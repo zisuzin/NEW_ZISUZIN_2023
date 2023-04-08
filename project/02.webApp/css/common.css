@@ -4,7 +4,8 @@
 @import url(./reset.css);
 
 :root {
-    /* --ma */
+    --main1-color: #d12268;
+    --main2-color: #c1165a;
 }
 
 #header {
@@ -32,8 +33,43 @@
 
 .search_menu {
     position: absolute;
-    right: 20%;
+    right: 24%;
     top: 25px;
+}
+
+.search_word_box {
+    position: relative;
+    width: 230px;
+    border: solid 2px var(--main1-color);
+    border-radius: 100px;
+    height: 33px;
+    padding: 0 8px;
+}
+
+.search_word_btn {
+    position: relative;
+    border: none;
+    background-color: transparent;
+}
+
+.search_word_btn::before {
+    content: '';
+    position: absolute;
+    background-image: url(../00.data/02.imgData/btn_sch.gif);
+    width: 18px;
+    height: 18px;
+    left: 26px;
+    top: -13px;
+}
+
+.search_menu > .search_word_box > input {
+    font-size: 12px;
+    margin-top: 8px;
+    font-weight: 600;
+}
+
+.search_menu > .search_word_box > input::placeholder {
+    color: #a9a9a9;
 }
 
 .user_only_menu {
@@ -46,16 +82,23 @@
     display: inline-block;
 }
 
+.user_only_menu li:last-child {
+    padding-left: 10px;
+}
+
+
 .rolling_keyword_wrap {
-    float: left;
+    position: absolute;
     width: 160px;
     height: 25px;
+    top: 29px;
+    right: 8%;
 }
 
 .rolling_keyword_wrap a {
     position: relative;
-    padding-left: 40px;
     padding-top: 3px;
+    padding-left: 40px;
     font-size: 14px;
 }
 
