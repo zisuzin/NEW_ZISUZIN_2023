@@ -1,0 +1,29 @@
+@charset "utf-8";
+
+/* 초기화 */
+h1,ul,ol,li,a,section,header,main,footer,form,input,div,span,nav,p {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+    letter-spacing: -1.1px;
+    outline: none;
+}
+
+html,body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
