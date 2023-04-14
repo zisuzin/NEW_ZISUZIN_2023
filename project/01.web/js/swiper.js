@@ -29,10 +29,3 @@
         },
     },
 });
-
-var swiper = new Swiper(".swiper-container2", {
-  pagination: {
-    el: ".swiper-pagination",
-    type: "fraction",
-  },
-});
