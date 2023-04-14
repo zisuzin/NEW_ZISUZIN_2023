@@ -1,143 +1,32 @@
 @charset "utf-8";
 
-/* 공통 css 셋팅 */
-@import url(./reset.css);
-
-:root {
-    --main1-color: #d12268;
-    --main2-color: #c1165a;
-}
-
 #header {
-    width: 100%;
+    position: relative;
 }
 
 .header_inner {
+    height: 43px;
+    border-bottom: 1px solid #000;
+}
+
+.top_fixed_menuBar {
     position: relative;
-    width: 1100px;
-    height: 86px;
+    width: 80%;
+    height: 100%;
     margin: 0 auto;
-    margin-top: 22px;
-    display: flex;
 }
 
-.header_logo {
-    top: 13px;
-    position: absolute;
+.top_fixed_menuBar > ul {
+    float: left;
+    line-height: 42px;
 }
 
-.main_logo {
-    width: 100%;
-    text-align: center;
+.top_fixed_menuBar > ul > li:nth-child(1) {
+    padding: 0;
 }
 
-.search_menu {
-    position: absolute;
-    right: 24%;
-    top: 25px;
-}
-
-.search_word_box {
-    position: relative;
-    width: 230px;
-    border: solid 2px var(--main1-color);
-    border-radius: 100px;
-    height: 33px;
-    padding: 0 8px;
-}
-
-.search_word_btn {
-    position: relative;
-    border: none;
-    background-color: transparent;
-}
-
-.search_word_btn::before {
-    content: '';
-    position: absolute;
-    background-image: url(../00.data/02.imgData/btn_sch.gif);
-    width: 18px;
-    height: 18px;
-    left: 26px;
-    top: -13px;
-}
-
-.search_menu > .search_word_box > input {
+.top_fixed_menuBar > ul > li {
+    float: left;
+    padding-left: 14px;
     font-size: 12px;
-    margin-top: 8px;
-    font-weight: 600;
 }
-
-.search_menu > .search_word_box > input::placeholder {
-    color: #a9a9a9;
-}
-
-.user_only_menu {
-    position: absolute;
-    right: 18px;
-    top: 25px;
-}
-
-.user_only_menu li {
-    display: inline-block;
-}
-
-.user_only_menu li:last-child {
-    padding-left: 10px;
-}
-
-
-.rolling_keyword_wrap {
-    position: absolute;
-    width: 160px;
-    height: 25px;
-    top: 29px;
-    right: 8%;
-}
-
-.rolling_keyword_wrap a {
-    position: relative;
-    padding-top: 3px;
-    padding-left: 40px;
-    font-size: 14px;
-}
-
-.rolling_keyword_wrap a::before {
-    content: 'HOT';
-    width: 32px;
-    height: 16px;
-    line-height: 15px;
-    position: absolute;
-    color: #d12268;
-    border: solid 1px #d12268;
-    border-radius: 4px 0 4px 4px;
-    font-size: 11px;
-    letter-spacing: -0.7px;
-    top: 5px;
-    left: 0;
-    text-align: center;
-    font-weight: 600;
-}
-
-/* 롤링 텍스트 */
-.swiper {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-  }
-
-  .swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    background: #fff;
-    display: flex;
-    margin-top: 3px;
-    align-items: center;
-  }
-
-  .swiper-slide img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
