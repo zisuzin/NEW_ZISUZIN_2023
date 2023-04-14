@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 /* 초기화 */
-h1,ul,ol,li,a,section,header,main,footer,form,input,div,span,nav,p {
+h1,ul,ol,li,a,section,header,main,footer,form,input,div,span,nav,p,fieldset,legend {
     margin: 0;
     padding: 0;
 }

@@ -30,3 +30,51 @@
     padding-left: 14px;
     font-size: 12px;
 }
+
+.right_infoBar {
+    float: right;
+    height: 100%;
+}
+
+.keyword_searchbox,
+.keyword_searchbox span {
+    float: right;
+}
+
+.keyword_searchbox {
+    position: relative;
+    margin-top: 7px;
+    margin-bottom: 7px;
+}
+
+.keyword_searchbox legend {
+    visibility: hidden;
+    width: 0;
+    height: 0;
+    line-height: 0;
+}
+
+.keyword_searchbox fieldset {
+    position: relative;
+    border: none;
+}
+
+.keyword_searchbox form {
+    width: 150px;
+    background-color: rgba(0,0,0,.16);
+    height: 28px;
+    border-radius: 5px;
+}
+
+.keyword_searchbox label {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.keyword_searchbox input {
+    background: none;
+    width: 100%;
+    height: 100%;
+    padding: 6px 8px;
+}
