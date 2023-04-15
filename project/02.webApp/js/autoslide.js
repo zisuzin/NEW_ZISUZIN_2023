@@ -16,7 +16,6 @@
         delay: 4000, // 시간간격(1/1000초)
         disableOnInteraction: false,
         // 상호작용(건드리는 것!)이 없으면 다시 재시작(false일때)
-    },
+      },
       slidesPerGroup: 1, // 슬라이드 그룹(개수단위로 넘어감!)
-  });
-
+    });
