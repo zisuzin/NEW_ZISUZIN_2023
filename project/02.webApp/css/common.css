@@ -53,7 +53,7 @@
 /* 회원가입 welcome 메시지박스 */
 .top_fixed_menuBar > ul > li.sign_msgbx_wrap > .sign_msgbox {
     position: absolute;
-    background-color: #000;
+    background-color: var(--dark-gray-color);
     color: #fff;
     height: auto;
     padding: 5px 7px;
@@ -70,7 +70,7 @@
     content: "\e92f";
     position: absolute;
     font-family: xeicon;
-    color: #000;
+    color: var(--dark-gray-color);
     top: -6px;
     left: 50%;
     transform: translateX(-50%);
@@ -152,4 +152,72 @@
 
 .right_infoBar > .recent_view_box > a > i {
     line-height: 28px;
+}
+
+.main_headerBox_inner {
+    position: relative;
+    width: 80%;
+    text-align: center;
+    margin: 0 auto;
+    padding: 25px 0;
+    border: 1px dashed red;
+}
+
+.main_logo {
+    display: inline-block;
+    border: 1px dashed red;
+    text-align: center;
+}
+
+.main_logo img {
+    border: 1px dashed blue;
+    vertical-align: middle;
+    width: 100%;
+}
+
+.sns_list {
+    position: absolute;
+    bottom: 10px;
+}
+
+.sns_list > a {
+    float: left;
+    background-color: rgba(0,0,0,.16);
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+}
+
+.sns_list > .ico_align {
+    margin-left: 5px;
+}
+
+.sns_list > a::after {
+    font-family: xeicon;
+    color: #fff;
+    line-height: 25px;
+    margin-left: -1px;
+    font-size: 17px;
+}
+
+.sns_list > a:nth-child(1)::after {
+    content: "\ebd3";
+}
+
+.sns_list > a:nth-child(2)::after {
+    content: "\ebe9";
+}
+
+.sns_list > a:nth-child(3)::after {
+    content: "\ebbc";
+}
+.sns_list > a:nth-child(4)::after {
+    content: "\ebef";
+}
+.sns_list > a:nth-child(5)::after {
+    content: "\ec04";
+}
+
+.main_headerBox {
+    border-bottom: 1px solid #000;
 }
