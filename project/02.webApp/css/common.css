@@ -1,12 +1,12 @@
 @charset "utf-8";
 
 :root {
-    --border-roundness: 5px;
     --dark-gray-color: #3f3f3f;
     --dark-gray-md-color: #00000029;
     --light-gray-color: #e8e8e8;
     --margin-vt-size: 7px;
     --margin-hr-size: 5px;
+    --border-roundness: 5px;
 }
 
 #header {
@@ -41,6 +41,35 @@
     font-size: 12px;
 }
 
+.top_fixed_menuBar > ul > li.sign_msgbx_wrap {
+    position: relative;
+} 
+
+/* 회원가입 welcome 메시지박스 */
+.top_fixed_menuBar > ul > li.sign_msgbx_wrap > .sign_msgbox {
+    position: absolute;
+    background-color: #000;
+    color: #fff;
+    height: auto;
+    padding: 5px 7px;
+    margin-top: -8px;
+    left: 10%;
+    border-radius: var(--border-roundness);
+    font-size: 11px;
+    letter-spacing: normal;
+    line-height: 1;
+} 
+
+.top_fixed_menuBar > ul > li.sign_msgbx_wrap > .sign_msgbox::before {
+    content: "\e92f";
+    position: absolute;
+    font-family: xeicon;
+    color: #000;
+    top: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 /* 상단 우측 인포메뉴 */
 .right_infoBar {
     float: right;
@@ -71,6 +100,19 @@
     background-color: var(--dark-gray-md-color);
     height: 28px;
     border-radius: var(--border-roundness);
+}
+
+.keyword_searchbox form a::after {
+    content: "\e97a";
+    position: absolute;
+    font-family: xeicon;
+    width: 30px;
+    height: 28px;
+    top: 0;
+    right: 0;
+    color: #fff;
+    line-height: 28px;
+    text-align: center;
 }
 
 .keyword_searchbox label {
