@@ -7,6 +7,7 @@
     --margin-vt-size: 7px;
     --margin-hr-size: 5px;
     --border-roundness: 5px;
+    --letter-interval: normal;
 }
 
 #header {
@@ -45,6 +46,10 @@
     position: relative;
 } 
 
+.gnb_txt_bold {
+    font-weight: bold;
+}
+
 /* 회원가입 welcome 메시지박스 */
 .top_fixed_menuBar > ul > li.sign_msgbx_wrap > .sign_msgbox {
     position: absolute;
@@ -56,8 +61,9 @@
     left: 10%;
     border-radius: var(--border-roundness);
     font-size: 11px;
-    letter-spacing: normal;
+    letter-spacing: var(--letter-interval);
     line-height: 1;
+    font-weight: bold;
 } 
 
 .top_fixed_menuBar > ul > li.sign_msgbx_wrap > .sign_msgbox::before {
