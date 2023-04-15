@@ -1,5 +1,12 @@
-// let swiper = new Swiper(".mySwiper", {
-//     pagination: {
-//       el: ".swiper-pagination",
-//     },
-//   });
+function autoSlide() {}
+export default autoSlide {
+    let swiper = new Swiper('.swiper', {
+        direction: 'vertical',
+        loop: true,
+      
+        pagination: {
+          el: '.swiper-pagination',
+        },
+      
+    });
+}
