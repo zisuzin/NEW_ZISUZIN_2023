@@ -64,7 +64,14 @@
     letter-spacing: var(--letter-interval);
     line-height: 1;
     font-weight: bold;
+    animation: move_topBottom 1s linear infinite;
 } 
+
+@keyframes move_topBottom {
+    50% {
+        margin-top: -4px
+    }
+}
 
 .top_fixed_menuBar > ul > li.sign_msgbx_wrap > .sign_msgbox::before {
     content: "\e92f";
