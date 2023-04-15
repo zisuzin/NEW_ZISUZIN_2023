@@ -34,6 +34,16 @@
 
 .top_fixed_menuBar > ul > li:nth-child(1) {
     padding: 0;
+    width: 52px;
+    overflow: hidden;
+    height: 0;
+    text-align: center;
+    border: 1px dashed red;
+}
+
+.top_fixed_menuBar > ul > li:nth-child(1).showTxt {
+    height: 100%;
+    background-color: var(--dark-gray-color);
 }
 
 .top_fixed_menuBar > ul > li {
@@ -159,6 +169,7 @@
 
 .right_infoBar > .recent_view_box > a > i {
     line-height: 28px;
+    padding: 0 6px;
 }
 
 .main_headerBox_inner {
@@ -220,6 +231,25 @@
 }
 .sns_list > a:nth-child(5)::after {
     content: "\ec04";
+}
+
+.sns_list > a:nth-child(1):hover {
+    background-color: #5c84d7;
+}
+.sns_list > a:nth-child(2):hover {
+    background: linear-gradient(to right,#fa9753 ,#773ac6);
+}
+
+.sns_list > a:nth-child(3):hover {
+    background-color: #44cb44;
+}
+
+.sns_list > a:nth-child(4):hover {
+    background-color: #f9b932;
+}
+
+.sns_list > a:nth-child(5):hover {
+    background-color: #ee1c1b;
 }
 
 .main_headerBox {

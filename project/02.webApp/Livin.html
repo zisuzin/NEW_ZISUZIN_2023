@@ -150,6 +150,17 @@
     <footer id="info">
 
     </footer>
+    <script>
+        window.addEventListener("scroll",()=>{
+            const show_txt = document.querySelector(".top_fixed_menuBar > ul > li:nth-child(1)");
+            const show_txt_h = show_txt.offset().top; 
+            let scrvalue = window.scrollY;
+            console.log(show_txt_h,scrvalue);
+            if(scrvalue > show_txt_h) {
+                show_txt.classList.toggle("showTxt");
+            }
+        });
+    </script>
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <!-- JS File -->
