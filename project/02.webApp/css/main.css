@@ -137,11 +137,40 @@
     height: 100%;
 }
 
+.more_promotion_btn > a {
+    width: 230px;
+    height: 36px;
+}
+
 .more_promotion_btn {
-    position: absolute;
+    position: relative;
+    float: left;
+    width: 250px;
     height: 100%;
     left: 50%;
     transform: translateX(-50%);
+}
+
+.more_promotion_btn p,
+.more_promotion_btn span {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.more_promotion_btn span {
+    position: relative;
+    float: right;
+    width: 35px;
+    height: 35px;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 5%;
+}
+
+.more_promotion_btn span > img {
+    width: 100%;
+    height: 100%;
 }
 
 /***************** C. 하단영역 *****************/
