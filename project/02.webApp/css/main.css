@@ -15,25 +15,37 @@
     background-color: rgba(0,0,0,.15);
     width: 38px;
     border-radius: 5px;
-    opacity: 0;
+    transition: all .3s ease;
 }
 
-.pgBtn.showBtn {
-    opacity: 1;
+.swiper2 .swiper-button-prev {
+    left: 30px;
+}
+
+.swiper2 .swiper-button-prev.on {
+    left: 10px;
+}
+
+.swiper2 .swiper-button-next {
+    right: 30px;
+}
+
+.swiper2 .swiper-button-next.on {
+    right: 10px;
+}
+
+.swiper2 .swiper-button-prev::after,
+.swiper2 .swiper-button-next::after {
+    font-family: xeicon;
+    font-size: 30px;
 }
 
 .swiper2 .swiper-button-prev::after {
     content: "\e93d";
-    font-family: xeicon;
-    left: 5px;
-    font-size: 30px;
 }
 
 .swiper2 .swiper-button-next::after {
     content: "\e940";
-    font-family: xeicon;
-    right: 5px;
-    font-size: 30px;
 }
 
 .pg-nav2 {

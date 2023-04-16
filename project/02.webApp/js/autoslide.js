@@ -50,19 +50,22 @@
   /* 메인 컨텐츠1
     - 이벤트대상 영역에 마우스호버/리브시 버튼스타일 변경 */
   function showBtn () {
-    const pgBtn = document.querySelectorAll(".pgBtn");
+    const LBtn = document.querySelector(".swiper-button-prev");
+    const RBtn = document.querySelector(".swiper-button-next");
     const pgcont1 = document.querySelector(".section1_container");
     
     pgcont1.addEventListener("mouseenter", ()=>{
-    pgBtn.forEach(ele => {
-      ele.style.opacity = "1";
+      LBtn.style.opacity = "1";
+      RBtn.style.opacity = "1";
+      LBtn.classList.add("on");
+      RBtn.classList.add("on");
       });
-    });
   
     pgcont1.addEventListener("mouseleave", ()=>{
-    pgBtn.forEach(ele => {
-      ele.style.opacity = "0";
-      });
+      LBtn.style.opacity = "0";
+      RBtn.style.opacity = "0";
+      LBtn.classList.remove("on");
+      RBtn.classList.remove("on");
     });
   }
 
