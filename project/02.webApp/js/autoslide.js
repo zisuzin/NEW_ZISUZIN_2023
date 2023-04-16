@@ -19,10 +19,10 @@
         // 상호작용(건드리는 것!)이 없으면 다시 재시작(false일때)
       },
       slidesPerGroup: 1, // 슬라이드 그룹(개수단위로 넘어감!)
-    });
+  });
 
 
-  /* 1. 메인 컨텐츠1 */
+  /* 메인 컨텐츠1 */
   new Swiper(".swiper2", {
     slidesPerView: 1,
     spaceBetween: 0,
@@ -47,13 +47,23 @@
 
   });
 
-  const pgBtn = document.querySelectorAll(".pgBtn");
-  const pgcont1 = document.querySelector(".section1_container");
-  
-  pgcont1.addEventListener("mouseover", ()=>{
-  pgBtn.forEach(ele => {
-    ele.classList.toggle("showBtn");
-      console.log("콘솔!")
+  /* 메인 컨텐츠1
+    - 이벤트대상 영역에 마우스호버/리브시 버튼스타일 변경 */
+  function showBtn () {
+    const pgBtn = document.querySelectorAll(".pgBtn");
+    const pgcont1 = document.querySelector(".section1_container");
+    
+    pgcont1.addEventListener("mouseenter", ()=>{
+    pgBtn.forEach(ele => {
+      ele.style.opacity = "1";
+      });
     });
-  });
+  
+    pgcont1.addEventListener("mouseleave", ()=>{
+    pgBtn.forEach(ele => {
+      ele.style.opacity = "0";
+      });
+    });
+  }
 
+  showBtn();
