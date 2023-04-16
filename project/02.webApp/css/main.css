@@ -1,8 +1,66 @@
 @charset "utf-8";
 
-/* 공통 css 셋팅 */
-@import url(./reset.css);
-
-/***************** A. 상단영역 *****************/
 /***************** B. 메인영역 *****************/
+/* 1. 메인 컨텐츠1 */
+.swiper2 > ul > li > a > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.swiper2 .swiper-button-prev,
+.swiper2 .swiper-button-next {
+    color: #fff;
+    position: absolute;
+    background-color: rgba(0,0,0,.15);
+    width: 38px;
+    border-radius: 5px;
+    opacity: 0;
+}
+
+.pgBtn.showBtn {
+    opacity: 1;
+}
+
+.swiper2 .swiper-button-prev::after {
+    content: "\e93d";
+    font-family: xeicon;
+    left: 5px;
+    font-size: 30px;
+}
+
+.swiper2 .swiper-button-next::after {
+    content: "\e940";
+    font-family: xeicon;
+    right: 5px;
+    font-size: 30px;
+}
+
+.pg-nav2 {
+    text-align: center;
+    bottom: 18px !important;
+}
+
+.pg-nav2 > span {
+    background-color: #ccc;
+    border-radius: 0;
+    min-width: 14px;
+    height: 4px;
+    opacity: 0.9;
+}
+
+.pg-nav2 > span.swiper-pagination-bullet-active {
+    position: relative;
+}
+
+.pg-nav2 > span.swiper-pagination-bullet-active::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.5);
+}
+
 /***************** C. 하단영역 *****************/
