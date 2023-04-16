@@ -2,6 +2,9 @@
 
 /***************** B. 메인영역 *****************/
 /* 1. 메인 컨텐츠1 */
+.swiper2 {
+    height: 100%;
+}
 .swiper2 > ul > li > a > img {
     width: 100%;
     height: 100%;
@@ -73,6 +76,72 @@
     top: 0;
     left: 0;
     background-color: rgba(0,0,0,0.5);
+}
+
+.line-notice {
+    width: 100%;
+    height: 70px;
+    display: flex;
+}
+
+.line-notice-left {
+    position: relative;
+    width: 50%;
+    background-color: #000;
+}
+
+.line-notice-right {
+    position: relative;
+    width: 50%;
+    background-color: #f6f5ef;
+}
+
+.line-notice-left > .line-notice-inner > dl > dt,
+.line-notice-left > .line-notice-inner > dl > dd a {
+    color: #fff;
+}
+
+.line-notice-left > .line-notice-inner > dl {
+    display: flex;
+    white-space: nowrap;
+    margin-top: 25px;
+}
+
+.line-notice-left > .line-notice-inner {
+    position: absolute;
+    float: left;
+    width: auto;
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.line-notice-left > .line-notice-inner > dl > dd {
+    width: auto;
+    height: 20px;
+    overflow: hidden;
+}
+
+.more_notice_btn {
+    position: relative;
+    float: right;
+    width: 35px;
+    height: 35px;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 5%;
+}
+
+.more_notice_btn img {
+    width: 100%;
+    height: 100%;
+}
+
+.more_promotion_btn {
+    position: absolute;
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 /***************** C. 하단영역 *****************/
