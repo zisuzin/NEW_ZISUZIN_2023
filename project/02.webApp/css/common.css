@@ -179,7 +179,7 @@
 
 .main_headerBox_inner {
     position: relative;
-    width: 80%;
+    width: 70%;
     text-align: center;
     margin: 0 auto;
     padding: 25px 0;
@@ -312,7 +312,7 @@
 
 .gnb_menu_inner {
     position: relative;
-    width: 80%;
+    width: 70%;
     height: 100%;
     margin: 0 auto;
     display: flex;
