@@ -173,4 +173,14 @@
     height: 100%;
 }
 
+
+/* 2. 메인 컨텐츠2 */
+.main_left_big_slide {
+    width: 45%;
+    border: 1px solid blue;
+}
+
+.main_right_small_slide {
+    width: 55%;
+}
 /***************** C. 하단영역 *****************/
