@@ -18,7 +18,7 @@
     <!-- A. 상단영역 -->
     <header id="header">
         <div class="header_inner">
-            <div class="header_left">
+            <div class="header_fixed_bar">
                 <div class="header_top_logo">
                     <h2>
                         <a href="#">
@@ -43,32 +43,35 @@
                         <li>
                             <a href="#">KIDS</a>
                         </li>
+                        <li>
+                            <a href="#">EVENT</a>
+                        </li>
                     </ul>
                 </nav>
-            </div>
-            <div class="personal_menu">
-                <ul>
-                    <li>
-                        <a href="#">
-                            <img src="./00.data/02.imgData/" alt="검색버튼">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="" alt="장바구니버튼">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="" alt="찜하기버튼">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="" alt="마이페이지버튼">
-                        </a>
-                    </li>
-                </ul>
+                <div class="header_top_personal_menu">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <em class="btn_bind_title">돋보기버튼</em>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <em class="btn_bind_title">장바구니버튼</em>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <em class="btn_bind_title">찜하기버튼</em>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <em class="btn_bind_title">마이페이지</em>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </header>
@@ -76,7 +79,64 @@
     <main id="cont">
         <!-- 1. 메인 컨텐츠1 -->
         <div class="section1_container">
-            <div class="section1_inner">
+            <div class="swiper">
+                <ul class="swiper-wrapper">
+                    <li class="swiper-slide">
+                        <a href="#">
+                            <img src="./00.data/02.imgData/main_cont1_ban/ban_1.jpg" alt="슬라이드배너">
+                        </a>
+                    </li>
+                    <li class="swiper-slide">
+                        <a href="#">
+                            <img src="./00.data/02.imgData/main_cont1_ban/ban_2.jpg" alt="슬라이드배너">
+                        </a>
+                    </li>
+                    <li class="swiper-slide">
+                        <a href="#">
+                            <img src="./00.data/02.imgData/main_cont1_ban/ban_3.jpg" alt="슬라이드배너">
+                        </a>
+                    </li>
+                    <li class="swiper-slide">
+                        <a href="#">
+                            <img src="./00.data/02.imgData/main_cont1_ban/ban_4.jpg" alt="슬라이드배너">
+                        </a>
+                    </li>
+                    <li class="swiper-slide">
+                        <a href="#">
+                            <img src="./00.data/02.imgData/main_cont1_ban/ban_5.jpg" alt="슬라이드배너">
+                        </a>
+                    </li>
+                    <li class="swiper-slide">
+                        <a href="#">
+                            <img src="./00.data/02.imgData/main_cont1_ban/ban_6.jpg" alt="슬라이드배너">
+                        </a>
+                    </li>
+                    <li class="swiper-slide">
+                        <a href="#">
+                            <img src="./00.data/02.imgData/main_cont1_ban/ban_7.jpg" alt="슬라이드배너">
+                        </a>
+                    </li>
+                    <li class="swiper-slide">
+                        <a href="#">
+                            <img src="./00.data/02.imgData/main_cont1_ban/ban_8.jpg" alt="슬라이드배너">
+                        </a>
+                    </li>
+                </ul>
+                <!-- 네비게이션 버튼 -->
+                <div class="banner-control">
+                    <div class="banner-control-inner">
+                        <div class="banner-pagination fraction">
+                            <span class="banner-cnt current">00</span>
+                            <span class="banner-cnt divider">/</span>
+                            <span class="banner-cnt total">00</span>
+                        </div>
+                        <div class="swiper-navigation">
+                            <div class="swiper-button-prev pgBtn"></div>
+                            <div class="swiper-button-next pgBtn"></div>
+                        </div>
+                        <button type="button" class="swiper-btn-toggle-pause"></button>
+                    </div>
+                </div>
             </div>
         </div>
 
