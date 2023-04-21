@@ -234,7 +234,6 @@
 
 .img_wrap {
     position: relative;
-    width: 285px;
     height: 285px;
 }
 
@@ -243,7 +242,7 @@
     height: 100%;
     object-fit: cover;
 }
-
+ 
 .img_wrap .sale {
     width: 60px;
     height: 60px;
@@ -318,4 +317,27 @@
 .section2-title > a {
     position: absolute;
     margin-top: 40px;
+    font-size: 15px;
+    font-weight: normal;
+    background: url(../00.data/02.imgData/main_btn_section_link.png) no-repeat center right;
+    padding-right: 12px;
+}
+
+.main-swiper-nav > .main-navBtnL,
+.main-swiper-nav > .main-navBtnR {
+    top: 128px;
+    position: absolute;
+    width: 15px;
+    height: 29px;
+    background: url(../00.data/02.imgData/main_btn_abc_swiper.png) 0 0 no-repeat;
+    z-index: 2;
+}
+
+.main-swiper-nav > .main-navBtnL {
+    background-position: -15px 0;
+    left: 20%;
+}
+
+.main-swiper-nav > .main-navBtnR {
+    background-position: 0 0;
 }
