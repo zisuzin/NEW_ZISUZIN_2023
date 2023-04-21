@@ -54,7 +54,6 @@
 
 .header_fixed_bar > .header_top_logo > h2 {
     font-size: 0;
-    height: 45px;
 }
 
 .header_fixed_bar > .header_top_logo > h2 img {
@@ -94,7 +93,7 @@
 
 .swiper {
     position: relative;
-    height: 530px;
+    height: 600px;
 }
 
 .swiper-wrapper {
@@ -139,7 +138,6 @@
 }
 
 .banner-pagination {
-    /* padding: 13px 0 0 22px; */
     padding-left: 22px;
 }
 
@@ -157,6 +155,11 @@
     font-size: 14px;
     color: #999;
     font-weight: 500;
+}
+
+.banner-pagination > .current {
+    font-size: 14px;
+    font-weight: 700;
 }
 
 .banner-control > .banner-control-inner > .swiper-navigation {
@@ -183,5 +186,56 @@
     position: absolute;
     width: 48px;
     height: 48px;
-    background-color: rgba(0,0,0,0.5);;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.swiper-btn-toggle-pause::after {
+    content: '';
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    background: url(../00.data/02.imgData/abc_main_banner_btn_control.png) no-repeat -66px 0;
+}
+
+.section2_inner {
+    position: relative;
+    /* width: 80%; */
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    border: 1px solid red;
+    margin-top: 100px;
+}
+
+.section2-title > .text_head1 {
+    font-size: 30px;
+}
+
+.section2-title span:not(.text_head1) {
+    display: block;
+    font-size: 14px;
+    line-height: 22px;
+    margin-top: 20px;
+    color: #666;
+    letter-spacing: -.7px;
+    font-weight: normal;
+}
+
+.main-hot-deal {
+    position: relative;
+    width: 1200px;
+    border: 1px solid #000;
+}
+
+.swiper2 {
+    position: relative;
+    height: 480px;
+    border: 1px solid #000;
+    overflow: hidden;
+}
+
+.swiper2 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
