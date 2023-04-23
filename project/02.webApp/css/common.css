@@ -283,6 +283,53 @@
     padding: 15px 10px;
 }
 
+.prod-info-wrap > .prod-brand {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.prod-info-wrap > .prod-name {
+    color: #666;
+    font-size: 14px;
+    display: block;
+    margin-top: 8px;
+    height: 38px;
+}
+
+.prod-info-wrap > .prod-price {
+    position: relative;
+}
+
+.prod-info-wrap > .prod-price > .price-discount-cost {
+    font-size: 20px;
+    margin-left: 8px;
+    font-weight: 600;
+}
+
+.prod-info-wrap > .prod-price > .price-normal-cost {
+    color: #999;
+    text-decoration: line-through;
+    font-size: 14px;
+}
+
+.prod-info-wrap > .prod-price > .price-normal-cost::after,
+.prod-info-wrap > .prod-price > .price-discount-cost::after {
+    content: '원';
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.prod-info-wrap > .prod-price > .price-sale-percent {
+    font-size: 14px;
+    margin-left: -2px;
+}
+
+
+.prod-info-wrap > .prod-price > .price-discount-cost,
+.prod-info-wrap > .prod-price > .price-sale-percent {
+    color: #ee1c25;
+}
+
 .sale-period-wrap {
     padding: 16px 10px;
     border-top: 1px solid #e5e5e5;
