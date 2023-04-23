@@ -1,4 +1,14 @@
 @charset "utf-8";
 
 /***************** B. 메인영역 *****************/
-/* 1. 메인 컨텐츠1 */
+/* 3. 메인 컨텐츠3 */
+.section3_container {
+    margin-top: 120px;
+}
+
+.section3_inner {
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+    border: 1px solid #000;
+}

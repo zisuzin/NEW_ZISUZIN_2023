@@ -13,8 +13,8 @@
     --border-roundness: 5px;
     --letter-interval: normal;
     --font-size-s: 12px;
-    --main-font1: 'Noto Sans KR', sans-serif;
-    --sub-font1: 'Montserrat', sans-serif;
+    --main-font1: 'Noto Sans KR';
+    --sub-font1: 'Montserrat';
 }
 
 #header {
@@ -217,6 +217,7 @@
 .section2-title > .text_head1 {
     font-size: 30px;
     font-family: var(--sub-font1);
+    font-weight: 600;
 }
 
 .section2-title span:not(.text_head1) {
@@ -238,7 +239,6 @@
 .swiper2 {
     position: relative;
     height: 480px;
-    border: 1px solid #000;
     overflow: hidden;
 }
 
@@ -377,7 +377,6 @@
     font-weight: bold;
     display: inline-block;
     letter-spacing: -5px;
-
 }
 
 .prod_count_bx > .date {
@@ -400,7 +399,8 @@
     position: absolute;
     margin-top: 40px;
     font-size: 15px;
-    font-weight: normal;
+    color: #666;
+    font-weight: 600;
     background: url(../00.data/02.imgData/main_btn_section_link.png) no-repeat center right;
     padding-right: 12px;
     font-family: var(--sub-font1);
@@ -424,4 +424,76 @@
 .main-swiper-nav > .main-navBtnR {
     background-position: 0 0;
     right: -3%;
+}
+
+/* 3. 메인 컨텐츠3 */
+.section3_inner > h2 {
+    text-align: center;
+    font-family: var(--sub-font1);
+    font-size: 44px;
+    font-weight: 800;
+}
+
+.special_cont_wrap {
+    display: flex;
+    position: relative;
+    margin-top: 40px;
+}
+
+.special_cont_wrap > .special-main-item > a {
+    display: block;
+    width: 520px;
+    height: 520px;
+}
+
+.special_cont_wrap > .special-main-item > a > img {
+    width: 100%;
+    height: 100%;
+}
+
+.special_cont_wrap > .special-item-list {
+    width: 50%;
+}
+
+.special-item-list > .ban-item-tit {
+    width: 462px;
+    margin: 10px auto 30px;
+}
+
+.special-item-list > .ban-item-tit > strong {
+    font-size: 28px;
+}
+
+.special-item-list > .ban-item-tit > span {
+    font-size: 16px;
+    display: block;
+    color: #191919;
+    margin-top: 2px;
+    line-height: 28px;
+}
+
+.swiper3 {
+    width: 462px;
+    border: 1px solid red;
+    margin: 0 auto;
+}
+
+.swiper3 .swiper-slide {
+    width: 147px;
+}
+
+
+.swiper3 .swiper-slide img {
+    width: 100%;
+}
+
+.swiper3 .swiper-slide .brand {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: -0.5px;
+}
+
+.swiper3 .swiper-slide p {
+    margin-top: 4px;
+    font-size: 13px;
 }
