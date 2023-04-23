@@ -33,10 +33,6 @@ a {
     text-decoration: none;
 }
 
-a, strong, span {
-    font-family: 'Noto Sans KR', sans-serif;
-}
-
 input {
     border: none;
 }

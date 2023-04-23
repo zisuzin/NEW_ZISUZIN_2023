@@ -1,6 +1,7 @@
 
 @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;500;600;800&display=swap');
+@import url('https://fonts.cdnfonts.com/css/malgun-gothic-boot');
 
 .notosanskr { 
     font-family: 'Noto Sans KR';
@@ -8,4 +9,8 @@
 
 .Montserrat {
     font-family: 'Montserrat';
+}
+
+.Malgun-Gothic-Boot {
+    font-family: 'Malgun Gothic Boot', sans-serif;
 }
