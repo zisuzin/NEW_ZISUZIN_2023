@@ -370,6 +370,7 @@
     font-weight: 700;
     font-size: 16px;
     font-family: var(--mont-font1);
+    margin-right: -5px;
 }
 
 .prod_count_bx > .date,
@@ -574,4 +575,8 @@
 .main4-navBtnN {
     transform: rotate(45deg);
     right: 18px;
+}
+
+.spring-main-item {
+    padding-left: 10px;
 }
