@@ -18,6 +18,10 @@
     --gothic-font1: 'Malgun Gothic Boot', sans-serif;
 }
 
+.section4_container * {
+    font-family: var(--notos-font1);
+}
+
 #header {
     width: 100%;
     height: 90px;
