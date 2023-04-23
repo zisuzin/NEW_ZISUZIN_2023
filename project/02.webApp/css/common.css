@@ -13,6 +13,8 @@
     --border-roundness: 5px;
     --letter-interval: normal;
     --font-size-s: 12px;
+    --main-font1: 'Noto Sans KR', sans-serif;
+    --sub-font1: 'Montserrat', sans-serif;
 }
 
 #header {
@@ -116,7 +118,7 @@
 
 .banner-control {
     position: relative;
-    width: 1200px;
+    width: 1500px;
     height: 48px;
     left: 74%;
     z-index: 1;
@@ -197,17 +199,24 @@
     background: url(../00.data/02.imgData/abc_main_banner_btn_control.png) no-repeat -66px 0;
 }
 
+.section2_container {
+    margin-top: 100px;
+}
+
 .section2_inner {
     position: relative;
-    /* width: 80%; */
     width: 1200px;
-    margin: 0 auto;
+    margin-left: 100px;
     display: flex;
-    margin-top: 100px;
+}
+
+.section2-title {
+    width: 305px;
 }
 
 .section2-title > .text_head1 {
     font-size: 30px;
+    font-family: var(--sub-font1);
 }
 
 .section2-title span:not(.text_head1) {
@@ -218,6 +227,7 @@
     color: #666;
     letter-spacing: -.7px;
     font-weight: normal;
+    font-family: var(--main-font1);
 }
 
 .main-hot-deal {
@@ -256,6 +266,7 @@
     color: #fff;
     font-weight: 600;
     letter-spacing: -5px;
+    font-family: var(--sub-font1);
 }
 
 .sale > .val {
@@ -268,9 +279,8 @@
 
 .img_wrap .prod_count_bx {
     height: 46px;
-    line-height: 60px;
     background-color: rgba(0,0,0,0.8);
-
+    font-family: var(--sub-font1);
     position: absolute;
     left: 0;
     right: 0;
@@ -298,6 +308,7 @@
 
 .prod-info-wrap > .prod-price {
     position: relative;
+    font-family: var(--sub-font1);
 }
 
 .prod-info-wrap > .prod-price > .price-discount-cost {
@@ -334,6 +345,30 @@
     padding: 16px 10px;
     border-top: 1px solid #e5e5e5;
     margin-top: 10px;
+    display: flex;
+
+}
+
+.sale-period-wrap > .sale-period {
+    flex: 1;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 16px;
+    background: url(../00.data/02.imgData/prod_sale_period_bg.png) no-repeat;
+    padding-left: 22px;
+    font-family: var(--sub-font1);
+}
+
+.count {
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.count > .val {
+    color: #85c55b;
+    font-weight: 700;
+    font-size: 16px;
+    font-family: var(--sub-font1);
 }
 
 .prod_count_bx > .date,
@@ -368,6 +403,7 @@
     font-weight: normal;
     background: url(../00.data/02.imgData/main_btn_section_link.png) no-repeat center right;
     padding-right: 12px;
+    font-family: var(--sub-font1);
 }
 
 .main-swiper-nav > .main-navBtnL,
@@ -382,9 +418,10 @@
 
 .main-swiper-nav > .main-navBtnL {
     background-position: -15px 0;
-    left: 20%;
+    left: 22%;
 }
 
 .main-swiper-nav > .main-navBtnR {
     background-position: 0 0;
+    right: -3%;
 }
