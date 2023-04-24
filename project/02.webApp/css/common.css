@@ -433,7 +433,8 @@
 }
 
 /* 3. 메인 컨텐츠3 */
-.section3_container > h2 {
+.section3_container > h2,
+.section5_container > h2 {
     text-align: center;
     font-family: var(--mont-font1);
     font-size: 44px;
@@ -509,7 +510,8 @@
 }
 
 .swiper3 .swiper-slide .brand,
-.swiper4 .swiper-slide .brand {
+.swiper4 .swiper-slide .brand,
+.swiper5 .swiper-slide .brand {
     font-size: 12px;
     font-weight: 500;
     letter-spacing: -0.5px;
@@ -517,7 +519,8 @@
 }
 
 .swiper3 .swiper-slide p,
-.swiper4 .swiper-slide p {
+.swiper4 .swiper-slide p,
+.swiper5 .swiper-slide p {
     margin-top: 4px;
     font-size: 12px;
     font-family: var(--gothic-font1);
@@ -583,4 +586,18 @@
 
 .spring-main-item {
     padding-left: 10px;
+}
+
+.new-item-list {
+    display: flex;
+    /* flex-wrap: wrap; */
+}
+
+.new-item-list > li {
+    width: 25%;
+    /* padding: 0 10px; */
+}
+
+.swiper5 {
+    overflow: hidden;
 }
