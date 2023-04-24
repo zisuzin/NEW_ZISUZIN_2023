@@ -16,6 +16,7 @@
     --notos-font1: 'Noto Sans KR';
     --mont-font1: 'Montserrat';
     --gothic-font1: 'Malgun Gothic Boot', sans-serif;
+    --work-font1: 'Work Sans', sans-serif;
 }
 
 .section4_container * {
@@ -603,7 +604,6 @@
 
 .new-item-list {
     display: flex;
-    /* flex-wrap: wrap; */
 }
 
 .new-item-list > li {
@@ -625,6 +625,10 @@
     margin-top: 5px;
 }
 
+.item-tag-wrap > button:nth-child(2) {
+    margin-left: 3px;
+}
+
 .m-cont5_list {
     border: 1px solid #ccc;
     position: relative;
@@ -643,10 +647,9 @@
 }
 
 .new-item-box {
-    width: 3000px;
-    height: 175px;
+    width: 100%;
+    height: 180px;
     padding: 15px;
-    z-index: -1;
 }
 
 .txt-marquee {
@@ -657,7 +660,6 @@
     overflow: hidden;
     position: absolute;
     top: 50%;
-    /* transform: rotate(3deg); */
 }
 
 .txt-marquee > ul {
@@ -684,4 +686,196 @@
     color: #fff;
     white-space: nowrap;
     font-size: 40px;
+}
+
+
+/* C. 하단영역 */
+#info {
+    position: relative;
+    padding: 60px 5%;
+    background-color: #131313;
+}
+
+#info > .scrollTop {
+    position: absolute;
+    top: -50px;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    background-color: #131313;
+}
+
+#info > .scrollTop > i {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 12px;
+    height: 18px;
+    color: #fff;
+    transition: .3s ease;
+}
+
+#info > .scrollTop > i::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 6px;
+    height: 6px;
+    margin-left: -3px;
+    margin-top: -9px;
+    border-top: 1px solid #fff;
+    border-right: 1px solid #fff;
+    transform: rotate(-45deg);
+}
+
+#info > .scrollTop > i::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    width: 1px;
+    height: 100%;
+    background-color: currentColor;
+}
+
+.footer-info-wrap {
+    position: relative;
+    display: flex;
+}
+
+.footer-info-wrap > .f-box-w1 {
+    width: 50%;
+    float: left;
+    border: 1px solid red;
+}
+
+.footer-info-wrap > .f-box-w2 {
+    width: 50%;
+    float: right;
+}
+
+.footer-info-wrap > .f-box-w1 ul > li > a {
+    letter-spacing: -0.5px;
+}
+
+.footer-info-wrap > .f-box-w1 ul > li {
+    display: inline-block;
+}
+
+.footer-info-wrap > .f-box-w1 ul > li+li {
+    padding: 0 15px;
+}
+
+.f-box-w1 > .f-menu > ul > li > a,
+.f-bottom .txt-semibold {
+    color: #fff;
+}
+
+.f-bottom .txt-semibold {
+    font-weight: 600;
+}
+
+.f-bottom span {
+    font-size: 13px;
+    color: #888;
+    font-family: var(--work-font1);
+}
+
+.f-bottom a {
+    position: relative;
+    display: inline-block;
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 0 12px 0 25px;
+    font-size: 13px;
+    letter-spacing: -0.5px;
+    line-height: 24px;
+    vertical-align: middle;
+}
+
+.f-bottom a::before {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background: url(../00.data/02.imgData/../02.imgData/icon_cs.svg) no-repeat;
+    background-position: right 0;
+    left: 5px;
+}
+
+.f-sns-list {
+    float: right;
+}
+
+.f-sns-list > ul > li {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    float: left;
+}
+
+.f-sns-list > ul > li > a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.f-sns-list > ul > li > a > i {
+    background: url(../00.data/02.imgData/icon_sns.svg) no-repeat;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    transition: .3s ease;
+}
+
+.f-sns-list > ul > li > .facebook > i {
+    background-position: left -30px;
+}
+
+.f-sns-list > ul > li > .youtube > i {
+    background-position: left -60px;
+}
+
+.f-sns-list li+li {
+    margin-left: 10px;
+}
+
+.f-tel {
+    position: relative;
+    display: inline-block;
+    font-size: 30px;
+    font-family: var(--mont-font1);
+}
+
+.f-tel > a {
+    color: #fff;
+    font-family: var(--work-font1);
+    font-weight: 600;
+    padding-left: 35px;
+}
+
+.f-tel > i {
+    background: url(../00.data/02.imgData/icon_tel.svg) no-repeat;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+}
+
+
+.f-info li,
+.f-info li > em,
+.f-info li > a {
+    color: #888;
+    font-style: normal;
+    font-size: 13px;
+}
+
+.f-info li > em {
+    color: #fff;
+    font-weight: 600;
 }
