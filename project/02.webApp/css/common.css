@@ -601,3 +601,29 @@
 .swiper5 {
     overflow: hidden;
 }
+
+.item-tag-wrap {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.item-tag-wrap > button {
+    background-color: var(--main-color-b);
+    color: #fff;
+    padding: 5.5px 12px;
+    border-radius: 20px;
+    margin-top: 5px;
+}
+
+.m-cont5_list {
+    border: 1px solid #ccc;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.m-cont5_list img {
+    width: 100%;
+    height: 100%;
+}
