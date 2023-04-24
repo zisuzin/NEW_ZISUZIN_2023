@@ -17,15 +17,22 @@
         prevEl: ".arrow-prev",
         nextEl: ".arrow-next",
       },
-    /* 미디어쿼리 */
-		breakpoints: {
-        // 620: {
-        //     slidesPerView: 3,
-        //     spaceBetween: 5,
-        //   },
-        1230: {
-            slidesPerView: 3,
-            spaceBetween: 20,
-        },
-    },
+    // /* 미디어쿼리 */
+		// breakpoints: {
+    //     // 620: {
+    //     //     slidesPerView: 3,
+    //     //     spaceBetween: 5,
+    //     //   },
+    //     1230: {
+    //         slidesPerView: 3,
+    //         spaceBetween: 20,
+    //     },
+    // },
+});
+
+var swiper = new Swiper(".swiper-container2", {
+  pagination: {
+    el: ".swiper-pagination",
+    type: "fraction",
+  },
 });
