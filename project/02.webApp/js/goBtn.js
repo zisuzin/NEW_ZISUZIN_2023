@@ -11,7 +11,6 @@ const mTopBtn = document.querySelector(".scrollTop");
 // 상단이동시 숨기기/보이기
 window.addEventListener("scroll", ()=>{
     let scVal = window.scrollY;
-    console.log("scVal",scVal);
     if(scVal === 0) {
         mTopBtn.style.opacity = 0;
         mTopBtn.classList.add("active");
