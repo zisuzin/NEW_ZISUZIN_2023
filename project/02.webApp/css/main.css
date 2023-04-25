@@ -1,5 +1,33 @@
 @charset "utf-8";
 
 /***************** B. 메인영역 *****************/
+.search-input-wrap {
+    position: absolute;
+    background: #fff;
+    width: 645px;
+    right: -20px;
+    top: 0;
+}
+
+.search-input-cont-inner {
+    display: flex;
+}
+
+.search-input-wrap > form > a {
+    position: absolute;
+    background: url(../00.data/02.imgData/ico_common.png) no-repeat 0 0;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+}
+
+.search-input-wrap > form > label,
+.search-input-wrap > form > label > input {
+    font-size: 15px;
+}
+
+.search-input-wrap > form > label > input {
+    border-bottom: 2px solid #191919;
+}
 
 /***************** C. 하단영역 *****************/
