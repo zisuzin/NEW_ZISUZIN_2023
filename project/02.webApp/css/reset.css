@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 /* 초기화 */
-button,h1,h2,ul,ol,li,a,section,header,main,footer,form,input,div,span,nav,p,article,mark {
+button,h1,h2,h3,ul,ol,li,a,section,header,main,footer,form,input,div,span,nav,p,article,mark {
     margin: 0;
     padding: 0;
     background-color: transparent;
