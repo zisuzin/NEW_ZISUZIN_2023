@@ -27,8 +27,8 @@
     spaceBetween: 20,
     loop: true, // 무한루프(기본값:false)
     navigation : { // 네비게이션 설정
-      nextEl : '.main-navBtnL', // 다음 버튼 클래스명
-      prevEl : '.main-navBtnN', // 이번 버튼 클래스명
+      nextEl : '.main-navBtnN', // 다음 버튼 클래스명
+      prevEl : '.main-navBtnL', // 이번 버튼 클래스명
     },
     slidesPerGroup: 3, // 슬라이드 그룹(개수단위로 넘어감!)
   });
@@ -39,20 +39,20 @@
     spaceBetween: 10,
     loop: true, // 무한루프(기본값:false)
     navigation : { // 네비게이션 설정
-      nextEl : '.main3-navBtnL', // 다음 버튼 클래스명
-      prevEl : '.main3-navBtnN', // 이번 버튼 클래스명
+      nextEl : '.main3-navBtnN', // 다음 버튼 클래스명
+      prevEl : '.main3-navBtnL', // 이번 버튼 클래스명
     },
     slidesPerGroup: 3, // 슬라이드 그룹(개수단위로 넘어감!)
   });
 
-  /* 메인 컨텐츠4 */
+  /* 메인 컨텐츠3 */
   new Swiper(".swiper4", {
     slidesPerView: 3,
     spaceBetween: 10,
     loop: true, // 무한루프(기본값:false)
     navigation : { // 네비게이션 설정
-      nextEl : '.main4-navBtnL', // 다음 버튼 클래스명
-      prevEl : '.main4-navBtnN', // 이번 버튼 클래스명
+      nextEl : '.main4-navBtnN', // 다음 버튼 클래스명
+      prevEl : '.main4-navBtnL', // 이번 버튼 클래스명
     },
     slidesPerGroup: 3, // 슬라이드 그룹(개수단위로 넘어감!)
   });

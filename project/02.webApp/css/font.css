@@ -44,3 +44,10 @@
 .Poppins {
     font-family: 'Poppins', sans-serif;
 }
+
+/* Happiness-Sans */
+@font-face {
+    font-family: 'Happiness-Sans';
+    src: url(../css/fonts/Happiness-Sans-Regular.woff) format(woff);
+    src: url(../css/fonts/Happiness-Sans-Title.woff) format(woff);
+}
