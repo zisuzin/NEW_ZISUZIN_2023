@@ -28,17 +28,14 @@
 }
 
 #header {
-    /* width: 100%;
-    height: 90px;
-    border-top: 1px solid #ccc;
-    border-bottom: 1px solid #ccc; */
+    position: fixed;
     width: 80%;
     height: 90px;
-    margin: 0 auto;
-    position: sticky;
+    top: 32px;
+    left: 50%;
+    transform: translateX(-50%);
     background-color: #fff;
     z-index: 99;
-    top: 32px;
 }
 
 .header_inner {
@@ -114,7 +111,7 @@
 
 .swiper {
     position: relative;
-    height: 600px;
+    /* min-height: 600px; */
 }
 
 .swiper-wrapper {
@@ -146,39 +143,36 @@
 
 .banner-control > .banner-control-inner {
     position: relative;
-    width: 202px;
-    height: 100%;
-    display: inline-block;
 }
 
-.banner-control > .banner-control-inner > .banner-pagination {
+.banner-control > .banner-control-inner > .swiper-pagination {
     float: left;
     background-color: #fff;
     width: 82px;
     height: 100%;
 }
 
-.banner-pagination {
+.swiper-pagination {
     padding-left: 22px;
 }
 
-.banner-pagination > .banner-cnt {
+.swiper-pagination > .banner-cnt {
     letter-spacing: 0;
     line-height: 48px;
 }
 
-.banner-pagination > .divider {
+.swiper-pagination > .divider {
     margin: 0 3px; 
 }
 
-.banner-pagination > .divider,
-.banner-pagination > .total {
+.swiper-pagination > .divider,
+.swiper-pagination > .total {
     font-size: 14px;
     color: #999;
     font-weight: 500;
 }
 
-.banner-pagination > .current {
+.swiper-pagination > .current {
     font-size: 14px;
     font-weight: 700;
 }
@@ -713,7 +707,7 @@
 
 .scrollTop-btn-wrap > .scrollTop {
     position: absolute;
-    top: -50px;
+    bottom: 0;
     right: 0;
     width: 50px;
     height: 50px;
@@ -727,7 +721,7 @@
 }
 
 
-#info > .scrollTop-btn-wrap > .scrollTop > i {
+.scrollTop-btn-wrap > .scrollTop > i {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -739,7 +733,7 @@
     z-index: 999;
 }
 
-#info > .scrollTop-btn-wrap > .scrollTop  > i::after {
+.scrollTop-btn-wrap > .scrollTop  > i::after {
     content: '';
     position: absolute;
     left: 50%;
@@ -753,7 +747,7 @@
     transform: rotate(-45deg);
 }
 
-#info > .scrollTop-btn-wrap > .scrollTop  > i::before {
+.scrollTop-btn-wrap > .scrollTop  > i::before {
     content: '';
     position: absolute;
     left: 50%;
@@ -947,8 +941,7 @@
 }
 
 .scrollTop-btn-wrap {
-    position: fixed;
-    right: 0;
+    position: sticky;
     bottom: 0;
     z-index: 99;
 }

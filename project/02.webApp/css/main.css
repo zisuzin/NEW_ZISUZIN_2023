@@ -131,4 +131,8 @@
     position: absolute;
     right: 0;
 }
+
+#cont {
+    position: relative;
+}
 /***************** C. 하단영역 *****************/
