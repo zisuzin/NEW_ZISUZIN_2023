@@ -60,6 +60,7 @@
 
 .header_fixed_bar > .header_top_personal_menu > ul > li:nth-child(1) {
     margin-left: 0;
+    position: relative;
 }
 
 .header_fixed_bar > .header_top_personal_menu > ul > li {
