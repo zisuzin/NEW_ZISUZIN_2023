@@ -42,6 +42,7 @@
     padding: 20px 56px;
     /* -webkit-box-shadow: 6px 6px 16px rgba(0, 0, 0, 0); */
     box-shadow: 6px 6px 16px rgba(0, 0, 0, 0);
+    display: none;
 }
 
 .latest-search-word-bx > dl {
