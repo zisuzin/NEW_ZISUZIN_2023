@@ -1,0 +1,49 @@
+/***************** B-1. NEW 서브페이지 영역 *****************/
+.pc-layout-cont-r {
+    float: right;
+    width: 842px;
+    border: 1px solid #000;
+}
+
+.product-section {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.product-section > li {
+    width: 33%;
+}
+
+.item-detail {
+    margin-top: 5px;
+}
+
+.product-img > .brand {
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: -0.5px;
+    font-family: var(--notos-font1);
+    display: block;
+}
+
+.product-img > p {
+    margin-top: 4px;
+    font-size: 14px;
+    font-family: var(--gothic-font1);
+    letter-spacing: -0.5px;
+    color: #666;
+    word-break: break-all;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.original-price > em,
+.original-price > span,
+.discount-price > em,
+.discount-price > span,
+.percent-price > em,
+.percent-price > span {
+    font-style: normal;
+}
