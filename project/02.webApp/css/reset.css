@@ -10,12 +10,14 @@ form,input,label,em,strong,dl,dt,dd {
 
 button {
     border: none;
+    display: inline-block;
 }
 
 *,
 *::before,
 *::after {
     box-sizing: border-box;
+    -webkit-box-sizing: border-box;
     letter-spacing: 0;
     outline: none;
 }

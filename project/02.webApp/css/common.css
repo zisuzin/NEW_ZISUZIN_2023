@@ -143,17 +143,19 @@
 
 .banner-control > .banner-control-inner {
     position: relative;
+    height: 48px;
+    width: 202px;
 }
 
 .banner-control > .banner-control-inner > .swiper-pagination {
-    float: left;
-    background-color: #fff;
+    position: absolute;
+    bottom: 0;
     width: 82px;
-    height: 100%;
-}
-
-.swiper-pagination {
-    padding-left: 22px;
+    height: 48px;
+    float: left;
+    left: 1px;
+    line-height: 48px;
+    background-color: #fff;
 }
 
 .swiper-pagination > .banner-cnt {
@@ -182,7 +184,8 @@
     background-color: #fff;
     width: 72px;
     height: 48px;
-    position: relative;
+    left: 41%;
+    position: absolute;
 }
 
 .swiper-navigation > .pgBtn {
@@ -198,7 +201,7 @@
 
 .swiper-btn-toggle-pause {
     float: right;
-    position: absolute;
+    /* position: absolute; */
     width: 48px;
     height: 48px;
     background-color: rgba(0,0,0,0.5);
@@ -945,4 +948,3 @@
     bottom: 0;
     z-index: 99;
 }
-
