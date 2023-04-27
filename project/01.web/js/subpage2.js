@@ -65,15 +65,12 @@ function chgImg(e) {
         }
         hcode += "</ul>";
         // console.log(subpage_menu[btxt]["신상"])
-        // for(let i=0; i<subpage_menu[btxt]["신상"].length; i++) {
-            if(subpage_menu[btxt]["신상"][i]) {
-                // console.log(subpage_menu[btxt]["신상"])
-                const newDiv = document.createElement("div");
-                sigImg.appendChild(newDiv);
-                newDiv.className = 'new_menu';
-            }  else {
-                return;
-            }
+        // if(subpage_menu[btxt]["신상"] != "false") {
+        //     const newDiv = document.createElement("div");
+        //     sigImg.appendChild(newDiv);
+        //     newDiv.className = 'new_menu';
+        // }  else {
+        //     return;
         // }
         // let newTit = "";
         // if(subpage_menu[btxt]["신상"] !== undefined || subpage_menu[btxt]["신상"] !== "") {

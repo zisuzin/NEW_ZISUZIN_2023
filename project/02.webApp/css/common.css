@@ -134,11 +134,12 @@
 
 .banner-control {
     position: relative;
-    width: 1500px;
+    width: fit-content;
     height: 48px;
     left: 74%;
     z-index: 1;
     margin-top: -48px;
+    text-align: right;
 }
 
 .banner-control > .banner-control-inner {
