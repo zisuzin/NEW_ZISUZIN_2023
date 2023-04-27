@@ -135,4 +135,8 @@
 #cont {
     position: relative;
 }
+
+.swiper-pagination-current {
+    font-weight: bold;
+}
 /***************** C. 하단영역 *****************/

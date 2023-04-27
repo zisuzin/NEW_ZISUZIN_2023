@@ -24,7 +24,7 @@
     },
     slidesPerGroup: 1, // 슬라이드 그룹(개수단위로 넘어감!)
   });
-
+  
   /* 메인 컨텐츠2 */
   new Swiper(".swiper2", {
     slidesPerView: 3,
