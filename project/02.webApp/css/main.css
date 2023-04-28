@@ -10,6 +10,10 @@
     position: relative;
 }
 
+.swiper {
+    height: 600px;
+}
+
 /* 2. 메인 컨텐츠2 */
 .section2_container {
     margin-top: 100px;
