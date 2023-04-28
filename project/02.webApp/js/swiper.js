@@ -26,12 +26,23 @@
 
   });
 
-  const pauseBtn = $(".swiper-btn-toggle-pause")
-  pauseBtn.click(function(){
-    swiper.autoplay.stop();
-    pauseBtn.toggleClass("onClick");
-  });
+  // 멈춤버튼 클릭시 슬라이드 멈춤
+  const pauseBtn = $(".swiper-btn-toggle");
 
+  pauseBtn.click(()=>{
+    swiper.autoplay.stop();
+    pauseBtn.toggleClass('paused');
+
+    if(pauseBtn.attr('class') === 'swiper-btn-toggle') {
+      swiper.autoplay.start();
+    }
+
+    // let is = pauseBtn.is('.paused');
+    // console.log(is)
+    // if(is === 'false') {
+    //   swiper.autoplay.start();
+    // }
+  });
 
   /* 메인 컨텐츠2 */
   new Swiper(".swiper2", {
