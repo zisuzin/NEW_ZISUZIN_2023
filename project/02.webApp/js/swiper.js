@@ -36,12 +36,6 @@
     if(pauseBtn.attr('class') === 'swiper-btn-toggle') {
       swiper.autoplay.start();
     }
-
-    // let is = pauseBtn.is('.paused');
-    // console.log(is)
-    // if(is === 'false') {
-    //   swiper.autoplay.start();
-    // }
   });
 
   /* 메인 컨텐츠2 */

@@ -217,6 +217,32 @@
     background-position: -44px 0;
 }
 
+.recent-view-item-bx {
+    position: sticky;
+    right: 0;
+}
+
+.recent-view-item-list-wrap {
+    position: absolute;
+    top: 100px;
+    right: 0;
+    transform: translateY(-50%);
+    width: 100px;
+    height: 416px;
+    background-color: red;
+    text-align: center;
+}
+
+.recent-view-item-list-wrap > h2 {
+    color: #fff;
+    font-size: 12px;
+}
+
+.recent-view-item-list > ul {
+    height: 416px;
+    overflow: hidden;
+}
+
 /***************** C. 하단영역 *****************/
 #info {
     position: relative;
@@ -462,7 +488,6 @@
 .scrollTop-btn-wrap {
     position: sticky;
     bottom: 0;
-    z-index: 99;
 }
 
 /* 키워드 검색메뉴 */
