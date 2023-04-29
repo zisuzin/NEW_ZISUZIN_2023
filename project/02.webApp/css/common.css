@@ -595,12 +595,11 @@
 /* 키워드 검색메뉴 */
 .search-input-wrap {
     position: absolute;
-    top: 0;
-    right: -20px;
+    top: 25%;
+    z-index: 9;
+    right: 177px;
     background: #fff;
     width: 580px;
-
-    /* -webkit-box-shadow: 6px 6px 16px rgba(0, 0, 0, 0); */
     box-shadow: 6px 6px 16px rgba(0, 0, 0, 0);
     padding: 0 56px 20px;
     display: none;
@@ -722,4 +721,8 @@
 .real-time-rank span {
     position: absolute;
     right: 0;
+}
+
+#cont {
+    position: relative;
 }
