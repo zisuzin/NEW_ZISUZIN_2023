@@ -1,4 +1,4 @@
-// 뷰JS 인스턴스 생성용 함수
+// // 뷰JS 인스턴스 생성용 함수
 // const makeVue = x => new Vue({el:x});
 
 // new Vue({
