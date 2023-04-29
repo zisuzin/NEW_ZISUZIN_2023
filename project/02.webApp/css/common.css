@@ -249,6 +249,7 @@
 }
 
 .recent-view-prod-list > ul > li {
+    position: relative;
     display: list-item;
     width: 72px;
     height: 80px;
@@ -265,7 +266,7 @@
 }
 
 .recent-view-prod-list > ul > li:hover::before {
-    transform: translateX(-203px);
+    transform: translateX(-204px);
     width: 240px;
     border: 1px solid #d5d5d5;
     background-color: #fff;
@@ -341,6 +342,7 @@
     top: 0;
     right: 0;
     z-index: 1;
+    cursor: pointer;
 }
 
 /***************** C. 하단영역 *****************/
