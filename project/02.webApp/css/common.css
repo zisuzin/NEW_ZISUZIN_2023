@@ -122,13 +122,12 @@
 }
 
 .banner-control {
-    position: relative;
+    position: absolute;
     width: fit-content;
     height: 48px;
     left: 74%;
+    bottom: 0;
     z-index: 1;
-    margin-top: -48px;
-    text-align: right;
 }
 
 .banner-control > .banner-control-inner {
@@ -138,12 +137,11 @@
 }
 
 .banner-control > .banner-control-inner > .swiper-pagination {
-    position: absolute;
     bottom: 0;
-    width: 82px;
+    width: 75px;
+    left: 8px;
     height: 48px;
-    float: left;
-    left: 1px;
+    padding-left: 10px;
     line-height: 48px;
     background-color: #fff;
 }

@@ -4,13 +4,25 @@
 ***************************** */
 
   /* 메인 컨텐츠1 */
+  // 중복클릭방지 변수 초기값
+  let isClicked = 0;
   const swiper = new Swiper(".swiper", {
     slidesPerView: 1,
     spaceBetween: 0,
     loop: true, // 무한루프(기본값:false)
+    effect: "fade", // 페이드 효과 설정
+    fadeEffect: {
+      crossFade: true, // 교차페이드 설정
+    },
     pagination: {
       el: '.swiper-pagination',
       type: 'fraction',
+      formatFractionCurrent: function (number) {
+        return ("0" + number).slice(-2);
+      },
+      formatFractionTotal: function (number) {
+        return ("0" + number).slice(-2);
+      },
     },
     navigation : { // 네비게이션 설정
       nextEl : '.swiper-button-next', // 다음 버튼 클래스명
@@ -23,8 +35,18 @@
       // 상호작용(건드리는 것!)이 없으면 다시 재시작(false일때)
     },
     slidesPerGroup: 1, // 슬라이드 그룹(개수단위로 넘어감!)
-
   });
+
+  const navigationButtons = document.querySelectorAll('.pgBtn');
+  navigationButtons.forEach((btn)=>{
+    btn.addEventListener("click",()=>{
+      if(isClicked) return;
+      isClicked = 1;
+      setTimeout(()=>{
+        isClicked = false;
+      },1000);
+    })
+  })
 
   // 멈춤버튼 클릭시 슬라이드 멈춤
   const pauseBtn = $(".swiper-btn-toggle");
@@ -32,7 +54,6 @@
   pauseBtn.click(()=>{
     swiper.autoplay.stop();
     pauseBtn.toggleClass('paused');
-
     if(pauseBtn.attr('class') === 'swiper-btn-toggle') {
       swiper.autoplay.start();
     }
@@ -79,12 +100,5 @@
     slidesPerView: 4,
     spaceBetween: 10,
     loop: true, // 무한루프(기본값:false)
-    // autoplay: {
-    //   // 자동넘김설정
-    //   delay: 1000, // 시간간격(1/1000초)
-    //   disableOnInteraction: false,
-    //   // 상호작용(건드리는 것!)이 없으면 다시 재시작(false일때)
-    // },
-    // slidesPerGroup: 1, // 슬라이드 그룹(개수단위로 넘어감!)
   });
 
