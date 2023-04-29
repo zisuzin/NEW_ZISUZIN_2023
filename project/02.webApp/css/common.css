@@ -214,7 +214,7 @@
 }
 
 .swiper-btn-toggle.paused::after {
-    background: url(../00.data/02.imgData/abc_main_banner_btn_control.png) no-repeat -44px 0;
+    background-position: -44px 0;
 }
 
 /***************** C. 하단영역 *****************/
