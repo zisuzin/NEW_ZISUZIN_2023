@@ -230,7 +230,7 @@
     right: 0;
     margin-right: 50px;
     width: 100px;
-    height: 416px;
+    height: 425px;
     border: 1px solid #d5d5d5;
     background-color: #fff;
     text-align: center;
@@ -246,7 +246,6 @@
     height: 366px;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
 }
 
 .recent-view-prod-list > ul > li {
@@ -254,12 +253,31 @@
     width: 72px;
     height: 80px;
     margin: 10px 14px 0;
+    background-color: #fff;
+}
+
+.recent-view-prod-list > ul > li::before {
+    content: '';
+    position: absolute;
+    transform: translateX(-50%);
+    width: 72px;
+    height: 80px;
+}
+
+.recent-view-prod-list > ul > li:hover::before {
+    transform: translateX(-203px);
+    width: 240px;
+    border: 1px solid #d5d5d5;
+    background-color: #fff;
+    z-index: -1;
 }
 
 .recent-view-prod-list > ul > li > img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    cursor: pointer;
+    float: right;
 }
 
 .section3_container,
@@ -303,10 +321,26 @@
     width: 20px;
     height: 20px;
     background: url(../00.data/02.imgData/comm_btn_fly_prod_pager.png) no-repeat;
+    cursor: pointer;
 }
 
 .recent-view-prod-pager > .next {
     background-position: -20px 0;
+}
+
+.current-page-num {
+    font-weight: bold;
+}
+
+.delete-item {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: url(../00.data/02.imgData/comm_btn_fly_prod_remove.png) no-repeat center;
+    border: 1px solid #d5d5d5;
+    top: 0;
+    right: 0;
+    z-index: 1;
 }
 
 /***************** C. 하단영역 *****************/
