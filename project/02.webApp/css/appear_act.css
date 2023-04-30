@@ -127,7 +127,7 @@ path {
     stroke-linecap: round;
     /* 선꺾이는 부분처리 둥글게 */  
     stroke-linejoin: round;
-    animation: lineAni 3s forwards infinite;
+    animation: lineAni 3s forwards;
     animation-delay: 3.5s;
 }
 
