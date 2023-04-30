@@ -1,0 +1,48 @@
+/* 이미지 등장액션 */
+.image-container {
+    position: relative;
+    height: 100vh;
+}
+  
+.hidden {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 1s ease-in-out;
+}
+
+.hidden:nth-child(1) {
+    width: 30%;
+    top: 50%;
+    z-index: 3;
+    border: 1px solid #000;
+    animation:  moveCenter 3s 1s ease;
+}
+
+.hidden:nth-child(2) {
+    width: 20%;
+    top: 50%;
+    border: 1px solid #000;
+}
+
+.hidden:nth-child(3) {
+    width: 10%;
+    top: 50%;
+    border: 1px solid #000;
+}
+
+.hidden:nth-child(4) {
+    width: 20%;
+    top: 50%;
+    border: 1px solid #000;
+}
+
+@keyframes moveCenter {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
