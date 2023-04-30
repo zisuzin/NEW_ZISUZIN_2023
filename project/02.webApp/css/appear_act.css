@@ -2,47 +2,99 @@
 .image-container {
     position: relative;
     height: 100vh;
+    overflow: hidden;
 }
-  
+
 .hidden {
     position: absolute;
-    top: 50%;
+}
+
+.img1 {
+    width: 23%;
+    bottom: 30%;
+    right: 50%;
+    z-index: 1;
+    animation: moveCenter1 1s forwards;
+    animation-delay: 1s;
+}
+
+.img2 {
+    width: 18%;
+    right: 45%;
+    bottom: 5%;
+    z-index: 2;
+    animation: moveCenter2 1s forwards;
+    animation-delay: 2s;
+}
+
+.img3 {
+    width: 23%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    transition: opacity 1s ease-in-out;
-}
-
-.hidden:nth-child(1) {
-    width: 30%;
-    top: 50%;
+    bottom: 10%;
     z-index: 3;
-    border: 1px solid #000;
-    animation:  moveCenter 3s 1s ease;
+    transform: translate(-50%, 0) rotate(-5deg);
+    animation: moveCenter3 1s forwards;
+    animation-delay: 3s;
 }
 
-.hidden:nth-child(2) {
-    width: 20%;
-    top: 50%;
-    border: 1px solid #000;
+.img4 {
+    width: 18%;
+    top: 55%;
+    left: 50%;
+    z-index: 4;
+    transform: translate(-50%,-50%) rotate(5deg);
+    animation: moveCenter4 1s forwards;
+    animation-delay: 4s;
 }
 
-.hidden:nth-child(3) {
-    width: 10%;
-    top: 50%;
-    border: 1px solid #000;
-}
-
-.hidden:nth-child(4) {
-    width: 20%;
-    top: 50%;
-    border: 1px solid #000;
-}
-
-@keyframes moveCenter {
+@keyframes moveCenter1 {
     from {
-        transform: translateX(0);
+        right: 0;
+        bottom: 0;
+        transform: translate(0, 0) rotate(0deg);
     }
     to {
-        transform: translateX(-50%);
+        right: 50%;
+        bottom: 30%;
+        transform: translate(50%, 0) rotate(7deg);
+    }
+}
+
+@keyframes moveCenter2 {
+    from {
+        right: 0;
+        bottom: 0;
+        transform: translate(0, 0) rotate(0deg);
+    }
+    to {
+        right: 48%;
+        bottom: 5%;
+        transform: translate(45%, 0) rotate(-3deg);
+    }
+}
+
+@keyframes moveCenter3 {
+    from {
+        left: 0;
+        bottom: 0;
+        transform: translate(0, 0) rotate(0deg);
+    }
+    to {
+        left: 50%;
+        bottom: 10%;
+        transform: translate(-50%, 0) rotate(-5deg);
+    }
+}
+
+@keyframes moveCenter4 {
+    from {
+        top: 0;
+        left: 0;
+        transform: translateY(0) rotate(0deg);
+    }
+    to {
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%, -55%) rotate(5deg);
     }
 }
