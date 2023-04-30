@@ -7,7 +7,7 @@ let AniComplete = false;
 
 function handleAniComplete(){
     AniComplete = true;
-    if(isScrolling && AniComplete) { // 화살표애니 완료되고, 스크롤 발생시 실행
+    if(AniComplete && isScrolling) { 
         window.location.href = "main.html";
     }
 }
