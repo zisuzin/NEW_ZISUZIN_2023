@@ -120,11 +120,15 @@ svg {
 path {
     stroke-width: 5;
     stroke-dasharray: 300;
+    /* 데쉬어레이 값과 같으면 공백부터시작 */
     stroke-dashoffset: 300;
+
+    /* 선끝처리 둥글게 */
     stroke-linecap: round;
-    animation: lineAni 3s forwards;
-    animation-delay: .1s;
-    transition: 2s .1s ease;
+    /* 선꺾이는 부분처리 둥글게 */  
+    stroke-linejoin: round;
+    animation: lineAni 3s forwards infinite;
+    animation-delay: 3.5s;
 }
 
 @keyframes lineAni {
@@ -132,3 +136,13 @@ path {
         stroke-dashoffset: 0;
     }
 }
+
+.fade-container {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+} 
+  
+.fade-container.fade-out {
+    opacity: 0;
+}
+  
