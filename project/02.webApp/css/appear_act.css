@@ -1,11 +1,7 @@
-
-body {
-    overflow-y: hidden;
-}
-
 /* 이미지 등장액션 */
 .image-container {
     height: 100vh;
+    /* padding: 1vw 0; */
 }
 
 .hidden {
