@@ -217,13 +217,12 @@
 
 .recent-view-prod-bx {
     position: sticky;
-    z-index: 99;
-    top: 50%;
+    top: 10%;
+    z-index: 9;
 }
 
 .recent-view-item-prod-wrap {
     position: absolute;
-    transform: translateY(-50%);
     right: 0;
     margin-right: 50px;
     width: 100px;
@@ -231,6 +230,7 @@
     border: 1px solid #d5d5d5;
     background-color: #fff;
     text-align: center;
+    z-index: 9;
 }
 
 .recent-view-item-prod-wrap > h2 {
