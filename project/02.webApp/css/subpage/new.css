@@ -47,3 +47,7 @@
 .percent-price > span {
     font-style: normal;
 }
+
+.pc-layout-cont {
+    height: 280vh;
+}
