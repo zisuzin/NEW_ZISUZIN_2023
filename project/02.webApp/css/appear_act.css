@@ -108,15 +108,39 @@
 }
 
 /* 화살표 애니 */
-svg {
+#path1 {
     position: absolute;
     right: 0;
-    bottom: 2vw;
+    bottom: 70px;
     width: 200px;
     height: 200px;
 }
 
-path {
+#path2 {
+    position: absolute;
+    right: 32px;
+    bottom: 50px;
+    width: 60px;
+    height: 60px;
+}
+
+svg {
+    stroke-width: 5;
+    stroke-dasharray: 300;
+    /* 데쉬어레이 값과 같으면 공백부터시작 */
+    stroke-dashoffset: 300;
+    /* 선끝처리 둥글게 */
+    stroke-linecap: round;
+    /* 선꺾이는 부분처리 둥글게 */  
+    stroke-linejoin: round;
+}
+
+#path1 > path {
+    animation: lineAni 3s forwards;
+    animation-delay: 3.5s;
+}
+
+#path2 > path {
     stroke-width: 5;
     stroke-dasharray: 300;
     /* 데쉬어레이 값과 같으면 공백부터시작 */
@@ -127,7 +151,7 @@ path {
     /* 선꺾이는 부분처리 둥글게 */  
     stroke-linejoin: round;
     animation: lineAni 3s forwards;
-    animation-delay: 3.5s;
+    animation-delay: 6s;
 }
 
 @keyframes lineAni {
