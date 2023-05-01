@@ -1,8 +1,11 @@
+
+body {
+    overflow-y: hidden;
+}
+
 /* 이미지 등장액션 */
 .image-container {
-    position: relative;
     height: 100vh;
-    overflow: hidden;
 }
 
 .hidden {
@@ -12,7 +15,7 @@
 
 .img1 {
     width: 23%;
-    bottom: 30%;
+    bottom: 50%;
     right: 50%;
     z-index: 1;
     animation: moveCenter1 .2s ease-out forwards;
@@ -57,7 +60,7 @@
     }
     to {
         right: 50%;
-        bottom: 30%;
+        bottom: 45%;
         transform: translate(50%, 0) rotate(7deg);
         opacity: 1;
     }
@@ -72,7 +75,7 @@
     }
     to {
         right: 48%;
-        bottom: 5%;
+        bottom: 10%;
         transform: translate(45%, 0) rotate(-3deg);
         opacity: 1;
     }
@@ -87,7 +90,7 @@
     }
     to {
         left: 50%;
-        bottom: 10%;
+        bottom: 20%;
         transform: translate(-50%, 0) rotate(-5deg);
         opacity: 1;
     }
@@ -112,7 +115,7 @@
 svg {
     position: absolute;
     right: 0;
-    bottom: 0;
+    bottom: 2vw;
     width: 200px;
     height: 200px;
 }
@@ -138,6 +141,7 @@ path {
 }
 
 .fade-container {
+    position: relative;
     opacity: 1;
     transition: opacity 0.5s ease-in-out;
 } 
