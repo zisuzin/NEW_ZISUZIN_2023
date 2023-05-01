@@ -1,12 +1,11 @@
 document.addEventListener('DOMContentLoaded', function() {
   // 변수 초기화
-  var slider = document.querySelector('.swiper5');
-  var slides = slider.querySelector('.swiper-wrapper');
-  var slideCount = slides.children.length;
-  var slideWidth = slider.offsetWidth / slideCount;
-  var currentIndex = 0;
-  var intervalId;
-  var timeoutId;
+  let slider = document.querySelector('.swiper5');
+  let slides = slider.querySelector('.swiper-wrapper');
+  let slideCount = slides.children.length;
+  let slideWidth = slider.offsetWidth / slideCount;
+  let currentIndex = 0;
+  let timeoutId;
 
   // 슬라이드 초기화
   slides.style.width = slideCount * 100 + '%';
