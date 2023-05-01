@@ -181,87 +181,92 @@
         </header>
         <!-- B. 메인영역 -->
         <main id="cont">
-            <aside class="recent-view-prod-bx">
-                <div class="recent-view-item-prod-wrap">
-                    <h2>최근본상품</h2>
-                    <div class="recent-view-prod-list">
-                        <ul>
-                            <li>
-                                <img src="./00.data/02.imgData/2212672944_0000001.jpg" alt="최근본상품 이미지">
-                                <button type="button" class="delete-item"></button>
-                            </li>
-                            <li>
-                                <img src="./00.data/02.imgData/2212672944_0000001.jpg" alt="최근본상품 이미지">
-                                <button type="button" class="delete-item"></button>
-                            </li>
-                            <li>
-                                <img src="./00.data/02.imgData/2212672944_0000001.jpg" alt="최근본상품 이미지">
-                                <button type="button" class="delete-item"></button>
-                            </li>
-                            <li>
-                                <img src="./00.data/02.imgData/2212672944_0000001.jpg" alt="최근본상품 이미지">
-                                <button type="button" class="delete-item"></button>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="recent-view-prod-pager">
-                        <button type="button" class="prod-pager prev"></button>
-                        <span class="pager-number">
-                            <span class="current-page-num">1</span>
-                            /
-                            <span class="total-page-num"></span>
-                        </span>
-                        <button type="button" class="prod-pager next"></button>
-                    </div>
-                </div>
-            </aside>
-            <div class="new-sc-container">
-                <div class="new-sc-inner">
-                    <div class="pc-layout-cont">
-                        <div class="pc-layout-cont-r">
-                            <div class="category-option">
-                                <p class="product-count">
-                                    <strong>187</strong>
-                                    items
-                                </p>
-                                <div class="product-filter">
-                                    <strong>
-                                        <i></i>
-                                        상품정렬
-                                    </strong>
+            <section class="new_container">
+                <h2>NEW</h2>
+                <div class="new_inner">
+                    <aside class="recent-view-prod-bx">
+                        <div class="recent-view-item-prod-wrap">
+                            <h2>최근본상품</h2>
+                            <div class="recent-view-prod-list">
+                                <ul>
+                                    <li>
+                                        <img src="./00.data/02.imgData/2212672944_0000001.jpg" alt="최근본상품 이미지">
+                                        <button type="button" class="delete-item"></button>
+                                    </li>
+                                    <li>
+                                        <img src="./00.data/02.imgData/2212672944_0000001.jpg" alt="최근본상품 이미지">
+                                        <button type="button" class="delete-item"></button>
+                                    </li>
+                                    <li>
+                                        <img src="./00.data/02.imgData/2212672944_0000001.jpg" alt="최근본상품 이미지">
+                                        <button type="button" class="delete-item"></button>
+                                    </li>
+                                    <li>
+                                        <img src="./00.data/02.imgData/2212672944_0000001.jpg" alt="최근본상품 이미지">
+                                        <button type="button" class="delete-item"></button>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="recent-view-prod-pager">
+                                <button type="button" class="prod-pager prev"></button>
+                                <span class="pager-number">
+                                    <span class="current-page-num">1</span>
+                                    /
+                                    <span class="total-page-num"></span>
+                                </span>
+                                <button type="button" class="prod-pager next"></button>
+                            </div>
+                        </div>
+                    </aside>
+                    <div class="new-sc-container">
+                        <div class="new-sc-inner">
+                            <div class="pc-layout-cont">
+                                <div class="pc-layout-cont-r">
+                                    <div class="category-option">
+                                        <p class="product-count">
+                                            <strong>187</strong>
+                                            items
+                                        </p>
+                                        <div class="product-filter">
+                                            <strong>
+                                                <i></i>
+                                                상품정렬
+                                            </strong>
+                                        </div>
+                                    </div>
+                                    <ul class="product-section">
+                                        <img-comp v-for="item in 21"></img-comp>
+                                        <div class="product-img">
+                                                <strong class="brand">슈펜키즈</strong>
+                                                <p>키즈 피셔맨 말랑 젤리샌들 HPKV1D204U</p>
+                                            </div>
+                                        <div class="item-detail">
+                                            <span class="original-price">
+                                                <em>19,900</em>
+                                                <span>원</span>
+                                            </span>
+                                            <br>
+                                            <span class="discount-price">
+                                                <em>14,330</em>
+                                                <span>원</span>
+                                            </span>
+                                            <span class="percent-price">
+                                                <em>27</em>
+                                                <span>%</span>
+                                            </span>
+                                        </div>
+                                    </ul>
                                 </div>
                             </div>
-                            <ul class="product-section">
-                                <img-comp v-for="item in 21"></img-comp>
-                                <div class="product-img">
-                                        <strong class="brand">슈펜키즈</strong>
-                                        <p>키즈 피셔맨 말랑 젤리샌들 HPKV1D204U</p>
-                                    </div>
-                                <div class="item-detail">
-                                    <span class="original-price">
-                                        <em>19,900</em>
-                                        <span>원</span>
-                                    </span>
-                                    <br>
-                                    <span class="discount-price">
-                                        <em>14,330</em>
-                                        <span>원</span>
-                                    </span>
-                                    <span class="percent-price">
-                                        <em>27</em>
-                                        <span>%</span>
-                                    </span>
-                                </div>
-                            </ul>
                         </div>
                     </div>
+                    <aside class="scrollTop-btn-wrap">
+                        <div class="scrollTop">
+                            <i></i>
+                        </div>
+                    </aside>
                 </div>
-            </div>
-            <aside class="scrollTop-btn-wrap">
-                <div class="scrollTop">
-                    <i></i>
-                </div>
-            </aside>
+            </section>
         </main>
         <!-- C. 하단영역 -->
         <footer id="info">
