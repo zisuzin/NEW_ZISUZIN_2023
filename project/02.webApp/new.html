@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./css/swiper-bundle.min.css">
     <!-- CSS -->
     <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/subpage/new.css">
     <!-- Icon CDN -->
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
@@ -22,7 +23,7 @@
                 <div class="header_fixed_bar">
                     <div class="header_top_logo">
                         <h2>
-                            <a href="main.html">
+                            <a href="#">
                                 <img src="./00.data/02.imgData/logo_shoopen_sd.png" alt="메인로고">
                             </a>
                         </h2>
@@ -182,217 +183,82 @@
         <!-- B. 메인영역 -->
         <main id="cont">
             <section class="new_container">
-                <h2>NEW</h2>
                 <div class="new_inner">
-                    <aside class="recent-view-prod-bx">
-                        <div class="recent-view-item-prod-wrap">
-                            <h2>최근본상품</h2>
-                            <div class="recent-view-prod-list">
-                                <ul>
-                                    <li>
-                                        <img src="./00.data/02.imgData/2212672944_0000001.jpg" alt="최근본상품 이미지">
-                                        <button type="button" class="delete-item"></button>
-                                    </li>
-                                    <li>
-                                        <img src="./00.data/02.imgData/2212672944_0000001.jpg" alt="최근본상품 이미지">
-                                        <button type="button" class="delete-item"></button>
-                                    </li>
-                                    <li>
-                                        <img src="./00.data/02.imgData/2212672944_0000001.jpg" alt="최근본상품 이미지">
-                                        <button type="button" class="delete-item"></button>
-                                    </li>
-                                    <li>
-                                        <img src="./00.data/02.imgData/2212672944_0000001.jpg" alt="최근본상품 이미지">
-                                        <button type="button" class="delete-item"></button>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="recent-view-prod-pager">
-                                <button type="button" class="prod-pager prev"></button>
-                                <span class="pager-number">
-                                    <span class="current-page-num">1</span>
-                                    /
-                                    <span class="total-page-num"></span>
-                                </span>
-                                <button type="button" class="prod-pager next"></button>
-                            </div>
-                        </div>
-                    </aside>
-                    <div class="new-sc-container">
-                        <div class="new-sc-inner">
-                            <div class="pc-layout-cont">
-                                <div class="pc-layout-cont-r">
-                                    <div class="category-option">
-                                        <p class="product-count">
-                                            <strong>187</strong>
-                                            items
-                                        </p>
-                                        <div class="product-filter">
-                                            <strong>
-                                                <i></i>
-                                                상품정렬
-                                            </strong>
-                                        </div>
-                                    </div>
-                                    <ul class="product-section">
-                                        <img-comp v-for="item in 21"></img-comp>
-                                        <div class="product-img">
-                                                <strong class="brand">슈펜키즈</strong>
-                                                <p>키즈 피셔맨 말랑 젤리샌들 HPKV1D204U</p>
-                                            </div>
-                                        <div class="item-detail">
-                                            <span class="original-price">
-                                                <em>19,900</em>
-                                                <span>원</span>
-                                            </span>
-                                            <br>
-                                            <span class="discount-price">
-                                                <em>14,330</em>
-                                                <span>원</span>
-                                            </span>
-                                            <span class="percent-price">
-                                                <em>27</em>
-                                                <span>%</span>
-                                            </span>
-                                        </div>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <aside class="scrollTop-btn-wrap">
-                        <div class="scrollTop">
-                            <i></i>
-                        </div>
-                    </aside>
-                </div>
-            </section>
-        </main>
-        <!-- C. 하단영역 -->
-        <footer id="info">
-            <div class="footer-info-wrap">
-                <div class="f-box-w1">
-                    <div class="f-menu">
-                        <ul>
-                            <li>
-                                <a href="#">회사소개</a>
-                            </li>
-                            <li>
-                                <a href="#">공지사항</a>
-                            </li>
-                            <li>
-                                <a href="#">이용약관</a>
-                            </li>
-                            <li>
-                                <a href="#">개인정보처리방침</a>
-                            </li>
-                            <li>
-                                <a href="#">제휴/입점문의</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="f-info">
-                        <ul>
-                            <li>
-                                <mark class="cw">(주)이랜드월드 온라인플랫폼</mark>
-                            </li>
-                            <li>
-                                대표이사 : 최운식
-                            </li>
-                            <li>
-                                사업자등록번호: 123-85-50061
-                                <a href="#" class="business_info_check">[사업자정보확인]</a>
-                            </li>
-                            <li>
-                                통신판매업 신고번호 : 2022-서울금천-1718
-                            </li>
-                            <li>
-                                주소: 서울 금천구 가산디지털1로 159(가산동,이랜드가산동사옥) 슈펜몰
-                            </li>
-                            <li>
-                                개인정보 보호책임자 : 최운식
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="f-box-w2">
-                    <div class="f-top">
-                        <div class="f-tel">
-                            <i></i>
-                            <a href="#">1899
-                                <span>·</span>
-                                9500
-                            </a>
-                        </div>
-                        <div class="f-sns-list">
+                    <h2>NEW</h2>
+                    <div class="new-prod-container">
+                        <!-- new 아이템 탭메뉴 -->
+                        <div class="new-prod-tab">
                             <ul>
                                 <li>
-                                    <a href="#" class="instagram">
-                                        <i></i>
-                                    </a>
+                                    <a href="#">ALL</a>
                                 </li>
                                 <li>
-                                    <a href="#" class="facebook">
-                                        <i></i>
-                                    </a>
+                                    <a href="#">WOMAN</a>
                                 </li>
                                 <li>
-                                    <a href="#" class="youtube">
-                                        <i></i>
-                                    </a>
+                                    <a href="#">MAN</a>
+                                </li>
+                                <li>
+                                    <a href="#">KIDS</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="new-prod-cont">
+                            <ul>
+                                <li>
+                                    <div class="new-prod-img">
+                                        <a href="#">
+                                            <img src="./00.data/02.imgData/new_sc_comp/item_1.jpg" alt="상품이미지">
+                                            <strong class="brand">슈펜키즈</strong>
+                                            <p>키즈 피셔맨 말랑 젤리샌들 HPKV1D204U</p>
+                                        </a>
+                                    </div>
+                                    <div class="item-detail">
+                                        <span class="prod-discount-price">
+                                            <em>59,900</em>
+                                            <span>원</span>
+                                        </span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="new-prod-img">
+                                        <a href="#">
+                                            <img src="./00.data/02.imgData/new_sc_comp/item_1.jpg" alt="상품이미지">
+                                            <strong class="brand">슈펜키즈</strong>
+                                            <p>키즈 피셔맨 말랑 젤리샌들 HPKV1D204U</p>
+                                        </a>
+                                    </div>
+                                    <div class="item-detail">
+                                        <span class="prod-discount-price">
+                                            <em>59,900</em>
+                                            <span>원</span>
+                                        </span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="new-prod-img">
+                                        <a href="#">
+                                            <img src="./00.data/02.imgData/new_sc_comp/item_1.jpg" alt="상품이미지">
+                                            <strong class="brand">슈펜키즈</strong>
+                                            <p>키즈 피셔맨 말랑 젤리샌들 HPKV1D204U</p>
+                                        </a>
+                                    </div>
+                                    <div class="item-detail">
+                                        <span class="prod-discount-price">
+                                            <em>59,900</em>
+                                            <span>원</span>
+                                        </span>
+                                    </div>
                                 </li>
                             </ul>
                         </div>
                     </div>
-                    <div class="f-bottom">
-                        <ul>
-                            <li>
-                                <a href="#">고객센터</a>
-                                <span>
-                                    <span class="txt-semibold">AM 09:00 ~ PM 17:00</span>
-                                    (LUNCH 12:00 ~ 13:00)(주말 및 공휴일 휴무)
-                                </span>
-                            </li>
-                        </ul>
-                    </div>
                 </div>
-            </div>
-            <p class="f-copyright">COPYRIGHT © WONDERPLACE ALL RIGHTS RESERVED.</p>
-        </footer>
+            </section>
+        </main>
+        <!-- C. 하단영역 -->
+        <!-- <footer id="info"></footer> -->
     </div>
-    <script type="module">
-        // 뷰JS 인스턴스 생성용 함수
-        const makeVue = x => new Vue({el:x});
-
-        // 숫자증감 변수
-        let num = 0;
-
-        // 갤러리 리스트에 넣을 전역컴포넌트 생성
-        Vue.component("img-comp",{
-            template:`
-            <li>
-                <img v-bind:src="isrc" alt="신상품이미지">
-            </li>
-            `,
-            // 컴포넌트 내부 변수
-            data:function(){
-                return{
-                    isrc:`./00.data/02.imgData/new_sc_comp/item_${this.setNum()}.jpg `
-                }
-            },
-            // 컴포넌트 내부 메서드셋팅
-            methods:{
-                setNum(){
-                    num+=1;
-                    return num;
-                }
-            }
-        }); // 전역 컴포넌트 //
-
-
-        // 리스트 뷰 인스턴스 생성
-        makeVue(".product-section");
-    </script>
     <!-- Plugin JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="./js/plugin/jquery-3.6.0.min.js"></script>
@@ -400,7 +266,7 @@
     <!-- 뷰JS 스탠드얼론 버전 -->
      <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
     <!-- JS File -->
-    <script type="module" src="./js/goBtn.js"></script>
+    <!-- <script type="module" src="./js/goBtn.js"></script> -->
     <script type="module" src="./js/search.js"></script>
 </body>
 </html>
