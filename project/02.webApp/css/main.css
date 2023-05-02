@@ -11,6 +11,7 @@
 }
 
 .swiper {
+    position: relative;
     height: 600px;
 }
 
@@ -504,13 +505,15 @@
 
 .circle {
     position: absolute;
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
     background-color: pink;
+    opacity: 0.8;
     transition: all .3s ease;
     z-index: 9;
-    display: none;
     top: 0;
     left: 0;
+    display: none;
+    transition: .3s ease-in-out;
 }

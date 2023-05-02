@@ -6,10 +6,8 @@ screen.addEventListener("mouseover",() => {
 });
 
 screen.addEventListener("mousemove",(e) => {
-    const x = e.clientX;
-    const y = e.clientY;
-    // console.log("x축:",x);
-    // console.log("y축:",y);
+    const x = e.clientX - circle.clientWidth  / 2;
+    const y = e.clientY - circle.clientHeight / 2;
     circle.style.left = `${x}px`;
     circle.style.top = `${y}px`;
 });
