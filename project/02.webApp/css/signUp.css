@@ -112,12 +112,6 @@ label span {
     display: inline-block;
 }
 
-.birth_date > span {
-    text-indent: 20px;
-    float: left;
-    line-height: 70px;
-}
-
 .birth_date > div {
     float: right;
 }
@@ -134,4 +128,17 @@ label span {
     display: inline-block;
     padding: 0 10px;
     line-height: 70px;
+    font-size: 15px;
+}
+
+.birth_date > .birth_option {
+    text-indent: 20px;
+    float: left;
+    line-height: 70px;
+}
+
+.birth_date > div + span {
+    display: inline-block;
+    line-height: 70px;
+    width: 100%;
 }
