@@ -1,0 +1,102 @@
+@charset "urf-8";
+
+#cont * {
+    border: 1px dashed red;
+}
+
+.signUp_wrapper {
+    width: 40%;
+    margin: 0 auto;
+}
+
+.signUp_wrapper h2 {
+    font-size: 50px;
+    font-weight: 100;
+    line-height: 50px;
+}
+
+.signUp_wrapper p {
+    font-size: 14px;
+    letter-spacing: -0.5px;
+    margin: 30px 0;
+}
+
+.kakao-signUp-btn {
+    position: relative;
+    background-color: #fee500;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 60px;
+}
+
+.signUp_wrapper .cs_line {
+    position: relative;
+    text-align: center;
+    font-weight: 600;
+    color: #888;
+}
+
+.signUp_wrapper .cs_line::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    background-color: #f4f4f4;
+    height: 1px;
+}
+
+.signUp_wrapper .cs_line > span {
+    background-color: #fff;
+    padding: 0 15px;
+    position: relative;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    line-height: 40px;
+}
+
+#joinForm_wrap li {
+    margin-bottom: 10px;
+}
+
+input {
+    height: 60px;
+    border-radius: 5px;
+    border: #d5d5d5 solid 1px;
+    padding: 0 20px;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+}
+
+label span {
+    padding-left: 20px;
+}
+
+.pnumber > label,
+.email > label {
+    display: flex;
+    flex-direction: row;
+}
+
+.email > label {
+    justify-content: space-between;
+}
+
+.pnumber  > label > select {
+    width: calc(33.3333% - 7px);
+    border: #d5d5d5 solid 1px;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.pnumber > label > * {
+    width: 33%;
+}
+
+.pnumber input:nth-child(2) {
+    margin-right: 10px;
+}

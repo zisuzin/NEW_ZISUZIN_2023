@@ -2,7 +2,7 @@
 
 /* 초기화 */
 button,h1,h2,h3,ul,ol,li,a,section,header,main,footer,form,input,div,span,nav,p,article,mark,
-form,input,label,em,strong,dl,dt,dd,aside {
+form,input,label,em,strong,dl,dt,dd,aside,select,option {
     margin: 0;
     padding: 0;
     background-color: transparent;

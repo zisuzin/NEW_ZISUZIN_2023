@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="./css/swiper-bundle.min.css">
     <!-- CSS -->
     <link rel="stylesheet" href="./css/common.css">
-    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/signUp.css">
     <!-- Icon CDN -->
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
 </head>
@@ -202,66 +202,156 @@
                 </p>
                 <div id="joinForm_wrap">
                     <form action="#" method="post">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>
-                                        <span>개인회원</span>
-                                    </th>
-                                    <th>
-                                        <span>외국인회원(FOREIGNER)</span>
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <!-- 1. 아이디 -->
-                                <tr>
-                                    <label for="mid" title="아이디">
-                                        <input type="text" name="mid" id="mid" maxlength="20" placeholder="아이디">
-                                        <span>로그인 아이디로 사용할 이메일을 입력해 주세요.</span>
+                        <ul>
+                            <!-- 1. 아이디 -->
+                            <li>
+                                <label for="mid" title="아이디">
+                                    <input type="text" name="mid" id="mid" maxlength="20" placeholder="아이디">
+                                    <span>로그인 아이디로 사용할 이메일을 입력해 주세요.</span>
+                                </label>
+                            </li>
+                            <!-- 2. 비밀번호 -->
+                            <li>
+                                <label for="mpw" title="비밀번호">
+                                    <input type="password" name="mpw" id="mpw" maxlength="20" placeholder="비밀번호">
+                                    <span>영문 대소문자/숫자/특수문자 중 2가지 이상 조합, 10자~16자</span>
+                                </label>
+                            </li>
+                            <!-- 3. 비밀번호 확인 -->
+                            <li>
+                                <label for="mpw2" title="비밀번호 확인">
+                                    <input type="password" name="mpw2" id="mpw2" maxlength="20" placeholder="비밀번호 확인">
+                                </label>
+                            </li>
+                            <!-- 4. 이름 -->
+                            <li>
+                                <label for="mnm" title="이름">
+                                    <input type="text" name="mnm" id="mnm" maxlength="20" placeholder="이름">
+                                </label>
+                            </li>
+                            <!-- 5. 핸드폰번호 -->
+                            <li class="pnumber">
+                                <label for="mpn" title="핸드폰번호">
+                                    <select name="mpn" id="mpn">
+                                        <option value="first_number">
+                                            010
+                                        </option>
+                                        <option value="first_number">
+                                            011
+                                        </option>
+                                        <option value="first_number">
+                                            016
+                                        </option>
+                                        <option value="first_number">
+                                            017
+                                        </option>
+                                        <option value="first_number">
+                                            018
+                                        </option>
+                                        <option value="first_number">
+                                            019
+                                        </option>
+                                    </select>
+                                    <input type="text" name="mpn" id="mpn">
+                                    <input type="text" name="mpn" id="mpn">
+                                </label>
+                            </li>
+                            <!-- 6. 이메일 앞주소 -->
+                            <!-- <li class="email">
+                                <label for="email1" title="이메일앞주소">
+                                    <input type="text" name="email1" id="email1" placeholder="이메일앞주소">
+                                    <span class="gol">@</span>
+                                    <select name="selelml" id="selelml">
+                                        <option value="init">
+                                            이메일뒷주소
+                                        </option>
+                                        <option value="naver.com">
+                                            naver.com
+                                        </option>
+                                        <option value="daum.net">
+                                            daum.net
+                                        </option>
+                                        <option value="hotmail.com">
+                                            hotmail.com
+                                        </option>
+                                        <option value="hanmail.net">
+                                            hanmail.net
+                                        </option>
+                                        <option value="gmail.com">
+                                            gmail.com
+                                        </option>
+                                        <option value="free">
+                                            직접입력
+                                        </option>
+                                    </select>
+                                </label>
+                            </li> -->
+                            <!-- 7. 이메일 뒷주소 직접입력 -->
+                            <!-- <li>
+                                <label for="email2" title="직접입력">
+                                    <input type="text" name="email2" id="email2" placeholder="직접입력">
+                                </label>
+                            </li> -->
+                            <li>
+                                <div>
+                                    <span>생년월일 (선택)</span>
+                                    <label for="birth_year">
+                                        <input type="birth_year" id="birth_year">
+                                        년
                                     </label>
-                                </tr>
-                                <!-- 2. 비밀번호 -->
-                                <tr>
-                                    <label for="mpw" title="비밀번호">
-                                        <input type="password" name="mpw" id="mpw" maxlength="20" placeholder="비밀번호">
-                                        <span>영문 대소문자/숫자/특수문자 중 2가지 이상 조합, 10자~16자</span>
+                                    <label for="birth_month">
+                                        <input type="birth_month" id="birth_month">
+                                        월
                                     </label>
-                                </tr>
-                                <!-- 3. 비밀번호 확인 -->
-                                <tr>
-                                    <label for="mpw2" title="비밀번호 확인">
-                                        <input type="password" name="mpw2" id="mpw2" maxlength="20" placeholder="비밀번호 확인">
+                                    <label for="birth_day">
+                                        <input type="birth_day" id="birth_day">
+                                        일
                                     </label>
-                                </tr>
-                                <!-- 4. 이름 -->
-                                <tr>
-                                    <label for="mnm" title="이름">
-                                        <input type="text" name="mnm" id="mnm" maxlength="20" placeholder="이름">
-                                    </label>
-                                </tr>
-                                <!-- 5. 핸드폰번호 -->
-                                <tr>
-                                    <label for="mpn" title="핸드폰번호">
-                                        <input type="text" name="mpn" id="mpn" maxlength="20" placeholder="핸드폰번호">
-                                    </label>
-                                </tr>
-                                <!-- 6. 이메일 앞주소 -->
-                                <tr>
-                                    <label for="email1" title="이메일앞주소">
-                                        <input type="text" name="email1" id="email1" placeholder="이메일앞주소">
-                                        <span class="gol">@</span>
-                                        <select name="" id=""></select>
-                                    </label>
-                                </tr>
-                                <!-- 7. 이메일 뒷주소 직접입력 -->
-                                <tr>
-                                    <label for="email2" title="이메일뒷주소">
-                                        <input type="text" name="email2" id="email2" placeholder="이메일뒷주소">
-                                    </label>
-                                </tr>
-                            </tbody>
-                        </table>
+                                </div>
+                                <span>* 생년월일 입력시 생일기념 할인 쿠폰이 발급됩니다.</span>
+                            </li>
+                            <p class="cs_line">
+                                <span>약관 동의</span>
+                            </p>
+                            <div class="check_all">
+                                <label for="checkAll">
+                                    <input type="checkbox" name="checkAll" id="checkAll">
+                                    <strong>이용약관 및 개인정보수집 및 이용, 쇼핑정보 수신(선택)에 모두 동의합니다.</strong>
+                                </label>
+                            </div>
+                            <div class="agree_service_chk">
+                                <label for="agree_service_check">
+                                    <input type="checkbox" name="agree_service_check0" id="agree_service_check0">
+                                    <strong>[필수] 이용약관 동의</strong>
+                                </label>
+                            </div>
+                            <div class="collect_personal_info">
+                                <label for="collect_personal_information">
+                                    <input type="checkbox" name="collect_personal_information" id="collect_personal_information">
+                                    <strong>[필수] 개인정보 수집 및 이용 동의</strong>
+                                </label>
+                            </div>
+                            <p>SMS/이메일 수신 동의 시 바로 사용 가능한 적립금 1,000원이 적립됩니다.</p>
+                            <div class="agree_sms">
+                                <label for="is_sms">
+                                    <input type="checkbox" name="is_sms" id="is_sms">
+                                    <strong>[선택] SMS 수신 동의
+                                        <span>(각종 할인 혜택 등 원더 소식을 전해 드립니다.)</span>
+                                    </strong>
+                                </label>
+                            </div>
+                            <div class="agree_email">
+                                <label for="is_email">
+                                    <input type="checkbox" name="is_email" id="is_email">
+                                    <strong>[선택] 이메일 수신 동의
+                                        <span>(각종 할인 혜택 등 원더 소식을 전해 드립니다.)</span>
+                                    </strong>
+                                </label>
+                            </div>
+                            <div>
+                                <input type="submit" id="submitForm" value="회원가입">
+                            </div>
+                        </ul>
                     </form>
                 </div>
             </section>
