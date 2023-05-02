@@ -723,3 +723,33 @@
 #cont {
     position: relative;
 }
+
+.mypage_btn {
+    position: relative;
+}
+
+.mypage_btn > .mypage_wrap{
+    position: absolute;
+    z-index: 9;
+    background-color: #fff;
+    width: 200px;
+    right: 0;
+    padding: 20px;
+    border: 1px solid #000;
+    visibility: hidden;
+}
+
+.mypage_btn > .mypage_wrap li+li {
+    padding-top: 20px;
+}
+
+.mypage_btn > .mypage_wrap li > a {
+    font-size: 14px;
+    color: #191919;
+}
+
+.mypage_btn > .mypage_wrap li > a:hover {
+    color: #e5132e;
+    font-weight: bold;
+    text-decoration: underline;
+}
