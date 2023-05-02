@@ -181,7 +181,90 @@
         </header>
         <!-- B. 메인영역 -->
         <main id="cont">
-            
+            <section class="signUp_wrapper">
+                <div class="signUp_title">
+                    <h2>SIGN UP</h2>
+                </div>
+                <p>
+                    개인정보 하나하나 입력하기 귀찮으시죠? <br>
+                    카카오로 1초 만에 회원가입 하세요.
+                </p>
+                <form action="#" method="post">
+                    <div class="kakao-signUp-btn">
+                        <a href="#">
+                            <i></i>
+                            카카오 1초 회원가입
+                        </a>
+                    </div>
+                </form>
+                <p class="cs_line">
+                    <span>또는</span>
+                </p>
+                <div id="joinForm_wrap">
+                    <form action="#" method="post">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <span>개인회원</span>
+                                    </th>
+                                    <th>
+                                        <span>외국인회원(FOREIGNER)</span>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- 1. 아이디 -->
+                                <tr>
+                                    <label for="mid" title="아이디">
+                                        <input type="text" name="mid" id="mid" maxlength="20" placeholder="아이디">
+                                        <span>로그인 아이디로 사용할 이메일을 입력해 주세요.</span>
+                                    </label>
+                                </tr>
+                                <!-- 2. 비밀번호 -->
+                                <tr>
+                                    <label for="mpw" title="비밀번호">
+                                        <input type="password" name="mpw" id="mpw" maxlength="20" placeholder="비밀번호">
+                                        <span>영문 대소문자/숫자/특수문자 중 2가지 이상 조합, 10자~16자</span>
+                                    </label>
+                                </tr>
+                                <!-- 3. 비밀번호 확인 -->
+                                <tr>
+                                    <label for="mpw2" title="비밀번호 확인">
+                                        <input type="password" name="mpw2" id="mpw2" maxlength="20" placeholder="비밀번호 확인">
+                                    </label>
+                                </tr>
+                                <!-- 4. 이름 -->
+                                <tr>
+                                    <label for="mnm" title="이름">
+                                        <input type="text" name="mnm" id="mnm" maxlength="20" placeholder="이름">
+                                    </label>
+                                </tr>
+                                <!-- 5. 핸드폰번호 -->
+                                <tr>
+                                    <label for="mpn" title="핸드폰번호">
+                                        <input type="text" name="mpn" id="mpn" maxlength="20" placeholder="핸드폰번호">
+                                    </label>
+                                </tr>
+                                <!-- 6. 이메일 앞주소 -->
+                                <tr>
+                                    <label for="email1" title="이메일앞주소">
+                                        <input type="text" name="email1" id="email1" placeholder="이메일앞주소">
+                                        <span class="gol">@</span>
+                                        <select name="" id=""></select>
+                                    </label>
+                                </tr>
+                                <!-- 7. 이메일 뒷주소 직접입력 -->
+                                <tr>
+                                    <label for="email2" title="이메일뒷주소">
+                                        <input type="text" name="email2" id="email2" placeholder="이메일뒷주소">
+                                    </label>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </form>
+                </div>
+            </section>
         </main>
         <!-- C. 하단영역 -->
     </div>
