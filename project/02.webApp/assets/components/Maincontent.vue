@@ -30,7 +30,7 @@ let num = 0;
 // 갤러리 리스트에 넣을 전역컴포넌트 생성
 export default {
     name: 'Maincontent',
-    components: 
+    components: 'maincontent',
     data() {
         return {
             isrc: `./00.data/02.imgData/new_sc_comp/item_${this.setNum()}.jpg `,
@@ -56,7 +56,7 @@ export default {
                     price: 59900,
                 },
             ],
-        };
+        },
     },
     methods: {
         setNum() {
