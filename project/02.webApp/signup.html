@@ -203,20 +203,21 @@
                 <div id="joinForm_wrap">
                     <form action="#" method="post">
                         <ul>
-                            <!-- 1. 아이디 -->
-                            <li>
-                                <label for="mid" title="아이디">
-                                    <input type="text" name="mid" id="mid" maxlength="20" placeholder="아이디">
-                                    <span>로그인 아이디로 사용할 이메일을 입력해 주세요.</span>
-                                </label>
-                            </li>
-                            <!-- 2. 비밀번호 -->
-                            <li>
-                                <label for="mpw" title="비밀번호">
-                                    <input type="password" name="mpw" id="mpw" maxlength="20" placeholder="비밀번호">
-                                    <span>영문 대소문자/숫자/특수문자 중 2가지 이상 조합, 10자~16자</span>
-                                </label>
-                            </li>
+                            <div id="login_key">
+                                <!-- 1. 아이디 -->
+                                <li>
+                                    <label for="mid" title="아이디">
+                                        <input type="text" name="mid" id="mid" maxlength="20" placeholder="아이디">
+                                        <span>로그인 아이디로 사용할 이메일을 입력해 주세요.</span>
+                                    </label>
+                                </li>
+                                <!-- 2. 비밀번호 -->
+                                <li>
+                                    <label for="mpw" title="비밀번호">
+                                        <input type="password" name="mpw" id="mpw" maxlength="20" placeholder="비밀번호">
+                                        <span>영문 대소문자/숫자/특수문자 중 2가지 이상 조합, 10자~16자</span>
+                                    </label>
+                                </li>
                             <!-- 3. 비밀번호 확인 -->
                             <li>
                                 <label for="mpw2" title="비밀번호 확인">
@@ -229,6 +230,7 @@
                                     <input type="text" name="mnm" id="mnm" maxlength="20" placeholder="이름">
                                 </label>
                             </li>
+                        </div>
                             <!-- 5. 핸드폰번호 -->
                             <li class="pnumber">
                                 <label for="mpn" title="핸드폰번호">
@@ -252,8 +254,8 @@
                                             019
                                         </option>
                                     </select>
-                                    <input type="text" name="mpn" id="mpn">
-                                    <input type="text" name="mpn" id="mpn">
+                                    <input type="text" name="first_phone_num" id="first_phone_num">
+                                    <input type="text" name="last_phone_num" id="last_phone_num">
                                 </label>
                             </li>
                             <!-- 6. 이메일 앞주소 -->
@@ -292,24 +294,26 @@
                                     <input type="text" name="email2" id="email2" placeholder="직접입력">
                                 </label>
                             </li> -->
-                            <li>
+                            <!-- 7. 생년월일 -->
+                            <li class="birth_date">
+                                <span>생년월일 (선택)</span>
                                 <div>
-                                    <span>생년월일 (선택)</span>
                                     <label for="birth_year">
-                                        <input type="birth_year" id="birth_year">
+                                        <input type="text" name="birth_year" id="birth_year">
                                         년
                                     </label>
                                     <label for="birth_month">
-                                        <input type="birth_month" id="birth_month">
+                                        <input type="text" name="birth_month" id="birth_month">
                                         월
                                     </label>
                                     <label for="birth_day">
-                                        <input type="birth_day" id="birth_day">
+                                        <input type="text" name="birth_day" id="birth_day">
                                         일
                                     </label>
                                 </div>
                                 <span>* 생년월일 입력시 생일기념 할인 쿠폰이 발급됩니다.</span>
                             </li>
+                            <!-- 8. 약관 동의 -->
                             <p class="cs_line">
                                 <span>약관 동의</span>
                             </p>

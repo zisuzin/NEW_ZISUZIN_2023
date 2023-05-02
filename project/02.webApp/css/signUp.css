@@ -31,9 +31,8 @@
 
 .signUp_wrapper .cs_line {
     position: relative;
-    text-align: center;
-    font-weight: 600;
     color: #888;
+    text-align: center;
 }
 
 .signUp_wrapper .cs_line::before {
@@ -52,7 +51,7 @@
     position: relative;
 }
 
-label {
+#login_key label {
     display: flex;
     flex-direction: column;
     line-height: 40px;
@@ -99,4 +98,40 @@ label span {
 
 .pnumber input:nth-child(2) {
     margin-right: 10px;
+}
+
+#submitForm {
+    width: 100%;
+    color: #fff;
+    padding: 0;
+    background-color: #131313;
+}
+
+.birth_date {
+    position: relative;
+    display: inline-block;
+}
+
+.birth_date > span {
+    text-indent: 20px;
+    float: left;
+    line-height: 70px;
+}
+
+.birth_date > div {
+    float: right;
+}
+
+.birth_date input[type=text] {
+    width: 70px;
+}
+
+.birth_date input[type=text]#birth_year {
+    width: 120px;
+}
+
+.birth_date > div > label {
+    display: inline-block;
+    padding: 0 10px;
+    line-height: 70px;
 }
