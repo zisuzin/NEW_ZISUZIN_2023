@@ -1,69 +1,47 @@
 function moveFn() {
-  // 이벤트 대상
-  const slidewrapL = $(".ui_auto_slider1 > ul");
-  const slidewrapR = $(".ui_auto_slider2 > ul");
-
-  // 위치값 변수
+  const slidewrap = $(".new-item-list");
+  let sc_sts = 0;
   let lpos = 0;
-  // 재귀호출 상태값 변수(1-호출가능/0-호출불가)
-  let call_sts = 0;
-  // 재귀호출 타임아웃용 변수
+  let call_sts = 1;
   let callT;
+  const startTop = slidewrap.offset().top - $(window).height();
 
   function moveList() {
-    // 1. 이동위치값(top값 감소하기)
     lpos--;
-    // console.log("위치값:",lpos);
-
-    // 2. 한계값 초기화 + 첫번째 요소 맨뒤로 이동!
-    if(lpos < -350) {
-      // 한계값 초기화
-      lpos = 0; 
-
-      // 첫번째 li 맨뒤로 이동
-      slidewrapL.append(slidewrapL.find("li").first());
-    }
-    
-    else if (lpos > 350) {
+    if(lpos < -262) {
       lpos = 0;
-      slidewrapR.prepend(slidewrapR.find("li").last());
+      slidewrap.append(slidewrap.find("li").first());
     }
 
-    // 3. 이동하가
-    slidewrapL.css({
-      top: lpos + "px",
+    slidewrap.css({
+      left: lpos + "px",
     });
 
-
-    slidewrapR.css({
-      bottom: lpos + "px",
-    });
-
-    // 재귀호출하기(비동기호출-setTimeout)
-    // 조건: call_sts 상태값이 1일때만 호출
     if(call_sts) callT = setTimeout(moveList, 40);
   }
-  moveList();
 
-  slidewrapL.hover(
+  // 스크롤 이벤트 핸들러 추가
+  $(window).scroll(function() {
+    if($(window).scrollTop() > startTop) {
+      // 스크롤이 해당 배너영역에 도달하면 슬라이드 시작
+      if(!call_sts) {
+        call_sts = 1;
+        moveList();
+      }
+    } else {
+      call_sts = 0;
+    }
+  });
+
+  slidewrap.hover(
     function(){
-      call_sts = 0; // 콜백중단
+      call_sts = 0;
     }
     ,function(){
-      call_sts = 1; // 콜백허용
+      call_sts = 1;
       moveList();
     }
-  ); // hover // 
-
-  slidewrapR.hover(
-    function(){
-      call_sts = 0; // 콜백중단
-    }
-    ,function(){
-      call_sts = 1; // 콜백허용
-      moveList();
-    }
-  ); // hover // 
-}
+  );
+} 
 
 moveFn();

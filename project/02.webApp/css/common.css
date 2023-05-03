@@ -99,7 +99,7 @@
 /***************** B. 메인영역 *****************/
 .swiper {
     position: relative;
-    /* min-height: 600px; */
+    min-height: 600px;
 }
 
 .swiper-wrapper {
