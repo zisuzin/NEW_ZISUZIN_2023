@@ -1,0 +1,1 @@
+import sdata from "./tempData/data-sub";
