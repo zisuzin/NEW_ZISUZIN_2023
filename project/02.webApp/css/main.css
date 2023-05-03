@@ -514,7 +514,6 @@
 .section5_container > dl {
     width: 1080px;
     margin: 0 auto;
-    overflow: hidden;
 }
 
 .section5_container > dl > dd {
@@ -524,10 +523,9 @@
 }
 
 .section5_container > dl > dd > div {
-    position: relative;
     width: 350px;
-    height: 350px;
     margin-left: 12px;
+    overflow: hidden;
 }
 
 .section5_container > dl > dd > div > ul > li {
@@ -540,4 +538,14 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.section5_container > dl > dd > .ui_auto_slider1 > ul {
+    position: relative;
+    top: 0;
+}
+
+.section5_container > dl > dd > .ui_auto_slider2 > ul {
+    position: relative;
+    bottom: 0;
 }
