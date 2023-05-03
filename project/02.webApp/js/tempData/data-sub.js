@@ -1,19 +1,21 @@
 const sdata = {
     new_best_tab: `
-        <ul>
-            <li>
-                <a href="#">ALL</a>
-            </li>
-            <li>
-                <a href="#">WOMAN</a>
-            </li>
-            <li>
-                <a href="#">MAN</a>
-            </li>
-            <li>
-                <a href="#">KIDS</a>
-            </li>
-        </ul>
+        <div class="new-prod-tab">
+            <ul>
+                <li>
+                    <a href="#">ALL</a>
+                </li>
+                <li>
+                    <a href="#">WOMAN</a>
+                </li>
+                <li>
+                    <a href="#">MAN</a>
+                </li>
+                <li>
+                    <a href="#">KIDS</a>
+                </li>
+            </ul>
+    </div>
     `,
     prod_list: `
         <li>
