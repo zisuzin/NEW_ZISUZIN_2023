@@ -11,7 +11,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/subpage/new.css">
+    <link rel="stylesheet" href="./css/subPage.css">
     <!-- Icon CDN -->
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
 </head>
@@ -170,10 +170,34 @@
                                     <em class="btn_bind_title">찜하기버튼</em>
                                 </a>
                             </li>
-                            <li>
+                            <li class="mypage_btn">
                                 <a href="#">
                                     <em class="btn_bind_title">마이페이지</em>
                                 </a>
+                                <div class="mypage_wrap">
+                                    <ul>
+                                        <li>
+                                            <a href="#">
+                                                로그인
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="signup.html">
+                                                회원가입
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                카카오 플러스친구
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                고객센터
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </li>
                         </ul>
                     </div>
@@ -218,14 +242,14 @@
             </aside>
             <section class="new_container">
                 <div class="new_inner">
-                    <h2>NEW</h2>
+                    <h2 v-text="sub_tit1"></h2>
                     <div class="new-prod-container">
                         <!-- new 아이템 탭메뉴 -->
                         <stab-comp></stab-comp>
                         <!-- new 아이템 리스트 -->
                         <div class="new-prod-cont">
                             <ul>
-                                <item-list v-for="item in 20"></item-list>
+                                <list-comp v-for="item in 20"></list-comp>
                             </ul>
                         </div>
                     </div>
@@ -329,75 +353,7 @@
             <p class="f-copyright">COPYRIGHT © WONDERPLACE ALL RIGHTS RESERVED.</p>
         </footer>
     </div>
-    <script type="module">
-    // 뷰JS 인스턴스 생성용 함수
-    const makeVue = x => new Vue({el:x});
-
-    // 숫자증감 변수
-    let num = 0;
-
-    // 갤러리 리스트에 넣을 전역컴포넌트 생성
-    Vue.component('item-list',{
-        template: `
-        <li>
-            <div class="new-prod-bx">
-                <a href="#">
-                    <div class="prod-img">
-                        <img v-bind:src="isrc" alt="상품이미지">
-                    </div>
-                    <div class="prod-txt">
-                        <strong class="brand">슈펜키즈</strong>
-                        <p>키즈 피셔맨 말랑 젤리샌들 HPKV1D204U</p>
-                    </div>
-                </a>
-            </div>
-            <div class="item-detail">
-                <span class="prod-discount-price">
-                    <em>59,900</em>
-                    <span>원</span>
-                </span>
-            </div>
-        </li>
-        `,
-        data() {
-            return {
-                isrc:`./00.data/02.imgData/new_sc_comp/item_${this.setNum()}.jpg `,
-                products: [
-                {
-                    brand: "슈펜키즈",
-                    name: "키즈 피셔맨 말랑 젤리샌들 HPKV1D204U",
-                    price: 59900,
-                },
-                {
-                    brand: "슈펜키즈",
-                    name: "키즈 피셔맨 말랑 피치샌들 HPKV1D204U",
-                    price: 59900,
-                },
-                {
-                    brand: "슈펜키즈",
-                    name: "키즈 피셔맨 말랑 젤리샌들 HPKV1D204U",
-                    price: 59900,
-                },
-                {
-                    brand: "슈펜키즈",
-                    name: "키즈 피셔맨 말랑 젤리샌들 HPKV1D204U",
-                    price: 59900,
-                },
-                ],
-            }
-        },
-        methods: {
-            setNum() {
-                num+=1;
-                return num;
-                }
-            }
-    }); // 전역 컴포넌트 // 
-
-    // 리스트 뷰 인스턴스 생성 
-    makeVue("#cont");
     
-    </script>
     <!-- Plugin JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="./js/plugin/jquery-3.6.0.min.js"></script>
@@ -409,5 +365,6 @@
     <script type="module" src="./js/search.js"></script>
     <script type="module" src="./js/recent_view_prod.js"></script>
     <script type="module" src="./js/subpage.js"></script>
+    <script type="module" src="./js/mypage.js"></script>
 </body>
 </html>
