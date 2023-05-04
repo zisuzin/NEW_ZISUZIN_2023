@@ -26,7 +26,7 @@ let num = 0;
 
 new Vue({
     el: ".new_container",
-    data() {
+    data: function() {
       return {
         isrc:`../00.data/02.imgData/new_sc_comp/item_${this.setNum()}.jpg `,
         sub_tit1: "NEW",
@@ -53,12 +53,12 @@ new Vue({
               price: 59900,
             },
           ],
-        };
-    }, 
-    methods: {
-      setNum() {
-          num+=1;
-          return num;
         }
+        methods: {
+          
+        }
+    }, 
+    mounted() {
+      this.setNum();
     }
 });
