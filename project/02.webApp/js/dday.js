@@ -13,7 +13,6 @@ function dayCount() {
 
     // 남은 시간 카운트
     const seconds = String(Math.floor(timeGap / 1000) % 60).padStart(2,'0'); // 초 단위 변환
-    console.log(String(Math.floor(timeGap / 1000)))
     const minutes = String(Math.floor(timeGap / (1000 * 60)) % 60).padStart(2,'0'); // 분 단위 변환
     const hours = String(Math.floor(timeGap / (1000 * 60 * 60)) % 24).padStart(2,'0'); // 시 단위 변환
 

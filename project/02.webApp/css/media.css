@@ -6,4 +6,17 @@
     .fixed_wrap {
         display: none;
     }
+
+    #header {
+        bottom: 0;
+    }
+
+    .swiper {
+        height: auto;
+    }
+
+    .banner-control {
+        bottom: 4px;
+    }
 }
+
