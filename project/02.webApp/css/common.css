@@ -20,6 +20,10 @@
 }
 
 /***************** A. 상단영역 *****************/
+.fixed_wrap {
+    height: 90px;
+}
+
 #header {
     position: fixed;
     width: 100%;
@@ -102,21 +106,6 @@
 }
 
 /***************** B. 메인영역 *****************/
-.swiper {
-    position: relative;
-    min-height: 600px;
-}
-
-.swiper-wrapper {
-    display: flex;
-}
-
-.swiper img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
 .btn_bind_title {
     position: absolute;
     width: 0;
@@ -362,13 +351,8 @@
     height: 50px;
     background-color: #131313;
     cursor: pointer;
-    transition: .5s ease;
+    transition: .5s ease-in-out;
 }
-
-.scrollTop-btn-wrap > .scrollTop.active {
-    cursor: auto;
-}
-
 
 .scrollTop-btn-wrap > .scrollTop > i {
     position: absolute;
@@ -378,7 +362,6 @@
     width: 12px;
     height: 18px;
     color: #fff;
-    transition: .3s ease;
     z-index: 999;
 }
 
