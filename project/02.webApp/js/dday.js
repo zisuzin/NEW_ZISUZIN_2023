@@ -4,7 +4,6 @@ function dayCount() {
     const remainMinute = document.querySelectorAll(".value_min"); 
     const remainSecond = document.querySelectorAll(".value_sec"); 
 
-    
     const today = new Date();
     const dday = new Date(2023, 4, 21);
     const timeGap = dday.getTime() - today.getTime();
@@ -14,6 +13,7 @@ function dayCount() {
 
     // 남은 시간 카운트
     const seconds = String(Math.floor(timeGap / 1000) % 60).padStart(2,'0'); // 초 단위 변환
+    console.log(String(Math.floor(timeGap / 1000)))
     const minutes = String(Math.floor(timeGap / (1000 * 60)) % 60).padStart(2,'0'); // 분 단위 변환
     const hours = String(Math.floor(timeGap / (1000 * 60 * 60)) % 24).padStart(2,'0'); // 시 단위 변환
 
@@ -29,5 +29,3 @@ function dayCount() {
 
 // 1초마다 업데이트
 let countdownInterval = setInterval(dayCount, 1000);
-
-dayCount();
