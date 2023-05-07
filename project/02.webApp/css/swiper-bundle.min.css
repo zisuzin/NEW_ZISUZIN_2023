@@ -53,11 +53,9 @@ swiper-container {
 .swiper-vertical {
     touch-action: pan-x;
 }
-.swiper-slide,
-swiper-slide {
+.swiper-slide {
     flex-shrink: 0;
     width: 100%;
-    height: 100%;
     position: relative;
     transition-property: transform;
     display: block;

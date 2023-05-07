@@ -107,8 +107,8 @@
     }
 
     .f-copyright {
-        padding: 30px 0;
         margin-top: 20px;
+        padding: 30px 0 80px;
     }
 
     .f-info {
@@ -126,12 +126,13 @@
         height: auto;
     }
 
-    .banner-control {
-        bottom: 4px;
-    }
-
     .section2-title > .text_head1 {
         font-size: 26px;
+    }
+
+    .banner-control {
+        left: 50%;
+        transform: translateX(-50%);
     }
 }
 

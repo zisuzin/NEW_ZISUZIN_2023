@@ -4,7 +4,6 @@
 
 #cont_wrap {
     position: relative;
-    overflow-x: hidden;
 }
 
 #cont {
@@ -435,6 +434,7 @@
     position: relative;
     border-radius: 10px;
     overflow: hidden;
+    height: 100%;
 }
 
 .m-cont5_list img {

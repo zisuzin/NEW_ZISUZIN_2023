@@ -200,7 +200,7 @@
     background-color: #fff;
     width: 72px;
     height: 48px;
-    left: 41%;
+    left: 40%;
     position: absolute;
 }
 
@@ -218,6 +218,7 @@
 .swiper-btn-toggle {
     position: relative;
     float: right;
+    left: -1px;
     width: 48px;
     height: 48px;
     background-color: rgba(0,0,0,0.5);
