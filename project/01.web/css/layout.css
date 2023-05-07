@@ -12,10 +12,6 @@
     overflow-x: hidden;
 }
 
-.main_content2 {
-    /* height: 100vh; */
-}
-
 .main_content4 {
     margin: 100px 0;
     height: calc(100vh + 30vh);
@@ -42,6 +38,4 @@
     width: 100%;
     height: auto;
 }
-
-/* 서브2 컨텐츠 */
 

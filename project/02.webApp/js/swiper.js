@@ -69,6 +69,32 @@
       prevEl : '.main-navBtnL', // 이번 버튼 클래스명
     },
     slidesPerGroup: 3, // 슬라이드 그룹(개수단위로 넘어감!)
+    breakpoints: {
+      // 다음 윈도우 크기 이상일때 미디어쿼리 적용 
+      150: {
+        slidesPerView: 1,
+      },
+      480: {
+        slidesPerView: 2,
+        spaceBetween: 20
+      },
+      1222: {
+        slidesPerView: 3,
+        spaceBetween: 20
+      }
+    },
+    on: {
+      init: function () {
+        // 초기화 시 현재 화면에 표시된 슬라이드 외에는 투명도 0으로 설정
+        this.slides.removeClass("active-slide").css("opacity", 0);
+        // this.slides.eq(this.activeIndex).addClass("active-slide").css("opacity", 1);
+      },
+      slideChange: function () {
+        // 슬라이드 변경 시 현재 화면에 표시된 슬라이드만 투명도 1로 설정
+        // this.slides.removeClass("active-slide").css("opacity", 0);
+        this.slides.eq(this.activeIndex).addClass("active-slide").css("opacity", 1);
+      }
+    }
   });
 
   /* 메인 컨텐츠3 */

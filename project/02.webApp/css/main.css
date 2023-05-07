@@ -33,7 +33,6 @@
 .section2_inner {
     position: relative;
     width: 1080px;
-    /* margin-left: 100px; */
     margin: 0 auto;
     display: flex;
 }
@@ -59,14 +58,8 @@
     font-family: var(--notos-font1);
 }
 
-.main-hot-deal {
-    position: relative;
-    width: 1200px;
-}
-
 .swiper2 {
     position: relative;
-    height: 480px;
     overflow: hidden;
 }
 

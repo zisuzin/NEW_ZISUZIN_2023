@@ -44,24 +44,29 @@
 }
 
 .header_fixed_bar,
-.bottom_inner {
+.mo_bottom_personal_menu > ul {
     display: flex;
     align-items: center;
     height: 100%;
 }
 
 .header_fixed_bar > .header_top_gnb > ul > li,
-.header_fixed_bar > .header_top_personal_menu > ul > li,
+.header_fixed_bar > .header_top_personal_menu > ul > li {
+    display: inline-block;
+}
+
 .mo_bottom_personal_menu > ul > li {
     display: inline-block;
+    margin-left: 20px;
+    flex: 1;
+    text-align: -webkit-center;
 }
 
 .header_fixed_bar > .header_top_personal_menu > ul > li:nth-child(1) {
     margin-left: 0;
 }
 
-.header_fixed_bar > .header_top_personal_menu > ul > li,
-.mo_bottom_personal_menu > ul > li {
+.header_fixed_bar > .header_top_personal_menu > ul > li {
     margin-left: 20px;
 }
 
@@ -94,7 +99,7 @@
 }
 
 .header_top_personal_menu > ul > li > a,
-.mo_bottom_personal_menu > ul > li:not(.burger_btn) > a {
+.mo_bottom_personal_menu > ul > li > a {
     background: url(../00.data/02.imgData/ico_common.png) no-repeat;
     display: block;
     width: 40px;
@@ -102,21 +107,21 @@
 }
 
 .header_top_personal_menu > ul > li:nth-child(2) > a,
-.mo_bottom_personal_menu > ul > li:nth-child(1) > a {
+.mo_bottom_personal_menu > ul > .cart_btn > a {
     background-position: -40px 0;
 } 
 
 .header_top_personal_menu > ul > li:nth-child(3) > a,
-.mo_bottom_personal_menu > ul > li:nth-child(2) > a {
+.mo_bottom_personal_menu > ul > .interest_btn > a {
     background-position: -80px 2px;
 }
 
 .header_top_personal_menu > ul > li:nth-child(4) > a,
-.mo_bottom_personal_menu > ul > li:nth-child(3) > a {
+.mo_bottom_personal_menu > ul > .mypage_btn > a {
     background-position: -120px 0;
 }
 
-.mo_bottom_personal_menu > ul > li:nth-child(4) > a {
+.mo_bottom_personal_menu > ul > .burger_btn > a {
     background: url(../00.data/02.imgData/comm_docker_btn_icon_black.png) no-repeat;
     display: block;
     width: 40px;
@@ -124,6 +129,10 @@
     background-position: -72px 0;
     background-size: cover;
     margin-bottom: 5px;
+}
+
+.mo_bottom_personal_menu > ul {
+    display: flex;
 }
 
 /***************** B. 메인영역 *****************/
@@ -596,6 +605,7 @@
 .scrollTop-btn-wrap {
     position: sticky;
     bottom: 0;
+    z-index: 999;
 }
 
 /* 키워드 검색메뉴 */
@@ -770,7 +780,7 @@
     z-index: 99999;
     height: auto;
     background-color: #fff;
-    border: 1px dashed #000;
+    display: none;
 }
 
 .mo_main_nav_is-fixed > ul {
@@ -781,4 +791,3 @@
 .m_main_bottom_logo {
     width: 100px;
 }
-
