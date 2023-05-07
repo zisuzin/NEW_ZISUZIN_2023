@@ -1,13 +1,25 @@
 @charset "utf-8";
 
 /***************** B. 메인영역 *****************/
-
 #cont_wrap {
     position: relative;
 }
 
 #cont {
     position: relative;
+}
+
+/* 스크롤 등장박스 */
+.showBox {
+    opacity: 0;
+    transform: translateY(10%);
+    transition: all .5s ease-in-out;
+}
+
+/* 스크롤 등장 클래스 */
+.showBox.on {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .swiper {
