@@ -316,13 +316,6 @@
     margin-top: 80px;
 }
 
-.section3_inner, .section4_inner,
-.section5_inner  {
-    position: relative;
-    width: 1080px;
-    margin: 0 auto;
-}
-
 .recent-view-prod-pager {
     position: relative;
     width: 100%;
@@ -737,10 +730,6 @@
 .real-time-rank span {
     position: absolute;
     right: 0;
-}
-
-#cont {
-    position: relative;
 }
 
 .mypage_btn {

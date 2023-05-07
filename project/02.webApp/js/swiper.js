@@ -83,18 +83,6 @@
         spaceBetween: 20
       }
     },
-    on: {
-      init: function () {
-        // 초기화 시 현재 화면에 표시된 슬라이드 외에는 투명도 0으로 설정
-        this.slides.removeClass("active-slide").css("opacity", 0);
-        // this.slides.eq(this.activeIndex).addClass("active-slide").css("opacity", 1);
-      },
-      slideChange: function () {
-        // 슬라이드 변경 시 현재 화면에 표시된 슬라이드만 투명도 1로 설정
-        // this.slides.removeClass("active-slide").css("opacity", 0);
-        this.slides.eq(this.activeIndex).addClass("active-slide").css("opacity", 1);
-      }
-    }
   });
 
   /* 메인 컨텐츠3 */

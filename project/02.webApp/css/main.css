@@ -4,6 +4,7 @@
 
 #cont_wrap {
     position: relative;
+    overflow-x: hidden;
 }
 
 #cont {
@@ -235,6 +236,7 @@
     height: 29px;
     background: url(../00.data/02.imgData/main_btn_abc_swiper.png) 0 0 no-repeat;
     z-index: 2;
+    transition: .3s ease;
 }
 
 .main-swiper-nav > .main-navBtnL {
