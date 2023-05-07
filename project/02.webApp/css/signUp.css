@@ -5,7 +5,7 @@
 }
 
 .signUp_wrapper {
-    width: 40%;
+    width: 460px;
     margin: 0 auto;
 }
 
@@ -118,10 +118,6 @@ label span {
 
 .birth_date input[type=text] {
     width: 70px;
-}
-
-.birth_date input[type=text]#birth_year {
-    width: 120px;
 }
 
 .birth_date > div > label {
