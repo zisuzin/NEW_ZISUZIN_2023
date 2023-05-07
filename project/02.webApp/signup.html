@@ -279,8 +279,8 @@
                                                 019
                                             </option>
                                         </select>
-                                        <input type="text" name="first_phone_num" id="first_phone_num">
-                                        <input type="text" name="last_phone_num" id="last_phone_num">
+                                        <input type="text" name="first_phone_num" id="first_phone_num" maxlength="4">
+                                        <input type="text" name="last_phone_num" id="last_phone_num" maxlength="4">
                                     </label>
                                 </li>
                                 <!-- 7. 생년월일 -->
@@ -291,8 +291,7 @@
                                         </div>
                                         <div class="birth_date_bx">
                                             <label for="birth_year">
-                                                <input type="text" name="birth_year" id="birth_year" maxlength="4">
-                                                년
+                                                <input type="text" name="birth_year" id="birth_year" maxlength="4" placeholder="년(4자)">
                                             </label>
                                             <label for="birth_month">
                                                 <select name="birth_month" id="birth_month" aria-label="월">
@@ -310,12 +309,9 @@
                                                     <option value="11">11</option>
                                                     <option value="12">12</option>
                                                 </select>
-                                                <!-- <input type="text" name="birth_month" id="birth_month">
-                                                월 -->
                                             </label>
                                             <label for="birth_day">
-                                                <input type="text" name="birth_day" id="birth_day">
-                                                일
+                                                <input type="text" name="birth_day" id="birth_day" maxlength="2" placeholder="일">
                                             </label>
                                         </div>
                                     </div>
