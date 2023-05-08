@@ -1,104 +1,144 @@
-const matchDetail = [
-    {
-        "name": "[디즈니] 앨리스 하트 크로스백 HPKBXDA1DG",
-        "price": "32,310",
-        "saleRate":"10%"
-    },
-    {
-        "name": "아이스락 하이퍼그립 첼시부츠 (HPMV9C404M RE) HPMV9DA04M",
-        "price": "159,000",
-        "saleRate":""
-    },
-    {
-        "name": "[디즈니] 앨리스 헤어핀 세트 HPKZZDA1DG",
-        "price": "17,910",
-        "saleRate":"10%"
-    },
+const matchData = [
     {
         "name": "와이드 라운드 버클 단화 2.0 HPWWVD217M",
-        "price": "37,900",
-        "saleRate":"5%"
+        "img": "item_1",
+        "oprice":"39,900",
+        "dprice": "37,900",
+        "sale":"5%"
     },
     {
         "name": "바게트 숄더백 HPABGD202M",
-        "price": "최종할인가39,900",
-        "saleRate":""
+        "img": "item_2",
+        "oprice":"39,900",
+        "dprice": "",
+        "sale":""
     },
     {
         "name": "네프사 캔디컬러 미들 삭스 HPAO5DA18Q",
-        "price": "최종할인가5,900",
-        "saleRate":""
-    },
-    {
-        "name": "[경량EVA] 논슬립 베이직 리커버리 쪼리 HPCV5D251M",
-        "price": "18,900",
-        "saleRate":""
-    },
-    {
-        "name": "캔버스 버킷백 HPABGD224M",
-        "price": "37,900",
-        "saleRate":""
-    },
-    {
-        "name": "링클 버킷햇 HPACSD304M",
-        "price": "27,900",
-        "saleRate":"6%"
-    },
-    {
-        "name": "[슈탠다드] 남성 컬러 골지크루 삭스 HPAO5DA19M",
-        "price": "3,900",
-        "saleRate":""
-    },
-    {
-        "name": "라운드 투스트랩 밴딩 슬라이드 1.0 HPWWID231D",
-        "price": "18,900",
-        "saleRate":"5%"
-    },
-    {
-        "name": "[도영도영이 PICK] 캔버스 쇼퍼백 HPABGD225M",
-        "price": "37,900",
-        "saleRate":"5%"
-    },
-    {
-        "name": "[도영도영이 PICK] 코튼 블렌드 케이블 버킷햇 HPACSD301M",
-        "price": "27,900",
-        "saleRate":"6%"
-    },
-    {
-        "name": "마하그리드 스트링 백팩 HPADZDA05M",
-        "price": "56,900",
-        "saleRate":"5%"
-    },
-    {
-        "name": "[테니스클럽] 그래픽 골지 미들 삭스 HPAO5DA17Q",
-        "price": "5,900",
-        "saleRate":""
-    },
-    {
-        "name": "캔버스 핸드폰백 HPABGD226M",
-        "price": "24,900",
-        "saleRate":"3%"
-    },
-    {
-        "name": "[경량EVA] 논슬립 페인팅 리커버리 쪼리 HPCV5D382M",
-        "price": "27,900",
-        "saleRate":"6%"
-    },
-    {
-        "name": "[경량EVA] 컬러풀 리커버리 클로그 HPCV4D386M",
-        "price": "33,900",
-        "saleRate":"5%"
+        "img": "item_3",
+        "oprice":"5,900",
+        "dprice": "",
+        "sale":""
     },
     {
         "name": "[경량EVA] 더블 스트랩 리커버리 슬리퍼 HPCV4D244M",
-        "price": "24,900",
-        "saleRate":"3%"
+        "img": "item_4",
+        "oprice":"25,900",
+        "dprice": "24,900",
+        "sale":"3%"
     },
     {
         "name": "[경량EVA] 아웃도어 투 벨크로 샌들 HPCV4D242M",
-        "price": "37,900",
-        "saleRate":"5%"
+        "img": "item_5",
+        "oprice":"39,900",
+        "dprice": "37,900",
+        "sale":"5%"
+    },
+    {
+        "name": "[도영도영이 PICK] 캔버스 쇼퍼백 HPABGD225M",
+        "img": "item_6",
+        "oprice":"39,900",
+        "dprice": "37,900",
+        "sale":"5%"
+    },
+    {
+        "name": "캔버스 핸드폰백 HPABGD226M",
+        "img": "item_7",
+        "oprice":"25,900",
+        "dprice": "24,900",
+        "sale":"3%"
+    },
+    {
+        "name": "캔버스 버킷백 HPABGD224M",
+        "img": "item_8",
+        "oprice":"39,900",
+        "dprice": "37,900",
+        "sale":"5%"
+    },
+    {
+        "name": "[경량EVA] 논슬립 베이직 리커버리 쪼리 HPCV5D251M",
+        "img": "item_9",
+        "oprice":"19,900",
+        "dprice": "18,900",
+        "sale":"5%"
+    },
+    {
+        "name": "링클 버킷햇 HPACSD304M",
+        "img": "item_10",
+        "oprice":"29,900",
+        "dprice": "27,900",
+        "sale":"6%"
+    },
+    {
+        "name": "[도영도영이 PICK] 코튼 블렌드 케이블 버킷햇 HPACSD301M",
+        "img": "item_11",
+        "oprice":"29,900",
+        "dprice": "27,900",
+        "sale":"6%"
+    },
+    {
+        "name": "라운드 투스트랩 밴딩 슬라이드 1.0 HPWWID231D",
+        "img": "item_12",
+        "oprice":"19,900",
+        "dprice": "18,900",
+        "sale":"5%"
+    },
+    {
+        "name": "[경량EVA] 논슬립 페인팅 리커버리 쪼리 HPCV5D382M",
+        "img": "item_13",
+        "oprice":"29,900",
+        "dprice": "27,900",
+        "sale":"6%"
+    },
+    {
+        "name": "[경량EVA] 컬러풀 리커버리 클로그 HPCV4D386M",
+        "img": "item_14",
+        "oprice":"35,900",
+        "dprice": "33,900",
+        "sale":"5%"
+    },
+    {
+        "name": "[테니스클럽] 그래픽 골지 미들 삭스 HPAO5DA17Q",
+        "img": "item_15",
+        "oprice":"5,900",
+        "dprice": "",
+        "sale":""
+    },
+    {
+        "name": "에스파듀 패턴 샌들 2.0 HPWWND321Q",
+        "img": "item_16",
+        "oprice":"39,900",
+        "dprice": "37,900",
+        "sale":"5%"
+    },
+    {
+        "name": "에스파듀 패턴 슬라이드 2.0 HPWWID321Q",
+        "img": "item_17",
+        "oprice":"39,900",
+        "dprice": "37,900",
+        "sale":"5%"
+    },
+    {
+        "name": "네이비 3M 스트링 백팩 HPADZC401N",
+        "img": "item_18",
+        "oprice":"59,900",
+        "dprice": "53,900",
+        "sale":"10%"
+    },
+    {
+        "name": "밴딩 첼시 레인부츠 HPCV7D383W",
+        "img": "item_19",
+        "oprice":"35,900",
+        "dprice": "33,900",
+        "sale":"5%"
+    },
+    {
+        "name": "캐스퍼 미니 토트백 TPBT79W32",
+        "img": "item_20",
+        "oprice":"25,900",
+        "dprice": "19,900",
+        "sale":"23%"
     },
 ]
 
-export default matchDetail;
+export default matchData;

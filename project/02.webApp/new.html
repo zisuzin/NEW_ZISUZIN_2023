@@ -242,14 +242,14 @@
             </aside>
             <section class="new_container">
                 <div class="new_inner">
-                    <h2 v-text="sub_tit1"></h2>
+                    <h2>NEW</h2>
                     <div class="new-prod-container">
                         <!-- new 아이템 탭메뉴 -->
-                        <stab-comp></stab-comp>
+                        <!-- <stab-comp></stab-comp> -->
                         <!-- new 아이템 리스트 -->
                         <div class="new-prod-cont">
                             <ul>
-                                <list-comp v-for="item in matchDetail" v-bind:matchDetail="item"></list-comp>
+                                <list-comp v-for="n in matchData" v-bind:matchItem="n"></list-comp>
                             </ul>
                         </div>
                     </div>
