@@ -18,22 +18,21 @@ const sdata = {
     </div>
     `,
     prod_list: `
-        <li>
+        <li class="new-prod-wrap">
             <div class="new-prod-bx">
                 <a href="#">
-                    <div class="prod-img">
-                        <img v-bind:src="isrc" alt="상품이미지">
-                    </div>
+                    <div class="prod-img" v-html='isrc'></div>
                     <div class="prod-txt">
                         <strong class="brand">슈펜키즈</strong>
-                        <p>키즈 피셔맨 말랑 젤리샌들 HPKV1D204U</p>
+                        <p>{{pname}}</p>
                     </div>
                 </a>
             </div>
             <div class="item-detail">
                 <span class="prod-discount-price">
-                    <em>59,900</em>
+                    <em>{{pprice}}</em>
                     <span>원</span>
+                    {{prate}}
                 </span>
             </div>
         </li>

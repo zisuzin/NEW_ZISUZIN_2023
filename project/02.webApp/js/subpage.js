@@ -1,4 +1,5 @@
-import sdata from "./tempData/data-sub.js";
+import sdata from "./tempData/sub-comp.js";
+import matchDetail from "./tempData/subData.js";
 
 // ##### 컴포넌트 등록 #### 
 // 2. 메인영역
@@ -11,7 +12,22 @@ Vue.component("stab-comp", {
 // 메인영역2 상품리스트 뷰 템플릿 셋팅
 Vue.component("list-comp", {
     name: "list-comp",
-    template: sdata.prod_list,
+    template: sdata.prod_list, 
+    props: ["matchDetail"],
+    data: function () {
+      return {
+        isrc:`<img src="./00.data/02.imgData/new_sc_comp/item_${this.setNum()}.jpg"> `,
+        pname: this.matchDetail.name,
+        pprice: this.matchDetail.price,
+        prate: this.matchDetail.saleRate,
+      }
+    },
+    methods : {
+      setNum() {
+        num+=1;
+        return num;
+      }
+    }
 });
 
 // 3. 하단영역
@@ -26,39 +42,14 @@ let num = 0;
 
 new Vue({
     el: ".new_container",
-    data: function() {
-      return {
-        isrc:`../00.data/02.imgData/new_sc_comp/item_${this.setNum()}.jpg `,
-        sub_tit1: "NEW",
-        sub_tit2: "BEST",
-          products: [
-            {
-              brand: "슈펜키즈",
-              name: "키즈 피셔맨 말랑 젤리샌들 HPKV1D204U",
-              price: 59900,
-            },
-            {
-              brand: "슈펜키즈",
-              name: "키즈 피셔맨 말랑 피치샌들 HPKV1D204U",
-              price: 59900,
-            },
-            {
-              brand: "슈펜키즈",
-              name: "키즈 피셔맨 말랑 젤리샌들 HPKV1D204U",
-              price: 59900,
-            },
-            {
-              brand: "슈펜키즈",
-              name: "키즈 피셔맨 말랑 젤리샌들 HPKV1D204U",
-              price: 59900,
-            },
-          ],
-        }
+    data: {
+        matchDetail: matchDetail
     }, 
-    mounted() {
-      setNum() {
-        num++;
-        this.setNum();
+      methods: {
+        setNum() {
+          num+=1;
+          return num;
+        }
       }
-    }
 });
+

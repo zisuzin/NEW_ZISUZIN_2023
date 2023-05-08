@@ -249,7 +249,7 @@
                         <!-- new 아이템 리스트 -->
                         <div class="new-prod-cont">
                             <ul>
-                                <list-comp v-for="(item, idx) in 20"></list-comp>
+                                <list-comp v-for="item in matchDetail" v-bind:matchDetail="item"></list-comp>
                             </ul>
                         </div>
                     </div>
