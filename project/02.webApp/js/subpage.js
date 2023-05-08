@@ -54,11 +54,11 @@ new Vue({
             },
           ],
         }
-        methods: {
-          
-        }
     }, 
     mounted() {
-      this.setNum();
+      setNum() {
+        num++;
+        this.setNum();
+      }
     }
 });

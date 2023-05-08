@@ -20,10 +20,6 @@
 }
 
 /***************** A. 상단영역 *****************/
-#cont_wrap {
-    margin-top: 90px;
-}
-
 #header {
     position: fixed;
     width: 100%;
@@ -54,6 +50,11 @@
 .header_fixed_bar > .header_top_gnb > ul > li,
 .header_fixed_bar > .header_top_personal_menu > ul > li {
     display: inline-block;
+}
+
+#cont_wrap {
+    position: relative;
+    margin-top: 90px;
 }
 
 .mo_bottom_personal_menu > ul > li {
