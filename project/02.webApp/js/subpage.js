@@ -42,7 +42,7 @@ new Vue({
                           <img v-bind:src="this.pimg" alt="상품이미지">
                       </div>
                       <div class="prod-txt">
-                          <strong class="brand">슈펜키즈</strong>
+                          <strong class="brand">슈펜</strong>
                           <p>{{this.pname}}</p>
                       </div>
                   </a>
