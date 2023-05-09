@@ -1,5 +1,4 @@
-import sdata from "./tempData/sub-comp.js";
-import matchData from "./tempData/subData.js";
+import matchData1 from "./tempData/subData.js";
 
 // ##### 컴포넌트 등록 #### 
 // 2. 메인영역
@@ -8,21 +7,21 @@ Vue.component("stab-comp", {
     name: "stab-comp",
     template: `
       <div class="new-prod-tab">
-      <ul>
-          <li>
-              <a href="#">ALL</a>
-          </li>
-          <li>
-              <a href="#">WOMAN</a>
-          </li>
-          <li>
-              <a href="#">MAN</a>
-          </li>
-          <li>
-              <a href="#">KIDS</a>
-          </li>
-      </ul>
-</div>
+        <ul>
+            <li>
+                <a href="#">ALL</a>
+            </li>
+            <li>
+                <a href="#">WOMAN</a>
+            </li>
+            <li>
+                <a href="#">MAN</a>
+            </li>
+            <li>
+                <a href="#">KIDS</a>
+            </li>
+        </ul>
+    </div>
     `,
 });
 
@@ -30,7 +29,8 @@ Vue.component("stab-comp", {
 new Vue({
     el: ".new_container",
     data: {
-      matchData: matchData,
+      matchData1: matchData1,
+      subTit: ["NEW","BEST"],
     }, 
     components: {
       "list-comp":{
@@ -57,7 +57,7 @@ new Vue({
                       <em>{{this.pdprice}}</em>
                       <span v-if="this.pdprice">원</span>
                   </span>
-                  <span class="percent-price">
+                  <span class="percent-price" v-if="this.psale">
                       <em>{{this.psale}}</em>
                   </span>
               </div>
@@ -65,12 +65,19 @@ new Vue({
           `,
           props:['inum'],
           data() {
+            const oprice = parseInt(matchData1[this.inum].oprice);
+            const dprice = parseInt(matchData1[this.inum].dprice);
+            let sale = '';
+            if(!isNaN(oprice) && !isNaN(dprice) && oprice !== 0) {
+              let saleRate = Math.floor(((oprice - dprice) / oprice) * 100); 
+                sale = `${saleRate}%`;
+            }
             return {
-              pname: matchData[this.inum].name,
+              pname: matchData1[this.inum].name,
               pimg: `./00.data/02.imgData/new_sc_comp/item_${this.inum+1}.jpg`,
-              poprice: this.insComma(matchData[this.inum].oprice),
-              pdprice: this.insComma(matchData[this.inum].dprice),
-              psale: matchData[this.inum].sale,
+              poprice: this.insComma(matchData1[this.inum].oprice),
+              pdprice: this.insComma(matchData1[this.inum].dprice),
+              psale: sale,
             }
           },
           methods:{

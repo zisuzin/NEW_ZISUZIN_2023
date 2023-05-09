@@ -50,6 +50,7 @@
                             </li>
                         </ul>
                     </nav>
+                    <!-- 상품검색 메뉴 -->
                     <div class="header_top_personal_menu">
                         <ul>
                             <li>
@@ -242,14 +243,14 @@
             </aside>
             <section class="new_container">
                 <div class="new_inner">
-                    <h2>NEW</h2>
+                    <h2 v-html="subTit[0]"></h2>
                     <div class="new-prod-container">
                         <!-- new 아이템 탭메뉴 -->
                         <stab-comp></stab-comp>
                         <!-- new 아이템 리스트 -->
                         <div class="new-prod-cont">
                             <ul>
-                                <list-comp v-for="(n,i) in matchData" v-bind:inum="i"></list-comp>
+                                <list-comp v-for="(n,i) in matchData1" v-bind:inum="i"></list-comp>
                             </ul>
                         </div>
                     </div>

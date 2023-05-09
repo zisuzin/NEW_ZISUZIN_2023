@@ -67,3 +67,45 @@
     font-style: normal;
     font-family: var(--mont-font1);
 }
+
+.original-price > em,
+.discount-price > em,
+.percent-price > em {
+    font-style: normal;
+    font-size: 22px;
+    font-family: var(--mont-font1);
+}
+
+.discount-price > span {
+    font-size: 14px;
+    vertical-align: 1px;
+}
+
+.discount-price,
+.prod-discount-price {
+    letter-spacing: -5px;
+    font-family: var(--mont-font1);
+}
+
+.original-price > em,
+.original-price > span {
+    color: #999;
+    font-size: 13px;
+    text-decoration: line-through;
+    display: inline-block;
+}
+
+.original-price > span {
+    margin-left: -5px;
+}
+
+.percent-price {
+    color: #ff1e00;
+    float: right;
+    font-size: 20px;
+    letter-spacing: -10px;
+}
+
+.prod-txt {
+    font-size: 14px;
+}
