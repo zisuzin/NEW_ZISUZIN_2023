@@ -249,7 +249,7 @@
                         <!-- new 아이템 리스트 -->
                         <div class="new-prod-cont">
                             <ul>
-                                <list-comp v-for="n in matchData" v-bind:matchItem="n"></list-comp>
+                                <list-comp v-for="(n,i) in matchData" v-bind:inum="i"></list-comp>
                             </ul>
                         </div>
                     </div>
