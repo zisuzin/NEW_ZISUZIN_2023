@@ -2,41 +2,54 @@ const store = new Vuex.Store({
     state: {
         // 서브데이터 셋업
         npData: { // NEW 상품 데이터
-            전체: {
+            ALL: {
+                sNum: 60,
+                cat: "ALL",
+            },
+            NEW: {
                 // 리스트개수
                 sNum: 60,
                 cat: "ALL",
             },
-            여성: {
+            BEST: {
                 // 리스트개수
                 sNum: 20,
                 cat: "WOMEN",
             },
-            남성: {
+            WOMEN: {
                 // 리스트개수
                 sNum: 20,
                 cat: "MEN",
             },
-            아동: {
+            MEN: {
+                // 리스트개수
+                sNum: 20, 
+                cat: "KIDS",
+            },
+            KIDS: {
                 // 리스트개수
                 sNum: 20, 
                 cat: "KIDS",
             },
         },
-        // bpData: { // BEST 상품 데이터
-        //     ALL: {
-
-        //     },
-        //     WOMEN: {
-
-        //     },
-        //     MEN: {
-
-        //     },
-        //     KIDS: {
-
-        //     },
-        // },
+        bpData: { // BEST 상품 데이터
+            ALL: {
+                sNum: 60,
+                cat: "ALL",
+            },
+            WOMEN: {
+                sNum: 60,
+                cat: "ALL",
+            },
+            MEN: {
+                sNum: 60,
+                cat: "ALL",
+            },
+            KIDS: {
+                sNum: 60,
+                cat: "ALL",
+            },
+        },
         // 공통처리 메뉴 변수
         sNum: 20,
         cat: "ALL",
@@ -47,8 +60,6 @@ const store = new Vuex.Store({
             console.log(data)
         }
     },
-    // 공통처리 메뉴 변수
-    sNum: 20,
 })
 
 export default store;
