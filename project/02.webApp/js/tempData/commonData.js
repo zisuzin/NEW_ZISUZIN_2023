@@ -12,10 +12,10 @@ const comData = {
             <nav class="header_top_gnb">
                 <ul>
                     <li>
-                        <a href="new.html">NEW</a>
+                        <a href="#">NEW</a>
                     </li>
                     <li>
-                        <a href="best.html">BEST</a>
+                        <a href="#">BEST</a>
                     </li>
                     <li>
                         <a href="#">WOMEN</a>
@@ -309,7 +309,6 @@ const comData = {
             </div>
         </div>
     </div>
-    <p class="f-copyright">COPYRIGHT © WONDERPLACE ALL RIGHTS RESERVED.</p>
     `,
 };
 
