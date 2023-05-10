@@ -31,7 +31,6 @@ delItem.forEach((ele)=>{
 
 function removeItem(){
     const listItem = this.parentNode;
-    // console.log(listItem); // LI 
     listItem.parentNode.removeChild(listItem); 
 
     arrLength--; // 전체요소갯수 감소

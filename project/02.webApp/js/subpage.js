@@ -1,4 +1,5 @@
 import matchData1 from "./tempData/subData.js";
+import store from "./store.js";
 
 // ##### 컴포넌트 등록 #### 
 // 2. 메인영역
@@ -28,6 +29,7 @@ Vue.component("stab-comp", {
 // 메인영역2 상품리스트 뷰 템플릿 셋팅
 new Vue({
     el: ".new_container",
+    store, // 뷰엑스 스토어 등록
     data: {
       matchData1: matchData1,
       subTit: ["NEW","BEST"],
@@ -68,7 +70,7 @@ new Vue({
             const oprice = parseInt(matchData1[this.inum].oprice);
             const dprice = parseInt(matchData1[this.inum].dprice);
             let sale = '';
-            if(!isNaN(oprice) && !isNaN(dprice) && oprice !== 0) {
+            if(!isNaN(oprice) && !isNaN(dprice) && oprice) {
               let saleRate = Math.floor(((oprice - dprice) / oprice) * 100); 
                 sale = `${saleRate}%`;
             }
