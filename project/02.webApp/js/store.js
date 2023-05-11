@@ -51,6 +51,11 @@ const store = new Vuex.Store({
         sNum: 20,
         cat: "ALL",
     },
+    mutations:{
+        chgData(){
+            
+        }
+    }
 })
 
 export default store;

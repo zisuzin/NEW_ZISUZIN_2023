@@ -21,7 +21,7 @@ const subdata = {
     prodList: `
     <ul>
         <li v-for="(value,name) in $store.state.newData" :key="name">
-            <div v-for="(a,b) in value.item" :key="b" v-if="a.img=='item_1'||a.img!='item_2'" v-if="value.cat!='ALL'">
+            <div v-for="(a,b) in value.item" :key="b" v-if="value.cat!='ALL'">
                 <div class="new-prod-bx">
                     <a href="#">
                         <div class="prod-img">

@@ -23,5 +23,6 @@ new Vue({
   }, 
   mounted:function(){
     // console.log(store.state.newData.전체.item.list0.img)
+    // console.log(store.state.newData.전체.item[1].name)
   }
 })
