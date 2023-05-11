@@ -1,9 +1,10 @@
 const subdata = {
+    // 상품 카테고리 선택 Tab메뉴
     prodTab: `
         <div class="new-prod-tab">
             <ul>
                 <li>
-                    <a href="#" v-on:click="$store.commit('chgData','전체')">ALL</a>
+                    <a href="#" v-on:click="newChgData('전체')">ALL</a>
                 </li>
                 <li>
                     <a href="#" v-on:click="$store.commit('chgData','여성')">WOMAN</a>
@@ -18,6 +19,7 @@ const subdata = {
         </div>
     `,
 
+    // 상품 정보 리스트
     prodList: `
     <ul>
         <li v-for="(value,name) in $store.state.newData" :key="name">

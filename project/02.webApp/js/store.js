@@ -51,11 +51,16 @@ const store = new Vuex.Store({
         sNum: 20,
         cat: "ALL",
     },
-    mutations:{
-        chgData(){
-            
-        }
-    }
+    // mutations:{
+    //     newChgData(data,pram){ // data - state데이터, pram - 전달값 
+    //         // 해당 카테고리 개수 업데이트
+    //         data.sNum = data.newData[pram].sNum;
+    //         // 해당 카테고리 이름 업데이트
+    //         data.cat = data.newData[pram].cat;
+    //         // 해당 카테고리 제품리스트 업데이트
+    //         data.item = data.newData[pram].item;
+    //     }
+    // }
 })
 
 export default store;

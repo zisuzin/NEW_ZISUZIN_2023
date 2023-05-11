@@ -19,10 +19,15 @@ new Vue({
   store, // 뷰엑스 스토어 등록
   data: {
     subTit: ["NEW","BEST"],
-
   }, 
+  methods:{
+    chgData(ctg) {
+      const newProd = this.$store.state.newData[ctg].item;
+      this.productList = newProd;
+    }
+  },
   mounted:function(){
     // console.log(store.state.newData.전체.item.list0.img)
     // console.log(store.state.newData.전체.item[1].name)
-  }
+  },
 })
