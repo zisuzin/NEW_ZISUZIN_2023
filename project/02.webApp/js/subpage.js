@@ -19,6 +19,9 @@ new Vue({
   store, // 뷰엑스 스토어 등록
   data: {
     subTit: ["NEW","BEST"],
+
   }, 
-  mounted:function(){}
+  mounted:function(){
+    // console.log(store.state.newData.전체.item.list0.img)
+  }
 })
