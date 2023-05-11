@@ -23,7 +23,7 @@ const subdata = {
             <div class="new-prod-bx">
                 <a href="#">
                     <div class="prod-img" v-for="(a,b) in value.item">
-                        <img v-bind:src="'./00.data/02.imgData/new/' + value.cat + a.img+'.jpg'" alt="상품이미지">
+                        <img v-bind:src="'./00.data/02.imgData/new/' + value.cat + a.img + '.jpg'" alt="상품이미지">
                     </div>
                     <div class="prod-txt">
                         <strong class="brand">슈펜</strong>
