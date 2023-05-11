@@ -1,65 +1,64 @@
+import matchData1 from "./tempData/prodData.js"
+
 const store = new Vuex.Store({
     state: {
         // 서브데이터 셋업
-        npData: { // NEW 상품 데이터
-            ALL: {
+        newData: { // NEW 상품 데이터
+            전체 : {
                 sNum: 60,
                 cat: "ALL",
+                item: matchData1,
             },
-            NEW: {
-                // 리스트개수
-                sNum: 60,
-                cat: "ALL",
-            },
-            BEST: {
-                // 리스트개수
+            여성: {
                 sNum: 20,
                 cat: "WOMEN",
+                item: matchData1,
             },
-            WOMEN: {
-                // 리스트개수
-                sNum: 20,
+            남성: {
+                sNum: 20, 
                 cat: "MEN",
+                item: matchData1,
             },
-            MEN: {
-                // 리스트개수
+            아동: {
                 sNum: 20, 
                 cat: "KIDS",
-            },
-            KIDS: {
-                // 리스트개수
-                sNum: 20, 
-                cat: "KIDS",
+                item: matchData1,
             },
         },
-        bpData: { // BEST 상품 데이터
-            ALL: {
+        bestData: { // BEST 상품 데이터
+            전체 : {
                 sNum: 60,
                 cat: "ALL",
+                // item: matchData2,
             },
-            WOMEN: {
-                sNum: 60,
-                cat: "ALL",
+            여성: {
+                sNum: 20,
+                cat: "WOMEN",
+                // item: matchData2,
             },
-            MEN: {
-                sNum: 60,
-                cat: "ALL",
+            남성: {
+                sNum: 20, 
+                cat: "MEN",
+                // item: matchData2,
             },
-            KIDS: {
-                sNum: 60,
-                cat: "ALL",
+            아동: {
+                sNum: 20, 
+                cat: "KIDS",
+                // item: matchData2,
             },
         },
         // 공통처리 메뉴 변수
         sNum: 20,
         cat: "ALL",
     },
-    mutations:{
-        chgData(data,pram){ // data - state데이터, pram - 전달값 
-            // 1. 해당 카테고리 개수 업데이트
-            console.log(data)
-        }
-    },
+    // mutations:{
+    //     chgData(data,pram){ // data - state데이터, pram - 전달값 
+    //         // 1. 해당 카테고리 개수 업데이트
+    //         data.sNum = data.NEW[pram].sNum;
+    //         // 2. 해당 카테고리 메뉴 업데이트
+    //         data.cat = data.NEW[pram].cat;
+    //     }
+    // },
 })
 
 export default store;
