@@ -27,22 +27,22 @@ const subdata = {
                     </div>
                     <div class="prod-txt">
                         <strong class="brand">슈펜</strong>
-                        <p>{{value.name}}</p>
+                        <p>{{a.name}}</p>
                     </div>
                 </a>
             </div>
             <div class="item-detail">
                 <span class="original-price">
-                    <em>{{value.oprice}}</em>
-                    <span v-if="value.oprice">원</span>
+                    <em>{{a.oprice}}</em>
+                    <span v-if="a.oprice">원</span>
                 </span>
                 <br>
                 <span class="discount-price">
-                    <em>{{value.dprice}}</em>
-                    <span v-if="value.dprice">원</span>
+                    <em>{{a.dprice}}</em>
+                    <span v-if="a.dprice">원</span>
                 </span>
-                <span class="percent-price" v-if="value.sale">
-                    <em>{{value.sale}}</em>
+                <span class="percent-price" v-if="a.sale">
+                    <em>{{a.sale}}</em>
                 </span>
             </div>
         </li>
