@@ -6,6 +6,11 @@ import store from "./store.js";
 // 메인영역1 메뉴 뷰 템플릿 셋팅
 Vue.component("stab-comp", {
     template: subdata.prodTab,
+    methods:{
+      test(x){
+        store.commit('newChgData',x)
+      }
+    }
 });
 
 // 메인영역2 상품리스트 뷰 템플릿 셋팅
@@ -20,13 +25,17 @@ new Vue({
     subTit: ["NEW","BEST"],
   }, 
   methods:{
-    newChgData(data, ctg) {
-      const newProd = this.$store.state.newData[ctg].item;
-      this.productList = newProd;
-    }
+    newChgData(data, ctg) {}
   },
-  mounted:function(){
-    // console.log(store.state.newData.전체.item.list0.img)
-    // console.log(store.state.newData.전체.item[1].name)
-  },
+  mounted:function(){},
 })
+
+const subTab = document.querySelectorAll(".new-prod-tab > ul > li > a");
+
+subTab.forEach(ele =>
+  ele.addEventListener("click", () => {
+    for(let x of subTab) {
+      x.classList.remove('clicked');
+    }
+    ele.classList.add('clicked');
+}));

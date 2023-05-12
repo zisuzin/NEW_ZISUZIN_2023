@@ -29,8 +29,15 @@
     background: #FAFAFA;
 }
 
+.new-prod-tab > ul > li > a.clicked {
+    background-color: #fff;
+    border-bottom: #000;
+}
+
 .new-prod-tab > ul > li > a {
     color: #666;
+    display: inline-block;
+    width: 100%;
 }
 
 .new-prod-cont > ul {
