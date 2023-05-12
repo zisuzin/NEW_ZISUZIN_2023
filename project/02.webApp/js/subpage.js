@@ -27,7 +27,7 @@ new Vue({
   mounted:function(){},
 })
 
-const subTab = document.querySelectorAll(".new-prod-tab > ul > li > a");
+const subTab = document.querySelectorAll(".new-prod-tab > ul > li");
 
 subTab.forEach(ele =>
   ele.addEventListener("click", () => {

@@ -24,20 +24,17 @@
     height: 62px;
     line-height: 62px;
     text-align: center;
-    border: #E1E1E1 1px solid;
-    border-bottom: transparent;
+    border: 1px solid #E1E1E1;
+    border-bottom: 3px solid #000;
     background: #FAFAFA;
+    cursor: pointer;
 }
 
-.new-prod-tab > ul > li > a.clicked {
+.new-prod-tab > ul > li.clicked {
     background-color: #fff;
-    border-bottom: #000;
-}
-
-.new-prod-tab > ul > li > a {
-    color: #666;
-    display: inline-block;
-    width: 100%;
+    border: #191919 2px solid;
+    color: #000;
+    border-bottom: transparent;
 }
 
 .new-prod-cont > ul {
