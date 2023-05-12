@@ -1,4 +1,4 @@
-import matchData1 from "./tempData/prodData.js"
+import {womenData,menData} from "./tempData/prodData.js"
 
 const store = new Vuex.Store({
     state: {
@@ -7,22 +7,22 @@ const store = new Vuex.Store({
             전체 : {
                 sNum: 60,
                 cat: "ALL",
-                item: matchData1,
+                item: womenData,
             },
             여성: {
                 sNum: 20,
                 cat: "WOMEN",
-                item: matchData1,
+                item: womenData,
             },
             남성: {
                 sNum: 20, 
                 cat: "MEN",
-                item: matchData1,
+                item: menData,
             },
             아동: {
                 sNum: 20, 
                 cat: "KIDS",
-                item: matchData1,
+                item: womenData,
             },
         },
         bestData: { // BEST 상품 데이터

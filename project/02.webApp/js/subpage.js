@@ -1,4 +1,3 @@
-import matchData1 from "./tempData/prodData.js";
 import subdata from "./tempData/subData.js";
 import store from "./store.js";
 

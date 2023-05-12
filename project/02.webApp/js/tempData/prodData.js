@@ -1,4 +1,4 @@
-const matchData1 = [
+const womenData = [
     {
         name: "와이드 라운드 버클 단화 2.0 HPWWVD217M",
         img: "item_1",
@@ -140,5 +140,147 @@ const matchData1 = [
         sale:"",
     },
 ]
+const menData = [
+    {
+        name: "아이스락 하이퍼그립 첼시부츠 (HPMV9C404M RE) HPMV9DA04M",
+        img: "item_1",
+        oprice:"",
+        dprice: "159000",
+        sale:"",
+    },
+    {
+        name: "[슈탠다드] 남성 컬러 골지크루 삭스 HPAO5DA19M",
+        img: "item_2",
+        oprice:"",
+        dprice: "3900",
+        sale:"",
+    },
+    {
+        name: "마하그리드 스트링 백팩 HPADZDA05M",
+        img: "item_3",
+        oprice:"59900",
+        dprice: "56900",
+        sale:"",
+    },
+    {
+        name: "[드로우핏 X 슈펜] 베이직 레더 더비 HPMR7CA51M",
+        img: "item_4",
+        oprice:"",
+        dprice: "129000",
+        sale:"",
+    },
+    {
+        name: "🌟TOP 5 [오솔라이트] 유니 레더 독일군 HPMR6DA03M",
+        img: "item_5",
+        oprice:"",
+        dprice: "59900",
+        sale:"",
+    },
+    {
+        name: "이지라이트 컴포트 어텁 레이스 펀칭더비 BYSL79A12",
+        img: "item_6",
+        oprice:"39900",
+        dprice: "23630",
+        sale:"",
+    },
+    {
+        name: "네이비 3M 스트링 백팩 HPADZC401N",
+        img: "item_7",
+        oprice:"59900",
+        dprice: "53900",
+        sale:"",
+    },
+    {
+        name: "[핏더사이즈X슈펜] Seku-shi(세쿠시) 첼시 부읏츠 (다크 브라운 / 아이보리)",
+        img: "item_8",
+        oprice:"",
+        dprice: "159000",
+        sale:"",
+    },
+    {
+        name: "22 베이직 키높이 스니커즈_HPMR6CA04M",
+        img: "item_9",
+        oprice:"59900",
+        dprice: "53900",
+        sale:"",
+    },
+    {
+        name: "남성 레더 드라이빙로퍼_스웨이드 페니(HPMR9C471M RE) HPMR9DA11M",
+        img: "item_10",
+        oprice:"79900",
+        dprice: "75900",
+        sale:"",
+    },
+     {
+        name: "드로우핏 X 슈펜 로퍼 HPMR7DA56M",
+        img: "item_11",
+        oprice:"79900",
+        dprice: "75900",
+        sale:"",
+    },
+     {
+        name: "드로우핏 X 슈펜 더비 HPMR7DA55M",
+        img: "item_12",
+        oprice:"79900",
+        dprice: "75900",
+        sale:"",
+    },
+     {
+        name: "[초경량] 논슬립 슬림 슈레이스 워킹화 HPCR5DA23M",
+        img: "item_13",
+        oprice:"39900",
+        dprice: "37900",
+        sale:"",
+    },
+     {
+        name: "[초경량] 논슬립 베이직 슬립온 워킹화 HPCR5DA31Q",
+        img: "item_14",
+        oprice:"39900",
+        dprice: "37900",
+        sale:"",
+    },
+     {
+        name: "유니 모던 캐주얼 키높이 더비 HPMR7DA02M",
+        img: "item_15",
+        oprice:"59900",
+        dprice: "56900",
+        sale:"",
+    },
+     {
+        name: "유니 모던 캐주얼 로퍼 HPMR7DA04Q",
+        img: "item_16",
+        oprice:"59900",
+        dprice: "56900",
+        sale:"",
+    },
+     {
+        name: "유니모던 캐주얼 더비 HPMR7DA01Q",
+        img: "item_17",
+        oprice:"59900",
+        dprice: "56900",
+        sale:"",
+    },
+     {
+        name: "[NAVY] 2포켓 빅 반달 메신저백 HPABCD206M",
+        img: "item_18",
+        oprice:"39900",
+        dprice: "37900",
+        sale:"",
+    },
+     {
+        name: "[NAVY] 가벼운 반달포켓 크로스백 HPABCD207M",
+        img: "item_19",
+        oprice:"29900",
+        dprice: "27900",
+        sale:"",
+    },
+     {
+        name: "남성 베이직 쿠션 샌들 HPMV4D210M",
+        img: "item_20",
+        oprice:"59900",
+        dprice: "56900",
+        sale:"",
+    },
+]
 
-export default matchData1;
+export {womenData, menData};
