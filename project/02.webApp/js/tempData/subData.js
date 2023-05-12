@@ -4,13 +4,13 @@ const subdata = {
         <div class="new-prod-tab">
             <ul>
                 <li>
-                    <a href="#" v-on:click="newChgData('전체')">ALL</a>
+                    <a href="#" v-on:click="$store.commit('newChgData','전체')">ALL</a>
                 </li>
                 <li>
-                    <a href="#" v-on:click="$store.commit('chgData','여성')">WOMAN</a>
+                    <a href="#" v-on:click="$store.commit('newChgData','여성')">WOMAN</a>
                 </li>
                 <li>
-                    <a href="#" v-on:click="$store.commit('chgData','남성')">MAN</a>
+                    <a href="#" v-on:click="$store.commit('newChgData','남성')">MAN</a>
                 </li>
                 <li>
                     <a href="#" v-on:click="$store.commit('chgData','아동')">KIDS</a>

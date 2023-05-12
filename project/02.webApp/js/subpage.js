@@ -20,7 +20,7 @@ new Vue({
     subTit: ["NEW","BEST"],
   }, 
   methods:{
-    chgData(ctg) {
+    newChgData(data, ctg) {
       const newProd = this.$store.state.newData[ctg].item;
       this.productList = newProd;
     }
