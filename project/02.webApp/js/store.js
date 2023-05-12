@@ -48,7 +48,7 @@ const store = new Vuex.Store({
         //     },
         // },
         // 공통처리 메뉴 변수
-        sNum: 60,
+        sNum: "",
         cat: "ALL",
         item:"",
     },

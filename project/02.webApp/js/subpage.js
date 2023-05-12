@@ -24,9 +24,6 @@ new Vue({
   data: {
     subTit: ["NEW","BEST"],
   }, 
-  methods:{
-    newChgData(data, ctg) {}
-  },
   mounted:function(){},
 })
 
