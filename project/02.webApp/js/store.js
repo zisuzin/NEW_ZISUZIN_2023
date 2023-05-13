@@ -1,4 +1,4 @@
-import {womenData,menData} from "./tempData/prodData.js"
+import {womenData, menData , kidsData} from "./tempData/prodData.js"
 
 const store = new Vuex.Store({
     state: {
@@ -22,7 +22,7 @@ const store = new Vuex.Store({
             아동: {
                 sNum: 20, 
                 cat: "KIDS",
-                item: womenData,
+                item: kidsData,
             },
         },
         // bestData: { // BEST 상품 데이터
@@ -48,18 +48,19 @@ const store = new Vuex.Store({
         //     },
         // },
         // 공통처리 메뉴 변수
-        sNum: "",
-        cat: "ALL",
-        item:"",
+        setsNum: "",
+        setcat: "",
+        setitem:"",
     },
     mutations:{
-        newChgData(data,pram){ // data - state데이터, pram - 전달값 
+        newChgData(state,pram){ // state - state데이터, pram - 전달값 
             // 해당 카테고리 개수 업데이트
-            data.sNum = data.newData[pram].sNum;
+            state.sNum = state.newData[pram].sNum;
             // 해당 카테고리 이름 업데이트
-            data.cat = data.newData[pram].cat;
+            state.cat = state.newData[pram].cat;
             // 해당 카테고리 제품리스트 업데이트
-            data.item = data.newData[pram].item;
+            state.item = state.newData[pram].item;
+            state.setcat = pram;
         }
     }
 })

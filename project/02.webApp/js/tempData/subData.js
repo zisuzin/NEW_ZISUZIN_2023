@@ -22,7 +22,7 @@ const subdata = {
     // 상품 정보 리스트
     prodList: `
         <ul>
-            <li v-for="(value,name) in $store.state.newData.전체.item" :key="name">
+            <li v-for="(value,name) in $store.state.newData[$store.state.setcat].item" :key="name">
                 <div>
                     <div class="new-prod-bx">
                         <a href="#">
@@ -56,4 +56,3 @@ const subdata = {
 }
 
 export default subdata;
-

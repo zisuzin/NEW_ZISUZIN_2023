@@ -35,8 +35,16 @@ Vue.component("list-comp", {
     // 정규식함수(숫자 세자리마다 콤마해주는 기능)
     numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    },
+    chgData(param) {
+      store.state.setsNum = store.state.newData[param].sNum;
+      store.state.setcat = store.state.newData[param].cat;
+      store.state.setitem = store.state.newData[param].item;
     }
   },
+  mounted(){
+    console.log(store.state.newData['전체'].item)
+},
 });
 
 new Vue({
