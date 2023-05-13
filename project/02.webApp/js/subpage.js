@@ -9,8 +9,6 @@ Vue.component("stab-comp", {
     methods:{
       chgData(cat){
         store.commit('newChgData',x)
-        // Get방식으로 넘어온 값 받기!
-        
       }
     },
     mounted(){
