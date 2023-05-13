@@ -12,22 +12,22 @@ const comData = {
             <nav class="header_top_gnb">
                 <ul>
                     <li>
-                        <router-link to="/new">NEW</router-link>
+                        <router-link to="/sub_new.html">NEW</router-link>
                     </li>
                     <li>
-                        <a href="#">BEST</a>
+                        <router-link to="/best">BEST</router-link>
                     </li>
                     <li>
-                        <a href="#">WOMEN</a>
+                        <router-link to="/women">WOMEN</router-link>
                     </li>
                     <li>
-                        <a href="#">MEN</a>
+                        <router-link to="/men">MEN</router-link>
                     </li>
                     <li>
-                        <a href="#">KIDS</a>
+                        <router-link to="/kids">KIDS</router-link>
                     </li>
                     <li>
-                        <a href="#">EVENT</a>
+                        <router-link to="/event">EVENT</router-link>
                     </li>
                 </ul>
             </nav>
