@@ -30,6 +30,8 @@ const New = () => import("./subpage.Vue")
 Vue.use(VueRouter)
 
 const router = new VueRouter({
+    mode: "history", // history 모드 설정
+    base: "/", // 기본 경로 설정 (루트 경로)
     // 라우팅 설정
     routes: [
         // 라우트 경로와 컴포넌트 매핑
@@ -51,7 +53,7 @@ makeVue("#info");
 new Vue({
     el: "#cont_wrap",
     router, // 라우터 등록
-    ccreated() {
+    created() { // 오타 수정: ccreated() -> created()
         // 생성 시점에 URL 분할 코드 실행
         this.$router.push(path);
     }
