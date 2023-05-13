@@ -162,6 +162,10 @@ section.new_container {
     margin-top: 20px;
 }
 
+.ctg_depth1 > div {
+    position: relative;
+}
+
 .cat_left_side_tab > .ctg_link em {
     font-style: normal;
     font-size: 15px;
@@ -182,7 +186,7 @@ section.new_container {
     cursor: pointer;
 }
 
-.ctg_nav > ul > li > a::after {
+.ctg_nav > ul > li > div > a::after {
     content: '';
     position: absolute;
     background: url(../00.data/02.imgData/ico_common.png) no-repeat -62px -115px;
@@ -197,4 +201,27 @@ section.new_container {
     color: #666;
     font-size: 14px;
     line-height: 30px;
+}
+
+.ctg_depth2 > ul > li {
+    position: relative;
+}
+
+.ctg_depth2 > ul > li > a::after {
+    content: '';
+    position: absolute;
+    background: url(../00.data/02.imgData/ico_common.png) no-repeat -102px -98px;
+    width: 10px;
+    height: 10px;
+    right: 20px;
+    top: 50%;
+    margin-top: -5px;
+}
+
+.ctg_depth2 {
+    display: none;
+}
+
+.ctg_depth2.slide-down {
+    display: block;
 }

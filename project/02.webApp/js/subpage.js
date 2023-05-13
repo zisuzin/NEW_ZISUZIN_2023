@@ -80,3 +80,9 @@ subTab.forEach(ele =>
     }
     ele.classList.add('clicked');
 }));
+
+/*  3. WOMEN - 서브페이지  */
+// 카테고리메뉴 클릭시 토글
+$('.ctg_depth1 > div').click(function(){
+  $(this).parent('.ctg_depth1').find('.ctg_depth2').slideToggle(300);
+});
