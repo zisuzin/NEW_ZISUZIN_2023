@@ -11,7 +11,7 @@ const comData = {
             </div>
             <nav class="header_top_gnb">
                 <ul>
-                    <li>
+                    <li @click.prevent="gotoPage(menus[0].page)">
                         <a href="#">NEW</a>
                     </li>
                     <li>

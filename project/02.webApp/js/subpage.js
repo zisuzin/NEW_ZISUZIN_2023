@@ -7,12 +7,13 @@ import store from "./store.js";
 Vue.component("stab-comp", {
     template: subdata.prodTab,
     methods:{
-      test(x){
-        store.commit('newChgData',x)
-      },
-      showMoreItems(category) {
-        this.chgData(category);
-        this.$store.commit("showMoreItems"); // showMoreItems 뮤테이션 호출
+      test(category){
+        store.commit('newChgData',category)
+        // this.chgData(category);
+        // this.$store.commit("showMoreItems"); // showMoreItems 뮤테이션 호출
+        if (category === '전체') {
+          this.$store.commit('showMoreItems');
+        }
       },
     },
     mounted(){
@@ -21,6 +22,7 @@ Vue.component("stab-comp", {
         const firstLi = this.$el.querySelector('ul > li:first-child');
         firstLi.click();
       });
+      // console.log(store.state.setcat)
     },
 });
 

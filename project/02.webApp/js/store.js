@@ -65,8 +65,12 @@ const store = new Vuex.Store({
             state.cat = state.newData[pram].cat;
             // 해당 카테고리 제품리스트 업데이트
             state.item = state.newData[pram].item;
+            state.showmore = state.newData[pram].showmore;
             state.setcat = pram;
         },
+        showmoreItems(state){
+            state.showmore = false;
+        }
     }
 }) // 뷰엑스 인스턴스 // 
 
