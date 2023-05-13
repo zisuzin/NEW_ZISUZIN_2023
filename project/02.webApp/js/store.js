@@ -7,7 +7,7 @@ const store = new Vuex.Store({
             전체 : {
                 sNum: 60,
                 cat: "ALL",
-                item: womenData,
+                item: {...womenData, ...menData, ...kidsData},
             },
             여성: {
                 sNum: 20,
@@ -61,8 +61,8 @@ const store = new Vuex.Store({
             // 해당 카테고리 제품리스트 업데이트
             state.item = state.newData[pram].item;
             state.setcat = pram;
-        }
+        },
     }
-})
+}) // 뷰엑스 인스턴스 // 
 
 export default store;

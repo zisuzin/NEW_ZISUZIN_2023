@@ -3,16 +3,16 @@ const subdata = {
     prodTab: `
         <div class="new-prod-tab">
             <ul>
-                <li v-on:click="test('전체')">
+                <li v-on:click="chgData('전체')">
                     <a href="#">ALL</a>
                 </li>
-                <li v-on:click="test('여성')">
+                <li v-on:click="chgData('여성')">
                     <a href="#">WOMAN</a>
                 </li>
-                <li v-on:click="test('남성')">
+                <li v-on:click="chgData('남성')">
                     <a href="#"">MAN</a>
                 </li>
-                <li v-on:click="test('아동')">
+                <li v-on:click="chgData('아동')">
                     <a href="#">KIDS</a>
                 </li>
             </ul>
