@@ -22,7 +22,7 @@ Vue.component("stab-comp", {
 
 // 서브페이지 상품리스트 뷰 템플릿 셋팅
 Vue.component("list-comp", {
-  template: subdata.prodList,
+  template: subdata.newprodList,
   methods: {
     // 할인률 계산 - ((정가 - 할인가) / 정가) * 100 
     calculateDiscount(oprice,dprice){
@@ -36,15 +36,12 @@ Vue.component("list-comp", {
     numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     },
-    chgData(param) {
-      store.state.setsNum = store.state.newData[param].sNum;
-      store.state.setcat = store.state.newData[param].cat;
-      store.state.setitem = store.state.newData[param].item;
-    }
   },
-  mounted(){
-    console.log(store.state.newData['전체'].item)
-},
+  chgData(pram) {
+    store.state.setsNum = state.newData[pram].sNum;
+    store.state.setcat = state.newData[pram].cat;
+    store.state.setitem = state.newData[pram].item;
+  }
 });
 
 new Vue({
