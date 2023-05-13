@@ -7,7 +7,7 @@ import store from "./store.js";
 Vue.component("stab-comp", {
     template: subdata.prodTab,
     methods:{
-      chgData(cat){
+      test(x){
         store.commit('newChgData',x)
       }
     },
@@ -40,8 +40,7 @@ Vue.component("list-comp", {
       store.state.setsNum = store.state.newData[param].sNum;
       store.state.setcat = store.state.newData[param].cat;
       store.state.setitem = store.state.newData[param].item;
-    },
-    
+    }
   },
   mounted(){
     // console.log(store.state.newData['전체'].item)
