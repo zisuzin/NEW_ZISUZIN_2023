@@ -23,6 +23,12 @@ Vue.component("stab-comp", {
 // 서브페이지 상품리스트 뷰 템플릿 셋팅
 Vue.component("list-comp", {
   template: subdata.prodList,
+  methods: {
+    // 정규식함수(숫자 세자리마다 콤마해주는 기능)
+    numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+  },
 });
 
 new Vue({
@@ -31,9 +37,6 @@ new Vue({
   data: {
     subTit: ["NEW","BEST"],
   }, 
-  mounted:function(){
-    isComma(x) 
-  },
 })
 
 // 메뉴 뷰 템플릿 클릭시 스타일 적용
