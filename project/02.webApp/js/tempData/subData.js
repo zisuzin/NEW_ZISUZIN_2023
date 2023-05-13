@@ -45,8 +45,8 @@ const subdata = {
                             <em>{{numberWithCommas(value.dprice)}}</em>
                             <span v-if="value.dprice">원</span>
                         </span>
-                        <span class="percent-price" v-if="value.sale">
-                            <em>{{value.sale}}</em>
+                        <span class="percent-price" v-if="value.oprice && value.dprice">
+                            <em>{{calculateDiscount(value.oprice, value.dprice)}}</em>
                         </span>
                     </div>
                 </div>

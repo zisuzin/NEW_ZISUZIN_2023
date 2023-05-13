@@ -24,6 +24,14 @@ Vue.component("stab-comp", {
 Vue.component("list-comp", {
   template: subdata.prodList,
   methods: {
+    // 할인률 계산 - ((정가 - 할인가) / 정가) * 100 
+    calculateDiscount(oprice,dprice){
+      if(!oprice || !dprice) {
+        return "";
+      }
+      const discount = ((oprice - dprice) / oprice) * 100;
+      return Math.floor(discount) + '%'
+    },
     // 정규식함수(숫자 세자리마다 콤마해주는 기능)
     numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
