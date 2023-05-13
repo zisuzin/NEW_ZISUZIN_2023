@@ -9,7 +9,11 @@ Vue.component("stab-comp", {
     methods:{
       test(x){
         store.commit('newChgData',x)
-      }
+      },
+      showMoreItems(category) {
+        this.chgData(category);
+        this.$store.commit("showMoreItems"); // showMoreItems 뮤테이션 호출
+      },
     },
     mounted(){
       // 첫번째 li만 강제클릭 발생
@@ -17,7 +21,7 @@ Vue.component("stab-comp", {
         const firstLi = this.$el.querySelector('ul > li:first-child');
         firstLi.click();
       });
-    }
+    },
 });
 
 // 서브페이지 상품리스트 뷰 템플릿 셋팅

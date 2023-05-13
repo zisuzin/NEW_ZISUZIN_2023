@@ -8,21 +8,25 @@ const store = new Vuex.Store({
                 sNum: 60,
                 cat: "ALL",
                 item: {...womenData, ...menData, ...kidsData},
+                showmore: true,
             },
             여성: {
                 sNum: 20,
                 cat: "WOMEN",
                 item: womenData,
+                showmore: false,
             },
             남성: {
                 sNum: 20, 
                 cat: "MEN",
                 item: menData,
+                showmore: false,
             },
             아동: {
                 sNum: 20, 
                 cat: "KIDS",
                 item: kidsData,
+                showmore: false,
             },
         },
         // bestData: { // BEST 상품 데이터
@@ -51,6 +55,7 @@ const store = new Vuex.Store({
         setsNum: "",
         setcat: "",
         setitem:"",
+        showmore: false,
     },
     mutations:{
         newChgData(state,pram){ // state - state데이터, pram - 전달값 
@@ -61,7 +66,6 @@ const store = new Vuex.Store({
             // 해당 카테고리 제품리스트 업데이트
             state.item = state.newData[pram].item;
             state.setcat = pram;
-            
         },
     }
 }) // 뷰엑스 인스턴스 // 
