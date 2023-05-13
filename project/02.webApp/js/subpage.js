@@ -1,4 +1,5 @@
 import subdata from "./tempData/subData.js";
+import comData from "./tempData/commonData.js"
 import store from "./store.js";
 
 // ##### 컴포넌트 등록 #### 
@@ -24,6 +25,10 @@ Vue.component("stab-comp", {
       });
       // console.log(store.state.setcat)
     },
+});
+
+Vue.component("prod-comp",{
+  template: comData.rcent_view_pbx,
 });
 
 // 서브페이지 상품리스트 뷰 템플릿 셋팅
@@ -59,6 +64,10 @@ new Vue({
   data: {
     subTit: ["NEW","BEST"],
   }, 
+})
+
+new Vue({
+  el: ".recent-view-prod-bx",
 })
 
 // 메뉴 뷰 템플릿 클릭시 스타일 적용

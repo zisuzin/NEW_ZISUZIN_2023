@@ -130,3 +130,71 @@ section.new_container {
     color: #fff;
     cursor: pointer;
 }
+
+/********* 3. WOMEN - 서브메뉴 *********/
+.cat_left_side_tab {
+    width: 208px;
+    /* float: left; */
+    border: 1px dashed #000;
+}
+
+.cat_left_side_tab > h2 {
+    font-size: 26px;
+    font-family: var(--mont-font1);
+    font-weight: 700;
+    margin: 0 0 12px 10px;
+}
+
+.cat_left_side_tab > .ctg_link {
+    padding: 20px 12px 30px;
+}
+
+.cat_left_side_tab > .ctg_link a,
+.cat_left_side_tab > .ctg_nav .ctg_depth1 span {
+    font-size: 18px;
+    font-weight: 700;
+    font-family: var(--notos-font1);
+    line-height: 28px;
+}
+
+.cat_left_side_tab > .ctg_link > ul > li+li,
+.cat_left_side_tab > .ctg_nav > ul > li+li {
+    margin-top: 20px;
+}
+
+.cat_left_side_tab > .ctg_link em {
+    font-style: normal;
+    font-size: 15px;
+    color: #FF1E00;
+    vertical-align: top;
+    font-weight: 500;
+    font-family: var(--mont-font1);
+}
+
+.cat_left_side_tab > .ctg_nav {
+    padding: 10px 0 0 12px;
+    border-top: 1px solid #F1F1F1;
+}
+
+.ctg_nav > ul > li,
+.ctg_link > ul > li  {
+    position: relative;
+    cursor: pointer;
+}
+
+.ctg_nav > ul > li > a::after {
+    content: '';
+    position: absolute;
+    background: url(../00.data/02.imgData/ico_common.png) no-repeat -62px -115px;
+    width: 10px;
+    height: 10px;
+    right: 20px;
+    top: 50%;
+    margin-top: -5px;
+}
+
+.ctg_depth2 > ul > li > a {
+    color: #666;
+    font-size: 14px;
+    line-height: 30px;
+}

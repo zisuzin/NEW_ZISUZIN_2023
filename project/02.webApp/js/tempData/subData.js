@@ -19,6 +19,41 @@ const subdata = {
         </div>
     `,
 
+    recentPrdBx: `
+        <div class="recent-view-item-prod-wrap">
+            <h2>최근본상품</h2>
+            <div class="recent-view-prod-list">
+            <ul>
+                <li>
+                    <img src="./00.data/02.imgData/2212672944_0000001.jpg" alt="최근본상품 이미지" />
+                    <button type="button" class="delete-item"></button>
+                </li>
+                <li>
+                    <img src="./00.data/02.imgData/2212672944_0000001.jpg" alt="최근본상품 이미지" />
+                    <button type="button" class="delete-item"></button>
+                </li>
+                <li>
+                    <img src="./00.data/02.imgData/2212672944_0000001.jpg" alt="최근본상품 이미지" />
+                    <button type="button" class="delete-item"></button>
+                </li>
+                <li>
+                    <img src="./00.data/02.imgData/2212672944_0000001.jpg" alt="최근본상품 이미지" />
+                    <button type="button" class="delete-item"></button>
+                </li>
+            </ul>
+            </div>
+            <div class="recent-view-prod-pager">
+            <button type="button" class="prod-pager prev"></button>
+            <span class="pager-number">
+                <span class="current-page-num">1</span>
+                /
+                <span class="total-page-num"></span>
+            </span>
+            <button type="button" class="prod-pager next"></button>
+            </div>
+        </div>
+    `,
+
     // 상품 정보 리스트
     prodList: `
         <ul>
