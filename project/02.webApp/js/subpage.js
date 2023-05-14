@@ -1,5 +1,4 @@
-import subdata from "./tempData/subData_nb.js";
-import comData from "./tempData/commonData.js"
+import subdata from "./tempData/subData.js";
 import store from "./store.js";
 
 // ##### 컴포넌트 등록 #### 
@@ -12,9 +11,9 @@ Vue.component("stab-comp", {
         store.commit('newChgData',category)
         // this.chgData(category);
         // this.$store.commit("showMoreItems"); // showMoreItems 뮤테이션 호출
-        if (category === '전체') {
-          this.$store.commit('showMoreItems');
-        }
+        // if (category === '전체') {
+        //   this.$store.commit('showMoreItems');
+        // }
       },
     },
     mounted(){
@@ -27,13 +26,9 @@ Vue.component("stab-comp", {
     },
 });
 
-Vue.component("prod-comp",{
-  template: comData.rcent_view_pbx,
-});
-
 // 서브페이지 상품리스트 뷰 템플릿 셋팅
 Vue.component("list-comp", {
-  template: subdata.prodList,
+  template: subdata.new_prodList,
   methods: {
     // 할인률 계산 - ((정가 - 할인가) / 정가) * 100 
     calculateDiscount(oprice,dprice){
@@ -58,17 +53,24 @@ Vue.component("list-comp", {
 },
 });
 
+// 메인 서브 사이드메뉴탭
 Vue.component("sidetab-comp",{
-    template: subdata.sideMenuTab,
+  template: subdata.sideMenuTab,
 })
 
 new Vue({
-  el: "#cont",
+  el: "#cont_wrap",
   store, // 뷰엑스 스토어 등록
   data: {
     subTit: ["NEW","BEST"],
   }, 
+  components: {
+    "tgprod-comp": {
+      template: subdata.tgProdList,
+    }
+  }
 })
+
 
 // 메뉴 뷰 템플릿 클릭시 스타일 적용
 const subTab = document.querySelectorAll(".new-prod-tab > ul > li");
@@ -100,4 +102,32 @@ $('.ctg_depth1 > div').click(function(){
     $target.slideToggle(300);
     $(this).toggleClass('slide-down');
   }
+});
+
+// 가격 라디오버튼 중복 선택 막기
+let lastChecked = null; 
+
+$('.rdo > input').on('change', function() {
+  if (lastChecked && lastChecked !== this) {
+    $(lastChecked).prop('checked', false); // 마지막으로 체크된 요소 체크 해제
+  }
+  lastChecked = this; // 마지막으로 체크된 요소를 현재 체크된 요소로 업데이트
+});
+
+// 직접입력 버튼 클릭시에만 입력창 활성화
+$('.rdo > input').on('change', function() {
+  if ($('.direct-user-input input').is(':checked')) {
+    $('.custom-filter-price > input').addClass('is_active').prop('disabled', false);
+  } else {
+    $('.custom-filter-price > input').removeClass('is_active').prop('disabled', true);
+  }
+});
+
+// 상품정렬 버튼 클릭시 리스트 보이기
+$('.item_sort').on('click',function(){
+  $(this).toggleClass('style_black');
+  $(this).find('.product-sort-list').toggleClass('style_black');
+  $('.product-sort-list > li > a').toggleClass('style_black');
+  $('.item_sort > strong > i').toggleClass('style_black');
+  $('.item_sort > strong').toggleClass('style_black');
 });
