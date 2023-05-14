@@ -84,5 +84,20 @@ subTab.forEach(ele =>
 /*  3. WOMEN - 서브페이지  */
 // 카테고리메뉴 클릭시 토글
 $('.ctg_depth1 > div').click(function(){
-  $(this).parent('.ctg_depth1').find('.ctg_depth2').slideToggle(300);
+  var $target = $(this).parent('.ctg_depth1').find('.ctg_depth2');
+  
+  // 이미 열려있는 ctg_depth2 요소 닫음
+  if ($target.is(':visible')) {
+    $target.slideUp(300);
+    $(this).removeClass('slide-down');
+
+  } else {
+    // 다른 ctg_depth2 요소를 모두 닫음
+    $('.ctg_depth2').slideUp(300);
+    $('.ctg_depth1 > div').removeClass('slide-down');
+    
+    // 현재 클릭한 요소를 토글
+    $target.slideToggle(300);
+    $(this).toggleClass('slide-down');
+  }
 });

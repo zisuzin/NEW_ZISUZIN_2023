@@ -53,10 +53,6 @@ section.new_container {
     padding: 0 10px;
 }
 
-.prod-img {
-    text-align: center;
-}
-
 .new-prod-bx img {
     width: 250px;
     height: 340px;
@@ -220,8 +216,18 @@ section.new_container {
 
 .ctg_depth2 {
     display: none;
+    margin: 18px 0;
 }
 
-.ctg_depth2.slide-down {
-    display: block;
+.ctg_depth1 > div.slide-down > a::after {
+    background-position: -72px -115px;
+}
+
+.sub_container {
+    padding-top: 30px;
+}
+
+.sub_inner {
+    padding-left: 48px;
+    padding-right: 48px;
 }
