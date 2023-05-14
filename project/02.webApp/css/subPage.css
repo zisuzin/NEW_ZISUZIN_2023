@@ -130,7 +130,7 @@ section.new_container {
 /********* 3. WOMEN - 서브메뉴 *********/
 .cat_left_side_tab {
     width: 208px;
-    /* float: left; */
+    display: inline-block;
     border: 1px dashed #000;
 }
 
@@ -230,4 +230,37 @@ section.new_container {
 .sub_inner {
     padding-left: 48px;
     padding-right: 48px;
+}
+
+.ctg-prd-view {
+    position: relative;
+    float: right;
+    width: 850px;
+}
+
+.ui-item-title {
+    padding-bottom: 18px;
+}
+
+.view-more-btn {
+    position: absolute;
+    top: 0;
+    right: 130px;
+}
+
+.view-more-btn > span {
+    font-family: var(--mont-font1);
+    font-size: 12px;
+}
+
+.view-more-btn > span::after {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    top: 50%;
+    margin-left: 10px;
+    border-right: 1px solid #000;
+    border-top: 1px solid #000;
+    transform: rotate(45deg);
 }

@@ -1,4 +1,5 @@
-import subdata from "./tempData/subData.js";
+import subdata from "./tempData/subData_nb.js";
+import msubdata from "./tempData/subData_wmk.js"
 import comData from "./tempData/commonData.js"
 import store from "./store.js";
 
@@ -27,47 +28,45 @@ Vue.component("stab-comp", {
     },
 });
 
-Vue.component("prod-comp",{
-  template: comData.rcent_view_pbx,
-});
-
-// 서브페이지 상품리스트 뷰 템플릿 셋팅
-Vue.component("list-comp", {
-  template: subdata.prodList,
-  methods: {
-    // 할인률 계산 - ((정가 - 할인가) / 정가) * 100 
-    calculateDiscount(oprice,dprice){
-      if(!oprice || !dprice) {
-        return "";
-      }
-      const discount = ((oprice - dprice) / oprice) * 100;
-      return Math.floor(discount) + '%'
-    },
-    // 정규식함수(숫자 세자리마다 콤마해주는 기능)
-    numberWithCommas(x) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    },
-    chgData(param) {
-      store.state.setsNum = store.state.newData[param].sNum;
-      store.state.setcat = store.state.newData[param].cat;
-      store.state.setitem = store.state.newData[param].item;
-    }
-  },
-  mounted(){
-    // console.log(store.state.newData['전체'].item)
-},
-});
+Vue.component("subTab-comp",{
+  template: msubdata.sideTab,
+})
 
 new Vue({
-  el: ".new_container",
+  el: "#cont_wrap",
   store, // 뷰엑스 스토어 등록
   data: {
     subTit: ["NEW","BEST"],
   }, 
-})
-
-new Vue({
-  el: ".recent-view-prod-bx",
+  component: {
+    // 서브페이지 상품리스트 뷰 템플릿 셋팅
+    "list-comp": {
+      name: list-comp,
+      template: subdata.new_prodList,
+      methods: {
+      // 할인률 계산 - ((정가 - 할인가) / 정가) * 100 
+      calculateDiscount(oprice,dprice){
+        if(!oprice || !dprice) {
+          return "";
+        }
+        const discount = ((oprice - dprice) / oprice) * 100;
+        return Math.floor(discount) + '%'
+      },
+      // 정규식함수(숫자 세자리마다 콤마해주는 기능)
+      numberWithCommas(x) {
+      return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      },
+      chgData(param) {
+        store.state.setsNum = store.state.newData[param].sNum;
+        store.state.setcat = store.state.newData[param].cat;
+        store.state.setitem = store.state.newData[param].item;
+      }
+    },
+    mounted(){
+      // console.log(store.state.newData['전체'].item)
+      },
+    }
+  }
 })
 
 // 메뉴 뷰 템플릿 클릭시 스타일 적용
