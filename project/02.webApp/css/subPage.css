@@ -359,7 +359,11 @@ section.new_container {
     display: inline-block;
 }
 
-.filter-price > .custom-filter-price > input[type="text"] {
+.custom-filter-price > input.is_active {
+    background-color: #fff !important;
+}
+
+.custom-filter-price > input {
     background-color: #ddd;
     border: 1px solid #ccc;
     width: 100%;

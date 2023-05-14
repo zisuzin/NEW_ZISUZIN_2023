@@ -107,3 +107,12 @@ $('.rdo > input').on('change', function() {
 });
 
 // 직접입력 버튼 클릭시에만 입력창 활성화
+$('.rdo > input').on('change', function() {
+  if ($('.direct-user-input input').is(':checked')) {
+    $('.custom-filter-price > input').addClass('is_active').prop('disabled', false);
+  } else {
+    $('.custom-filter-price > input').removeClass('is_active').prop('disabled', true);
+  }
+});
+
+
