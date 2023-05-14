@@ -1,4 +1,4 @@
-import { womenData, menData, kidsData } from "./tempData/prodData.js";
+import { womenData, menData, kidsData, w_Flat_Data } from "./tempData/prodData.js";
 
 const store = new Vuex.Store({
   state: {
@@ -58,27 +58,27 @@ const store = new Vuex.Store({
             shoes: {
                 tit: "여성신발",
                 sub: {
-                    flats: "w_Flat_Data",
-                    sneakers: "w_Sneak_Data",
-                    sandals: "w_SandS_Data",
+                    flats: w_Flat_Data,
+                    // sneakers: w_Sneak_Data,
+                    // sandals: w_SandS_Data,
                     all: "전체",
                 },
             },
             bags: {
                 tit: "여성가방",
                 sub: {
-                    backpack: "w_BackP_Data",
-                    miniBag: "w_MiniB_Data",
-                    crossBag: "w_CrossB_Data",
+                    // backpack: w_BackP_Data,
+                    // miniBag: w_MiniB_Data,
+                    // crossBag: w_CrossB_Data,
                     all: "전체",
                 },
             },
-            accessories: {
+            ac: {
             tit: "여성잡화",
             sub: {
-                socks: "w_Socks_Data",
-                hat: "w_Hats_Data",
-                gloves: "w_Glov_Data",
+                // socks: w_Socks_Data,
+                // hat: w_Hats_Data,
+                // gloves: w_Glov_Data,
                 all: "전체",
                },
             },
@@ -87,27 +87,27 @@ const store = new Vuex.Store({
             shoes: {
             tit: "남성신발",
             sub: {
-                slippers: "m_Slip_Data",
-                sneakers: "m_Sneak_Data",
-                sandals: "m_Sands_Data",
+                // slippers: m_Slip_Data,
+                // sneakers: m_Sneak_Data,
+                // sandals: m_Sands_Data,
                 all: "전체",
             },
             },
             bags: {
             tit: "남성가방",
             sub: {
-                backpack: "m_BackP_Data",
-                mensBag: "m_Mens_Data",
-                crossBag: "m_CossB_Data",
+                // backpack: m_BackP_Data,
+                // mensBag: m_Mens_Data,
+                // crossBag: m_CossB_Data,
                 all: "전체",
             },
             },
-            accessories: {
+            ac: {
             tit: "남성잡화",
             sub: {
-                socks: "m_Socks_Data",
-                hat: "m_Hats_Data",
-                belt: "m_Belt_Data",
+                // socks: m_Socks_Data,
+                // hat: m_Hats_Data,
+                // belt: m_Belt_Data,
                 all: "전체",
             },
           },
@@ -116,27 +116,27 @@ const store = new Vuex.Store({
             shoes: {
             tit: "아동신발",
             sub: {
-                shoe: "k_Shoe_Data",
-                sneakers: "k_Sneak_Data",
-                sandals: "k_Sands_Data",
+                // shoe: k_Shoe_Data,
+                // sneakers: k_Sneak_Data,
+                // sandals: k_Sands_Data,
                 all: "전체",
             },
             },
             bags: {
             tit: "아동가방",
             sub: {
-                backpack: "k_BackP_Data",
-                auxiliaryBag: "k_AuxilB_Data",
-                styleBag: "k_StyleB_Data",
+                // backpack: k_BackP_Data,
+                // auxiliaryBag: k_AuxilB_Data,
+                // styleBag: k_StyleB_Data,
                 all: "전체",
             },
             },
-            accessories: {
+            ac: {
             tit: "아동잡화",
             sub: {
-                socks: "k_Socks_Data",
-                hat: "k_Hats_Data",
-                gloves: "k_Glov_Data",
+                // socks: k_Socks_Data,
+                // hat: k_Hats_Data,
+                // gloves: k_Glov_Data,
                 all: "전체",
             },
           },
@@ -160,8 +160,8 @@ const store = new Vuex.Store({
       state.showmore = state.newData[pram].showmore;
       state.setcat = pram;
     },
-    showmoreItems(state) {
-      state.showmore = false;
+    updateTarget(state, target) {
+      state.target = target; // 타겟 정보 업데이트
     },
   },
 }); // 뷰엑스 인스턴스 //

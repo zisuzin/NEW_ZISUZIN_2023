@@ -66,7 +66,7 @@ new Vue({
   }, 
   components: {
     "tgprod-comp": {
-      template: subdata.tgProdList,
+      template: subdata.w_ProdList,
     }
   }
 })

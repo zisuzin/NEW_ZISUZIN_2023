@@ -529,3 +529,8 @@ section.new_container {
 .box_grade {
     margin-top: 8px;
 }
+
+.ui-col4 {
+    display: flex;
+    flex-wrap: wrap;
+}

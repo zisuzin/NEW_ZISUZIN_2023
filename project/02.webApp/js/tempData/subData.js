@@ -147,7 +147,7 @@ const subdata = {
         </aside>
     `,
     // 타겟 상품리스트 (여성,남성,아동)
-    tgProdList: `
+    w_ProdList: `
         <div class="item-cont-list__inner">
             <!-- 상품 필터메뉴 -->
             <div class="item-cat-filter-row">
@@ -303,19 +303,16 @@ const subdata = {
             <!-- 메인 상품리스트 -->
             <div class="ui-item-view">
                 <ul class="ui-col4">
-                <li>
+                <li v-for="(v,n) in $store.state.tgData.women">
                     <div class="ui-prod-bx">
                         <a href="#">
                             <div class="prod-img">
-                                <img src="./00.data/02.imgData/2207040118_0000013.jpg" alt="상품이미지">
+                                <img src="v.jpg" alt="상품이미지">
                             </div>
                             <div class="prod-txt">
                                 <strong class="brand">슈펜</strong>
                                 <p>디즈니 앨리스 하트 크로스백</p>
                             </div>
-                            <!-- <div class="item_ranking">
-                                <span>1</span>
-                            </div> -->
                         </a>
                     </div>
                     <div class="item-detail">
@@ -342,6 +339,45 @@ const subdata = {
                     </div>
                     </li>
                 </ul>
+
+                <ul class="ui-col4" v-if="n === 'shoes'">
+                <li v-for="(v1,n1) in v.sub" :key="n1">
+                    <div class="ui-prod-bx">
+                        <a href="#">
+                            <div class="prod-img">
+                                <img src="v.jpg" alt="상품이미지">
+                            </div>
+                            <div class="prod-txt">
+                                <strong class="brand">슈펜</strong>
+                                <p>디즈니 앨리스 하트 크로스백</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="item-detail">
+                        <span class="original-price">
+                            <em>35,900</em>
+                            <span>원</span>
+                        </span>
+                        <br>
+                        <span class="discount-price">
+                            <em>32,310</em>
+                            <span>원</span>
+                        </span>
+                        <span class="percent-price">
+                            <em>10%</em>
+                        </span>
+                        <div class="box_grade">
+                            <div class="star">
+                            <span></span>
+                            <strong>리뷰
+                                <span>(5)</span>
+                            </strong>
+                            </div>
+                        </div>
+                    </div>
+                    </li>
+                </ul>
+
             </div>
         </div>
     `

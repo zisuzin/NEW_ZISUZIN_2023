@@ -1,3 +1,4 @@
+// NEW 상품 데이터
 const womenData = {
     item0: {
         name: "와이드 라운드 버클 단화 2.0 HPWWVD217M",
@@ -427,4 +428,168 @@ const kidsData = {
     },
 }
 
-export {womenData, menData , kidsData};
+// 타겟 서브페이지 상품데이터 
+const w_Flat_Data = {
+    item0: {
+        name:"🌟TOP 5 [가드너] 스윗버튼 메리제인 플랫 1.0 HPWWFD202S",
+        img: "item_1",
+        oprice: "29900",
+        dprice: "28900",
+        sale: "",
+        review: "170"
+    },
+    item1: {
+        name:"V컷 스퀘어 쿠션 플랫 1.0 HPWWFC401S",
+        img: "item_2",
+        oprice: "19900",
+        dprice: "14880",
+        sale: "",
+        review: "63"
+    },
+    item2: {
+        name:"쿠션 플랫 1.0 HPWWFCA01S",
+        img: "item_3",
+        oprice: "19900",
+        dprice: "14880",
+        sale: "",
+        review: "127"
+    },
+    item3: {
+        name:"[가드너] 스퀘어 리본 플랫슈즈 HPWWFDA01S",
+        img: "item_4",
+        oprice: "25900",
+        dprice: "24900",
+        sale: "",
+        review: "3"
+    },
+    item4: {
+        name:"와이드 라운드 버클 단화 2.0 HPWWVD217M",
+        img: "item_5",
+        oprice: "39900",
+        dprice: "37900",
+        sale: "",
+        review: "29"
+    },
+    item5: {
+        name:"베이직 메리제인 플랫 1.0 HPWWFC402S",
+        img: "item_6",
+        oprice: "19,900",
+        dprice: "14880",
+        sale: "",
+        review: "129"
+    },
+    item6: {
+        name:"스퀘어 힐밴딩 플랫 1.0 MIST78S02",
+        img: "item_7",
+        oprice: "19900",
+        dprice: "14880",
+        sale: "",
+        review: "100"
+    },
+    item7: {
+        name:"라운드토 니트 플랫 1.0 MIST79S04",
+        img: "item_8",
+        oprice: "15900",
+        dprice: "12380",
+        sale: "",
+        review: "115"
+    },
+    item8: {
+        name:"발레리나 메리제인 플랫 HPWWFDA90Q",
+        img: "item_9",
+        oprice: "39900",
+        dprice: "37900",
+        sale: "",
+        review: "6"
+    },
+    item9: {
+        name:"Q 메리제인 웰트 단화 1.5 MISW79S42",
+        img: "item_10",
+        oprice: "29900",
+        dprice: "18630",
+        sale: "",
+        review: "19"
+    },
+    item10: {
+        name:"에어핏쿠션 메리제인 단화 3.0 HPWWVC407S",
+        img: "item_11",
+        oprice: "39900",
+        dprice: "23630",
+        sale: "",
+        review: "23"
+    },
+    item11: {
+        name:"오블리크 V컷 플랫 HPWWFD201S",
+        img: "item_12",
+        oprice: "29900",
+        dprice: "27900",
+        sale: "",
+        review: "13"
+    },
+    item12: {
+        name:"쿠션 플랫 1.0 MIST79A01",
+        img: "item_13",
+        oprice: "15900",
+        dprice: "12380",
+        sale: "",
+        review: "103"
+    },
+    item13: {
+        name:"캔버스 슬립온 에스파듀 AFHL78S01",
+        img: "item_14",
+        oprice: "19900",
+        dprice: "14880",
+        sale: "",
+        review: "6"
+    },
+    item14: {
+        name:"스퀘어 밴딩 바부슈 플랫 1.0 HPWWFB403M",
+        img: "item_15",
+        oprice: "19900",
+        dprice: "14880",
+        sale: "",
+        review: "43"
+    },
+    item15: {
+        name:"글로시 메리제인 플랫 1.5 HPWWFC403S",
+        img: "item_16",
+        oprice: "29900",
+        dprice: "18630",
+        sale: "",
+        review: "63"
+    },
+    item16: {
+        name:"[가드너] 스퀘어 메리제인 플랫슈즈 HPWWFDA03S",
+        img: "item_17",
+        oprice: "29900",
+        dprice: "27900",
+        sale: "",
+        review: "7"
+    },
+    item17: {
+        name:"슈블리 메리제인 플랫 MIST78S52",
+        img: "item_18",
+        oprice: "39900",
+        dprice: "23630",
+        sale: "",
+        review: "25"
+    },
+    item18: {
+        name:"포인트 민자 단화 1.0 MIST79W06",
+        img: "item_19",
+        oprice: "29900",
+        dprice: "18630",
+        sale: "",
+        review: "8"
+    },
+    item19: {
+        name:"쭈언니픽 메리제인 컬러 니트 플랫 1.0 MIST78S04",
+        img: "item_20",
+        oprice: "19900",
+        dprice: "17900",
+        sale: "",
+        review: "14"
+    },
+}
+
+export {womenData, menData , kidsData, w_Flat_Data};
