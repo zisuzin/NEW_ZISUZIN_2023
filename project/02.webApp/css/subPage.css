@@ -390,9 +390,11 @@ section.new_container {
 }
 
 .option-right {
+    position: relative;
     display: flex;
     padding: 15px 0 14px;
     justify-content: end;
+    font-family: var(--pop-font1);
 }
 
 .item-cat-option {
@@ -400,36 +402,60 @@ section.new_container {
 }
 
 .item_sort {
+    position: relative;
     border: 1px solid #000;
     width: 180px;
     height: 50px;
-    border-radius: 5px;
-    position: relative;
-    padding-top: 15px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
     margin-left: 30px;
+    cursor: pointer;
 }
 
 .item_sort > strong > i {
     position: absolute;
     width: 20px;
     height: 20px;
-    background: url(../00.data/02.imgData/icon_menu.svg) no-repeat left top;
+    background-image: url(../00.data/02.imgData/icon_menu.svg);
+    background-repeat: no-repeat;
+    background-position: left top;
     left: 15px;
+    margin-top: 13px;
 }
 
 .product-sort-list {
-    top: 49px;
+    top: 48px;
+    width: 180px;
     position: absolute;
-    padding: 15px 0;
+    left: -0.5px;
+    padding: 10px 0;
+    display: none;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: 1px solid;
 }
 
 .prdCount strong {
     font-size: 20px;
 }
 
+.prdCount {
+    line-height: 45px;
+}
+
 .item_sort strong {
     font-size: 15px;
-    margin-left: 40px;
+    line-height: 50px;
+    padding-left: 40px;
+}
+
+.item_sort strong.style_black::after {
+    transform: rotate(-45deg);
+    border-top: 2px solid #ffff;
+    border-right: 2px solid #ffff;
+    margin-top: 4px;
 }
 
 .item_sort strong::after {
@@ -441,5 +467,38 @@ section.new_container {
     border-right: 2px solid #000;
     transform: rotate(135deg);
     right: 21px;
-    top: 45%;
+    top: 40%;
+}
+
+.product-sort-list > li {
+    font-size: 14px;
+    line-height: 40px;
+    padding-left: 40px;
+}
+
+.item_sort.style_black {
+    background-color: #000;
+    color: #fff;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.product-sort-list.style_black {
+    display: inline-block;
+    background-color: #000;
+    color: #fff;
+    border: none;
+}
+
+.product-sort-list > li > a.style_black {
+    color: #fff;
+}
+
+.item_sort > strong > i.style_black {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-position: right top;
+    left: 15px;
+    margin-top: 13px;
 }

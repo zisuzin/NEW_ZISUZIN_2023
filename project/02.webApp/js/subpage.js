@@ -115,4 +115,12 @@ $('.rdo > input').on('change', function() {
   }
 });
 
+// 상품정렬 버튼 클릭시 리스트 보이기
+$('.item_sort').on('click',function(){
+  $(this).toggleClass('style_black');
+  $(this).find('.product-sort-list').toggleClass('style_black');
+  $('.product-sort-list > li > a').toggleClass('style_black');
+  $('.item_sort > strong > i').toggleClass('style_black');
+  $('.item_sort > strong').toggleClass('style_black');
+});
 
