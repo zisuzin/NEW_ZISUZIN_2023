@@ -129,8 +129,8 @@ section.new_container {
 
 /********* 3. WOMEN - 서브메뉴 *********/
 .cat_left_side_tab {
+    float: left;
     width: 208px;
-    display: inline-block;
     border: 1px dashed #000;
 }
 
@@ -223,44 +223,42 @@ section.new_container {
     background-position: -72px -115px;
 }
 
-.sub_container {
-    padding-top: 30px;
+.item-cat-filter__list > li,
+.filter-item > ul {
+    display: flex;
 }
 
-.sub_inner {
-    padding-left: 48px;
-    padding-right: 48px;
-}
-
-.ctg-prd-view {
+.filter-item > ul > .color-record > button {
     position: relative;
-    float: right;
-    width: 850px;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #000;
 }
 
-.ui-item-title {
-    padding-bottom: 18px;
-}
-
-.view-more-btn {
+.filter-item > ul > .color-record > button::after {
+    /* content: '';
     position: absolute;
-    top: 0;
-    right: 130px;
-}
-
-.view-more-btn > span {
-    font-family: var(--mont-font1);
-    font-size: 12px;
-}
-
-.view-more-btn > span::after {
-    content: '';
-    position: absolute;
-    width: 5px;
-    height: 5px;
+    width: 30px;
+    height: 30px;
+    /* opacity: 0.06; */
     top: 50%;
-    margin-left: 10px;
-    border-right: 1px solid #000;
-    border-top: 1px solid #000;
-    transform: rotate(45deg);
+    transform: translateY(-50%); */
+}
+
+.filter-item > ul > .color-record > button:nth-child(1) {
+    background: #fff;
+}
+
+.filter-item > ul > .color-record > button:nth-child(2) {
+    background-color: #d7b170;
+}
+
+.item-cont-list {
+    float: right;
+    width: 840px;
+}
+
+.sub_container {
+    width: 1080px;
+    margin: 0 auto;
 }

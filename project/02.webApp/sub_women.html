@@ -119,159 +119,127 @@
                 </ul>
               </div>
             </aside>
-            <!-- 우측 상품 리스트 - RANKING -->
-            <section class="ctg-prd-view">
-              <div class="ui-item-box"></div>
-              <div class="ui-item-title">
-                <h3>RANKING</h3>
-              </div>
-              <div class="ui-item-view">
-                <ul class="ui-col4">
-                  <li>
-                      <div class="ui-prod-bx">
-                          <a href="#">
-                              <div class="prod-img">
-                                  <img src="./00.data/02.imgData/2207040118_0000013.jpg" alt="상품이미지">
+            <!-- 우측 상품리스트 -->
+            <div class="item-cont-list">
+              <div class="item-cont-list__inner">
+                <div class="item-cat-filter-row">
+                  <ul class="item-cat-filter__list">
+                    <li>
+                      <strong class="filter-tit">가격</strong>
+                        <div class="filter-item">
+                          <ul>
+                            <li>
+                              <label for="cgt-rdo-list-1">
+                                <input type="radio" id="cgt-rdo-list-1" name="cgt-rdo-list-1">
+                                <span>1만원 이하</span>
+                              </label>
+                            </li>
+                            <li>
+                              <label for="cgt-rdo-list-2">
+                                <input type="radio" id="cgt-rdo-list-2" name="cgt-rdo-list-2">
+                                <span>2만5천원 이하</span>
+                              </label>
+                            </li>
+                            <li>
+                              <label for="cgt-rdo-list-3">
+                                <input type="radio" id="cgt-rdo-list-3" name="cgt-rdo-list-3">
+                                <span>3만원 이하</span>
+                              </label>
+                            </li>
+                            <li>
+                              <label for="cgt-rdo-list-4">
+                                <input type="radio" id="cgt-rdo-list-4" name="cgt-rdo-list-4">
+                                <span>5만원 이하</span>
+                              </label>
+                            </li>
+                            <li>
+                              <label for="cgt-rdo-list-5">
+                                <input type="radio" id="cgt-rdo-list-5" name="cgt-rdo-list-5">
+                                <span>직접입력</span>
+                              </label>
+                              <div class="filter-price">
+                                <span>
+                                  <input type="text">
+                                </span>
+                                <span>~</span>
+                                <span>
+                                  <input type="text">
+                                </span>
+                                <a href="#" role="button" class="price-filter-check-btn">확인</a>
                               </div>
-                              <div class="prod-txt">
-                                  <strong class="brand">슈펜</strong>
-                                  <p>디즈니 앨리스 하트 크로스백</p>
-                              </div>
-                              <!-- <div class="item_ranking">
-                                <span>1</span>
-                              </div> -->
-                          </a>
-                      </div>
-                      <div class="item-detail">
-                          <span class="original-price">
-                              <em>35,900</em>
-                              <span v-if="value.oprice">원</span>
-                          </span>
-                          <br>
-                          <span class="discount-price">
-                              <em>32,310</em>
-                              <span v-if="value.dprice">원</span>
-                          </span>
-                          <span class="percent-price" v-if="value.oprice && value.dprice">
-                              <em>10%</em>
-                          </span>
-                      </div>
-                  </li>
-                </ul>
-              </div>
-              <a href="#" class="view-more-btn">
-                <span>View more</span>
-              </a>
-            </section>
-            <!-- 우측 상품 리스트 - 기획전 -->
-            <section class="ctg-prd-view">
-              <div class="ui-item-box"></div>
-              <div class="ui-item-title">
-                <h3>기획전</h3>
-              </div>
-              <div class="ui-item-view">
-                <ul class="ui-col3">
-                  <li>
-                    <div class="ui-item__banner">
-                      <a href="#">
-                        <div class="ui-item-ban-img">
-                          <img src="./00.data/02.imgData/2207040118_0000013.jpg" alt="">
+                            </li>
+                          </ul>
                         </div>
-                        <div class="ui-item-ban-txt">
-                          <strong>[슈펜] 커플 피셔맨 샌들 컬렉션</strong>
-                          <span>5월 HOT한 여름 머스트 해브 아이템</span>
-                        </div>
-                      </a>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </section>
-            <!-- 우측 상품 리스트 - WEEKLY BEST -->
-            <section class="ctg-prd-view">
-              <div class="ui-item-box"></div>
-              <div class="ui-item-title">
-                <h3>WEEKLY BEST</h3>
-              </div>
-              <div class="ui-item-view">
-                <ul class="ui-col4">
-                  <li>
-                      <div class="ui-prod-bx">
-                          <a href="#">
-                              <div class="prod-img">
-                                  <img src="./00.data/02.imgData/2207040118_0000013.jpg" alt="상품이미지">
-                              </div>
-                              <div class="prod-txt">
-                                  <strong class="brand">슈펜</strong>
-                                  <p>디즈니 앨리스 하트 크로스백</p>
-                              </div>
-                              <!-- <div class="item_ranking">
-                                <span>1</span>
-                              </div> -->
-                          </a>
+                    </li>
+                    <li>
+                      <strong class="filter-tit">색상</strong>
+                      <div class="filter-item">
+                          <ul>
+                            <li class="color-record">
+                              <button type="button"></button>
+                            </li>
+                            <li class="color-record">
+                              <button type="button"></button>
+                            </li>
+                            <li class="color-record">
+                              <button type="button"></button>
+                            </li>
+                            <li class="color-record">
+                              <button type="button"></button>
+                            </li>
+                            <li class="color-record">
+                              <button type="button"></button>
+                            </li>
+                            <li class="color-record">
+                              <button type="button"></button>
+                            </li>
+                            <li class="color-record">
+                              <button type="button"></button>
+                            </li>
+                            <li class="color-record">
+                              <button type="button"></button>
+                            </li>
+                            <li class="color-record">
+                              <button type="button"></button>
+                            </li>
+                            <li class="color-record">
+                              <button type="button"></button>
+                            </li>
+                          </ul>
                       </div>
-                      <div class="item-detail">
-                          <span class="original-price">
-                              <em>35,900</em>
-                              <span v-if="value.oprice">원</span>
-                          </span>
-                          <br>
-                          <span class="discount-price">
-                              <em>32,310</em>
-                              <span v-if="value.dprice">원</span>
-                          </span>
-                          <span class="percent-price" v-if="value.oprice && value.dprice">
-                              <em>10%</em>
-                          </span>
+                    </li>
+                    <li>
+                      <strong class="filter-tit">사이즈</strong>
+                      <div class="filter-item">
+                        <ul>
+                          <li class="size-record">
+                            <button type="button">225</button>
+                          </li>
+                          <li class="size-record">
+                            <button type="button">230</button>
+                          </li>
+                          <li class="size-record">
+                            <button type="button">235</button>
+                          </li>
+                          <li class="size-record">
+                            <button type="button">240</button>
+                          </li>
+                          <li class="size-record">
+                            <button type="button">245</button>
+                          </li>
+                          <li class="size-record">
+                            <button type="button">250</button>
+                          </li>
+                          <li class="size-record">
+                            <button type="button">255</button>
+                          </li>
+                        </ul>
                       </div>
-                  </li>
-                </ul>
+                    </li>
+                  </ul>
+                </div>
               </div>
-              <a href="#" class="view-more-btn">
-                <span>View more</span>
-              </a>
-            </section>
-            <!-- 우측 상품 리스트 - NEW IN -->
-            <section class="ctg-prd-view">
-              <div class="ui-item-box"></div>
-              <div class="ui-item-title">
-                <h3>NEW IN</h3>
-              </div>
-              <div class="ui-item-view">
-                <ul class="ui-col4">
-                  <li>
-                      <div class="ui-prod-bx">
-                          <a href="#">
-                              <div class="prod-img">
-                                  <img src="./00.data/02.imgData/2207040118_0000013.jpg" alt="상품이미지">
-                              </div>
-                              <div class="prod-txt">
-                                  <strong class="brand">슈펜</strong>
-                                  <p>디즈니 앨리스 하트 크로스백</p>
-                              </div>
-                          </a>
-                      </div>
-                      <div class="item-detail">
-                          <span class="original-price">
-                              <em>35,900</em>
-                              <span v-if="value.oprice">원</span>
-                          </span>
-                          <br>
-                          <span class="discount-price">
-                              <em>32,310</em>
-                              <span v-if="value.dprice">원</span>
-                          </span>
-                          <span class="percent-price" v-if="value.oprice && value.dprice">
-                              <em>10%</em>
-                          </span>
-                      </div>
-                  </li>
-                </ul>
-              </div>
-              <a href="#" class="view-more-btn">
-                <span>View more</span>
-              </a>
-            </section>
+            </div>
           </div>
         </div>
         <aside class="scrollTop-btn-wrap">
