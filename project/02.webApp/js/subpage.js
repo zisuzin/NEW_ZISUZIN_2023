@@ -95,3 +95,15 @@ $('.ctg_depth1 > div').click(function(){
     $(this).toggleClass('slide-down');
   }
 });
+
+// 가격 라디오버튼 중복 선택 막기
+let lastChecked = null; 
+
+$('.rdo > input').on('change', function() {
+  if (lastChecked && lastChecked !== this) {
+    $(lastChecked).prop('checked', false); // 마지막으로 체크된 요소 체크 해제
+  }
+  lastChecked = this; // 마지막으로 체크된 요소를 현재 체크된 요소로 업데이트
+});
+
+// 직접입력 버튼 클릭시에만 입력창 활성화

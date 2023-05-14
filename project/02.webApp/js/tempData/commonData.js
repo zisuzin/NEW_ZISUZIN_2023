@@ -18,7 +18,7 @@ const comData = {
                             <a href="sub_best.html">BEST</a>
                         </li>
                         <li>
-                            <a href="#">WOMEN</a>
+                            <a href="sub_women.html">WOMEN</a>
                         </li>
                         <li>
                             <a href="#">MEN</a>
