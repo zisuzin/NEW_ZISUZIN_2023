@@ -502,3 +502,30 @@ section.new_container {
     left: 15px;
     margin-top: 13px;
 }
+
+.star {
+    display: block;
+    background: url(../00.data/02.imgData/ico_grade.png) no-repeat 0 -12px;
+    width: 60px;
+    height: 12px;
+    line-height: 14px;
+}
+
+.star > strong {
+    letter-spacing: -2px;
+    color: #949494;
+    margin-left: 2px;
+    font-size: 12px;
+    font-weight: 500;
+    position: absolute;
+    left: 63px;
+}
+
+.ui-col4 li {
+    position: relative;
+    width: fit-content;
+}
+
+.box_grade {
+    margin-top: 8px;
+}
