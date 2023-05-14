@@ -51,6 +51,37 @@ const store = new Vuex.Store({
         //         // item: matchData2,
         //     },
         // },
+        tgData: {
+            women: {
+                shoes: {
+                  tit: "여성신발",
+                  sub: {
+                    flats: "플랫슈즈",
+                    sneakers: "스니커즈",
+                    sandals: "샌들",
+                    all: "전체",
+                  },
+                },
+                bags: {
+                  tit: "여성가방",
+                  sub: {
+                    backpack: "백팩",
+                    miniBag: "미니백",
+                    crossBag: "크로스백",
+                    all: "전체",
+                  },
+                },
+                accessories: {
+                  tit: "여성잡화",
+                  sub: {
+                    socks: "양말",
+                    hat: "모자",
+                    gloves: "장갑",
+                    all: "전체",
+                  },
+                },
+            },
+          },
         // 공통처리 메뉴 변수
         setsNum: "",
         setcat: "",
