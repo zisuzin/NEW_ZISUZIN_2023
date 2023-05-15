@@ -22,7 +22,6 @@ Vue.component("stab-comp", {
         const firstLi = this.$el.querySelector('ul > li:first-child');
         firstLi.click();
       });
-      // console.log(store.state.setcat)
     },
 });
 

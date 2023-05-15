@@ -302,8 +302,8 @@ const subdata = {
             </div>
             <!-- 메인 상품리스트 -->
             <div class="ui-item-view">
-                <ul class="ui-col4">
-                <li v-for="(v,n) in $store.state.tgData.women">
+                <ul class="ui-col4" v-if="n === 'shoes'">
+                <li v-for="(v,n) in $store.state.tgData.women.">
                     <div class="ui-prod-bx">
                         <a href="#">
                             <div class="prod-img">
@@ -340,12 +340,12 @@ const subdata = {
                     </li>
                 </ul>
 
-                <ul class="ui-col4" v-if="n === 'shoes'">
+                <ul class="ui-col4">
                 <li v-for="(v1,n1) in v.sub" :key="n1">
                     <div class="ui-prod-bx">
                         <a href="#">
                             <div class="prod-img">
-                                <img src="v.jpg" alt="상품이미지">
+                                <img src="'./00.data/02.imgData/women/'+ v.shoes + '/' + value.img + '.jpg" alt="상품이미지">
                             </div>
                             <div class="prod-txt">
                                 <strong class="brand">슈펜</strong>

@@ -57,88 +57,70 @@ const store = new Vuex.Store({
       women: {
             shoes: {
                 tit: "여성신발",
-                sub: {
-                    flats: w_Flat_Data,
-                    // sneakers: w_Sneak_Data,
-                    // sandals: w_SandS_Data,
-                    all: "전체",
-                },
+                flats: w_Flat_Data,
+                // sneakers: w_Sneak_Data,
+                // sandals: w_SandS_Data,
+                all: "전체",
             },
             bags: {
                 tit: "여성가방",
-                sub: {
-                    // backpack: w_BackP_Data,
-                    // miniBag: w_MiniB_Data,
-                    // crossBag: w_CrossB_Data,
-                    all: "전체",
-                },
+                // backpack: w_BackP_Data,
+                // miniBag: w_MiniB_Data,
+                // crossBag: w_CrossB_Data,
+                all: "전체",
             },
             ac: {
-            tit: "여성잡화",
-            sub: {
+              tit: "여성잡화",
                 // socks: w_Socks_Data,
                 // hat: w_Hats_Data,
                 // gloves: w_Glov_Data,
                 all: "전체",
-               },
             },
         },
       men: {
             shoes: {
-            tit: "남성신발",
-            sub: {
+                tit: "남성신발",
                 // slippers: m_Slip_Data,
                 // sneakers: m_Sneak_Data,
                 // sandals: m_Sands_Data,
                 all: "전체",
             },
-            },
             bags: {
-            tit: "남성가방",
-            sub: {
+                tit: "남성가방",
                 // backpack: m_BackP_Data,
                 // mensBag: m_Mens_Data,
                 // crossBag: m_CossB_Data,
                 all: "전체",
             },
-            },
             ac: {
-            tit: "남성잡화",
-            sub: {
+               tit: "남성잡화",
                 // socks: m_Socks_Data,
                 // hat: m_Hats_Data,
                 // belt: m_Belt_Data,
                 all: "전체",
-            },
           },
         },
       kids: {
             shoes: {
-            tit: "아동신발",
-            sub: {
+               tit: "아동신발",
                 // shoe: k_Shoe_Data,
                 // sneakers: k_Sneak_Data,
                 // sandals: k_Sands_Data,
                 all: "전체",
             },
-            },
             bags: {
-            tit: "아동가방",
-            sub: {
+                tit: "아동가방",
                 // backpack: k_BackP_Data,
                 // auxiliaryBag: k_AuxilB_Data,
                 // styleBag: k_StyleB_Data,
                 all: "전체",
             },
-            },
             ac: {
-            tit: "아동잡화",
-            sub: {
+                tit: "아동잡화",
                 // socks: k_Socks_Data,
                 // hat: k_Hats_Data,
                 // gloves: k_Glov_Data,
                 all: "전체",
-            },
           },
        },
     },
@@ -159,6 +141,7 @@ const store = new Vuex.Store({
       state.item = state.newData[pram].item;
       state.showmore = state.newData[pram].showmore;
       state.setcat = pram;
+      // state.sub = 
     },
     updateTarget(state, target) {
       state.target = target; // 타겟 정보 업데이트

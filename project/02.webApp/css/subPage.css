@@ -318,7 +318,6 @@ section.new_container {
 .item-cont-list {
     float: right;
     width: 840px;
-    padding-right: 20px;
 }
 
 .sub_container {
@@ -488,6 +487,7 @@ section.new_container {
     background-color: #000;
     color: #fff;
     border: none;
+    left: -1px;
 }
 
 .product-sort-list > li > a.style_black {
