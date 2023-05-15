@@ -75,14 +75,14 @@ const subdata = {
             <ul>
                 <li class="ctg_depth1">
                 <div>
-                    <a href="#" v-on:click="$store.commit('ChgData',{cat1:'women',cat2:'shoes',cat3:'all'})">
+                    <a href="#" v-on:click="$store.commit('combineArrays')">
                     <span>여성신발</span>
                     </a>
                 </div>
                 <div class="ctg_depth2">
                     <ul>
                     <li>
-                        <a href="#" v-on:click="$store.commit('ChgData',{cat1:'women',cat2:'shoes',cat3:'all'})">전체</a>
+                        <a href="#" v-on:click="$store.commit('combineArrays')">전체</a>
                     </li>
                     <li>
                         <a href="#" v-on:click="$store.commit('ChgData',{cat1:'women',cat2:'shoes',cat3:'flat'})">플랫슈즈</a>

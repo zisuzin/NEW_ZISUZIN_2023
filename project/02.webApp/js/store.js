@@ -55,7 +55,6 @@ const store = new Vuex.Store({
       state.cat3 = pram.cat3;
       state.menu = state.tgData[pram.cat1][pram.cat2]; /* 중분류 접근 */
       state.menu2 = state.tgData[pram.cat1][pram.cat2][pram.cat3]; /* 소분류 접근 */
-      console.log(store.state.cat3)
     },
   },
 }); // 뷰엑스 인스턴스 //

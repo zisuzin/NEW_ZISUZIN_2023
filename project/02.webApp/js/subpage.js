@@ -1,5 +1,6 @@
 import subdata from "./tempData/subData.js";
 import store from "./store.js";
+import { tgData } from "./tempData/prodData.js";
 
 /************************************* 
     뷰 컴포넌트 데이터 셋업
