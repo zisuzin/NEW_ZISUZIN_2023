@@ -141,7 +141,7 @@ $('.product-sort-list').on('click', function(event) {
   event.stopPropagation();
 });
 
-// 클릭한 요소의 텍스트값 읽어와서 배열로 만든후 화면에 출력
-const priceEl = $('.priceVal').click(function(){
-  const priceVal = $(this).next().text();
-});
+// 색상, 가격, 사이즈 정보 클릭하면 클릭표시
+// $('.color-record > button').click(function(){
+//   $(this).toggleClass
+// });
