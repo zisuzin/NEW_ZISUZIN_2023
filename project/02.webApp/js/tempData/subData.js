@@ -303,7 +303,7 @@ const subdata = {
             <!-- 메인 상품리스트 -->
             <div class="ui-item-view">
                 <ul class="ui-col4" v-if="n === 'shoes'">
-                <li v-for="(v,n) in $store.state.tgData.women.">
+                <li v-for="(v,n) in $store.state.tgData.women[$store.state.setcat].item">
                     <div class="ui-prod-bx">
                         <a href="#">
                             <div class="prod-img">
