@@ -140,3 +140,8 @@ $('.item_sort').on('click',function(){
 $('.product-sort-list').on('click', function(event) {
   event.stopPropagation();
 });
+
+// 클릭한 요소의 텍스트값 읽어와서 배열로 만든후 화면에 출력
+const priceEl = $('.priceVal').click(function(){
+  const priceVal = $(this).next().text();
+});

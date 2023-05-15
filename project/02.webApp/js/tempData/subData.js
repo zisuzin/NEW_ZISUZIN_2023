@@ -146,28 +146,28 @@ const subdata = {
                 <li>
                     <strong class="filter-tit">가격</strong>
                     <div class="filter-item">
-                        <ul>
+                     <ul>
                         <li>
                             <label for="cgt-rdo-list-1" class="rdo">
-                            <input type="radio" id="cgt-rdo-list-1" name="cgt-rdo-list-1">
+                            <input type="radio" id="cgt-rdo-list-1" name="cgt-rdo-list-1" class="priceVal">
                             <span>1만원 이하</span>
                             </label>
                         </li>
                         <li>
                             <label for="cgt-rdo-list-2" class="rdo">
-                            <input type="radio" id="cgt-rdo-list-2" name="cgt-rdo-list-2">
+                            <input type="radio" id="cgt-rdo-list-2" name="cgt-rdo-list-2" class="priceVal">
                             <span>2만5천원 이하</span>
                             </label>
                         </li>
                         <li>
                             <label for="cgt-rdo-list-3" class="rdo">
-                            <input type="radio" id="cgt-rdo-list-3" name="cgt-rdo-list-3">
+                            <input type="radio" id="cgt-rdo-list-3" name="cgt-rdo-list-3" class="priceVal">
                             <span>3만원 이하</span>
                             </label>
                         </li>
                         <li>
                             <label for="cgt-rdo-list-4" class="rdo">
-                            <input type="radio" id="cgt-rdo-list-4" name="cgt-rdo-list-4">
+                            <input type="radio" id="cgt-rdo-list-4" name="cgt-rdo-list-4" class="priceVal">
                             <span>5만원 이하</span>
                             </label>
                         </li>
@@ -187,8 +187,8 @@ const subdata = {
                             <a href="#" role="button" class="price-filter-check-btn">확인</a>
                             </div>
                         </li>
-                        </ul>
-                    </div>
+                    </ul>
+                </div>
                 </li>
                 <li>
                     <strong class="filter-tit">색상</strong>

@@ -34,6 +34,6 @@ $('.header_top_gnb > ul > li').click(function(){
 });
 
 // 공사중 표시
-$('.header_top_personal_menu > ul > li:nth-child(2), .header_top_personal_menu > ul > li:nth-child(3)').on('click', function() {
-    alert("공사중입니다");
-  });
+$('.header_top_personal_menu > ul > li:nth-child(2), .header_top_personal_menu > ul > li:nth-child(3)').on('click',function() {
+    alert("공사중입니다.");
+});
