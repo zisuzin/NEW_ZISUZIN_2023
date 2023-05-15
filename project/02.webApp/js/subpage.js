@@ -39,8 +39,6 @@ Vue.component("sidetab-comp",{
 
 Vue.component("tgprod-comp", {
   template: subdata.tg_ProdList,
-  methods: {
-  }
 })
 
 /************************************* 
@@ -55,7 +53,7 @@ new Vue({
   }, 
 })
 
-// 전역 등록 함수
+// 뷰 전역등록 함수
 Vue.prototype.numberWithCommas = function(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 };
@@ -89,7 +87,7 @@ $('.ctg_depth1 > div').click(function(){
   
   // 이미 열려있는 ctg_depth2 요소 닫음
   if ($target.is(':visible')) {
-    // $target.slideUp(300);
+    $target.slideUp(300);
     $(this).removeClass('slide-down');
 
   } else {
@@ -103,6 +101,11 @@ $('.ctg_depth1 > div').click(function(){
   }
 });
 
+$('.ctg_depth2 > ul > li').on('click', function(event) {
+  event.stopPropagation();
+});
+
+
 // 가격 라디오버튼 중복 선택 막기
 let lastChecked = null; 
 
@@ -113,11 +116,15 @@ $('.rdo > input').on('change', function() {
   lastChecked = this; // 마지막으로 체크된 요소를 현재 체크된 요소로 업데이트
 });
 
+// 직접입력버튼 체크시 입력창 활성화!
+// 초기에 버튼 미체크된 경우 입력창 비활성화
+$('.custom-filter-price > input').prop('disabled', true); 
 // 직접입력 버튼 클릭시에만 입력창 활성화
 $('.rdo > input').on('change', function() {
   if ($('.direct-user-input input').is(':checked')) {
     $('.custom-filter-price > input').addClass('is_active').prop('disabled', false);
-  } else {
+  }
+  else {
     $('.custom-filter-price > input').removeClass('is_active').prop('disabled', true);
   }
 });
@@ -129,4 +136,8 @@ $('.item_sort').on('click',function(){
   $('.product-sort-list > li > a').toggleClass('style_black');
   $('.item_sort > strong > i').toggleClass('style_black');
   $('.item_sort > strong').toggleClass('style_black');
+});
+
+$('.product-sort-list').on('click', function(event) {
+  event.stopPropagation();
 });

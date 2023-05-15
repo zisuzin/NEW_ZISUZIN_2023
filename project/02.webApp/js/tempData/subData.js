@@ -75,14 +75,14 @@ const subdata = {
             <ul>
                 <li class="ctg_depth1">
                 <div>
-                    <a href="#" v-on:click="$store.commit('combineArrays')">
+                    <a href="#" v-on:click="">
                     <span>여성신발</span>
                     </a>
                 </div>
                 <div class="ctg_depth2">
                     <ul>
                     <li>
-                        <a href="#" v-on:click="$store.commit('combineArrays')">전체</a>
+                        <a href="#" v-on:click="">전체</a>
                     </li>
                     <li>
                         <a href="#" v-on:click="$store.commit('ChgData',{cat1:'women',cat2:'shoes',cat3:'flat'})">플랫슈즈</a>
@@ -260,37 +260,37 @@ const subdata = {
             <div class="item-cat-option">
                 <div class="option-right">
                 <p class="prdCount">
-                    <strong>240</strong>
+                    <strong>{{$store.state.prodCount}}</strong>
                     items
                 </p>
                 <div class="item_sort">
                     <strong>
-                    <i></i>
-                    상품정렬
+                        <i></i>
+                        상품정렬
                     </strong>
                     <ul class="product-sort-list">
-                    <li>
-                        <a href="#">낮은가격순</a>
-                    </li>
-                    <li>
-                        <a href="#">높은가격순</a>
-                    </li>
-                    <li>
-                        <a href="#">상품평순</a>
-                    </li>
-                    <li>
-                        <a href="#">인기상품순</a>
-                    </li>
-                    <li>
-                        <a href="#">신상품순</a>
-                    </li>
-                    <li>
-                        <a href="#">할인률높은순</a>
-                    </li>
+                        <li>
+                            <a href="#">낮은가격순</a>
+                        </li>
+                        <li>
+                            <a href="#">높은가격순</a>
+                        </li>
+                        <li>
+                            <a href="#">상품평순</a>
+                        </li>
+                        <li>
+                            <a href="#">인기상품순</a>
+                        </li>
+                        <li>
+                            <a href="#">신상품순</a>
+                        </li>
+                        <li>
+                            <a href="#">할인률높은순</a>
+                        </li>
                     </ul>
                 </div>
-                </div>
             </div>
+        </div>
             <!-- 메인 상품리스트 -->
             <div class="ui-item-view">
                 <ul class="ui-col4">
@@ -324,7 +324,8 @@ const subdata = {
                                 <div class="star">
                                 <span></span>
                                 <strong>리뷰
-                                    <span v-text="a.review"></span>
+                                    <span v-if="a.review!==''" v-text="('('+a.review+')')"></span>
+                                    <span v-else>(0)</span>
                                 </strong>
                                 </div>
                             </div>

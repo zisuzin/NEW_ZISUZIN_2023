@@ -593,6 +593,38 @@ const tgData = {
                     sale: "",
                     review: "14"
                 },
+                {
+                   name:"메리제인 웰트 플랫 1.0 MIST79W04",
+                   img: "item_17",
+                   oprice: "29900",
+                   dprice: "22900",
+                   sale: "",
+                   review: "13" 
+                },
+                {
+                    name:"메리제인 발레슈 단화 1.0 HPWWVD204M",
+                    img: "item_18",
+                    oprice: "39900",
+                    dprice: "37900",
+                    sale: "",
+                    review: "17"
+                },
+                {
+                    name:"DRP드롭_메리제인플랫 MIST78S09",
+                    img: "item_19",
+                    oprice: "29900",
+                    dprice: "26900",
+                    sale: "",
+                    review: "15"
+                },
+                {
+                    name:"와이드 라운드 메리제인 단화 2.0 HPWWVD218M",
+                    img: "item_20",
+                    oprice: "39900",
+                    dprice: "37900",
+                    sale: "",
+                    review: "2"
+                },
             ],
             
             sandal: [

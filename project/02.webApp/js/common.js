@@ -25,3 +25,8 @@ new Vue({
 })
 
 
+// 공사중 표시
+$('.header_top_personal_menu > ul > li:nth-child(2), .header_top_personal_menu > ul > li:nth-child(3)').on('click', function() {
+    alert("공사중입니다");
+  });
+  

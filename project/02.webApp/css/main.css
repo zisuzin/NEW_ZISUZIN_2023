@@ -1,6 +1,10 @@
 @charset "utf-8";
 
 /***************** B. 메인영역 *****************/
+#cont_wrap {
+    position: relative;
+}
+
 #cont {
     position: relative;
 }
@@ -354,6 +358,37 @@
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
+}
+
+.original-price > em,
+.discount-price > em,
+.percent-price > em {
+    font-style: normal;
+    font-family: var(--mont-font1);
+}
+
+.discount-price,
+.prod-discount-price {
+    letter-spacing: -5px;
+}
+
+.original-price > em,
+.original-price > span {
+    color: #999;
+    font-size: 11px;
+    text-decoration: line-through;
+    display: inline-block;
+}
+
+.original-price > span {
+    margin-left: -5px;
+}
+
+.percent-price {
+    color: #ff1e00;
+    float: right;
+    font-size: 18px;
+    letter-spacing: -10px;
 }
 
 .main3-navBtnL, .main3-navBtnN,

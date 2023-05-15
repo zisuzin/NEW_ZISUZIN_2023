@@ -26,9 +26,6 @@ const comData = {
                         <li>
                             <a href="#">KIDS</a>
                         </li>
-                        <li>
-                            <a href="#">EVENT</a>
-                        </li>
                     </ul>
                 </nav>
                 <div class="header_top_personal_menu">
@@ -168,12 +165,12 @@ const comData = {
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#">
+                                        <a href="https://pf.kakao.com/_tDZNd">
                                             카카오 플러스친구
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#">
+                                        <a href="https://shoopen.elandmall.co.kr/m/custcenter?pageId=1684164884903&preCornerNo=R05300001_gnb_contents">
                                             고객센터
                                         </a>
                                     </li>
