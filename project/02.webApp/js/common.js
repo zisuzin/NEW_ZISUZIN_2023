@@ -24,9 +24,16 @@ new Vue({
     el: "#header",
 })
 
+// Get방식으로 넘어온 url값 받아서 파라미터값 변경!
+$('.header_top_gnb > ul > li').click(function(){
+    const catName = $(this).text(); // 클릭한 카테고리명 가져오기
+    const wUrl = window.location.href.split('?')[0]; // 현재 페이지 URL에서 '?' 이전 부분 가져오기
+    // console.log(wUrl)
+    const newUrl = wUrl + '?catName=' + catName;
+    window.location.href = newUrl; // 새로운 url 페이지로 이동
+});
 
 // 공사중 표시
 $('.header_top_personal_menu > ul > li:nth-child(2), .header_top_personal_menu > ul > li:nth-child(3)').on('click', function() {
     alert("공사중입니다");
   });
-  
