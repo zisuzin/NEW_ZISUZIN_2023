@@ -10,7 +10,7 @@ Vue.component("stab-comp", {
     template: subdata.prodTab,
     methods:{
       test(category){
-        store.commit('newChgData',category)
+        store.commit('ChgData',category)
       },
     },
     mounted(){
@@ -45,7 +45,6 @@ Vue.component("list-comp", {
     }
   },
   mounted(){
-    // console.log(store.state.newData['전체'].item)
 },
 });
 
@@ -67,8 +66,11 @@ new Vue({
   }, 
   components: {
     "tgprod-comp": {
-      template: subdata.w_ProdList,
+      template: subdata.tg_ProdList,
     },
+    created() {
+      store.commit('getLink');
+    }
   },
 })
 
@@ -86,11 +88,11 @@ subTab.forEach(ele =>
 /*  3. WOMEN - 서브페이지  */
 // 카테고리메뉴 클릭시 토글
 $('.ctg_depth1 > div').click(function(){
-  var $target = $(this).parent('.ctg_depth1').find('.ctg_depth2');
+  const $target = $(this).parent('.ctg_depth1').find('.ctg_depth2');
   
   // 이미 열려있는 ctg_depth2 요소 닫음
   if ($target.is(':visible')) {
-    $target.slideUp(300);
+    // $target.slideUp(300);
     $(this).removeClass('slide-down');
 
   } else {

@@ -75,69 +75,60 @@ const subdata = {
             <ul>
                 <li class="ctg_depth1">
                 <div>
-                    <a href="#">
+                    <a href="#" v-on:click="$store.commit('chgData',{cat1:'women',cat2:'shoes',cat3:'all'})">
                     <span>여성신발</span>
                     </a>
                 </div>
                 <div class="ctg_depth2">
                     <ul>
                     <li>
-                        <a href="#">전체</a>
+                        <a href="#" v-on:click="$store.commit('chgData',{cat1:'women',cat2:'shoes',cat3:'all'})">전체</a>
                     </li>
                     <li>
-                        <a href="#">플랫/단화</a>
+                        <a href="#" v-on:click="$store.commit('chgData',{cat1:'women',cat2:'shoes',cat3:'flat'})">플랫슈즈</a>
                     </li>
                     <li>
-                        <a href="#">샌들</a>
-                    </li>
-                    <li>
-                        <a href="#">스니커즈/운동화</a>
+                        <a href="#" v-on:click="$store.commit('chgData',{cat1:'women',cat2:'shoes',cat3:'sandal'})">샌들</a>
                     </li>
                     </ul>
                 </div>
                 </li>
                 <li class="ctg_depth1">
                 <div>
-                    <a href="#">
+                    <a href="#" v-on:click="$store.commit('chgData',{cat1:'women',cat2:'bags',cat3:'all'})">
                     <span>여성가방</span>
                     </a>
                 </div>
                 <div class="ctg_depth2">
                     <ul>
                     <li>
-                        <a href="#">전체</a>
+                        <a href="#" v-on:click="$store.commit('chgData',{cat1:'women',cat2:'bags',cat3:'all'})">전체</a>
                     </li>
                     <li>
-                        <a href="#">백팩</a>
+                        <a href="#" v-on:click="$store.commit('chgData',{cat1:'women',cat2:'bags',cat3:'backpack'})">백팩</a>
                     </li>
                     <li>
-                        <a href="#">미니백</a>
-                    </li>
-                    <li>
-                        <a href="#">크로스백</a>
+                        <a href="#" v-on:click="$store.commit('chgData',{cat1:'women',cat2:'bags',cat3:'minibag'})">미니백</a>
                     </li>
                     </ul>
                 </div>
                 </li>
                 <li class="ctg_depth1">
                 <div>
-                    <a href="#">
+                    <a href="#" v-on:click="$store.commit('chgData',{cat1:'women',cat2:'ac',cat3:'all'})">
                     <span>여성잡화</span>
                     </a>
                 </div>
                 <div class="ctg_depth2">
                     <ul>
                     <li>
-                        <a href="#">전체</a>
+                        <a href="#" v-on:click="$store.commit('chgData',{cat1:'women',cat2:'ac',cat3:'all'})">전체</a>
                     </li>
                     <li>
-                        <a href="#">양말</a>
+                        <a href="#" v-on:click="$store.commit('chgData',{cat1:'women',cat2:'ac',cat3:'socks'})">양말</a>
                     </li>
                     <li>
-                        <a href="#">모자</a>
-                    </li>
-                    <li>
-                        <a href="#">머플러/장갑</a>
+                        <a href="#" v-on:click="$store.commit('chgData',{cat1:'women',cat2:'ac',cat3:'hats'})">모자</a>
                     </li>
                     </ul>
                 </div>
@@ -147,7 +138,7 @@ const subdata = {
         </aside>
     `,
     // 타겟 상품리스트 (여성,남성,아동)
-    w_ProdList: `
+    tg_ProdList: `
         <div class="item-cont-list__inner">
             <!-- 상품 필터메뉴 -->
             <div class="item-cat-filter-row">
@@ -302,85 +293,49 @@ const subdata = {
             </div>
             <!-- 메인 상품리스트 -->
             <div class="ui-item-view">
-                <ul class="ui-col4" v-if="n === 'shoes'">
-                <li v-for="(v,n) in $store.state.tgData.women[$store.state.setcat].item">
-                    <div class="ui-prod-bx">
-                        <a href="#">
-                            <div class="prod-img">
-                                <img src="v.jpg" alt="상품이미지">
-                            </div>
-                            <div class="prod-txt">
-                                <strong class="brand">슈펜</strong>
-                                <p>디즈니 앨리스 하트 크로스백</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="item-detail">
-                        <span class="original-price">
-                            <em>35,900</em>
-                            <span>원</span>
-                        </span>
-                        <br>
-                        <span class="discount-price">
-                            <em>32,310</em>
-                            <span>원</span>
-                        </span>
-                        <span class="percent-price">
-                            <em>10%</em>
-                        </span>
-                        <div class="box_grade">
-                            <div class="star">
-                            <span></span>
-                            <strong>리뷰
-                                <span>(5)</span>
-                            </strong>
-                            </div>
-                        </div>
-                    </div>
-                    </li>
-                </ul>
-
                 <ul class="ui-col4">
-                <li v-for="(v1,n1) in v.sub" :key="n1">
-                    <div class="ui-prod-bx">
-                        <a href="#">
-                            <div class="prod-img">
-                                <img src="'./00.data/02.imgData/women/'+ v.shoes + '/' + value.img + '.jpg" alt="상품이미지">
-                            </div>
-                            <div class="prod-txt">
-                                <strong class="brand">슈펜</strong>
-                                <p>디즈니 앨리스 하트 크로스백</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="item-detail">
-                        <span class="original-price">
-                            <em>35,900</em>
-                            <span>원</span>
-                        </span>
-                        <br>
-                        <span class="discount-price">
-                            <em>32,310</em>
-                            <span>원</span>
-                        </span>
-                        <span class="percent-price">
-                            <em>10%</em>
-                        </span>
-                        <div class="box_grade">
-                            <div class="star">
-                            <span></span>
-                            <strong>리뷰
-                                <span>(5)</span>
-                            </strong>
+                <template v-for="(v,i) in $store.state.menu">
+                    <li v-for="(a,b) in v" v-if="$store.state.cat3 === '전체' || $store.state.cat3 === i">
+                        <div class="ui-prod-bx">
+                            <a href="#">
+                                <div class="prod-img">
+                                    {{$store.state.cat1}}
+                                    // <img v-bind:src="'./00.data/02.imgData/'+$store.state.cat1+'/'+ $store.state.cat2+'/'+$store.state.cat3+n+'.jpg'" alt="상품이미지">
+                                </div>
+                                <div class="prod-txt">
+                                    <strong class="brand">슈펜</strong>
+                                    <p>디즈니 앨리스 하트 크로스백</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="item-detail">
+                            <span class="original-price">
+                                <em>35,900</em>
+                                <span>원</span>
+                            </span>
+                            <br>
+                            <span class="discount-price">
+                                <em>32,310</em>
+                                <span>원</span>
+                            </span>
+                            <span class="percent-price">
+                                <em>10%</em>
+                            </span>
+                            <div class="box_grade">
+                                <div class="star">
+                                <span></span>
+                                <strong>리뷰
+                                    <span>(5)</span>
+                                </strong>
+                                </div>
                             </div>
                         </div>
-                    </div>
                     </li>
-                </ul>
-
-            </div>
+                </template>
+            </ul>
         </div>
+    </div>
     `
 }
 
-export default subdata;
+    export default subdata;
