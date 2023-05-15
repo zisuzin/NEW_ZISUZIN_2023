@@ -1,19 +1,16 @@
 import subdata from "./tempData/subData.js";
 import store from "./store.js";
 
-// ##### 컴포넌트 등록 #### 
-// 2. 메인영역
-// 서브페이지 메뉴 뷰 템플릿 셋팅
+/************************************* 
+    뷰 컴포넌트 데이터 셋업
+*************************************/
+// [1] 서브 카테고리 (신상, 베스트)
+// [1-1] 뷰 컴포넌트 - 카테고리
 Vue.component("stab-comp", {
     template: subdata.prodTab,
     methods:{
       test(category){
         store.commit('newChgData',category)
-        // this.chgData(category);
-        // this.$store.commit("showMoreItems"); // showMoreItems 뮤테이션 호출
-        // if (category === '전체') {
-        //   this.$store.commit('showMoreItems');
-        // }
       },
     },
     mounted(){
@@ -25,7 +22,7 @@ Vue.component("stab-comp", {
     },
 });
 
-// 서브페이지 상품리스트 뷰 템플릿 셋팅
+// [1-2] 뷰 컴포넌트 - 상품리스트
 Vue.component("list-comp", {
   template: subdata.new_prodList,
   methods: {
@@ -52,11 +49,16 @@ Vue.component("list-comp", {
 },
 });
 
-// 메인 서브 사이드메뉴탭
+// [2] 서브 카테고리 (타겟)
+// [2-1] 뷰 컴포넌트 - 사이드메뉴탭
 Vue.component("sidetab-comp",{
   template: subdata.sideMenuTab,
 })
 
+/********************************************* 
+    뷰인스턴스 생성영역
+*********************************************/
+// [1] 뷰인스턴스 - 메인
 new Vue({
   el: "#cont_wrap",
   store, // 뷰엑스 스토어 등록
@@ -69,7 +71,6 @@ new Vue({
     },
   },
 })
-
 
 // 메뉴 뷰 템플릿 클릭시 스타일 적용
 const subTab = document.querySelectorAll(".new-prod-tab > ul > li");
