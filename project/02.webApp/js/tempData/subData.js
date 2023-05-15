@@ -75,60 +75,60 @@ const subdata = {
             <ul>
                 <li class="ctg_depth1">
                 <div>
-                    <a href="#" v-on:click="$store.commit('chgData',{cat1:'women',cat2:'shoes',cat3:'all'})">
+                    <a href="#" v-on:click="$store.commit('ChgData',{cat1:'women',cat2:'shoes',cat3:'all'})">
                     <span>여성신발</span>
                     </a>
                 </div>
                 <div class="ctg_depth2">
                     <ul>
                     <li>
-                        <a href="#" v-on:click="$store.commit('chgData',{cat1:'women',cat2:'shoes',cat3:'all'})">전체</a>
+                        <a href="#" v-on:click="$store.commit('ChgData',{cat1:'women',cat2:'shoes',cat3:'all'})">전체</a>
                     </li>
                     <li>
-                        <a href="#" v-on:click="$store.commit('chgData',{cat1:'women',cat2:'shoes',cat3:'flat'})">플랫슈즈</a>
+                        <a href="#" v-on:click="$store.commit('ChgData',{cat1:'women',cat2:'shoes',cat3:'flat'})">플랫슈즈</a>
                     </li>
                     <li>
-                        <a href="#" v-on:click="$store.commit('chgData',{cat1:'women',cat2:'shoes',cat3:'sandal'})">샌들</a>
+                        <a href="#" v-on:click="$store.commit('ChgData',{cat1:'women',cat2:'shoes',cat3:'sandal'})">샌들</a>
                     </li>
                     </ul>
                 </div>
                 </li>
                 <li class="ctg_depth1">
                 <div>
-                    <a href="#" v-on:click="$store.commit('chgData',{cat1:'women',cat2:'bags',cat3:'all'})">
+                    <a href="#" v-on:click="$store.commit('ChgData',{cat1:'women',cat2:'bags',cat3:'all'})">
                     <span>여성가방</span>
                     </a>
                 </div>
                 <div class="ctg_depth2">
                     <ul>
                     <li>
-                        <a href="#" v-on:click="$store.commit('chgData',{cat1:'women',cat2:'bags',cat3:'all'})">전체</a>
+                        <a href="#" v-on:click="$store.commit('ChgData',{cat1:'women',cat2:'bags',cat3:'all'})">전체</a>
                     </li>
                     <li>
-                        <a href="#" v-on:click="$store.commit('chgData',{cat1:'women',cat2:'bags',cat3:'backpack'})">백팩</a>
+                        <a href="#" v-on:click="$store.commit('ChgData',{cat1:'women',cat2:'bags',cat3:'backpack'})">백팩</a>
                     </li>
                     <li>
-                        <a href="#" v-on:click="$store.commit('chgData',{cat1:'women',cat2:'bags',cat3:'minibag'})">미니백</a>
+                        <a href="#" v-on:click="$store.commit('ChgData',{cat1:'women',cat2:'bags',cat3:'minibag'})">미니백</a>
                     </li>
                     </ul>
                 </div>
                 </li>
                 <li class="ctg_depth1">
                 <div>
-                    <a href="#" v-on:click="$store.commit('chgData',{cat1:'women',cat2:'ac',cat3:'all'})">
+                    <a href="#" v-on:click="$store.commit('ChgData',{cat1:'women',cat2:'ac',cat3:'all'})">
                     <span>여성잡화</span>
                     </a>
                 </div>
                 <div class="ctg_depth2">
                     <ul>
                     <li>
-                        <a href="#" v-on:click="$store.commit('chgData',{cat1:'women',cat2:'ac',cat3:'all'})">전체</a>
+                        <a href="#" v-on:click="$store.commit('ChgData',{cat1:'women',cat2:'ac',cat3:'all'})">전체</a>
                     </li>
                     <li>
-                        <a href="#" v-on:click="$store.commit('chgData',{cat1:'women',cat2:'ac',cat3:'socks'})">양말</a>
+                        <a href="#" v-on:click="$store.commit('ChgData',{cat1:'women',cat2:'ac',cat3:'socks'})">양말</a>
                     </li>
                     <li>
-                        <a href="#" v-on:click="$store.commit('chgData',{cat1:'women',cat2:'ac',cat3:'hats'})">모자</a>
+                        <a href="#" v-on:click="$store.commit('ChgData',{cat1:'women',cat2:'ac',cat3:'hats'})">모자</a>
                     </li>
                     </ul>
                 </div>
@@ -295,37 +295,36 @@ const subdata = {
             <div class="ui-item-view">
                 <ul class="ui-col4">
                 <template v-for="(v,i) in $store.state.menu">
-                    <li v-for="(a,b) in v" v-if="$store.state.cat3 === '전체' || $store.state.cat3 === i">
+                    <li v-for="(a,b) in v" v-if="$store.state.cat3 === i">
                         <div class="ui-prod-bx">
                             <a href="#">
                                 <div class="prod-img">
-                                    {{$store.state.cat1}}
-                                    // <img v-bind:src="'./00.data/02.imgData/'+$store.state.cat1+'/'+ $store.state.cat2+'/'+$store.state.cat3+n+'.jpg'" alt="상품이미지">
+                                    <img v-bind:src="'./00.data/02.imgData/'+$store.state.cat1+'/'+ $store.state.cat2+'/'+$store.state.cat3+'/'+'item_'+(b+1)+'.jpg'" alt="상품이미지">
                                 </div>
                                 <div class="prod-txt">
                                     <strong class="brand">슈펜</strong>
-                                    <p>디즈니 앨리스 하트 크로스백</p>
+                                    <p v-text="a.name"></p>
                                 </div>
                             </a>
                         </div>
                         <div class="item-detail">
                             <span class="original-price">
-                                <em>35,900</em>
-                                <span>원</span>
+                                <em>{{numberWithCommas(a.oprice)}}</em>
+                                <span v-if="a.oprice">원</span>
                             </span>
                             <br>
                             <span class="discount-price">
-                                <em>32,310</em>
+                                <em>{{numberWithCommas(a.dprice)}}</em>
                                 <span>원</span>
                             </span>
-                            <span class="percent-price">
-                                <em>10%</em>
+                            <span class="percent-price" v-if="a.oprice && a.dprice">
+                                <em>{{calculateDiscount(a.oprice, a.dprice)}}</em>
                             </span>
                             <div class="box_grade">
                                 <div class="star">
                                 <span></span>
                                 <strong>리뷰
-                                    <span>(5)</span>
+                                    <span v-text="a.review"></span>
                                 </strong>
                                 </div>
                             </div>

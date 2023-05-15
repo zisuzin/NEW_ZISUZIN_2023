@@ -26,26 +26,8 @@ Vue.component("stab-comp", {
 Vue.component("list-comp", {
   template: subdata.new_prodList,
   methods: {
-    // 할인률 계산 - ((정가 - 할인가) / 정가) * 100 
-    calculateDiscount(oprice,dprice){
-      if(!oprice || !dprice) {
-        return "";
-      }
-      const discount = ((oprice - dprice) / oprice) * 100;
-      return Math.floor(discount) + '%'
-    },
-    // 정규식함수(숫자 세자리마다 콤마해주는 기능)
-    numberWithCommas(x) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    },
-    chgData(param) {
-      store.state.setsNum = store.state.newData[param].sNum;
-      store.state.setcat = store.state.newData[param].cat;
-      store.state.setitem = store.state.newData[param].item;
-    }
+    
   },
-  mounted(){
-},
 });
 
 // [2] 서브 카테고리 (타겟)
@@ -54,9 +36,15 @@ Vue.component("sidetab-comp",{
   template: subdata.sideMenuTab,
 })
 
-/********************************************* 
+Vue.component("tgprod-comp", {
+  template: subdata.tg_ProdList,
+  methods: {
+  }
+})
+
+/************************************* 
     뷰인스턴스 생성영역
-*********************************************/
+*************************************/
 // [1] 뷰인스턴스 - 메인
 new Vue({
   el: "#cont_wrap",
@@ -64,15 +52,20 @@ new Vue({
   data: {
     subTit: ["NEW","BEST"],
   }, 
-  components: {
-    "tgprod-comp": {
-      template: subdata.tg_ProdList,
-    },
-    created() {
-      store.commit('getLink');
-    }
-  },
 })
+
+// 전역 등록 함수
+Vue.prototype.numberWithCommas = function(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+};
+
+Vue.prototype.calculateDiscount = function(oprice, dprice) {
+  if (!oprice || !dprice) {
+    return "";
+  }
+  const discount = ((oprice - dprice) / oprice) * 100;
+  return Math.floor(discount) + '%';
+};
 
 // 메뉴 뷰 템플릿 클릭시 스타일 적용
 const subTab = document.querySelectorAll(".new-prod-tab > ul > li");
@@ -85,7 +78,10 @@ subTab.forEach(ele =>
     ele.classList.add('clicked');
 }));
 
-/*  3. WOMEN - 서브페이지  */
+
+/************************************* 
+    3. WOMEN - 서브페이지
+*************************************/
 // 카테고리메뉴 클릭시 토글
 $('.ctg_depth1 > div').click(function(){
   const $target = $(this).parent('.ctg_depth1').find('.ctg_depth2');

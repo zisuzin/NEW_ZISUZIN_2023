@@ -2,7 +2,7 @@ import { womenData, menData, kidsData, tgData } from "./tempData/prodData.js";
 
 const store = new Vuex.Store({
   state: {
-    // tgData 객체데이터
+    // tg서브메뉴 제품정보 객체
     tgData:tgData,
 
     // 서브데이터 셋업
@@ -48,12 +48,14 @@ const store = new Vuex.Store({
     menu2:[],
   },
   mutations: {
+    // tg서브메뉴 상태변경 변수 셋업
     ChgData(state, pram) {
       state.cat1 = pram.cat1;
       state.cat2 = pram.cat2;
       state.cat3 = pram.cat3;
-      state.menu = state.tgData[pram.cat1][pram.cat2];
-      state.menu2 = state.tgData[pram.cat1][pram.cat2][pram.cat3];
+      state.menu = state.tgData[pram.cat1][pram.cat2]; /* 중분류 접근 */
+      state.menu2 = state.tgData[pram.cat1][pram.cat2][pram.cat3]; /* 소분류 접근 */
+      console.log(store.state.cat3)
     },
   },
 }); // 뷰엑스 인스턴스 //
