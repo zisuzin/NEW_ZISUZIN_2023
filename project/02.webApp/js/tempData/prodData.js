@@ -435,6 +435,7 @@ const tgData = {
         "shoes": {
             flat:[
                 {
+                    idx: "0",
                     name:"🌟TOP 5 [가드너] 스윗버튼 메리제인 플랫 1.0 HPWWFD202S",
                     img: "item_1",
                     oprice: "29900",
@@ -442,7 +443,7 @@ const tgData = {
                     sale: "",
                     review: "170"
                 },
-                {
+                {   idx: "0",
                     name:"V컷 스퀘어 쿠션 플랫 1.0 HPWWFC401S",
                     img: "item_2",
                     oprice: "19900",
@@ -450,7 +451,7 @@ const tgData = {
                     sale: "",
                     review: "63"
                 },
-                {
+                {   idx: "0",
                     name:"쿠션 플랫 1.0 HPWWFCA01S",
                     img: "item_3",
                     oprice: "19900",
@@ -458,7 +459,7 @@ const tgData = {
                     sale: "",
                     review: "127"
                 },
-                {
+                {   idx: "0",
                     name:"[가드너] 스퀘어 리본 플랫슈즈 HPWWFDA01S",
                     img: "item_4",
                     oprice: "25900",
@@ -466,7 +467,7 @@ const tgData = {
                     sale: "",
                     review: "3"
                 },
-                {
+                {   idx: "0",
                     name:"와이드 라운드 버클 단화 2.0 HPWWVD217M",
                     img: "item_5",
                     oprice: "39900",
@@ -474,7 +475,7 @@ const tgData = {
                     sale: "",
                     review: "29"
                 },
-                {
+                {   idx: "0",
                     name:"베이직 메리제인 플랫 1.0 HPWWFC402S",
                     img: "item_6",
                     oprice: "19900",
@@ -482,7 +483,7 @@ const tgData = {
                     sale: "",
                     review: "129"
                 },
-                {
+                {   idx: "0",
                     name:"스퀘어 힐밴딩 플랫 1.0 MIST78S02",
                     img: "item_7",
                     oprice: "19900",
@@ -490,7 +491,7 @@ const tgData = {
                     sale: "",
                     review: "100"
                 },
-                {
+                {   idx: "0",
                     name:"라운드토 니트 플랫 1.0 MIST79S04",
                     img: "item_8",
                     oprice: "15900",
@@ -498,7 +499,7 @@ const tgData = {
                     sale: "",
                     review: "115"
                 },
-                {
+                {   idx: "0",
                     name:"발레리나 메리제인 플랫 HPWWFDA90Q",
                     img: "item_9",
                     oprice: "39900",
@@ -506,7 +507,7 @@ const tgData = {
                     sale: "",
                     review: "6"
                 },
-                {
+                {   idx: "0",
                     name:"Q 메리제인 웰트 단화 1.5 MISW79S42",
                     img: "item_10",
                     oprice: "29900",
@@ -514,7 +515,7 @@ const tgData = {
                     sale: "",
                     review: "19"
                 },
-                {
+                {   idx: "0",
                     name:"에어핏쿠션 메리제인 단화 3.0 HPWWVC407S",
                     img: "item_11",
                     oprice: "39900",
@@ -522,7 +523,7 @@ const tgData = {
                     sale: "",
                     review: "23"
                 },
-                {
+                {   idx: "0",
                     name:"오블리크 V컷 플랫 HPWWFD201S",
                     img: "item_12",
                     oprice: "29900",
@@ -530,7 +531,7 @@ const tgData = {
                     sale: "",
                     review: "13"
                 },
-                {
+                {   idx: "0",
                     name:"쿠션 플랫 1.0 MIST79A01",
                     img: "item_13",
                     oprice: "15900",
@@ -538,7 +539,7 @@ const tgData = {
                     sale: "",
                     review: "103"
                 },
-                {
+                {   idx: "0",
                     name:"캔버스 슬립온 에스파듀 AFHL78S01",
                     img: "item_14",
                     oprice: "19900",
@@ -546,7 +547,7 @@ const tgData = {
                     sale: "",
                     review: "6"
                 },
-                {
+                {   idx: "0",
                     name:"스퀘어 밴딩 바부슈 플랫 1.0 HPWWFB403M",
                     img: "item_15",
                     oprice: "19900",
@@ -554,7 +555,7 @@ const tgData = {
                     sale: "",
                     review: "43"
                 },
-                {
+                {   idx: "0",
                     name:"글로시 메리제인 플랫 1.5 HPWWFC403S",
                     img: "item_16",
                     oprice: "29900",
@@ -562,7 +563,7 @@ const tgData = {
                     sale: "",
                     review: "63"
                 },
-                {
+                {   idx: "0",
                    name:"[가드너] 스퀘어 메리제인 플랫슈즈 HPWWFDA03S",
                    img: "item_17",
                    oprice: "29900",
@@ -570,7 +571,7 @@ const tgData = {
                    sale: "",
                    review: "7" 
                 },
-                {
+                {   idx: "0",
                     name:"슈블리 메리제인 플랫 MIST78S52",
                     img: "item_18",
                     oprice: "39900",
@@ -578,7 +579,7 @@ const tgData = {
                     sale: "",
                     review: "25"
                 },
-                {
+                {   idx: "0",
                     name:"포인트 민자 단화 1.0 MIST79W06",
                     img: "item_19",
                     oprice: "29900",
@@ -586,7 +587,7 @@ const tgData = {
                     sale: "",
                     review: "8"
                 },
-                {
+                {   idx: "0",
                     name:"쭈언니픽 메리제인 컬러 니트 플랫 1.0 MIST78S04",
                     img: "item_20",
                     oprice: "19900",
@@ -594,7 +595,7 @@ const tgData = {
                     sale: "",
                     review: "14"
                 },
-                {
+                {   idx: "0",
                    name:"메리제인 웰트 플랫 1.0 MIST79W04",
                    img: "item_17",
                    oprice: "29900",
@@ -602,7 +603,7 @@ const tgData = {
                    sale: "",
                    review: "13" 
                 },
-                {
+                {   idx: "0",
                     name:"메리제인 발레슈 단화 1.0 HPWWVD204M",
                     img: "item_18",
                     oprice: "39900",
@@ -610,7 +611,7 @@ const tgData = {
                     sale: "",
                     review: "17"
                 },
-                {
+                {   idx: "0",
                     name:"DRP드롭_메리제인플랫 MIST78S09",
                     img: "item_19",
                     oprice: "29900",
@@ -618,7 +619,7 @@ const tgData = {
                     sale: "",
                     review: "15"
                 },
-                {
+                {   idx: "0",
                     name:"와이드 라운드 메리제인 단화 2.0 HPWWVD218M",
                     img: "item_20",
                     oprice: "39900",
@@ -629,7 +630,7 @@ const tgData = {
             ],
             
             sandal: [
-                {
+                {   idx: "1",
                     name:"패턴 커버 플랫 샌들 1.5 MIDW78S14",
                     img:"item_1",
                     oprice:"19900",
@@ -637,7 +638,7 @@ const tgData = {
                     sale:"",
                     review:"5",
                 },
-                {
+                {   idx: "1",
                     name:"플랫폼 피셔맨 샌들 3.5 HPWWND204M",
                     img:"item_2",
                     oprice:"39900",
@@ -645,7 +646,7 @@ const tgData = {
                     sale:"",
                     review:"33",
                 },
-                {
+                {   idx: "1",
                     name:"스퀘어 스트랩 샌들 2.5 MIDW78S01",
                     img:"item_3",
                     oprice:"19900",
@@ -653,7 +654,7 @@ const tgData = {
                     sale:"",
                     review:"32",
                 },
-                {
+                {   idx: "1",
                     name:"와이드 플랫 피셔맨 샌들 1.0 HPWWND203M",
                     img:"item_4",
                     oprice:"39900",
@@ -661,7 +662,7 @@ const tgData = {
                     sale:"",
                     review:"26",
                 },
-                {
+                {   idx: "1",
                     name:"쿠션 투 스트랩 샌들 AFDM78S02",
                     img:"item_5",
                     oprice:"29900",
@@ -669,7 +670,7 @@ const tgData = {
                     sale:"",
                     review:"25",
                 },
-                {
+                {   idx: "1",
                     name:"[도영도영이 PICK] 라운드 커버 단화샌들 1.0 HPWWND201S",
                     img:"item_6",
                     oprice:"29900",
@@ -677,7 +678,7 @@ const tgData = {
                     sale:"",
                     review:"89",
                 },
-                {
+                {   idx: "1",
                     name:"[경량EVA] 아웃도어 투 벨크로 샌들 HPCV4D242M",
                     img:"item_7",
                     oprice:"39900",
@@ -685,7 +686,7 @@ const tgData = {
                     sale:"",
                     review:"1",
                 },
-                {
+                {   idx: "1",
                     name:"쿠션 플랫폼 스트랩 샌들 4.0 MIDW78S07",
                     img:"item_8",
                     oprice:"29900",
@@ -693,7 +694,7 @@ const tgData = {
                     sale:"",
                     review:"16",
                 },
-                {
+                {   idx: "1",
                     name:"스퀘어 스트랩 샌들 5.0 MIDW78S02",
                     img:"item_9",
                     oprice:"29900",
@@ -701,7 +702,7 @@ const tgData = {
                     sale:"",
                     review:"19",
                 },
-                {
+                {   idx: "1",
                     name:"X 스트랩 쿠션 웨지 샌들 6.5 MIDW78S19",
                     img:"item_10",
                     oprice:"29900",
@@ -709,7 +710,7 @@ const tgData = {
                     sale:"",
                     review:"19",
                 },
-                {
+                {   idx: "1",
                     name:"리커버리 소프트 젤리샌들 HPCV1D381Q",
                     img:"item_11",
                     oprice:"19900",
@@ -717,7 +718,7 @@ const tgData = {
                     sale:"",
                     review:"",
                 },
-                {
+                {   idx: "1",
                     name:"에어핏 쿠션 베이직 덮개 뮬 4.0 MIDL78S04",
                     img:"item_12",
                     oprice:"29900",
@@ -725,7 +726,7 @@ const tgData = {
                     sale:"",
                     review:"10",
                 },
-                {
+                {   idx: "1",
                     name:"오블리크 스트랩 샌들 2.0 MIDW78S12",
                     img:"item_13",
                     oprice:"19900",
@@ -733,7 +734,7 @@ const tgData = {
                     sale:"",
                     review:"5",
                 },
-                {
+                {   idx: "1",
                     name:"베이직 웨지 샌들 5.0 MIDW78S21",
                     img:"item_14",
                     oprice:"29900",
@@ -741,7 +742,7 @@ const tgData = {
                     sale:"",
                     review:"14",
                 },
-                {
+                {   idx: "1",
                     name:"스팽클 투밴드 웻지 슬리퍼 AFDL79S14",
                     img:"item_15",
                     oprice:"19900",
@@ -749,7 +750,7 @@ const tgData = {
                     sale:"",
                     review:"6",
                 },
-                {
+                {   idx: "1",
                     name:"투웨이 웨지 샌들 5.0 MIDW78S22",
                     img:"item_16",
                     oprice:"29900",
@@ -757,7 +758,7 @@ const tgData = {
                     sale:"",
                     review:"1",
                 },
-                {
+                {   idx: "1",
                     name:"베이직 스트랩 샌들 5.0 MIDW79S01",
                     img:"item_17",
                     oprice:"29900",
@@ -765,7 +766,7 @@ const tgData = {
                     sale:"",
                     review:"23",
                 },
-                {
+                {   idx: "1",
                     name:"메쉬 스트랩 쿠션 웨지 샌들 6.5 MIDW78S20",
                     img:"item_18",
                     oprice:"29900",
@@ -773,7 +774,7 @@ const tgData = {
                     sale:"",
                     review:"8",
                 },
-                {
+                {   idx: "1",
                     name:"피셔맨 힐 샌들 HPWWND252D",
                     img:"item_19",
                     oprice:"49900",
@@ -781,7 +782,7 @@ const tgData = {
                     sale:"",
                     review:"",
                 },
-                {
+                {   idx: "1",
                     name:"T스트랩 플랫폼 샌들 3.0 MIDW78S06",
                     img:"item_20",
                     oprice:"29900",

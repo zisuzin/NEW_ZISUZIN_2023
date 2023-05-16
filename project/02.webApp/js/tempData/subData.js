@@ -75,14 +75,14 @@ const subdata = {
             <ul>
                 <li class="ctg_depth1">
                 <div>
-                    <a href="#" v-on:click="">
+                    <a href="#" v-on:click="$store.commit('ChgData',{cat1:'women',cat2:'shoes',cat3:'flat'})">
                     <span>여성신발</span>
                     </a>
                 </div>
                 <div class="ctg_depth2">
                     <ul>
                     <li>
-                        <a href="#" v-on:click="">전체</a>
+                        <a href="#" v-on:click="$store.commit('ChgData',{cat1:'women',cat2:'shoes',cat3:'flat'})">전체</a>
                     </li>
                     <li>
                         <a href="#" v-on:click="$store.commit('ChgData',{cat1:'women',cat2:'shoes',cat3:'flat'})">플랫슈즈</a>
@@ -295,7 +295,7 @@ const subdata = {
             <div class="ui-item-view">
                 <ul class="ui-col4">
                 <template v-for="(v,i) in $store.state.menu">
-                    <li v-for="(a,b) in v" v-if="$store.state.cat3 === i">
+                    <li v-for="(a,b) in v">
                         <div class="ui-prod-bx">
                             <a href="#">
                                 <div class="prod-img">
