@@ -75,14 +75,14 @@ const subdata = {
             <ul>
                 <li class="ctg_depth1">
                 <div>
-                    <a href="#" v-on:click="$store.commit('ChgData',{cat1:'women',cat2:'shoes',cat3:'flat'})">
+                    <a href="#" v-on:click="">
                     <span>여성신발</span>
                     </a>
                 </div>
                 <div class="ctg_depth2">
                     <ul>
                     <li>
-                        <a href="#" v-on:click="$store.commit('ChgData',{cat1:'women',cat2:'shoes',cat3:'flat'})">전체</a>
+                        <a href="#" v-on:click="">전체</a>
                     </li>
                     <li>
                         <a href="#" v-on:click="$store.commit('ChgData',{cat1:'women',cat2:'shoes',cat3:'flat'})">플랫슈즈</a>
@@ -295,11 +295,11 @@ const subdata = {
             <div class="ui-item-view">
                 <ul class="ui-col4">
                 <template v-for="(v,i) in $store.state.menu">
-                    <li v-for="(a,b) in v">
+                    <li v-for="(a,b) in v" v-if="$store.state.cat3 === i">
                         <div class="ui-prod-bx">
                             <a href="#">
                                 <div class="prod-img">
-                                    <img v-bind:src="'./00.data/02.imgData/'+$store.state.cat1+'/'+ $store.state.cat2+'/'+$store.state.cat3+'/'+'item_'+(b+1)+'.jpg'" alt="상품이미지">
+                                    <img v-on:mouseover="handleMouseOver" v-bind:src="'./00.data/02.imgData/'+$store.state.cat1+'/'+ $store.state.cat2+'/'+$store.state.cat3+'/'+'item_'+(b+1)+'.jpg'" alt="상품이미지">
                                 </div>
                                 <div class="prod-txt">
                                     <strong class="brand">슈펜</strong>

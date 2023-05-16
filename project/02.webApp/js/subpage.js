@@ -38,6 +38,21 @@ Vue.component("sidetab-comp",{
 
 Vue.component("tgprod-comp", {
   template: subdata.tg_ProdList,
+  methods: {
+    handleMouseOver(event) {
+    // 이벤트 발생 요소
+    const tgImg = $(event.currentTarget);
+  
+    // 현재 이미지의 src 값
+    const tgSrc = tgImg.attr('src');
+    console.log("img?",tgImg);
+    const newSrc = tgSrc.split('.jpg')[0] + '_on.jpg';
+    console.log(newSrc)
+    $(this).attr('src', newSrc);
+    // const newSrc = tgSrc.replace('.jpg', '_on.jpg');
+    // $(this).attr('src', newSrc);
+    }
+  }
 })
 
 /************************************* 
@@ -145,3 +160,8 @@ $('.product-sort-list').on('click', function(event) {
 // $('.color-record > button').click(function(){
 //   $(this).toggleClass
 // });
+
+// 상품리스트 이미지 오버시 이미지 변경
+$('.prod-img > img').mouseover(function(){
+  console.log((this))
+})
