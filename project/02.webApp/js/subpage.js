@@ -45,26 +45,11 @@ Vue.component("tgprod-comp", {
   
     // // 현재 이미지의 src 값
     const tgSrc = tgImg.attr('src');
-    console.log("img?",tgImg,"src?",tgSrc);
-    // const newSrc = tgSrc.split('.jpg')[0] + '_on.jpg';
+    // console.log("img?",tgImg,"src?",tgSrc);
+    const newSrc = tgSrc.split('.jpg')[0] + '_on.jpg';
     // console.log(newSrc)
     // // const newSrc = tgSrc.replace('.jpg', '_on.jpg');
     // // $(this).attr('src', newSrc);
-    // gnb 오버 이미지 Array
-    const imgArray = ["item_1_on","item_2_on","item_3_on","item_4_on","item_5_on","item_6_on","item_7_on","item_8_on","item_9_on","item_10_on","item_11_on",
-    ,"item_12_on","item_13_on","item_14_on","item_15_on","item_16_on","item_17_on","item_18_on","item_19_on","item_20_on"];
-    let sideSub = $(".prod-img");
-
-    let temp_img = "";
-    for(let i = 0; i<imgArray.length; i++) {
-        temp_img = `
-        <li>
-            <img src="./00.data/02.imgData/women/shoes/flat/${imgArray[i]}.jpg" alt="메뉴이미지">
-        </li>
-        `;
-    }
-    console.log(temp_img)
-    $(this).attr('src', temp_img);
     }
   }
 })
