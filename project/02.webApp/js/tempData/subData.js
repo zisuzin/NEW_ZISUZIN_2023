@@ -19,8 +19,8 @@ const subdata = {
         </div>
     `,
 
-    // 상품 정보 리스트(NEW)
-    new_prodList: `
+     // 상품 정보 리스트(NEW)
+     new_prodList: `
         <ul>
             <li v-for="(value,name) in $store.state.newData[$store.state.setcat].item" :key="name">
                 <div>

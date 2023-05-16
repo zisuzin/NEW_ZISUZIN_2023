@@ -1,13 +1,12 @@
-import { womenData, menData, kidsData, tgData } from "./tempData/prodData.js";
+import { womenData, menData , kidsData, tgData } from "./tempData/prodData.js";
 
 const store = new Vuex.Store({
   state: {
     // tg서브메뉴 제품정보 객체
     tgData:tgData,
 
-    // 서브데이터 셋업
-    newData: {
-      // NEW 상품 데이터
+     // 서브데이터 셋업 (new/best)
+     newData: {
       전체: {
         sNum: 60,
         cat: "ALL",
@@ -33,6 +32,7 @@ const store = new Vuex.Store({
         showmore: false,
       },
     },
+    
     // 공통처리 메뉴 변수
     setsNum: "",
     setcat: "",
@@ -57,6 +57,16 @@ const store = new Vuex.Store({
       state.menu2 = state.tgData[pram.cat1][pram.cat2][pram.cat3]; /* 소분류 접근 */
       state.prodCount = state.menu2 ? state.menu2.length : 0; /* 소분류데이터 길이값 출력 */
     },
+    newChgData(state,pram){ // state - state데이터, pram - 전달값 
+      // 해당 카테고리 개수 업데이트
+      state.sNum = state.newData[pram].sNum;
+      // 해당 카테고리 이름 업데이트
+      state.cat = state.newData[pram].cat;
+      // 해당 카테고리 제품리스트 업데이트
+      state.item = state.newData[pram].item;
+      state.showmore = state.newData[pram].showmore;
+      state.setcat = pram;
+  },
   },
 }); // 뷰엑스 인스턴스 //
 

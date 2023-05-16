@@ -1,0 +1,40 @@
+<!-- 메인 상품리스트 -->
+            <div class="ui-item-view">
+                <ul class="ui-col4">
+                <template v-for="(v,i) in $store.state.menu">
+                    <li v-for="(a,b) in v" v-if="$store.state.cat3 === i">
+                        <div class="ui-prod-bx">
+                            <a href="#">
+                                <div class="prod-img">
+                                    <img v-bind:src="'./00.data/02.imgData/'+$store.state.cat1+'/'+ $store.state.cat2+'/'+$store.state.cat3+'/'+'item_'+(b+1)+'.jpg'" alt="상품이미지">
+                                </div>
+                                <div class="prod-txt">
+                                    <strong class="brand">슈펜</strong>
+                                    <p v-text="a.name"></p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="item-detail">
+                            <span class="original-price">
+                                <em>{{numberWithCommas(a.oprice)}}</em>
+                                <span v-if="a.oprice">원</span>
+                            </span>
+                            <br>
+                            <span class="discount-price">
+                                <em>{{numberWithCommas(a.dprice)}}</em>
+                                <span>원</span>
+                            </span>
+                            <span class="percent-price" v-if="a.oprice && a.dprice">
+                                <em>{{calculateDiscount(a.oprice, a.dprice)}}</em>
+                            </span>
+                            <div class="box_grade">
+                                <div class="star">
+                                <span></span>
+                                <strong>리뷰
+                                    <span v-if="a.review!==''" v-text="('('+a.review+')')"></span>
+                                    <span v-else>(0)</span>
+                                </strong>
+                                </div>
+                            </div>
+                        </div>
+                    </li>

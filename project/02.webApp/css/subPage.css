@@ -135,7 +135,6 @@ section.new_container {
 .cat_left_side_tab {
     float: left;
     width: 208px;
-    border: 1px dashed #000;
 }
 
 .cat_left_side_tab > h2 {

@@ -1,4 +1,5 @@
 // NEW 상품 데이터
+
 const womenData = {
     item0: {
         name: "와이드 라운드 버클 단화 2.0 HPWWVD217M",
@@ -476,7 +477,7 @@ const tgData = {
                 {
                     name:"베이직 메리제인 플랫 1.0 HPWWFC402S",
                     img: "item_6",
-                    oprice: "19,900",
+                    oprice: "19900",
                     dprice: "14880",
                     sale: "",
                     review: "129"
@@ -1367,4 +1368,4 @@ const tgData = {
 
 
 
-export {womenData, menData , kidsData, tgData};
+export { womenData, menData , kidsData, tgData };

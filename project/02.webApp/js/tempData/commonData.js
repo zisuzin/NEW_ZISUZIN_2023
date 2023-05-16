@@ -12,13 +12,13 @@ const comData = {
                 <nav class="header_top_gnb">
                     <ul>
                         <li>
-                            <a href="sub_new.html">NEW</a>
+                            <a href="#" v-on:click="$store.commit('newUpdate',{nbcat1:'new',nbcat2:'all'})">NEW</a>
                         </li>
                         <li>
-                            <a href="sub_best.html">BEST</a>
+                            <a href="#" v-on:click="$store.commit('newUpdate',{nbcat1:'best',nbcat2:'all'})">BEST</a>
                         </li>
                         <li>
-                            <a href="sub_women.html">WOMEN</a>
+                            <a href="#">WOMEN</a>
                         </li>
                         <li>
                             <a href="#">MEN</a>

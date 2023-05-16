@@ -10,7 +10,7 @@ Vue.component("stab-comp", {
     template: subdata.prodTab,
     methods:{
       test(category){
-        store.commit('ChgData',category)
+        store.commit('newChgData',category)
       },
     },
     mounted(){

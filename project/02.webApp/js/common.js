@@ -28,8 +28,7 @@ new Vue({
 $('.header_top_gnb > ul > li').click(function(){
     const catName = $(this).text(); // 클릭한 카테고리명 가져오기
     const wUrl = window.location.href.split('?')[0]; // 현재 페이지 URL에서 '?' 이전 부분 가져오기
-    // console.log(wUrl)
-    const newUrl = wUrl + '?catName=' + catName;
+    const newUrl = wUrl + '?cat=' + catName;
     window.location.href = newUrl; // 새로운 url 페이지로 이동
 });
 

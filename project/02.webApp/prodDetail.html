@@ -26,18 +26,31 @@
         <aside class="recent-view-prod-bx">
           <prod-comp></prod-comp>
         </aside>
-        <section class="new_container">
-          <div class="new_inner">
-            <h2 v-html="subTit[0]"></h2>
-            <div class="new-prod-container">
-              <!-- new 아이템 탭메뉴 -->
-              <stab-comp></stab-comp>
-              <!-- new 아이템 리스트 -->
-              <div class="new-prod-cont">
-                <list-comp></list-comp>
-              </div>
-              <!-- 더보기 버튼 -->
-              <button v-if="$store.state.newData['전체'].showmore" type="button" class="showmore_btn">더보기</button>
+        <section class="prod_container">
+          <div class="prod_inner">
+            <div class="current-cat-info">
+                <ul>
+                    <li>HOME</li>
+                    <li>WOMEN</li>
+                    <li>여성신발</li>
+                    <li>플랫슈즈</li>
+                </ul>
+            </div>
+            <div class="prod-detail-main">
+                <div class="brand_wrap">
+                    <a href="#">슈펜</a>
+                </div>
+                <!-- 상품 상세이미지 박스 -->
+                <div class="prod_wrap">
+                    <!-- 이미지박스 -->
+                    <div class="prod-img_wrap">
+                        <strong class="tit">V컷 스퀘어 쿠션 플랫 1.0 HPWWFC401S</strong>
+                    </div>
+                    <!-- 옵션박스 -->
+                    <div class="prod-info_wrap">
+
+                    </div>
+                </div>
             </div>
           </div>
         </section>
@@ -48,10 +61,10 @@
         </aside>
       </main>
       <!-- C. 하단영역 -->
-      <footer id="info">
+      <!-- <footer id="info">
         <info-area></info-area>
         <p class="f-copyright">COPYRIGHT © WONDERPLACE ALL RIGHTS RESERVED.</p>
-      </footer>
+      </footer> -->
     </div>
 
     <!-- Plugin JS -->
