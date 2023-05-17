@@ -22,8 +22,10 @@ const subdata = {
      // 상품 정보 리스트(NEW)
      new_prodList: `
         <ul>
-            <li v-for="(value,name) in $store.state.newData[$store.state.setcat].item" :key="name">
-                <div>
+            <li v-for="(value,i) in $store.state.newData[$store.state.setcat].item"
+            v-if="i>=0 && i<20+$store.state.mnum"
+            :key="i">
+                <div>{{i}}
                     <div class="new-prod-bx">
                         <a href="#">
                             <div class="prod-img">

@@ -11,6 +11,7 @@ Vue.component("stab-comp", {
     methods:{
       test(category){
         store.commit('newChgData',category)
+        console.log(category);
       },
     },
     mounted(){

@@ -10,7 +10,7 @@ const store = new Vuex.Store({
       전체: {
         sNum: 60,
         cat: "ALL",
-        item: womenData,
+        item: [...womenData,...menData,...kidsData],
         showmore: true,
       },
       여성: {
@@ -48,6 +48,12 @@ const store = new Vuex.Store({
     menu:{},
     menu2:[],
     menusum:[],
+
+    // 더보기버튼 상태변수
+    mbsts:true,
+    // 더보기배수 변수
+    mnum: 0,
+
     
   },
   mutations: {
@@ -74,9 +80,22 @@ const store = new Vuex.Store({
       state.cat = state.newData[pram].cat;
       // 해당 카테고리 제품리스트 업데이트
       state.item = state.newData[pram].item;
+      console.log(pram,Object.keys(state.newData[pram].item).length);
+
       state.showmore = state.newData[pram].showmore;
       state.setcat = pram;
+
+      // MORE 버튼 보이기/숨기기
+      if(pram=="전체") state.mbsts = true;
+      else state.mbsts = false;
   },
+  updateList(dt,pm){
+
+    dt.mnum += pm;
+    console.log(dt.mnum);
+    if(dt.mnum > 45)
+      dt.mbsts = false;
+  }, //////////// updateList /////////////
   },
 }); // 뷰엑스 인스턴스 //
 
