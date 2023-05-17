@@ -603,8 +603,8 @@ section.new_container {
     font-weight: 600;
 }
 
-.prod_select_bx_inner > ul > .dept1_bx {
-    padding: 0 60px;
+.price-info-bx, .prod_select_bx_inner > ul > .prod_select {
+    padding: 20px 60px;
     border-top: 1px solid #d5d4c9;
 }
 
@@ -624,10 +624,14 @@ section.new_container {
     transform: translateY(-50%);
 }
 
-.info-tit:not(.selec), .price-info-bx {
-    padding: 0 60px;
-}
-
 .price-info-wrap {
     height: 485px;
+}
+
+.option_list {
+    padding-left: 10px;
+}
+
+.prod-img {
+    height: 253px;
 }

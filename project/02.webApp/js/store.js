@@ -43,10 +43,12 @@ const store = new Vuex.Store({
     cat1: "",
     cat2: "",
     cat3: "",
+    cat4:"",
 
     menu:{},
     menu2:[],
     menusum:[],
+    
   },
   mutations: {
     // tg서브메뉴 상태변경 변수 셋업
@@ -54,8 +56,13 @@ const store = new Vuex.Store({
       state.cat1 = pram.cat1;
       state.cat2 = pram.cat2;
       state.cat3 = pram.cat3;
-      state.menusum = [...Object.values(state.tgData[pram.cat1][pram.cat2])[0], ...Object.values(state.tgData[pram.cat1][pram.cat2])[1]]
-      // console.log(state.menusum);
+      state.cat4 = pram.cat4;
+
+      // all:[...Object.values(state.tgData[pram.cat1][pram.cat2])[0], ...Object.values(state.tgData[pram.cat1][pram.cat2])[1]],
+      // state.menusum = all
+      
+      // state.menusum = [...Object.values(state.tgData[pram.cat1][pram.cat2])[0], ...Object.values(state.tgData[pram.cat1][pram.cat2])[1]]
+      // console.log(state.cat3);
       state.menu = state.tgData[pram.cat1][pram.cat2]; /* 중분류 접근 */
       state.menu2 = state.tgData[pram.cat1][pram.cat2][pram.cat3]; /* 소분류 접근 */
       state.prodCount = state.menu2 ? state.menu2.length : 0; /* 소분류데이터 길이값 출력 */

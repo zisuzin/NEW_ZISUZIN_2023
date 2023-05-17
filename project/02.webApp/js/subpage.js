@@ -40,16 +40,16 @@ Vue.component("tgprod-comp", {
   template: subdata.tg_ProdList,
   methods: {
     handleMouseOver(event) {
-    // // 이벤트 발생 요소
     const tgImg = $(event.currentTarget);
-  
-    // // 현재 이미지의 src 값
     const tgSrc = tgImg.attr('src');
-    // console.log("img?",tgImg,"src?",tgSrc);
     const newSrc = tgSrc.split('.jpg')[0] + '_on.jpg';
-    // console.log(newSrc)
-    // // const newSrc = tgSrc.replace('.jpg', '_on.jpg');
-    // // $(this).attr('src', newSrc);
+    tgImg.attr('src', newSrc);
+    },
+    handleMouseLeave(event) {
+    const tgImg = $(event.currentTarget);
+    const tgSrc = tgImg.attr('src');
+    const newSrc = tgSrc.split('_on')[0] + '.jpg';
+    tgImg.attr('src', newSrc);
     }
   }
 })
