@@ -257,13 +257,6 @@ const menData = [
         sale:"",
     },
     {
-        name: "유니모던 캐주얼 더비 HPMR7DA01Q",
-        img: "item_17",
-        oprice:"59900",
-        dprice: "56900",
-        sale:"",
-    },
-    {
         name: "[NAVY] 2포켓 빅 반달 메신저백 HPABCD206M",
         img: "item_18",
         oprice:"39900",
@@ -1319,7 +1312,7 @@ const tgData = {
                 },
                 {
                     name:"캐스퍼 미니 토트백 TPBT79W32",
-                    img:"item_2",
+                    img:"item_6",
                     oprice:"25900",
                     dprice:"19900",
                     sale:"",
@@ -1327,7 +1320,7 @@ const tgData = {
                 },
                 {
                     name:"가벼운 스트링 핸드폰백 HPABXC432M",
-                    img:"item_2",
+                    img:"item_7",
                     oprice:"19900",
                     dprice:"17900",
                     sale:"",
@@ -1335,7 +1328,7 @@ const tgData = {
                 },
                 {
                     name:"패턴 미니백 TPBT78S06",
-                    img:"item_2",
+                    img:"item_8",
                     oprice:"",
                     dprice:"15900",
                     sale:"",
@@ -1343,7 +1336,7 @@ const tgData = {
                 },
                 {
                     name:"뉴반달 S BLBC79W01",
-                    img:"item_2",
+                    img:"item_9",
                     oprice:"35900",
                     dprice:"27900",
                     sale:"",
@@ -1351,7 +1344,7 @@ const tgData = {
                 },
                 {
                     name:"슈펜 베이직 핸드폰 가방 TPBC79W01",
-                    img:"item_2",
+                    img:"item_10",
                     oprice:"",
                     dprice:"15900",
                     sale:"",
@@ -1359,7 +1352,7 @@ const tgData = {
                 },
                 {
                     name:"[NAVY] 베이직 와펜 핸드폰 가방 HPABCD205M",
-                    img:"item_2",
+                    img:"item_11",
                     oprice:"19900",
                     dprice:"18900",
                     sale:"",
@@ -1367,7 +1360,7 @@ const tgData = {
                 },
                 {
                     name:"마하 그리드 베이직 사코슈백 TPBC78S75",
-                    img:"item_2",
+                    img:"item_12",
                     oprice:"25900",
                     dprice:"22900",
                     sale:"",
@@ -1375,7 +1368,7 @@ const tgData = {
                 },
                 {
                     name:"미니 볼링백 BLBC79W13",
-                    img:"item_2",
+                    img:"item_13",
                     oprice:"39900",
                     dprice:"30900",
                     sale:"",
@@ -1383,7 +1376,7 @@ const tgData = {
                 },
                 {
                     name:"CHEWY MINIBAG BLBC78S20",
-                    img:"item_2",
+                    img:"item_14",
                     oprice:"",
                     dprice:"15900",
                     sale:"",
@@ -1391,7 +1384,7 @@ const tgData = {
                 },
                 {
                     name:"캔버스 아코디언 BLBC78S07",
-                    img:"item_2",
+                    img:"item_15",
                     oprice:"39900",
                     dprice:"35900",
                     sale:"",
@@ -1399,7 +1392,7 @@ const tgData = {
                 },
                 {
                     name:"에코 미니 토트백 HPABDC456M",
-                    img:"item_2",
+                    img:"item_16",
                     oprice:"",
                     dprice:"15900",
                     sale:"",
@@ -1407,7 +1400,7 @@ const tgData = {
                 },
                 {
                     name:"바게트 미니백 HPABXC405M",
-                    img:"item_2",
+                    img:"item_17",
                     oprice:"39900",
                     dprice:"35900",
                     sale:"",
@@ -1415,7 +1408,7 @@ const tgData = {
                 },
                 {
                     name:"클래식 미니백 HPABXC401O",
-                    img:"item_2",
+                    img:"item_18",
                     oprice:"49900",
                     dprice:"44900",
                     sale:"",
@@ -1423,7 +1416,7 @@ const tgData = {
                 },
                 {
                     name:"슬림 미니백 HPABXC412M",
-                    img:"item_2",
+                    img:"item_19",
                     oprice:"29900",
                     dprice:"26900",
                     sale:"",
@@ -1431,7 +1424,7 @@ const tgData = {
                 },
                 {
                     name:"미니스퀘어 HPABXC401M",
-                    img:"item_2",
+                    img:"item_20",
                     oprice:"29900",
                     dprice:"26900",
                     sale:"",
@@ -1601,7 +1594,7 @@ const tgData = {
                 },
                 {
                     name:"푸우 레이 백팩 TPBK79S52",
-                    img:"item_1",
+                    img:"",
                     oprice:"",
                     dprice:"29900",
                     sale:"",
@@ -1609,7 +1602,7 @@ const tgData = {
                 },
                 {
                     name:"[테디아일랜드] 베이직 백팩 HPADZDA01C",
-                    img:"item_2",
+                    img:"",
                     oprice:"29900",
                     dprice:"27900",
                     sale:"",
@@ -1617,7 +1610,7 @@ const tgData = {
                 },
                 {
                     name:"전황일콜라보 매쉬백팩 TPBK79W72",
-                    img:"item_3",
+                    img:"",
                     oprice:"69900",
                     dprice:"55900",
                     sale:"",
@@ -1625,7 +1618,7 @@ const tgData = {
                 },
                 {
                     name:"네이비 3M 스트링 백팩 HPADZC401N",
-                    img:"item_4",
+                    img:"",
                     oprice:"59900",
                     dprice:"53900",
                     sale:"",
@@ -1633,7 +1626,7 @@ const tgData = {
                 },
                 {
                     name:"[테디아일랜드] 멀티 매쉬 백팩 HPADZDA02C",
-                    img:"item_5",
+                    img:"",
                     oprice:"59900",
                     dprice:"56900",
                     sale:"",
@@ -1641,7 +1634,7 @@ const tgData = {
                 },
                 {
                     name:"나일론 미니 백팩 BLBK78S15",
-                    img:"item_6",
+                    img:"",
                     oprice:"29900",
                     dprice:"26900",
                     sale:"",
@@ -1649,7 +1642,7 @@ const tgData = {
                 },
                 {
                     name:"네이비 X 베이직 백팩 HPADZC433M",
-                    img:"item_7",
+                    img:"",
                     oprice:"29900",
                     dprice:"26900",
                     sale:"",
@@ -1657,7 +1650,7 @@ const tgData = {
                 },
                 {
                     name:"MADE BY 쭈언니 백팩 BLBP78S25",
-                    img:"item_8",
+                    img:"",
                     oprice:"99000",
                     dprice:"88900",
                     sale:"",
@@ -1665,7 +1658,7 @@ const tgData = {
                 },
                 {
                     name:"마하 그리드 로고 베이직 백팩 TPBK78S71",
-                    img:"item_9",
+                    img:"",
                     oprice:"29900",
                     dprice:"26900",
                     sale:"",
@@ -1673,7 +1666,7 @@ const tgData = {
                 },
                 {
                     name:"브루클린 스트링 백팩 TPBK78S05",
-                    img:"item_10",
+                    img:"",
                     oprice:"39900",
                     dprice:"35900",
                     sale:"",
@@ -2009,7 +2002,7 @@ const tgData = {
             all: [
                 {
                     name:"여성 골지 니삭스 HPAO2DA14Q",
-                    img:"",
+                    img:"item_1",
                     oprice:"",
                     dprice:"5900",
                     sale:"",

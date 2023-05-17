@@ -1,4 +1,4 @@
-import { womenData, menData , kidsData, allData, tgData } from "./tempData/prodData.js";
+import { womenData, menData , kidsData, tgData, allData } from "./tempData/prodData.js";
 
 const store = new Vuex.Store({
   state: {
@@ -10,22 +10,27 @@ const store = new Vuex.Store({
       전체: {
         sNum: 60,
         cat: "ALL",
+        // item: [...womenData,...menData,...kidsData],
         item: allData,
+        showmore: true,
       },
       여성: {
         sNum: 20,
         cat: "WOMEN",
         item: womenData,
+        showmore: false,
       },
       남성: {
         sNum: 20,
         cat: "MEN",
         item: menData,
+        showmore: false,
       },
       아동: {
         sNum: 20,
         cat: "KIDS",
         item: kidsData,
+        showmore: false,
       },
     },
     
@@ -33,6 +38,7 @@ const store = new Vuex.Store({
     setsNum: "",
     setcat: "",
     item: "",
+    showmore: false,
     
     name: "",
     cat1: "",
@@ -48,6 +54,8 @@ const store = new Vuex.Store({
     mbsts:true,
     // 더보기배수 변수
     mnum: 0,
+
+    
   },
   mutations: {
     // tg서브메뉴 상태변경 변수 셋업
@@ -60,17 +68,7 @@ const store = new Vuex.Store({
       state.menu = state.tgData[pram.cat1][pram.cat2]; /* 중분류 접근 */
       state.menu2 = state.tgData[pram.cat1][pram.cat2][pram.cat3]; /* 소분류 접근 */
       state.prodCount = state.menu2 ? state.menu2.length : 0; /* 소분류데이터 길이값 출력 */
-
-      // MORE 버튼 보이기/숨기기
-      if(state.cat3=="all") state.mbsts = true;
-      else state.mbsts = false;
     },
-    Countupdate(dt,pm){
-      dt.mnum += pm;
-      // console.log(dt.mnum);
-      if(dt.mnum > 28)
-        dt.mbsts = false;
-    }, //////////// Countupdate /////////////
     newChgData(state,pram){ // state - state데이터, pram - 전달값 
       // 해당 카테고리 개수 업데이트
       state.sNum = state.newData[pram].sNum;
@@ -78,17 +76,16 @@ const store = new Vuex.Store({
       state.cat = state.newData[pram].cat;
       // 해당 카테고리 제품리스트 업데이트
       state.item = state.newData[pram].item;
+
+      state.showmore = state.newData[pram].showmore;
       state.setcat = pram;
 
       // MORE 버튼 보이기/숨기기
       if(pram=="전체") state.mbsts = true;
       else state.mbsts = false;
   },
-  newUpdate(st,pr) {
-    // $store.state.ChgData(pr)
-    // console.log(st, pr)
-  },
   updateList(dt,pm){
+
     dt.mnum += pm;
     // console.log(dt.mnum);
     if(dt.mnum > 45)
