@@ -12,19 +12,19 @@ const comData = {
                 <nav class="header_top_gnb">
                     <ul>
                         <li>
-                            <a href="#" @click="$store.commit('newUpdate', 'new')">NEW</a>
+                            <a href="sub_new.html">NEW</a>
                         </li>
                         <li>
-                            <a href="#" @click="$store.commit('newUpdate','best')">BEST</a>
+                            <a href="sub_best.html">BEST</a>
                         </li>
                         <li>
-                            <a href="#" @click="$store.commit('newUpdate','women')">WOMEN</a>
+                            <a href="#">WOMEN</a>
                         </li>
                         <li>
-                            <a href="#" @click="$store.commit('newUpdate','men')">MEN</a>
+                            <a href="#">MEN</a>
                         </li>
                         <li>
-                            <a href="#" @click="$store.commit('newUpdate', 'kids')">KIDS</a>
+                            <a href="#">KIDS</a>
                         </li>
                     </ul>
                 </nav>

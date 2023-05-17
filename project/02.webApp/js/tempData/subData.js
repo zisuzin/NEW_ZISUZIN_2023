@@ -60,12 +60,12 @@ const subdata = {
             <div class="ctg_link">
             <ul>
                 <li>
-                <a href="#">신상
+                <a href="sub_new.html">신상
                     <em>NEW</em>
                 </a>
                 </li>
                 <li>
-                <a href="#">베스트
+                <a href="sub_best.html">베스트
                     <em>BEST</em>
                 </a>
                 </li>
@@ -295,7 +295,7 @@ const subdata = {
             <div class="ui-item-view">
                 <ul class="ui-col4">
                 <template v-for="(v,i) in $store.state.menu">
-                    <li v-for="(a,b) in v" v-if="$store.state.cat3 === i">
+                    <li v-for="(a,b) in v" v-if="$store.state.cat3 === i && b>=0 && b<20+$store.state.mnum" :key="b">
                         <div class="ui-prod-bx">
                             <a href="#">
                                 <div class="prod-detail-img">
@@ -333,6 +333,9 @@ const subdata = {
                     </li>
                 </template>
             </ul>
+            <div v-if="$store.state.mbsts && $store.state.cat3 === 'all'"">
+              <button type="button" class="showmore_btn" @click="$store.commit('Countupdate',12)">View more</button>
+          </div>
         </div>
     </div>
     `

@@ -47,7 +47,10 @@ Vue.component("tgprod-comp", {
     const tgSrc = tgImg.attr('src');
     const newSrc = tgSrc.split('_on')[0] + '.jpg';
     tgImg.attr('src', newSrc);
-    }
+    },
+    test(category){
+        store.commit('newChgData',category)
+    },
   }
 })
 
@@ -156,9 +159,4 @@ $('.item_sort').on('click',function(){
 $('.product-sort-list').on('click', function(event) {
   event.stopPropagation();
 });
-
-// 색상, 가격, 사이즈 정보 클릭하면 클릭표시
-// $('.color-record > button').click(function(){
-//   $(this).toggleClass
-// });
 
