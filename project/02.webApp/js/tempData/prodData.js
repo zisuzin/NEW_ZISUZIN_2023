@@ -429,6 +429,51 @@ const kidsData = [
     },
 ];
 
+const allData = [
+    {
+        name: "와이드 라운드 버클 단화 2.0 HPWWVD217M",
+        img: "item_1",
+        oprice:"39900",
+        dprice: "37900",
+        sale:"",
+    },
+    {
+        name: "바게트 숄더백 HPABGD202M",
+        img: "item_2",
+        oprice:"",
+        dprice: "39900",
+        sale:"",
+    },
+{
+        name: "아이스락 하이퍼그립 첼시부츠 (HPMV9C404M RE) HPMV9DA04M",
+        img: "item_1",
+        oprice:"",
+        dprice: "159000",
+        sale:"",
+    },
+    {
+        name: "[슈탠다드] 남성 컬러 골지크루 삭스 HPAO5DA19M",
+        img: "item_2",
+        oprice:"",
+        dprice: "3900",
+        sale:"",
+    },
+{
+        name: "[디즈니] 앨리스 라이팅 샌들 HPKWND21DG",
+        img: "item_1",
+        oprice:"39900",
+        dprice: "35900",
+        sale:"",
+    },
+    {
+        name: "키즈 샤이닝 레인부츠 HPKV6DA01Q",
+        img: "item_2",
+        oprice:"29900",
+        dprice: "26910",
+        sale:"",
+    },
+]
+
 // 타겟 서브페이지 상품데이터 
 const tgData = {
     "women": {
@@ -630,7 +675,7 @@ const tgData = {
             ],
             
             sandal: [
-                {   idx: "1",
+                {   
                     name:"패턴 커버 플랫 샌들 1.5 MIDW78S14",
                     img:"item_1",
                     oprice:"19900",
@@ -638,7 +683,7 @@ const tgData = {
                     sale:"",
                     review:"5",
                 },
-                {   idx: "1",
+                {   
                     name:"플랫폼 피셔맨 샌들 3.5 HPWWND204M",
                     img:"item_2",
                     oprice:"39900",
@@ -646,7 +691,7 @@ const tgData = {
                     sale:"",
                     review:"33",
                 },
-                {   idx: "1",
+                {   
                     name:"스퀘어 스트랩 샌들 2.5 MIDW78S01",
                     img:"item_3",
                     oprice:"19900",
@@ -654,7 +699,7 @@ const tgData = {
                     sale:"",
                     review:"32",
                 },
-                {   idx: "1",
+                {   
                     name:"와이드 플랫 피셔맨 샌들 1.0 HPWWND203M",
                     img:"item_4",
                     oprice:"39900",
@@ -662,7 +707,7 @@ const tgData = {
                     sale:"",
                     review:"26",
                 },
-                {   idx: "1",
+                {   
                     name:"쿠션 투 스트랩 샌들 AFDM78S02",
                     img:"item_5",
                     oprice:"29900",
@@ -670,7 +715,7 @@ const tgData = {
                     sale:"",
                     review:"25",
                 },
-                {   idx: "1",
+                {   
                     name:"[도영도영이 PICK] 라운드 커버 단화샌들 1.0 HPWWND201S",
                     img:"item_6",
                     oprice:"29900",
@@ -678,7 +723,7 @@ const tgData = {
                     sale:"",
                     review:"89",
                 },
-                {   idx: "1",
+                {   
                     name:"[경량EVA] 아웃도어 투 벨크로 샌들 HPCV4D242M",
                     img:"item_7",
                     oprice:"39900",
@@ -686,7 +731,7 @@ const tgData = {
                     sale:"",
                     review:"1",
                 },
-                {   idx: "1",
+                {   
                     name:"쿠션 플랫폼 스트랩 샌들 4.0 MIDW78S07",
                     img:"item_8",
                     oprice:"29900",
@@ -694,7 +739,7 @@ const tgData = {
                     sale:"",
                     review:"16",
                 },
-                {   idx: "1",
+                {   
                     name:"스퀘어 스트랩 샌들 5.0 MIDW78S02",
                     img:"item_9",
                     oprice:"29900",
@@ -702,7 +747,7 @@ const tgData = {
                     sale:"",
                     review:"19",
                 },
-                {   idx: "1",
+                {   
                     name:"X 스트랩 쿠션 웨지 샌들 6.5 MIDW78S19",
                     img:"item_10",
                     oprice:"29900",
@@ -710,7 +755,7 @@ const tgData = {
                     sale:"",
                     review:"19",
                 },
-                {   idx: "1",
+                {   
                     name:"리커버리 소프트 젤리샌들 HPCV1D381Q",
                     img:"item_11",
                     oprice:"19900",
@@ -718,7 +763,7 @@ const tgData = {
                     sale:"",
                     review:"",
                 },
-                {   idx: "1",
+                {   
                     name:"에어핏 쿠션 베이직 덮개 뮬 4.0 MIDL78S04",
                     img:"item_12",
                     oprice:"29900",
@@ -726,7 +771,7 @@ const tgData = {
                     sale:"",
                     review:"10",
                 },
-                {   idx: "1",
+                {   
                     name:"오블리크 스트랩 샌들 2.0 MIDW78S12",
                     img:"item_13",
                     oprice:"19900",
@@ -734,7 +779,7 @@ const tgData = {
                     sale:"",
                     review:"5",
                 },
-                {   idx: "1",
+                {   
                     name:"베이직 웨지 샌들 5.0 MIDW78S21",
                     img:"item_14",
                     oprice:"29900",
@@ -742,7 +787,7 @@ const tgData = {
                     sale:"",
                     review:"14",
                 },
-                {   idx: "1",
+                {   
                     name:"스팽클 투밴드 웻지 슬리퍼 AFDL79S14",
                     img:"item_15",
                     oprice:"19900",
@@ -750,7 +795,7 @@ const tgData = {
                     sale:"",
                     review:"6",
                 },
-                {   idx: "1",
+                {   
                     name:"투웨이 웨지 샌들 5.0 MIDW78S22",
                     img:"item_16",
                     oprice:"29900",
@@ -758,7 +803,7 @@ const tgData = {
                     sale:"",
                     review:"1",
                 },
-                {   idx: "1",
+                {   
                     name:"베이직 스트랩 샌들 5.0 MIDW79S01",
                     img:"item_17",
                     oprice:"29900",
@@ -766,7 +811,7 @@ const tgData = {
                     sale:"",
                     review:"23",
                 },
-                {   idx: "1",
+                {   
                     name:"메쉬 스트랩 쿠션 웨지 샌들 6.5 MIDW78S20",
                     img:"item_18",
                     oprice:"29900",
@@ -774,7 +819,7 @@ const tgData = {
                     sale:"",
                     review:"8",
                 },
-                {   idx: "1",
+                {   
                     name:"피셔맨 힐 샌들 HPWWND252D",
                     img:"item_19",
                     oprice:"49900",
@@ -782,7 +827,7 @@ const tgData = {
                     sale:"",
                     review:"",
                 },
-                {   idx: "1",
+                {   
                     name:"T스트랩 플랫폼 샌들 3.0 MIDW78S06",
                     img:"item_20",
                     oprice:"29900",
@@ -986,7 +1031,7 @@ const tgData = {
                     review: "2"
                 },
             
-                {   idx: "1",
+                {   
                     name:"패턴 커버 플랫 샌들 1.5 MIDW78S14",
                     img:"item_1",
                     oprice:"19900",
@@ -994,7 +1039,7 @@ const tgData = {
                     sale:"",
                     review:"5",
                 },
-                {   idx: "1",
+                {   
                     name:"플랫폼 피셔맨 샌들 3.5 HPWWND204M",
                     img:"item_2",
                     oprice:"39900",
@@ -1002,7 +1047,7 @@ const tgData = {
                     sale:"",
                     review:"33",
                 },
-                {   idx: "1",
+                {   
                     name:"스퀘어 스트랩 샌들 2.5 MIDW78S01",
                     img:"item_3",
                     oprice:"19900",
@@ -1010,7 +1055,7 @@ const tgData = {
                     sale:"",
                     review:"32",
                 },
-                {   idx: "1",
+                {   
                     name:"와이드 플랫 피셔맨 샌들 1.0 HPWWND203M",
                     img:"item_4",
                     oprice:"39900",
@@ -1018,7 +1063,7 @@ const tgData = {
                     sale:"",
                     review:"26",
                 },
-                {   idx: "1",
+                {   
                     name:"쿠션 투 스트랩 샌들 AFDM78S02",
                     img:"item_5",
                     oprice:"29900",
@@ -1026,7 +1071,7 @@ const tgData = {
                     sale:"",
                     review:"25",
                 },
-                {   idx: "1",
+                {   
                     name:"[도영도영이 PICK] 라운드 커버 단화샌들 1.0 HPWWND201S",
                     img:"item_6",
                     oprice:"29900",
@@ -1034,7 +1079,7 @@ const tgData = {
                     sale:"",
                     review:"89",
                 },
-                {   idx: "1",
+                {   
                     name:"[경량EVA] 아웃도어 투 벨크로 샌들 HPCV4D242M",
                     img:"item_7",
                     oprice:"39900",
@@ -1042,7 +1087,7 @@ const tgData = {
                     sale:"",
                     review:"1",
                 },
-                {   idx: "1",
+                {   
                     name:"쿠션 플랫폼 스트랩 샌들 4.0 MIDW78S07",
                     img:"item_8",
                     oprice:"29900",
@@ -1050,7 +1095,7 @@ const tgData = {
                     sale:"",
                     review:"16",
                 },
-                {   idx: "1",
+                {   
                     name:"스퀘어 스트랩 샌들 5.0 MIDW78S02",
                     img:"item_9",
                     oprice:"29900",
@@ -1058,7 +1103,7 @@ const tgData = {
                     sale:"",
                     review:"19",
                 },
-                {   idx: "1",
+                {   
                     name:"X 스트랩 쿠션 웨지 샌들 6.5 MIDW78S19",
                     img:"item_10",
                     oprice:"29900",
@@ -1066,7 +1111,7 @@ const tgData = {
                     sale:"",
                     review:"19",
                 },
-                {   idx: "1",
+                {   
                     name:"리커버리 소프트 젤리샌들 HPCV1D381Q",
                     img:"item_11",
                     oprice:"19900",
@@ -1074,7 +1119,7 @@ const tgData = {
                     sale:"",
                     review:"",
                 },
-                {   idx: "1",
+                {   
                     name:"에어핏 쿠션 베이직 덮개 뮬 4.0 MIDL78S04",
                     img:"item_12",
                     oprice:"29900",
@@ -1082,7 +1127,7 @@ const tgData = {
                     sale:"",
                     review:"10",
                 },
-                {   idx: "1",
+                {   
                     name:"오블리크 스트랩 샌들 2.0 MIDW78S12",
                     img:"item_13",
                     oprice:"19900",
@@ -1090,7 +1135,7 @@ const tgData = {
                     sale:"",
                     review:"5",
                 },
-                {   idx: "1",
+                {   
                     name:"베이직 웨지 샌들 5.0 MIDW78S21",
                     img:"item_14",
                     oprice:"29900",
@@ -1098,7 +1143,7 @@ const tgData = {
                     sale:"",
                     review:"14",
                 },
-                {   idx: "1",
+                {   
                     name:"스팽클 투밴드 웻지 슬리퍼 AFDL79S14",
                     img:"item_15",
                     oprice:"19900",
@@ -1106,7 +1151,7 @@ const tgData = {
                     sale:"",
                     review:"6",
                 },
-                {   idx: "1",
+                {   
                     name:"투웨이 웨지 샌들 5.0 MIDW78S22",
                     img:"item_16",
                     oprice:"29900",
@@ -1114,7 +1159,7 @@ const tgData = {
                     sale:"",
                     review:"1",
                 },
-                {   idx: "1",
+                {   
                     name:"베이직 스트랩 샌들 5.0 MIDW79S01",
                     img:"item_17",
                     oprice:"29900",
@@ -1122,7 +1167,7 @@ const tgData = {
                     sale:"",
                     review:"23",
                 },
-                {   idx: "1",
+                {   
                     name:"메쉬 스트랩 쿠션 웨지 샌들 6.5 MIDW78S20",
                     img:"item_18",
                     oprice:"29900",
@@ -1130,7 +1175,7 @@ const tgData = {
                     sale:"",
                     review:"8",
                 },
-                {   idx: "1",
+                {   
                     name:"피셔맨 힐 샌들 HPWWND252D",
                     img:"item_19",
                     oprice:"49900",
@@ -1138,7 +1183,7 @@ const tgData = {
                     sale:"",
                     review:"",
                 },
-                {   idx: "1",
+                {   
                     name:"T스트랩 플랫폼 샌들 3.0 MIDW78S06",
                     img:"item_20",
                     oprice:"29900",
@@ -1234,7 +1279,7 @@ const tgData = {
             minibag:[
                 {
                     name:"크로셰 핸드폰 백 BLBK78S11",
-                    img:"",
+                    img:"item_1",
                     oprice:"15900",
                     dprice:"12900",
                     sale:"",
@@ -1242,7 +1287,7 @@ const tgData = {
                 },
                 {
                     name:"나일론 셔링 미니백 HPABGD221M",
-                    img:"",
+                    img:"item_2",
                     oprice:"25900",
                     dprice:"24900",
                     sale:"",
@@ -1250,7 +1295,7 @@ const tgData = {
                 },
                 {
                     name:"데일리 나일론 미니 숄더백 HPABGC407M",
-                    img:"",
+                    img:"item_3",
                     oprice:"29900",
                     dprice:"26900",
                     sale:"",
@@ -1258,7 +1303,7 @@ const tgData = {
                 },
                 {
                     name:"캐스퍼 백인백 TPAC79W31",
-                    img:"",
+                    img:"item_4",
                     oprice:"",
                     dprice:"15900",
                     sale:"",
@@ -1266,7 +1311,7 @@ const tgData = {
                 },
                 {
                     name:"네트 핸드폰 백 BLBK78S08",
-                    img:"",
+                    img:"item_5",
                     oprice:"19900",
                     dprice:"17900",
                     sale:"",
@@ -1274,7 +1319,7 @@ const tgData = {
                 },
                 {
                     name:"캐스퍼 미니 토트백 TPBT79W32",
-                    img:"",
+                    img:"item_2",
                     oprice:"25900",
                     dprice:"19900",
                     sale:"",
@@ -1282,7 +1327,7 @@ const tgData = {
                 },
                 {
                     name:"가벼운 스트링 핸드폰백 HPABXC432M",
-                    img:"",
+                    img:"item_2",
                     oprice:"19900",
                     dprice:"17900",
                     sale:"",
@@ -1290,7 +1335,7 @@ const tgData = {
                 },
                 {
                     name:"패턴 미니백 TPBT78S06",
-                    img:"",
+                    img:"item_2",
                     oprice:"",
                     dprice:"15900",
                     sale:"",
@@ -1298,7 +1343,7 @@ const tgData = {
                 },
                 {
                     name:"뉴반달 S BLBC79W01",
-                    img:"",
+                    img:"item_2",
                     oprice:"35900",
                     dprice:"27900",
                     sale:"",
@@ -1306,7 +1351,7 @@ const tgData = {
                 },
                 {
                     name:"슈펜 베이직 핸드폰 가방 TPBC79W01",
-                    img:"",
+                    img:"item_2",
                     oprice:"",
                     dprice:"15900",
                     sale:"",
@@ -1314,7 +1359,7 @@ const tgData = {
                 },
                 {
                     name:"[NAVY] 베이직 와펜 핸드폰 가방 HPABCD205M",
-                    img:"",
+                    img:"item_2",
                     oprice:"19900",
                     dprice:"18900",
                     sale:"",
@@ -1322,7 +1367,7 @@ const tgData = {
                 },
                 {
                     name:"마하 그리드 베이직 사코슈백 TPBC78S75",
-                    img:"",
+                    img:"item_2",
                     oprice:"25900",
                     dprice:"22900",
                     sale:"",
@@ -1330,7 +1375,7 @@ const tgData = {
                 },
                 {
                     name:"미니 볼링백 BLBC79W13",
-                    img:"",
+                    img:"item_2",
                     oprice:"39900",
                     dprice:"30900",
                     sale:"",
@@ -1338,7 +1383,7 @@ const tgData = {
                 },
                 {
                     name:"CHEWY MINIBAG BLBC78S20",
-                    img:"",
+                    img:"item_2",
                     oprice:"",
                     dprice:"15900",
                     sale:"",
@@ -1346,7 +1391,7 @@ const tgData = {
                 },
                 {
                     name:"캔버스 아코디언 BLBC78S07",
-                    img:"",
+                    img:"item_2",
                     oprice:"39900",
                     dprice:"35900",
                     sale:"",
@@ -1354,7 +1399,7 @@ const tgData = {
                 },
                 {
                     name:"에코 미니 토트백 HPABDC456M",
-                    img:"",
+                    img:"item_2",
                     oprice:"",
                     dprice:"15900",
                     sale:"",
@@ -1362,7 +1407,7 @@ const tgData = {
                 },
                 {
                     name:"바게트 미니백 HPABXC405M",
-                    img:"",
+                    img:"item_2",
                     oprice:"39900",
                     dprice:"35900",
                     sale:"",
@@ -1370,7 +1415,7 @@ const tgData = {
                 },
                 {
                     name:"클래식 미니백 HPABXC401O",
-                    img:"",
+                    img:"item_2",
                     oprice:"49900",
                     dprice:"44900",
                     sale:"",
@@ -1378,7 +1423,7 @@ const tgData = {
                 },
                 {
                     name:"슬림 미니백 HPABXC412M",
-                    img:"",
+                    img:"item_2",
                     oprice:"29900",
                     dprice:"26900",
                     sale:"",
@@ -1386,7 +1431,7 @@ const tgData = {
                 },
                 {
                     name:"미니스퀘어 HPABXC401M",
-                    img:"",
+                    img:"item_2",
                     oprice:"29900",
                     dprice:"26900",
                     sale:"",
@@ -2281,4 +2326,4 @@ const tgData = {
 
 
 
-export { womenData, menData , kidsData, tgData };
+export { womenData, menData , kidsData, allData, tgData };

@@ -1,4 +1,4 @@
-import { womenData, menData , kidsData, tgData } from "./tempData/prodData.js";
+import { womenData, menData , kidsData, allData, tgData } from "./tempData/prodData.js";
 
 const store = new Vuex.Store({
   state: {
@@ -10,7 +10,7 @@ const store = new Vuex.Store({
       전체: {
         sNum: 60,
         cat: "ALL",
-        item: [...womenData,...menData,...kidsData],
+        item: allData,
       },
       여성: {
         sNum: 20,
@@ -62,13 +62,13 @@ const store = new Vuex.Store({
       state.prodCount = state.menu2 ? state.menu2.length : 0; /* 소분류데이터 길이값 출력 */
 
       // MORE 버튼 보이기/숨기기
-      if(state.cat2=="shoes" && state.cat3=="all") state.mbsts = true;
+      if(state.cat3=="all") state.mbsts = true;
       else state.mbsts = false;
     },
     Countupdate(dt,pm){
       dt.mnum += pm;
       // console.log(dt.mnum);
-      if(dt.mnum > 20)
+      if(dt.mnum > 28)
         dt.mbsts = false;
     }, //////////// Countupdate /////////////
     newChgData(state,pram){ // state - state데이터, pram - 전달값 
