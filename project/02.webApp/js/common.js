@@ -21,7 +21,7 @@ makeVue("#info");
 makeVue(".recent-view-prod-bx");
 
 new Vue({
-    el: "#header",
+    el: "#header"
 })
 
 // Get방식으로 넘어온 url값 받아서 파라미터값 변경!

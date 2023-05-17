@@ -11,7 +11,6 @@ Vue.component("stab-comp", {
     methods:{
       test(category){
         store.commit('newChgData',category)
-        console.log(category);
       },
     },
     mounted(){
@@ -26,9 +25,6 @@ Vue.component("stab-comp", {
 // [1-2] 뷰 컴포넌트 - 상품리스트
 Vue.component("list-comp", {
   template: subdata.new_prodList,
-  methods: {
-    
-  },
 });
 
 // [2] 서브 카테고리 (타겟)
@@ -64,7 +60,12 @@ new Vue({
   store, // 뷰엑스 스토어 등록
   data: {
     subTit: ["NEW","BEST"],
-  }, 
+  },
+  mounted(){
+    $(".header_top_gnb ul li a").click(function(){
+      store.commit('newUpdate', $(this).text())
+    })
+  }
 })
 
 // 뷰 전역등록 함수

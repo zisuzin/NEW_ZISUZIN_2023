@@ -10,7 +10,7 @@ const store = new Vuex.Store({
       전체: {
         sNum: 60,
         cat: "ALL",
-        item: [...womenData,...menData,...kidsData],
+        item: [...womenData, ...menData, ...kidsData],
         showmore: true,
       },
       여성: {
@@ -53,8 +53,6 @@ const store = new Vuex.Store({
     mbsts:true,
     // 더보기배수 변수
     mnum: 0,
-
-    
   },
   mutations: {
     // tg서브메뉴 상태변경 변수 셋업
@@ -80,7 +78,7 @@ const store = new Vuex.Store({
       state.cat = state.newData[pram].cat;
       // 해당 카테고리 제품리스트 업데이트
       state.item = state.newData[pram].item;
-      console.log(pram,Object.keys(state.newData[pram].item).length);
+      // console.log(pram,Object.keys(state.newData[pram].item).length);
 
       state.showmore = state.newData[pram].showmore;
       state.setcat = pram;
@@ -88,6 +86,10 @@ const store = new Vuex.Store({
       // MORE 버튼 보이기/숨기기
       if(pram=="전체") state.mbsts = true;
       else state.mbsts = false;
+  },
+  newUpdate(st,pr) {
+    $store.state.ChgData(pr)
+    console.log(st, pr)
   },
   updateList(dt,pm){
 

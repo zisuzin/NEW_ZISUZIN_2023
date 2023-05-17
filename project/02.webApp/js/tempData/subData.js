@@ -23,9 +23,7 @@ const subdata = {
      new_prodList: `
         <ul>
             <li v-for="(value,i) in $store.state.newData[$store.state.setcat].item"
-            v-if="i>=0 && i<20+$store.state.mnum"
-            :key="i">
-                <div>{{i}}
+            v-if="i>=0 && i<20+$store.state.mnum" :key="i">
                     <div class="new-prod-bx">
                         <a href="#">
                             <div class="prod-img">
@@ -83,14 +81,14 @@ const subdata = {
                 </div>
                 <div class="ctg_depth2">
                     <ul>
-                    <li>
-                        <a href="#" v-on:click="$store.commit('ChgData',{cat1:'women',cat2:'shoes',cat3:''})">전체</a>
+                    <li v-on:click="$store.commit('ChgData',{cat1:'women',cat2:'shoes',cat3:'all'})">
+                        <a href="#">전체</a>
                     </li>
-                    <li>
-                        <a href="#" v-on:click="$store.commit('ChgData',{cat1:'women',cat2:'shoes',cat3:'flat'})">플랫슈즈</a>
+                    <li v-on:click="$store.commit('ChgData',{cat1:'women',cat2:'shoes',cat3:'flat'})">
+                        <a href="#">플랫슈즈</a>
                     </li>
-                    <li>
-                        <a href="#" v-on:click="$store.commit('ChgData',{cat1:'women',cat2:'shoes',cat3:'sandal'})">샌들</a>
+                    <li v-on:click="$store.commit('ChgData',{cat1:'women',cat2:'shoes',cat3:'sandal'})">
+                        <a href="#">샌들</a>
                     </li>
                     </ul>
                 </div>
@@ -103,14 +101,14 @@ const subdata = {
                 </div>
                 <div class="ctg_depth2">
                     <ul>
-                    <li>
-                        <a href="#" v-on:click="$store.commit('ChgData',{cat1:'women',cat2:'bags',cat3:'all'})">전체</a>
+                    <li v-on:click="$store.commit('ChgData',{cat1:'women',cat2:'bags',cat3:'all'})">
+                        <a href="#">전체</a>
                     </li>
-                    <li>
-                        <a href="#" v-on:click="$store.commit('ChgData',{cat1:'women',cat2:'bags',cat3:'backpack'})">백팩</a>
+                    <li v-on:click="$store.commit('ChgData',{cat1:'women',cat2:'bags',cat3:'backpack'})">
+                        <a href="#">백팩</a>
                     </li>
-                    <li>
-                        <a href="#" v-on:click="$store.commit('ChgData',{cat1:'women',cat2:'bags',cat3:'minibag'})">미니백</a>
+                    <li v-on:click="$store.commit('ChgData',{cat1:'women',cat2:'bags',cat3:'minibag'})">
+                        <a href="#">미니백</a>
                     </li>
                     </ul>
                 </div>
@@ -123,14 +121,14 @@ const subdata = {
                 </div>
                 <div class="ctg_depth2">
                     <ul>
-                    <li>
-                        <a href="#" v-on:click="$store.commit('ChgData',{cat1:'women',cat2:'ac',cat3:'all'})">전체</a>
+                    <li v-on:click="$store.commit('ChgData',{cat1:'women',cat2:'ac',cat3:'all'})">
+                        <a href="#">전체</a>
                     </li>
-                    <li>
-                        <a href="#" v-on:click="$store.commit('ChgData',{cat1:'women',cat2:'ac',cat3:'socks'})">양말</a>
+                    <li v-on:click="$store.commit('ChgData',{cat1:'women',cat2:'ac',cat3:'socks'})">
+                        <a href="#">양말</a>
                     </li>
-                    <li>
-                        <a href="#" v-on:click="$store.commit('ChgData',{cat1:'women',cat2:'ac',cat3:'hats'})">모자</a>
+                    <li v-on:click="$store.commit('ChgData',{cat1:'women',cat2:'ac',cat3:'hats'})">
+                        <a href="#">모자</a>
                     </li>
                     </ul>
                 </div>
@@ -300,7 +298,7 @@ const subdata = {
                     <li v-for="(a,b) in v" v-if="$store.state.cat3 === i">
                         <div class="ui-prod-bx">
                             <a href="#">
-                                <div class="prod-img">
+                                <div class="prod-detail-img">
                                     <img v-on:mouseover="handleMouseOver" v-on:mouseleave="handleMouseLeave" v-bind:src="'./00.data/02.imgData/'+$store.state.cat1+'/'+ $store.state.cat2+'/'+$store.state.cat3+'/'+'item_'+(b+1)+'.jpg'" alt="상품이미지">
                                 </div>
                                 <div class="prod-txt">
