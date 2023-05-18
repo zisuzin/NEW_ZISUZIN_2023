@@ -103,6 +103,7 @@ const store = new Vuex.Store({
       if(pram=="전체") state.mbsts = true;
       else state.mbsts = false;
   },
+  // 페이지이동 호출함수
   nbChg(state, pram){
     // console.log(pram)
     if(pram==="WOMEN" || pram==="MEN" || pram==="KIDS")

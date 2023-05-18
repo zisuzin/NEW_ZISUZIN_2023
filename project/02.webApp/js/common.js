@@ -23,9 +23,4 @@ makeVue(".recent-view-prod-bx");
 new Vue({
     el: "#header",
     store,
-    // mounted() {
-    //     const detail = $(".header_top_gnb > ul > li > a").click({
-    //         console.log(detail)
-    //     })
-    // }
 })
