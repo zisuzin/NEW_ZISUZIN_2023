@@ -77,7 +77,7 @@ const subdata = {
                 <li class="ctg_depth1">
                 <div>
                     <a href="#" v-on:click="$store.commit('ChgData',{cat1:'women',cat2:'shoes',cat3:'all'})">
-                    <span v-if="$store.state.newChgData,'women'">여성신발</span>
+                    <span>여성신발</span>
                     </a>
                 </div>
                 <div class="ctg_depth2">

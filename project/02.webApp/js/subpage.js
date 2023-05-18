@@ -39,6 +39,7 @@ Vue.component("sidetab-comp",{
   template: subdata.sideMenuTab,
 })
 
+
 Vue.component("tgprod-comp", {
   template: subdata.tg_ProdList,
   methods: {
