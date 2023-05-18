@@ -17,8 +17,3 @@ window.addEventListener("scroll", ()=>{
         mTopBtn.style.opacity = 1;
     }
 });
-
-// GNB 기본 기능 막기
-$('.header_top_gnb > ul > li > a, .header_top_personal_menu > ul > li > a').click(function(e){
-    e.preventDefault();
-});

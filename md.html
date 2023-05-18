@@ -1,0 +1,9 @@
+<div v-if="$store.state.mbsts">
+    <button type="button" class="showmore_btn" @click="$store.commit('updateList',12)">View more</button>
+  </div>
+
+
+<template v-for="(v,i) in $store.state.menu">
+        <li v-for="(a,b) in v" v-if="$store.state.cat3 === i">
+
+            <li v-on:click="$store.commit('ChgData',{cat1:'women',cat2:'bags',cat3:'all'})"></li>

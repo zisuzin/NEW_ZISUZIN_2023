@@ -65,6 +65,26 @@ new Vue({
     subTit: ["NEW","BEST"],
   },
   mounted(){
+    // http://127.0.0.1:5500/project/02.webApp/sub.html?cat1=men&cat2=shoes&cat3=all
+
+    // GET 방식으로 넘어온 데이터 처리
+    // let pm,pm1,pm2,pm3;
+
+    // if(location.href.indexOf("?") !== -1){
+    //     pm = location.href.split("?")[1].split("&");
+    //     pm1 = pm[0].split("=")[1]; // cat1
+    //     pm2 = decodeURI(pm[1].split("=")[1]); // cat2
+    //     pm3 = decodeURI(pm[2].split("=")[1]); // cat3
+    //     console.log(pm2);
+    // }
+    // if(pm)
+    //     store.commit("chgData",{cat1:pm1,cat2:pm2,cat3:pm3});
+    // else
+    //     store.commit("chgData",{cat1:"men",cat2:"운동화",cat3:"전체"});
+
+    //     console.log(store.state.cat1);
+    //     prod = qsa(".prod_box li");
+    //     console.log(prod);
   }
 })
 
@@ -156,4 +176,3 @@ $('.item_sort').on('click',function(){
 $('.product-sort-list').on('click', function(event) {
   event.stopPropagation();
 });
-

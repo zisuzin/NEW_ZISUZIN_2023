@@ -46,13 +46,14 @@ const subdata = {
                             <span v-if="value.dprice">원</span>
                         </span>
                         <span class="percent-price" v-if="value.oprice && value.dprice">
-                            <em>{{calculateDiscount(value.oprice, value.dprice)}}</em>
+                            <em>{{calculateDiscount(value.oprice,value.dprice)}}</em>
                         </span>
                     </div>
                 </div>
             </li>
         </ul>
     `,
+    
     // 사이드 메뉴탭 (여성,남성,아동)
     sideMenuTab: `
         <aside class="cat_left_side_tab">
@@ -270,22 +271,16 @@ const subdata = {
                     </strong>
                     <ul class="product-sort-list">
                         <li>
-                            <a href="#">낮은가격순</a>
+                            <a href="#" v-on:click="$store.commit('sortFn2', {cat1:'women',cat2:'shoes',cat3:'flat'})">낮은가격순</a>
                         </li>
                         <li>
-                            <a href="#">높은가격순</a>
+                            <a href="#" v-on:click="$store.commit('sortFn1', {cat1:'women',cat2:'shoes',cat3:'flat'})">높은가격순</a>
                         </li>
                         <li>
-                            <a href="#">상품평순</a>
+                            <a href="#" v-on:click="$store.commit('sortFn', {cat1:'women',cat2:'shoes',cat3:'flat'})">상품평순</a>
                         </li>
                         <li>
-                            <a href="#">인기상품순</a>
-                        </li>
-                        <li>
-                            <a href="#">신상품순</a>
-                        </li>
-                        <li>
-                            <a href="#">할인률높은순</a>
+                            <a href="#" v-on:click="$store.commit('sortFn3', {cat1:'women',cat2:'shoes',cat3:'flat'})">할인률높은순</a>
                         </li>
                     </ul>
                 </div>
@@ -318,7 +313,7 @@ const subdata = {
                                 <span>원</span>
                             </span>
                             <span class="percent-price" v-if="a.oprice && a.dprice">
-                                <em>{{calculateDiscount(a.oprice, a.dprice)}}</em>
+                                <em>{{a.sale + '%'}}</em>
                             </span>
                             <div class="box_grade">
                                 <div class="star">

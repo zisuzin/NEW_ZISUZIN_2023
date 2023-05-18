@@ -1,4 +1,4 @@
-import { womenData, menData , kidsData, tgData } from "./tempData/prodData.js";
+import { /* womenData, menData , kidsData, */ nbData, tgData } from "./tempData/prodData.js";
 
 const store = new Vuex.Store({
   state: {
@@ -10,35 +10,53 @@ const store = new Vuex.Store({
       전체: {
         sNum: 60,
         cat: "ALL",
-        // item: [...womenData,...menData,...kidsData],
-        item: allData,
-        showmore: true,
+        item: [...nbData.new.womenData,...nbData.new.menData,...nbData.new.kidsData],
       },
       여성: {
         sNum: 20,
         cat: "WOMEN",
-        item: womenData,
-        showmore: false,
+        item: nbData.new.womenData,
       },
       남성: {
         sNum: 20,
         cat: "MEN",
-        item: menData,
-        showmore: false,
+        item: nbData.new.menData,
       },
       아동: {
         sNum: 20,
         cat: "KIDS",
-        item: kidsData,
-        showmore: false,
+        item: nbData.new.kidsData,
       },
     },
     
+    // 서브데이터 셋업 (new/best)
+    bestData: {
+      전체: {
+        sNum: 60,
+        cat: "ALL",
+        item: [...nbData.best.womenData,...nbData.best.menData,...nbData.best.kidsData],
+      },
+      여성: {
+        sNum: 20,
+        cat: "WOMEN",
+        item: nbData.best.womenData,
+      },
+      남성: {
+        sNum: 20,
+        cat: "MEN",
+        item: nbData.best.menData,
+      },
+      아동: {
+        sNum: 20,
+        cat: "KIDS",
+        item: nbData.best.kidsData,
+      },
+    },
+
     // 공통처리 메뉴 변수
     setsNum: "",
     setcat: "",
     item: "",
-    showmore: false,
     
     name: "",
     cat1: "",
@@ -46,15 +64,18 @@ const store = new Vuex.Store({
     cat3: "",
     cat4:"",
 
+    wdata: "",
+    mdata: "",
+    kdata: "",
+
     menu:{},
     menu2:[],
     menusum:[],
-
+    sortmenu:[],
     // 더보기버튼 상태변수
     mbsts:true,
     // 더보기배수 변수
     mnum: 0,
-
     
   },
   mutations: {
@@ -71,7 +92,7 @@ const store = new Vuex.Store({
     },
     newChgData(state,pram){ // state - state데이터, pram - 전달값 
       // 해당 카테고리 개수 업데이트
-      state.sNum = state.newData[pram].sNum;
+      // state.sNum = state.newData[pram].sNum;
       // 해당 카테고리 이름 업데이트
       state.cat = state.newData[pram].cat;
       // 해당 카테고리 제품리스트 업데이트
@@ -84,14 +105,60 @@ const store = new Vuex.Store({
       if(pram=="전체") state.mbsts = true;
       else state.mbsts = false;
   },
+  nbChg(state, pram){
+    console.log(pram)
+    // state.cat = state[pram]['전체'].cat
+    // state.item = state[pram]['전체'].item
+    // state.showmore = state[pram]['전체'].showmore
+  },
+  // MORE 버튼 클릭시 이미지 증가 함수
   updateList(dt,pm){
-
     dt.mnum += pm;
     // console.log(dt.mnum);
     if(dt.mnum > 45)
       dt.mbsts = false;
-  }, //////////// updateList /////////////
-  },
+  }, // updateList //
+
+  // 상품평순 정렬 함수
+  sortFn(st,pr) {
+    st.arr = st.tgData[pr.cat1][pr.cat2][pr.cat3];
+    let temp = st.arr;
+    temp.sort(function(a,b){
+      return b.review - a.review
+    })
+    store.commit('ChgData', pr)
+  }, 
+
+  // 높은가격순 정렬 함수
+  sortFn1(st,pr) {
+    st.arr = st.tgData[pr.cat1][pr.cat2][pr.cat3];
+    let temp = st.arr;
+    temp.sort(function(a,b){
+      return b.dprice - a.dprice
+    })
+    store.commit('ChgData', pr)
+  },  
+
+  // 낮은가격순 정렬 함수
+  sortFn2(st,pr) {
+    st.arr = st.tgData[pr.cat1][pr.cat2][pr.cat3];
+    let temp = st.arr;
+    temp.sort(function(a,b){
+      return a.dprice - b.dprice
+    })
+    store.commit('ChgData', pr)
+  },  
+
+  // 할인률높은순 정렬 함수
+  sortFn3(st,pr) {
+    st.arr = st.tgData[pr.cat1][pr.cat2][pr.cat3];
+    let temp = st.arr;
+    temp.sort(function(a,b){
+      return b.sale - a.sale
+    })
+    store.commit('ChgData', pr)
+  }  
+  }, // mutation // 
 }); // 뷰엑스 인스턴스 //
 
 export default store;
