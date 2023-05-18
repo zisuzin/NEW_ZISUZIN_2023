@@ -1,6 +1,21 @@
 import subdata from "./tempData/subData.js";
 import store from "./store.js";
 
+
+let pm = location.href.split("/");
+pm = pm[pm.length-1].split("=")[1];
+console.log(pm);
+$(()=>{
+  
+  if(pm==="WOMEN")
+    $(".new-prod-tab li").eq(1).trigger("click");
+    else if(pm==="MEN")
+    $(".new-prod-tab li").eq(2).trigger("click");
+    else if(pm==="KIDS")
+    $(".new-prod-tab li").eq(2).trigger("click");
+
+})
+
 /************************************* 
     뷰 컴포넌트 데이터 셋업
 *************************************/
@@ -19,6 +34,7 @@ Vue.component("stab-comp", {
         const firstLi = this.$el.querySelector('ul > li:first-child');
         firstLi.click();
       });
+      
     },
 });
 

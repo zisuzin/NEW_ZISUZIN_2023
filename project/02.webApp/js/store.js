@@ -1,5 +1,6 @@
 import { /* womenData, menData , kidsData, */ nbData, tgData } from "./tempData/prodData.js";
 
+
 const store = new Vuex.Store({
   state: {
     // tg서브메뉴 제품정보 객체
@@ -10,7 +11,7 @@ const store = new Vuex.Store({
       전체: {
         sNum: 60,
         cat: "ALL",
-        item: [...nbData.new.womenData,...nbData.new.menData,...nbData.new.kidsData],
+        item: nbData.new.allData,
       },
       여성: {
         sNum: 20,
@@ -107,6 +108,11 @@ const store = new Vuex.Store({
   },
   nbChg(state, pram){
     console.log(pram)
+    if(pram==="WOMEN")
+    location.href = "sub_tg.html?cat="+pram;
+    else
+    location.href = "sub_best.html?cat="+pram;
+    this.newChgData(pram);
     // state.cat = state[pram]['전체'].cat
     // state.item = state[pram]['전체'].item
     // state.showmore = state[pram]['전체'].showmore
@@ -114,7 +120,7 @@ const store = new Vuex.Store({
   // MORE 버튼 클릭시 이미지 증가 함수
   updateList(dt,pm){
     dt.mnum += pm;
-    // console.log(dt.mnum);
+    console.log(dt.mnum+20);
     if(dt.mnum > 45)
       dt.mbsts = false;
   }, // updateList //
