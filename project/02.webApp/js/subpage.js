@@ -1,10 +1,9 @@
 import subdata from "./tempData/subData.js";
 import store from "./store.js";
 
-
 let pm = location.href.split("/");
 pm = pm[pm.length-1].split("=")[1];
-console.log(pm)
+// console.log(pm)
 
 /************************************* 
     뷰 컴포넌트 데이터 셋업

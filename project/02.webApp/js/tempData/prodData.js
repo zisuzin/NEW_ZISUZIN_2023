@@ -2939,13 +2939,181 @@ const tgData = {
             ]
         },
         "bags": {
+            "mensBag": [
+                {
+                    name: "비슬로우 BESLOWⅩSHOOPEN 메신저백 TPBF79S09",
+                    img: "item_1",
+                    oprice: "49,900",
+                    dprice: "39,900",
+                    sale: "",
+                    review: "",
+                },
+                {
+                    name: "비슬로우 BESLOW Ⅹ SHOOPEN 포켓 토트백 TPBF79S07",
+                    img: "item_2",
+                    oprice: "",
+                    dprice: "59,900",
+                    sale: "",
+                    review: "",
+                },
+                {
+                    name: "SHOO NOTEBOOK BAG TPBF79S04",
+                    img: "item_3",
+                    oprice: "",
+                    dprice: "49,900",
+                    sale: "",
+                    review: "",
+                },
+            ],
+            "crossBag": [
+                {
+                    name: "마하 그리드 유틸리티 에코백 TPBT78S76",
+                    img: "item_1",
+                    oprice: "29,900",
+                    dprice: "19,900",
+                    sale: "",
+                    review: "19",
+                },
+                {
+                    name: "[드로우핏 X 슈펜] 투포켓 크로스백 HPABFC404D",
+                    img: "item_2",
+                    oprice: "",
+                    dprice: "49,900",
+                    sale: "",
+                    review: "6",
+                },
+                {
+                    name: "전황일 패딩 버킷백 TPBT79W15",
+                    img: "item_3",
+                    oprice: "25,900",
+                    dprice: "19,900",
+                    sale: "",
+                    review: "6",
+                },
+
+            ]
+        },
+        "ac": {
+            "belt": [
+                {
+                    name: "빈티지 버클 레더벨트 3.0 TPFL78A02",
+                    img: "item_1",
+                    oprice: "29,900",
+                    dprice: "26,900",
+                    sale: "",
+                    review: "1",
+                },
+                {
+                    name: "FG 무봉제_벨트 TPFL79A05",
+                    img: "item_2",
+                    oprice: "29,900",
+                    dprice: "22,900",
+                    sale: "",
+                    review: "",
+                },
+                {
+                    name: "컬러패턴 S 마스크 목걸이 BLAZ79A03",
+                    img: "item_3",
+                    oprice: "",
+                    dprice: "1,900",
+                    sale: "",
+                    review: "10",
+                },
+
+            ],
+            "hat": [
+                {
+                    name: "아일렛 베이직 버킷햇 TPCH79W02",
+                    img: "item_1",
+                    oprice: "19,900",
+                    dprice: "15,900",
+                    sale: "",
+                    review: "11",
+                },
+                {
+                    name: "네이비 볼록자수 볼캡 HPACCCA51M",
+                    img: "item_2",
+                    oprice: "",
+                    dprice: "19,900",
+                    sale: "",
+                    review: "4",
+                },
+                {
+                    name: "슈펜 무지 볼갭 TPCC78S01",
+                    img: "item_3",
+                    oprice: "",
+                    dprice: "10,000",
+                    sale: "",
+                    review: "",
+                },
+            ]
+        }
+    },
+    "kids": {
+        "shoes": {
+            "shoe": [
+                {
+                    name: "키즈 리본 말랑 젤리슈즈 HPKV1D201G",
+                    img: "",
+                    oprice: "19,900",
+                    dprice: "17,910",
+                    sale: "",
+                    review: "1",
+                },
+                {
+                    name: "공룡 아쿠아 슈즈 VKDA78S02",
+                    img: "",
+                    oprice: "19,900",
+                    dprice: "11,900",
+                    sale: "",
+                    review: "",
+                },
+                {
+                    name: "유니콘 아쿠아 슈즈 VKDA78S01",
+                    img: "",
+                    oprice: "19,900",
+                    dprice: "11,900",
+                    sale: "",
+                    review: "4",
+                }
+
+            ],
+            "sneakers": [
+                {
+                    name: "",
+                    img: "",
+                    oprice: "",
+                    dprice: "",
+                    sale: "",
+                    review: "",
+                },
+                {
+                    name: "",
+                    img: "",
+                    oprice: "",
+                    dprice: "",
+                    sale: "",
+                    review: "",
+                },
+                {
+                    name: "",
+                    img: "",
+                    oprice: "",
+                    dprice: "",
+                    sale: "",
+                    review: "",
+                },
+            ]
+        },
+        "bag": {
 
         },
         "ac": {
+
         }
     }
 }
 
 
 
-export { /* womenData, menData , kidsData, */ nbData, tgData };
+export { nbData, tgData };
