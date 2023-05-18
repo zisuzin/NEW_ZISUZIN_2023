@@ -3,7 +3,11 @@ import store from "./store.js";
 
 let pm = location.href.split("/");
 pm = pm[pm.length-1].split("=")[1];
-// console.log(pm)
+// pm에 값이 할당이 되어있다면 undefined가 아니므로 true
+if (pm) {
+  store.commit("chgData", decodeURI(pm));
+}
+console.log(pm)
 
 /************************************* 
     뷰 컴포넌트 데이터 셋업

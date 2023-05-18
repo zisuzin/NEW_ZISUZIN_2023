@@ -89,6 +89,13 @@ const store = new Vuex.Store({
       state.menu = state.tgData[pram.cat1][pram.cat2]; /* 중분류 접근 */
       state.menu2 = state.tgData[pram.cat1][pram.cat2][pram.cat3]; /* 소분류 접근 */
       state.prodCount = state.menu2 ? state.menu2.length : 0; /* 소분류데이터 길이값 출력 */
+
+      switch (pm){
+        case  "men" : dt.brand = ["Polo Ralph Lauren", "Purple Label"]; break;
+        case "women" : dt.brand = ["Polo Ralph Lauren", "Ralph Lauren Collection"]; break;
+        case "kids" : dt.brand = ["Boys 2-7", "Girls 7-16"]; break;
+        case "home" : dt.brand = ["Polo Ralph Lauren Home", null];
+    }
     },
     newChgData(state,pram){ // state - state데이터, pram - 전달값 
       // 해당 카테고리 이름 업데이트
