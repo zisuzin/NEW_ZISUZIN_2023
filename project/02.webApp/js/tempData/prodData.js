@@ -422,50 +422,50 @@ const kidsData = [
     },
 ];
 
-const allData = [
-    {
-        name: "와이드 라운드 버클 단화 2.0 HPWWVD217M",
-        img: "item_1",
-        oprice:"39900",
-        dprice: "37900",
-        sale:"",
-    },
-    {
-        name: "바게트 숄더백 HPABGD202M",
-        img: "item_2",
-        oprice:"",
-        dprice: "39900",
-        sale:"",
-    },
-{
-        name: "아이스락 하이퍼그립 첼시부츠 (HPMV9C404M RE) HPMV9DA04M",
-        img: "item_3",
-        oprice:"",
-        dprice: "159000",
-        sale:"",
-    },
-    {
-        name: "[슈탠다드] 남성 컬러 골지크루 삭스 HPAO5DA19M",
-        img: "item_4",
-        oprice:"",
-        dprice: "3900",
-        sale:"",
-    },
-{
-        name: "[디즈니] 앨리스 라이팅 샌들 HPKWND21DG",
-        img: "item_5",
-        oprice:"39900",
-        dprice: "35900",
-        sale:"",
-    },
-    {
-        name: "키즈 샤이닝 레인부츠 HPKV6DA01Q",
-        img: "item_6",
-        oprice:"29900",
-        dprice: "26910",
-        sale:"",
-    },
-]
+// const allData = [
+//     {
+//         name: "와이드 라운드 버클 단화 2.0 HPWWVD217M",
+//         img: "item_1",
+//         oprice:"39900",
+//         dprice: "37900",
+//         sale:"",
+//     },
+//     {
+//         name: "바게트 숄더백 HPABGD202M",
+//         img: "item_2",
+//         oprice:"",
+//         dprice: "39900",
+//         sale:"",
+//     },
+// {
+//         name: "아이스락 하이퍼그립 첼시부츠 (HPMV9C404M RE) HPMV9DA04M",
+//         img: "item_3",
+//         oprice:"",
+//         dprice: "159000",
+//         sale:"",
+//     },
+//     {
+//         name: "[슈탠다드] 남성 컬러 골지크루 삭스 HPAO5DA19M",
+//         img: "item_4",
+//         oprice:"",
+//         dprice: "3900",
+//         sale:"",
+//     },
+// {
+//         name: "[디즈니] 앨리스 라이팅 샌들 HPKWND21DG",
+//         img: "item_5",
+//         oprice:"39900",
+//         dprice: "35900",
+//         sale:"",
+//     },
+//     {
+//         name: "키즈 샤이닝 레인부츠 HPKV6DA01Q",
+//         img: "item_6",
+//         oprice:"29900",
+//         dprice: "26910",
+//         sale:"",
+//     },
+// ]
 
 // 타겟 서브페이지 상품데이터 
 const tgData = {
@@ -2319,4 +2319,4 @@ const tgData = {
 
 
 
-export { womenData, menData , kidsData, allData, tgData };
+export { womenData, menData , kidsData, tgData };

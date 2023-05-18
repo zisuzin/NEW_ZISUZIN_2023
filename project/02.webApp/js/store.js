@@ -1,4 +1,4 @@
-import { womenData, menData , kidsData, tgData, allData } from "./tempData/prodData.js";
+import { womenData, menData , kidsData, tgData } from "./tempData/prodData.js";
 
 const store = new Vuex.Store({
   state: {

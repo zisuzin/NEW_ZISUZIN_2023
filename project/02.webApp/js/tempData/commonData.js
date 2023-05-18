@@ -12,19 +12,19 @@ const comData = {
                 <nav class="header_top_gnb">
                     <ul>
                         <li>
-                            <a href="sub_new.html">NEW</a>
+                            <a href="#">NEW</a>
                         </li>
                         <li>
-                            <a href="sub_best.html">BEST</a>
+                            <a href="#">BEST</a>
                         </li>
                         <li>
-                            <a href="#">WOMEN</a>
+                            <a href="sub.html?cat1=𝘸𝘰𝘮𝘦𝘯&cat2=shoes&cat3=𝘢𝘭𝘭">WOMEN</a>
                         </li>
                         <li>
-                            <a href="#">MEN</a>
+                            <a href="sub.html?cat1=𝘮𝘦𝘯&cat2=shoes&cat3=𝘢𝘭𝘭">MEN</a>
                         </li>
                         <li>
-                            <a href="#">KIDS</a>
+                            <a href="sub.html?cat1=𝘬𝘪𝘥𝘴&cat2=shoes&cat3=𝘢𝘭𝘭">KIDS</a>
                         </li>
                     </ul>
                 </nav>

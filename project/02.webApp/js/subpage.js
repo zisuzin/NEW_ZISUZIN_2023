@@ -65,9 +65,6 @@ new Vue({
     subTit: ["NEW","BEST"],
   },
   mounted(){
-    $(".header_top_gnb ul li a").click(function(){
-      store.commit('newUpdate', $(this).text())
-    })
   }
 })
 
