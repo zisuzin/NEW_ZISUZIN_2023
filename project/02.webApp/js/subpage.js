@@ -4,17 +4,7 @@ import store from "./store.js";
 
 let pm = location.href.split("/");
 pm = pm[pm.length-1].split("=")[1];
-console.log(pm);
-$(()=>{
-  
-  if(pm==="WOMEN")
-    $(".new-prod-tab li").eq(1).trigger("click");
-    else if(pm==="MEN")
-    $(".new-prod-tab li").eq(2).trigger("click");
-    else if(pm==="KIDS")
-    $(".new-prod-tab li").eq(2).trigger("click");
-
-})
+console.log(pm)
 
 /************************************* 
     뷰 컴포넌트 데이터 셋업
@@ -80,28 +70,6 @@ new Vue({
   data: {
     subTit: ["NEW","BEST"],
   },
-  mounted(){
-    // http://127.0.0.1:5500/project/02.webApp/sub.html?cat1=men&cat2=shoes&cat3=all
-
-    // GET 방식으로 넘어온 데이터 처리
-    // let pm,pm1,pm2,pm3;
-
-    // if(location.href.indexOf("?") !== -1){
-    //     pm = location.href.split("?")[1].split("&");
-    //     pm1 = pm[0].split("=")[1]; // cat1
-    //     pm2 = decodeURI(pm[1].split("=")[1]); // cat2
-    //     pm3 = decodeURI(pm[2].split("=")[1]); // cat3
-    //     console.log(pm2);
-    // }
-    // if(pm)
-    //     store.commit("chgData",{cat1:pm1,cat2:pm2,cat3:pm3});
-    // else
-    //     store.commit("chgData",{cat1:"men",cat2:"운동화",cat3:"전체"});
-
-    //     console.log(store.state.cat1);
-    //     prod = qsa(".prod_box li");
-    //     console.log(prod);
-  }
 })
 
 // 뷰 전역등록 함수

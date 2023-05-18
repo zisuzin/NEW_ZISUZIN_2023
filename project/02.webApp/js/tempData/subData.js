@@ -61,12 +61,12 @@ const subdata = {
             <div class="ctg_link">
             <ul>
                 <li>
-                <a href="#">신상
+                <a href="sub_new.html?" @click.prevent="$store.commit('nbChg', 'NEW')">신상
                     <em>NEW</em>
                 </a>
                 </li>
                 <li>
-                <a href="#">베스트
+                <a href="sub_best.html?" @click.prevent="$store.commit('nbChg', 'BEST')">베스트
                     <em>BEST</em>
                 </a>
                 </li>
@@ -77,7 +77,7 @@ const subdata = {
                 <li class="ctg_depth1">
                 <div>
                     <a href="#" v-on:click="$store.commit('ChgData',{cat1:'women',cat2:'shoes',cat3:'all'})">
-                    <span>여성신발</span>
+                    <span v-if="$store.state.newChgData,'women'">여성신발</span>
                     </a>
                 </div>
                 <div class="ctg_depth2">

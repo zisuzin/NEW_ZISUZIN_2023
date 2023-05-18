@@ -679,6 +679,13 @@ const nbData = {
                 sale:"",
             },
             {
+                name: "유니모던 캐주얼 더비 HPMR7DA01Q",
+                img: "item_17",
+                oprice:"59900",
+                dprice: "56900",
+                sale:"",
+            },
+            {
                 name: "[NAVY] 2포켓 빅 반달 메신저백 HPABCD206M",
                 img: "item_18",
                 oprice:"39900",
@@ -984,7 +991,7 @@ const nbData = {
                 dprice: "19900",
                 sale:"",
             },
-{
+            {
                 name: "아이스락 하이퍼그립 첼시부츠 (HPMV9C404M RE) HPMV9DA04M",
                 img: "item_21",
                 oprice:"",
@@ -1097,6 +1104,13 @@ const nbData = {
                 sale:"",
             },
             {
+                name: "유니모던 캐주얼 더비 HPMR7DA01Q",
+                img: "item_37",
+                oprice:"59900",
+                dprice: "56900",
+                sale:"",
+            },
+            {
                 name: "[NAVY] 2포켓 빅 반달 메신저백 HPABCD206M",
                 img: "item_38",
                 oprice:"39900",
@@ -1117,7 +1131,7 @@ const nbData = {
                 dprice: "56900",
                 sale:"",
             },
-{
+            {
                 name: "[디즈니] 앨리스 라이팅 샌들 HPKWND21DG",
                 img: "item_41",
                 oprice:"39900",
@@ -1257,6 +1271,7 @@ const nbData = {
                 dprice: "23310",
                 sale:"",
             },
+            
         ],
 
     },

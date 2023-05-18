@@ -1,11 +1,10 @@
-import { /* womenData, menData , kidsData, */ nbData, tgData } from "./tempData/prodData.js";
+import { nbData, tgData } from "./tempData/prodData.js";
 
 
 const store = new Vuex.Store({
   state: {
     // tg서브메뉴 제품정보 객체
     tgData:tgData,
-
      // 서브데이터 셋업 (new/best)
      newData: {
       전체: {
@@ -92,35 +91,32 @@ const store = new Vuex.Store({
       state.prodCount = state.menu2 ? state.menu2.length : 0; /* 소분류데이터 길이값 출력 */
     },
     newChgData(state,pram){ // state - state데이터, pram - 전달값 
-      // 해당 카테고리 개수 업데이트
-      // state.sNum = state.newData[pram].sNum;
       // 해당 카테고리 이름 업데이트
       state.cat = state.newData[pram].cat;
       // 해당 카테고리 제품리스트 업데이트
       state.item = state.newData[pram].item;
-
-      state.showmore = state.newData[pram].showmore;
       state.setcat = pram;
+
+      state.tgData = state.tgData.pram;
 
       // MORE 버튼 보이기/숨기기
       if(pram=="전체") state.mbsts = true;
       else state.mbsts = false;
   },
   nbChg(state, pram){
-    console.log(pram)
-    if(pram==="WOMEN")
-    location.href = "sub_tg.html?cat="+pram;
-    else
-    location.href = "sub_best.html?cat="+pram;
-    this.newChgData(pram);
-    // state.cat = state[pram]['전체'].cat
-    // state.item = state[pram]['전체'].item
-    // state.showmore = state[pram]['전체'].showmore
+    // console.log(pram)
+    if(pram==="WOMEN" || pram==="MEN" || pram==="KIDS")
+      location.href = "sub_tg.html?cat="+pram;
+    else if(pram==="NEW")
+      location.href = "sub_new.html?cat="+pram;
+    else {
+      location.href = "sub_best.html?cat="+pram;
+    }
   },
   // MORE 버튼 클릭시 이미지 증가 함수
   updateList(dt,pm){
     dt.mnum += pm;
-    console.log(dt.mnum+20);
+    // console.log(dt.mnum+20);
     if(dt.mnum > 45)
       dt.mbsts = false;
   }, // updateList //
