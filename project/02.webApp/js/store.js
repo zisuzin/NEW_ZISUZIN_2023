@@ -81,10 +81,10 @@ const store = new Vuex.Store({
     mbsts:true,
     // 더보기배수 변수
     mnum: 0,
-
-    tgtit: pm.toUpperCase(),
-    
+    tgtit: pm
   },
+
+  
   mutations: {
     // tg서브메뉴 상태변경 변수 셋업
     ChgData(state, pram) {
@@ -120,7 +120,11 @@ const store = new Vuex.Store({
       location.href = "sub_best.html?cat="+pram;
     }
 
-   
+    switch (pm){
+      case "women" : 
+      case "men" : 
+      case "kids" : 
+  }
 
   },
   // MORE 버튼 클릭시 이미지 증가 함수
