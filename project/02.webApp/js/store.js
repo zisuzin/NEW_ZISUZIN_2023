@@ -81,7 +81,9 @@ const store = new Vuex.Store({
     mbsts:true,
     // 더보기배수 변수
     mnum: 0,
-    tgtit: pm
+    tgtit: pm.toUpperCase(),
+    pm:pm,
+    pa:'',
   },
 
   
@@ -92,7 +94,8 @@ const store = new Vuex.Store({
       state.cat2 = pram.cat2;
       state.cat3 = pram.cat3;
       state.cat4 = pram.cat4;
-
+      
+      console.log(pm,state.cat3)
       state.menu = state.tgData[pram.cat1][pram.cat2]; /* 중분류 접근 */
       state.menu2 = state.tgData[pram.cat1][pram.cat2][pram.cat3]; /* 소분류 접근 */
       state.prodCount = state.menu2 ? state.menu2.length : 0; /* 소분류데이터 길이값 출력 */
@@ -110,6 +113,12 @@ const store = new Vuex.Store({
       if(pram=="전체") state.mbsts = true;
       else state.mbsts = false;
   },
+  chgLeng(state,pa){
+    pa==="women"?pa="여성":pa==="men"?pa="남성":pa==="kids"?pa="아동":pa =undefined;
+    state.pa = pa
+    console.log("pa",pa)
+
+  },
   // 페이지이동 호출함수
   nbChg(state, pram){
     if(pram==="WOMEN" || pram==="MEN" || pram==="KIDS")
@@ -120,11 +129,7 @@ const store = new Vuex.Store({
       location.href = "sub_best.html?cat="+pram;
     }
 
-    switch (pm){
-      case "women" : 
-      case "men" : 
-      case "kids" : 
-  }
+    
 
   },
   // MORE 버튼 클릭시 이미지 증가 함수

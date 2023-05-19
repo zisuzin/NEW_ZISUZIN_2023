@@ -98,6 +98,7 @@ subTab.forEach(ele =>
 *************************************/
 // 카테고리메뉴 클릭시 토글
 $('.ctg_depth1 > div').click(function(){
+  event.preventDefault()
   const $target = $(this).parent('.ctg_depth1').find('.ctg_depth2');
   
   // 이미 열려있는 ctg_depth2 요소 닫음
@@ -117,6 +118,7 @@ $('.ctg_depth1 > div').click(function(){
 });
 
 $('.ctg_depth2 > ul > li').on('click', function(event) {
+  event.preventDefault()
   event.stopPropagation();
 });
 
