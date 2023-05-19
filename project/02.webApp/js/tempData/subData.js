@@ -57,7 +57,7 @@ const subdata = {
     // 사이드 메뉴탭 (여성,남성,아동)
     sideMenuTab: `
         <aside class="cat_left_side_tab">
-            <h2 class="tit_h2">WOMEN</h2>
+            <h2 class="tit_h2">{{$store.state.tgtit}}</h2>
             <div class="ctg_link">
             <ul>
                 <li>

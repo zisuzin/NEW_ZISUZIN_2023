@@ -1,6 +1,11 @@
 import { nbData, tgData } from "./tempData/prodData.js";
 
 
+let pm = location.href.split("/");
+pm = pm[pm.length-1].split("=")[1];
+// pm에 값이 할당이 되어있다면 undefined가 아니므로 true
+console.log(pm)
+
 const store = new Vuex.Store({
   state: {
     // tg서브메뉴 제품정보 객체
@@ -76,6 +81,8 @@ const store = new Vuex.Store({
     mbsts:true,
     // 더보기배수 변수
     mnum: 0,
+
+    tgtit: pm.toUpperCase(),
     
   },
   mutations: {
@@ -113,13 +120,7 @@ const store = new Vuex.Store({
       location.href = "sub_best.html?cat="+pram;
     }
 
-    let pm = location.href.split("/");
-    pm = pm[pm.length-1].split("=")[1];
-    // pm에 값이 할당이 되어있다면 undefined가 아니므로 true
-    if (pm) {
-      store.commit("chgData", decodeURI(pm));
-    }
-    console.log(pm)
+   
 
   },
   // MORE 버튼 클릭시 이미지 증가 함수
