@@ -88,91 +88,91 @@ const catData = {
             <!-- 상품 필터메뉴 -->
             <div class="item-cat-filter-row">
                 <ul class="item-cat-filter__list">
-                <li>
-                    <strong class="filter-tit">가격</strong>
-                    <div class="filter-item">
-                    <ul>
-                        <li>
-                            <label for="cgt-rdo-list-1" class="rdo">
-                            <input type="radio" id="cgt-rdo-list-1" name="cgt-rdo-list-1" class="priceVal">
-                            <span>1만원 이하</span>
-                            </label>
-                        </li>
-                        <li>
-                            <label for="cgt-rdo-list-2" class="rdo">
-                            <input type="radio" id="cgt-rdo-list-2" name="cgt-rdo-list-2" class="priceVal">
-                            <span>2만5천원 이하</span>
-                            </label>
-                        </li>
-                        <li>
-                            <label for="cgt-rdo-list-3" class="rdo">
-                            <input type="radio" id="cgt-rdo-list-3" name="cgt-rdo-list-3" class="priceVal">
-                            <span>3만원 이하</span>
-                            </label>
-                        </li>
-                        <li>
-                            <label for="cgt-rdo-list-4" class="rdo">
-                            <input type="radio" id="cgt-rdo-list-4" name="cgt-rdo-list-4" class="priceVal">
-                            <span>5만원 이하</span>
-                            </label>
-                        </li>
-                        <li class="direct-user-input">
-                            <label for="cgt-rdo-list-5" class="rdo">
-                            <input type="radio" id="cgt-rdo-list-5" name="cgt-rdo-list-5">
-                            <span>직접입력</span>
-                            </label>
-                            <div class="filter-price">
-                            <span class="custom-filter-price">
-                                <input type="text" placeholder="9900원">
-                            </span>
-                            <span>~</span>
-                            <span class="custom-filter-price">
-                                <input type="text" placeholder="59900원">
-                            </span>
-                            <a href="#" role="button" class="price-filter-check-btn">확인</a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                </li>
-                <li>
-                    <strong class="filter-tit">색상</strong>
-                    <div class="filter-item">
+                    <li>
+                        <strong class="filter-tit">가격</strong>
+                        <div class="filter-item">
+                            <ul>
+                                <li>
+                                    <label for="cgt-rdo-list-1" class="rdo">
+                                        <input type="radio" id="cgt-rdo-list-1" name="cgt-rdo-list-1" class="priceVal">
+                                        <span>1만원 이하</span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label for="cgt-rdo-list-2" class="rdo">
+                                        <input type="radio" id="cgt-rdo-list-2" name="cgt-rdo-list-2" class="priceVal">
+                                        <span>2만5천원 이하</span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label for="cgt-rdo-list-3" class="rdo">
+                                        <input type="radio" id="cgt-rdo-list-3" name="cgt-rdo-list-3" class="priceVal">
+                                        <span>3만원 이하</span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label for="cgt-rdo-list-4" class="rdo">
+                                        <input type="radio" id="cgt-rdo-list-4" name="cgt-rdo-list-4" class="priceVal">
+                                        <span>5만원 이하</span>
+                                    </label>
+                                </li>
+                                <li class="direct-user-input">
+                                    <label for="cgt-rdo-list-5" class="rdo">
+                                        <input type="radio" id="cgt-rdo-list-5" name="cgt-rdo-list-5">
+                                        <span>직접입력</span>
+                                    </label>
+                                    <div class="filter-price">
+                                        <span class="custom-filter-price">
+                                            <input type="text" placeholder="9900원">
+                                        </span>
+                                        <span>~</span>
+                                        <span class="custom-filter-price">
+                                            <input type="text" placeholder="59900원">
+                                        </span>
+                                        <a href="#" role="button" class="price-filter-check-btn">확인</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <strong class="filter-tit">색상</strong>
+                        <div class="filter-item">
                         <ul>
-                        <li class="color-record">
-                            <button type="button"></button>
-                        </li>
-                        <li class="color-record">
-                            <button type="button"></button>
-                        </li>
-                        <li class="color-record">
-                            <button type="button"></button>
-                        </li>
-                        <li class="color-record">
-                            <button type="button"></button>
-                        </li>
-                        <li class="color-record">
-                            <button type="button"></button>
-                        </li>
-                        <li class="color-record">
-                            <button type="button"></button>
-                        </li>
-                        <li class="color-record">
-                            <button type="button"></button>
-                        </li>
-                        <li class="color-record">
-                            <button type="button"></button>
-                        </li>
-                        <li class="color-record">
-                            <button type="button"></button>
-                        </li>
-                        <li class="color-record">
-                            <button type="button"></button>
-                        </li>
+                            <li class="color-record">
+                                <button type="button"></button>
+                            </li>
+                            <li class="color-record">
+                                <button type="button"></button>
+                            </li>
+                            <li class="color-record">
+                                <button type="button"></button>
+                            </li>
+                            <li class="color-record">
+                                <button type="button"></button>
+                            </li>
+                            <li class="color-record">
+                                <button type="button"></button>
+                            </li>
+                            <li class="color-record">
+                                <button type="button"></button>
+                            </li>
+                            <li class="color-record">
+                                <button type="button"></button>
+                            </li>
+                            <li class="color-record">
+                                <button type="button"></button>
+                            </li>
+                            <li class="color-record">
+                                <button type="button"></button>
+                            </li>
+                            <li class="color-record">
+                                <button type="button"></button>
+                            </li>
                         </ul>
-                    </div>
-                </li>
-                <li>
+                        </div>
+                    </li>
+                    <li>
                     <strong class="filter-tit">사이즈</strong>
                     <div class="filter-item">
                     <ul>
@@ -231,6 +231,51 @@ const catData = {
             </div>
         </div>
      `,
+     prodList: `
+        <!-- 메인 상품리스트 -->
+        <div class="ui-item-view">
+            <ul class="ui-col4">
+                <template>
+                    <li>
+                        <div class="ui-prod-bx">
+                            <a href="#">
+                                <div class="prod-detail-img">
+                                    <img src="'./00.data/02.imgData/'+$store.state.cat1+'/'+ $store.state.cat2+'/'+$store.state.cat3+'/'+'item_'+(b+1)+'.jpg'" alt="상품이미지">
+                                </div>
+                                <div class="prod-txt">
+                                    <strong class="brand">슈펜</strong>
+                                    <p></p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="item-detail">
+                            <span class="original-price">
+                                <em></em>
+                                <span>원</span>
+                            </span>
+                            <br>
+                            <span class="discount-price">
+                                <em></em>
+                                <span>원</span>
+                            </span>
+                            <span class="percent-price">
+                                <em></em>
+                            </span>
+                            <div class="box_grade">
+                                <div class="star">
+                                <span></span>
+                                <strong>리뷰
+                                    <span></span>
+                                    <span></span>
+                                </strong>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </template>
+            </ul>
+        </div>
+     `
 };
 
 export default catData;
