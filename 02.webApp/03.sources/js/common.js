@@ -23,13 +23,13 @@ new Vue({
             });
             
             /* 사이드탭메뉴 리브시 사라짐 */
-            // $(".cat_left_side_tab").mouseleave(function() {
-            //     console.log("클릭");
-            //     $(this).animate({
-            //         left: "-208px",
-            //         opacity: "0",
-            //     }, 500);
-            // });
+            $(".cat_left_side_tab").mouseleave(function() {
+                console.log("클릭");
+                $(this).animate({
+                    left: "-208px",
+                    opacity: "0",
+                }, 500);
+            });
         } // commonFn 함수
     }
 });
@@ -37,6 +37,10 @@ new Vue({
 // 메인영역 컴포넌트
 Vue.component("nav-comp",{
     template: catData.navCat,
+})
+
+Vue.component("fil-comp",{
+    template: catData.catFilter,
 })
 
 
