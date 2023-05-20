@@ -15,19 +15,19 @@ const comData = {
             <nav class="gnb">
                 <ul>
                     <li>
-                        <a href="#">NEW</a>
+                        <a href="sub.html?=신상">NEW</a>
                     </li>
                     <li>
-                        <a href="#">BEST</a>
+                        <a href="sub.html?=베스트">BEST</a>
                     </li>
                     <li>
-                        <a href="#">MEN</a>
+                        <a href="sub.html?=남성">MEN</a>
                     </li>
                     <li>
-                        <a href="#">WOMEN</a>
+                        <a href="sub.html?=여성">WOMEN</a>
                     </li>
                     <li>
-                        <a href="#">KIDS</a>
+                        <a href="sub.html?=아동">KIDS</a>
                     </li>
                 </ul>
             </nav>
