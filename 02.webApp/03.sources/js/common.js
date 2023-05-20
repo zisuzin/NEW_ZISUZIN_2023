@@ -17,9 +17,9 @@ new Vue({
             /* GNB메뉴 클릭시 사이드탭메뉴 등장 */
             $(".gnb > ul > li").mouseover(function() {
                 $(".cat_left_side_tab").animate({
-                    left: "30px",
+                    left: "200px",
                     opacity: "1",
-                }, 500);
+                }, 700);
             });
             
             /* 사이드탭메뉴 리브시 사라짐 */
@@ -28,7 +28,7 @@ new Vue({
                 $(this).animate({
                     left: "-208px",
                     opacity: "0",
-                }, 500);
+                }, 700);
             });
         } // commonFn 함수
     }

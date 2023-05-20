@@ -241,6 +241,7 @@ body {
     width: 208px;
     left: -208px;
     border: 1px solid #000;
+    background-color: #fff;
 }
 
 .cat_left_side_tab > h2 {
@@ -335,10 +336,6 @@ body {
 /* 타겟 서브페이지 */
 .cont > section {
     margin-top: 90px;
-}
-
-.pagewrap {
-    padding: 0 30px;
 }
 
 .ctg_nav > ul > li > div > a::after {
