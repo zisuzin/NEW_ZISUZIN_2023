@@ -4,82 +4,82 @@ const catData = {
         <aside class="cat_left_side_tab">
             <h2 class="tit_h2">WOMEN</h2>
             <div class="ctg_link">
-            <ul>
-                <li>
-                <a href="">신상
-                    <em>NEW</em>
-                </a>
-                </li>
-                <li>
-                <a href="">베스트
-                    <em>BEST</em>
-                </a>
-                </li>
-            </ul>
+                <ul>
+                    <li>
+                        <a href="#">신상
+                            <em>NEW</em>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">베스트
+                            <em>BEST</em>
+                        </a>
+                    </li>
+                </ul>
             </div>
             <div class="ctg_nav">
-            <ul>
-                <li class="ctg_depth1">
-                <div>
-                    <a href="#">
-                    <span>여성신발</span>
-                    </a>
-                </div>
-                <div class="ctg_depth2">
-                    <ul>
-                    <li>
-                        <a href="#">전체</a>
+                <ul>
+                    <li class="ctg_depth1">
+                        <div>
+                            <a href="#">
+                            <span>여성신발</span>
+                            </a>
+                        </div>
+                        <div class="ctg_depth2">
+                            <ul>
+                                <li>
+                                    <a href="#">전체</a>
+                                </li>
+                                <li>
+                                    <a href="#">플랫슈즈</a>
+                                </li>
+                                <li>
+                                    <a href="#">샌들</a>
+                                </li>
+                            </ul>
+                        </div>
                     </li>
-                    <li>
-                        <a href="#">플랫슈즈</a>
+                    <li class="ctg_depth1">
+                        <div>
+                            <a href="#">
+                                <span>여성가방</span>
+                            </a>
+                        </div>
+                        <div class="ctg_depth2">
+                            <ul>
+                                <li>
+                                    <a href="#">전체</a>
+                                </li>
+                                <li>
+                                    <a href="#">백팩</a>
+                                </li>
+                                <li>
+                                    <a href="#">미니백</a>
+                                </li>
+                            </ul>
+                        </div>
                     </li>
-                    <li>
-                        <a href="#">샌들</a>
+                    <li class="ctg_depth1">
+                        <div>
+                            <a href="#">
+                                <span>여성잡화</span>
+                            </a>
+                        </div>
+                        <div class="ctg_depth2">
+                            <ul>
+                                <li>
+                                    <a href="#">전체</a>
+                                </li>
+                                <li>
+                                    <a href="#">양말</a>
+                                </li>
+                                <li>
+                                    <a href="#">모자</a>
+                                </li>
+                            </ul>
+                        </div>
                     </li>
-                    </ul>
-                </div>
-                </li>
-                <li class="ctg_depth1">
-                <div>
-                    <a href="#">
-                    <span>여성가방</span>
-                    </a>
-                </div>
-                <div class="ctg_depth2">
-                    <ul>
-                    <li>
-                        <a href="#">전체</a>
-                    </li>
-                    <li>
-                        <a href="#">백팩</a>
-                    </li>
-                    <li>
-                        <a href="#">미니백</a>
-                    </li>
-                    </ul>
-                </div>
-                </li>
-                <li class="ctg_depth1">
-                <div>
-                    <a href="#">
-                    <span>여성잡화</span>
-                    </a>
-                </div>
-                <div class="ctg_depth2">
-                    <ul>
-                    <li>
-                        <a href="#">전체</a>
-                    </li>
-                    <li>
-                        <a href="#">양말</a>
-                    </li>
-                    <li>
-                        <a href="#">모자</a>
-                    </li>
-                    </ul>
-                </div>
-                </li>
-            </ul>
+                </ul>
             </div>
         </aside>
     `,
@@ -138,68 +138,68 @@ const catData = {
                     <li>
                         <strong class="filter-tit">색상</strong>
                         <div class="filter-item">
-                        <ul>
-                            <li class="color-record">
-                                <button type="button"></button>
-                            </li>
-                            <li class="color-record">
-                                <button type="button"></button>
-                            </li>
-                            <li class="color-record">
-                                <button type="button"></button>
-                            </li>
-                            <li class="color-record">
-                                <button type="button"></button>
-                            </li>
-                            <li class="color-record">
-                                <button type="button"></button>
-                            </li>
-                            <li class="color-record">
-                                <button type="button"></button>
-                            </li>
-                            <li class="color-record">
-                                <button type="button"></button>
-                            </li>
-                            <li class="color-record">
-                                <button type="button"></button>
-                            </li>
-                            <li class="color-record">
-                                <button type="button"></button>
-                            </li>
-                            <li class="color-record">
-                                <button type="button"></button>
-                            </li>
-                        </ul>
+                            <ul>
+                                <li class="color-record">
+                                    <button type="button"></button>
+                                </li>
+                                <li class="color-record">
+                                    <button type="button"></button>
+                                </li>
+                                <li class="color-record">
+                                    <button type="button"></button>
+                                </li>
+                                <li class="color-record">
+                                    <button type="button"></button>
+                                </li>
+                                <li class="color-record">
+                                    <button type="button"></button>
+                                </li>
+                                <li class="color-record">
+                                    <button type="button"></button>
+                                </li>
+                                <li class="color-record">
+                                    <button type="button"></button>
+                                </li>
+                                <li class="color-record">
+                                    <button type="button"></button>
+                                </li>
+                                <li class="color-record">
+                                    <button type="button"></button>
+                                </li>
+                                <li class="color-record">
+                                    <button type="button"></button>
+                                </li>
+                            </ul>
                         </div>
                     </li>
                     <li>
-                    <strong class="filter-tit">사이즈</strong>
-                    <div class="filter-item">
-                    <ul>
-                        <li class="size-record">
-                        <button type="button">225</button>
-                        </li>
-                        <li class="size-record">
-                        <button type="button">230</button>
-                        </li>
-                        <li class="size-record">
-                        <button type="button">235</button>
-                        </li>
-                        <li class="size-record">
-                        <button type="button">240</button>
-                        </li>
-                        <li class="size-record">
-                        <button type="button">245</button>
-                        </li>
-                        <li class="size-record">
-                        <button type="button">250</button>
-                        </li>
-                        <li class="size-record">
-                        <button type="button">255</button>
-                        </li>
-                    </ul>
-                    </div>
-                </li>
+                        <strong class="filter-tit">사이즈</strong>
+                        <div class="filter-item">
+                            <ul>
+                                <li class="size-record">
+                                    <button type="button">225</button>
+                                </li>
+                                <li class="size-record">
+                                    <button type="button">230</button>
+                                </li>
+                                <li class="size-record">
+                                    <button type="button">235</button>
+                                </li>
+                                <li class="size-record">
+                                    <button type="button">240</button>
+                                </li>
+                                <li class="size-record">
+                                    <button type="button">245</button>
+                                </li>
+                                <li class="size-record">
+                                    <button type="button">250</button>
+                                </li>
+                                <li class="size-record">
+                                    <button type="button">255</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
                 </ul>
             </div>
             <div class="item-cat-option">
