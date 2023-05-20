@@ -1,5 +1,6 @@
 // 공통 템플릿 JS
 const comData = {
+// 상단영역 html data
   tarea: `
         <div class="top">
         <!-- 로고 -->

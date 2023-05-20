@@ -43,10 +43,11 @@ Vue.component("nav-comp",{
 // 메인영역 뷰인스턴스
 new Vue({
     el: ".pagewrap",
-    store,
-    created: function() {
-        let pm;
-        if(location.href.indexOf("?"))
+    // store,
+    // created 실행구역 : DOM 연결 전
+    created: function() { 
+        // let pm;
+        // if(location.href.indexOf("?"))
     }
 })
 // 하단영역 뷰인스턴스
