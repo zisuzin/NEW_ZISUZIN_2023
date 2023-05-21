@@ -10,47 +10,26 @@ Vue.component("top-comp", {
 new Vue({
   el: "#top",
   mounted() {
-    // this.commonFn(); // commonFn 함수호출!
   },
-  methods: {
-    // commonFn() {
-    //   // 2 하위메뉴 + 메뉴배경 style변경함수 만들기
-    //   // ele - 변경요소, hv - 높이값, opa - 투명도값
-    //   const stFn = (ele, hv, opa) => {
-    //     ele.style.height = hv + "px";
-    //     ele.style.opacity = opa;
-    //   }; ///// stFn ///////
+  created: function(){
+    console.log("created구역")
+    
+    // 파라미터 변수
+    let pm;
 
-    //   const gnbList = document.querySelectorAll(".gnb > ul > li");
-
-    //   // 3. 상위메뉴 li에 이벤트 설정하기 //////////
-    //   for (let x of gnbList) {
-    //     // (1) 마우스 오버시 /////////
-    //     x.onmouseenter = () => {
-    //         // (1) 하위메뉴 박스 .smenu 선택하기
-    //         let tg = x.querySelector(".gnb_draw_select");
-
-    //         // (2) 하위메뉴 박스 내부박스 높이값 구하기
-    //         let hv = tg.clientHeight;
-    //         // console.log("내부높이:",hv);
-
-    //         // (3) 스타일 변경요소 함수호출
-    //         // stFn(요소,높이값,투명도)
-    //         stFn(tg,hv,1);
-    //     }; /////// mouseenter ///////////
-
-    //     // (2) 마우스 아웃시 /////////
-    //     x.onmouseleave = () => {
-    //         // (1) 하위메뉴 박스 .smenu 선택하기
-    //         let tg = x.querySelector(".gnb_draw_select");
-
-    //         // (2) 스타일 변경요소 함수호출
-    //         // stFn(요소,높이값,투명도)
-    //         stFn(tg,"0",0);
-    //     }; /////// mouseleave ///////////
-    //   }
-    // }, // commonFn 함수
-  },
+    // GET방식으로 넘어온 데이터 처리하여 서브페이지 연결!
+    // location.href -> 상단 url 읽어옴
+    // indexOf("?")!==-1 -> 물음표가 있으면
+    if(location.href.indexOf("?")!==-1){
+      pm = location.href.split("?")[1].split("=")[1];
+      // 물음표(?)로 잘라서 뒤엣것, 이퀄(=)로 잘라서 뒤엣것
+      // 파라미터만 추출함!
+      // pm에 할당이 되었다면 undefined가 아니므로 true
+      if(pm)
+      store.commit("chgData",decodeURI(pm));
+    }
+    
+  }
 });
 
 // 메인영역 컴포넌트
