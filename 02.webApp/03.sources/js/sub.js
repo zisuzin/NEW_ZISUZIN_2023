@@ -1,11 +1,5 @@
-const tgData = {
-    신상: {
-        all: {
-            idx: 1,
-            name: "",
-            img: item_1,
-            
-        },
+const nbData = {
+    new: {
         women: {
 
         },
@@ -15,5 +9,57 @@ const tgData = {
         kids: {
 
         },
+    },
+    best: {
+        women: {
+            
+        },
+        men: {
+
+        },
+        kids: {
+
+        }
+    },
+}
+
+const tgData = {
+    women: {
+        shoes: {
+            flat: [
+                {
+                    idx: 1,
+                    gender: "ALL",
+    
+                }
+            ],
+            sandal: [
+                {
+                    idx: 1,
+                    gender: "ALL",
+                    
+                }
+            ],
+        },
+        bags: {
+
+        },
+        ac: {
+
+        }
+    },
+    men: {
+        shoes: [
+
+        ],
+        bags: [
+
+        ],
+        ac: [
+
+        ]
+    },
+    kids: {
+
     }
 }
