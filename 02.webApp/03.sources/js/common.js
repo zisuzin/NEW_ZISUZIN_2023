@@ -28,12 +28,7 @@ Vue.component("fil-comp", {
 new Vue({
   el: ".contWrap",
   store,
-  // created 실행구역 : DOM 연결 전
-  mounted() {
-    // 로고 클릭시 첫페이지로 이동!
-    $(".logo").click(() => (location.href = "index.html"));
-  }, // mounted 구역
-  created: function(){
+  created: function(){ // created 실행구역 : DOM 연결 전
     // 파라미터 변수
     let pm;
 
@@ -49,7 +44,10 @@ new Vue({
         store.commit("ChgMenu", pm);
       }
     }
-    
-  }
+  }, // created 구역 
+  mounted() { // mounted 실행구역 : DOM 연결 후
+    // 로고 클릭시 첫페이지로 이동!
+    $(".logo").click(() => (location.href = "index.html"));
+  }, // mounted 구역
 });
 // 하단영역 뷰인스턴스

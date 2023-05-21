@@ -103,8 +103,7 @@ const store = new Vuex.Store({
             dt.cat1 = tgData[pm]
         }, // ChgMenu 함수 
         ChgNoteList(dt,pr){
-            tx = pr.toLowerCase();
-            console.log(tx)
+            console.log(dt,pr)
         }
     }
 })
