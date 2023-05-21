@@ -237,11 +237,8 @@ body {
 
 /********* 서브메뉴 공통 *********/
 .cat_left_side_tab {
-    position: absolute;
+    float: left;
     width: 208px;
-    left: -208px;
-    border: 1px solid #000;
-    background-color: #fff;
 }
 
 .cat_left_side_tab > h2 {

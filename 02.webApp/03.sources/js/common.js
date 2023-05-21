@@ -26,7 +26,7 @@ new Vue({
             $(".cat_left_side_tab").mouseleave(function() {
                 console.log("클릭");
                 $(this).animate({
-                    left: "-208px",
+                    // left: "-208px",
                     opacity: "0",
                 }, 700);
             });
