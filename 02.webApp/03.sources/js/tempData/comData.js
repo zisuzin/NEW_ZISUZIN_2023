@@ -2,7 +2,7 @@
 const comData = {
 // 상단영역 html data
   tarea: `
-        <div class="top">
+    <div class="top">
         <!-- 로고 -->
         <div class="top_wrap top_wrap1">
             <h1 class="logo">

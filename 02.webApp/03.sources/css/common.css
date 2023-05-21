@@ -59,10 +59,84 @@ body {
 }
 
 .gnb > ul > li > a {
+    position: relative;
     font-size: 15px;
     font-family: var(--pop-font);
 }
 
+.menu_banner {
+    width: 45%;
+}
+
+.gnb_draw_select {
+    /* display: none; */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    padding: 60px 0;
+    z-index: 10;
+    box-shadow: 0 3px 3px rgba(0,0,0,0.15);
+}
+
+.draw_inner {
+    margin: 0 auto;
+    display: flex;
+    gap: 0 60px;
+    max-width: 860px;
+}
+
+
+.menu_list {
+    width: 55%;
+}
+
+.menu_list > ul {
+    width: 100%;
+    display: inline-block;
+}
+
+.menu_list > ul > li {
+    float: left;
+    width: 170px;
+    margin-right: 46px;
+}
+
+.menu_list > ul > li > .tit_2 {
+    position: relative;
+    display: block;
+    padding: 0 0 7px 0;
+    margin-bottom: 14px;
+    /* font-family: 'aritaSB'; */
+}
+
+.menu_list > ul > li > .tit_2::before {
+    display: block;
+    content: "";
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    bottom: 0;
+    background-color: #a5a298;
+}
+
+.menu_banner > ul > li:first-child {
+    margin-left: 0;
+}
+
+.menu_banner > ul > li {
+    display: inline-block;
+    margin-left: 30px;
+    width: 44.2%;
+}
+
+.menu_banner > ul > li p {
+    text-align: left;
+    margin-top: 10px;
+    font-size: 1.4rem;
+}
+
+/* 로고 */
 .top_wrap > .logo > a > img {
     vertical-align: bottom;
 }

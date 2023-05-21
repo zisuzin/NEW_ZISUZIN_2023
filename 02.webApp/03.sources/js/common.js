@@ -52,7 +52,12 @@ new Vue({
     created: function() { 
         // let pm;
         // if(location.href.indexOf("?"))
-    }
+    },
+    mounted(){
+        // 로고 클릭시 첫페이지로 이동!
+        $(".logo").click(()=>
+        (location.href = "index.html"));
+    } // mounted 구역 
 })
 // 하단영역 뷰인스턴스
 
