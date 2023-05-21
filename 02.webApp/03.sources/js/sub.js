@@ -30,14 +30,12 @@ const tgData = {
                 {
                     idx: 1,
                     gender: "ALL",
-    
                 }
             ],
             sandal: [
                 {
                     idx: 1,
                     gender: "ALL",
-                    
                 }
             ],
         },
