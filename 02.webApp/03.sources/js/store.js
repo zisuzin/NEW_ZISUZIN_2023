@@ -1,5 +1,6 @@
 // 서브 페이지 뷰엑스 스토어 셋팅 JS  - store.js
 import tgData from "./sub.js";
+// import {qs, qsa, addCls, removeCls, hoverCont, toggleCont} from "./eventFn.js";
 
 const store = new Vuex.Store({
     state: {
@@ -41,11 +42,6 @@ const store = new Vuex.Store({
                 
             },
             "men": {
-                title: "MEN",
-                lnb: ["신상","베스트","남성신발","남성가방","남성잡화"],
-                lnbItem: ["전체","스니커즈","샌들"],
-                lnbItem2: ["전체","백팩","맨즈백"],
-                lnbItem3: ["전체","양말","모자"],
                 item: {
                     // 중분류 - 신발
                     // 사이즈는 신발만 있음
@@ -86,12 +82,31 @@ const store = new Vuex.Store({
     mutations: {
         // 카테고리 페이지 타이틀 및 lnb 변경
         ChgMenu(dt,pm) {
-            dt.title = dt.lnbData[pm].title
-            dt.lnb = dt.lnbData[pm].lnb
-            dt.lnbItem = dt.lnbData[pm].lnbItem
-            dt.lnbItem2 = dt.lnbData[pm].lnbItem2
-            dt.lnbItem3 = dt.lnbData[pm].lnbItem3
-            dt.item = dt.lnbData[pm].item
+            // dt.title = dt.lnbData[pm].title
+            // dt.lnb = dt.lnbData[pm].lnb
+            // dt.lnbItem = dt.lnbData[pm].lnbItem
+            // dt.lnbItem2 = dt.lnbData[pm].lnbItem2
+            // dt.lnbItem3 = dt.lnbData[pm].lnbItem3
+            // dt.item = dt.lnbData[pm].item
+
+            // const gnb = document.querySelectorAll(".gnb > ul > li > a")
+            // console.log(gnb)
+            // gnb.forEach((x) => x.addEventListener("click",()=>{
+            //     x.preventDefault();
+            // }))
+            switch (pm){
+                case  "men" :
+                    dt.title = "MEN",
+                    dt.lnb = ["신상","베스트","남성신발","남성가방","남성잡화"];
+                    dt.lnbItem = ["전체","스니커즈","샌들"];
+                    dt.lnbItem2 = ["전체","백팩","맨즈백"];
+                    dt.lnbItem3 = ["전체","양말","모자"];
+                    break;
+
+                case "women" : dt.brand = ["Polo Ralph Lauren", "Ralph Lauren Collection"]; break;
+                case "kids" : dt.brand = ["Boys 2-7", "Girls 7-16"]; break;
+                case "home" : dt.brand = ["Polo Ralph Lauren Home", null];
+            }
         },
     }
 })

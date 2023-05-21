@@ -27,7 +27,7 @@ const catData = {
                         </div>
                         <div class="ctg_depth2">
                             <ul>
-                                <li>
+                                <li v-on:click="$store.commit('ChgData',{cat1:'women',cat2:'shoes',cat3:'all'})">
                                     <a href="#">{{$store.state.lnbItem[0]}}</a>
                                 </li>
                                 <li>
