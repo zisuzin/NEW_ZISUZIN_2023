@@ -170,7 +170,7 @@ body {
 .search-input-wrap {
     position: absolute;
     top: 25%;
-    z-index: 9;
+    z-index: 999;
     right: 177px;
     background: #fff;
     width: 580px;
