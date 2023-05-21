@@ -70,13 +70,14 @@ body {
 
 .gnb_draw_select {
     /* display: none; */
+    opacity: 0;
     position: absolute;
     top: 100%;
     left: 0;
     right: 0;
     padding: 60px 0;
     z-index: 10;
-    box-shadow: 0 3px 3px rgba(0,0,0,0.15);
+    /* box-shadow: 0 3px 3px rgba(0,0,0,0.15); */
 }
 
 .draw_inner {
@@ -93,7 +94,8 @@ body {
 
 .menu_list > ul {
     width: 100%;
-    display: inline-block;
+    /* display: inline-block; */
+    display: flex;
 }
 
 .menu_list > ul > li {
