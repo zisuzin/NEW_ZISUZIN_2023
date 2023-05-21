@@ -28,7 +28,7 @@ const catData = {
                         <div class="ctg_depth2">
                             <ul>
                                 <li v-for="(v,n) in $store.state.lnbItem">
-                                    <a href="#" v-on:click.prevent=ChgNoteList(v)>{{v}}</a>
+                                    <a href="#" v-on:click.prevent="ChgNoteList(v)">{{v}}</a>
                                 </li>
                             </ul>
                         </div>
@@ -42,7 +42,7 @@ const catData = {
                         <div class="ctg_depth2">
                             <ul>
                                 <li v-for="(v,n) in $store.state.lnbItem2">
-                                    <a href="#" v-on:click.prevent=ChgNoteList(v)>{{v}}</a>
+                                    <a href="#" v-on:click.prevent="ChgNoteList(v)">{{v}}</a>
                                 </li>
                             </ul>
                         </div>
@@ -56,7 +56,7 @@ const catData = {
                         <div class="ctg_depth2">
                             <ul>
                                 <li v-for="(v,n) in $store.state.lnbItem3">
-                                    <a href="#" v-on:click.prevent=ChgNoteList(v)>{{v}}</a>
+                                    <a href="#"v-on:click.prevent="ChgNoteList(v)">{{v}}</a>
                                 </li>
                             </ul>
                         </div>
