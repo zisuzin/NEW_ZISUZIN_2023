@@ -8,44 +8,38 @@ const store = new Vuex.Store({
         // lnb데이터 셋업
         lnbData: {
             "women": {
-                title: "WOMEN",
-                lnb: ["신상","베스트","여성신발","여성가방","여성잡화"],
-                lnbItem: ["전체","플랫슈즈","샌들"],
-                lnbItem2: ["전체","백팩","미니백"],
-                lnbItem3: ["전체","양말","모자"],
                 item: {
                     // 중분류 - 신발
                     // 사이즈는 신발만 있음
-                    flat: {
+                    플랫슈즈: {
                         size: [225,230,240,245,250,255],
                         color: ["#000","#fff","#0054FF","#FFB2D9","#FFE400","#CCA63D","#542E00","#123478","#A6A6A6","#227428","#78247C"],
                         priceList: ["2만6천원 이하","3만원 이하","3만5천원 이하",""],
                     },
-                    sandal: {
+                    샌들: {
                         size: [225,230,235,240,245,250],
                         color: ["#000","#fff","#CCA63D","#542E00","#78247C","#FFE400","#0054FF","#227428","#A6A6A6","#123478","#FFB2D9"],
                         priceList: ["1만9천원 이하","2만1천원 이하","2만6천원 이하","3만원 이하"],
                     },
                     // 중분류 - 가방
-                    backpack: {
+                    백팩: {
                         size: ["FREE(one-size)",""],
                         color: ["#000","#CCA63D","#227428","#fff","#A6A6A6","#FFB2D9"],
                         priceList: ["1만9천원 이하","2만1천원 이하","2만6천원 이하","3만원 이하"],
                     },
                     // 중분류 - 잡화 
-                    socks: {
+                    양말: {
                         size: ["FREE(one-size)","M","S"], 
                         color: ["#000","#fff","#CCA63D","#FFB2D9","#227428","#FFE400","#78247C","linear-gradient(red, orange, yellow,green, blue, indigo, violet"],
                         priceList: ["1만9천원 이하","2만1천원 이하","2만6천원 이하","3만원 이하"],
                     }
                 },
-                
             },
             "men": {
                 item: {
                     // 중분류 - 신발
                     // 사이즈는 신발만 있음
-                    sandal: {
+                    샌들: {
                         size: [250,255,260,265,270,275,280],
                         color: ["#000","#fff","#0054FF","#FFB2D9","#FFE400","#CCA63D","#542E00","#123478","#A6A6A6","#227428","#78247C"],
                         priceList: ["2만2천원 이하","3만원 이하","3만5천원원 이하","5만원 이하"],
@@ -53,48 +47,26 @@ const store = new Vuex.Store({
                 }
             },
             "kids": {
-                title: "KIDS",
-                lnb: ["신상","베스트","아동신발","아동가방","아동잡화"],
-                lnbItem: ["전체","구두","샌들"],
-                lnbItem2: ["전체","패션가방","실내화가방"],
-                lnbItem3: ["전체","양말","모자"],
+                
             },
-            "new": {
-                title: "신상"
-            },
-            "best": {
-                title: "베스트"
-            },
+        }, // lnb 데이터객체
 
-            // 공통처리 메뉴 변수
-            title: "",
-            lnb: "",
-            gender: "",
-            name: "",
-            img: "",
-            oprice: "",
-            dprice: "",
-            sale: "",
-            review: "",
-
-        } // lnb 데이터객체
+        // 공통처리 메뉴 변수
+        title: "",
+        lnb: "",
+        gender: "",
+        name: "",
+        img: "",
+        oprice: "",
+        dprice: "",
+        sale: "",
+        review: "",
+        
     }, // state 객체
     mutations: {
         // 카테고리 페이지 타이틀 및 lnb 변경
         ChgMenu(dt,pm) {
-            // dt.title = dt.lnbData[pm].title
-            // dt.lnb = dt.lnbData[pm].lnb
-            // dt.lnbItem = dt.lnbData[pm].lnbItem
-            // dt.lnbItem2 = dt.lnbData[pm].lnbItem2
-            // dt.lnbItem3 = dt.lnbData[pm].lnbItem3
-            // dt.item = dt.lnbData[pm].item
-
-            // const gnb = document.querySelectorAll(".gnb > ul > li > a")
-            // console.log(gnb)
-            // gnb.forEach((x) => x.addEventListener("click",()=>{
-            //     x.preventDefault();
-            // }))
-            switch (pm){
+            switch(pm){
                 case  "men" :
                     dt.title = "MEN",
                     dt.lnb = ["신상","베스트","남성신발","남성가방","남성잡화"];
@@ -103,11 +75,37 @@ const store = new Vuex.Store({
                     dt.lnbItem3 = ["전체","양말","모자"];
                     break;
 
-                case "women" : dt.brand = ["Polo Ralph Lauren", "Ralph Lauren Collection"]; break;
-                case "kids" : dt.brand = ["Boys 2-7", "Girls 7-16"]; break;
-                case "home" : dt.brand = ["Polo Ralph Lauren Home", null];
+                case "women" :
+                    dt.title = "WOMEN";
+                    dt.lnb = ["신상","베스트","여성신발","여성가방","여성잡화"];
+                    dt.lnbItem = ["전체","플랫슈즈","샌들"];
+                    dt.lnbItem2 = ["전체","백팩","미니백"];
+                    dt.lnbItem3 = ["전체","양말","모자"];
+                    break;
+
+                case "kids" : 
+                    dt.title = "KIDS",
+                    dt.lnb = ["신상","베스트","아동신발","아동가방","아동잡화"];
+                    dt.lnbItem = ["전체","구두","샌들"];
+                    dt.lnbItem2 = ["전체","패션가방","실내화가방"];
+                    dt.lnbItem3 = ["전체","양말","모자"];
+                    break;
+                
+                case "best" :
+                    dt.titile = "베스트";
+                    break;
+
+                case "new" :
+                    dt.title = "신상";
+                    break;
             }
-        },
+
+            dt.cat1 = tgData[pm]
+        }, // ChgMenu 함수 
+        ChgNoteList(dt,pr){
+            tx = pr.toLowerCase();
+            console.log(tx)
+        }
     }
 })
 

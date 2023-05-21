@@ -27,14 +27,8 @@ const catData = {
                         </div>
                         <div class="ctg_depth2">
                             <ul>
-                                <li v-on:click="$store.commit('ChgData',{cat1:'women',cat2:'shoes',cat3:'all'})">
-                                    <a href="#">{{$store.state.lnbItem[0]}}</a>
-                                </li>
-                                <li>
-                                    <a href="#">{{$store.state.lnbItem[1]}}</a>
-                                </li>
-                                <li>
-                                    <a href="#">{{$store.state.lnbItem[2]}}</a>
+                                <li v-for="(v,n) in $store.state.lnbItem">
+                                    <a href="#" v-on:click.prevent=ChgNoteList(v)>{{v}}</a>
                                 </li>
                             </ul>
                         </div>
@@ -47,14 +41,8 @@ const catData = {
                         </div>
                         <div class="ctg_depth2">
                             <ul>
-                                <li>
-                                    <a href="#">{{$store.state.lnbItem[0]}}</a>
-                                </li>
-                                <li>
-                                    <a href="#">{{$store.state.lnbItem2[1]}}</a>
-                                </li>
-                                <li>
-                                    <a href="#">{{$store.state.lnbItem2[2]}}</a>
+                                <li v-for="(v,n) in $store.state.lnbItem2">
+                                    <a href="#" v-on:click.prevent=ChgNoteList(v)>{{v}}</a>
                                 </li>
                             </ul>
                         </div>
@@ -67,14 +55,8 @@ const catData = {
                         </div>
                         <div class="ctg_depth2">
                             <ul>
-                                <li>
-                                    <a href="#">{{$store.state.lnbItem3[0]}}</a>
-                                </li>
-                                <li>
-                                    <a href="#">{{$store.state.lnbItem3[1]}}</a>
-                                </li>
-                                <li>
-                                    <a href="#">{{$store.state.lnbItem3[2]}}</a>
+                                <li v-for="(v,n) in $store.state.lnbItem3">
+                                    <a href="#" v-on:click.prevent=ChgNoteList(v)>{{v}}</a>
                                 </li>
                             </ul>
                         </div>
