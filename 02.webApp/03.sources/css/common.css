@@ -120,6 +120,11 @@ body {
     background-color: #a5a298;
 }
 
+.menu_list > ul > li > ul > li {
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+
 .menu_banner > ul > li:first-child {
     margin-left: 0;
 }
@@ -133,7 +138,7 @@ body {
 .menu_banner > ul > li p {
     text-align: left;
     margin-top: 10px;
-    font-size: 1.4rem;
+    font-size: 14px;
 }
 
 /* 로고 */
