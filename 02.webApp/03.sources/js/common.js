@@ -14,22 +14,6 @@ new Vue({
     },
     methods: {
         commonFn(){
-            /* GNB메뉴 클릭시 사이드탭메뉴 등장 */
-            $(".gnb > ul > li").mouseover(function() {
-                $(".cat_left_side_tab").animate({
-                    left: "200px",
-                    opacity: "1",
-                }, 700);
-            });
-            
-            /* 사이드탭메뉴 리브시 사라짐 */
-            $(".cat_left_side_tab").mouseleave(function() {
-                console.log("클릭");
-                $(this).animate({
-                    // left: "-208px",
-                    opacity: "0",
-                }, 700);
-            });
         } // commonFn 함수
     }
 });
