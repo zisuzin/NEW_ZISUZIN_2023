@@ -114,3 +114,5 @@ const tgData = {
 
     }
 }
+
+export default tgData;

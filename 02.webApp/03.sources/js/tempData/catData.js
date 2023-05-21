@@ -2,16 +2,16 @@
 const catData = {
   navCat: `
         <aside class="cat_left_side_tab">
-            <h2 class="tit_h2">WOMEN</h2>
+            <h2 class="tit_h2">{{$store.state.title}}</h2>
             <div class="ctg_link">
                 <ul>
                     <li>
-                        <a href="#">신상
+                        <a href="#">{{$store.state.lnb[0]}}
                             <em>NEW</em>
                         </a>
                     </li>
                     <li>
-                        <a href="#">베스트
+                        <a href="#">{{$store.state.lnb[1]}}
                             <em>BEST</em>
                         </a>
                     </li>
@@ -21,20 +21,20 @@ const catData = {
                 <ul>
                     <li class="ctg_depth1">
                         <div>
-                            <a href="#" $store.state.pm>
-                            <span>여성신발</span>
+                            <a href="#">
+                            <span>{{$store.state.lnb[2]}}</span>
                             </a>
                         </div>
                         <div class="ctg_depth2">
                             <ul>
                                 <li>
-                                    <a href="#">전체</a>
+                                    <a href="#">{{$store.state.lnbItem[0]}}</a>
                                 </li>
                                 <li>
-                                    <a href="#">플랫슈즈</a>
+                                    <a href="#">{{$store.state.lnbItem[1]}}</a>
                                 </li>
                                 <li>
-                                    <a href="#">샌들</a>
+                                    <a href="#">{{$store.state.lnbItem[2]}}</a>
                                 </li>
                             </ul>
                         </div>
@@ -42,19 +42,19 @@ const catData = {
                     <li class="ctg_depth1">
                         <div>
                             <a href="#">
-                                <span>여성가방</span>
+                                <span>{{$store.state.lnb[3]}}</span>
                             </a>
                         </div>
                         <div class="ctg_depth2">
                             <ul>
                                 <li>
-                                    <a href="#">전체</a>
+                                    <a href="#">{{$store.state.lnbItem[0]}}</a>
                                 </li>
                                 <li>
-                                    <a href="#">백팩</a>
+                                    <a href="#">{{$store.state.lnbItem2[1]}}</a>
                                 </li>
                                 <li>
-                                    <a href="#">미니백</a>
+                                    <a href="#">{{$store.state.lnbItem2[2]}}</a>
                                 </li>
                             </ul>
                         </div>
@@ -62,19 +62,19 @@ const catData = {
                     <li class="ctg_depth1">
                         <div>
                             <a href="#">
-                                <span>여성잡화</span>
+                                <span>{{$store.state.lnb[4]}}</span>
                             </a>
                         </div>
                         <div class="ctg_depth2">
                             <ul>
                                 <li>
-                                    <a href="#">전체</a>
+                                    <a href="#">{{$store.state.lnbItem3[0]}}</a>
                                 </li>
                                 <li>
-                                    <a href="#">양말</a>
+                                    <a href="#">{{$store.state.lnbItem3[1]}}</a>
                                 </li>
                                 <li>
-                                    <a href="#">모자</a>
+                                    <a href="#">{{$store.state.lnbItem3[2]}}</a>
                                 </li>
                             </ul>
                         </div>
@@ -243,7 +243,7 @@ const catData = {
                         <div class="ui-prod-bx">
                             <a href="#">
                                 <div class="prod-detail-img">
-                                    <img src="'./00.data/02.imgData/'+$store.state.cat1+'/'+ $store.state.cat2+'/'+$store.state.cat3+'/'+'item_'+(b+1)+'.jpg'" alt="상품이미지">
+                                    <img src="" alt="상품이미지">
                                 </div>
                                 <div class="prod-txt">
                                     <strong class="brand">슈펜</strong>
