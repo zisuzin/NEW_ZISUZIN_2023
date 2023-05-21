@@ -26,7 +26,7 @@ new Vue({
       // 파라미터만 추출함!
       // pm에 할당이 되었다면 undefined가 아니므로 true
       if(pm)
-      store.commit("chgData",decodeURI(pm));
+      store.commit("ChgMenu",decodeURI(pm));
     }
     
   }
@@ -44,11 +44,9 @@ Vue.component("fil-comp", {
 // 메인영역 뷰인스턴스
 new Vue({
   el: ".pagewrap",
-  // store,
+  store,
   // created 실행구역 : DOM 연결 전
   created: function () {
-    // let pm;
-    // if(location.href.indexOf("?"))
   },
   mounted() {
     // 로고 클릭시 첫페이지로 이동!

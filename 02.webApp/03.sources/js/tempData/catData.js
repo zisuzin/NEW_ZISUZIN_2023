@@ -21,7 +21,7 @@ const catData = {
                 <ul>
                     <li class="ctg_depth1">
                         <div>
-                            <a href="#">
+                            <a href="#" $store.state.pm>
                             <span>여성신발</span>
                             </a>
                         </div>
