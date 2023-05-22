@@ -22,6 +22,22 @@ Vue.component("nav-comp", {
     // 중분류 lnb텍스트 영문으로 변환
     ChgNoteList(v) {
       switch (v) {
+        // women, men, kids 공통 중분류 데이터
+        case "여성신발" :
+        case "남성신발" :
+        case "아동신발" :
+          v = "shoes";
+          break;
+        case "여성가방" :
+        case "남성가방" :
+        case "아동가방" :
+          v = "bag";
+          break;
+        case "여성잡화" :
+        case "남성잡화" :
+        case "아동잡화" :
+          v = "ac";
+          break;
         // kids lnb 소분류 데이터
         case "전체" :
           v = "all";
@@ -55,7 +71,7 @@ Vue.component("nav-comp", {
         case "맨즈백" :
           v = "mensbag";
           break;
-          
+        
         // women lnb 소분류 데이터
         case "플랫슈즈" :
           v = "flat";
