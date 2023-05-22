@@ -426,3 +426,9 @@ body {
     top: 50%;
     margin-top: -5px;
 }
+
+.cat_left_side_tab > ul > li {
+    position: absolute;
+    width: 195px;
+    /* display: none; */
+}
