@@ -53,6 +53,8 @@ const store = new Vuex.Store({
     }, // lnb 데이터객체
 
     // 공통처리 메뉴 변수
+    menu: {},
+    menu2: [],
     title: "",
     lnb: "",
     gender: "",
@@ -68,8 +70,15 @@ const store = new Vuex.Store({
     // 카테고리 페이지 타이틀 및 lnb 변경
     ChgMenu(dt, pm) {
       // pm - Get방식으로 넘어온 파라미터값
-      // 분류 카테고리별 lnb 클릭 시 해당되는 항목의 상품으로 리스트 변경
-        console.log(pm)
+        dt.cat1 = pm.cat1;
+        dt.cat2 = pm.cat2;
+        dt.cat3 = pm.cat3;
+
+        // 중분류 메뉴출력을 위한 변수
+        dt.menu = dt.tgData[pm.cat1]
+        // 소분류 메뉴출력을 위한 변수
+        dt.menu2 = dt.tgData[pm.cat1][pm.cat2]
+        // console.log(dt.menu2)
     }, // ChgMenu 함수
   },
 });

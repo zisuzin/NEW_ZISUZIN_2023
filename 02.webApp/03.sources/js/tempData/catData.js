@@ -404,8 +404,8 @@ const catData = {
         <!-- 메인 상품리스트 -->
         <div class="ui-item-view">
             <ul class="ui-col4">
-                <template>
-                    <li>
+                <template v-for="(v,n) in $store.state.menu">
+                    <li v-for="(a,b)" in v>
                         <div class="ui-prod-bx">
                             <a href="#">
                                 <div class="prod-detail-img">
