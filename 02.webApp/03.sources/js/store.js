@@ -22,21 +22,21 @@ const store = new Vuex.Store({
           },
         },
         bag: {
-            // 중분류 - 가방
-            bagpack: {
-              size: ["FREE(one-size)", ""],
-              color: ["#000", "#CCA63D", "#227428", "#fff", "#A6A6A6", "#FFB2D9"],
-              priceList: ["1만9천원 이하", "2만1천원 이하", "2만6천원 이하", "3만원 이하"],
-            },
+          // 중분류 - 가방
+          bagpack: {
+            size: ["FREE(one-size)", ""],
+            color: ["#000", "#CCA63D", "#227428", "#fff", "#A6A6A6", "#FFB2D9"],
+            priceList: ["1만9천원 이하", "2만1천원 이하", "2만6천원 이하", "3만원 이하"],
+          },
         },
         ac: {
-            // 중분류 - 잡화
-            socks: {
-              size: ["FREE(one-size)", "M", "S"],
-              color: ["#000", "#fff", "#CCA63D", "#FFB2D9", "#227428", "#FFE400", "#78247C", "linear-gradient(red, orange, yellow,green, blue, indigo, violet"],
-              priceList: ["1만9천원 이하", "2만1천원 이하", "2만6천원 이하", "3만원 이하"],
-            },
-        }
+          // 중분류 - 잡화
+          socks: {
+            size: ["FREE(one-size)", "M", "S"],
+            color: ["#000", "#fff", "#CCA63D", "#FFB2D9", "#227428", "#FFE400", "#78247C", "linear-gradient(red, orange, yellow,green, blue, indigo, violet"],
+            priceList: ["1만9천원 이하", "2만1천원 이하", "2만6천원 이하", "3만원 이하"],
+          },
+        },
       },
       men: {
         shoes: {
@@ -66,7 +66,7 @@ const store = new Vuex.Store({
   }, // state 객체
   mutations: {
     // 카테고리 페이지 타이틀 및 lnb 변경
-    ChgMenu(dt, pm, v) {
+    ChgMenu(dt, pm) {
       // pm - Get방식으로 넘어온 파라미터값
       switch (pm) {
         case "men":
@@ -92,20 +92,10 @@ const store = new Vuex.Store({
           dt.lnbItem2 = ["전체", "패션가방", "실내화가방"];
           dt.lnbItem3 = ["전체", "양말", "모자"];
           break;
-        }
+      }
 
-        dt.setlnb = dt.lnbData[pm] // 대분류 카테고리 접근
-        // dt.setlnb2 = dt.lnbData[pm][v]
-        // console.log(dt.setlnb2)
-        console.log(dt.setlnb[dt.setlnb[v]])
-        // console.log(dt.lnbData[pm][v])
-
-        // 분류 카테고리별 lnb 클릭 시 해당되는 항목의 상품으로 리스트 변경
-        // console.log(pm)
+      // 분류 카테고리별 lnb 클릭 시 해당되는 항목의 상품으로 리스트 변경
     }, // ChgMenu 함수
-    // ChgNoteList(dt,v) {
-    //     console.log(v)
-    // }
   },
 });
 

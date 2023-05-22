@@ -21,8 +21,8 @@ const catData = {
                 <ul>
                     <li class="ctg_depth1">
                         <div>
-                            <a href="#">
-                            <span v-on:click.prevent="ChgNoteList($store.state.lnb[2])">{{$store.state.lnb[2]}}</span>
+                            <a href="">
+                            <span>{{$store.state.lnb[2]}}</span>
                             </a>
                         </div>
                         <div class="ctg_depth2">
@@ -36,7 +36,7 @@ const catData = {
                     <li class="ctg_depth1">
                         <div>
                             <a href="#">
-                                <span v-on:click.prevent="ChgNoteList($store.state.lnb[3])">{{$store.state.lnb[3]}}</span>
+                                <span>{{$store.state.lnb[3]}}</span>
                             </a>
                         </div>
                         <div class="ctg_depth2">
@@ -50,7 +50,7 @@ const catData = {
                     <li class="ctg_depth1">
                         <div>
                             <a href="#">
-                                <span v-on:click.prevent="ChgNoteList($store.state.lnb[4])">{{$store.state.lnb[4]}}</span>
+                                <span>{{$store.state.lnb[4]}}</span>
                             </a>
                         </div>
                         <div class="ctg_depth2">

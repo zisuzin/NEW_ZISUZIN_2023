@@ -38,47 +38,47 @@ Vue.component("nav-comp", {
         case "아동잡화" :
           v = "ac";
           break;
-        // // kids lnb 소분류 데이터
-        // case "전체" :
-        //   v = "all";
-        //   break;
-        // case "구두" :
-        //   v = "shoe";
-        //   break;
-        // case "샌들" :
-        //   v = "sandal";
-        //   break;
-        // case "패션가방" :
-        //   v = "styleback";
-        //   break;
-        // case "실내화가방" :
-        //   v = "shoebag";
-        //   break;
-        // case "양말" :
-        //   v = "socks";
-        //   break;
-        // case "모자" :
-        //   v = "hat";
-        //   break;
+        // kids lnb 소분류 데이터
+        case "전체" :
+          v = "all";
+          break;
+        case "구두" :
+          v = "shoe";
+          break;
+        case "샌들" :
+          v = "sandal";
+          break;
+        case "패션가방" :
+          v = "styleback";
+          break;
+        case "실내화가방" :
+          v = "shoebag";
+          break;
+        case "양말" :
+          v = "socks";
+          break;
+        case "모자" :
+          v = "hat";
+          break;
 
         // // men lnb 소분류 데이터
-        // case "스니커즈" :
-        //   v = "sneakers";
-        //   break;
-        // case "백팩" :
-        //   v = "bagpack";
-        //   break;
-        // case "맨즈백" :
-        //   v = "mensbag";
-        //   break;
+        case "스니커즈" :
+          v = "sneakers";
+          break;
+        case "백팩" :
+          v = "bagpack";
+          break;
+        case "맨즈백" :
+          v = "mensbag";
+          break;
         
         // // women lnb 소분류 데이터
-        // case "플랫슈즈" :
-        //   v = "flat";
-        //   break;
-        // case "미니백" :
-        //   v = "minibag";
-        //   break;
+        case "플랫슈즈" :
+          v = "flat";
+          break;
+        case "미니백" :
+          v = "minibag";
+          break;
       }
       // console.log(v);
       store.commit("ChgMenu", v)
@@ -100,17 +100,12 @@ new Vue({
   store,
   created: function () {
     // created 실행구역 : DOM 연결 전
-    // 파라미터 변수
-    let pm;
+    // GET 방식으로 넘어온 데이터 처리
+    let pm,pm1,pm2,pm3;
 
-    // GET방식으로 넘어온 데이터 처리하여 서브페이지 연결!
-    // location.href -> 상단 url 읽어옴
-    // indexOf("?")!==-1 -> 물음표가 있으면
     if (location.href.indexOf("?") !== -1) {
       pm = location.href.split("?")[1].split("=")[1];
-      // 물음표(?)로 잘라서 뒤엣것, 이퀄(=)로 잘라서 뒤엣것
-      // 파라미터만 추출함!
-      // pm에 할당이 되었다면 undefined가 아니므로 true
+      console.log(pm)
       if (pm) {
         store.commit("ChgMenu", pm);
       }
