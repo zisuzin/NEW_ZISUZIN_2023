@@ -43,6 +43,7 @@ new Vue({
       pm2 = pm[1].split("=")[1] // cat2
       pm3 = pm[2].split("=")[1] // cat3
       // console.log(pm1,pm2,pm3)
+      console.log(pm)
     }
     if(pm)
     store.commit("ChgMenu",{cat1:pm1,cat2:pm2,cat3:pm3}); 
