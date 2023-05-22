@@ -1,53 +1,28 @@
-import comData from "./tempData/comData.js";
-import catData from "./tempData/catData.js";
-import store from "./store.js";
-
-// 상단영역 컴포넌트
-Vue.component("top-comp", {
-  template: comData.tarea,
-});
-
-// 상단영역 뷰인스턴스
-new Vue({
-  el: "#top",
-  store,
-  mounted() {
-  },
-});
-
-// 메인영역 컴포넌트
-Vue.component("nav-comp", {
-  template: catData.navCat,
-});
-
-Vue.component("fil-comp", {
-  template: catData.catFilter,
-});
-
-// 메인영역 뷰인스턴스
-new Vue({
-  el: ".contWrap",
-  store,
-  created: function(){ // created 실행구역 : DOM 연결 전
-    // 파라미터 변수
-    let pm;
-
-    // GET방식으로 넘어온 데이터 처리하여 서브페이지 연결!
-    // location.href -> 상단 url 읽어옴
-    // indexOf("?")!==-1 -> 물음표가 있으면
-    if(location.href.indexOf("?")!==-1){
-      pm = location.href.split("?")[1].split("=")[1];
-      // 물음표(?)로 잘라서 뒤엣것, 이퀄(=)로 잘라서 뒤엣것
-      // 파라미터만 추출함!
-      // pm에 할당이 되었다면 undefined가 아니므로 true
-      if(pm) {
-        store.commit("ChgMenu", pm);
+// 공통 기능 JS
+function catToggle(){
+    // 카테고리메뉴 클릭시 토글
+    $(".ctg_depth1 > div").click(function () {
+      const $target = $(this).parent(".ctg_depth1").find(".ctg_depth2");
+  
+      // 이미 열려있는 ctg_depth2 요소 닫음
+      if ($target.is(":visible")) {
+        $target.slideUp(300);
+        $(this).removeClass("slide-down");
       }
-    }
-  }, // created 구역 
-  mounted() { // mounted 실행구역 : DOM 연결 후
-    // 로고 클릭시 첫페이지로 이동!
-    $(".logo").click(() => (location.href = "index.html"));
-  }, // mounted 구역
-});
-// 하단영역 뷰인스턴스
+      else {
+        // 다른 ctg_depth2 요소를 모두 닫음
+        $(".ctg_depth2").slideUp(300);
+        $(".ctg_depth1 > div").removeClass("slide-down");
+  
+        // 현재 클릭한 요소를 토글
+        $target.slideToggle(300);
+        $(this).toggleClass("slide-down");
+      }
+  
+      $('.ctg_depth2 > ul > li').on('click', function(event) {
+        event.stopPropagation();
+      });
+    });
+} // catToggle 함수
+
+export { catToggle };

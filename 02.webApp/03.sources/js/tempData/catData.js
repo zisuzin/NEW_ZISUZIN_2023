@@ -7,12 +7,12 @@ const catData = {
                 <ul>
                     <li>
                         <a href="#">{{$store.state.lnb[0]}}
-                            <em>NEW</em>
+                            <em v-if="$store.state.lnb">NEW</em>
                         </a>
                     </li>
                     <li>
                         <a href="#">{{$store.state.lnb[1]}}
-                            <em>BEST</em>
+                            <em v-if="$store.state.lnb">BEST</em>
                         </a>
                     </li>
                 </ul>
