@@ -97,7 +97,7 @@ const store = new Vuex.Store({
         dt.setlnb = dt.lnbData[pm] // 대분류 카테고리 접근
         // dt.setlnb2 = dt.lnbData[pm][v]
         // console.log(dt.setlnb2)
-        console.log(pm,"v?",v)
+        console.log(dt.setlnb[dt.setlnb[v]])
         // console.log(dt.lnbData[pm][v])
 
         // 분류 카테고리별 lnb 클릭 시 해당되는 항목의 상품으로 리스트 변경
