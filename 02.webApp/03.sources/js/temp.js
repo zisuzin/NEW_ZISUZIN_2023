@@ -20,7 +20,6 @@ Vue.component("nav-comp", {
   template: catData.navCat,
   mounted() {
     // 메인영역 공통 JS
-    // catToggle();
   },
 });
 
@@ -30,6 +29,11 @@ Vue.component("fil-comp", {
 
 Vue.component("prod-list",{
   template: catData.NewBest_prodList,
+  methods: {
+    chgFn(cat){
+      store.commit('ChgMenu',cat)
+    }
+  }
 })
 
 // 메인영역 뷰인스턴스
@@ -44,14 +48,18 @@ new Vue({
     if(location.href.indexOf("?") !== -1) {
       pm = location.href.split("?")[1].split("&");
       pm1 = pm[0].split("=")[1]; // cat1
-      console.log(pm1)
+      // console.log(pm1)
       pm2 = pm[1].split("=")[1] // cat2
       pm3 = pm[2].split("=")[1] // cat3
       // console.log(pm1,pm2,pm3)
     }
-    if(pm)
-    store.commit("ChgMenu",{cat1:pm1,cat2:pm2,cat3:pm3}); 
-  }, // created 구역
+    if(pm1 === "new" || pm1 === "best"){
+      store.commit("ChgMenu",{cat1:pm1});
+    }
+    else {
+      store.commit("ChgMenu",{cat1:pm1,cat2:pm2,cat3:pm3}); 
+    }
+    }, // created 구역
   mounted() {
     // mounted 실행구역 : DOM 연결 후
     // 로고 클릭시 첫페이지로 이동!

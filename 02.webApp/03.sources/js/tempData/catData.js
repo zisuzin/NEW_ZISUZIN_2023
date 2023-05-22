@@ -8,13 +8,13 @@ const catData = {
                       <div class="ctg_link">
                           <ul>
                               <li>
-                                  <a href="#">{{$store.state.lnb[0]}}
-                                      <em v-if="$store.state.lnb">NEW</em>
+                                  <a href="product.html?=new">
+                                      <em>NEW</em>
                                   </a>
                               </li>
                               <li>
-                                  <a href="#">{{$store.state.lnb[1]}}
-                                      <em v-if="$store.state.lnb">BEST</em>
+                                  <a href="product.html?=best">
+                                      <em>BEST</em>
                                   </a>
                               </li>
                           </ul>
@@ -89,13 +89,13 @@ const catData = {
                       <div class="ctg_link">
                           <ul>
                               <li>
-                                  <a href="#">{{$store.state.lnb[0]}}
-                                      <em v-if="$store.state.lnb">NEW</em>
+                                  <a href="#">
+                                      <em>NEW</em>
                                   </a>
                               </li>
                               <li>
-                                  <a href="#">{{$store.state.lnb[1]}}
-                                      <em v-if="$store.state.lnb">BEST</em>
+                                  <a href="#">
+                                      <em>BEST</em>
                                   </a>
                               </li>
                           </ul>
@@ -170,13 +170,13 @@ const catData = {
                       <div class="ctg_link">
                           <ul>
                               <li>
-                                  <a href="#">{{$store.state.lnb[0]}}
-                                      <em v-if="$store.state.lnb">NEW</em>
+                                  <a href="#">
+                                      <em>NEW</em>
                                   </a>
                               </li>
                               <li>
-                                  <a href="#">{{$store.state.lnb[1]}}
-                                      <em v-if="$store.state.lnb">BEST</em>
+                                  <a href="#">
+                                      <em>BEST</em>
                                   </a>
                               </li>
                           </ul>
@@ -451,27 +451,27 @@ const catData = {
         <div class="new_inner">
             <h2>{{$store.state.cat1}}</h2>
             <div class="new-prod-container">
-                <!-- new 아이템 탭메뉴 -->
+                <!-- new&best 아이템 탭메뉴 -->
                 <div class="new-prod-tab">
                     <ul>
                         <li>
-                            <a href="#" @click.prevent="$store.commit('ChgMenu',{cat1:'$store.state.cat1',cat2:'all'})">ALL</a>
+                            <a href="#" @click.prevent="chgFn('all')">ALL</a>
                         </li>
                         <li>
-                            <a href="#" @click.prevent="$store.commit('ChgMenu',{cat1:'$store.state.cat1',cat2:'women'})">WOMEN</a>
+                            <a href="#" @click.prevent="chgFn('women')">WOMEN</a>
                         </li>
                         <li>
-                            <a href="#" @click.prevent="$store.commit('ChgMenu',{cat1:'$store.state.cat1',cat2:'men'})">MEN</a>
+                            <a href="#" @click.prevent="chgFn('men')">MEN</a>
                         </li>
                         <li>
-                            <a href="#" @click.prevent="$store.commit('ChgMenu',{cat1:'$store.state.cat1',cat2:'kids'})">KIDS</a>
+                            <a href="#" @click.prevent="chgFn('kids')">KIDS</a>
                         </li>
                     </ul>
                 </div>
-                <!-- new 아이템 리스트 -->
+                <!-- new&best 아이템 리스트 -->
                 <div class="new-prod-cont">
                     <ul>
-                        <li v-for="(value,i) in $store.state.nbData">
+                        <li v-for="(value,i) in $store.state.nbData[$store.state.setcat]">
                             <div class="new-prod-bx">
                                 <a href="#">
                                     <div class="prod-img">
