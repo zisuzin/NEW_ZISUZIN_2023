@@ -22,6 +22,7 @@ Vue.component("nav-comp", {
     // 중분류 lnb텍스트 영문으로 변환
     ChgNoteList(v) {
       switch (v) {
+        // kids lnb 소분류 데이터
         case "전체" :
           v = "all";
           break;
@@ -43,14 +44,28 @@ Vue.component("nav-comp", {
         case "모자" :
           v = "hat";
           break;
+
+        // men lnb 소분류 데이터
         case "스니커즈" :
           v = "sneakers";
+          break;
+        case "백팩" :
+          v = "bagpack";
           break;
         case "맨즈백" :
           v = "mensbag";
           break;
+          
+        // women lnb 소분류 데이터
+        case "플랫슈즈" :
+          v = "flat";
+          break;
+        case "미니백" :
+          v = "minibag";
+          break;
       }
-      console.log(v);
+      // console.log(v);
+      store.commit("chgNoteList",v)
     },
   },
   mounted() {

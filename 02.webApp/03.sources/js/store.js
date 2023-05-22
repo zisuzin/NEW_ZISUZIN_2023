@@ -58,7 +58,6 @@ const store = new Vuex.Store({
     dprice: "",
     sale: "",
     review: "",
-    lnbItem2: [],
   }, // state 객체
   mutations: {
     // 카테고리 페이지 타이틀 및 lnb 변경
@@ -91,9 +90,9 @@ const store = new Vuex.Store({
         }
     }, // ChgMenu 함수
     // 분류 카테고리별 lnb 클릭 시 해당되는 항목의 상품으로 리스트 변경
-    // chgNoteList(dt, pm) {
-    //     console.log(dt,pm)
-    // }
+    chgNoteList(dt, pm) {
+        console.log(pm)
+    }
   },
 });
 
