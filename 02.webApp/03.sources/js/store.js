@@ -1,9 +1,10 @@
 // 서브 페이지 뷰엑스 스토어 셋팅 JS  - store.js
-import tgData from "./sub.js";
+import {nbData, tgData} from "./sub.js";
 
 const store = new Vuex.Store({
   state: {
     tgData: tgData,
+    nbData: nbData,
     // lnb데이터 셋업
     lnbData: {
       women: {
@@ -55,6 +56,12 @@ const store = new Vuex.Store({
     // 공통처리 메뉴 변수
     menu: {},
     menu2: [],
+    setcat: {},
+    setcat2: [],
+    cat1:"",
+    cat2:"",
+    cat3:"",
+
     title: "",
     lnb: "",
     gender: "",
@@ -74,11 +81,10 @@ const store = new Vuex.Store({
         dt.cat2 = pm.cat2;
         dt.cat3 = pm.cat3;
 
-        // 중분류 메뉴출력을 위한 변수
-        dt.menu = dt.tgData[pm.cat1]
-        // 소분류 메뉴출력을 위한 변수
-        dt.menu2 = dt.tgData[pm.cat1][pm.cat2]
-        // console.log(dt.menu2)
+        dt.menu = dt.tgData[pm.cat1] /* 중분류 접근 */
+        dt.menu2 = dt.tgData[pm.cat1][pm.cat2] /* 소분류 접근 */
+        dt.setcat = dt.nbData[pm.cat1] /* 중분류 접근 */
+        dt.setcat2 = dt.nbData[pm.cat1][pm.cat2] /* 소분류 접근 */
     }, // ChgMenu 함수
   },
 });

@@ -190,3 +190,22 @@
 .ctg_nav {
     margin-top: 20px;
 }
+
+/* new & best 서브페이지 */
+.item_cont {
+    display: flex;
+    border: 1px dashed #000;
+}
+
+.img_bx {
+    position: fixed;
+    left: 0;
+    top: 118px;
+    bottom: -2px;
+    width: 35%;
+}
+
+.img_bx img {
+    height: 100%;
+    object-fit: cover;
+}

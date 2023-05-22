@@ -28,6 +28,10 @@ Vue.component("fil-comp", {
   template: catData.catFilter,
 });
 
+Vue.component("prod-list",{
+  template: catData.NewBest_prodList,
+})
+
 // 메인영역 뷰인스턴스
 new Vue({
   el: ".contWrap",
@@ -40,10 +44,10 @@ new Vue({
     if(location.href.indexOf("?") !== -1) {
       pm = location.href.split("?")[1].split("&");
       pm1 = pm[0].split("=")[1]; // cat1
+      console.log(pm1)
       pm2 = pm[1].split("=")[1] // cat2
       pm3 = pm[2].split("=")[1] // cat3
       // console.log(pm1,pm2,pm3)
-      console.log(pm)
     }
     if(pm)
     store.commit("ChgMenu",{cat1:pm1,cat2:pm2,cat3:pm3}); 

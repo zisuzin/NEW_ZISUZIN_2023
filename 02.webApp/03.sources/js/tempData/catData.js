@@ -1,6 +1,6 @@
 // 카테고리 템플릿 JS
 const catData = {
-    navCat: `
+  navCat: `
           <aside class="cat_left_side_tab">
               <ul>
                   <li>
@@ -30,13 +30,13 @@ const catData = {
                                   <div class="ctg_depth2">
                                       <ul>
                                           <li>
-                                              <a href="sub.html?cat1=men&cat2=shoes&cat3=all">전체</a>
+                                              <a href="#" v-on:click="$store.commit('ChgMenu',{cat1:'men',cat2:'shoes',cat3:'all'})">전체</a>
                                           </li>
                                           <li>
-                                              <a href="sub.html?cat1=men&cat2=shoes&cat3=sneakers">스니커즈</a>
+                                              <a href="#" v-on:click="$store.commit('ChgMenu',{cat1:'men',cat2:'shoes',cat3:'sneakers'})">스니커즈</a>
                                           </li>
                                           <li>
-                                              <a href="sub.html?cat1=men&cat2=shoes&cat3=sandal">샌들</a>
+                                              <a href="#" v-on:click="$store.commit('ChgMenu',{cat1:'men',cat2:'shoes',cat3:'sandal'})">샌들</a>
                                           </li>
                                       </ul>
                                   </div>
@@ -111,13 +111,13 @@ const catData = {
                                   <div class="ctg_depth2">
                                       <ul>
                                           <li>
-                                              <a href="sub.html?cat1=women&cat2=shoes&cat3=all">전체</a>
+                                              <a href="#" v-on:click="$store.commit('ChgMenu',{cat1:'women',cat2:'shoes',cat3:'all'})">전체</a>
                                           </li>
                                           <li>
-                                              <a href="sub.html?cat1=women&cat2=shoes&cat3=flat">플랫슈즈</a>
+                                              <a href="#" v-on:click="$store.commit('ChgMenu',{cat1:'women',cat2:'shoes',cat3:'flat'})">플랫슈즈</a>
                                           </li>
                                           <li>
-                                              <a href="sub.html?cat1=women&cat2=shoes&cat3=sandel">샌들</a>
+                                              <a href="#" v-on:click="$store.commit('ChgMenu',{cat1:'women',cat2:'shoes',cat3:'sandal'})">샌들</a>
                                           </li>
                                       </ul>
                                   </div>
@@ -249,7 +249,7 @@ const catData = {
               </ul>
           </aside>
       `,
-    catFilter: `
+  catFilter: `
           <div class="item-cont-list">
               <div class="item-cont-list__inner">
                   <!-- 상품 필터메뉴 -->
@@ -400,16 +400,16 @@ const catData = {
               </div>
           </div>
        `,
-       prodList: `
+  prodList: `
           <!-- 메인 상품리스트 -->
           <div class="ui-item-view">
               <ul class="ui-col4">
                   <template v-for="(v,n) in $store.state.menu">
-                      <li v-for="(a,b)" in v>
+                      <li v-for="(a,b) in v">
                           <div class="ui-prod-bx">
                               <a href="#">
                                   <div class="prod-detail-img">
-                                      <img src="" alt="상품이미지">
+                                      <img src="'./images/02.imgData/sub/'+$store.state.cat1+'/'+$store.state.cat2+'/'+$store.state.cat3+'/'+'item_'+(b+1)+'.jpg'" alt="상품이미지">
                                   </div>
                                   <div class="prod-txt">
                                       <strong class="brand">슈펜</strong>
@@ -444,7 +444,65 @@ const catData = {
                   </template>
               </ul>
           </div>
-       `
-  };
-  
-  export default catData;
+       `,
+
+  // NEW & BEST 상품정보 리스트
+  NewBest_prodList: `
+        <div class="new_inner">
+            <h2>{{$store.state.cat1}}</h2>
+            <div class="new-prod-container">
+                <!-- new 아이템 탭메뉴 -->
+                <div class="new-prod-tab">
+                    <ul>
+                        <li>
+                            <a href="#" @click.prevent="$store.commit('ChgMenu',{cat1:'$store.state.cat1',cat2:'all'})">ALL</a>
+                        </li>
+                        <li>
+                            <a href="#" @click.prevent="$store.commit('ChgMenu',{cat1:'$store.state.cat1',cat2:'women'})">WOMEN</a>
+                        </li>
+                        <li>
+                            <a href="#" @click.prevent="$store.commit('ChgMenu',{cat1:'$store.state.cat1',cat2:'men'})">MEN</a>
+                        </li>
+                        <li>
+                            <a href="#" @click.prevent="$store.commit('ChgMenu',{cat1:'$store.state.cat1',cat2:'kids'})">KIDS</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- new 아이템 리스트 -->
+                <div class="new-prod-cont">
+                    <ul>
+                        <li v-for="(value,i) in $store.state.nbData">
+                            <div class="new-prod-bx">
+                                <a href="#">
+                                    <div class="prod-img">
+                                        <img v-bind:src="'./images/02.imgData/sub/'+$store.state.cat1+'/'+$store.state.cat2+'/'+'item_'+1+'.jpg'" alt="상품이미지">
+                                    </div>
+                                    <div class="prod-txt">
+                                        <strong class="brand">슈펜</strong>
+                                        <p></p>
+                                    </div>
+                                </a>
+                                <div class="item-detail">
+                                    <span class="original-price">
+                                        <em></em>
+                                        <span>원</span>
+                                    </span>
+                                    <br>
+                                    <span class="discount-price">
+                                        <em></em>
+                                        <span>원</span>
+                                    </span>
+                                    <span class="percent-price">
+                                        <em></em>
+                                    </span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    `,
+};
+
+export default catData;
