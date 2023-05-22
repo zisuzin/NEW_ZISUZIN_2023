@@ -7,7 +7,7 @@ const store = new Vuex.Store({
     // lnb데이터 셋업
     lnbData: {
       women: {
-        item: {
+        shoes: {
           // 중분류 - 신발
           // 사이즈는 신발만 있음
           flat: {
@@ -20,22 +20,26 @@ const store = new Vuex.Store({
             color: ["#000", "#fff", "#CCA63D", "#542E00", "#78247C", "#FFE400", "#0054FF", "#227428", "#A6A6A6", "#123478", "#FFB2D9"],
             priceList: ["1만9천원 이하", "2만1천원 이하", "2만6천원 이하", "3만원 이하"],
           },
-          // 중분류 - 가방
-          bagpack: {
-            size: ["FREE(one-size)", ""],
-            color: ["#000", "#CCA63D", "#227428", "#fff", "#A6A6A6", "#FFB2D9"],
-            priceList: ["1만9천원 이하", "2만1천원 이하", "2만6천원 이하", "3만원 이하"],
-          },
-          // 중분류 - 잡화
-          socks: {
-            size: ["FREE(one-size)", "M", "S"],
-            color: ["#000", "#fff", "#CCA63D", "#FFB2D9", "#227428", "#FFE400", "#78247C", "linear-gradient(red, orange, yellow,green, blue, indigo, violet"],
-            priceList: ["1만9천원 이하", "2만1천원 이하", "2만6천원 이하", "3만원 이하"],
-          },
         },
+        bag: {
+            // 중분류 - 가방
+            bagpack: {
+              size: ["FREE(one-size)", ""],
+              color: ["#000", "#CCA63D", "#227428", "#fff", "#A6A6A6", "#FFB2D9"],
+              priceList: ["1만9천원 이하", "2만1천원 이하", "2만6천원 이하", "3만원 이하"],
+            },
+        },
+        ac: {
+            // 중분류 - 잡화
+            socks: {
+              size: ["FREE(one-size)", "M", "S"],
+              color: ["#000", "#fff", "#CCA63D", "#FFB2D9", "#227428", "#FFE400", "#78247C", "linear-gradient(red, orange, yellow,green, blue, indigo, violet"],
+              priceList: ["1만9천원 이하", "2만1천원 이하", "2만6천원 이하", "3만원 이하"],
+            },
+        }
       },
       men: {
-        item: {
+        shoes: {
           // 중분류 - 신발
           // 사이즈는 신발만 있음
           sandal: {
@@ -58,10 +62,11 @@ const store = new Vuex.Store({
     dprice: "",
     sale: "",
     review: "",
+    setlnb: "",
   }, // state 객체
   mutations: {
     // 카테고리 페이지 타이틀 및 lnb 변경
-    ChgMenu(dt, pm) {
+    ChgMenu(dt, pm, v) {
       // pm - Get방식으로 넘어온 파라미터값
       switch (pm) {
         case "men":
@@ -88,11 +93,17 @@ const store = new Vuex.Store({
           dt.lnbItem3 = ["전체", "양말", "모자"];
           break;
         }
+
+        dt.setlnb = dt.lnbData[pm] // 대분류 카테고리 접근
+        console.log(pm, v)
+        // console.log(dt.lnbData[pm][v])
+
+        // 분류 카테고리별 lnb 클릭 시 해당되는 항목의 상품으로 리스트 변경
+        // console.log(pm)
     }, // ChgMenu 함수
-    // 분류 카테고리별 lnb 클릭 시 해당되는 항목의 상품으로 리스트 변경
-    chgNoteList(dt, pm) {
-        console.log(pm)
-    }
+    // ChgNoteList(dt,v) {
+    //     console.log(v)
+    // }
   },
 });
 

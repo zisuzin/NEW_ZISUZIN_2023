@@ -81,7 +81,7 @@ Vue.component("nav-comp", {
           break;
       }
       // console.log(v);
-      store.commit("chgNoteList",v)
+      store.commit("ChgMenu", v)
     },
   },
   mounted() {
