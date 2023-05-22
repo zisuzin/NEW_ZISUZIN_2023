@@ -18,10 +18,45 @@ new Vue({
 // 메인영역 컴포넌트
 Vue.component("nav-comp", {
   template: catData.navCat,
+  methods: {
+    // 중분류 lnb텍스트 영문으로 변환
+    ChgNoteList(v) {
+      switch (v) {
+        case "전체" :
+          v = "all";
+          break;
+        case "구두" :
+          v = "shoe";
+          break;
+        case "샌들" :
+          v = "sandal";
+          break;
+        case "패션가방" :
+          v = "styleback";
+          break;
+        case "실내화가방" :
+          v = "shoebag";
+          break;
+        case "양말" :
+          v = "socks";
+          break;
+        case "모자" :
+          v = "hat";
+          break;
+        case "스니커즈" :
+          v = "sneakers";
+          break;
+        case "맨즈백" :
+          v = "mensbag";
+          break;
+      }
+      console.log(v);
+    },
+  },
   mounted() {
     // 메인영역 공통 JS
     // catToggle();
-  }
+  },
 });
 
 Vue.component("fil-comp", {
