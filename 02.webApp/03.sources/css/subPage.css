@@ -209,3 +209,9 @@
     height: 100%;
     object-fit: cover;
 }
+
+.cat_left_side_tab > ul > li {
+    position: absolute;
+    width: 195px;
+    /* display: none; */
+}
