@@ -38,47 +38,47 @@ Vue.component("nav-comp", {
         case "아동잡화" :
           v = "ac";
           break;
-        // kids lnb 소분류 데이터
-        case "전체" :
-          v = "all";
-          break;
-        case "구두" :
-          v = "shoe";
-          break;
-        case "샌들" :
-          v = "sandal";
-          break;
-        case "패션가방" :
-          v = "styleback";
-          break;
-        case "실내화가방" :
-          v = "shoebag";
-          break;
-        case "양말" :
-          v = "socks";
-          break;
-        case "모자" :
-          v = "hat";
-          break;
+        // // kids lnb 소분류 데이터
+        // case "전체" :
+        //   v = "all";
+        //   break;
+        // case "구두" :
+        //   v = "shoe";
+        //   break;
+        // case "샌들" :
+        //   v = "sandal";
+        //   break;
+        // case "패션가방" :
+        //   v = "styleback";
+        //   break;
+        // case "실내화가방" :
+        //   v = "shoebag";
+        //   break;
+        // case "양말" :
+        //   v = "socks";
+        //   break;
+        // case "모자" :
+        //   v = "hat";
+        //   break;
 
-        // men lnb 소분류 데이터
-        case "스니커즈" :
-          v = "sneakers";
-          break;
-        case "백팩" :
-          v = "bagpack";
-          break;
-        case "맨즈백" :
-          v = "mensbag";
-          break;
+        // // men lnb 소분류 데이터
+        // case "스니커즈" :
+        //   v = "sneakers";
+        //   break;
+        // case "백팩" :
+        //   v = "bagpack";
+        //   break;
+        // case "맨즈백" :
+        //   v = "mensbag";
+        //   break;
         
-        // women lnb 소분류 데이터
-        case "플랫슈즈" :
-          v = "flat";
-          break;
-        case "미니백" :
-          v = "minibag";
-          break;
+        // // women lnb 소분류 데이터
+        // case "플랫슈즈" :
+        //   v = "flat";
+        //   break;
+        // case "미니백" :
+        //   v = "minibag";
+        //   break;
       }
       // console.log(v);
       store.commit("ChgMenu", v)
