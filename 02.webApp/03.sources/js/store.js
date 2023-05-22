@@ -68,33 +68,8 @@ const store = new Vuex.Store({
     // 카테고리 페이지 타이틀 및 lnb 변경
     ChgMenu(dt, pm) {
       // pm - Get방식으로 넘어온 파라미터값
-      switch (pm) {
-        case "men":
-          dt.title = "MEN";
-          dt.lnb = ["신상", "베스트", "남성신발", "남성가방", "남성잡화"];
-          dt.lnbItem = ["전체", "스니커즈", "샌들"];
-          dt.lnbItem2 = ["전체", "백팩", "맨즈백"];
-          dt.lnbItem3 = ["전체", "양말", "모자"];
-          break;
-
-        case "women":
-          dt.title = "WOMEN";
-          dt.lnb = ["신상", "베스트", "여성신발", "여성가방", "여성잡화"];
-          dt.lnbItem = ["전체", "플랫슈즈", "샌들"];
-          dt.lnbItem2 = ["전체", "백팩", "미니백"];
-          dt.lnbItem3 = ["전체", "양말", "모자"];
-          break;
-
-        case "kids":
-          dt.title = "KIDS";
-          dt.lnb = ["신상", "베스트", "아동신발", "아동가방", "아동잡화"];
-          dt.lnbItem = ["전체", "구두", "샌들"];
-          dt.lnbItem2 = ["전체", "패션가방", "실내화가방"];
-          dt.lnbItem3 = ["전체", "양말", "모자"];
-          break;
-      }
-
       // 분류 카테고리별 lnb 클릭 시 해당되는 항목의 상품으로 리스트 변경
+        console.log(pm)
     }, // ChgMenu 함수
   },
 });

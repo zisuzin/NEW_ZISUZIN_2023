@@ -2,67 +2,251 @@
 const catData = {
   navCat: `
         <aside class="cat_left_side_tab">
-            <h2 class="tit_h2">{{$store.state.title}}</h2>
-            <div class="ctg_link">
-                <ul>
-                    <li>
-                        <a href="#">{{$store.state.lnb[0]}}
-                            <em v-if="$store.state.lnb">NEW</em>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">{{$store.state.lnb[1]}}
-                            <em v-if="$store.state.lnb">BEST</em>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="ctg_nav">
-                <ul>
-                    <li class="ctg_depth1">
-                        <div>
-                            <a href="">
-                            <span>{{$store.state.lnb[2]}}</span>
-                            </a>
-                        </div>
-                        <div class="ctg_depth2">
-                            <ul>
-                                <li v-for="(v,n) in $store.state.lnbItem">
-                                    <a href="#" v-on:click.prevent="ChgNoteList(v)">{{v}}</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="ctg_depth1">
-                        <div>
-                            <a href="#">
-                                <span>{{$store.state.lnb[3]}}</span>
-                            </a>
-                        </div>
-                        <div class="ctg_depth2">
-                            <ul>
-                                <li v-for="(v,n) in $store.state.lnbItem2">
-                                    <a href="#" v-on:click.prevent="ChgNoteList(v)">{{v}}</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="ctg_depth1">
-                        <div>
-                            <a href="#">
-                                <span>{{$store.state.lnb[4]}}</span>
-                            </a>
-                        </div>
-                        <div class="ctg_depth2">
-                            <ul>
-                                <li v-for="(v,n) in $store.state.lnbItem3">
-                                    <a href="#" v-on:click.prevent="ChgNoteList(v)">{{v}}</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                </ul>
-            </div>
+            <ul>
+                <li>
+                    <h2 class="tit_h2">MEN</h2>
+                    <div class="ctg_link">
+                        <ul>
+                            <li>
+                                <a href="#">{{$store.state.lnb[0]}}
+                                    <em v-if="$store.state.lnb">NEW</em>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">{{$store.state.lnb[1]}}
+                                    <em v-if="$store.state.lnb">BEST</em>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="ctg_nav">
+                        <ul>
+                            <li class="ctg_depth1">
+                                <div>
+                                    <a href="#">
+                                        <span>남성신발</span>
+                                    </a>
+                                </div>
+                                <div class="ctg_depth2">
+                                    <ul>
+                                        <li>
+                                            <a href="sub.html?cat1=men&cat2=shoes&cat3=all">전체</a>
+                                        </li>
+                                        <li>
+                                            <a href="sub.html?cat1=men&cat2=shoes&cat3=sneakers">스니커즈</a>
+                                        </li>
+                                        <li>
+                                            <a href="sub.html?cat1=men&cat2=shoes&cat3=sandal">샌들</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="ctg_depth1">
+                                <div>
+                                    <a href="#">
+                                        <span>남성가방</span>
+                                    </a>
+                                </div>
+                                <div class="ctg_depth2">
+                                    <ul>
+                                        <li>
+                                            <a href="sub.html?cat1=men&cat2=bag&cat3=all">전체</a>
+                                        </li>
+                                        <li>
+                                            <a href="sub.html?cat1=men&cat2=bag&cat3=bagpack">백팩</a>
+                                        </li>
+                                        <li>
+                                            <a href="sub.html?cat1=men&cat2=bag&cat3=mensbag">맨즈백</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="ctg_depth1">
+                                <div>
+                                    <a href="#">
+                                        <span>남성잡화</span>
+                                    </a>
+                                </div>
+                                <div class="ctg_depth2">
+                                    <ul>
+                                        <li>
+                                            <a href="sub.html?cat1=men&cat2=ac&cat3=all">전체</a>
+                                        </li>
+                                        <li>
+                                            <a href="sub.html?cat1=men&cat2=ac&cat3=socks">양말</a>
+                                        </li>
+                                        <li>
+                                            <a href="sub.html?cat1=men&cat2=ac&cat3=hat">모자</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <h2 class="tit_h2">WOMEN</h2>
+                    <div class="ctg_link">
+                        <ul>
+                            <li>
+                                <a href="#">{{$store.state.lnb[0]}}
+                                    <em v-if="$store.state.lnb">NEW</em>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">{{$store.state.lnb[1]}}
+                                    <em v-if="$store.state.lnb">BEST</em>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="ctg_nav">
+                        <ul>
+                            <li class="ctg_depth1">
+                                <div>
+                                    <a href="#">
+                                        <span>여성신발</span>
+                                    </a>
+                                </div>
+                                <div class="ctg_depth2">
+                                    <ul>
+                                        <li>
+                                            <a href="sub.html?cat1=women&cat2=shoes&cat3=all">전체</a>
+                                        </li>
+                                        <li>
+                                            <a href="sub.html?cat1=women&cat2=shoes&cat3=flat">플랫슈즈</a>
+                                        </li>
+                                        <li>
+                                            <a href="sub.html?cat1=women&cat2=shoes&cat3=sandel">샌들</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="ctg_depth1">
+                                <div>
+                                    <a href="#">
+                                        <span>여성가방</span>
+                                    </a>
+                                </div>
+                                <div class="ctg_depth2">
+                                    <ul>
+                                        <li>
+                                            <a href="sub.html?cat1=women&cat2=bag&cat3=all">전체</a>
+                                        </li>
+                                        <li>
+                                            <a href="sub.html?cat1=women&cat2=bag&cat3=bagpack">백팩</a>
+                                        </li>
+                                        <li>
+                                            <a href="sub.html?cat1=women&cat2=bag&cat3=miniback">미니백</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="ctg_depth1">
+                                <div>
+                                    <a href="#">
+                                        <span>여성잡화</span>
+                                    </a>
+                                </div>
+                                <div class="ctg_depth2">
+                                    <ul>
+                                        <li>
+                                            <a href="sub.html?cat1=women&cat2=ac&cat3=all">전체</a>
+                                        </li>
+                                        <li>
+                                            <a href="sub.html?cat1=women&cat2=ac&cat3=socks">양말</a>
+                                        </li>
+                                        <li>
+                                            <a href="sub.html?cat1=women&cat2=ac&cat3=hat">모자</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <h2 class="tit_h2">KIDS</h2>
+                    <div class="ctg_link">
+                        <ul>
+                            <li>
+                                <a href="#">{{$store.state.lnb[0]}}
+                                    <em v-if="$store.state.lnb">NEW</em>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">{{$store.state.lnb[1]}}
+                                    <em v-if="$store.state.lnb">BEST</em>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="ctg_nav">
+                        <ul>
+                            <li class="ctg_depth1">
+                                <div>
+                                    <a href="#">
+                                        <span>아동신발</span>
+                                    </a>
+                                </div>
+                                <div class="ctg_depth2">
+                                    <ul>
+                                        <li>
+                                            <a href="sub.html?cat1=kids&cat2=shoes&cat3=all">전체</a>
+                                        </li>
+                                        <li>
+                                            <a href="sub.html?cat1=kids&cat2=shoes&cat3=shoe">구두</a>
+                                        </li>
+                                        <li>
+                                            <a href="sub.html?cat1=kids&cat2=shoes&cat3=sandal">샌들</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="ctg_depth1">
+                                <div>
+                                    <a href="#">
+                                        <span>아동가방</span>
+                                    </a>
+                                </div>
+                                <div class="ctg_depth2">
+                                    <ul>
+                                        <li>
+                                            <a href="sub.html?cat1=kids&cat2=bag&cat3=all">전체</a>
+                                        </li>
+                                        <li>
+                                            <a href="sub.html?cat1=kids&cat2=bag&cat3=stylebag">패션가방</a>
+                                        </li>
+                                        <li>
+                                            <a href="sub.html?cat1=kids&cat2=bag&cat3=slipperbag">실내화가방</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="ctg_depth1">
+                                <div>
+                                    <a href="#">
+                                        <span>아동잡화</span>
+                                    </a>
+                                </div>
+                                <div class="ctg_depth2">
+                                    <ul>
+                                        <li>
+                                            <a href="sub.html?cat1=kids&cat2=ac&cat3=all">전체</a>
+                                        </li>
+                                        <li>
+                                            <a href="sub.html?cat1=kids&cat2=ac&cat3=socks">양말</a>
+                                        </li>
+                                        <li>
+                                            <a href="sub.html?cat1=kids&cat2=ac&cat3=hat">모자</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
         </aside>
     `,
   catFilter: `
