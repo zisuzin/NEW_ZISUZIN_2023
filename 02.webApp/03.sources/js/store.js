@@ -1,174 +1,94 @@
-import { nbData, tgData } from "./tempData/prodData.js";
-
+// 서브 페이지 뷰엑스 스토어 셋팅 JS  - store.js
+import {nbData, tgData} from "./sub.js";
 
 const store = new Vuex.Store({
   state: {
-    // tg서브메뉴 제품정보 객체
-    tgData:tgData,
-     // 서브데이터 셋업 (new/best)
-     newData: {
-      전체: {
-        sNum: 60,
-        cat: "ALL",
-        item: nbData.new.allData,
+    tgData: tgData,
+    nbData: nbData,
+    // lnb데이터 셋업
+    lnbData: {
+      women: {
+        shoes: {
+          // 중분류 - 신발
+          // 사이즈는 신발만 있음
+          flat: {
+            size: [225, 230, 240, 245, 250, 255],
+            color: ["#000", "#fff", "#0054FF", "#FFB2D9", "#FFE400", "#CCA63D", "#542E00", "#123478", "#A6A6A6", "#227428", "#78247C"],
+            priceList: ["2만6천원 이하", "3만원 이하", "3만5천원 이하", ""],
+          },
+          sandal: {
+            size: [225, 230, 235, 240, 245, 250],
+            color: ["#000", "#fff", "#CCA63D", "#542E00", "#78247C", "#FFE400", "#0054FF", "#227428", "#A6A6A6", "#123478", "#FFB2D9"],
+            priceList: ["1만9천원 이하", "2만1천원 이하", "2만6천원 이하", "3만원 이하"],
+          },
+        },
+        bag: {
+          // 중분류 - 가방
+          bagpack: {
+            size: ["FREE(one-size)", ""],
+            color: ["#000", "#CCA63D", "#227428", "#fff", "#A6A6A6", "#FFB2D9"],
+            priceList: ["1만9천원 이하", "2만1천원 이하", "2만6천원 이하", "3만원 이하"],
+          },
+        },
+        ac: {
+          // 중분류 - 잡화
+          socks: {
+            size: ["FREE(one-size)", "M", "S"],
+            color: ["#000", "#fff", "#CCA63D", "#FFB2D9", "#227428", "#FFE400", "#78247C", "linear-gradient(red, orange, yellow,green, blue, indigo, violet"],
+            priceList: ["1만9천원 이하", "2만1천원 이하", "2만6천원 이하", "3만원 이하"],
+          },
+        },
       },
-      여성: {
-        sNum: 20,
-        cat: "WOMEN",
-        item: nbData.new.womenData,
+      men: {
+        shoes: {
+          // 중분류 - 신발
+          // 사이즈는 신발만 있음
+          sandal: {
+            size: [250, 255, 260, 265, 270, 275, 280],
+            color: ["#000", "#fff", "#0054FF", "#FFB2D9", "#FFE400", "#CCA63D", "#542E00", "#123478", "#A6A6A6", "#227428", "#78247C"],
+            priceList: ["2만2천원 이하", "3만원 이하", "3만5천원원 이하", "5만원 이하"],
+          },
+        },
       },
-      남성: {
-        sNum: 20,
-        cat: "MEN",
-        item: nbData.new.menData,
-      },
-      아동: {
-        sNum: 20,
-        cat: "KIDS",
-        item: nbData.new.kidsData,
-      },
-    },
-    
-    // 서브데이터 셋업 (new/best)
-    bestData: {
-      전체: {
-        sNum: 60,
-        cat: "ALL",
-        item: [...nbData.best.womenData,...nbData.best.menData,...nbData.best.kidsData],
-      },
-      여성: {
-        sNum: 20,
-        cat: "WOMEN",
-        item: nbData.best.womenData,
-      },
-      남성: {
-        sNum: 20,
-        cat: "MEN",
-        item: nbData.best.menData,
-      },
-      아동: {
-        sNum: 20,
-        cat: "KIDS",
-        item: nbData.best.kidsData,
-      },
-    },
+      kids: {},
+    }, // lnb 데이터객체
 
     // 공통처리 메뉴 변수
-    setsNum: "",
-    setcat: "",
-    item: "",
-    
+    menu: {},
+    menu2: [],
+    setcat: {},
+    setcat2: [],
+    cat1:"",
+    cat2:"",
+    cat3:"",
+
+    title: "",
+    lnb: "",
+    gender: "",
     name: "",
-    cat1: "",
-    cat2: "",
-    cat3: "",
-    cat4:"",
-
-    wdata: "",
-    mdata: "",
-    kdata: "",
-
-    menu:{},
-    menu2:[],
-    menusum:[],
-    sortmenu:[],
-    // 더보기버튼 상태변수
-    mbsts:true,
-    // 더보기배수 변수
-    mnum: 0,
-    
-  },
+    img: "",
+    oprice: "",
+    dprice: "",
+    sale: "",
+    review: "",
+    setlnb: "",
+  }, // state 객체
   mutations: {
-    // tg서브메뉴 상태변경 변수 셋업
-    ChgData(state, pram) {
-      state.cat1 = pram.cat1;
-      state.cat2 = pram.cat2;
-      state.cat3 = pram.cat3;
-      state.cat4 = pram.cat4;
+    // 카테고리 페이지 타이틀 및 lnb 변경
+    ChgMenu(dt, pm) {
+      // pm - Get방식으로 넘어온 파라미터값
+        dt.cat1 = pm.cat1;
+        dt.cat2 = pm.cat2;
+        dt.cat3 = pm.cat3;
 
-      state.menu = state.tgData[pram.cat1][pram.cat2]; /* 중분류 접근 */
-      state.menu2 = state.tgData[pram.cat1][pram.cat2][pram.cat3]; /* 소분류 접근 */
-      state.prodCount = state.menu2 ? state.menu2.length : 0; /* 소분류데이터 길이값 출력 */
+        dt.menu = dt.tgData[pm.cat1] /* 중분류 접근 */
+        dt.menu2 = dt.tgData[pm.cat1][pm.cat2] /* 소분류 접근 */
 
-      switch (pm){
-        case  "men" : dt.brand = ["Polo Ralph Lauren", "Purple Label"]; break;
-        case "women" : dt.brand = ["Polo Ralph Lauren", "Ralph Lauren Collection"]; break;
-        case "kids" : dt.brand = ["Boys 2-7", "Girls 7-16"]; break;
-        case "home" : dt.brand = ["Polo Ralph Lauren Home", null];
-    }
-    },
-    newChgData(state,pram){ // state - state데이터, pram - 전달값 
-      // 해당 카테고리 이름 업데이트
-      state.cat = state.newData[pram].cat;
-      // 해당 카테고리 제품리스트 업데이트
-      state.item = state.newData[pram].item;
-      state.setcat = pram;
-
-      state.tgData = state.tgData.pram;
-
-      // MORE 버튼 보이기/숨기기
-      if(pram=="전체") state.mbsts = true;
-      else state.mbsts = false;
+        dt.menu3 = dt.nbData[pm.cat1] /* 대분류 접근 */
+        dt.setcat = pm;
+        console.log(pm)
+    }, // ChgMenu 함수
   },
-  // 페이지이동 호출함수
-  nbChg(state, pram){
-    // console.log(pram)
-    if(pram==="WOMEN" || pram==="MEN" || pram==="KIDS")
-      location.href = "sub_tg.html?cat="+pram;
-    else if(pram==="NEW")
-      location.href = "sub_new.html?cat="+pram;
-    else {
-      location.href = "sub_best.html?cat="+pram;
-    }
-  },
-  // MORE 버튼 클릭시 이미지 증가 함수
-  updateList(dt,pm){
-    dt.mnum += pm;
-    // console.log(dt.mnum+20);
-    if(dt.mnum > 45)
-      dt.mbsts = false;
-  }, // updateList //
-
-  // 상품평순 정렬 함수
-  sortFn(st,pr) {
-    st.arr = st.tgData[pr.cat1][pr.cat2][pr.cat3];
-    let temp = st.arr;
-    temp.sort(function(a,b){
-      return b.review - a.review
-    })
-    store.commit('ChgData', pr)
-  }, 
-
-  // 높은가격순 정렬 함수
-  sortFn1(st,pr) {
-    st.arr = st.tgData[pr.cat1][pr.cat2][pr.cat3];
-    let temp = st.arr;
-    temp.sort(function(a,b){
-      return b.dprice - a.dprice
-    })
-    store.commit('ChgData', pr)
-  },  
-
-  // 낮은가격순 정렬 함수
-  sortFn2(st,pr) {
-    st.arr = st.tgData[pr.cat1][pr.cat2][pr.cat3];
-    let temp = st.arr;
-    temp.sort(function(a,b){
-      return a.dprice - b.dprice
-    })
-    store.commit('ChgData', pr)
-  },  
-
-  // 할인률높은순 정렬 함수
-  sortFn3(st,pr) {
-    st.arr = st.tgData[pr.cat1][pr.cat2][pr.cat3];
-    let temp = st.arr;
-    temp.sort(function(a,b){
-      return b.sale - a.sale
-    })
-    store.commit('ChgData', pr)
-  }  
-  }, // mutation // 
-}); // 뷰엑스 인스턴스 //
+});
 
 export default store;
