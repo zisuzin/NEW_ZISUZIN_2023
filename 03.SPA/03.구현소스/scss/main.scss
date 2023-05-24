@@ -1,15 +1,20 @@
-.first-btn {
-    &:hover{
-        background: {
-            color: red;
-        }
-    }
+@charset 'utf-8';
+
+/* 배너전체박스 */
+.banbx {
+    position: relative;
+    padding: 80px 0;
 }
 
-.second-btn {
-    &:hover{
-        background: {
-            color: blue
-        };
-    }
+/* 배너컨텐츠박스 */
+.bancont {
+    position: relative;
+    width: 50vw;
+    left: 25vw;
+    aspect-ratio: 1/0.55;
+    border: 1px dashed #000;
+}
+
+.album_set {
+    display: flex;
 }
