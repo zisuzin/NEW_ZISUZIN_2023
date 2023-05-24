@@ -1,0 +1,28 @@
+@charset "UTF-8";
+/* nav06 리셋 CSS - reset.css */
+html, body, ul, li, div, span {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  height: 100%;
+}
+
+img {
+  border: none;
+  vertical-align: bottom;
+  /* 박스 이미지 하단간극 없애기(약4px)
+  값으로 top, middle등 도 효과있음! */
+}
+
+* {
+  font-family: "Noto Sans KR";
+  font-style: normal;
+}/*# sourceMappingURL=reset.css.map */
