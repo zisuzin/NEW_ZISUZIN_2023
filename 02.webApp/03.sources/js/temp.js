@@ -1,6 +1,5 @@
 import comData from "./tempData/comData.js";
 import catData from "./tempData/catData.js";
-import {qs, qsa, addCls, removeCls, hoverCont, toggleCont} from "./eventFn.js";
 import store from "./store.js";
 
 // 상단영역 컴포넌트
@@ -26,6 +25,10 @@ Vue.component("fil-comp", {
   template: catData.catFilter,
 });
 
+Vue.component("prod-comp", {
+  template: catData.prodList,
+})
+
 Vue.component("prod-list",{
   template: catData.NewBest_prodList,
   methods: {
@@ -50,14 +53,15 @@ new Vue({
       // console.log(pm1)
       pm2 = pm[1].split("=")[1] // cat2
       pm3 = pm[2].split("=")[1] // cat3
-      // console.log(pm1,pm2,pm3)
+      console.log(pm1,pm2,pm3);
     }
-    if(pm1 === "new" || pm1 === "best"){
-      store.commit("ChgMenu",{cat1:pm1});
-    }
-    else {
-      store.commit("ChgMenu",{cat1:pm1,cat2:pm2,cat3:pm3}); 
-    }
+    // if(pm1 === "new" || pm1 === "best"){
+    //   store.commit("ChgMenu",{cat1:pm1});
+    //   console.log(pm1)
+    // }
+    // else {
+    //   store.commit("ChgMenu",{cat1:pm1,cat2:pm2,cat3:pm3}); 
+    // }
     }, // created 구역
   mounted() {
     // mounted 실행구역 : DOM 연결 후
@@ -65,4 +69,18 @@ new Vue({
     $(".logo").click(() => (location.href = "index.html"));
   }, // mounted 구역
 });
+
 // 하단영역 뷰인스턴스
+
+// 뷰 전역등록 함수
+Vue.prototype.numberWithCommas = function(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+};
+
+Vue.prototype.calculateDiscount = function(oprice, dprice) {
+  if (!oprice || !dprice) {
+    return "";
+  }
+  const discount = ((oprice - dprice) / oprice) * 100;
+  return Math.floor(discount) + '%';
+};

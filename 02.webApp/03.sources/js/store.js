@@ -80,13 +80,12 @@ const store = new Vuex.Store({
         dt.cat1 = pm.cat1;
         dt.cat2 = pm.cat2;
         dt.cat3 = pm.cat3;
+        // console.log(dt.cat1,dt.cat2,dt.cat3)
 
         dt.menu = dt.tgData[pm.cat1] /* 중분류 접근 */
         dt.menu2 = dt.tgData[pm.cat1][pm.cat2] /* 소분류 접근 */
+        // console.log(dt.menu2);
 
-        dt.menu3 = dt.nbData[pm.cat1] /* 대분류 접근 */
-        dt.setcat = pm;
-        console.log(pm)
     }, // ChgMenu 함수
   },
 });

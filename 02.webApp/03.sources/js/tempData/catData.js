@@ -30,13 +30,13 @@ const catData = {
                                   <div class="ctg_depth2">
                                       <ul>
                                           <li>
-                                              <a href="#" v-on:click="$store.commit('ChgMenu',{cat1:'men',cat2:'shoes',cat3:'all'})">전체</a>
+                                              <a href="#" v-on:click.prevent="$store.commit('ChgMenu',{cat1:'men',cat2:'shoes',cat3:'all'})">전체</a>
                                           </li>
                                           <li>
-                                              <a href="#" v-on:click="$store.commit('ChgMenu',{cat1:'men',cat2:'shoes',cat3:'sneakers'})">스니커즈</a>
+                                              <a href="#" v-on:click.prevent="$store.commit('ChgMenu',{cat1:'men',cat2:'shoes',cat3:'sneakers'})">스니커즈</a>
                                           </li>
                                           <li>
-                                              <a href="#" v-on:click="$store.commit('ChgMenu',{cat1:'men',cat2:'shoes',cat3:'sandal'})">샌들</a>
+                                              <a href="#" v-on:click.prevent="$store.commit('ChgMenu',{cat1:'men',cat2:'shoes',cat3:'slippers'})">슬리퍼</a>
                                           </li>
                                       </ul>
                                   </div>
@@ -111,13 +111,13 @@ const catData = {
                                   <div class="ctg_depth2">
                                       <ul>
                                           <li>
-                                              <a href="#" v-on:click="$store.commit('ChgMenu',{cat1:'women',cat2:'shoes',cat3:'all'})">전체</a>
+                                              <a href="sub.html?cat1=women&cat2=shoes&cat3=all">전체</a>
                                           </li>
                                           <li>
-                                              <a href="#" v-on:click="$store.commit('ChgMenu',{cat1:'women',cat2:'shoes',cat3:'flat'})">플랫슈즈</a>
+                                              <a href="sub.html?cat1=women&cat2=shoes&cat3=flat">플랫슈즈</a>
                                           </li>
                                           <li>
-                                              <a href="#" v-on:click="$store.commit('ChgMenu',{cat1:'women',cat2:'shoes',cat3:'sandal'})">샌들</a>
+                                              <a href="sub.html?cat1=women&cat2=shoes&cat3=sandal">샌들</a>
                                           </li>
                                       </ul>
                                   </div>
@@ -397,53 +397,53 @@ const catData = {
                           </div>
                       </div>
                   </div>
+                  <!-- 메인 상품리스트 -->
+                  <div class="ui-item-view">
+                      <ul class="ui-col4">
+                        <template v-for="(v,n) in $store.state.menu2">
+                            <li v-for="(a,b) in v" v-if="$store.state.cat3 === n" :key="b">
+                                <div class="ui-prod-bx">
+                                    <a href="#">
+                                        <div class="prod-detail-img">
+                                            <img :src="'./images/02.imgData/sub/'+$store.state.cat1+'/'+$store.state.cat2+'/'+$store.state.cat3+'/'+'item_'+(b+1)+'.jpg'" alt="상품이미지">
+                                        </div>
+                                        <div class="prod-txt">
+                                            <strong class="brand">슈펜</strong>
+                                            <p>{{a.name}}</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="item-detail">
+                                    <span class="original-price">
+                                        <em>{{numberWithCommas(a.oprice)}}</em>
+                                        <span v-if="a.oprice">원</span>
+                                    </span>
+                                    <br>
+                                    <span class="discount-price">
+                                        <em>{{numberWithCommas(a.dprice)}}</em>
+                                        <span>원</span>
+                                    </span>
+                                    <span class="percent-price" v-if="a.oprice && a.dprice">
+                                        <em>{{calculateDiscount(a.oprice,a.dprice)}}</em>
+                                    </span>
+                                    <div class="box_grade">
+                                        <div class="star">
+                                        <span></span>
+                                        <strong>리뷰
+                                            <span v-if="a.review!==undefined" v-text="'('+a.review+')'"></span>
+                                            <span v-else>(0)</span>
+                                        </strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </template>
+                      </ul>
+                  </div>
               </div>
           </div>
        `,
   prodList: `
-          <!-- 메인 상품리스트 -->
-          <div class="ui-item-view">
-              <ul class="ui-col4">
-                  <template v-for="(v,n) in $store.state.menu">
-                      <li v-for="(a,b) in v">
-                          <div class="ui-prod-bx">
-                              <a href="#">
-                                  <div class="prod-detail-img">
-                                      <img src="'./images/02.imgData/sub/'+$store.state.cat1+'/'+$store.state.cat2+'/'+$store.state.cat3+'/'+'item_'+(b+1)+'.jpg'" alt="상품이미지">
-                                  </div>
-                                  <div class="prod-txt">
-                                      <strong class="brand">슈펜</strong>
-                                      <p></p>
-                                  </div>
-                              </a>
-                          </div>
-                          <div class="item-detail">
-                              <span class="original-price">
-                                  <em></em>
-                                  <span>원</span>
-                              </span>
-                              <br>
-                              <span class="discount-price">
-                                  <em></em>
-                                  <span>원</span>
-                              </span>
-                              <span class="percent-price">
-                                  <em></em>
-                              </span>
-                              <div class="box_grade">
-                                  <div class="star">
-                                  <span></span>
-                                  <strong>리뷰
-                                      <span></span>
-                                      <span></span>
-                                  </strong>
-                                  </div>
-                              </div>
-                          </div>
-                      </li>
-                  </template>
-              </ul>
-          </div>
        `,
 
   // NEW & BEST 상품정보 리스트
