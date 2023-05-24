@@ -1,9 +1,7 @@
-.container {
-  background-color: yellow;
+.first-btn:hover {
+  background-color: red;
 }
-.container h2 {
-  color: green;
-}
-.container p {
+
+.second-btn:hover {
   background-color: blue;
 }/*# sourceMappingURL=main.css.map */

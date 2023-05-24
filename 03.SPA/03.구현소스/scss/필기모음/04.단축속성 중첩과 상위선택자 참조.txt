@@ -1,0 +1,42 @@
+**** 단축 속성 ****
+- 단축 속성은 여러가지 CSS 속성의 값을 함께 지정할 수 있는 속성으로,
+- 같은 주제를 가진 여러 공통 속성을 묶기 위해 정의하는 속성이다.
+    Sass에서는 중첩을 이용해 단축 속성의 하위 속성을 그룹화 할 수 있다.
+Ex)
+    font-family: sans-serif;
+    font-size: 1em;
+    font-style: normal;
+    font-weight: 900;
+
+Ex) - 네임스페이스 속성 중첩
+    p {
+        font: {
+            font-family: sans-serif;
+            font-size: 1em;
+            font-style: normal;
+            font-weight: 900;
+        }
+    }
+
+________________________________________________________
+
+[ & 기호로 상위 선택자 참조하기 ]
+- 기호 &를 사용해 상위 선택자를 참조할 수 있다.
+- 의사클래스를 선택하고자 할 때 유용한 방법이며,
+    서로 다른 클래스에 서로 다른 스타일을 지정할 때도 사용할 수 있다.
+Ex)
+    button {
+        $:active{
+            background-color: red;
+        }
+    }
+
+
+Ex) - 단축 속성의 그룹화 
+p {
+    font: {
+        style: italic;
+        weight: 900;
+        size: 32px;
+    }
+}

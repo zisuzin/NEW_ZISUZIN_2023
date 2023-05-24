@@ -1,12 +1,15 @@
-.container {
-    background-color: yellow;
-
-    h2 {
-        color: green;
+.first-btn {
+    &:hover{
+        background: {
+            color: red;
+        }
     }
-
-    p {
-        background-color: blue;
-    } 
 }
 
+.second-btn {
+    &:hover{
+        background: {
+            color: blue
+        };
+    }
+}
