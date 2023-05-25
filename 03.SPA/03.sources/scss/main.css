@@ -8,7 +8,6 @@
 /* 배너컨텐츠박스 */
 .bancont {
   position: relative;
-  width: 50vw;
   height: 360px;
   left: 5vw;
   aspect-ratio: 1/0.55;
@@ -75,9 +74,8 @@
 }
 .album_cover1 .release_date {
   color: white;
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
+  position: absolute;
+  bottom: 0;
 }
 .album_cover1 .original_author {
   font-size: 12px;
