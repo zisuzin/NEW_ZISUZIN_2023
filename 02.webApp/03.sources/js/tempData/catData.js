@@ -50,13 +50,13 @@ const catData = {
                                   <div class="ctg_depth2">
                                       <ul>
                                           <li>
-                                              <a href="sub.html?cat1=men&cat2=bag&cat3=all">전체</a>
+                                              <a href="#" v-on:click.prevent="$store.commit('ChgMenu',{cat1:'men',cat2:'bag',cat3:'all'})">전체</a>
                                           </li>
                                           <li>
-                                              <a href="sub.html?cat1=men&cat2=bag&cat3=bagpack">백팩</a>
+                                              <a href="#" v-on:click.prevent="$store.commit('ChgMenu',{cat1:'men',cat2:'bag',cat3:'crossbag'})">크로스백</a>
                                           </li>
                                           <li>
-                                              <a href="sub.html?cat1=men&cat2=bag&cat3=mensbag">맨즈백</a>
+                                              <a href="#" v-on:click.prevent="$store.commit('ChgMenu',{cat1:'men',cat2:'bag',cat3:'mensbag'})">맨즈백</a>
                                           </li>
                                       </ul>
                                   </div>

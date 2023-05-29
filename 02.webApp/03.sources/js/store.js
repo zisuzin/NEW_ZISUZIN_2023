@@ -62,16 +62,6 @@ const store = new Vuex.Store({
     cat2:"",
     cat3:"",
 
-    title: "",
-    lnb: "",
-    gender: "",
-    name: "",
-    img: "",
-    oprice: "",
-    dprice: "",
-    sale: "",
-    review: "",
-    setlnb: "",
   }, // state 객체
   mutations: {
     // 카테고리 페이지 타이틀 및 lnb 변경
@@ -80,11 +70,9 @@ const store = new Vuex.Store({
         dt.cat1 = pm.cat1;
         dt.cat2 = pm.cat2;
         dt.cat3 = pm.cat3;
-        // console.log(dt.cat1,dt.cat2,dt.cat3)
 
         dt.menu = dt.tgData[pm.cat1] /* 중분류 접근 */
         dt.menu2 = dt.tgData[pm.cat1][pm.cat2] /* 소분류 접근 */
-        // console.log(dt.menu2);
 
     }, // ChgMenu 함수
   },

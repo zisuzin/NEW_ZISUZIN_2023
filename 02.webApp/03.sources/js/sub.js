@@ -657,6 +657,28 @@ const tgData = {
             ],
         },
         bags: {
+            crossbag: [
+                {
+                    idx: 1,
+                    gender: "ALL",
+                    name: "네이비 X 가벼운 크로스백 HPABXC435M",
+                    img: "item_1",
+                    oprice: "20930",
+                    dprice: "18840",
+                    sale: "",
+                    review: "1",
+                },
+                {
+                    idx: 2,
+                    gender: "ALL",
+                    name: "전황일콜라보 힙쌕 TPBT79W73",
+                    img: "item_2",
+                    oprice: "18130",
+                    dprice: "16320",
+                    sale: "",
+                    review: "11",
+                },
+            ]
 
         },
         ac: {
