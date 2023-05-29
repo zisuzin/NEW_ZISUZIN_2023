@@ -1,29 +1,25 @@
 import comData from "./tempData/comData.js";
 import catData from "./tempData/catData.js";
-import { catToggle, radioFn, sortFn, EvtPrevnt } from "./common.js";
+import { catToggle, radioFn, sortFn } from "./common.js";
 import store from "./store.js";
 
 // 상단영역 컴포넌트
 Vue.component("top-comp", {
   template: comData.tarea,
   mounted() {
-    EvtPrevnt();
-  }
+    gnbClick();
+  },
 });
 
 // 상단영역 뷰인스턴스
 new Vue({
   el: "#top",
   store,
-  mounted() {},
 });
 
 // 메인영역 컴포넌트
 Vue.component("nav-comp", {
   template: catData.navCat,
-  mounted() {
-    catToggle();
-  },
 });
 
 Vue.component("fil-comp", {
@@ -51,26 +47,7 @@ Vue.component("prod-list",{
 new Vue({
   el: ".contWrap",
   store,
-  created: function () {
-    // created 실행구역 : DOM 연결 전
-    // GET 방식으로 넘어온 데이터 처리
-    let pm,pm1,pm2,pm3;
-
-    if(location.href.indexOf("?") !== -1) {
-      pm = location.href.split("?")[1].split("&");
-      pm1 = pm[0].split("=")[1]; // cat1
-      pm2 = pm[1].split("=")[1] // cat2
-      pm3 = pm[2].split("=")[1] // cat3
-    }
-    if(pm)
-      store.commit('ChgMenu',{cat1:pm1,cat2:pm2,cat3:pm3})
-    else 
-      store.commit('ChgMenu',{cat1:pm1,cat2:pm2,cat3:전체})
-    }, // created 구역
   mounted() {
-    // mounted 실행구역 : DOM 연결 후
-    // 로고 클릭시 첫페이지로 이동!
-    // $(".logo").click(() => (location.href = "index.html"));
   }, // mounted 구역
 });
 
@@ -88,3 +65,12 @@ Vue.prototype.calculateDiscount = function calculateDiscount(oprice, dprice) {
   const discount = ((oprice - dprice) / oprice) * 100;
   return Math.floor(discount) + '%';
 };
+
+const gnbLi = document.querySelectorAll(".gnb > ul > li > a");
+const navLi = document.querySelectorAll(".cat_left_side_tab > ul > li");
+// console.log(gnbLi)
+  gnbLi.forEach((item, index) => {
+    item.addEventListener("click", ()=>{
+      navLi.forEach((x)=> x.style.display = "block")
+    });
+  });

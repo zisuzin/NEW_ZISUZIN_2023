@@ -83,7 +83,6 @@ const store = new Vuex.Store({
           let combinedData = [].concat(...tempData);
           // all 클릭시 배열의 길이값 출력
           dt.prodCount = combinedData.length;
-
         }
     }, // ChgMenu 함수
   },

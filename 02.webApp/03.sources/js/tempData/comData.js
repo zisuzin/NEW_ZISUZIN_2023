@@ -6,7 +6,7 @@ const comData = {
             <!-- 로고 -->
             <div class="top_wrap top_wrap1">
                 <h1 class="logo">
-                    <a href="#">
+                    <a href="index.html">
                         <img src="./images/02.imgData/logo_shoopen_sd.png" alt="로고">
                     </a>
                 </h1>
@@ -22,13 +22,13 @@ const comData = {
                             <a href="product.html?=best">BEST</a>
                         </li>
                         <li>
-                            <a href="sub.html?=men">MEN</a>
+                            <a href="#" @click.prevent>MEN</a>
                         </li>
                         <li>
-                            <a href="sub.html?=women">WOMEN</a>
+                            <a href="#" @click.prevent>WOMEN</a>
                         </li>
                         <li>
-                            <a href="sub.html?=kids">KIDS</a>
+                            <a href="#" @click.prevent>KIDS</a>
                         </li>
                     </ul>
                 </nav>

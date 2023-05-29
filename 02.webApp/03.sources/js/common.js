@@ -65,10 +65,4 @@ function sortFn(){
   });
 } // sortFn 함수
 
-function EvtPrevnt() {
-  const tgLi = $(".gnb > ul > li")
-  for(let x of tgLi) x.mouseover(() => console.log("클클"))
-} 
-
-
-export { catToggle, radioFn, sortFn, EvtPrevnt };
+export { catToggle, radioFn, sortFn };
