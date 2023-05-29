@@ -81,11 +81,6 @@ const store = new Vuex.Store({
           // 합친 객체데이터의 배열 데이터 합치기
           let combinedData = [].concat(...tempData);
           // console.log(combinedData)
-          combinedData.forEach(obj => {
-            console.log(obj);
-          // const output = document.querySelector(".ui-col4");
-          // output.innerHTML = combinedData
-          });
         }
     }, // ChgMenu 함수
   },
