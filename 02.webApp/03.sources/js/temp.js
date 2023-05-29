@@ -1,11 +1,14 @@
 import comData from "./tempData/comData.js";
 import catData from "./tempData/catData.js";
-import { catToggle, radioFn, sortFn } from "./common.js";
+import { catToggle, radioFn, sortFn, EvtPrevnt } from "./common.js";
 import store from "./store.js";
 
 // 상단영역 컴포넌트
 Vue.component("top-comp", {
   template: comData.tarea,
+  mounted() {
+    EvtPrevnt();
+  }
 });
 
 // 상단영역 뷰인스턴스
@@ -67,7 +70,7 @@ new Vue({
   mounted() {
     // mounted 실행구역 : DOM 연결 후
     // 로고 클릭시 첫페이지로 이동!
-    $(".logo").click(() => (location.href = "index.html"));
+    // $(".logo").click(() => (location.href = "index.html"));
   }, // mounted 구역
 });
 

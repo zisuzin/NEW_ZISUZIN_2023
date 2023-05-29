@@ -48,7 +48,7 @@ $('.rdo > input').on('change', function() {
       $('.custom-filter-price > input').removeClass('is_active').prop('disabled', true);
     }
   });
-}
+} // radioFn 함수
 
 function sortFn(){
   // 상품정렬 버튼 클릭시 리스트 보이기
@@ -63,7 +63,12 @@ function sortFn(){
   $('.product-sort-list').on('click', function(event) {
     event.stopPropagation();
   });
-}
+} // sortFn 함수
+
+function EvtPrevnt() {
+  const tgLi = $(".gnb > ul > li")
+  for(let x of tgLi) x.mouseover(() => console.log("클클"))
+} 
 
 
-export { catToggle, radioFn, sortFn };
+export { catToggle, radioFn, sortFn, EvtPrevnt };
