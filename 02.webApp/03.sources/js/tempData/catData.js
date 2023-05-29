@@ -405,7 +405,7 @@ const catData = {
                                 <div class="ui-prod-bx">
                                     <a href="#">
                                         <div class="prod-detail-img">
-                                            <img :src="'./images/02.imgData/sub/'+$store.state.cat1+'/'+$store.state.cat2+'/'+$store.state.cat3+'/'+'item_'+(b+1)+'.jpg'" alt="상품이미지">
+                                            <img :src="'./images/02.imgData/sub/'+$store.state.cat1+'/'+$store.state.cat2+'/'+n+'/'+'item_'+(b+1)+'.jpg'" alt="상품이미지">
                                         </div>
                                         <div class="prod-txt">
                                             <strong class="brand">슈펜</strong>
