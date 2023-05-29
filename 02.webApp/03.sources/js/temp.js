@@ -52,8 +52,11 @@ new Vue({
       pm1 = pm[0].split("=")[1]; // cat1
       pm2 = pm[1].split("=")[1] // cat2
       pm3 = pm[2].split("=")[1] // cat3
-      // console.log(pm1,pm2,pm3);
     }
+    if(pm)
+      store.commit('ChgMenu',{cat1:pm1,cat2:pm2,cat3:pm3})
+    else 
+      store.commit('ChgMenu',{cat1:pm1,cat2:pm2,cat3:전체})
     }, // created 구역
   mounted() {
     // mounted 실행구역 : DOM 연결 후

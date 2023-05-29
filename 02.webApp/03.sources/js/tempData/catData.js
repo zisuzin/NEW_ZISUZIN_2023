@@ -401,7 +401,7 @@ const catData = {
                   <div class="ui-item-view">
                       <ul class="ui-col4">
                         <template v-for="(v,n) in $store.state.menu2">
-                            <li v-for="(a,b) in v" v-if="$store.state.cat3 === n" :key="b">
+                            <li v-for="(a,b) in v" v-if="$store.state.cat3 === n || $store.state.cat3 === 'all'" :key="a.idx">
                                 <div class="ui-prod-bx">
                                     <a href="#">
                                         <div class="prod-detail-img">
@@ -415,16 +415,16 @@ const catData = {
                                 </div>
                                 <div class="item-detail">
                                     <span class="original-price">
-                                        <em>{{numberWithCommas(a.oprice)}}</em>
+                                        <em>{{a.oprice}}</em>
                                         <span v-if="a.oprice">원</span>
                                     </span>
                                     <br>
                                     <span class="discount-price">
-                                        <em>{{numberWithCommas(a.dprice)}}</em>
+                                        <em>{{a.dprice}}</em>
                                         <span>원</span>
                                     </span>
                                     <span class="percent-price" v-if="a.oprice && a.dprice">
-                                        <em>{{calculateDiscount(a.oprice,a.dprice)}}</em>
+                                        <em>{{a.oprice,a.dprice}}</em>
                                     </span>
                                     <div class="box_grade">
                                         <div class="star">

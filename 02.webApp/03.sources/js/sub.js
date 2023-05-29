@@ -635,7 +635,7 @@ const tgData = {
             ],
             sandal: [
                 {
-                    idx: 1,
+                    idx: 3,
                     gender: "ALL",
                     name: "패턴 커버 플랫 샌들 1.5 MIDW78S14",
                     img: "item_1",
@@ -645,7 +645,7 @@ const tgData = {
                     review: "83",
                 },
                 {
-                    idx: 2,
+                    idx: 4,
                     gender: "ALL",
                     name:"플랫폼 피셔맨 샌들 3.5 HPWWND204M",
                     img:"item_2",
@@ -659,7 +659,7 @@ const tgData = {
         bags: {
             backpack: [
                 {
-                    idx: 1,
+                    idx: 5,
                     gender: "ALL",
                     name: "푸우 레이 백팩 TPBK79S52",
                     img: "item_1",
@@ -669,7 +669,7 @@ const tgData = {
                     review: "23",
                 },
                 {
-                    idx: 2,
+                    idx: 6,
                     gender: "ALL",
                     name: "[테디아일랜드] 베이직 백팩 HPADZDA01C",
                     img: "item_2",
@@ -679,7 +679,7 @@ const tgData = {
                     review: "1",
                 },
                 {
-                    idx: 3,
+                    idx: 7,
                     gender: "ALL",
                     name: "전황일콜라보 매쉬백팩 TPBK79W72",
                     img: "item_3",
@@ -691,7 +691,7 @@ const tgData = {
             ]     ,
             minibag: [
                 {
-                    idx: 1,
+                    idx: 8,
                     gender: "ALL",
                     name: "크로셰 핸드폰 백 BLBK78S11",
                     img: "item_1",
@@ -701,7 +701,7 @@ const tgData = {
                     review: "4",
                 },
                 {
-                    idx: 2,
+                    idx: 9,
                     gender: "ALL",
                     name: "나일론 셔링 미니백 HPABGD221M",
                     img: "item_2",
@@ -711,7 +711,7 @@ const tgData = {
                     review: "1",
                 },
                 {
-                    idx: 3,
+                    idx: 10,
                     gender: "ALL",
                     name: "데일리 나일론 미니 숄더백 HPABGC407M",
                     img: "item_3",
@@ -726,7 +726,7 @@ const tgData = {
         ac: {
             socks: [
                 {
-                    idx: 1,
+                    idx: 11,
                     gender: "ALL",
                     name: "슈탠다드 남녀 데일리 페이크 삭스 10팩 LGKA79A01",
                     img: "item_1",
@@ -736,7 +736,7 @@ const tgData = {
                     review: "65",
                 },
                 {
-                    idx: 2,
+                    idx: 12,
                     gender: "ALL",
                     name: "슈탠다드 양말_남녀 쇼트 10팩 LGKA79A21",
                     img: "item_2",
@@ -746,7 +746,7 @@ const tgData = {
                     review: "5",
                 },
                 {
-                    idx: 3,
+                    idx: 13,
                     gender: "ALL",
                     name: "슈탠다드 양말_남녀 클래식 골지 7팩 LGKA20A07",
                     img: "item_3",
@@ -758,7 +758,7 @@ const tgData = {
             ],
             hat: [
                 {
-                    idx: 1,
+                    idx: 14,
                     gender: "ALL",
                     name: "[도영도영이 PICK] 코튼 블렌드 케이블 버킷햇 HPACSD301M",
                     img: "item_1",
@@ -768,7 +768,7 @@ const tgData = {
                     review: "4",
                 },
                 {
-                    idx: 2,
+                    idx: 15,
                     gender: "ALL",
                     name: "아일렛 베이직 버킷햇 TPCH79W02",
                     img: "item_2",
@@ -778,7 +778,7 @@ const tgData = {
                     review: "11",
                 },
                 {
-                    idx: 3,
+                    idx: 16,
                     gender: "ALL",
                     name: "화섬 소프트 베이직 볼캡 TPCC79W02",
                     img: "item_3",
@@ -794,7 +794,7 @@ const tgData = {
         shoes: {
             sneakers: [
                 {
-                    idx: 1,
+                    idx: 17,
                     gender: "ALL",
                     name:"[슈탠다드] 와이드핏 캔버스 스니커즈 HPCR3DA03M",
                     img:"item_1",
@@ -804,7 +804,7 @@ const tgData = {
                     review:"126",
                 },
                 {
-                    idx: 2,
+                    idx: 18,
                     gender: "ALL",
                     name:"[슈탠다드] 베이직 캔버스 스니커즈 HPCR3DA01M",
                     img:"item_2",
@@ -814,7 +814,7 @@ const tgData = {
                     review:"98",
                 },
                 {   
-                    idx:3,
+                    idx: 19,
                     gender: "ALL",
                     name:"[NAVY] 베이직 캔버스 덱 슈즈 HPCR3CA03S",
                     img:"item_3",
@@ -824,7 +824,7 @@ const tgData = {
                     review:"9",
                 },
                 {   
-                    idx:4,
+                    idx: 20,
                     gender: "ALL",
                     name:"메쉬 스포츠 스트랩 캐주얼 AFDM78S65",
                     img:"item_4",
@@ -834,7 +834,7 @@ const tgData = {
                     review:"6",
                 },
                 {   
-                    idx:5,
+                    idx: 21,
                     gender: "ALL",
                     name:"슬립온 니트 워킹화 AFHJ79S01",
                     img:"item_5",
@@ -847,7 +847,7 @@ const tgData = {
 
             slippers: [
                 {   
-                    idx: 1,
+                    idx: 22,
                     gender: "ALL",
                     name: "남성 피셔맨 오픈 슬라이드 HPMV4D207M",
                     img: "item_1",
@@ -857,7 +857,7 @@ const tgData = {
                     review:"5",
                 },
                 {   
-                    idx: 2,
+                    idx: 23,
                     gender: "ALL",
                     name: "[핏더사이즈] 남성 리커버리 슬라이드 HPMV4DA11M",
                     img: "item_2",
@@ -871,7 +871,7 @@ const tgData = {
         bags: {
             crossbag: [
                 {
-                    idx: 1,
+                    idx: 24,
                     gender: "ALL",
                     name: "마하 그리드 유틸리티 에코백 TPBT78S76",
                     img: "item_1",
@@ -881,7 +881,7 @@ const tgData = {
                     review: "19",
                 },
                 {
-                    idx: 2,
+                    idx: 25,
                     gender: "ALL",
                     name: "[드로우핏 X 슈펜] 투포켓 크로스백 HPABFC404D",
                     img: "item_2",
@@ -891,7 +891,7 @@ const tgData = {
                     review: "11",
                 },
                 {
-                    idx: 3,
+                    idx: 26,
                     gender: "ALL",
                     name: "전황일 패딩 버킷백 TPBT79W15",
                     img: "item_3",
@@ -903,7 +903,7 @@ const tgData = {
             ],
             mensbag: [
                 {
-                    idx: 1,
+                    idx: 27,
                     gender: "ALL",
                     name: "비슬로우 BESLOWⅩSHOOPEN 메신저백 TPBF79S09",
                     img: "item_1",
@@ -913,7 +913,7 @@ const tgData = {
                     review: "17", 
                 },
                 {
-                    idx: 2,
+                    idx: 28,
                     gender: "ALL",
                     name: "비슬로우 BESLOW Ⅹ SHOOPEN 포켓 토트백 TPBF79S07",
                     img: "item_2",
@@ -923,7 +923,7 @@ const tgData = {
                     review: "6", 
                 },
                 {
-                    idx: 3,
+                    idx: 29,
                     gender: "ALL",
                     name: "SHOO NOTEBOOK BAG TPBF79S04",
                     img: "item_3",
@@ -937,7 +937,7 @@ const tgData = {
         ac: {
             belt: [
                 {
-                    idx: 1,
+                    idx: 30,
                     gender: "ALL",
                     name: "빈티지 버클 레더벨트 3.0 TPFL78A02",
                     img: "item_1",
@@ -947,7 +947,7 @@ const tgData = {
                     review: "1", 
                 },
                 {
-                    idx: 2,
+                    idx: 31,
                     gender: "ALL",
                     name: "FG 무봉제_벨트 TPFL79A05",
                     img: "item_2",
@@ -957,7 +957,7 @@ const tgData = {
                     review: "8", 
                 },
                 {
-                    idx: 3,
+                    idx: 32,
                     gender: "ALL",
                     name: "컬러패턴 S 마스크 목걸이 BLAZ79A03",
                     img: "item_3",
@@ -969,7 +969,7 @@ const tgData = {
             ],
             hat: [
                 {
-                    idx: 1,
+                    idx: 33,
                     gender: "ALL",
                     name: "아일렛 베이직 버킷햇 TPCH79W02",
                     img: "item_1",
@@ -979,7 +979,7 @@ const tgData = {
                     review: "11",
                 },
                 {
-                    idx: 2,
+                    idx: 34,
                     gender: "ALL",
                     name: "네이비 볼록자수 볼캡 HPACCCA51M",
                     img: "item_2",
@@ -989,7 +989,7 @@ const tgData = {
                     review: "4",
                 },
                 {
-                    idx: 3,
+                    idx: 35,
                     gender: "ALL",
                     name: "뽀글이 군밤모자 HPAHOD109M",
                     img: "item_3",
@@ -1006,7 +1006,7 @@ const tgData = {
         shoes: {
             shoe: [
                 {
-                    idx: 1,
+                    idx: 36,
                     gender: "ALL",
                     name: "키즈 플라워 매쉬 쿠션플랫 VKST78S5M",
                     img: "item_1",
@@ -1016,7 +1016,7 @@ const tgData = {
                     review: "3",
                 },
                 {
-                    idx: 2,
+                    idx: 37,
                     gender: "ALL",
                     name: "키즈 니트 말랑쿠션 플랫 VKST78S01",
                     img: "item_2",
@@ -1026,7 +1026,7 @@ const tgData = {
                     review: "6",
                 },
                 {
-                    idx: 3,
+                    idx: 38,
                     gender: "ALL",
                     name: "[레인보우] 리본 탈부착 글리터 플랫 HPKWVD224G",
                     img: "item_3",
@@ -1038,7 +1038,7 @@ const tgData = {
             ],
             sandal: [
                 {
-                    idx: 1,
+                    idx: 39,
                     gender: "ALL",
                     name: "키즈 플라워 매쉬 쿠션플랫 VKST78S5M",
                     img: "item_1",
@@ -1048,7 +1048,7 @@ const tgData = {
                     review: "3",
                 },
                 {
-                    idx: 2,
+                    idx: 40,
                     gender: "ALL",
                     name: "키즈 니트 말랑쿠션 플랫 VKST78S01",
                     img: "item_2",
@@ -1058,7 +1058,7 @@ const tgData = {
                     review: "6",
                 },
                 {
-                    idx: 3,
+                    idx: 41,
                     gender: "ALL",
                     name: "[레인보우] 리본 탈부착 글리터 플랫 HPKWVD224G",
                     img: "item_3",
@@ -1072,7 +1072,7 @@ const tgData = {
         bags: {
             slipperbag: [
                 {
-                    idx: 1,
+                    idx: 42,
                     gender: "ALL",
                     name: "[뉴스쿨] 키즈 크로스 신발주머니 HPKBMDA02U",
                     img: "item_1",
@@ -1082,7 +1082,7 @@ const tgData = {
                     review: "2",
                 },
                 {
-                    idx: 2,
+                    idx: 43,
                     gender: "ALL",
                     name: "레디셋고 신발주머니 VKBT78S02",
                     img: "item_2",
@@ -1092,7 +1092,7 @@ const tgData = {
                     review: "7",
                 },
                 {
-                    idx: 3,
+                    idx: 44,
                     gender: "ALL",
                     name: "[뉴스쿨] 키즈 베이직 신발주머니 HPKBMDA01U",
                     img: "item_3",
@@ -1102,7 +1102,7 @@ const tgData = {
                     review: "4",
                 },
                 {
-                    idx: 4,
+                    idx: 45,
                     gender: "ALL",
                     name: "베이직 신발 주머니 VKBT79S01",
                     img: "item_4",
@@ -1114,7 +1114,7 @@ const tgData = {
             ],
             stylebag: [
                 {
-                    idx: 1,
+                    idx: 46,
                     gender: "ALL",
                     name: "[뉴스쿨] 키즈 슬링백 HPKBXDA01U",
                     img: "item_1",
@@ -1124,7 +1124,7 @@ const tgData = {
                     review: "",
                 },
                 {
-                    idx: 2,
+                    idx: 47,
                     gender: "ALL",
                     name: "키즈 목걸이 지갑 HPKBXDA03U",
                     img: "item_2",
@@ -1134,7 +1134,7 @@ const tgData = {
                     review: "2",
                 },
                 {
-                    idx: 3,
+                    idx: 48,
                     gender: "ALL",
                     name: "키즈 화섬 미니 크로스백 HPKBXDA02U",
                     img: "item_3",
@@ -1144,7 +1144,7 @@ const tgData = {
                     review: "",
                 },
                 {
-                    idx: 4,
+                    idx: 49,
                     gender: "ALL",
                     name: "겨울왕국 뽀글이 크로스백 VKBX79W1D",
                     img: "item_4",
@@ -1159,7 +1159,7 @@ const tgData = {
         ac: {
             socks: [
                 {
-                    idx: 1,
+                    idx: 50,
                     gender: "ALL",
                     name: "키즈 체크 스포츠 양말 4족세트 HPKL8DA01U",
                     img: "item_1",
@@ -1169,7 +1169,7 @@ const tgData = {
                     review: "14",
                 },
                 {
-                    idx: 2,
+                    idx: 51,
                     gender: "ALL",
                     name: "키즈 스마일 스포츠 양말 4족 세트 HPKL8DA03U",
                     img: "item_2",
@@ -1179,7 +1179,7 @@ const tgData = {
                     review: "12",
                 },
                 {
-                    idx: 3,
+                    idx: 52,
                     gender: "ALL",
                     name: "키즈 치즈 스니커즈 4족 세트 HPKL4DA08U",
                     img: "item_3",
@@ -1189,7 +1189,7 @@ const tgData = {
                     review: "",
                 },
                 {
-                    idx: 4,
+                    idx: 53,
                     gender: "ALL",
                     name: "키즈 펄 레이스 양말 3족 세트 HPKL6DA03G",
                     img: "item_4",
@@ -1201,7 +1201,7 @@ const tgData = {
             ],
             hat: [
                 {
-                    idx: 1,
+                    idx: 54,
                     gender: "ALL",
                     name: "키즈 메쉬 버킷햇 HPKACD201U",
                     img: "item_1",
@@ -1211,7 +1211,7 @@ const tgData = {
                     review: "",
                 },
                 {
-                    idx: 2,
+                    idx: 55,
                     gender: "ALL",
                     name: "키즈 썬캡 HPKACD203U",
                     img: "item_2",
@@ -1221,7 +1221,7 @@ const tgData = {
                     review: "22",
                 },
                 {
-                    idx: 3,
+                    idx: 56,
                     gender: "ALL",
                     name: "[테니스클럽] 키즈 배색 볼캡 HPKACDA03U",
                     img: "item_3",
@@ -1231,7 +1231,7 @@ const tgData = {
                     review: "1",
                 },
                 {
-                    idx: 4,
+                    idx: 57,
                     gender: "ALL",
                     name: "키즈 메쉬 플랩캡 HPKACD202U",
                     img: "item_4",

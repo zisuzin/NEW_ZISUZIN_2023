@@ -73,7 +73,20 @@ const store = new Vuex.Store({
 
         dt.menu = dt.tgData[pm.cat1] /* 중분류 접근 */
         dt.menu2 = dt.tgData[pm.cat1][pm.cat2] /* 소분류 접근 */
-
+        // all 클릭시 전체 아이템 반환
+        // console.log(dt.tgData[dt.cat1])
+        if(dt.cat3 === 'all') {
+          // 중분류 객체 데이터 합치기
+          let tempData = Object.keys(tgData[dt.cat1][dt.cat2]).map(item => tgData[dt.cat1][dt.cat2][item]);
+          // 합친 객체데이터의 배열 데이터 합치기
+          let combinedData = [].concat(...tempData);
+          // console.log(combinedData)
+          combinedData.forEach(obj => {
+            console.log(obj);
+          // const output = document.querySelector(".ui-col4");
+          // output.innerHTML = combinedData
+          });
+        }
     }, // ChgMenu 함수
   },
 });
