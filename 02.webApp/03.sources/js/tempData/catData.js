@@ -50,13 +50,13 @@ const catData = {
                                   <div class="ctg_depth2">
                                       <ul>
                                           <li>
-                                              <a href="#" v-on:click.prevent="$store.commit('ChgMenu',{cat1:'men',cat2:'bag',cat3:'all'})">전체</a>
+                                              <a href="#" v-on:click.prevent="$store.commit('ChgMenu',{cat1:'men',cat2:'bags',cat3:'all'})">전체</a>
                                           </li>
                                           <li>
-                                              <a href="#" v-on:click.prevent="$store.commit('ChgMenu',{cat1:'men',cat2:'bag',cat3:'crossbag'})">크로스백</a>
+                                              <a href="#" v-on:click.prevent="$store.commit('ChgMenu',{cat1:'men',cat2:'bags',cat3:'crossbag'})">크로스백</a>
                                           </li>
                                           <li>
-                                              <a href="#" v-on:click.prevent="$store.commit('ChgMenu',{cat1:'men',cat2:'bag',cat3:'mensbag'})">맨즈백</a>
+                                              <a href="#" v-on:click.prevent="$store.commit('ChgMenu',{cat1:'men',cat2:'bags',cat3:'mensbag'})">맨즈백</a>
                                           </li>
                                       </ul>
                                   </div>
@@ -70,13 +70,13 @@ const catData = {
                                   <div class="ctg_depth2">
                                       <ul>
                                           <li>
-                                              <a href="sub.html?cat1=men&cat2=ac&cat3=all">전체</a>
+                                              <a href="#" v-on:click.prevent="$store.commit('ChgMenu',{cat1:'men',cat2:'ac',cat3:'all'})">전체</a>
                                           </li>
                                           <li>
-                                              <a href="sub.html?cat1=men&cat2=ac&cat3=socks">양말</a>
+                                              <a href="#" v-on:click.prevent="$store.commit('ChgMenu',{cat1:'men',cat2:'ac',cat3:'belt'})">벨트</a>
                                           </li>
                                           <li>
-                                              <a href="sub.html?cat1=men&cat2=ac&cat3=hat">모자</a>
+                                              <a href="#" v-on:click.prevent="$store.commit('ChgMenu',{cat1:'men',cat2:'ac',cat3:'hat'})">모자</a>
                                           </li>
                                       </ul>
                                   </div>
@@ -111,13 +111,13 @@ const catData = {
                                   <div class="ctg_depth2">
                                       <ul>
                                           <li>
-                                              <a href="sub.html?cat1=women&cat2=shoes&cat3=all">전체</a>
+                                              <a href="#" v-on:click.prevent="$store.commit('ChgMenu',{cat1:'women',cat2:'shoes',cat3:'all'})">전체</a>
                                           </li>
                                           <li>
-                                              <a href="sub.html?cat1=women&cat2=shoes&cat3=flat">플랫슈즈</a>
+                                              <a href="#" v-on:click.prevent="$store.commit('ChgMenu',{cat1:'women',cat2:'shoes',cat3:'flat'})">플랫슈즈</a>
                                           </li>
                                           <li>
-                                              <a href="sub.html?cat1=women&cat2=shoes&cat3=sandal">샌들</a>
+                                              <a href="#" v-on:click.prevent="$store.commit('ChgMenu',{cat1:'women',cat2:'shoes',cat3:'sandal'})">샌들</a>
                                           </li>
                                       </ul>
                                   </div>
@@ -131,13 +131,13 @@ const catData = {
                                   <div class="ctg_depth2">
                                       <ul>
                                           <li>
-                                              <a href="sub.html?cat1=women&cat2=bag&cat3=all">전체</a>
+                                              <a href="#" v-on:click.prevent="$store.commit('ChgMenu',{cat1:'women',cat2:'bags',cat3:'all'})">전체</a>
                                           </li>
                                           <li>
-                                              <a href="sub.html?cat1=women&cat2=bag&cat3=bagpack">백팩</a>
+                                              <a href="#" v-on:click.prevent="$store.commit('ChgMenu',{cat1:'women',cat2:'bags',cat3:'backpack'})">백팩</a>
                                           </li>
                                           <li>
-                                              <a href="sub.html?cat1=women&cat2=bag&cat3=miniback">미니백</a>
+                                              <a href="#" v-on:click.prevent="$store.commit('ChgMenu',{cat1:'women',cat2:'bags',cat3:'minibag'})">미니백</a>
                                           </li>
                                       </ul>
                                   </div>
@@ -151,13 +151,13 @@ const catData = {
                                   <div class="ctg_depth2">
                                       <ul>
                                           <li>
-                                              <a href="sub.html?cat1=women&cat2=ac&cat3=all">전체</a>
+                                              <a href="#" v-on:click.prevent="$store.commit('ChgMenu',{cat1:'women',cat2:'ac',cat3:'all'})">전체</a>
                                           </li>
                                           <li>
-                                              <a href="sub.html?cat1=women&cat2=ac&cat3=socks">양말</a>
+                                              <a href="#" v-on:click.prevent="$store.commit('ChgMenu',{cat1:'women',cat2:'ac',cat3:'socks'})">양말</a>
                                           </li>
                                           <li>
-                                              <a href="sub.html?cat1=women&cat2=ac&cat3=hat">모자</a>
+                                              <a href="#" v-on:click.prevent="$store.commit('ChgMenu',{cat1:'women',cat2:'ac',cat3:'hat'})">모자</a>
                                           </li>
                                       </ul>
                                   </div>
@@ -192,13 +192,13 @@ const catData = {
                                   <div class="ctg_depth2">
                                       <ul>
                                           <li>
-                                              <a href="sub.html?cat1=kids&cat2=shoes&cat3=all">전체</a>
+                                              <a href="#" v-on:click.prevent="$store.commit('ChgMenu',{cat1:'kids',cat2:'shoes',cat3:'all'})">전체</a>
                                           </li>
                                           <li>
-                                              <a href="sub.html?cat1=kids&cat2=shoes&cat3=shoe">구두</a>
+                                              <a href="#" v-on:click.prevent="$store.commit('ChgMenu',{cat1:'kids',cat2:'shoes',cat3:'shoe'})">구두</a>
                                           </li>
                                           <li>
-                                              <a href="sub.html?cat1=kids&cat2=shoes&cat3=sandal">샌들</a>
+                                              <a href="#" v-on:click.prevent="$store.commit('ChgMenu',{cat1:'kids',cat2:'shoes',cat3:'sandal'})">샌들</a>
                                           </li>
                                       </ul>
                                   </div>
@@ -212,13 +212,13 @@ const catData = {
                                   <div class="ctg_depth2">
                                       <ul>
                                           <li>
-                                              <a href="sub.html?cat1=kids&cat2=bag&cat3=all">전체</a>
+                                              <a href="#" v-on:click.prevent="$store.commit('ChgMenu',{cat1:'kids',cat2:'bags',cat3:'all'})">전체</a>
                                           </li>
                                           <li>
-                                              <a href="sub.html?cat1=kids&cat2=bag&cat3=stylebag">패션가방</a>
+                                              <a href="#" v-on:click.prevent="$store.commit('ChgMenu',{cat1:'kids',cat2:'bags',cat3:'stylebag'})">패션가방</a>
                                           </li>
                                           <li>
-                                              <a href="sub.html?cat1=kids&cat2=bag&cat3=slipperbag">실내화가방</a>
+                                              <a href="#" v-on:click.prevent="$store.commit('ChgMenu',{cat1:'kids',cat2:'bags',cat3:'slipperbag'})">실내화가방</a>
                                           </li>
                                       </ul>
                                   </div>
@@ -232,13 +232,13 @@ const catData = {
                                   <div class="ctg_depth2">
                                       <ul>
                                           <li>
-                                              <a href="sub.html?cat1=kids&cat2=ac&cat3=all">전체</a>
+                                              <a href="#" v-on:click.prevent="$store.commit('ChgMenu',{cat1:'kids',cat2:'ac',cat3:'all'})">전체</a>
                                           </li>
                                           <li>
-                                              <a href="sub.html?cat1=kids&cat2=ac&cat3=socks">양말</a>
+                                              <a href="#" v-on:click.prevent="$store.commit('ChgMenu',{cat1:'kids',cat2:'ac',cat3:'socks'})">양말</a>
                                           </li>
                                           <li>
-                                              <a href="sub.html?cat1=kids&cat2=ac&cat3=hat">모자</a>
+                                              <a href="#" v-on:click.prevent="$store.commit('ChgMenu',{cat1:'kids',cat2:'ac',cat3:'hat'})">모자</a>
                                           </li>
                                       </ul>
                                   </div>
