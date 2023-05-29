@@ -7,7 +7,6 @@ import store from "./store.js";
 Vue.component("top-comp", {
   template: comData.tarea,
   mounted() {
-    gnbClick();
   },
 });
 
@@ -68,9 +67,11 @@ Vue.prototype.calculateDiscount = function calculateDiscount(oprice, dprice) {
 
 const gnbLi = document.querySelectorAll(".gnb > ul > li > a");
 const navLi = document.querySelectorAll(".cat_left_side_tab > ul > li");
-// console.log(gnbLi)
-  gnbLi.forEach((item, index) => {
-    item.addEventListener("click", ()=>{
-      navLi.forEach((x)=> x.style.display = "block")
-    });
+// GNB 클릭시 해당하는 상품데이터 바인딩
+gnbLi.forEach((item) => {
+  item.addEventListener("click", ()=>{
+    item.innerText === 'MEN'?  navLi[0].style.display = "block": navLi[0].style.display = "none";
+    item.innerText === 'WOMEN'?  navLi[1].style.display = "block": navLi[1].style.display = "none";
+    item.innerText === 'KIDS'?  navLi[2].style.display = "block": navLi[2].style.display = "none";
   });
+});
