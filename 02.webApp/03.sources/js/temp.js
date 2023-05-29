@@ -1,5 +1,6 @@
 import comData from "./tempData/comData.js";
 import catData from "./tempData/catData.js";
+import { catToggle, radioFn } from "./common.js";
 import store from "./store.js";
 
 // 상단영역 컴포넌트
@@ -18,11 +19,15 @@ new Vue({
 Vue.component("nav-comp", {
   template: catData.navCat,
   mounted() {
+    catToggle();
   },
 });
 
 Vue.component("fil-comp", {
   template: catData.catFilter,
+  mounted() {
+    radioFn();
+  }
 });
 
 Vue.component("prod-comp", {

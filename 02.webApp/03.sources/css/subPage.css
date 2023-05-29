@@ -187,7 +187,6 @@
     font-size: 12px;
     font-weight: 500;
     position: absolute;
-    margin-left: 65px;
 }
 
 .filter-price > .custom-filter-price {
@@ -241,6 +240,10 @@
 
 .ctg_nav {
     margin-top: 20px;
+}
+
+.custom-filter-price > input.is_active {
+    background-color: #fff;
 }
 
 /* new & best 서브페이지 */
