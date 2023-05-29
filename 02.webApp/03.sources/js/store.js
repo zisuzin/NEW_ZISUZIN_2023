@@ -71,16 +71,19 @@ const store = new Vuex.Store({
         dt.cat2 = pm.cat2;
         dt.cat3 = pm.cat3;
 
-        dt.menu = dt.tgData[pm.cat1] /* 중분류 접근 */
-        dt.menu2 = dt.tgData[pm.cat1][pm.cat2] /* 소분류 접근 */
+        dt.menu = dt.tgData[pm.cat1] /* 대분류 접근 */
+        dt.menu2 = dt.tgData[pm.cat1][pm.cat2] /* 중분류 접근 */
+        dt.menu3 = dt.tgData[pm.cat1][pm.cat2][pm.cat3] /* 소분류 접근 */
+        dt.prodCount = dt.menu3 ? dt.menu3.length : 0; /* 소분류데이터 길이값 출력 */
         // all 클릭시 전체 아이템 반환
-        // console.log(dt.tgData[dt.cat1])
         if(dt.cat3 === 'all') {
           // 중분류 객체 데이터 합치기
           let tempData = Object.keys(tgData[dt.cat1][dt.cat2]).map(item => tgData[dt.cat1][dt.cat2][item]);
           // 합친 객체데이터의 배열 데이터 합치기
           let combinedData = [].concat(...tempData);
-          // console.log(combinedData)
+          // all 클릭시 배열의 길이값 출력
+          dt.prodCount = combinedData.length;
+
         }
     }, // ChgMenu 함수
   },

@@ -27,7 +27,7 @@ function catToggle(){
 
 function radioFn(){
   // 가격 라디오버튼 중복 선택 막기
-let lastChecked = null; 
+  let lastChecked = null; 
 
 $('.rdo > input').on('change', function() {
   if (lastChecked && lastChecked !== this) {
@@ -36,19 +36,34 @@ $('.rdo > input').on('change', function() {
   lastChecked = this; // 마지막으로 체크된 요소를 현재 체크된 요소로 업데이트
 });
 
-// 직접입력버튼 체크시 입력창 활성화!
-// 초기에 버튼 미체크된 경우 입력창 비활성화
-$('.custom-filter-price > input').prop('disabled', true); 
-// 직접입력 버튼 클릭시에만 입력창 활성화
-$('.rdo > input').on('change', function() {
-  if ($('.direct-user-input input').is(':checked')) {
-    $('.custom-filter-price > input').addClass('is_active').prop('disabled', false);
-  }
-  else {
-    $('.custom-filter-price > input').removeClass('is_active').prop('disabled', true);
-  }
-});
+  // 직접입력버튼 체크시 입력창 활성화!
+  // 초기에 버튼 미체크된 경우 입력창 비활성화
+  $('.custom-filter-price > input').prop('disabled', true); 
+  // 직접입력 버튼 클릭시에만 입력창 활성화
+  $('.rdo > input').on('change', function() {
+    if ($('.direct-user-input input').is(':checked')) {
+      $('.custom-filter-price > input').addClass('is_active').prop('disabled', false);
+    }
+    else {
+      $('.custom-filter-price > input').removeClass('is_active').prop('disabled', true);
+    }
+  });
+}
+
+function sortFn(){
+  // 상품정렬 버튼 클릭시 리스트 보이기
+  $('.item_sort').on('click',function(){
+    $(this).toggleClass('style_black');
+    $(this).find('.product-sort-list').toggleClass('style_black');
+    $('.product-sort-list > li > a').toggleClass('style_black');
+    $('.item_sort > strong > i').toggleClass('style_black');
+    $('.item_sort > strong').toggleClass('style_black');
+  });
+
+  $('.product-sort-list').on('click', function(event) {
+    event.stopPropagation();
+  });
 }
 
 
-export { catToggle, radioFn };
+export { catToggle, radioFn, sortFn };

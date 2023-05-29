@@ -632,7 +632,6 @@ const tgData = {
                     sale: "25",
                     review: "63"
                 },
-                // 여기부터
                 {   idx: 3,
                     name:"쿠션 플랫 1.0 HPWWFCA01S",
                     img: "item_3",
@@ -641,7 +640,7 @@ const tgData = {
                     sale: "25",
                     review: "127"
                 },
-                {   idx: 3,
+                {   idx: 242,
                     name:"[가드너] 스퀘어 리본 플랫슈즈 HPWWFDA01S",
                     img: "item_4",
                     oprice: "25900",
@@ -831,7 +830,6 @@ const tgData = {
                     sale:"",
                     review:"33",
                 },
-                // 여기부터
                 {   idx: 26,   
                     name:"스퀘어 스트랩 샌들 2.5 MIDW78S01",
                     img:"item_3",
@@ -1802,7 +1800,7 @@ const tgData = {
                     sale:"",
                     review:"12",
                 },
-                // 여기부터 
+                 
                 {      
                     idx: 136,
                     gender: "ALL",
@@ -1957,7 +1955,7 @@ const tgData = {
                     sale: "",
                     review: "16",
                 },
-                // 여기부터
+                
                 {   
                     idx: 151,
                     gender: "ALL",

@@ -372,7 +372,7 @@ const catData = {
                   <div class="item-cat-option">
                       <div class="option-right">
                           <p class="prdCount">
-                              <strong></strong>
+                              <strong>{{$store.state.prodCount}}</strong>
                               items
                           </p>
                           <div class="item_sort">
