@@ -68,11 +68,11 @@ new Vue({
 // 하단영역 뷰인스턴스
 
 // 뷰 전역등록 함수
-Vue.prototype.numberWithCommas = function(x) {
+Vue.prototype.numberWithCommas = function numberWithCommas(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 };
 
-Vue.prototype.calculateDiscount = function(oprice, dprice) {
+Vue.prototype.calculateDiscount = function calculateDiscount(oprice, dprice) {
   if (!oprice || !dprice) {
     return "";
   }

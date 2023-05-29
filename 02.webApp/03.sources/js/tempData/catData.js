@@ -415,16 +415,16 @@ const catData = {
                                 </div>
                                 <div class="item-detail">
                                     <span class="original-price">
-                                        <em>{{a.oprice}}</em>
+                                        <em>{{numberWithCommas(a.oprice)}}</em>
                                         <span v-if="a.oprice">원</span>
                                     </span>
                                     <br>
                                     <span class="discount-price">
-                                        <em>{{a.dprice}}</em>
+                                        <em>{{numberWithCommas(a.dprice)}}</em>
                                         <span>원</span>
                                     </span>
                                     <span class="percent-price" v-if="a.oprice && a.dprice">
-                                        <em>{{a.oprice,a.dprice}}</em>
+                                        <em>{{calculateDiscount(a.oprice,a.dprice)}}</em>
                                     </span>
                                     <div class="box_grade">
                                         <div class="star">
