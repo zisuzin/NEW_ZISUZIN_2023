@@ -8,7 +8,7 @@
         height: 100vh;
         background: url(../../00.data/02.imgData/album/alb0.jpg);
         background-size: contain;
-        filter: brightness(50%);
+        filter: blur(6px) brightness(80%);
     }
 }
 
