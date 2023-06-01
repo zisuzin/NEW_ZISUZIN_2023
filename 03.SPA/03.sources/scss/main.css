@@ -1,12 +1,11 @@
 @charset "UTF-8";
-.cont:before {
-  content: "";
+.bgbx {
   position: absolute;
   width: 100%;
   height: 100vh;
   background: url(../../00.data/02.imgData/album/alb0.jpg);
   background-size: contain;
-  filter: brightness(50%);
+  filter: blur(6px) brightness(80%);
 }
 
 /* 배너전체박스 */
