@@ -1,5 +1,12 @@
 @charset 'utf-8';
 
+@mixin ablum_cover {
+    width: 50%;
+    height: 100%;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 12px;
+    z-index: 90;
+}
+
 /* 배경이미지박스 */
 .bgbx {
     position: absolute;
@@ -25,6 +32,7 @@
     border: 1px dashed #000;
 }
 
+
 /* 대상 슬라이드 */
 .album_set {
     display: flex;
@@ -32,7 +40,7 @@
 }
 
 /* 우측 CD */
-.album_cd1 {
+.album_cd1, .album_cd2 {
     width: 360px;
     height: 100%;
     left: -112px;
@@ -89,37 +97,48 @@
     }
 }
 
-
 /* 좌측 Album */
 .album_cover1 {
-    width: 50%;
+    @include ablum_cover;
     background-color: pink;
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 12px;
-    z-index: 90;
+}
 
-    /* 앨범 하단 출시년도 */
-    .release_date {
-        color: #ffff;
-        bottom: 0;
-    }
+.album_cover2 {
+    @include ablum_cover;
+    background-color: #222;
+}
 
-    /* 앨범명 */
-    em {
-        font-size: 54px;
-        font-weight: 300;
-        color: white;
-        line-height: 250px;
-    }
+.album_cover_inner {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 
-    /* 앨범우측 저작권자 */
-    .original_author {
-        font-size: 12px;
-        font-weight: 100;
-        text-align: right;
-        color: #fff;
+/* 앨범 하단 출시년도 */
+.release_date {
+    color: #ffff;
+    bottom: 0;
+}
 
-        span {
-            display: block;
-        }
+/* 앨범명 */
+em {
+    font-size: 54px;
+    font-weight: 300;
+    color: white;
+}
+
+/* 앨범우측 저작권자 */
+.original_author {
+    font-size: 12px;
+    font-weight: 100;
+    text-align: right;
+    color: #fff;
+
+    span {
+        display: block;
     }
 }
