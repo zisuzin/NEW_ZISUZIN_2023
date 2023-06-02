@@ -1,91 +1,10 @@
-@charset "UTF-8";
 .bgbx {
   position: absolute;
   width: 100%;
   height: 100vh;
-  background: url(../../00.data/02.imgData/album/alb0.jpg);
-  background-size: contain;
-  filter: blur(6px) brightness(80%);
-}
-
-/* 배너전체박스 */
-.banbx {
-  position: relative;
-  padding: 80px 0;
-}
-
-/* 배너컨텐츠박스 */
-.bancont {
-  position: relative;
-  height: 360px;
-  left: 5vw;
-  aspect-ratio: 1/0.55;
-  border: 1px dashed #000;
-}
-
-.album_set {
-  display: flex;
-  height: 100%;
-}
-
-.album_cd1 {
-  width: 360px;
-  height: 100%;
-  left: -112px;
-  position: absolute;
-  transform: translateX(73%);
   background-image: url(../../00.data/02.imgData/album/alb0.jpg);
-  background-size: cover;
-  border-radius: 50%;
-}
-.album_cd1:before {
-  content: "";
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  height: 100%;
-  border-radius: 100%;
-  transition: all 5s cubic-bezier(0.25, 0.1, 0.25, 1) 0s;
-  border: 8px solid #fff;
-  box-sizing: border-box;
-}
-.album_cd1 .cd_center_circle {
-  position: relative;
-  height: 16%;
-  max-width: 60px;
-  left: 50%;
-  margin: 0;
-  background-color: rgb(255, 255, 255);
-  border-radius: 100%;
-  border: 12px solid rgb(250, 250, 250);
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.album_cover1 {
-  width: 50%;
-  background-color: pink;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 12px;
-  z-index: 90;
-}
-.album_cover1 .release_date {
-  color: white;
-  position: absolute;
-  bottom: 0;
-}
-.album_cover1 .original_author {
-  font-size: 12px;
-  font-weight: 100;
-  text-align: right;
-  color: #fff;
-}
-.album_cover1 .original_author span {
-  display: block;
-}
-.album_cover1 em {
-  font-size: 54px;
-  font-weight: 300;
-  color: white;
-  line-height: 250px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: blur(6px) brightness(80%);
 }/*# sourceMappingURL=main.css.map */
