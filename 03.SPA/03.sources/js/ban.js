@@ -5,7 +5,6 @@
     기능: 휠 이동시 슬라이드 위치 변경
 ******************************************/
 function handleWheel(e){
-
     // 슬라이드 겉박스
     const moveSl = $(".bancont")
     console.log(moveSl)
@@ -30,7 +29,7 @@ function handleWheel(e){
     if(delta > 0) {
         // console.log(currentTop)
         moveSl.css("top", currentTop - delta + "px");
-        const lastLi = moveSl.find("ul > li").last();
+        // const lastLi = moveSl.find("ul > li").last();
     }
     // delta값이 음수인 경우 (위로 휠-> 아래로 이동) 
     else if (delta < 0) {
