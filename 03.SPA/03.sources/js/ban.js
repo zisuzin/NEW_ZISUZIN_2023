@@ -45,5 +45,27 @@ function handleWheel(e){
 
 }
 
+function handleHover(){
+    // 대상에 호버했을때 함수호출!
+   const hovertg = qsa(".album_set");
+    hovertg.forEach((ele)=>{
+        // 호버했을때 cd 회전하면서 튀어나옴
+        const tg = ele.lastElementChild;
+        ele.onmouseover = () => {
+            tg.style.transition = 'transform 5s';
+            tg.style.transform = 'translateX(83%) rotate(720deg)';
+        }
+        
+        ele.onmouseleave = () => {
+            tg.style.transition = 'transform 5s';
+            tg.style.transform = 'translateX(73%) rotate(0deg)';
+        }
+    })
+}
+
+handleHover()
+
 window.addEventListener("wheel", handleWheel);
+
+
 

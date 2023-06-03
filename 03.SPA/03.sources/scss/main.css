@@ -44,7 +44,7 @@ body {
   display: flex;
   height: 100%;
   flex-shrink: 0;
-  transition: 0.4s cubic-bezier(0.63, 0.1, 0.68, 0.53);
+  cursor: pointer;
 }
 
 /* 우측 CD */
