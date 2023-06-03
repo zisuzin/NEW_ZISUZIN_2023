@@ -8,6 +8,8 @@
     <!-- 외부CSS 연결 -->
     <link rel="stylesheet" href="../03.sources/scss/reset.css" />
     <link rel="stylesheet" href="../03.sources/scss/main.css" />
+    <!-- 폰트어썸 CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   </head>
   <body>
     <!-- 배경이미지박스 -->
@@ -231,10 +233,33 @@
       </div>
     </section>
 
+    <!-- 원형 네비게이션 메뉴 -->
+    <nav class="menu">
+      <input checked="checked" class="menu-toggler" type="checkbox">
+      <label for="menu-toggler"></label>
+      <ul>
+        <li class="menu-item">
+          <i class="fas fa-house"></i>
+        </li>
+        <li class="menu-item">
+          <i class="fa-solid fa-user"></i>
+        </li>
+        <li class="menu-item">
+          <i class="fa-solid fa-camera"></i>
+        </li>
+        <li class="menu-item">
+          <i class="fa-solid fa-video"></i>
+        </li>
+        <li class="menu-item">
+          <i class="fa-solid fa-music"></i>
+        </li>
+      </ul>
+    </nav>
+
     <!-- Plugin JS -->
     <script src="./js/plugin/jquery-3.6.0.min.js"></script>
     <script src="./js/plugin/jquery-ui.min.js"></script>
     <!-- JS File -->
-    <script type="module" src="./js/ban.js"></script>
+    <script type="module" src="./js/commonFn.js"></script>
   </body>
 </html>

@@ -45,6 +45,10 @@ function handleWheel(e){
 
 }
 
+/****************************************** 
+    함수명: handleHover
+    기능: 마우스 오버시 CD 회전하면서 옆으로 나옴
+******************************************/
 function handleHover(){
     // 대상에 호버했을때 함수호출!
    const hovertg = qsa(".album_set");
@@ -63,7 +67,8 @@ function handleHover(){
     })
 }
 
-handleHover()
+// 함수호출!
+handleHover();
 
 window.addEventListener("wheel", handleWheel);
 

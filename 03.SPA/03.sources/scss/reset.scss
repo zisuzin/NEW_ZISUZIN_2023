@@ -1,7 +1,7 @@
 @charset "utf-8";
-/* nav06 리셋 CSS - reset.css */
+/* 리셋 CSS - reset.css */
 
-html,body,ul,li,div,span {
+html,body,ul,li,div,span,article,aside,section {
     margin: 0;
     padding: 0;
 }
@@ -11,18 +11,17 @@ a {
     text-decoration: none;
 }
 
-ul {
+li {
     list-style: none;
 }
 
 img {
     border: none;
     vertical-align: bottom;
-    /* 박스 이미지 하단간극 없애기(약4px)
-    값으로 top, middle등 도 효과있음! */
 }
 
 * {
     font-family: "Noto Sans KR";
     font-style: normal;
+    box-sizing: border-box;
 }
