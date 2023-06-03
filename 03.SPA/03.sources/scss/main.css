@@ -1,18 +1,23 @@
 @charset "UTF-8";
+body {
+  height: 100vh;
+}
+
 /* 배경이미지박스 */
 .bgbx {
   position: absolute;
   width: 100%;
-  height: 100vh;
-  background: url(../../00.data/02.imgData/album/alb0.jpg);
-  background-size: 100% 100%;
-  filter: blur(6px) brightness(80%);
+  height: 100%;
 }
 
 /* 배너전체박스 */
 .banbx {
-  position: relative;
-  padding: 80px 0;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  transform: translateY(-50%);
 }
 
 /* 배너컨텐츠박스 */
@@ -20,18 +25,21 @@
   position: relative;
   height: 360px;
   left: 5vw;
+  top: 50%;
+  transform: translateY(-50%);
   aspect-ratio: 1/0.55;
-  border: 1px dashed #000;
 }
 
 /* 대상 슬라이드 */
 .album_set {
   display: flex;
   height: 100%;
+  margin-top: 30px;
 }
 
 /* 우측 CD */
-.album_cd1, .album_cd2 {
+.album_cd1, .album_cd2, .album_cd3,
+.album_cd4, .album_cd5, .album_cd6, .album_cd7 {
   width: 360px;
   height: 100%;
   left: -112px;
@@ -41,7 +49,8 @@
   /* CD 흰색 테두리 */
   /* CD 이미지 */
 }
-.album_cd1:before, .album_cd2:before {
+.album_cd1:before, .album_cd2:before, .album_cd3:before,
+.album_cd4:before, .album_cd5:before, .album_cd6:before, .album_cd7:before {
   content: "";
   position: absolute;
   top: 0px;
@@ -53,12 +62,14 @@
   border: 8px solid #fff;
   box-sizing: border-box;
 }
-.album_cd1 img, .album_cd2 img {
+.album_cd1 img, .album_cd2 img, .album_cd3 img,
+.album_cd4 img, .album_cd5 img, .album_cd6 img, .album_cd7 img {
   width: 100%;
   height: 100%;
   border-radius: 50%;
 }
-.album_cd1 > .cd_center_circle, .album_cd2 > .cd_center_circle {
+.album_cd1 > .cd_center_circle, .album_cd2 > .cd_center_circle, .album_cd3 > .cd_center_circle,
+.album_cd4 > .cd_center_circle, .album_cd5 > .cd_center_circle, .album_cd6 > .cd_center_circle, .album_cd7 > .cd_center_circle {
   position: absolute;
   height: 16%;
   width: 60px;
@@ -70,7 +81,8 @@
   top: 50%;
   transform: translate(-50%, -50%);
 }
-.album_cd1 > .cd_center_circle:before, .album_cd2 > .cd_center_circle:before {
+.album_cd1 > .cd_center_circle:before, .album_cd2 > .cd_center_circle:before, .album_cd3 > .cd_center_circle:before,
+.album_cd4 > .cd_center_circle:before, .album_cd5 > .cd_center_circle:before, .album_cd6 > .cd_center_circle:before, .album_cd7 > .cd_center_circle:before {
   content: "";
   position: absolute;
   top: 0px;
@@ -99,6 +111,46 @@
   box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 12px;
   z-index: 90;
   background-color: #222;
+}
+
+.album_cover3 {
+  width: 50%;
+  height: 100%;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 12px;
+  z-index: 90;
+  background-color: #da9438;
+}
+
+.album_cover4 {
+  width: 50%;
+  height: 100%;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 12px;
+  z-index: 90;
+  background-color: #cc372b;
+}
+
+.album_cover5 {
+  width: 50%;
+  height: 100%;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 12px;
+  z-index: 90;
+  background-color: #f7ba20;
+}
+
+.album_cover6 {
+  width: 50%;
+  height: 100%;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 12px;
+  z-index: 90;
+  background-color: #c26fdc;
+}
+
+.album_cover7 {
+  width: 50%;
+  height: 100%;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 12px;
+  z-index: 90;
+  background-color: #373736;
 }
 
 .album_cover_inner {

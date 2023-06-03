@@ -7,20 +7,28 @@
     z-index: 90;
 }
 
+body {
+    height: 100vh;
+}
+
 /* 배경이미지박스 */
 .bgbx {
     position: absolute;
     width: 100%;
-    height: 100vh;
-    background: url(../../00.data/02.imgData/album/alb0.jpg);
-    background-size: 100% 100%;
-    filter: blur(6px) brightness(80%);
+    height: 100%;
+    // background: url(../../00.data/02.imgData/album/alb0.jpg);
+    // background-size: 100% 100%;
+    // filter: blur(6px) brightness(80%);
 }
 
 /* 배너전체박스 */
 .banbx {
-    position: relative;
-    padding: 80px 0;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    transform: translateY(-50%);
 }
 
 /* 배너컨텐츠박스 */
@@ -28,8 +36,9 @@
     position: relative;
     height: 360px;
     left: 5vw;
+    top: 50%;
+    transform: translateY(-50%);
     aspect-ratio: 1/0.55;
-    border: 1px dashed #000;
 }
 
 
@@ -37,10 +46,12 @@
 .album_set {
     display: flex;
     height: 100%;
+    margin-top: 30px;
 }
 
 /* 우측 CD */
-.album_cd1, .album_cd2 {
+.album_cd1, .album_cd2, .album_cd3,
+.album_cd4, .album_cd5, .album_cd6, .album_cd7 {
     width: 360px;
     height: 100%;
     left: -112px;
@@ -106,6 +117,31 @@
 .album_cover2 {
     @include ablum_cover;
     background-color: #222;
+}
+
+.album_cover3 {
+    @include ablum_cover;
+    background-color: #da9438;
+}
+
+.album_cover4 {
+    @include ablum_cover;
+    background-color: #cc372b;
+}
+
+.album_cover5 {
+    @include ablum_cover;
+    background-color: #f7ba20;
+}
+
+.album_cover6 {
+    @include ablum_cover;
+    background-color: #c26fdc;
+}
+
+.album_cover7 {
+    @include ablum_cover;
+    background-color: #373736;
 }
 
 .album_cover_inner {
