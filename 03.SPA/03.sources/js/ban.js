@@ -22,6 +22,7 @@ function handleWheel(e){
     
     // 대상 슬라이드 li
     const tgsl = qsa(".album_set");
+    // console.log(tgsl[3].offsetHeight)
 
     // 휠 방향 체크
     const delta = -e.wheelDelta;
@@ -35,19 +36,18 @@ function handleWheel(e){
     console.log("문서높이:",docH) 
     // 휠 한계값
 
-    const currentTop = parseInt(getComputedStyle(moveSl).top);
     // delta값이 양수인 경우 (아래로 휠-> 위로 이동)
-    if(delta > 0) {
-        moveSl.style.top = currentTop - delta + "px";
-        moveSl.appendChild(moveSl.firstChild);
-    }
-    // delta값이 음수인 경우 (위로 휠-> 아래로 이동) 
-    else if (delta < 0) {
-        moveSl.insertBefore(tgsl[6], moveSl.firstChild)
-        moveSl.style.top = currentTop - delta + "px";
-    }
-
     tgsl.forEach((ele, idx) => {
+        if(delta > 0) {
+            ele.style.top = `-${ele.offsetHeight}px`;
+            moveSl.appendChild(moveSl.firstChild);
+        }
+        // delta값이 음수인 경우 (위로 휠-> 아래로 이동) 
+        else if (delta < 0) {
+            ele.style.top = `-${ele.offsetHeight}px`;
+            moveSl.insertBefore(tgsl[6], moveSl.firstChild)
+        }
+
         // data-seq 라는 사용자정의 속성 넣기
         ele.setAttribute("data-seq", idx);
     }); // forEach //
@@ -55,3 +55,4 @@ function handleWheel(e){
 }
 
 window.addEventListener("wheel", handleWheel);
+
