@@ -8,8 +8,8 @@
     <!-- 외부CSS 연결 -->
     <link rel="stylesheet" href="../03.sources/scss/reset.css" />
     <link rel="stylesheet" href="../03.sources/scss/main.css" />
-    <!-- 폰트어썸 CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Boxicons CDN -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   </head>
   <body>
     <!-- 배경이미지박스 -->
@@ -234,26 +234,38 @@
     </section>
 
     <!-- 원형 네비게이션 메뉴 -->
-    <nav class="menu">
-      <input checked="checked" class="menu-toggler" type="checkbox">
-      <label for="menu-toggler"></label>
-      <ul>
-        <li class="menu-item">
-          <i class="fas fa-house"></i>
-        </li>
-        <li class="menu-item">
-          <i class="fa-solid fa-user"></i>
-        </li>
-        <li class="menu-item">
-          <i class="fa-solid fa-camera"></i>
-        </li>
-        <li class="menu-item">
-          <i class="fa-solid fa-video"></i>
-        </li>
-        <li class="menu-item">
-          <i class="fa-solid fa-music"></i>
-        </li>
-      </ul>
+    <nav class="circular_nav">
+      <div class="nav_content">
+        <div class="toggle_btn">
+          <i class='bx bx-plus'></i>
+        </div>
+        <span style="--i:1">
+          <a href="#">
+            <i class='bx bxs-home' ></i>
+          </a>
+        </span>
+        <span style="--i:2">
+          <a href="#">
+            <i class='bx bxs-camera'></i>
+          </a>
+        </span>
+        <span style="--i:3">
+          <a href="#">
+            <i class='bx bxs-video'></i>
+          </a>
+        </span>
+        <span style="--i:4">
+          <a href="#">
+            <!-- <i class='bx bxs-album'></i> -->
+            <i class='bx bxs-music'></i>
+          </a>
+        </span>
+        <span style="--i:5">
+          <a href="#">
+            <i class='bx bxs-user-rectangle'></i>
+          </a>
+        </span>
+      </div>
     </nav>
 
     <!-- Plugin JS -->

@@ -67,8 +67,22 @@ function handleHover(){
     })
 }
 
+/****************************************** 
+    함수명: handleToggle
+    기능: 원형 네비 메뉴 클릭시 GNB 등장
+******************************************/
+function handleToggle(){
+    const nav = document.querySelector(".circular_nav");
+    const toggleBtn = nav.querySelector(".toggle_btn");
+
+    toggleBtn.addEventListener("click",() => {
+        nav.classList.toggle("active");
+    });
+}
+
 // 함수호출!
 handleHover();
+handleToggle()
 
 window.addEventListener("wheel", handleWheel);
 

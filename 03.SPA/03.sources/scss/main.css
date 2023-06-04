@@ -1,6 +1,7 @@
 @charset "UTF-8";
 body {
   height: 100vh;
+  overflow: hidden;
 }
 
 /* 배경이미지박스 */
@@ -48,8 +49,13 @@ body {
 }
 
 /* 우측 CD */
-.album_cd1, .album_cd2, .album_cd3,
-.album_cd4, .album_cd5, .album_cd6, .album_cd7 {
+.album_cd1,
+.album_cd2,
+.album_cd3,
+.album_cd4,
+.album_cd5,
+.album_cd6,
+.album_cd7 {
   width: 360px;
   height: 100%;
   left: -112px;
@@ -59,8 +65,13 @@ body {
   /* CD 흰색 테두리 */
   /* CD 이미지 */
 }
-.album_cd1:before, .album_cd2:before, .album_cd3:before,
-.album_cd4:before, .album_cd5:before, .album_cd6:before, .album_cd7:before {
+.album_cd1:before,
+.album_cd2:before,
+.album_cd3:before,
+.album_cd4:before,
+.album_cd5:before,
+.album_cd6:before,
+.album_cd7:before {
   content: "";
   position: absolute;
   top: 0px;
@@ -72,14 +83,24 @@ body {
   border: 8px solid #fff;
   box-sizing: border-box;
 }
-.album_cd1 img, .album_cd2 img, .album_cd3 img,
-.album_cd4 img, .album_cd5 img, .album_cd6 img, .album_cd7 img {
+.album_cd1 img,
+.album_cd2 img,
+.album_cd3 img,
+.album_cd4 img,
+.album_cd5 img,
+.album_cd6 img,
+.album_cd7 img {
   width: 100%;
   height: 100%;
   border-radius: 50%;
 }
-.album_cd1 > .cd_center_circle, .album_cd2 > .cd_center_circle, .album_cd3 > .cd_center_circle,
-.album_cd4 > .cd_center_circle, .album_cd5 > .cd_center_circle, .album_cd6 > .cd_center_circle, .album_cd7 > .cd_center_circle {
+.album_cd1 > .cd_center_circle,
+.album_cd2 > .cd_center_circle,
+.album_cd3 > .cd_center_circle,
+.album_cd4 > .cd_center_circle,
+.album_cd5 > .cd_center_circle,
+.album_cd6 > .cd_center_circle,
+.album_cd7 > .cd_center_circle {
   position: absolute;
   height: 16%;
   width: 60px;
@@ -91,8 +112,13 @@ body {
   top: 50%;
   transform: translate(-50%, -50%);
 }
-.album_cd1 > .cd_center_circle:before, .album_cd2 > .cd_center_circle:before, .album_cd3 > .cd_center_circle:before,
-.album_cd4 > .cd_center_circle:before, .album_cd5 > .cd_center_circle:before, .album_cd6 > .cd_center_circle:before, .album_cd7 > .cd_center_circle:before {
+.album_cd1 > .cd_center_circle:before,
+.album_cd2 > .cd_center_circle:before,
+.album_cd3 > .cd_center_circle:before,
+.album_cd4 > .cd_center_circle:before,
+.album_cd5 > .cd_center_circle:before,
+.album_cd6 > .cd_center_circle:before,
+.album_cd7 > .cd_center_circle:before {
   content: "";
   position: absolute;
   top: 0px;
@@ -197,167 +223,52 @@ em {
   display: block;
 }
 
-/* 원형 네비게이션 메뉴바 */
-.menu-toggler {
+/* 원형 네비 메뉴바 */
+.circular_nav {
   position: absolute;
-  display: block;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  margin: auto;
-  width: 40px;
-  height: 40px;
-  z-index: 1;
-  opacity: 0;
-  cursor: pointer;
+  top: 300px;
+  right: 5px;
 }
 
-.menu-toggler:checked + label {
-  background: transparent;
-}
-
-.menu-toggler:checked + label:before {
-  transform: rotate(45deg) translateY(-15px) translateX(-15px);
-}
-
-.menu-toggler:checked + label:after {
-  transform: rotate(-45deg);
-}
-
-.menu-toggler:checked ~ ul .menu-item {
+.circular_nav.active .nav_content > span {
+  transform: rotate(calc(var(--i) * 45deg)) translateY(120px);
   opacity: 1;
 }
 
-.menu-toggler:checked ~ ul .menu-item:nth-child(1) {
-  transform: rotate(0deg) translate(-110px);
+.nav_content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(-45deg);
+  /* 원형 네비 메뉴 토글러 */
 }
-
-.menu-toggler:checked ~ ul .menu-item:nth-child(2) {
-  transform: rotate(60deg) translateX(-110px);
-}
-
-.menu-toggler:checked ~ ul .menu-item:nth-child(3) {
-  transform: rotate(120deg) translateX(-110px);
-}
-
-.menu-toggler:checked ~ ul .menu-item:nth-child(4) {
-  transform: rotate(180deg) translateX(-110px);
-}
-
-.menu-toggler:checked ~ ul .menu-item:nth-child(5) {
-  transform: rotate(240deg) translateX(-110px);
-}
-
-.menu-toggler:checked ~ ul .menu-item:nth-child(6) {
-  transform: rotate(300deg) translateX(-110px);
-}
-
-.menu-toggler:checked ~ ul .menu-item a {
-  pointer-events: auto;
-}
-
-.menu-toggler + label {
-  width: 40px;
-  height: 5px;
-  display: block;
-  z-index: 1;
-  border-radius: 2.5px;
-  background: #ccc;
-  transition: transform 0.5s top 0.5s;
+.nav_content > span {
   position: absolute;
-  display: block;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-}
-
-.menu-toggler + label:before,
-.menu-toggler + label:after {
-  width: 40px;
-  height: 5px;
-  display: block;
-  z-index: 1;
-  border-radius: 2px;
-  background: #ccc;
-  transition: transform 0.5s top 0.5s;
-  content: "";
-  position: absolute;
-  display: block;
-  left: 0;
-}
-
-.menu-toggler + label:before {
-  top: 10px;
-}
-
-.menu-toggler + label:after {
-  top: -10px;
-}
-
-.menu-item:nth-child(1) i {
-  transform: rotate(0deg);
-  content: "/f015";
-  font-weight: 900;
-}
-
-.menu-item:nth-child(2) i {
-  transform: rotate(-60deg);
-  content: "/f007";
-  font-weight: 900;
-}
-
-.menu-item:nth-child(3) i {
-  transform: rotate(-120deg);
-  content: "/f030";
-  font-weight: 900;
-}
-
-.menu-item:nth-child(4) i {
-  transform: rotate(-180deg);
-  content: "/f03d";
-  font-weight: 900;
-}
-
-.menu-item:nth-child(5) i {
-  transform: rotate(-240deg);
-  content: "/f001";
-  font-weight: 900;
-}
-
-.menu-item {
-  position: absolute;
-  display: block;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-  width: 80px;
-  height: 80px;
+  transition: all 0.6s ease;
   opacity: 0;
-  transition: 0.5s;
 }
-
-.menu-item a {
-  display: block;
-  width: inherit;
-  height: inherit;
-  line-height: 80px;
-  color: rgba(255, 255, 255, 0.7);
-  background: rgba(230, 230, 250, 0.7);
+.nav_content > span > a {
+  transform: rotate(45deg);
+}
+.nav_content > span > a > i {
+  font-size: 24px;
+  color: #0e2431;
+  transform: rotate(calc(var(--i) * -45deg));
+}
+.nav_content > .toggle_btn,
+.nav_content > span {
+  width: 60px;
+  height: 60px;
+  background-color: #fff;
   border-radius: 50%;
-  text-align: center;
-  text-decoration: none;
-  font-size: 40px;
-  pointer-events: none;
-  transition: 0.2s;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
-.menu-item a:hover {
-  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
-  background: red;
-  font-size: 44.44px;
+.nav_content .toggle_btn {
+  font-size: 35px;
+  color: #0e2431;
+  z-index: 1;
+  cursor: pointer;
 }/*# sourceMappingURL=main.css.map */
