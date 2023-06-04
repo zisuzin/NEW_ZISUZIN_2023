@@ -246,5 +246,11 @@ em {
     color: #0e2431;
     z-index: 1;
     cursor: pointer;
+    transition: all .5s ease;
+    transform: rotate(45deg);
+  }
+
+  .toggle_btn.active {
+    transform: rotate(90deg);
   }
 } 

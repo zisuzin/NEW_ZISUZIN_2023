@@ -271,4 +271,9 @@ em {
   color: #0e2431;
   z-index: 1;
   cursor: pointer;
+  transition: all 0.5s ease;
+  transform: rotate(45deg);
+}
+.nav_content .toggle_btn.active {
+  transform: rotate(90deg);
 }/*# sourceMappingURL=main.css.map */

@@ -77,6 +77,7 @@ function handleToggle(){
 
     toggleBtn.addEventListener("click",() => {
         nav.classList.toggle("active");
+        toggleBtn.classList.toggle("active");
     });
 }
 
