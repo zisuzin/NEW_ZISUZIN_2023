@@ -1,5 +1,7 @@
 @charset 'utf-5';
 
+@import url(../scss/fonts.css);
+
 @mixin ablum_cover {
   width: 50%;
   height: 100%;
@@ -7,10 +9,10 @@
   z-index: 90;
 }
 
-body {
-  height: 100vh;
-  overflow: hidden;
-}
+$main-w-color: #fff;
+$msp-info-between: 200px;
+$open-sans-font: 'Open Sans', sans-serif;
+$icon-content: "\ebae";
 
 /* 배경이미지박스 */
 .bgbx {
@@ -84,7 +86,7 @@ body {
     height: 100%;
     border-radius: 100%;
     transition: all 5s cubic-bezier(0.25, 0.1, 0.25, 1) 0s;
-    border: 8px solid #fff;
+    border: 8px solid $main-w-color;
     box-sizing: border-box;
   }
 
@@ -171,7 +173,7 @@ body {
 
 /* 앨범 하단 출시년도 */
 .release_date {
-  color: #ffff;
+  color: $main-w-color;
   bottom: 0;
 }
 
@@ -187,7 +189,7 @@ em {
   font-size: 12px;
   font-weight: 100;
   text-align: right;
-  color: #fff;
+  color: $main-w-color;
 
   span {
     display: block;
@@ -204,6 +206,7 @@ em {
 .circular_nav.active .nav_content > span {
   transform: rotate(calc(var(--i) * (360deg / 8))) translateY(120px);
   opacity: 1;
+  cursor: pointer;
 }
 
 .nav_content {
@@ -232,7 +235,7 @@ em {
   > span {
     width: 60px;
     height: 60px;
-    background-color: #fff;
+    background-color: $main-w-color;
     border-radius: 50%;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     display: flex;
@@ -255,21 +258,165 @@ em {
   }
 } 
 
-/* 플레이리스트 */
-.msplayer .item {
-  padding: 10px 0;
-  border-top: 2px solid transparent;
+/* 뮤직플레이어 */
+.player {
+	height: 190px;
+	width: 430px;
+	background-color: rgb(30, 33, 37);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	border-top-left-radius: 100px;
+	border-bottom-left-radius: 100px;
 
-  * {
-    pointer-events: none;
+  > ul li {
+    display: inline-block;
   }
 
-  .dragstart {
-    opacity: 0.5;
-  }
-
-  .dragover {
-    border-top-color: green;
+  > #arm{
+    width: 90px;
+    height: 90px;
+    position: absolute;
+    top: 30px;
+    left: 110px;
+    transform: rotate(-45deg);
+    background-image: url(../../00.data/02.imgData/player/controller.png);
+    background-size: cover;
+    z-index: 1;
   }
 }
 
+.artwork {
+	position: absolute;
+	height: 190px;
+	width: 190px;
+	background: url(../../00.data/02.imgData/player/lp.png) center no-repeat;
+	background-size: cover;
+
+  img {
+    position: absolute;
+    height: 72px;
+    width: 72px;
+    border-radius: 50px;
+    top: 59px;
+    left: 59px;
+  }
+}
+
+.info {
+  > h1 {
+    margin: 20px 0 0;
+    margin-left: $msp-info-between;
+    font-size: 13pt;
+    font-weight: 600;
+    color: $main-w-color;
+    font-family: $open-sans-font;
+  }
+
+  > h2 {
+    margin-left: $msp-info-between;
+    font-size: 13pt;
+    font-weight: 300;
+    color: $main-w-color;
+    font-family: $open-sans-font;
+  }
+
+  > h4 {
+    margin: 5px 0 10px;
+    color: rgb(99, 99, 103);
+    margin-left: $msp-info-between;
+    font-size: 8pt;
+    font-weight: 400;
+  }
+
+  > .button-items {
+    margin-left: $msp-info-between;
+  }
+}
+
+/* 플레이어 프로그레스바 */
+#slider {
+	width: 182px;
+	height: 4px;
+	background: rgb(21, 21, 24);
+  margin-top: 15px;
+	border-radius: 2px;
+}
+
+/* 곡 현재 재생시간 / 전체시간 */
+.timer {
+	color: rgb(99, 99, 103);
+	line-height: 0;
+  display: inline-block;
+	font-size: 9pt;
+	font-family: Arial, Sans-Serif;
+  vertical-align: top;
+}
+
+#total_timer {
+  float: right;
+}
+
+.controls {
+  margin: 5px 0 0 -8px;
+  cursor: pointer;
+
+  span > i {
+    font-size: 30px;
+  }
+
+  .play_song_btn {
+    filter: brightness(0) invert(1);
+
+    > img {
+      width: 30px;
+      vertical-align: bottom;
+    }
+  };
+  
+  .prev_song_btn > i:before,
+  .play_song_btn > i:before,
+  .next_song_btn > i:before {
+    color: $main-w-color;
+  }
+}
+
+.slider {
+	width: 80px;
+    position: absolute;
+    display: inline-block;
+    margin: 4px 0 0 10px;
+
+    /* 볼륨조절바 */
+    > .volume{
+      width: 69px;
+      height: 4px;
+      background: rgba(239, 109, 188, 0.3);
+      border-top-left-radius: 2px;
+      border-bottom-left-radius: 2px;
+      margin-top: 10px;
+      position: inherit;
+    }
+}
+
+input[type="range"] {
+	appearance: none;
+	width: 100%;
+	height: 4px;
+	border-radius: 14px;
+	padding: 0px 1px;
+	background: rgb(21, 21, 24);
+}
+
+/* 볼륨조절바 컨트롤러 */
+input[type="range"]::-webkit-slider-thumb {
+	appearance: none;
+	width: 12px;
+	height: 12px;
+	border-radius: 6px;
+	background-color: $main-w-color;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover, input[type="range"]::-webkit-slider-thumb:focus, input[type="range"]::-webkit-slider-thumb:active {
+	background-color: rgb(239, 109, 188);
+}

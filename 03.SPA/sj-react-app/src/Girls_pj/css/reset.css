@@ -1,0 +1,29 @@
+@charset "UTF-8";
+/* 리셋 CSS - reset.css */
+html, body, ul, li, div, span, article, aside, section {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  border: none;
+  vertical-align: bottom;
+}
+
+* {
+  font-family: "Noto Sans KR";
+  font-style: normal;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}/*# sourceMappingURL=reset.css.map */

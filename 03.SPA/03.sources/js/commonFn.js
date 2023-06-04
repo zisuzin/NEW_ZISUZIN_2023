@@ -81,9 +81,25 @@ function handleToggle(){
     });
 }
 
+function player(){
+    const paused_btn = $(".play_song_btn");
+    
+    paused_btn.click(function() {
+        paused_btn.toggleClass("active");
+        /* active 클래스 가지고있으면 이미지 변경! */
+        if(paused_btn.hasClass("active")){
+            paused_btn.find("img").attr("src", "../00.data/02.imgData/player/bx-play-circle.svg")
+        }
+        else {
+            paused_btn.find("img").attr("src", "../00.data/02.imgData/player/bx-pause.svg")
+        }
+    });
+}
+
 // 함수호출!
 handleHover();
-handleToggle()
+handleToggle();
+player();
 
 window.addEventListener("wheel", handleWheel);
 

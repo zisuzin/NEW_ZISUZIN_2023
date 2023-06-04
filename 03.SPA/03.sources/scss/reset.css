@@ -1,8 +1,13 @@
 @charset "UTF-8";
 /* 리셋 CSS - reset.css */
-html, body, ul, li, div, span, article, aside, section {
+html, body, ul, li, div, span, article, aside, section, h1, h2, h4, input, audio {
   margin: 0;
   padding: 0;
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
 }
 
 a {
@@ -16,7 +21,6 @@ li {
 
 img {
   border: none;
-  vertical-align: bottom;
 }
 
 * {
@@ -26,4 +30,8 @@ img {
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
+}
+
+input {
+  border: none;
 }/*# sourceMappingURL=reset.css.map */
