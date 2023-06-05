@@ -107,13 +107,13 @@ function player() {
     // 음원 총 길이 구해서 시간 업데이트
     const minutes = Math.floor(duration / 60);
     const seconds = Math.floor(duration % 60);
-    const totalTime = minutes.toString().padStart(2,"0") + ":" + seconds.toString().padStart(2,"0");
+    const totalTime = minutes.toString().padStart(2,"0") + ":" + seconds.toString().padStart(2,"0"); // 자료형을 문자화한 후 앞에 "0"을 추가!
     total.text(totalTime);
 
     // 음원 재생시간 구해서 시간 업데이트
     const minutes2 = Math.floor(currentTime / 60);
     const seconds2 = Math.floor(currentTime % 60);
-    const currentTime2 = minutes2.toString().padStart(2,"0") + ":" + seconds2.toString().padStart(2,"0");
+    const currentTime2 = minutes2.toString().padStart(2,"0") + ":" + seconds2.toString().padStart(2,"0"); // 자료형을 문자화한 후 앞에 "0"을 추가!
     current.text(currentTime2);
     
     // 프로그레스 바의 너비 계산
