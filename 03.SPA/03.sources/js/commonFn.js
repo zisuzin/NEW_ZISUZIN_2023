@@ -21,20 +21,24 @@ function handleWheel(e) {
 
   // 대상 슬라이드 li
   const tgsl = qsa(".album_set");
-  // console.log(tgsl[3].offsetHeight)
 
   // 휠 방향 체크
-  const delta = -e.wheelDelta;
+  let delta = -e.wheelDelta / 10;
+  console.log(delta)
+  const currentTop = moveSl.getBoundingClientRect().top;
+  // console.log(currentTop)
 
-  // delta값이 양수인 경우 (아래로 휠-> 위로 이동)
+  // delta값이 음수인 경우 (위로 휠-> 위로 이동)
   tgsl.forEach((ele, idx) => {
-    if (delta > 0) {
-      ele.style.top = `-${ele.offsetHeight}px`;
+    if (delta < 0) {
+      console.log("위로휠!:",delta)
+      ele.style.top = currentTop + delta + "px";
       moveSl.appendChild(moveSl.firstChild);
     }
-    // delta값이 음수인 경우 (위로 휠-> 아래로 이동)
-    else if (delta < 0) {
-      ele.style.top = `+${ele.offsetHeight}px`;
+    // delta값이 양수인 경우 (아래로 휠-> 아래로 이동)
+    else if (delta > 0) {
+      console.log("아래로휠!:",delta)
+      ele.style.top = currentTop + delta + "px";
       moveSl.insertBefore(tgsl[6], moveSl.firstChild);
     }
 
@@ -79,6 +83,14 @@ function handleToggle() {
   });
 }
 
+/****************************************** 
+    함수명: player
+    기능: 
+    (1) 슬라이드li 2번째 요소에 맞춰 플레이어 음원/커버 변경
+    (2) 오디오 볼륨조절
+    (3) 음원 현재 재생시간/ 총 재생시간 업데이트
+    (4) 플레이버튼 토글하여 음원 재생/멈춤
+******************************************/
 function player() {
   const audio = $("#music")[0];
   const paused_btn = $(".play_song_btn");
