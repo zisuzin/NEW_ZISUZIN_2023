@@ -7,7 +7,8 @@ import { qs, qsa } from "./eventFn.js";
     기능: 휠 이동시 슬라이드 위치 변경
 ******************************************/
 let prot = 0;
-
+const valset1 = ["-25%","0","-25%","-50%","-50%","-50%","-50%"];
+const valset2 = ["-25%","-25%","0","-25%","-50%","-50%","-50%"];
 function handleWheel(e) {
   // 광휠금지
   if (prot) return;
@@ -29,7 +30,6 @@ function handleWheel(e) {
   // console.log(currentTop)
 
   // delta값이 음수인 경우 (위로 휠-> 위로 이동)
-  // tgsl.forEach((ele, idx) => {
     if (delta < 0) {
       console.log("위로휠!:",delta)
       // ele.style.top = currentTop + delta + "px";
@@ -64,7 +64,13 @@ function handleWheel(e) {
 
     // data-seq 라는 사용자정의 속성 넣기
     
-  // }); // forEach //
+    document.querySelectorAll(".album_wrap li").forEach((ele, idx) => {
+    ele.style.transform = `translateX(${delta<0?valset1[idx]:valset2[idx]})`;
+  }); // forEach //
+
+    
+
+
 }
 
 document.querySelectorAll(".album_wrap li").forEach((ele,idx)=>ele.setAttribute("data-seq", idx));
