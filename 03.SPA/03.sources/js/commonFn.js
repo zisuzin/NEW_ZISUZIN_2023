@@ -14,7 +14,7 @@ function handleWheel(e) {
   prot = 1;
   setTimeout(() => {
     prot = 0;
-  }, 100);
+  }, 1000);
 
   // 슬라이드 겉박스
   const moveSl = qs(".album_wrap");
@@ -29,23 +29,45 @@ function handleWheel(e) {
   // console.log(currentTop)
 
   // delta값이 음수인 경우 (위로 휠-> 위로 이동)
-  tgsl.forEach((ele, idx) => {
+  // tgsl.forEach((ele, idx) => {
     if (delta < 0) {
       console.log("위로휠!:",delta)
-      ele.style.top = currentTop + delta + "px";
-      moveSl.appendChild(moveSl.firstChild);
+      // ele.style.top = currentTop + delta + "px";
+        let fe = document.querySelectorAll(".album_wrap li")[0];
+      moveSl.insertBefore(tgsl[6], fe);
+      console.log(fe);
+      moveSl.style.top = "-360px";
+      moveSl.style.transition = "none";
+      setTimeout(()=>{
+        moveSl.style.transition = "1s ease-in-out";
+        moveSl.style.top = "3vh";
+
+      },10);
+      
     }
     // delta값이 양수인 경우 (아래로 휠-> 아래로 이동)
     else if (delta > 0) {
       console.log("아래로휠!:",delta)
-      ele.style.top = currentTop + delta + "px";
-      moveSl.insertBefore(tgsl[6], moveSl.firstChild);
+      moveSl.style.top = "-360px";
+      moveSl.style.transition = "1s ease-out";
+      setTimeout(()=>{
+        // ele.style.top = currentTop + delta + "px";
+        let fe = document.querySelectorAll(".album_wrap li")[0];
+        console.log(fe);
+        moveSl.appendChild(fe);
+        moveSl.style.transition = "none";
+        moveSl.style.top = "3vh";
+        
+      },1000)
+
     }
 
     // data-seq 라는 사용자정의 속성 넣기
-    ele.setAttribute("data-seq", idx);
-  }); // forEach //
+    
+  // }); // forEach //
 }
+
+document.querySelectorAll(".album_wrap li").forEach((ele,idx)=>ele.setAttribute("data-seq", idx));
 
 /****************************************** 
     함수명: handleHover
