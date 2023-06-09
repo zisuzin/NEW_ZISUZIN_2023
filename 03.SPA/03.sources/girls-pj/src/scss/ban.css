@@ -1,0 +1,432 @@
+@charset "UTF-8";
+@import url(../scss/fonts.css);
+/* 배경이미지박스 */
+.bgbx {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+/* 배너전체박스 */
+.banbx {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  transform: translateY(-50%);
+}
+
+/* 배너컨텐츠박스 */
+.bancont {
+  position: relative;
+  height: 360px;
+  left: 5vw;
+  top: -30%;
+  aspect-ratio: 1/0.55;
+}
+
+.album_wrap {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  flex-direction: column;
+  display: flex;
+  gap: 3vh 0;
+}
+
+/* 대상 슬라이드 */
+.album_set {
+  display: flex;
+  height: 100%;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+/* 우측 CD */
+.album_cd1,
+.album_cd2,
+.album_cd3,
+.album_cd4,
+.album_cd5,
+.album_cd6,
+.album_cd7 {
+  width: 360px;
+  height: 100%;
+  left: -112px;
+  position: absolute;
+  transform: translateX(73%);
+  border-radius: 50%;
+  /* CD 흰색 테두리 */
+  /* CD 이미지 */
+}
+.album_cd1:before,
+.album_cd2:before,
+.album_cd3:before,
+.album_cd4:before,
+.album_cd5:before,
+.album_cd6:before,
+.album_cd7:before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  transition: all 5s cubic-bezier(0.25, 0.1, 0.25, 1) 0s;
+  border: 8px solid #fff;
+  box-sizing: border-box;
+}
+.album_cd1 img,
+.album_cd2 img,
+.album_cd3 img,
+.album_cd4 img,
+.album_cd5 img,
+.album_cd6 img,
+.album_cd7 img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.album_cd1 > .cd_center_circle,
+.album_cd2 > .cd_center_circle,
+.album_cd3 > .cd_center_circle,
+.album_cd4 > .cd_center_circle,
+.album_cd5 > .cd_center_circle,
+.album_cd6 > .cd_center_circle,
+.album_cd7 > .cd_center_circle {
+  position: absolute;
+  height: 16%;
+  width: 60px;
+  left: 50%;
+  margin: 0;
+  background-color: rgb(255, 255, 255);
+  border-radius: 100%;
+  border: 12px solid rgb(250, 250, 250);
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.album_cd1 > .cd_center_circle:before,
+.album_cd2 > .cd_center_circle:before,
+.album_cd3 > .cd_center_circle:before,
+.album_cd4 > .cd_center_circle:before,
+.album_cd5 > .cd_center_circle:before,
+.album_cd6 > .cd_center_circle:before,
+.album_cd7 > .cd_center_circle:before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 12px inset;
+  transition: all 5s cubic-bezier(0.25, 0.1, 0.25, 1) 0s;
+  border: 8px solid rgb(238, 236, 235);
+  box-sizing: border-box;
+}
+
+/* 좌측 Album */
+.album_cover1 {
+  width: 50%;
+  height: 100%;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 12px;
+  z-index: 90;
+  background-color: pink;
+}
+
+.album_cover2 {
+  width: 50%;
+  height: 100%;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 12px;
+  z-index: 90;
+  background-color: #222;
+}
+
+.album_cover3 {
+  width: 50%;
+  height: 100%;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 12px;
+  z-index: 90;
+  background-color: #da9438;
+}
+
+.album_cover4 {
+  width: 50%;
+  height: 100%;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 12px;
+  z-index: 90;
+  background-color: #cc372b;
+}
+
+.album_cover5 {
+  width: 50%;
+  height: 100%;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 12px;
+  z-index: 90;
+  background-color: #f7ba20;
+}
+
+.album_cover6 {
+  width: 50%;
+  height: 100%;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 12px;
+  z-index: 90;
+  background-color: #c26fdc;
+}
+
+.album_cover7 {
+  width: 50%;
+  height: 100%;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 12px;
+  z-index: 90;
+  background-color: #373736;
+}
+
+.album_cover_inner {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* 앨범 하단 출시년도 */
+.release_date {
+  color: #fff;
+  bottom: 0;
+}
+
+/* 앨범명 */
+em {
+  font-size: 54px;
+  font-weight: 300;
+  color: white;
+}
+
+/* 앨범우측 저작권자 */
+.original_author {
+  font-size: 12px;
+  font-weight: 100;
+  text-align: right;
+  color: #fff;
+}
+.original_author span {
+  display: block;
+}
+
+/* 원형 네비 메뉴바 */
+.circular_nav {
+  position: absolute;
+  top: 300px;
+  right: 5px;
+}
+
+.circular_nav.active .nav_content > span {
+  transform: rotate(calc(var(--i) * 45deg)) translateY(120px);
+  opacity: 1;
+  cursor: pointer;
+}
+
+.nav_content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(-45deg);
+  /* 원형 네비 메뉴 토글러 */
+}
+.nav_content > span {
+  position: absolute;
+  transition: all 0.6s ease;
+  opacity: 0;
+}
+.nav_content > span > a {
+  transform: rotate(45deg);
+}
+.nav_content > span > a > i {
+  font-size: 24px;
+  color: #0e2431;
+  transform: rotate(calc(var(--i) * -45deg));
+}
+.nav_content > .toggle_btn,
+.nav_content > span {
+  width: 60px;
+  height: 60px;
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav_content .toggle_btn {
+  font-size: 35px;
+  color: #0e2431;
+  z-index: 1;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  transform: rotate(45deg);
+}
+.nav_content .toggle_btn.active {
+  transform: rotate(90deg);
+}
+
+/* 뮤직플레이어 */
+.player {
+  height: 190px;
+  width: 430px;
+  background-color: rgb(30, 33, 37);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-top-left-radius: 100px;
+  border-bottom-left-radius: 100px;
+}
+.player > ul li {
+  display: inline-block;
+}
+.player > #arm {
+  width: 90px;
+  height: 90px;
+  position: absolute;
+  top: 30px;
+  left: 110px;
+  transform: rotate(-45deg);
+  background-image: url(../../00.data/02.imgData/player/controller.png);
+  background-size: cover;
+  z-index: 1;
+}
+
+.artwork {
+  position: absolute;
+  height: 190px;
+  width: 190px;
+  background: url(../../00.data/02.imgData/player/lp.png) center no-repeat;
+  background-size: cover;
+}
+.artwork img {
+  position: absolute;
+  height: 72px;
+  width: 72px;
+  border-radius: 50px;
+  top: 59px;
+  left: 59px;
+}
+
+.info > h1 {
+  margin: 20px 0 0;
+  margin-left: 200px;
+  font-size: 13pt;
+  font-weight: 600;
+  color: #fff;
+  font-family: "Open Sans", sans-serif;
+}
+.info > h2 {
+  margin-left: 200px;
+  font-size: 13pt;
+  font-weight: 300;
+  color: #fff;
+  font-family: "Open Sans", sans-serif;
+}
+.info > h4 {
+  margin: 5px 0 10px;
+  color: rgb(99, 99, 103);
+  margin-left: 200px;
+  font-size: 8pt;
+  font-weight: 400;
+}
+.info > .button-items {
+  margin-left: 200px;
+}
+
+/* 플레이어 프로그레스바 */
+#slider {
+  width: 182px;
+  height: 4px;
+  background: rgb(21, 21, 24);
+  margin-top: 15px;
+  border-radius: 2px;
+}
+#slider #elapsed {
+  height: 100%;
+  background-color: rgb(239, 109, 188);
+}
+
+/* 곡 현재 재생시간 / 전체시간 */
+.timer {
+  color: rgb(99, 99, 103);
+  line-height: 0;
+  display: inline-block;
+  font-size: 9pt;
+  font-family: Arial, Sans-Serif;
+  vertical-align: top;
+}
+
+#total_timer {
+  float: right;
+}
+
+.controls {
+  margin: 5px 0 0 -8px;
+  cursor: pointer;
+}
+.controls span > i {
+  font-size: 30px;
+}
+.controls .play_song_btn {
+  filter: brightness(0) invert(1);
+}
+.controls .play_song_btn > img {
+  width: 30px;
+  vertical-align: bottom;
+}
+.controls .prev_song_btn > i:before,
+.controls .play_song_btn > i:before,
+.controls .next_song_btn > i:before {
+  color: #fff;
+}
+
+.slider {
+  width: 80px;
+  position: absolute;
+  display: inline-block;
+  margin: 4px 0 0 10px;
+  /* 볼륨조절바 */
+}
+.slider > .volume {
+  width: 69px;
+  height: 4px;
+  background: rgba(239, 109, 188, 0.3);
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+  margin-top: 10px;
+  position: inherit;
+}
+
+input[type=range] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 100%;
+  border-radius: 14px;
+  padding: 0px 1px;
+  background: rgb(21, 21, 24);
+}
+
+/* 볼륨조절바 컨트롤러 */
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+          appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 6px;
+  background-color: #fff;
+}
+
+input[type=range]::-webkit-slider-thumb:hover, input[type=range]::-webkit-slider-thumb:focus, input[type=range]::-webkit-slider-thumb:active {
+  background-color: rgb(239, 109, 188);
+}/*# sourceMappingURL=ban.css.map */

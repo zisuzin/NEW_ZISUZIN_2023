@@ -1,13 +1,37 @@
-body {
+@charset "UTF-8";
+/* 리셋 CSS - reset.css */
+html, body, ul, li, div, span, article, aside, section, h1, h2, h4, input, audio {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  height: 100vh;
+  overflow: hidden;
 }
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  border: none;
+}
+
+* {
+  font-family: "Noto Sans KR";
+  font-style: normal;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+input {
+  border: none;
+}/*# sourceMappingURL=index.css.map */
