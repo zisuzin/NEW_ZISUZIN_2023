@@ -1,6 +1,6 @@
 @charset 'utf-8';
 
-@import url(../scss/fonts.css);
+@import url(./fonts/fonts.css);
 
 @mixin ablum_cover {
   width: 50%;
@@ -280,7 +280,7 @@ em {
     top: 30px;
     left: 110px;
     transform: rotate(-45deg);
-    background-image: url(../../00.data/02.imgData/player/controller.png);
+    background-image: url(../../public/images/player/controller.png);
     background-size: cover;
     z-index: 1;
   }
@@ -290,7 +290,7 @@ em {
 	position: absolute;
 	height: 190px;
 	width: 190px;
-	background: url(../../00.data/02.imgData/player/lp.png) center no-repeat;
+	background: url(../../public/images/player/lp.png) center no-repeat;
 	background-size: cover;
 
   img {

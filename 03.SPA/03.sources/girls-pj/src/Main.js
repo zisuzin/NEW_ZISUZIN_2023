@@ -1,5 +1,5 @@
 // 메인 페이지 컴포넌트
-import Ban from "./Ban";
+import Ban from "./components/Ban";
 
 const Main = () => {
     return (

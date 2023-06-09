@@ -12,7 +12,7 @@ const ban_data = [
         isrc: "./images/album/alb1.jpg",
         vsrc: "./audios/Expectations.mp3",
         mtit: "EXPEC-TATIONS",
-        altop_txt: "The 2nd Single Album",
+        altop_txt: "Release^The 2nd Single Album",
         albot_txt: "MAR^2023",
     },
     {
