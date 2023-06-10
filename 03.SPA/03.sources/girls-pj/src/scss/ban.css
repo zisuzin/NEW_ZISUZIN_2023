@@ -11,7 +11,7 @@
 .banbx {
   position: absolute;
   top: 50%;
-  width: 100%;
+  width: auto;
   height: 100%;
   overflow: hidden;
   transform: translateY(-50%);
