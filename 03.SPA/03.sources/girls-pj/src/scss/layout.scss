@@ -1,0 +1,63 @@
+@charset "utf-8";
+
+/* 원형 네비 메뉴바 */
+.circular_nav {
+    position: absolute;
+    top: 300px;
+    right: 5px;
+  }
+  
+  .circular_nav.active .nav_content > span {
+    transform: rotate(calc(var(--i) * (360deg / 8))) translateY(120px);
+    opacity: 1;
+    cursor: pointer;
+  }
+  
+  .nav_content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(-45deg);
+  
+    > span {
+      position: absolute;
+      transition: all .6s ease;
+      opacity: 0;
+    }
+  
+    > span > a {
+      transform: rotate(45deg);
+    }
+  
+    > span > a > i {
+      font-size: 24px;
+      color: #0e2431;
+      transform: rotate(calc(var(--i) * (360deg / -8)))
+    }
+  
+    > .toggle_btn,
+    > span {
+      width: 60px;
+      height: 60px;
+      background-color: $main-w-color;
+      border-radius: 50%;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    /* 원형 네비 메뉴 토글러 */
+    .toggle_btn {
+      font-size: 35px;
+      color: #0e2431;
+      z-index: 1;
+      cursor: pointer;
+      transition: all .5s ease;
+      transform: rotate(45deg);
+    }
+  
+    .toggle_btn.active {
+      transform: rotate(90deg);
+    }
+  } 
