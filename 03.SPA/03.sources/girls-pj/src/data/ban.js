@@ -34,7 +34,7 @@ const ban_data = [
         vsrc: "./audios/dumdi dumdi.mp3",
         mtit: "DUMDi DUMDi",
         altop_txt: "Release^The First Single Album",
-        albot_txt: "",
+        albot_txt: "DEC^2022",
     },
     {
         isrc: "./images/album/alb5.jpg",
