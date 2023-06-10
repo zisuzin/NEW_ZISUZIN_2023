@@ -1,43 +1,43 @@
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 const Layout = () => {
   return (
     <>
       {/* 원형 네비게이션 메뉴 */}
-      <nav class="circular_nav">
-        <div class="nav_content">
+      <nav className="circular_nav">
+        <div className="nav_content">
             {/* 메뉴토글 버튼 */}
-          <div class="toggle_btn">
-            <i class="bx bx-plus"></i>
+          <div className="toggle_btn">
+            <i className="bx bx-plus"></i>
           </div>
           {/* 1. 홈버튼 */}
-          <span style="--i:1">
+          <span>
             <Link to="/">
-              <i class="bx bxs-home"></i>
+              <i className="bx bxs-home"></i>
             </Link>
           </span>
           {/* 2. 갤러리버튼 */}
-          <span style="--i:2">
+          <span>
             <Link to="/ga">
-              <i class="bx bxs-camera"></i>
+              <i className="bx bxs-camera"></i>
             </Link>
           </span>
           {/* 3. 비디오버튼 */}
-          <span style="--i:3">
+          <span>
             <Link to="/vd">
-              <i class="bx bxs-video"></i>
+              <i className="bx bxs-video"></i>
             </Link>
           </span>
           {/* 4. 앨범버튼 */}
-          <span style="--i:4">
+          <span>
             <Link to="/al">
-              <i class="bx bxs-music"></i>
+              <i className="bx bxs-music"></i>
             </Link>
           </span>
           {/* 5. 프로필버튼 */}
-          <span style="--i:5">
+          <span>
             <Link to="/pf">
-              <i class="bx bxs-user-rectangle"></i>
+              <i className="bx bxs-user-rectangle"></i>
             </Link>
           </span>
         </div>
