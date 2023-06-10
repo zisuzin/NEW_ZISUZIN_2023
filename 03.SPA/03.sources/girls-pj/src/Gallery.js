@@ -4,6 +4,7 @@ import React from "react";
 const Gallery = () => {
     return (
         <>
+        <h2>갤러리 페이지</h2>
         </>
     )
 }; // Gallery // 

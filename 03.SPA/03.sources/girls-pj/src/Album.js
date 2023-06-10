@@ -4,6 +4,7 @@ import React from "react";
 const Album = () => {
     return (
         <>
+        <h2>앨범 페이지</h2>
         </>
     )
 }; // Album // 

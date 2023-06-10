@@ -4,6 +4,7 @@ import React from "react";
 const Profile = () => {
     return (
         <>
+        <h2>프로필 페이지</h2>
         </>
     )
 }; // Profile // 

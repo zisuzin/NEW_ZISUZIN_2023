@@ -1,13 +1,28 @@
 import { Link, Outlet } from "react-router-dom";
 import "./scss/layout.css";
 
+/****************************************** 
+    함수명: handleToggle
+    기능: 원형 네비 메뉴 클릭시 GNB 등장
+******************************************/
+function handleToggle() {
+  const nav = document.querySelector(".circular_nav");
+  const toggleBtn = nav.querySelector(".toggle_btn");
+
+  toggleBtn.addEventListener("click", () => {
+    nav.classList.toggle("active");
+    toggleBtn.classList.toggle("active");
+  });
+}
+
 const Layout = () => {
   return (
     <>
-      {/* 원형 네비게이션 메뉴 */}
+    {/* 1. 메인영역 */}
+      {/* 1-1. 우측 메인(원형 GNB 토글러) */}
       <nav className="circular_nav">
         <div className="nav_content">
-            {/* 메뉴토글 버튼 */}
+          {/* 메뉴토글 버튼 */}
           <div className="toggle_btn">
             <i className="bx bx-plus"></i>
           </div>
@@ -43,6 +58,8 @@ const Layout = () => {
           </span>
         </div>
       </nav>
+      {/* 1-2. 좌측 메인(배너) */}
+      <Outlet/>
     </>
   );
 };
