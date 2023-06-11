@@ -11,7 +11,7 @@
 
 $main-w-color: #fff;
 $msp-info-between: 200px;
-$open-sans-font: 'Open Sans', sans-serif;
+$open-sans-font: "Open Sans", sans-serif;
 $icon-content: "\ebae";
 
 /* 배경이미지박스 */
@@ -201,6 +201,7 @@ em {
   position: absolute;
   top: 300px;
   right: 5px;
+  z-index: 999;
 }
 
 .circular_nav.active .nav_content > span {
@@ -217,7 +218,7 @@ em {
 
   > span {
     position: absolute;
-    transition: all .6s ease;
+    transition: all 0.6s ease;
     opacity: 0;
   }
 
@@ -228,7 +229,7 @@ em {
   > span > a > i {
     font-size: 24px;
     color: #0e2431;
-    transform: rotate(calc(var(--i) * (360deg / -8)))
+    transform: rotate(calc(var(--i) * (360deg / -8)));
   }
 
   > .toggle_btn,
@@ -249,31 +250,31 @@ em {
     color: #0e2431;
     z-index: 1;
     cursor: pointer;
-    transition: all .5s ease;
+    transition: all 0.5s ease;
     transform: rotate(45deg);
   }
 
   .toggle_btn.active {
     transform: rotate(90deg);
   }
-} 
+}
 
 /* 뮤직플레이어 */
 .player {
-	height: 190px;
-	width: 430px;
-	background-color: rgb(30, 33, 37);
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	border-top-left-radius: 100px;
-	border-bottom-left-radius: 100px;
+  height: 190px;
+  width: 430px;
+  background-color: rgb(30, 33, 37);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-top-left-radius: 100px;
+  border-bottom-left-radius: 100px;
 
   > ul li {
     display: inline-block;
   }
 
-  > #arm{
+  > #arm {
     width: 90px;
     height: 90px;
     position: absolute;
@@ -287,11 +288,11 @@ em {
 }
 
 .artwork {
-	position: absolute;
-	height: 190px;
-	width: 190px;
-	background: url(../../public/images/player/lp.png) center no-repeat;
-	background-size: cover;
+  position: absolute;
+  height: 190px;
+  width: 190px;
+  background: url(../../public/images/player/lp.png) center no-repeat;
+  background-size: cover;
 
   img {
     position: absolute;
@@ -336,11 +337,11 @@ em {
 
 /* 플레이어 프로그레스바 */
 #slider {
-	width: 182px;
-	height: 4px;
-	background: rgb(21, 21, 24);
+  width: 182px;
+  height: 4px;
+  background: rgb(21, 21, 24);
   margin-top: 15px;
-	border-radius: 2px;
+  border-radius: 2px;
 
   #elapsed {
     height: 100%;
@@ -350,11 +351,11 @@ em {
 
 /* 곡 현재 재생시간 / 전체시간 */
 .timer {
-	color: rgb(99, 99, 103);
-	line-height: 0;
+  color: rgb(99, 99, 103);
+  line-height: 0;
   display: inline-block;
-	font-size: 9pt;
-	font-family: Arial, Sans-Serif;
+  font-size: 9pt;
+  font-family: Arial, Sans-Serif;
   vertical-align: top;
 }
 
@@ -377,8 +378,8 @@ em {
       width: 30px;
       vertical-align: bottom;
     }
-  };
-  
+  }
+
   .prev_song_btn > i:before,
   .play_song_btn > i:before,
   .next_song_btn > i:before {
@@ -387,42 +388,44 @@ em {
 }
 
 .slider {
-	width: 80px;
-    position: absolute;
-    display: inline-block;
-    margin: 4px 0 0 10px;
+  width: 80px;
+  position: absolute;
+  display: inline-block;
+  margin: 4px 0 0 10px;
 
-    /* 볼륨조절바 */
-    > .volume{
-      width: 69px;
-      height: 4px;
-      background: rgba(239, 109, 188, 0.3);
-      border-top-left-radius: 2px;
-      border-bottom-left-radius: 2px;
-      margin-top: 10px;
-      position: inherit;
-    }
+  /* 볼륨조절바 */
+  > .volume {
+    width: 69px;
+    height: 4px;
+    background: rgba(239, 109, 188, 0.3);
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+    margin-top: 10px;
+    position: inherit;
+  }
 }
 
 input[type="range"] {
-	appearance: none;
-	width: 100%;
-	border-radius: 14px;
-	padding: 0px 1px;
-	background: rgb(21, 21, 24);
+  appearance: none;
+  width: 100%;
+  border-radius: 14px;
+  padding: 0px 1px;
+  background: rgb(21, 21, 24);
 }
 
 /* 볼륨조절바 컨트롤러 */
 input[type="range"]::-webkit-slider-thumb {
-	appearance: none;
-	width: 12px;
-	height: 12px;
-	border-radius: 6px;
-	background-color: $main-w-color;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 6px;
+  background-color: $main-w-color;
 }
 
-input[type="range"]::-webkit-slider-thumb:hover, input[type="range"]::-webkit-slider-thumb:focus, input[type="range"]::-webkit-slider-thumb:active {
-	background-color: rgb(239, 109, 188);
+input[type="range"]::-webkit-slider-thumb:hover,
+input[type="range"]::-webkit-slider-thumb:focus,
+input[type="range"]::-webkit-slider-thumb:active {
+  background-color: rgb(239, 109, 188);
 }
 
 /****** 프로필 페이지 ******/
@@ -440,7 +443,7 @@ input[type="range"]::-webkit-slider-thumb:hover, input[type="range"]::-webkit-sl
 .group_intro > h2 {
   color: #fff;
   font-size: 3vw;
-  font-family: 'NEXONFootballGothicBA1';
+  font-family: "NEXONFootballGothicBA1";
   display: table-cell;
   width: 40%;
 }
@@ -449,8 +452,8 @@ input[type="range"]::-webkit-slider-thumb:hover, input[type="range"]::-webkit-sl
   color: #ddd;
   display: table-cell;
   width: 60%;
-  font-family: 'Noto Sans KR';
-  vertical-align: top;  
+  font-family: "Noto Sans KR";
+  vertical-align: top;
 }
 
 .group_intro {
@@ -463,7 +466,7 @@ input[type="range"]::-webkit-slider-thumb:hover, input[type="range"]::-webkit-sl
 
 .intro_title > h2 {
   color: #fff;
-  font-family: 'NEXONFootballGothicBA1';
+  font-family: "NEXONFootballGothicBA1";
   vertical-align: middle;
   display: table-cell;
 }
@@ -523,8 +526,17 @@ input[type="range"]::-webkit-slider-thumb:hover, input[type="range"]::-webkit-sl
 .mv_wrap {
   display: flex;
 
+  li + li {
+    margin-left: 10px;
+  }
+
   > li {
-    width: 25%;
+    width: 33.33%;
+    cursor: pointer;
+
+    > .mv_img {
+      height: 200px;
+    }
 
     img {
       width: 100%;
@@ -534,5 +546,60 @@ input[type="range"]::-webkit-slider-thumb:hover, input[type="range"]::-webkit-sl
 }
 
 .pagenation {
+  margin-top: 50px;
   text-align: center;
+  cursor: pointer;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  padding: 30px 0 20px 0;
+
+  h2 {
+    text-align: center;
+    font-family: "NEXONFootballGothicBA1";
+    font-size: 3.5vw;
+    margin: 20px 0;
+  }
+
+  #main_mv {
+    width: 100%;
+    cursor: pointer;
+
+    img {
+      width: 100%;
+      display: block;
+    }
+  }
+}
+
+.container > .contents_inner {
+  width: 70%;
+  margin: 0 auto;
+
+  #sub_mv {
+    margin-top: 50px;
+  }
+}
+
+.mv_date {
+  p:nth-child(1) {
+    font-weight: 600;
+  }
+
+  p:nth-child(2) {
+    float: right;
+    font-size: 13px;
+  }
+}
+
+.play-button {
+  position: absolute;
+  transform: translateX(-50%);
+  left: 50%;
+  top: 30%;
+  width: 68px;
+  background: transparent;
+  cursor: pointer;
 }

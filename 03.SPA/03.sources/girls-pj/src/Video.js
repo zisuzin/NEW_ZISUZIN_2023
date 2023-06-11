@@ -4,7 +4,10 @@ import { Video_Ban } from "./components/Ban";
 
 const video = () => {
     return (
+        <>
         <Video_Ban cat="video"/>
+        <VidIntro/>
+        </>
     )
 }; // video // 
 
