@@ -13,10 +13,11 @@ function jqFn() {
 
 
 // 플레이어 출력용 컴포넌트
-function Player() {
+function Player(props) {
+  const sel_data = ban_data[props.cat];
   return (
     <>
-      {ban_data.map((x, i) => (
+      {sel_data.map((x, i) => (
         <div className="player" key={i}> 
           <span id="arm"></span>
           <ul>

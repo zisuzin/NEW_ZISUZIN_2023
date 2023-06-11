@@ -450,6 +450,7 @@ main {
   color: #ddd;
   display: table-cell;
   width: 60%;
+  font-family: $open-sans-font;
 }
 
 .group_intro {
@@ -461,4 +462,50 @@ main {
 .intro_title > h2 {
   color: #fff;
   font-family: 'NEXONFootballGothicBA1';
+  vertical-align: middle;
+  display: table-cell;
+}
+
+.members_inner {
+  position: relative;
+  display: table;
+  width: 100%;
+}
+
+.intro_title {
+  width: 316px;
+  height: 316px;
+  float: left;
+  text-align: center;
+  display: table;
+}
+
+.profile_img > li > button {
+  display: block;
+
+  div {
+    width: 316px;
+    height: 316px;
+    overflow: hidden;
+  }
+}
+
+.profile_img > * {
+  float: left;
+}
+
+.profile_img img {
+  width: 100%;
+}
+
+.profile_img > li:first-child {
+  margin-left: 0;
+}
+
+.profile_img > li {
+  margin-left: 25%;
+}
+
+.profile_img li:nth-child(odd) {
+  margin-left: 0;
 }

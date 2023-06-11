@@ -6,9 +6,9 @@ const Main = () => {
     return (
         <>
         {/* 1. 배너모듈 */}
-        <Main_Ban />
+        <Main_Ban cat="main"/>
         {/* 2. 플레이어모듈 */}
-        <Player />
+        <Player cat="main"/>
         </>
     )
 }
