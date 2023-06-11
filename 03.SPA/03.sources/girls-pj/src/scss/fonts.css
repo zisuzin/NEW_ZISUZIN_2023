@@ -1,5 +1,12 @@
 /* Open Sans */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&display=swap');
+/* notosans CDN */
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+/* notosanskr */
+.notosanskr { 
+    font-family: 'Noto Sans KR';
+}
 
 @font-face {
     font-family: 'establishRetrosansOTF';

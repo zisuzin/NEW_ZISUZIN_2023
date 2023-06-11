@@ -455,7 +455,7 @@ main {
   color: #ddd;
   display: table-cell;
   width: 60%;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Noto Sans KR";
 }
 
 .group_intro {
@@ -512,4 +512,8 @@ main {
 
 .profile_img li:nth-child(odd) {
   margin-left: 0;
+}
+
+.kv img {
+  width: 100%;
 }/*# sourceMappingURL=ban.css.map */
