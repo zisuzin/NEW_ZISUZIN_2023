@@ -450,11 +450,14 @@ main {
   display: table-cell;
   width: 60%;
   font-family: 'Noto Sans KR';
+  vertical-align: top;  
 }
 
 .group_intro {
   padding: 33px 180px 145px;
   display: table;
+  width: 100%;
+  border: 1px solid #fff;
   width: 100%;
 }
 
@@ -467,8 +470,11 @@ main {
 
 .members_inner {
   position: relative;
-  display: table;
+  max-width: 1280px;
   width: 100%;
+  margin: 0 auto;
+  display: table;
+  border: 1px solid #fff;
 }
 
 .intro_title {
