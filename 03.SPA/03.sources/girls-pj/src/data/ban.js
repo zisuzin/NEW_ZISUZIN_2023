@@ -86,6 +86,26 @@ const ban_data = {
       ],
     },
   ],
+  video: [
+    {
+      isrc: "https://i.ytimg.com/vi/uPU1l6fBEEQ/maxresdefault.jpg",
+      vsrc: "https://tv.naver.com/v/29982550?t=1",
+      txt: "(G)I-DLE) 'Nxde' M/V",
+      date: "2022-10-17",
+    },
+    {
+      isrc: "https://archivenew.vop.co.kr/images/78ddf9ac628c0853877cd0d4af0d3eeb/2021-01/marked/11051228_33.jpg",
+      vsrc: "https://youtu.be/z3szNvgQxHo",
+      txt: "(G)I-DLE) '화(火花)(HWAA) M/V",
+      date: "2021-01-11",
+    },
+    {
+      isrc: "https://i.ytimg.com/vi/XFe_xNeuETQ/maxresdefault.jpg",
+      vsrc: "https://youtu.be/om3n2ni8luE",
+      txt: "(G)I-DLE) 'Oh my god' M/V",
+      date: "2020-04-06",
+    },
+  ],
 };
 
 export default ban_data;

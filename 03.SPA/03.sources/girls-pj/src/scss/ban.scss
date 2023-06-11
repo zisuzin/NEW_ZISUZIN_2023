@@ -426,7 +426,7 @@ input[type="range"]::-webkit-slider-thumb:hover, input[type="range"]::-webkit-sl
 }
 
 /****** 프로필 페이지 ******/
-main {
+#kv_wrap {
   background: #111;
 }
 
@@ -517,4 +517,22 @@ main {
 
 .kv img {
   width: 100%;
+}
+
+/****** 비디오 페이지 ******/
+.mv_wrap {
+  display: flex;
+
+  > li {
+    width: 25%;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.pagenation {
+  text-align: center;
 }

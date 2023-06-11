@@ -1,11 +1,10 @@
 // 갤러리 페이지 컴포넌트
 import React from "react";
+import { Video_Ban } from "./components/Ban";
 
 const video = () => {
     return (
-        <>
-        <h2>비디오 페이지</h2>
-        </>
+        <Video_Ban cat="video"/>
     )
 }; // video // 
 
