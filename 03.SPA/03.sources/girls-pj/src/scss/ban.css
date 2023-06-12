@@ -567,6 +567,10 @@ input[type=range]::-webkit-slider-thumb:active {
   width: 100%;
   cursor: pointer;
 }
+.container #main_mv iframe {
+  width: 100%;
+  height: 520px;
+}
 .container #main_mv img {
   width: 100%;
   display: block;

@@ -89,19 +89,19 @@ const ban_data = {
   video: [
     {
       isrc: "./images/video/vidsm1.jpg",
-      vsrc: "https://tv.naver.com/v/29982550?t=1",
+      vsrc: "https://www.youtube.com/embed/fCO7f0SmrDc",
       txt: "((G)I-DLE) 'Nxde' M/V",
       date: "2022-10-17",
     },
     {
       isrc: "./images/video/vidsm2.jpg",
-      vsrc: "https://youtu.be/XZaBkbvteBc?t=1",
-      txt: "((G)I-DLE) 'Allergy' M/V",
-      date: "2023-05-15",
+      vsrc: "https://www.youtube.com/embed/MqzX9JAZ08U",
+      txt: "(전소연) 'BEAM BEAM' M/V",
+      date: "2022-04-27",
     },
     {
       isrc: "./images/video/vidsm3.jpg",
-      vsrc: "https://youtu.be/7HDeem-JaSY",
+      vsrc: "https://www.youtube.com/embed/7HDeem-JaSY",
       txt: "((G)I-DLE) 'Queencard' M/V",
       date: "2023-05-15",
     },
