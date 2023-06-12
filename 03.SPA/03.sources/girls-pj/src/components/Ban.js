@@ -1,13 +1,14 @@
 // 배너 컴포넌트 - Ban.js
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 // 제이쿼리
 import $ from "jquery";
 // 배너CSS
 import "../scss/ban.css";
 // 배너 데이터
 import ban_data from "../data/ban";
+import ReactPaginate from "react-paginate";
 
-// 배너출력용 컴포넌트
+// 메인배너 출력용 컴포넌트
 function Main_Ban(props) {
   const sel_data = ban_data[props.cat];
 
@@ -50,6 +51,7 @@ function Main_Ban(props) {
   );
 }
 
+// 프로필배너 출력용 컴포넌트
 function Profile_Ban(props) {
   const sel_data = ban_data[props.cat];
 
@@ -95,6 +97,7 @@ function Profile_Ban(props) {
   );
 }
 
+// 비디오배너 출력용 컴포넌트
 function Video_Ban(props){
   // 데이터 셋팅
   const vdata = ban_data[props.cat];
@@ -105,10 +108,16 @@ function Video_Ban(props){
     if (firstLi) {
       firstLi.click();
     }
-  }, []);
 
-  // 3. 첫번째 li 강제클릭
-  // $(".mv_wrap").find("li").first().trigger("click");
+    const getComments = async () => {
+      const res = await fetch(
+        `http://localhost:3004/comments?_page=1&_limit=5`
+      );
+      const data = await res.json();
+      setItems(data);
+    }
+    // 두번째 인자가 빈 배열 []인 경우, 컴포넌트가 처음 마운트될 때만 실행됨.
+  }, []);
 
   // 비디오 보이기 함수
   const showVid = (src,tit) => {
@@ -117,15 +126,24 @@ function Video_Ban(props){
       ifr.attr("src",src+"?autoplay=1");
       // 2. 아이프레임 title넣기
       ifr.attr("title", tit);
+      ifr.css("opacity", 1);
 
   } // Showvid // 
+
+  const [items, setItems] = useState([]);
+
+  console.log(items);
+
+  const handlePageClick = (data) => {
+    console.log(data.selected)
+  }
 
   return (
       <main className="container">
         <h2>VIDEO</h2>
         <div className="contents_inner">
           <section id="main_mv">
-            <iframe src="" title=""></iframe>
+            <iframe src="" title="" style={{ opacity: 0, transition: 'opacity 1s' }}></iframe>
           </section>
           <section id="sub_mv">
             <ul className="mv_wrap">
@@ -143,11 +161,25 @@ function Video_Ban(props){
             </ul>
           </section>
         </div>
-        <div className="pagenation">
+        <ReactPaginate
+        previousLabel={'< prev'}
+        nextLabel={'next >'}
+        pageCount={3}
+        onPageChange={handlePageClick}
+        containerClassName={'pagination justify-content-center'}
+        pageClassName={'page-item'}
+        pageLinkClassName={'page-link'}
+        previousClassName={'page-item'}
+        previousLinkClassName={'page-link'}
+        nextClassName={'page-item'}
+        nextLinkClassName={'page-link'}
+        activeClassName={'active'}
+        />
+        {/* <div className="pagenation">
           <span>1 </span>
           <span>| 2 </span>
           <span>| 3 </span>
-        </div>
+        </div> */}
       </main>
     );
 } 
