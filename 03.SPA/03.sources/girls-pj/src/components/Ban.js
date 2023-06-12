@@ -1,4 +1,5 @@
 // 배너 컴포넌트 - Ban.js
+import { useEffect } from "react";
 // 제이쿼리
 import $ from "jquery";
 // 배너CSS
@@ -98,13 +99,25 @@ function Video_Ban(props){
   // 데이터 셋팅
   const vdata = ban_data[props.cat];
 
-  // 비디오보이기 함수
+  useEffect(() => {
+    // 컴포넌트가 마운트될 때 첫 번째 li 클릭
+    const firstLi = document.querySelector(".mv_wrap li");
+    if (firstLi) {
+      firstLi.click();
+    }
+  }, []);
+
+  // 3. 첫번째 li 강제클릭
+  // $(".mv_wrap").find("li").first().trigger("click");
+
+  // 비디오 보이기 함수
   const showVid = (src,tit) => {
-      
       let ifr = $("#main_mv iframe");
       // 1. 아이프레임 src넣기
       ifr.attr("src",src+"?autoplay=1");
+      // 2. 아이프레임 title넣기
       ifr.attr("title", tit);
+
   } // Showvid // 
 
   return (
