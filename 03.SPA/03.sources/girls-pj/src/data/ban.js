@@ -87,6 +87,7 @@ const ban_data = {
     },
   ],
   video: [
+    // 1 페이지
     {
       isrc: "./images/video/vidsm1.jpg",
       vsrc: "https://www.youtube.com/embed/fCO7f0SmrDc",
@@ -105,6 +106,13 @@ const ban_data = {
       txt: "((G)I-DLE) 'Queencard' M/V",
       date: "2023-05-15",
     },
+    // 2 페이지
+    // {
+    //   isrc: "./images/video/vidsm4.jpg",
+    //   vsrc: "https://www.youtube.com/embed/Jh4QFaPmdss",
+    //   txt: "((G)I-DLE) 'TOMBOY' M/V",
+    //   date: "2022-03-14",
+    // }
   ],
 };
 
