@@ -12,7 +12,7 @@ function AlbumDetail() {
   return (
     <>
       <main>
-        <section className="albumlist_wrap">
+        <section className="albumlist_wrap half">
           {/* 1. 좌측 컨텐츠 */}
           <div className="contents_left">
             {/* 1-1. 뒤로가기 버튼 */}
@@ -28,16 +28,25 @@ function AlbumDetail() {
             {/* 1-3. 앨범 발매일 */}
             <div className="release_date">
               <p>Release Date</p>
-              <p>2023-04-26</p>
+              <p>{eachAlbum.release}</p>
             </div>
           </div>
           {/* 2. 우측 컨텐츠 */}
           <div className="contents_right">
             {/* 2-1.앨범 타이틀 */}
             <div className="album_tit">
-              <p>퀸카</p>
+              <p>{eachAlbum.mtit.replace(/-/g, "")}</p>
             </div>
-            <div className="album_info"></div>
+            <div className="album_info">
+              <p>
+              {eachAlbum.info.split("^").map((segment, index) => (
+                <React.Fragment key={index}>
+                  {segment}
+                  <br />
+                </React.Fragment>
+              ))}
+              </p>
+            </div>
           </div>
         </section>
       </main>

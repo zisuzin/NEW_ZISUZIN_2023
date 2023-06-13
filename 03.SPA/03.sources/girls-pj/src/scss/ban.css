@@ -450,7 +450,7 @@ input[type=range]::-webkit-slider-thumb:active {
 .group_intro > h2 {
   color: #fff;
   font-size: 3vw;
-  font-family: "NEXONFootballGothicBA1";
+  font-family: NEXONFootballGothicBA1;
   display: table-cell;
   width: 40%;
 }
@@ -459,7 +459,7 @@ input[type=range]::-webkit-slider-thumb:active {
   color: #ddd;
   display: table-cell;
   width: 60%;
-  font-family: "Noto Sans KR";
+  font-family: "$noto-sans-font";
   vertical-align: top;
 }
 
@@ -473,7 +473,7 @@ input[type=range]::-webkit-slider-thumb:active {
 
 .intro_title > h2 {
   color: #fff;
-  font-family: "NEXONFootballGothicBA1";
+  font-family: NEXONFootballGothicBA1;
   vertical-align: middle;
   display: table-cell;
 }
@@ -569,7 +569,7 @@ input[type=range]::-webkit-slider-thumb:active {
 }
 .contents_wrap h2 {
   text-align: center;
-  font-family: "NEXONFootballGothicBA1";
+  font-family: NEXONFootballGothicBA1;
   font-size: 3.5vw;
   margin: 20px 0;
 }
@@ -638,7 +638,7 @@ input[type=range]::-webkit-slider-thumb:active {
 .album_list li:hover .albumInfo_box .txt_align h2 {
   vertical-align: middle;
   color: #fff;
-  font-family: "Noto Sans KR";
+  font-family: "$noto-sans-font";
   text-align: center;
   font-size: 2vw;
   margin: 0;
@@ -647,7 +647,7 @@ input[type=range]::-webkit-slider-thumb:active {
 .album_list li:hover .albumInfo_box .txt_align h5 {
   vertical-align: middle;
   color: #fff;
-  font-family: "Noto Sans KR";
+  font-family: "$noto-sans-font";
   text-align: center;
   font-size: 1.1vw;
 }
@@ -659,6 +659,26 @@ input[type=range]::-webkit-slider-thumb:active {
 /****** 앨범 페이지 상세 ******/
 .albumlist_wrap {
   padding: 157px 180px 131px;
+  display: flex;
+}
+.albumlist_wrap .contents_right {
+  position: relative;
+  width: 600px;
+  overflow: hidden;
+  padding-left: 3.5vw;
+}
+.albumlist_wrap .contents_right .album_info > p {
+  text-align: justify;
+}
+.albumlist_wrap .contents_right .album_tit > p {
+  font-size: 4vw;
+  font-family: NEXONFootballGothicBA1;
+}
+.albumlist_wrap .contents_left {
+  position: relative;
+  width: 500px;
+  height: auto;
+  overflow: hidden;
 }
 
 .release_date > p {
