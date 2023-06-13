@@ -1,5 +1,6 @@
 @charset "UTF-8";
 @import url(./fonts.css);
+@import url(../index.css);
 /* 배경이미지박스 */
 .bgbx {
   position: absolute;
@@ -628,9 +629,11 @@ input[type=range]::-webkit-slider-thumb:active {
   bottom: 0;
 }
 .album_list li:hover .albumInfo_box .txt_align {
-  display: block;
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .album_list li:hover .albumInfo_box .txt_align h2 {
   vertical-align: middle;
@@ -638,13 +641,15 @@ input[type=range]::-webkit-slider-thumb:active {
   font-family: "Noto Sans KR";
   text-align: center;
   font-size: 2vw;
+  margin: 0;
+  margin-top: 10px;
 }
-.album_list li:hover .albumInfo_box .txt_align h7 {
+.album_list li:hover .albumInfo_box .txt_align h5 {
   vertical-align: middle;
   color: #fff;
   font-family: "Noto Sans KR";
   text-align: center;
-  font-size: 1.5vw;
+  font-size: 1.1vw;
 }
 
 .txt_align {

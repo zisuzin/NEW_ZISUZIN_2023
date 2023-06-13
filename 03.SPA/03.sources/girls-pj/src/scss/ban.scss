@@ -1,6 +1,7 @@
 @charset 'utf-8';
 
 @import url(./fonts.css);
+@import url(../index.css);
 
 @mixin ablum_cover {
   width: 50%;
@@ -12,7 +13,7 @@
 @mixin album_list {
   vertical-align: middle;
   color: #fff;
-  font-family: 'Noto Sans KR';
+  font-family: "Noto Sans KR";
   text-align: center;
 }
 
@@ -648,18 +649,22 @@ input[type="range"]::-webkit-slider-thumb:active {
       bottom: 0;
 
       .txt_align {
-        display: block;
         width: 100%;
         height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
 
         h2 {
           @include album_list;
           font-size: 2vw;
+          margin: 0;
+          margin-top: 10px;
         }
 
-        h7 {
+        h5 {
           @include album_list;
-          font-size: 1.5vw;
+          font-size: 1.1vw;
         }
       }
     }

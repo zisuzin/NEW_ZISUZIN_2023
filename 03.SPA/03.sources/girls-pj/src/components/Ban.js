@@ -175,7 +175,7 @@ function Album_Ban() {
                 <img src={x.isrc} alt={"여자아이들의 " + x.mtit + " 앨범"} />
                 <div className="albumInfo_box">
                   <div className="txt_align">
-                    <h7>{x.altop_txt.split('^')[1]}</h7>
+                    <h5>{x.altop_txt.split('^')[1]}</h5>
                     <h2>{x.mtit.replace(/-/g, "")}</h2>
                   </div>
                 </div>

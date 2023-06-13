@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /* 리셋 CSS - reset.css */
-html, body, ul, li, div, span, article, aside, section, h1, h2, h4, input, audio, button {
+html, body, ul, li, div, span, article, aside, section, h1, h2, h4, h5, input, audio, button {
   margin: 0;
   padding: 0;
 }
