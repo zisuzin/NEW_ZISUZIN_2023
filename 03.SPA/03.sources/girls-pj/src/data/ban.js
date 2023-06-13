@@ -8,6 +8,8 @@ const ban_data = {
       mtit: "I feel",
       altop_txt: "Release^The 6th Mini Album",
       albot_txt: "APR^2023",
+      info: "여자아이들이 6번째 미니 앨범 ‘I feel’을 발매한다. 전작에 이어 약 7개월 만에 선보이는 미니 6집 [I feel]에서는 ",
+      track: [],
     },
     {
       isrc: "./images/album/alb1.jpg",

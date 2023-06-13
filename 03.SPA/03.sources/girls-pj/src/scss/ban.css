@@ -659,4 +659,9 @@ input[type=range]::-webkit-slider-thumb:active {
 /****** 앨범 페이지 상세 ******/
 .albumlist_wrap {
   padding: 157px 180px 131px;
+}
+
+.release_date > p {
+  font-size: 1.2vw;
+  color: #000;
 }/*# sourceMappingURL=ban.css.map */
