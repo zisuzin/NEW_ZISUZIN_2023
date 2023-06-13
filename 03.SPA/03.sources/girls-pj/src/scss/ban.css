@@ -654,4 +654,9 @@ input[type=range]::-webkit-slider-thumb:active {
 
 .txt_align {
   display: none;
+}
+
+/****** 앨범 페이지 상세 ******/
+.albumlist_wrap {
+  padding: 157px 180px 131px;
 }/*# sourceMappingURL=ban.css.map */
