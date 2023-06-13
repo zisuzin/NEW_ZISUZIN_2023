@@ -1,6 +1,5 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
-import { Album_Ban } from "./Ban";
 import ban_data from "../data/ban";
 
 function AlbumDetail () {
@@ -18,7 +17,7 @@ function AlbumDetail () {
           <div className="contents_left">
             {/* 1-1. 뒤로가기 버튼 */}
             <div className="back_btn">
-              <Link to={<Album_Ban/>}>
+              <Link to="/al">
               <span>＜BACK</span>
               </Link>
             </div>
