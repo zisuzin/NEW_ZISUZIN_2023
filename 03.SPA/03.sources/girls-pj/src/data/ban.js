@@ -48,7 +48,7 @@ const ban_data = {
       track: ["1. Nxde", "2. LOVE", "3. Change", "4. Reset", "5. 조각품", "6. DARK (X-file)"],
       release: "2022-10-17",
       bgcolor: "#cc372b",
-      txcolor: "#d39876^",
+      txcolor: "#d39876^#d39876",
     },
     {
       isrc: "./images/album/alb4.jpg",
@@ -83,7 +83,7 @@ const ban_data = {
       info: "상처 하나, 눈물 한 방울도 어림없는 'TOMBOY'는 여자아이들 특유의 당당한 애티튜드가 마음껏 드러나는 곡으로, \"I'm not a doll\",\"Just me I-DLE\"과 같은 직설적인 가사가 듣는 이로 하여금 통제 불가능한 괴짜 캐릭터를 떠올리게 하며 한층 과감한 매력을 선사한다. 아울러 여자아이들의 유니크한 보이스와 거칠고 웅장한 악기 사운드가 어우러진 훅, 분위기가 고조된 순간 흘러나오는 중독성 넘치는 변주 구간 또한 이 곡의 관전 포인트다.",
       track: ["1. TOMBOY", "2. 말리지 마", "3. VILLAIN DIES", "4. ALERADY", "5. POLAROID", "6. ESCAPE", "7. LIAR", "8. MY BAG", "9. TOMBOY(CD Only)"],
       release: "2022-03-14",
-      bgcolor: "#222",
+      bgcolor: "#373736",
       txcolor: "#fff^#d8d8d8",
     },
   ],
