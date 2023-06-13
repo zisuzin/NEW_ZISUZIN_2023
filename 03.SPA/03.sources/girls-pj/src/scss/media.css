@@ -1,0 +1,29 @@
+@charset "utf-8";
+
+/* 비디오 페이지 */
+@media screen and (min-width: 1060px) {
+    body {
+        overflow-x: hidden;
+    }
+}
+
+/* 앨범 페이지 */
+@media screen and (max-width: 770px) {
+    .contents_wrap {
+        padding: 25.97vw 5.09vw 25.14vw;
+    }
+
+    .album_list li {
+        width: 48.44%;
+        margin-right: 3.12%;
+        margin-bottom: 3.12%;
+    }
+
+    .album_list li:nth-child(2n-1) {
+        margin-right: 0;
+    }
+
+    .album_list li:first-child {
+        width: 100%;
+    }
+}

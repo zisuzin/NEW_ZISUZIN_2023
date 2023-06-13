@@ -9,6 +9,8 @@ import $ from "jquery";
 
 // 배너CSS
 import "../scss/ban.css";
+// 미디어쿼리CSS
+import "../scss/media.css";
 
 // Import Swiper styles
 import "swiper/css";
@@ -164,6 +166,29 @@ function Video_Ban(props){
     );
 } 
 
+function Album_Ban(){
+
+  const sel_data = ban_data.main;
+  
+  return (
+    <main className="contents_wrap">
+      <h2>DISCOGRAPHY</h2>
+      <div className="contents_inner">
+        <div className="album_list">
+          <ul>
+           { sel_data.map((x,i)=>
+            <li key={i}>
+              <img src={x.isrc} alt={"여자아이들의 " + x.mtit + " 앨범"}/>
+            </li>
+           )
+            }
+          </ul>
+        </div>
+      </div>
+    </main>
+  );
+}
 
 
-export { Main_Ban, Profile_Ban, Video_Ban };
+
+export { Main_Ban, Profile_Ban, Video_Ban, Album_Ban };
