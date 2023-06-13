@@ -4,7 +4,7 @@ import {Album_Ban} from "./components/Ban";
 
 const Album = () => {
     return (
-        <Album_Ban />
+        <Album_Ban cat="main"/>
     )
 }; // Album // 
 

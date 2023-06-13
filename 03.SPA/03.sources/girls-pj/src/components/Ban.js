@@ -1,5 +1,6 @@
 // 배너 컴포넌트 - Ban.js
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { Link } from 'react-router-dom';
 // 스와이퍼 컴포넌트
 import { Swiper, SwiperSlide } from "swiper/react";
 // 스와이퍼 네비게이션 컴포넌트
@@ -18,7 +19,7 @@ import "swiper/css/navigation";
 
 // 배너 데이터
 import ban_data from "../data/ban";
-import ReactPaginate from "react-paginate";
+// import ReactPaginate from "react-paginate";
 
 // 메인배너 출력용 컴포넌트
 function Main_Ban(props) {
@@ -172,6 +173,7 @@ function Album_Ban() {
           <ul>
             {sel_data.map((x, i) => (
               <li key={i}>
+                <Link to={`/album/${i}`}>
                 <img src={x.isrc} alt={"여자아이들의 " + x.mtit + " 앨범"} />
                 <div className="albumInfo_box">
                   <div className="txt_align">
@@ -179,12 +181,14 @@ function Album_Ban() {
                     <h2>{x.mtit.replace(/-/g, "")}</h2>
                   </div>
                 </div>
+                </Link>
               </li>
             ))}
           </ul>
         </div>
       </div>
     </main>
+
   );
 }
 

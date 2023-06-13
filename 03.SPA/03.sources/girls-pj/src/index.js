@@ -8,6 +8,7 @@ import Gallery from "./Gallery";
 import Video from "./Video";
 import Album from "./Album";
 import Profile from "./Profile";
+import AlbumDetail from './components/AlbumDetail';
 
 export default function App(){
     return (
@@ -20,6 +21,7 @@ export default function App(){
                     <Route path='vd' element={<Video/>}/>
                     <Route path='al' element={<Album/>}/>
                     <Route path='pf' element={<Profile/>}/>
+                    <Route path="album/:id" element={<AlbumDetail />} />
                 </Route>
             </Routes>
         </BrowserRouter>
