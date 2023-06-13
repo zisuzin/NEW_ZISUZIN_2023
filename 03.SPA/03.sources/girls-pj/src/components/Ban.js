@@ -162,12 +162,6 @@ function Video_Ban(props) {
 }
 
 function Album_Ban() {
-  // 배너리스트 호버시 앨범명 보이기 함수
-  const showTxt = (txt) => {
-    const tgBan = $(".txt_align")
-    tgBan.text() = txt;
-  };
-
   const sel_data = ban_data.main;
 
   return (
@@ -177,16 +171,15 @@ function Album_Ban() {
         <div className="album_list">
           <ul>
             {sel_data.map((x, i) => (
-              <>
-              <li key={i} onMouseOver={() => showTxt(x.mtit)}>
+              <li key={i}>
                 <img src={x.isrc} alt={"여자아이들의 " + x.mtit + " 앨범"} />
+                <div className="albumInfo_box">
+                  <div className="txt_align">
+                    <h7>{x.altop_txt.split('^')[1]}</h7>
+                    <h2>{x.mtit.replace(/-/g, "")}</h2>
+                  </div>
+                </div>
               </li>
-              <div className="albumInfo_box">
-              <div className="txt_align">
-                <h2></h2>
-              </div>
-            </div>
-              </>
             ))}
           </ul>
         </div>

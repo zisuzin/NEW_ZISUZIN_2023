@@ -48,7 +48,7 @@ const ban_data = {
       isrc: "./images/album/alb6.jpg",
       vsrc: "./audios/tomboy.mp3",
       mtit: "TOMBOY",
-      altop_txt: "Collaboration^DJ R3HAB",
+      altop_txt: "Collaboration^X DJ R3HAB",
       albot_txt: "DEC^2022",
     },
   ],
