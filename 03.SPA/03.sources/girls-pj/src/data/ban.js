@@ -87,7 +87,6 @@ const ban_data = {
     },
   ],
   video: [
-    // 1 페이지
     {
       isrc: "./images/video/vidsm1.jpg",
       vsrc: "https://www.youtube.com/embed/fCO7f0SmrDc",
@@ -106,13 +105,30 @@ const ban_data = {
       txt: "((G)I-DLE) 'Queencard' M/V",
       date: "2023-05-15",
     },
-    // 2 페이지
-    // {
-    //   isrc: "./images/video/vidsm4.jpg",
-    //   vsrc: "https://www.youtube.com/embed/Jh4QFaPmdss",
-    //   txt: "((G)I-DLE) 'TOMBOY' M/V",
-    //   date: "2022-03-14",
-    // }
+    {
+      isrc: "./images/video/vidsm4.jpg",
+      vsrc: "https://www.youtube.com/embed/Jh4QFaPmdss",
+      txt: "((G)I-DLE) 'TOMBOY' M/V",
+      date: "2022-03-14",
+    },
+    {
+      isrc: "./images/video/vidsm5.jpg",
+      vsrc: "https://www.youtube.com/embed/z3szNvgQxHo",
+      txt: "((G)I-DLE) 'HWAA' M/V",
+      date: "2021-01-11",
+    },
+    {
+      isrc: "./images/video/vidsm6.jpg",
+      vsrc: "https://www.youtube.com/embed/I66oFXdf0KU",
+      txt: "((G)I-DLE) 'UH OH' M/V",
+      date: "2019-06-26",
+    },
+    {
+      isrc: "./images/video/vidsm7.jpg",
+      vsrc: "https://www.youtube.com/embed/om3n2ni8luE",
+      txt: "((G)I-DLE) 'Oh my god' M/V",
+      date: "2020-04-06",
+    },
   ],
 };
 

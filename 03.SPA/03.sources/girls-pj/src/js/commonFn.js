@@ -65,14 +65,9 @@ function handleWheel(e) {
     }
 
     // data-seq 라는 사용자정의 속성 넣기
-    
     document.querySelectorAll(".album_wrap li").forEach((ele, idx) => {
     ele.style.transform = `translateX(${delta<0?valset1[idx]:valset2[idx]})`;
   }); // forEach //
-
-    
-
-
 }
 
 document.querySelectorAll(".album_wrap li").forEach((ele,idx)=>ele.setAttribute("data-seq", idx));

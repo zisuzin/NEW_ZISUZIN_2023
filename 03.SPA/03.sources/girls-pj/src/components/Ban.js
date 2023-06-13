@@ -1,9 +1,19 @@
 // 배너 컴포넌트 - Ban.js
 import { useEffect, useState } from "react";
+// 스와이퍼 컴포넌트
+import { Swiper, SwiperSlide } from "swiper/react";
+// 스와이퍼 네비게이션 컴포넌트
+import { Navigation } from "swiper";
 // 제이쿼리
 import $ from "jquery";
+
 // 배너CSS
 import "../scss/ban.css";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
+
 // 배너 데이터
 import ban_data from "../data/ban";
 import ReactPaginate from "react-paginate";
@@ -104,18 +114,11 @@ function Video_Ban(props){
 
   useEffect(() => {
     // 컴포넌트가 마운트될 때 첫 번째 li 클릭
-    const firstLi = document.querySelector(".mv_wrap li");
+    const firstLi = document.querySelector(".swiper-slide");
     if (firstLi) {
       firstLi.click();
     }
 
-    const getComments = async () => {
-      const res = await fetch(
-        `http://localhost:3004/comments?_page=1&_limit=5`
-      );
-      const data = await res.json();
-      setItems(data);
-    }
     // 두번째 인자가 빈 배열 []인 경우, 컴포넌트가 처음 마운트될 때만 실행됨.
   }, []);
 
@@ -130,25 +133,21 @@ function Video_Ban(props){
 
   } // Showvid // 
 
-  const [items, setItems] = useState([]);
-
-  console.log(items);
-
-  const handlePageClick = (data) => {
-    console.log(data.selected)
-  }
-
   return (
-      <main className="container">
+      <main className="contents_wrap">
         <h2>VIDEO</h2>
         <div className="contents_inner">
           <section id="main_mv">
             <iframe src="" title="" style={{ opacity: 0, transition: 'opacity 1s' }}></iframe>
           </section>
           <section id="sub_mv">
-            <ul className="mv_wrap">
+            <Swiper className="mv_wrap"
+              slidesPerView={3}
+              spaceBetween={20}
+              navigation={true}
+              modules={[Navigation]}>
               {vdata.map((x, i) => (
-                <li key={i} onClick={()=>showVid(x.vsrc, x.txt)}>
+                <SwiperSlide key={i} className="swiper-slide" onClick={()=>showVid(x.vsrc, x.txt)}>
                   <div className="mv_img">
                     <img src={x.isrc} />
                   </div>
@@ -156,30 +155,11 @@ function Video_Ban(props){
                     <p>{x.txt}</p>
                     <p>{x.date}</p>
                   </div>
-                </li>
+                </SwiperSlide>
               ))}
-            </ul>
+            </Swiper>
           </section>
         </div>
-        <ReactPaginate
-        previousLabel={'< prev'}
-        nextLabel={'next >'}
-        pageCount={3}
-        onPageChange={handlePageClick}
-        containerClassName={'pagination justify-content-center'}
-        pageClassName={'page-item'}
-        pageLinkClassName={'page-link'}
-        previousClassName={'page-item'}
-        previousLinkClassName={'page-link'}
-        nextClassName={'page-item'}
-        nextLinkClassName={'page-link'}
-        activeClassName={'active'}
-        />
-        {/* <div className="pagenation">
-          <span>1 </span>
-          <span>| 2 </span>
-          <span>| 3 </span>
-        </div> */}
       </main>
     );
 } 
