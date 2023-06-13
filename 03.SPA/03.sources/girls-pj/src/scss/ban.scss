@@ -569,6 +569,7 @@ input[type="range"]::-webkit-slider-thumb:active {
   width: 100%;
   max-width: 1440px;
   padding: 157px 180px 131px;
+  overflow: hidden;
 
   h2 {
     text-align: center;
@@ -625,4 +626,9 @@ input[type="range"]::-webkit-slider-thumb:active {
   margin-right: 1.805%;
   margin-bottom: 1.805%;
   cursor: pointer;
+}
+
+.album_list li:hover {
+  background-color: #111;
+  filter: brightness(50%);
 }

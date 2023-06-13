@@ -110,7 +110,7 @@ function Profile_Ban(props) {
 }
 
 // 비디오배너 출력용 컴포넌트
-function Video_Ban(props){
+function Video_Ban(props) {
   // 데이터 셋팅
   const vdata = ban_data[props.cat];
 
@@ -125,70 +125,74 @@ function Video_Ban(props){
   }, []);
 
   // 비디오 보이기 함수
-  const showVid = (src,tit) => {
-      let ifr = $("#main_mv iframe");
-      // 1. 아이프레임 src넣기
-      ifr.attr("src",src+"?autoplay=1");
-      // 2. 아이프레임 title넣기
-      ifr.attr("title", tit);
-      ifr.css("opacity", 1);
-
-  } // Showvid // 
+  const showVid = (src, tit) => {
+    let ifr = $("#main_mv iframe");
+    // 1. 아이프레임 src넣기
+    ifr.attr("src", src + "?autoplay=1");
+    // 2. 아이프레임 title넣기
+    ifr.attr("title", tit);
+    ifr.css("opacity", 1);
+  }; // Showvid //
 
   return (
-      <main className="contents_wrap">
-        <h2>VIDEO</h2>
-        <div className="contents_inner">
-          <section id="main_mv">
-            <iframe src="" title="" style={{ opacity: 0, transition: 'opacity 1s' }}></iframe>
-          </section>
-          <section id="sub_mv">
-            <Swiper className="mv_wrap"
-              slidesPerView={3}
-              spaceBetween={20}
-              navigation={true}
-              modules={[Navigation]}>
-              {vdata.map((x, i) => (
-                <SwiperSlide key={i} className="swiper-slide" onClick={()=>showVid(x.vsrc, x.txt)}>
-                  <div className="mv_img">
-                    <img src={x.isrc} />
-                  </div>
-                  <div className="mv_date">
-                    <p>{x.txt}</p>
-                    <p>{x.date}</p>
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </section>
-        </div>
-      </main>
-    );
-} 
+    <main className="contents_wrap">
+      <h2>VIDEO</h2>
+      <div className="contents_inner">
+        <section id="main_mv">
+          <iframe src="" title="" style={{ opacity: 0, transition: "opacity 1s" }}></iframe>
+        </section>
+        <section id="sub_mv">
+          <Swiper className="mv_wrap" slidesPerView={3} spaceBetween={20} navigation={true} modules={[Navigation]}>
+            {vdata.map((x, i) => (
+              <SwiperSlide key={i} className="swiper-slide" onClick={() => showVid(x.vsrc, x.txt)}>
+                <div className="mv_img">
+                  <img src={x.isrc} />
+                </div>
+                <div className="mv_date">
+                  <p>{x.txt}</p>
+                  <p>{x.date}</p>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </section>
+      </div>
+    </main>
+  );
+}
 
-function Album_Ban(){
+function Album_Ban() {
+  // 배너리스트 호버시 앨범명 보이기 함수
+  const showTxt = (txt) => {
+    const tgBan = $(".txt_align")
+    tgBan.text() = txt;
+  };
 
   const sel_data = ban_data.main;
-  
+
   return (
     <main className="contents_wrap">
       <h2>DISCOGRAPHY</h2>
       <div className="contents_inner">
         <div className="album_list">
           <ul>
-           { sel_data.map((x,i)=>
-            <li key={i}>
-              <img src={x.isrc} alt={"여자아이들의 " + x.mtit + " 앨범"}/>
-            </li>
-           )
-            }
+            {sel_data.map((x, i) => (
+              <>
+              <li key={i} onMouseOver={() => showTxt(x.mtit)}>
+                <img src={x.isrc} alt={"여자아이들의 " + x.mtit + " 앨범"} />
+              </li>
+              <div className="albumInfo_box">
+              <div className="txt_align">
+                <h2></h2>
+              </div>
+            </div>
+              </>
+            ))}
           </ul>
         </div>
       </div>
     </main>
   );
 }
-
-
 
 export { Main_Ban, Profile_Ban, Video_Ban, Album_Ban };
