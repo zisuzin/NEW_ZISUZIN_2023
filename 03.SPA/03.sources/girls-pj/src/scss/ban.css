@@ -175,7 +175,7 @@
   height: 100%;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 12px;
   z-index: 90;
-  background-color: #c26fdc;
+  background-color: #d388eb;
 }
 
 .album_cover7 {
@@ -183,7 +183,7 @@
   height: 100%;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 12px;
   z-index: 90;
-  background-color: #373736;
+  background-color: #222;
 }
 
 .album_cover_inner {
@@ -664,7 +664,6 @@ input[type=range]::-webkit-slider-thumb:active {
 .albumlist_wrap .contents_right {
   position: relative;
   width: 600px;
-  overflow: hidden;
   padding-left: 3.5vw;
 }
 .albumlist_wrap .contents_right .album_info > p {
@@ -673,15 +672,32 @@ input[type=range]::-webkit-slider-thumb:active {
 .albumlist_wrap .contents_right .album_tit > p {
   font-size: 4vw;
   font-family: NEXONFootballGothicBA1;
+  text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
 }
 .albumlist_wrap .contents_left {
   position: relative;
   width: 500px;
   height: auto;
-  overflow: hidden;
+}
+.albumlist_wrap .contents_left .back_btn {
+  position: absolute;
+  top: -50px;
 }
 
 .release_date > p {
   font-size: 1.2vw;
   color: #000;
+}
+
+.track-list {
+  text-align: center;
+}
+.track-list .contents-title {
+  font-family: NEXONFootballGothicBA1;
+  font-size: 4vw;
+  text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+}
+
+.album_cover > img {
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
 }/*# sourceMappingURL=ban.css.map */

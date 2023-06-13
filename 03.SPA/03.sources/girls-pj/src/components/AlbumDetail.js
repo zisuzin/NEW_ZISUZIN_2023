@@ -11,8 +11,8 @@ function AlbumDetail() {
 
   return (
     <>
-      <main>
-        <section className="albumlist_wrap half">
+      <main id="albumlist_bx" style={{background:eachAlbum.bgcolor}}>
+        <section className="albumlist_wrap">
           {/* 1. 좌측 컨텐츠 */}
           <div className="contents_left">
             {/* 1-1. 뒤로가기 버튼 */}
@@ -35,18 +35,35 @@ function AlbumDetail() {
           <div className="contents_right">
             {/* 2-1.앨범 타이틀 */}
             <div className="album_tit">
-              <p>{eachAlbum.mtit.replace(/-/g, "")}</p>
+              {/* txcolor 문자열에 ^가 없다면 그냥 txcolor 색상 출력 */}
+              <p style={{color: eachAlbum.txcolor.indexOf('^') == -1? eachAlbum.txcolor : eachAlbum.txcolor.split('^')[0]}}>
+                {eachAlbum.mtit.replace(/-/g, "")}
+                </p>
             </div>
             <div className="album_info">
-              <p>
-              {eachAlbum.info.split("^").map((segment, index) => (
-                <React.Fragment key={index}>
-                  {segment}
-                  <br />
-                </React.Fragment>
-              ))}
+              {/* txcolor 문자열에 ^가 있다면 txcolor.split('^')[1] 색상 출력 */}
+              <p style={{color: eachAlbum.txcolor.indexOf('^') !== -1? eachAlbum.txcolor.split('^')[1] : eachAlbum.txcolor}}>
+                {eachAlbum.info.split("^").map((segment, index) => (
+                  <React.Fragment key={index}>
+                    {segment}
+                    <br />
+                  </React.Fragment>
+                ))}
               </p>
             </div>
+          </div>
+        </section>
+        <section className="track-list">
+          <h2 className="contents-title">TRACK</h2>
+          <div className="list-wrap">
+            <ol>
+              { eachAlbum.track.map((x,i)=>
+              <li key={i}>
+                <span>{x}</span>
+              </li>
+              )
+              }
+            </ol>
           </div>
         </section>
       </main>

@@ -23,6 +23,7 @@ $open-sans-font: "Open Sans", sans-serif;
 $nexon-font: NEXONFootballGothicBA1;
 $noto-sans-font: Noto Sans KR;
 $icon-content: "\ebae";
+$album_tit_shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
 
 /* 배경이미지박스 */
 .bgbx {
@@ -163,12 +164,13 @@ $icon-content: "\ebae";
 
 .album_cover6 {
   @include ablum_cover;
-  background-color: #c26fdc;
+  background-color: #d388eb;
 }
 
 .album_cover7 {
   @include ablum_cover;
-  background-color: #373736;
+  // background-color: #373736;
+  background-color: #222;
 }
 
 .album_cover_inner {
@@ -680,25 +682,29 @@ input[type="range"]::-webkit-slider-thumb:active {
   .contents_right {
     position: relative;
     width: 600px;
-    overflow: hidden;
     padding-left: 3.5vw;
 
     .album_info > p {
       text-align: justify;
     }
-    
+
     .album_tit > p {
       font-size: 4vw;
       font-family: $nexon-font;
+      text-shadow: $album_tit_shadow;
     }
   }
-  
+
   .contents_left {
     position: relative;
     width: 500px;
     height: auto;
-    overflow: hidden;
-}
+
+    .back_btn {
+      position: absolute;
+      top: -50px;
+    }
+  }
 }
 
 .release_date > p {
@@ -706,3 +712,16 @@ input[type="range"]::-webkit-slider-thumb:active {
   color: #000;
 }
 
+.track-list {
+  text-align: center;
+
+  .contents-title {
+    font-family: $nexon-font;
+    font-size: 4vw;
+    text-shadow: $album_tit_shadow;
+  }
+}
+
+.album_cover > img {
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
+}
