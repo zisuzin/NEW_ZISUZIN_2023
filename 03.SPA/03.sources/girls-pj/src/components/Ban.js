@@ -223,6 +223,13 @@ function Gallery_Ban() {
           <Gal1_comp cat={sel_data} />
         </div>
       </div>
+      <nav className="go_lft_rgt_btn">
+        <div className="lft_rgt_btn_wrap">
+          <div id="go_prev_btn"></div>
+          <div id="go_btn_dots"></div>
+          <div id="go_next_btn"></div>
+        </div>
+      </nav>
     </main>
   );
 }
