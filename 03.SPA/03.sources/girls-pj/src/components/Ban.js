@@ -192,22 +192,21 @@ function Album_Ban() {
   );
 }
 
+// 갤러리1 컴포넌트
 function Gal1_comp(props) {
-  const galVal = props.cat;
-  console.log(galVal[0])
+  const galVal = props.cat[0];
 
   return (
-  <div className="album_list">
-    <ul>
-      {galVal.map((x, i) => (
-        <li key={i}>
-          <img src={`./images/gallery/${x.galtit}/gal${i+1}.jpg`} alt={'여자아이들의 '+ x.galtit + "앨범이미지"} />
-        </li>
-      ))}
-    </ul>
-  </div>
-  )
-
+    <div className="gal1_cont">
+      <ul>
+        {galVal.galisrc.map((x, i) => (
+          <li className={"gal1_img" + (i + 1)} key={i}>
+            <img src={`./images/gallery/${galVal.galtit}/${x}.jpg`} alt={"여자아이들의 " + galVal.galtit + " 앨범이미지"} />
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 }
 
 // 갤러리 출력용 컴포넌트
@@ -219,13 +218,9 @@ function Gallery_Ban() {
       <h2>Gallery</h2>
       {/* 앨범명 */}
       <h3>I feel</h3>
-      <div className="contents_inner">
-        <div className="album_list">
-          <ul>
-            <li>
-              <Gal1_comp cat={sel_data} />
-            </li>
-          </ul>
+      <div className="gal_img_wrap">
+        <div className="gal_img_inner">
+          <Gal1_comp cat={sel_data} />
         </div>
       </div>
     </main>
