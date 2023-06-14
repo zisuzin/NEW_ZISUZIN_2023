@@ -1,6 +1,6 @@
 // 배너 컴포넌트 - Ban.js
 import { useEffect } from "react";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 // 스와이퍼 컴포넌트
 import { Swiper, SwiperSlide } from "swiper/react";
 // 스와이퍼 네비게이션 컴포넌트
@@ -162,6 +162,7 @@ function Video_Ban(props) {
   );
 }
 
+// 앨범 출력용 컴포넌트
 function Album_Ban() {
   const sel_data = ban_data.main;
 
@@ -174,13 +175,13 @@ function Album_Ban() {
             {sel_data.map((x, i) => (
               <li key={i}>
                 <Link to={`/album/${i}`}>
-                <img src={x.isrc} alt={"여자아이들의 " + x.mtit + " 앨범"} />
-                <div className="albumInfo_box">
-                  <div className="txt_align">
-                    <h5>{x.altop_txt.split('^')[1]}</h5>
-                    <h2>{x.mtit.replace(/-/g, "")}</h2>
+                  <img src={x.isrc} alt={"여자아이들의 " + x.mtit + " 앨범"} />
+                  <div className="albumInfo_box">
+                    <div className="txt_align">
+                      <h5>{x.altop_txt.split("^")[1]}</h5>
+                      <h2>{x.mtit.replace(/-/g, "")}</h2>
+                    </div>
                   </div>
-                </div>
                 </Link>
               </li>
             ))}
@@ -188,8 +189,27 @@ function Album_Ban() {
         </div>
       </div>
     </main>
-
   );
 }
 
-export { Main_Ban, Profile_Ban, Video_Ban, Album_Ban };
+// 갤러리 출력용 컴포넌트
+function Gallery_Ban() {
+  return (
+    <main className="contents_wrap">
+      <h2>Gallery</h2>
+      {/* 앨범명 */}
+      <h3>I feel</h3>
+      <div className="contents_inner">
+        <div className="album_list">
+          <ul>
+            <li>
+              <img src="" alt="" />
+            </li>
+          </ul>
+        </div>
+      </div>
+    </main>
+  );
+}
+
+export { Main_Ban, Profile_Ban, Video_Ban, Album_Ban, Gallery_Ban };

@@ -165,6 +165,16 @@ const ban_data = {
       date: "2020-04-06",
     },
   ],
+  gallery: [
+    {
+      galtit: "I feel",
+      galisrc: [], 
+    },
+    {
+      galtit: "EXPECTATIONS",
+      galisrc: [], 
+    },
+  ]
 };
 
 export default ban_data;
