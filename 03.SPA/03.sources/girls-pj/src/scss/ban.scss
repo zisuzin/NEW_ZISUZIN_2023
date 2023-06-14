@@ -21,7 +21,7 @@
 @mixin album_align {
   float: left;
   width: 50%;
-} 
+}
 
 @mixin gal1_s_img_size {
   width: 129px;
@@ -745,32 +745,13 @@ input[type="range"]::-webkit-slider-thumb:active {
 }
 
 .gal1_cont {
-  ul {
-    display: flex;
-    flex-wrap: wrap;
+  position: relative;
+  width: 100%;
+
+  ul > li {
+    .gal1_cont ul > li {
+      padding-bottom: 1.5vw;
+      display: inline-block;
+    }
   }
-
-  .gal1_cont li:nth-child(2n) {
-    width: 200px;
-    height: auto;
-}
-
-  // .gal1_img1 {
-  //   width: 323px;
-  //   height: 216px;
-  //   margin: 0 auto;
-  // }
-  
-  // .gal1_img2 {
-  //   @include gal1_s_img_size;
-  //   position: absolute;
-  //   top: 0;
-  // }
-  
-  // .gal1_img3 {
-  //   @include gal1_s_img_size;
-  //   position: absolute;
-  //   right: 0;
-  //   top: 0;
-  // }
 }

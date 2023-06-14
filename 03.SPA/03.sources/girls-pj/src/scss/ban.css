@@ -712,11 +712,11 @@ input[type=range]::-webkit-slider-thumb:active {
   position: relative;
 }
 
-.gal1_cont ul {
-  display: flex;
-  flex-wrap: wrap;
+.gal1_cont {
+  position: relative;
+  width: 100%;
 }
-.gal1_cont .gal1_cont li:nth-child(2n) {
-  width: 200px;
-  height: auto;
+.gal1_cont ul > li .gal1_cont ul > li {
+  padding-bottom: 1.5vw;
+  display: inline-block;
 }/*# sourceMappingURL=ban.css.map */
