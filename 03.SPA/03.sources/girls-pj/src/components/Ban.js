@@ -225,9 +225,21 @@ function Gallery_Ban() {
       </div>
       <nav className="go_lft_rgt_btn">
         <div className="lft_rgt_btn_wrap">
-          <div id="go_prev_btn"></div>
-          <div id="go_btn_dots"></div>
-          <div id="go_next_btn"></div>
+          <div id="go_prev_btn">
+            <svg viewBox="0 0 6 10" xmlns="http://www.w3.org/2000/svg" fill="none">
+              <path d="m5.216 9.4-4.2-4.2 4.2-4.2" stroke="#000" stroke-width=".7"></path>
+            </svg>
+          </div>
+          <div id="go_btn_dots">
+            <span class="chapter_1">I</span>
+            <span class="chapter_2">I</span>
+            <span class="chapter_3">I</span>
+          </div>
+          <div id="go_next_btn">
+            <svg viewBox="0 0 6 10" xmlns="http://www.w3.org/2000/svg" fill="none">
+              <path d="m5.216 9.4-4.2-4.2 4.2-4.2" stroke="#000" stroke-width=".7"></path>
+            </svg>
+          </div>
         </div>
       </nav>
     </main>
