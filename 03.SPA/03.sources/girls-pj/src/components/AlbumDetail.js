@@ -54,12 +54,12 @@ function AlbumDetail() {
           </div>
         </section>
         <section className="track-list">
-          <h2 className="contents-title">TRACK</h2>
+          <h2 className="contents-title" style={{color: eachAlbum.txcolor.indexOf('^') == -1? eachAlbum.txcolor : eachAlbum.txcolor.split('^')[0]}}>TRACK</h2>
           <div className="list-wrap">
             <ol>
               { eachAlbum.track.map((x,i)=>
               <li key={i}>
-                <span>{x}</span>
+                <span style={{color: eachAlbum.txcolor.indexOf('^') !== -1? eachAlbum.txcolor.split('^')[1] : eachAlbum.txcolor}}>{x}</span>
               </li>
               )
               }
