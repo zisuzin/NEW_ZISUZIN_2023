@@ -18,7 +18,9 @@ function AlbumDetail() {
             {/* 1-1. 뒤로가기 버튼 */}
             <div className="back_btn">
               <Link to="/al">
-                <span>＜BACK</span>
+                <span style={{color: eachAlbum.txcolor.indexOf('^') !== -1? eachAlbum.txcolor.split('^')[1] : eachAlbum.txcolor}}>
+                  ＜BACK
+                </span>
               </Link>
             </div>
             {/* 1-2. 앨범 커버 이미지 */}
@@ -27,8 +29,12 @@ function AlbumDetail() {
             </div>
             {/* 1-3. 앨범 발매일 */}
             <div className="release_date">
-              <p>Release Date</p>
-              <p>{eachAlbum.release}</p>
+              <p style={{color: eachAlbum.txcolor.indexOf('^') !== -1? eachAlbum.txcolor.split('^')[1] : eachAlbum.txcolor}}>
+                Release Date
+              </p>
+              <p style={{color: eachAlbum.txcolor.indexOf('^') !== -1? eachAlbum.txcolor.split('^')[1] : eachAlbum.txcolor}}>
+                {eachAlbum.release}
+              </p>
             </div>
           </div>
           {/* 2. 우측 컨텐츠 */}
@@ -38,7 +44,7 @@ function AlbumDetail() {
               {/* txcolor 문자열에 ^가 없다면 그냥 txcolor 색상 출력 */}
               <p style={{color: eachAlbum.txcolor.indexOf('^') == -1? eachAlbum.txcolor : eachAlbum.txcolor.split('^')[0]}}>
                 {eachAlbum.mtit.replace(/-/g, "")}
-                </p>
+              </p>
             </div>
             <div className="album_info">
               {/* txcolor 문자열에 ^가 있다면 txcolor.split('^')[1] 색상 출력 */}
@@ -54,12 +60,16 @@ function AlbumDetail() {
           </div>
         </section>
         <section className="track-list">
-          <h2 className="contents-title" style={{color: eachAlbum.txcolor.indexOf('^') == -1? eachAlbum.txcolor : eachAlbum.txcolor.split('^')[0]}}>TRACK</h2>
+          <h2 className="contents-title" style={{color: eachAlbum.txcolor.indexOf('^') == -1? eachAlbum.txcolor : eachAlbum.txcolor.split('^')[0]}}>
+            TRACK
+          </h2>
           <div className="list-wrap">
             <ol>
               { eachAlbum.track.map((x,i)=>
               <li key={i}>
-                <span style={{color: eachAlbum.txcolor.indexOf('^') !== -1? eachAlbum.txcolor.split('^')[1] : eachAlbum.txcolor}}>{x}</span>
+                <span style={{color: eachAlbum.txcolor.indexOf('^') !== -1? eachAlbum.txcolor.split('^')[1] : eachAlbum.txcolor}}>
+                  {x}
+                </span>
               </li>
               )
               }
