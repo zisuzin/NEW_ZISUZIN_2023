@@ -194,6 +194,8 @@ function Album_Ban() {
 
 // 갤러리 출력용 컴포넌트
 function Gallery_Ban() {
+  const sel_data = ban_data.gallery;
+
   return (
     <main className="contents_wrap">
       <h2>Gallery</h2>
@@ -203,7 +205,7 @@ function Gallery_Ban() {
         <div className="album_list">
           <ul>
             <li>
-              <img src="" alt="" />
+              <img src={`'./images/gallery/'+'.jpg'`} alt="" />
             </li>
           </ul>
         </div>

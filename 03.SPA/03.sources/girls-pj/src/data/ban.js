@@ -168,11 +168,19 @@ const ban_data = {
   gallery: [
     {
       galtit: "I feel",
-      galisrc: [], 
+      galisrc: "gal", 
     },
     {
-      galtit: "EXPECTATIONS",
-      galisrc: [], 
+      galtit: "I love",
+      galisrc: "gal"
+    },
+    {
+      galtit: "MY",
+      galisrc: "gal"
+    },
+    {
+      galtit: "I NEVER DIE",
+      galisrc: "gal"
     },
   ]
 };
