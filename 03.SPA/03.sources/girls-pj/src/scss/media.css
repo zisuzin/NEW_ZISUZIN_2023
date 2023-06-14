@@ -47,4 +47,16 @@
         width: 100% !important;
         padding: 0 !important;
     }
+
+    .album_tit {
+        text-align: center;
+    }
+
+    #albumlist_bx {
+        padding: 100px 5.5vw 5.09vw;
+    }
+
+    .albumlist_wrap {
+        padding: 0 !important;
+    }
 }
