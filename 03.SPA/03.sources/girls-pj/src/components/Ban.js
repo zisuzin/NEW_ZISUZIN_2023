@@ -10,8 +10,8 @@ import $ from "jquery";
 
 // 배너CSS
 import "../scss/ban.css";
-// 미디어쿼리CSS
-import "../scss/media.css";
+// // 미디어쿼리CSS
+// import "../scss/media.css";
 
 // Import Swiper styles
 import "swiper/css";

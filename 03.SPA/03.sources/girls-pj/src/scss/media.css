@@ -1,19 +1,25 @@
 @charset "utf-8";
 
 /* 비디오 페이지 */
-@media screen and (min-width: 1060px) {
+/* @media screen and (min-width: 1060px) {
     body {
         overflow-x: hidden;
+    }
+} */
+
+@media screen and (min-width: 930px) {
+    .album_list li:nth-child(3n) {
+        margin-right: 0;
     }
 }
 
 /* 앨범 페이지 */
 @media screen and (max-width: 930px) {
     .contents_wrap {
-        padding: 25.97vw 5.09vw 25.14vw;
+        padding: 25.97vw 5.09vw 25.14vw !important;
     }
 
-    .album_list li {
+    .album_list li+li {
         width: 48.44%;
         margin-right: 3.12%;
         margin-bottom: 3.12%;
@@ -24,6 +30,21 @@
     }
 
     .album_list li:first-child {
-        width: 100%;
+        width: 100% !important;
+        margin-right: 0 !important;
+    }
+}
+
+/* 앨범 상세 페이지 */
+@media screen and (max-width: 915px) {
+    .albumlist_wrap {
+        flex-wrap: wrap;
+    }
+
+    .albumlist_wrap .contents_left,
+    .albumlist_wrap .contents_right {
+        float: none !important;
+        width: 100% !important;
+        padding: 0 !important;
     }
 }

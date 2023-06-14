@@ -12,7 +12,7 @@ const ban_data = {
       track: ["1. 퀸카(Queencard)", "2. Allergy", "3. Lucid", "4. All Night", "5. Paradise", "6. 어린 어른"],
       release: "2023-05-15",
       bgcolor: "pink",
-      txcolor: "#e84461"
+      txcolor: "#e84461",
     },
     {
       isrc: "./images/album/alb1.jpg",

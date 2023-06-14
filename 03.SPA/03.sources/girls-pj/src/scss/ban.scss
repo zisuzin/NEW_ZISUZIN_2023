@@ -2,6 +2,7 @@
 
 @import url(./fonts.css);
 @import url(../index.css);
+@import url(./media.css);
 
 @mixin ablum_cover {
   width: 50%;
@@ -16,6 +17,11 @@
   font-family: "$noto-sans-font";
   text-align: center;
 }
+
+@mixin album_align {
+  float: left;
+  width: 50%;
+} 
 
 $main-w-color: #fff;
 $msp-info-between: 200px;
@@ -683,6 +689,7 @@ input[type="range"]::-webkit-slider-thumb:active {
     position: relative;
     width: 600px;
     padding-left: 3.5vw;
+    @include album_align;
 
     .album_info > p {
       text-align: justify;
@@ -699,6 +706,7 @@ input[type="range"]::-webkit-slider-thumb:active {
     position: relative;
     width: 500px;
     height: auto;
+    @include album_align;
 
     .back_btn {
       position: absolute;
