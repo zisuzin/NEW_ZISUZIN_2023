@@ -223,11 +223,12 @@ function Gal1_comp(props) {
 // 갤러리 출력용 컴포넌트
 function Gallery_Ban() {
   const sel_data = ban_data.gallery;
+  let prevIndex = 1;
 
   const [handleClick, setHandleClick] = useState(false);
 
   const handleNextClick = () => {
-    setHandleClick((prevIndex) => (prevIndex + 1) % sel_data.length); // 다음 갤러리 인덱스로 변경
+    setHandleClick((prevIndex) => (prevIndex + 1) % sel_data.length) // 다음 갤러리 인덱스로 변경
   };
 
   const handlePrevClick = () => {
@@ -243,16 +244,16 @@ function Gallery_Ban() {
       </main>
       <nav className="go_lft_rgt_btn">
         <div className="lft_rgt_btn_wrap">
-          <div id="go_prev_btn">
+          <div id="go_prev_btn" onClick={handlePrevClick}>
             <svg viewBox="0 0 6 10" xmlns="http://www.w3.org/2000/svg" fill="none">
-              <path d="m5.216 9.4-4.2-4.2 4.2-4.2" stroke="#000" stroke-width=".7"></path>
+              <path d="m5.216 9.4-4.2-4.2 4.2-4.2" stroke="#000" strokeWidth=".7"></path>
             </svg>
           </div>
           <div id="go_btn_dots">
           {sel_data.map((_, index) => (
               <span
                 key={index}
-                className={`gallery_dot ${index === handleClick ? 'active' : ''}`}
+                className={`gallery_dot${index+1} ${index === handleClick ? 'active' : ''}`}
                 style={{ fontWeight: index === handleClick ? '700' : '400' }}
               >
                 I
@@ -261,7 +262,7 @@ function Gallery_Ban() {
           </div>
           <div id="go_next_btn" onClick={handleNextClick}>
             <svg viewBox="0 0 6 10" xmlns="http://www.w3.org/2000/svg" fill="none">
-              <path d="m5.216 9.4-4.2-4.2 4.2-4.2" stroke="#000" stroke-width=".7"></path>
+              <path d="m5.216 9.4-4.2-4.2 4.2-4.2" stroke="#000" strokeWidth=".7"></path>
             </svg>
           </div>
         </div>
