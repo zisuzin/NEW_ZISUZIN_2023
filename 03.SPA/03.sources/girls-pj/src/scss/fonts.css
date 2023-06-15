@@ -1,7 +1,11 @@
 /* Open Sans */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&display=swap');
-/* notosans CDN */
+
+/* notosans */
 @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+/* Noto Serif Korean */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300&display=swap');
 
 /* notosanskr */
 .notosanskr { 

@@ -586,14 +586,14 @@ input[type="range"]::-webkit-slider-thumb:active {
   position: relative;
   width: 100%;
   max-width: 1440px;
-  padding: 157px 180px 131px;
+  padding: 40px 180px 40px;
   overflow: hidden;
 
   h2 {
     text-align: center;
     font-family: $nexon-font;
     font-size: 3.5vw;
-    margin: 20px 0;
+    margin-bottom: 10px;
   }
 
   #main_mv {
@@ -754,12 +754,13 @@ input[type="range"]::-webkit-slider-thumb:active {
   .gal1_img2 {
     left: 7%;
     top: 4%;
-    margin-left: 7%;
-    margin-top: -30%;
+    width: 14%;
+    margin-left: 19.5%;
+    margin-top: -22.5%;
   }
 
   .gal1_img1 {
-    width: 45%;
+    width: 30%;
     left: 50%;
     margin-left: auto;
     margin-right: auto;
@@ -770,7 +771,7 @@ input[type="range"]::-webkit-slider-thumb:active {
     margin-top: -30%;
     top: 2%;
     margin-left: 75%;
-}
+  }
 
   .gal1_img8 {
     margin-top: 1%;
@@ -786,19 +787,19 @@ input[type="range"]::-webkit-slider-thumb:active {
     width: 26% !important;
     margin-left: 28%;
     margin-top: 5.2%;
-}
+  }
 
-.gal1_img5 {
-  margin-top: -27%;
-  margin-left: 75%;
-  width: 13%;
-}
+  .gal1_img5 {
+    margin-top: -27%;
+    margin-left: 75%;
+    width: 13%;
+  }
 
-.gal1_img6 {
-  margin-top: -15%;
+  .gal1_img6 {
+    margin-top: -15%;
     margin-left: 56%;
     width: 17%;
-}
+  }
 }
 
 .contents_wrap > h3 {
@@ -808,10 +809,32 @@ input[type="range"]::-webkit-slider-thumb:active {
 .lft_rgt_btn_wrap {
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 100%;
+  height: 5%;
   position: absolute;
   right: 0;
   left: 0;
-  height: auto;
+  border: 1px solid #000;
   bottom: 0;
+}
+
+#go_prev_btn > svg,
+#go_next_btn > svg {
+  width: 20px;
+  height: 10px;
+}
+
+#go_btn_dots > span {
+  font-family: 'Noto Serif KR', serif;
+}
+
+#go_next_btn {
+  svg {
+    transform: rotate(180deg);
+  }
+}
+
+#go_btn_dots {
+  padding: 0 30px;
 }

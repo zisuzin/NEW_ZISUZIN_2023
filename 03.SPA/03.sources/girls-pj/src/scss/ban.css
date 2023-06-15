@@ -565,14 +565,14 @@ input[type=range]::-webkit-slider-thumb:active {
   position: relative;
   width: 100%;
   max-width: 1440px;
-  padding: 157px 180px 131px;
+  padding: 40px 180px 40px;
   overflow: hidden;
 }
 .contents_wrap h2 {
   text-align: center;
   font-family: NEXONFootballGothicBA1;
   font-size: 3.5vw;
-  margin: 20px 0;
+  margin-bottom: 10px;
 }
 .contents_wrap #main_mv {
   width: 100%;
@@ -721,11 +721,12 @@ input[type=range]::-webkit-slider-thumb:active {
 .gal1_cont .gal1_img2 {
   left: 7%;
   top: 4%;
-  margin-left: 7%;
-  margin-top: -30%;
+  width: 14%;
+  margin-left: 19.5%;
+  margin-top: -22.5%;
 }
 .gal1_cont .gal1_img1 {
-  width: 45%;
+  width: 30%;
   left: 50%;
   margin-left: auto;
   margin-right: auto;
@@ -762,4 +763,35 @@ input[type=range]::-webkit-slider-thumb:active {
 
 .contents_wrap > h3 {
   text-align: center;
+}
+
+.lft_rgt_btn_wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 5%;
+  position: absolute;
+  right: 0;
+  left: 0;
+  border: 1px solid #000;
+  bottom: 0;
+}
+
+#go_prev_btn > svg,
+#go_next_btn > svg {
+  width: 20px;
+  height: 10px;
+}
+
+#go_btn_dots > span {
+  font-family: "Noto Serif KR", serif;
+}
+
+#go_next_btn svg {
+  transform: rotate(180deg);
+}
+
+#go_btn_dots {
+  padding: 0 30px;
 }/*# sourceMappingURL=ban.css.map */
