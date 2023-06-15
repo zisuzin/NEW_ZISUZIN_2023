@@ -225,6 +225,8 @@ function Gallery_Ban() {
   const sel_data = ban_data.gallery;
   let prevIndex = 1;
 
+  const firstSpan = $(".gallery_dot1")
+
   const [handleClick, setHandleClick] = useState(false);
 
   const handleNextClick = () => {
@@ -254,7 +256,7 @@ function Gallery_Ban() {
               <span
                 key={index}
                 className={`gallery_dot${index+1} ${index === handleClick ? 'active' : ''}`}
-                style={{ fontWeight: index === handleClick ? '700' : '400' }}
+                style={{ fontWeight: index === handleClick ? '700': '400'}}
               >
                 I
               </span>
