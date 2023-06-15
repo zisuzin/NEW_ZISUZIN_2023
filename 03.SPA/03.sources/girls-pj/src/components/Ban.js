@@ -214,6 +214,7 @@ function Gallery_Ban() {
   const sel_data = ban_data.gallery;
 
   return (
+    <>
     <main className="contents_wrap">
       <h2>Gallery</h2>
       {/* 앨범명 */}
@@ -223,6 +224,7 @@ function Gallery_Ban() {
           <Gal1_comp cat={sel_data} />
         </div>
       </div>
+    </main>
       <nav className="go_lft_rgt_btn">
         <div className="lft_rgt_btn_wrap">
           <div id="go_prev_btn">
@@ -242,7 +244,7 @@ function Gallery_Ban() {
           </div>
         </div>
       </nav>
-    </main>
+    </>
   );
 }
 

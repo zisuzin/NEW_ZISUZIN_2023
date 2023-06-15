@@ -586,14 +586,13 @@ input[type="range"]::-webkit-slider-thumb:active {
   position: relative;
   width: 100%;
   max-width: 1440px;
-  padding: 40px 180px 40px;
+  padding: 40px 180px 25px;
   overflow: hidden;
 
   h2 {
     text-align: center;
     font-family: $nexon-font;
     font-size: 3.5vw;
-    margin-bottom: 10px;
   }
 
   #main_mv {
@@ -747,16 +746,12 @@ input[type="range"]::-webkit-slider-thumb:active {
 
   ul > li {
     padding-bottom: 1.5vw;
-    margin-right: 1.5%;
-    width: 18%;
   }
 
   .gal1_img2 {
-    left: 7%;
-    top: 4%;
-    width: 14%;
-    margin-left: 19.5%;
-    margin-top: -22.5%;
+    width: 12.5%;
+    margin-left: 21.5%;
+    margin-top: -23%;
   }
 
   .gal1_img1 {
@@ -767,10 +762,9 @@ input[type="range"]::-webkit-slider-thumb:active {
   }
 
   .gal1_img3 {
-    right: 6%;
-    margin-top: -30%;
-    top: 2%;
-    margin-left: 75%;
+    width: 13%;
+    margin-top: -19%;
+    margin-left: 66%;
   }
 
   .gal1_img8 {
@@ -784,21 +778,21 @@ input[type="range"]::-webkit-slider-thumb:active {
   }
 
   .gal1_img4 {
-    width: 26% !important;
+    width: 23.5%;
     margin-left: 28%;
-    margin-top: 5.2%;
+    margin-top: 1%;
   }
 
   .gal1_img5 {
-    margin-top: -27%;
-    margin-left: 75%;
+    margin-top: -21.5%;
+    margin-left: 68.5%;
     width: 13%;
   }
 
   .gal1_img6 {
-    margin-top: -15%;
-    margin-left: 56%;
-    width: 17%;
+    margin-top: -18%;
+    margin-left: 53%;
+    width: 14%;
   }
 }
 
@@ -816,7 +810,7 @@ input[type="range"]::-webkit-slider-thumb:active {
   right: 0;
   left: 0;
   border: 1px solid #000;
-  bottom: 0;
+  bottom: auto;
 }
 
 #go_prev_btn > svg,
@@ -837,4 +831,9 @@ input[type="range"]::-webkit-slider-thumb:active {
 
 #go_btn_dots {
   padding: 0 30px;
+
+  .chapter_1 {
+    color: #000;
+    font-weight: 600;
+  }
 }
