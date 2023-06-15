@@ -757,6 +757,8 @@ input[type=range]::-webkit-slider-thumb:active {
 
 .contents_wrap > h3 {
   text-align: center;
+  font-size: 1.5vw;
+  margin-bottom: 20px;
 }
 
 .lft_rgt_btn_wrap {
@@ -776,6 +778,7 @@ input[type=range]::-webkit-slider-thumb:active {
 #go_next_btn > svg {
   width: 20px;
   height: 10px;
+  cursor: pointer;
 }
 
 #go_btn_dots > span {

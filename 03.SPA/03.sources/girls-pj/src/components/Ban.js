@@ -1,5 +1,5 @@
 // 배너 컴포넌트 - Ban.js
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 // 스와이퍼 컴포넌트
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -197,34 +197,50 @@ function Gal1_comp(props) {
   const galVal = props.cat[0];
 
   return (
-    <div className="gal1_cont">
-      <ul>
-        {galVal.galisrc.map((x, i) => (
-          <li className={"gal1_img" + (i + 1)} key={i}>
-            <img src={`./images/gallery/${galVal.galtit}/${x}.jpg`} alt={"여자아이들의 " + galVal.galtit + " 앨범이미지"} />
-          </li>
-        ))}
-      </ul>
-    </div>
+    <>
+      <h3>Album Title : {galVal.galtit}</h3>
+      <div className="gal1_cont">
+        {/* 앨범명 */}
+        <div className="gal_img_wrap">
+          <div className="gal_img_inner">
+            <ul>
+              {galVal.galisrc.map((x, i) => (
+                <li className={"gal1_img" + (i + 1)} key={i}>
+                  <img src={`./images/gallery/${galVal.galtit}/${x}.jpg`} alt={"여자아이들의 " + galVal.galtit + " 앨범이미지"} />
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </>
   );
 }
+
+// // 갤러리2 컴포넌트
+// function Gal2_comp
 
 // 갤러리 출력용 컴포넌트
 function Gallery_Ban() {
   const sel_data = ban_data.gallery;
 
+  const [handleClick, setHandleClick] = useState(false);
+
+  const handleNextClick = () => {
+    setHandleClick((prevIndex) => (prevIndex + 1) % sel_data.length); // 다음 갤러리 인덱스로 변경
+  };
+
+  const handlePrevClick = () => {
+    setHandleClick((prevIndex) => (prevIndex - 1 + sel_data.length) % sel_data.length); // 이전 갤러리 인덱스로 변경
+  };
+
   return (
     <>
-    <main className="contents_wrap">
-      <h2>Gallery</h2>
-      {/* 앨범명 */}
-      <h3>I feel</h3>
-      <div className="gal_img_wrap">
-        <div className="gal_img_inner">
-          <Gal1_comp cat={sel_data} />
-        </div>
-      </div>
-    </main>
+      <main className="contents_wrap">
+        <h2>Gallery</h2>
+        {/* 컴포넌트 출력 부분 */}
+        <Gal1_comp cat={sel_data} />
+      </main>
       <nav className="go_lft_rgt_btn">
         <div className="lft_rgt_btn_wrap">
           <div id="go_prev_btn">
@@ -233,11 +249,17 @@ function Gallery_Ban() {
             </svg>
           </div>
           <div id="go_btn_dots">
-            <span class="chapter_1">I</span>
-            <span class="chapter_2">I</span>
-            <span class="chapter_3">I</span>
+          {sel_data.map((_, index) => (
+              <span
+                key={index}
+                className={`gallery_dot ${index === handleClick ? 'active' : ''}`}
+                style={{ fontWeight: index === handleClick ? '700' : '400' }}
+              >
+                I
+              </span>
+            ))}
           </div>
-          <div id="go_next_btn">
+          <div id="go_next_btn" onClick={handleNextClick}>
             <svg viewBox="0 0 6 10" xmlns="http://www.w3.org/2000/svg" fill="none">
               <path d="m5.216 9.4-4.2-4.2 4.2-4.2" stroke="#000" stroke-width=".7"></path>
             </svg>
