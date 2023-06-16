@@ -6,19 +6,49 @@ import "../scss/player.css";
 import ban_data from "../data/ban";
 import $ from "jquery";
 
-// 제이쿼리 로드구역 함수 /////////
-function jqFn() {
-    $(() => {}); //////// jQB ///////////
-} ////////////// jQFn ///////////
+let audio; 
 
+function handleplayer() {
+  audio = $("#music")[0];
+  const play_btn = $(".play_song_btn");
+  const elapsed = $("#elapsed");
+  const total = $("#total_timer");
+  const current = $("#progress_timer");
+  const volumeBar = $("#volume");
+
+  // 오디오 재생/멈춤버튼 토글
+  play_btn.click(function() {
+    play_btn.toggleClass("active");
+    /* active 클래스 가지고있으면 이미지 변경! */
+    if (play_btn.hasClass("active") && audio.paused) {
+      play_btn.find("img").attr("src", "./images/player/bx-pause.svg");
+      audio.play();
+    } else {
+      play_btn.find("img").attr("src", "./images/player/bx-play-circle.svg");
+      audio.pause();
+    }
+  });
+
+  // 오디오 볼륨 조절
+  volumeBar.on("input" , "#volume", function() { // 볼륨 조절바를 조작할때 이벤트 발생!
+    const volumeVal = $(this).val(); // 오디오 요소 - 현재 볼륨값을 값으로 가져옴
+    audio.volume = volumeVal;
+  })
+  
+} // handleplayer 함수
+
+$(document).ready(function() {
+  handleplayer();
+});
 
 // 플레이어 출력용 컴포넌트
 function Player(props) {
   const sel_data = ban_data[props.cat];
+
   return (
     <>
       {sel_data.map((x, i) => (
-        <div className="player" key={i}> 
+        <div className={"player msp" + (i + 1)} key={i}> 
           <span id="arm"></span>
           <ul>
             <li className="artwork">
@@ -28,7 +58,7 @@ function Player(props) {
             </li>
             <li className="info">
               {/* 곡 정보 */}
-              <h1 id="album">{x.mtit}</h1>
+              <h1 id="album">{x.mtit.replace(/-/g,"")}</h1>
               <h4 id="artist">(G)I-DLe</h4>
               <h2 id="song">{x.mtit}</h2>
               <div className="button-items">
@@ -69,10 +99,8 @@ function Player(props) {
           </ul>
         </div>
       ))}
-      {/* 빈루트를 만들고 JS로드함수포함 */}
-      {jqFn()}
     </>
   );
-}
+} // Player 함수
 
 export default Player;

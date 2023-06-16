@@ -110,7 +110,6 @@ $icon-content: "\ebae";
 
 .controls {
   margin: 5px 0 0 -8px;
-  cursor: pointer;
 
   span {
     display: inline-block;
@@ -122,6 +121,7 @@ $icon-content: "\ebae";
 
   .play_song_btn {
     filter: brightness(0) invert(1);
+    cursor: pointer;
 
     > img {
       width: 30px;
@@ -160,6 +160,7 @@ input[type="range"] {
 	border-radius: 14px;
 	padding: 0px 1px;
 	background: rgb(21, 21, 24);
+  cursor: pointer;
 }
 
 /* 볼륨조절바 컨트롤러 */
