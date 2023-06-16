@@ -101,14 +101,15 @@
 }
 .controls span > i {
   font-size: 30px;
+  vertical-align: bottom;
 }
 .controls .play_song_btn {
   filter: brightness(0) invert(1);
   cursor: pointer;
+  vertical-align: bottom;
 }
 .controls .play_song_btn > img {
   width: 30px;
-  vertical-align: bottom;
 }
 .controls .prev_song_btn > i:before,
 .controls .play_song_btn > i:before,

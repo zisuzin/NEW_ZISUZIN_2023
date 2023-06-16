@@ -1,15 +1,13 @@
 // 플레이어 컴포넌트 - Player.js
-import React, { useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 // 플레이어CSS
 import "../scss/player.css";
 // 배너 데이터
 import ban_data from "../data/ban";
 import $ from "jquery";
 
-// LP 회전 각도 초기화
+// LP 회전각도 초기화 변수
 let rotation = 0;
-// // 회전여부 변수
-// let isRotating = false;
 
 function handleplayer() {
   let audio = $("#music")[0];
@@ -57,6 +55,13 @@ function handleplayer() {
     lp.css("transform", "rotate(" + rotation + "deg)");
     requestAnimationFrame(stopLp);
   }
+
+    // 오디오 볼륨 조절
+    volumeBar.on("change", function() { // 볼륨 조절바를 조작할때 이벤트 발생!
+      const volumeVal = $(this).val(); // 오디오 요소 - 현재 볼륨값을 값으로 가져옴
+      console.log(volumeVal)
+      // audio.volume = volumeVal;
+    })
 } // handleplayer 함수
 
 $(document).ready(function () {
@@ -65,13 +70,19 @@ $(document).ready(function () {
 
 // 플레이어 출력용 컴포넌트
 function Player(props) {
+  const audioPlayer = useRef();
   const sel_data = ban_data[props.cat];
-  const [volume, setVolume] = useState(1);
+  const [volume, setVolume] = useState(1);  
 
   const handleVolumeChange = (event) => {
     const volumeValue = event.target.value;
+  
+    if (audioPlayer.current) {
+      audioPlayer.current.volume = volumeValue / 100;
+    }
     setVolume(volumeValue);
   };
+
   return (
     <>
       {sel_data.map((x, i) => (
@@ -118,7 +129,7 @@ function Player(props) {
                   </span>
                   <div className="slider">
                     <div className="volume"></div>
-                    <input type="range" id="volume" min="0" max="1" step="0.01" value={volume} onChange={handleVolumeChange} />
+                    <input type="range" id="volume" min={0} max={100} step={1} value={volume} onChange={handleVolumeChange}/>
                   </div>
                 </div>
               </div>

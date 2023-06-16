@@ -117,15 +117,16 @@ $icon-content: "\ebae";
 
   span > i {
     font-size: 30px;
+    vertical-align: bottom;
   }
 
   .play_song_btn {
     filter: brightness(0) invert(1);
     cursor: pointer;
+    vertical-align: bottom;
 
     > img {
       width: 30px;
-      vertical-align: bottom;
     }
   };
   
