@@ -83,7 +83,6 @@
 /* 곡 현재 재생시간 / 전체시간 */
 .timer {
   color: rgb(99, 99, 103);
-  line-height: 0;
   display: inline-block;
   font-size: 9pt;
   font-family: Arial, Sans-Serif;
@@ -97,6 +96,9 @@
 .controls {
   margin: 5px 0 0 -8px;
   cursor: pointer;
+}
+.controls span {
+  display: inline-block;
 }
 .controls span > i {
   font-size: 30px;
