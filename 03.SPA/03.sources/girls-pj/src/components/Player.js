@@ -1,7 +1,7 @@
 // 플레이어 컴포넌트 - Player.js
 import React, { useRef, useState, useEffect } from "react";
 // 오디오 재생/컨트롤 라이브러리
-import { Howl } from 'howler';
+import { Howl } from "howler";
 // 플레이어CSS
 import "../scss/player.css";
 // 배너 데이터
@@ -88,61 +88,85 @@ function Player(props) {
     setVolume(volumeValue);
   };
 
+  const [currentSongIndex, setCurrentSongIndex] = useState(0);
+  const soundRef = useRef(null);
+  
+  // 다음 버튼 클릭시 다음 곡 재생 
+  const playNextSong = () => {
+    const nextIndex = (currentSongIndex + 1) % sel_data.length;
+    setCurrentSongIndex(nextIndex);
+    playAudio(sel_data[nextIndex].vsrc);
+  };
+
+  // Howl 라이브러리(이전/다음 곡 컨트롤)
+  const playAudio = (audioSrc) => {
+    if (soundRef.current) {
+      soundRef.current.stop();
+    }
+    
+    const sound = new Howl({
+      src: [audioSrc],
+      html5: true,
+      onend: playNextSong, 
+    });
+    sound.play();
+    soundRef.current = sound; // 현재 재생 중인 곡을 참조
+  };
+
+  const x = ban_data.main[currentSongIndex];
+  console.log(x)
+
   return (
-    <>
-      {sel_data.map((x, i) => (
-        <div className={"player msp" + (i + 1)} key={i}>
-          <span id="arm"></span>
-          <ul>
-            <li className="artwork">
-              <a href="#">
-                <img src={x.isrc} alt="레코드이미지" />
-              </a>
-            </li>
-            <li className="info">
-              {/* 곡 정보 */}
-              <h1 id="album">{x.mtit.replace(/-/g, "")}</h1>
-              <h4 id="artist">(G)I-DLe</h4>
-              <h2 id="song">{x.mtit}</h2>
-              <div className="button-items">
-                <audio id="music">
-                  <source src={x.vsrc} type="audio/mp3" />
-                </audio>
-                {/* 음반 리스트 */}
-                <div id="slider">
-                  {/* 음원 재생시간 프로그레스바 */}
-                  <div id="elapsed"></div>
-                  <div id="buffered"></div>
-                </div>
-                {/* 현재 재생시간 */}
-                <p id="progress_timer" className="timer">
-                  00:00
-                </p>
-                {/* 총 재생시간 */}
-                <p id="total_timer" className="timer">
-                  00:00
-                </p>
-                <div className="controls">
-                  <span className="prev_song_btn">
-                    <i className="bx bx-skip-previous"></i>
-                  </span>
-                  <span className="play_song_btn">
-                    <img src={"./images/player/bx-play-circle.svg"} alt="정지버튼" />
-                  </span>
-                  <span className="next_song_btn">
-                    <i className="bx bx-skip-next"></i>
-                  </span>
-                  <div className="slider">
-                    <div className="volume"></div>
-                    <input type="range" id="volume" min={0} max={100} step={1} value={volume} onChange={handleVolumeChange} />
-                  </div>
-                </div>
+    <div className={"player"}>
+      <span id="arm"></span>
+      <ul>
+        <li className="artwork">
+          <a href="#">
+            <img src={x.isrc} alt="레코드이미지" />
+          </a>
+        </li>
+        <li className="info">
+          {/* 곡 정보 */}
+          <h1 id="album">{x.mtit.replace(/-/g, "")}</h1>
+          <h4 id="artist">(G)I-DLe</h4>
+          <h2 id="song">{x.mtit}</h2>
+          <div className="button-items">
+            <audio id="music">
+              <source src={x.vsrc} type="audio/mp3" />
+            </audio>
+            {/* 음반 리스트 */}
+            <div id="slider">
+              {/* 음원 재생시간 프로그레스바 */}
+              <div id="elapsed"></div>
+              <div id="buffered"></div>
+            </div>
+            {/* 현재 재생시간 */}
+            <p id="progress_timer" className="timer">
+              00:00
+            </p>
+            {/* 총 재생시간 */}
+            <p id="total_timer" className="timer">
+              00:00
+            </p>
+            <div className="controls">
+              <span className="prev_song_btn">
+                <i className="bx bx-skip-previous"></i>
+              </span>
+              <span className="play_song_btn">
+                <img src={"./images/player/bx-play-circle.svg"} alt="정지버튼" />
+              </span>
+              <span className="next_song_btn" onClick={playNextSong}>
+                <i className="bx bx-skip-next"></i>
+              </span>
+              <div className="slider">
+                <div className="volume"></div>
+                <input type="range" id="volume" min={0} max={100} step={1} value={volume} onChange={handleVolumeChange} />
               </div>
-            </li>
-          </ul>
-        </div>
-      ))}
-    </>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
   );
 } // Player 함수
 
