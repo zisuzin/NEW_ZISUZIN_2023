@@ -1,5 +1,6 @@
 // 플레이어 컴포넌트 - Player.js
 import React, { useRef, useState, useEffect } from "react";
+import AudioPlayer from 'react-audio-player';
 // 플레이어CSS
 import "../scss/player.css";
 // 배너 데이터
@@ -57,11 +58,11 @@ function handleplayer() {
   }
 
     // 오디오 볼륨 조절
-    volumeBar.on("change", function() { // 볼륨 조절바를 조작할때 이벤트 발생!
-      const volumeVal = $(this).val(); // 오디오 요소 - 현재 볼륨값을 값으로 가져옴
-      console.log(volumeVal)
-      // audio.volume = volumeVal;
-    })
+    // volumeBar.on("change", function() { // 볼륨 조절바를 조작할때 이벤트 발생!
+    //   const volumeVal = $(this).val(); // 오디오 요소 - 현재 볼륨값을 값으로 가져옴
+    //   console.log(volumeVal)
+    //   // audio.volume = volumeVal;
+    // })
 } // handleplayer 함수
 
 $(document).ready(function () {
@@ -70,22 +71,32 @@ $(document).ready(function () {
 
 // 플레이어 출력용 컴포넌트
 function Player(props) {
-  const audioPlayer = useRef();
+  const audioPlayer = useRef(null);
   const sel_data = ban_data[props.cat];
   const [volume, setVolume] = useState(1);  
 
   const handleVolumeChange = (event) => {
     const volumeValue = event.target.value;
-  
-    if (audioPlayer.current) {
-      audioPlayer.current.volume = volumeValue / 100;
-    }
-    setVolume(volumeValue);
+
+    // audioPlayer.current.volume = volumeValue;
+    // setVolume(volumeValue);
+
+    // console.log(audioPlayer.current.volume)
+    const audioElement = audioPlayer.current;
+    audioElement.volume = volumeValue;
+  setVolume(volumeValue);
   };
 
   return (
     <>
-      {sel_data.map((x, i) => (
+    <div>
+      <AudioPlayer
+        src="path/to/your/audio/file.mp3" // 오디오 파일 경로
+        autoPlay // 자동 재생 설정
+        controls // 플레이어 컨트롤러 표시
+      />
+    </div>
+      {/* {sel_data.map((x, i) => (
         <div className={"player msp" + (i + 1)} key={i}>
           <span id="arm"></span>
           <ul>
@@ -94,27 +105,27 @@ function Player(props) {
                 <img src={x.isrc} alt="레코드이미지" />
               </a>
             </li>
-            <li className="info">
+            <li className="info"> */}
               {/* 곡 정보 */}
-              <h1 id="album">{x.mtit.replace(/-/g, "")}</h1>
+              {/* <h1 id="album">{x.mtit.replace(/-/g, "")}</h1>
               <h4 id="artist">(G)I-DLe</h4>
               <h2 id="song">{x.mtit}</h2>
               <div className="button-items">
-                <audio id="music">
-                  <source src={x.vsrc} type="audio/mp3" />
-                </audio>
+                <audio id="music" ref={audioPlayer}>
+                  <source src={x.vsrc} type="audio/mp3"/>
+                </audio> */}
                 {/* 음반 리스트 */}
-                <div id="slider">
+                {/* <div id="slider"> */}
                   {/* 음원 재생시간 프로그레스바 */}
-                  <div id="elapsed"></div>
+                  {/* <div id="elapsed"></div>
                   <div id="buffered"></div>
-                </div>
+                </div> */}
                 {/* 현재 재생시간 */}
-                <p id="progress_timer" className="timer">
+                {/* <p id="progress_timer" className="timer">
                   00:00
-                </p>
+                </p> */}
                 {/* 총 재생시간 */}
-                <p id="total_timer" className="timer">
+                {/* <p id="total_timer" className="timer">
                   00:00
                 </p>
                 <div className="controls">
@@ -129,14 +140,14 @@ function Player(props) {
                   </span>
                   <div className="slider">
                     <div className="volume"></div>
-                    <input type="range" id="volume" min={0} max={100} step={1} value={volume} onChange={handleVolumeChange}/>
+                    <input type="range" id="volume" min={0} max={1} step={0.01} value={volume} onChange={handleVolumeChange}/>
                   </div>
                 </div>
               </div>
             </li>
           </ul>
         </div>
-      ))}
+      ))} */}
     </>
   );
 } // Player 함수
