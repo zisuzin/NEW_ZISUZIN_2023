@@ -14,6 +14,7 @@ let rotation = 0;
 function handleplayer() {
   let audio = $("#music")[0];
   const play_btn = $(".play_song_btn");
+  const nxt_btn = $(".next_song_btn");
   const elapsed = $("#elapsed");
   const total = $("#total_timer");
   const current = $("#progress_timer");
@@ -32,6 +33,12 @@ function handleplayer() {
       play_btn.find("img").attr("src", "./images/player/bx-play-circle.svg");
       audio.pause();
       stopLp();
+    }
+  });
+
+  nxt_btn.click(function () {
+    if(play_btn.hasClass("active")){
+      audio.pause();
     }
   });
 
@@ -78,14 +85,6 @@ function Player(props) {
 
   const handleVolumeChange = (event) => {
     const volumeValue = event.target.value;
-
-    // audioPlayer.current.volume = volumeValue;
-    // setVolume(volumeValue);
-
-    // console.log(audioPlayer.current.volume)
-    const audioElement = audioPlayer.current;
-    audioElement.volume = volumeValue;
-    setVolume(volumeValue);
   };
 
   const [currentSongIndex, setCurrentSongIndex] = useState(0);
@@ -107,10 +106,9 @@ function Player(props) {
     const sound = new Howl({
       src: [audioSrc],
       html5: true,
-      onend: playNextSong, 
+      id:0,
+      // onend: playNextSong, 
     });
-    sound.play();
-    soundRef.current = sound; // 현재 재생 중인 곡을 참조
   };
 
   const x = ban_data.main[currentSongIndex];
