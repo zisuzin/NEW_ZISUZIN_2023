@@ -15,8 +15,6 @@ function handleplayer() {
   let audio = $("#music")[0];
   const play_btn = $(".play_song_btn");
   const elapsed = $("#elapsed");
-  const total = $("#total_timer");
-  const current = $("#progress_timer");
   const volumeBar = $("#volume");
   const lp = $(".artwork");
 
@@ -72,6 +70,10 @@ $(document).ready(function () {
 
 // 플레이어 출력용 컴포넌트
 function Player(props) {
+  const total = $("#total_timer");
+  const current = $("#progress_timer");
+  const elapsed = $("#elapsed");
+
   const audioPlayer = useRef(null);
   const sel_data = ban_data[props.cat];
   const [volume, setVolume] = useState(1);
@@ -86,15 +88,17 @@ function Player(props) {
   // 다음 버튼 클릭시 다음 순번부터 곡 재생 (1~0)
   const playNextSong = () => {
     const nextIndex = (currentSongIndex + 1) % sel_data.length;
-    setCurrentSongIndex("다음 순번:",nextIndex);
+    setCurrentSongIndex(nextIndex);
     // playAudio 함수에 src값 인자로 넘겨주며 호출!
     playAudio(sel_data[nextIndex].vsrc);
   };
 
   const playPrevSong = () => {
-    const prevIndex = (currentSongIndex - 1) % sel_data.length;
-    console.log("이전 순번:",prevIndex)
-  }
+    const prevIndex = (currentSongIndex - 1 + sel_data.length) % sel_data.length;
+    setCurrentSongIndex(prevIndex);
+    const audioSrc = sel_data[prevIndex].vsrc;
+    playAudio(audioSrc);
+  };
 
   const playAudio = (audioSrc) => {
     // 이전/다음버튼 클릭 전 음원 중지
@@ -106,9 +110,10 @@ function Player(props) {
       src: [audioSrc],
       html5: true,
     });
+    sound.play();
 
     // 현재 재생 중인 곡 참조
-    soundRef.current = sound; 
+    soundRef.current = sound;
 
     // 재생버튼에 클래스 .active 유무 확인으로 음원 재생/멈춤
     if ($(".play_song_btn").hasClass("active")) {
@@ -153,7 +158,7 @@ function Player(props) {
               00:00
             </p>
             <div className="controls">
-              <span className="prev_song_btn">
+              <span className="prev_song_btn" onClick={playPrevSong}>
                 <i className="bx bx-skip-previous"></i>
               </span>
               <span className="play_song_btn">
