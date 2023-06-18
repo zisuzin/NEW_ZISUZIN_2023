@@ -113,8 +113,8 @@
 .album_cd6 > .cd_center_circle,
 .album_cd7 > .cd_center_circle {
   position: absolute;
-  height: 16%;
-  width: 60px;
+  width: 20%;
+  height: 20%;
   left: 50%;
   margin: 0;
   background-color: rgb(255, 255, 255);

@@ -4,9 +4,11 @@ import React, { useRef, useState, useEffect } from "react";
 import { Howl } from "howler";
 // 플레이어CSS
 import "../scss/player.css";
+// 메인함수
+import {handleHover} from "../js/commonFn";
+import $ from "jquery";
 // 배너 데이터
 import ban_data from "../data/ban";
-import $ from "jquery";
 
 // LP 회전각도 초기화 변수
 let rotation = 0;
@@ -33,13 +35,6 @@ function handleplayer() {
     }
   });
 
-  // // 오디오 볼륨 조절
-  // volumeBar.on("change", function() { // 볼륨 조절바를 조작할때 이벤트 발생!
-  //   const volumeVal = $(this).val(); // 오디오 요소 - 현재 볼륨값을 값으로 가져옴
-  //   console.log(volumeVal)
-  //   audio.volume = volumeVal;
-  // })
-
   function rotateLp() {
     // 회전각 1씩 증가!
     rotation += 1;
@@ -56,16 +51,11 @@ function handleplayer() {
     requestAnimationFrame(stopLp);
   }
 
-  // 오디오 볼륨 조절
-  // volumeBar.on("change", function() { // 볼륨 조절바를 조작할때 이벤트 발생!
-  //   const volumeVal = $(this).val(); // 오디오 요소 - 현재 볼륨값을 값으로 가져옴
-  //   console.log(volumeVal)
-  //   // audio.volume = volumeVal;
-  // })
 } // handleplayer 함수
 
 $(document).ready(function () {
   handleplayer();
+  handleHover();
 });
 
 // 플레이어 출력용 컴포넌트
