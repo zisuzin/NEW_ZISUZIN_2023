@@ -14,7 +14,6 @@ let rotation = 0;
 function handleplayer() {
   let audio = $("#music")[0];
   const play_btn = $(".play_song_btn");
-  const nxt_btn = $(".next_song_btn");
   const elapsed = $("#elapsed");
   const total = $("#total_timer");
   const current = $("#progress_timer");
@@ -27,19 +26,14 @@ function handleplayer() {
     /* active 클래스 가지고있으면 이미지 변경! */
     if (play_btn.hasClass("active") && audio.paused) {
       play_btn.find("img").attr("src", "./images/player/bx-pause.svg");
+      // audio.play();
       rotateLp();
-    }
-    else {
+    } else {
       play_btn.find("img").attr("src", "./images/player/bx-play-circle.svg");
+      // audio.pause();
       stopLp();
     }
   });
-
-  // nxt_btn.click(function () {
-  //   if(play_btn.hasClass("active")){
-  //     audio.pause();
-  //   }
-  // });
 
   // // 오디오 볼륨 조절
   // volumeBar.on("change", function() { // 볼륨 조절바를 조작할때 이벤트 발생!
@@ -63,6 +57,13 @@ function handleplayer() {
     lp.css("transform", "rotate(" + rotation + "deg)");
     requestAnimationFrame(stopLp);
   }
+
+  // 오디오 볼륨 조절
+  // volumeBar.on("change", function() { // 볼륨 조절바를 조작할때 이벤트 발생!
+  //   const volumeVal = $(this).val(); // 오디오 요소 - 현재 볼륨값을 값으로 가져옴
+  //   console.log(volumeVal)
+  //   // audio.volume = volumeVal;
+  // })
 } // handleplayer 함수
 
 $(document).ready(function () {
@@ -77,27 +78,26 @@ function Player(props) {
 
   const handleVolumeChange = (event) => {
     const volumeValue = event.target.value;
-
-    // audioPlayer.current.volume = volumeValue;
-    // setVolume(volumeValue);
-
-    // console.log(audioPlayer.current.volume)
-    const audioElement = audioPlayer.current;
-    audioElement.volume = volumeValue;
-    setVolume(volumeValue);
   };
 
   const [currentSongIndex, setCurrentSongIndex] = useState(0);
   const soundRef = useRef(null);
-  
-  // // 재생버튼 클릭시 현재곡 인덱스 재생
-  // const playcurrentSong = () => { // (sel_data[0].vsrc)
-  //   setCurrentSongIndex(0);
-  //   playAudio(sel_data[0].vsrc);
-  // }
 
-  // Howl 라이브러리(이전/다음 곡 컨트롤)
+  // 다음 버튼 클릭시 다음 순번부터 곡 재생 (1~0)
+  const playNextSong = () => {
+    const nextIndex = (currentSongIndex + 1) % sel_data.length;
+    setCurrentSongIndex("다음 순번:",nextIndex);
+    // playAudio 함수에 src값 인자로 넘겨주며 호출!
+    playAudio(sel_data[nextIndex].vsrc);
+  };
+
+  const playPrevSong = () => {
+    const prevIndex = (currentSongIndex - 1) % sel_data.length;
+    console.log("이전 순번:",prevIndex)
+  }
+
   const playAudio = (audioSrc) => {
+    // 이전/다음버튼 클릭 전 음원 중지
     if (soundRef.current) {
       soundRef.current.stop();
     }
@@ -106,36 +106,19 @@ function Player(props) {
       src: [audioSrc],
       html5: true,
     });
-    soundRef.current = sound; // 현재 재생 중인 곡을 참조
-    sound.play();
-  };
 
-  const stopAudio = () => {
-    if (soundRef.current) {
-      soundRef.current.stop();
+    // 현재 재생 중인 곡 참조
+    soundRef.current = sound; 
+
+    // 재생버튼에 클래스 .active 유무 확인으로 음원 재생/멈춤
+    if ($(".play_song_btn").hasClass("active")) {
+      sound.play();
+    } else {
+      sound.stop();
     }
   };
-
-  // 다음 버튼 클릭시 다음 곡 인덱스순부터 재생
-  const playNextSong = () => { // (sel_data[1~6].vsrc)
-    const nextIndex = (currentSongIndex + 1) % sel_data.length;
-    setCurrentSongIndex(nextIndex);
-    
-    if($(".play_song_btn").hasClass("active")) {
-      playAudio(sel_data[nextIndex].vsrc);
-    }
-    else {
-      stopAudio();
-    }
-  };
-
-  // const stopAudio = () => {
-  //   audioPlayer.current.pause();
-  //   audioPlayer.current.currentTime = 0;
-  // };
 
   const x = ban_data.main[currentSongIndex];
-  // console.log(x)
 
   return (
     <div className={"player"}>
