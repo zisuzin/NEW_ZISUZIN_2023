@@ -90,19 +90,6 @@ function Player(props) {
   const [currentSongIndex, setCurrentSongIndex] = useState(0);
   const soundRef = useRef(null);
   
-  // 다음 버튼 클릭시 다음 곡 인덱스순부터 재생
-  const playNextSong = () => { // (sel_data[1~6].vsrc)
-    const nextIndex = (currentSongIndex + 1) % sel_data.length;
-    setCurrentSongIndex(nextIndex);
-    
-    if($(".play_song_btn").hasClass("active")) {
-      playAudio(sel_data[nextIndex].vsrc);
-    }
-    else {
-      
-    }
-  };
-
   // // 재생버튼 클릭시 현재곡 인덱스 재생
   // const playcurrentSong = () => { // (sel_data[0].vsrc)
   //   setCurrentSongIndex(0);
@@ -122,6 +109,30 @@ function Player(props) {
     soundRef.current = sound; // 현재 재생 중인 곡을 참조
     sound.play();
   };
+
+  const stopAudio = () => {
+    if (soundRef.current) {
+      soundRef.current.stop();
+    }
+  };
+
+  // 다음 버튼 클릭시 다음 곡 인덱스순부터 재생
+  const playNextSong = () => { // (sel_data[1~6].vsrc)
+    const nextIndex = (currentSongIndex + 1) % sel_data.length;
+    setCurrentSongIndex(nextIndex);
+    
+    if($(".play_song_btn").hasClass("active")) {
+      playAudio(sel_data[nextIndex].vsrc);
+    }
+    else {
+      stopAudio();
+    }
+  };
+
+  // const stopAudio = () => {
+  //   audioPlayer.current.pause();
+  //   audioPlayer.current.currentTime = 0;
+  // };
 
   const x = ban_data.main[currentSongIndex];
   // console.log(x)
