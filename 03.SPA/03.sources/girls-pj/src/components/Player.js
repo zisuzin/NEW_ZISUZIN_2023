@@ -64,13 +64,6 @@ function handleplayer() {
     lp.css("transform", "rotate(" + rotation + "deg)");
     requestAnimationFrame(stopLp);
   }
-
-  // 오디오 볼륨 조절
-  // volumeBar.on("change", function() { // 볼륨 조절바를 조작할때 이벤트 발생!
-  //   const volumeVal = $(this).val(); // 오디오 요소 - 현재 볼륨값을 값으로 가져옴
-  //   console.log(volumeVal)
-  //   // audio.volume = volumeVal;
-  // })
 } // handleplayer 함수
 
 $(document).ready(function () {
@@ -90,14 +83,14 @@ function Player(props) {
   const [currentSongIndex, setCurrentSongIndex] = useState(0);
   const soundRef = useRef(null);
   
-  // 다음 버튼 클릭시 다음 곡 재생 
+  // // 다음 버튼 클릭시 다음 곡 재생 
   const playNextSong = () => {
     const nextIndex = (currentSongIndex + 1) % sel_data.length;
     setCurrentSongIndex(nextIndex);
     playAudio(sel_data[nextIndex].vsrc);
   };
 
-  // Howl 라이브러리(이전/다음 곡 컨트롤)
+  // // Howl 라이브러리(이전/다음 곡 컨트롤)
   const playAudio = (audioSrc) => {
     if (soundRef.current) {
       soundRef.current.stop();

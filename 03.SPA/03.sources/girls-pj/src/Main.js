@@ -8,7 +8,7 @@ const Main = () => {
       {/* 1. 배너모듈 */}
       <Main_Ban cat="main" />
       {/* 2. 플레이어모듈 */}
-      <Player cat="main" />
+      <Player cat="main"/>
     </>
   );
 };
