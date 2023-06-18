@@ -27,20 +27,19 @@ function handleplayer() {
     /* active 클래스 가지고있으면 이미지 변경! */
     if (play_btn.hasClass("active") && audio.paused) {
       play_btn.find("img").attr("src", "./images/player/bx-pause.svg");
-      audio.play();
       rotateLp();
-    } else {
+    }
+    else {
       play_btn.find("img").attr("src", "./images/player/bx-play-circle.svg");
-      audio.pause();
       stopLp();
     }
   });
 
-  nxt_btn.click(function () {
-    if(play_btn.hasClass("active")){
-      audio.pause();
-    }
-  });
+  // nxt_btn.click(function () {
+  //   if(play_btn.hasClass("active")){
+  //     audio.pause();
+  //   }
+  // });
 
   // // 오디오 볼륨 조절
   // volumeBar.on("change", function() { // 볼륨 조절바를 조작할때 이벤트 발생!
@@ -78,34 +77,54 @@ function Player(props) {
 
   const handleVolumeChange = (event) => {
     const volumeValue = event.target.value;
+
+    // audioPlayer.current.volume = volumeValue;
+    // setVolume(volumeValue);
+
+    // console.log(audioPlayer.current.volume)
+    const audioElement = audioPlayer.current;
+    audioElement.volume = volumeValue;
+    setVolume(volumeValue);
   };
 
   const [currentSongIndex, setCurrentSongIndex] = useState(0);
   const soundRef = useRef(null);
   
-  // // 다음 버튼 클릭시 다음 곡 재생 
-  const playNextSong = () => {
+  // 다음 버튼 클릭시 다음 곡 인덱스순부터 재생
+  const playNextSong = () => { // (sel_data[1~6].vsrc)
     const nextIndex = (currentSongIndex + 1) % sel_data.length;
     setCurrentSongIndex(nextIndex);
-    playAudio(sel_data[nextIndex].vsrc);
+    
+    if($(".play_song_btn").hasClass("active")) {
+      playAudio(sel_data[nextIndex].vsrc);
+    }
+    else {
+      
+    }
   };
 
-  // // Howl 라이브러리(이전/다음 곡 컨트롤)
+  // // 재생버튼 클릭시 현재곡 인덱스 재생
+  // const playcurrentSong = () => { // (sel_data[0].vsrc)
+  //   setCurrentSongIndex(0);
+  //   playAudio(sel_data[0].vsrc);
+  // }
+
+  // Howl 라이브러리(이전/다음 곡 컨트롤)
   const playAudio = (audioSrc) => {
     if (soundRef.current) {
       soundRef.current.stop();
     }
-    
+
     const sound = new Howl({
       src: [audioSrc],
       html5: true,
-      id:0,
-      // onend: playNextSong, 
     });
+    soundRef.current = sound; // 현재 재생 중인 곡을 참조
+    sound.play();
   };
 
   const x = ban_data.main[currentSongIndex];
-  console.log(x)
+  // console.log(x)
 
   return (
     <div className={"player"}>
