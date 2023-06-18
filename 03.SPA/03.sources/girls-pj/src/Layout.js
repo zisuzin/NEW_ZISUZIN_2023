@@ -1,17 +1,6 @@
 import { Link, Outlet } from "react-router-dom";
 import "./scss/layout.css";
-
-/****************************************** 
-    함수명: handleToggle
-    기능: 원형 네비 메뉴 클릭시 GNB 등장
-******************************************/
-function handleToggle() {
-  const nav = document.querySelector(".circular_nav");
-  const toggleBtn = nav.querySelector(".toggle_btn");
-
-  nav.classList.toggle("active");
-  toggleBtn.classList.toggle("active");
-}
+import { handleToggle } from "./js/commonFn";
 
 const Layout = () => {
   return (
@@ -61,5 +50,8 @@ const Layout = () => {
     </>
   );
 };
+
+// 함수호출!
+handleToggle();
 
 export default Layout;

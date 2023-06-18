@@ -6,6 +6,10 @@ html,body,ul,ol,li,div,span,article,aside,section,h1,h2,h4,h5,input,audio,button
     padding: 0;
 }
 
+body {
+    overflow-y: hidden;
+}
+
 a {
     color: #000;
     text-decoration: none;

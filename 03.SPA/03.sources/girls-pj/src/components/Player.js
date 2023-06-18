@@ -5,7 +5,7 @@ import { Howl } from "howler";
 // 플레이어CSS
 import "../scss/player.css";
 // 메인함수
-import {handleHover} from "../js/commonFn";
+import { handleHover, /* handleWheel */ } from "../js/commonFn";
 import $ from "jquery";
 // 배너 데이터
 import ban_data from "../data/ban";
@@ -54,8 +54,12 @@ function handleplayer() {
 } // handleplayer 함수
 
 $(document).ready(function () {
+  // Player 함수
   handleplayer();
+  // CD Hover함수
   handleHover();
+  // CD Wheel 함수
+  // handleWheel();
 });
 
 // 플레이어 출력용 컴포넌트
