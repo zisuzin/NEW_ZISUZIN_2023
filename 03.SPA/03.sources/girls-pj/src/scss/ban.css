@@ -421,6 +421,7 @@ em {
   max-width: 1440px;
   padding: 40px 180px 25px;
   overflow: hidden;
+  margin: 0 auto;
 }
 .contents_wrap h2 {
   text-align: center;

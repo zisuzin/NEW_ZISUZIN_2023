@@ -3,6 +3,7 @@
 const ban_data = {
   main: [
     {
+      idx: 0,
       isrc: "./images/album/alb0.jpg",
       vsrc: "./audios/i feel.mp3",
       mtit: "I feel",
@@ -15,6 +16,7 @@ const ban_data = {
       txcolor: "#e84461",
     },
     {
+      idx: 1,
       isrc: "./images/album/alb1.jpg",
       vsrc: "./audios/Expectations.mp3",
       mtit: "EXPEC-TATIONS",
@@ -27,6 +29,7 @@ const ban_data = {
       txcolor: "#fff^#d8d8d8",
     },
     {
+      idx: 2,
       isrc: "./images/album/alb2.jpg",
       vsrc: "./audios/Nxde.mp3",
       mtit: "Nxde",
@@ -39,6 +42,7 @@ const ban_data = {
       txcolor: "#000",
     },
     {
+      idx: 3,
       isrc: "./images/album/alb3.jpg",
       vsrc: "./audios/i love.mp3",
       mtit: "I love",
@@ -51,6 +55,7 @@ const ban_data = {
       txcolor: "#d39876^#d39876",
     },
     {
+      idx: 4,
       isrc: "./images/album/alb4.jpg",
       vsrc: "./audios/dumdi dumdi.mp3",
       mtit: "DUMDi DUMDi",
@@ -63,6 +68,7 @@ const ban_data = {
       txcolor: "#000",
     },
     {
+      idx: 5,
       isrc: "./images/album/alb5.jpg",
       vsrc: "./audios/i am.mp3",
       mtit: "I am",
@@ -75,6 +81,7 @@ const ban_data = {
       txcolor: "#5c0d8e^#861aa3",
     },
     {
+      idx: 6,
       isrc: "./images/album/alb6.jpg",
       vsrc: "./audios/tomboy.mp3",
       mtit: "TOMBOY",
