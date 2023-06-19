@@ -2,13 +2,12 @@
 import React, { useRef, useState, useEffect } from "react";
 // 오디오 재생/컨트롤 라이브러리
 import { Howl } from "howler";
+import { Reaplay } from 'reaplay'
 // 플레이어CSS
 import "../scss/player.css";
-// 메인함수
-import { handleHover } from "../js/commonFn";
-import $ from "jquery";
 // 배너 데이터
 import ban_data from "../data/ban";
+import $ from "jquery";
 
 // LP 회전각도 초기화 변수
 let rotation = 0;
@@ -17,6 +16,8 @@ function handleplayer() {
   let audio = $("#music")[0];
   const play_btn = $(".play_song_btn");
   const elapsed = $("#elapsed");
+  const total = $("#total_timer");
+  const current = $("#progress_timer");
   const volumeBar = $("#volume");
   const lp = $(".artwork");
 
@@ -35,6 +36,13 @@ function handleplayer() {
     }
   });
 
+  // // 오디오 볼륨 조절
+  // volumeBar.on("change", function() { // 볼륨 조절바를 조작할때 이벤트 발생!
+  //   const volumeVal = $(this).val(); // 오디오 요소 - 현재 볼륨값을 값으로 가져옴
+  //   console.log(volumeVal)
+  //   audio.volume = volumeVal;
+  // })
+
   function rotateLp() {
     // 회전각 1씩 증가!
     rotation += 1;
@@ -51,23 +59,20 @@ function handleplayer() {
     requestAnimationFrame(stopLp);
   }
 
+  // 오디오 볼륨 조절
+  // volumeBar.on("change", function() { // 볼륨 조절바를 조작할때 이벤트 발생!
+  //   const volumeVal = $(this).val(); // 오디오 요소 - 현재 볼륨값을 값으로 가져옴
+  //   console.log(volumeVal)
+  //   // audio.volume = volumeVal;
+  // })
 } // handleplayer 함수
 
 $(document).ready(function () {
-  // Player 함수
   handleplayer();
-  // CD Hover함수
-  handleHover();
-  // CD Wheel 함수
-  // handleWheel();
 });
 
 // 플레이어 출력용 컴포넌트
 function Player(props) {
-  const total = $("#total_timer");
-  const current = $("#progress_timer");
-  const elapsed = $("#elapsed");
-
   const audioPlayer = useRef(null);
   const sel_data = ban_data[props.cat];
   const [volume, setVolume] = useState(1);
@@ -82,17 +87,15 @@ function Player(props) {
   // 다음 버튼 클릭시 다음 순번부터 곡 재생 (1~0)
   const playNextSong = () => {
     const nextIndex = (currentSongIndex + 1) % sel_data.length;
-    setCurrentSongIndex(nextIndex);
+    setCurrentSongIndex("다음 순번:",nextIndex);
     // playAudio 함수에 src값 인자로 넘겨주며 호출!
     playAudio(sel_data[nextIndex].vsrc);
   };
 
   const playPrevSong = () => {
-    const prevIndex = (currentSongIndex - 1 + sel_data.length) % sel_data.length;
-    setCurrentSongIndex(prevIndex);
-    const audioSrc = sel_data[prevIndex].vsrc;
-    playAudio(audioSrc);
-  };
+    const prevIndex = (currentSongIndex - 1) % sel_data.length;
+    console.log("이전 순번:",prevIndex)
+  }
 
   const playAudio = (audioSrc) => {
     // 이전/다음버튼 클릭 전 음원 중지
@@ -104,10 +107,9 @@ function Player(props) {
       src: [audioSrc],
       html5: true,
     });
-    sound.play();
 
     // 현재 재생 중인 곡 참조
-    soundRef.current = sound;
+    soundRef.current = sound; 
 
     // 재생버튼에 클래스 .active 유무 확인으로 음원 재생/멈춤
     if ($(".play_song_btn").hasClass("active")) {
@@ -117,9 +119,22 @@ function Player(props) {
     }
   };
 
+  const srcList = [
+    "I feel",
+    "EXPEC-TATIONS",
+    "Nxde",
+    "I love",
+    "DUMDi DUMDi",
+    "I am",
+    "TOMBOY",
+  ]
+
   const x = ban_data.main[currentSongIndex];
+  console.log(x)
 
   return (
+  <Reaplay tracks={srcList} startIndex={1}>
+    {(player)=> {console.log(player.isLoading)}}
     <div className={"player"}>
       <span id="arm"></span>
       <ul>
@@ -152,7 +167,7 @@ function Player(props) {
               00:00
             </p>
             <div className="controls">
-              <span className="prev_song_btn" onClick={playPrevSong}>
+              <span className="prev_song_btn">
                 <i className="bx bx-skip-previous"></i>
               </span>
               <span className="play_song_btn">
@@ -163,13 +178,14 @@ function Player(props) {
               </span>
               <div className="slider">
                 <div className="volume"></div>
-                <input type="range" id="volume" min={0} max={100} step={1} value={volume} onChange={handleVolumeChange} />
+                <input type="range" id="volume" min={0} max={100} step={1} /* value={player.volume} onChange={(e) => player.setVolume(e.target.value)} */ />
               </div>
             </div>
           </div>
         </li>
       </ul>
     </div>
+  </Reaplay>
   );
 } // Player 함수
 

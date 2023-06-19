@@ -118,17 +118,6 @@ function handleToggle() {
 //   const current = $("#progress_timer");
 //   const volumeBar = $("#volume");
 
-//   // 오디오 재생/멈춤버튼 토글
-//   paused_btn.click(function () {
-//     paused_btn.toggleClass("active");
-//     /* active 클래스 가지고있으면 이미지 변경! */
-//     if (paused_btn.hasClass("active")) {
-//       paused_btn.find("img").attr("src", "../00.data/02.imgData/player/bx-pause.svg");
-//     } else {
-//       paused_btn.find("img").attr("src", "../00.data/02.imgData/player/bx-play-circle.svg");
-//     }
-//   });
-
 //   // 오디오의 재생 시간이 업데이트될 때마다 함수 호출!
 //   audio.addEventListener("timeupdate", function () { // timeupdate - 오디오 또는 비디오의 재생 시간이 변경될 때마다 발생하는 이벤트
 //     // 오디오의 재생 시간과 전체 재생 시간 가져오기
@@ -154,21 +143,6 @@ function handleToggle() {
 //     elapsed.css("width", progress);
 //   });
 
-//   play_btn.click(function () {
-//     if (audio.paused) {
-//       // 재생버튼 클릭시 음원 재생
-//       audio.play();
-//     } else {
-//       audio.pause();
-//     }
-//   });
-
-//   // 오디오 볼륨 조절
-//   volumeBar.on("input", function() { // 볼륨 조절바를 조작할때 이벤트 발생!
-//     const volumeVal = $(this).val(); // 오디오 요소 - 현재 볼륨값을 값으로 가져옴
-//     audio.volume = volumeVal;
-//   })
-// }
 
 
 window.addEventListener("wheel", handleWheel);
