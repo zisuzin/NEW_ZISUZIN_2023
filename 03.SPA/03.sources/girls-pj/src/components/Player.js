@@ -5,7 +5,7 @@ import { Howl } from "howler";
 // 플레이어CSS
 import "../scss/player.css";
 // 메인함수
-import { handleHover, /* handleWheel */ } from "../js/commonFn";
+import { handleHover } from "../js/commonFn";
 import $ from "jquery";
 // 배너 데이터
 import ban_data from "../data/ban";

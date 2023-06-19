@@ -32,11 +32,11 @@ function handleWheel(e) {
 
   // delta값이 음수인 경우 (위로 휠-> 위로 이동)
     if (delta < 0) {
-      console.log("위로휠!:",delta)
+      // console.log("위로휠!:",delta)
       // ele.style.top = currentTop + delta + "px";
         let fe = document.querySelectorAll(".album_wrap li")[0];
       moveSl.insertBefore(tgsl[6], fe);
-      console.log(fe);
+      // console.log(fe);
       moveSl.style.top = "-360px";
       moveSl.style.transition = "none";
       setTimeout(()=>{
@@ -46,13 +46,13 @@ function handleWheel(e) {
     }
     // delta값이 양수인 경우 (아래로 휠-> 아래로 이동)
     else if (delta > 0) {
-      console.log("아래로휠!:",delta)
+      // console.log("아래로휠!:",delta)
       moveSl.style.top = "-360px";
       moveSl.style.transition = "1s ease-out";
       setTimeout(()=>{
         // ele.style.top = currentTop + delta + "px";
         let fe = document.querySelectorAll(".album_wrap li")[0];
-        console.log(fe);
+        // console.log(fe);
         moveSl.appendChild(fe);
         moveSl.style.transition = "none";
         moveSl.style.top = "3vh";
@@ -173,4 +173,4 @@ function handleToggle() {
 
 window.addEventListener("wheel", handleWheel);
 
-export { handleHover, handleToggle, handleWheel };
+export { handleHover, handleToggle };
