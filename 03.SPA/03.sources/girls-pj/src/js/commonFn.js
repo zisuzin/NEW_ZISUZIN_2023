@@ -1,6 +1,7 @@
 // PC - 휠이벤트 + 메인배너이동
 
 import { qs, qsa } from "./eventFn.js";
+import changeSongTxt from "../components/Player.js";
 import $ from "jquery";
 
 /****************************************** 
@@ -143,6 +144,9 @@ function handleTime() {
 
     // 프로그레스 바 업데이트
     elapsed.css("width", progress);
+
+    // changeSongTxt(undefined,currentTime2);
+
   });
 }
 
