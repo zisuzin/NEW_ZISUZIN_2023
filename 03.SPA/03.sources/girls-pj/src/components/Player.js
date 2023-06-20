@@ -5,7 +5,7 @@ import { Howl } from "howler";
 // 플레이어CSS
 import "../scss/player.css";
 // 메인함수
-import { handleHover } from "../js/commonFn";
+import { handleHover, handleTime, handleVolumeChange } from "../js/commonFn";
 import $ from "jquery";
 // 배너 데이터
 import ban_data from "../data/ban";
@@ -34,71 +34,64 @@ function Player(props) {
         lp = $(".artwork");
 
         // console.log(audio);
-
     } // handleplayer 함수
 
     $(document).ready(function () {
         // Player 함수
         handleplayer();
+        handleTime();
         // CD Hover함수
         handleHover();
         // CD Wheel 함수
         // handleWheel();
     });
 
-    const handleVolumeChange = (event) => {
+    const volumeChange = (event) => {
         const volumeValue = event.target.value;
+        audio.volume = volumeValue;
+        setVolume(volumeValue)
     };
 
     const [currentSongIndex, setCurrentSongIndex] = useState(0);
     const soundRef = useRef(null);
+    let rotsts = 1;
 
     // 다음 버튼 클릭시 다음 순번부터 곡 재생 (1~0)
-    const currentPlayStop = () => {
+    const currentPlayStop = (e) => {
         play_btn.toggleClass("active");
         // console.log("재생멈춤버튼!!!");
         /* active 클래스 가지고있으면 이미지 변경! */
-        if (play_btn.hasClass("active") && audio.paused) {
+        if (play_btn.hasClass("active")) {
             play_btn.find("img").attr("src", "./images/player/bx-pause.svg");
             audio.play();
+            rotsts = 1;
             rotateLp();
         } else {
             play_btn.find("img").attr("src", "./images/player/bx-play-circle.svg");
             audio.pause();
-            stopLp();
+            // stopLp();
+            rotsts = 0;
         }
     };
 
     const rotateLp = () => {
+        // console.log("상태값:",rotsts)
         // 회전각 1씩 증가!
         rotation += 1;
         // 1씩 증가된 회전각 만큼 회전
         lp.css("transform", "rotate(" + rotation + "deg)");
-        requestAnimationFrame(rotateLp);
-    };
-
-    const stopLp = () => {
-        // 회전각 1씩 감소!
-        rotation -= 1;
-        // 1씩 감소된 회전각 만큼 회전
-        lp.css("transform", "rotate(" + rotation + "deg)");
-        requestAnimationFrame(stopLp);
+        if (rotsts && play_btn.hasClass("active")) setTimeout(rotateLp, 10);
     };
 
     // 다음 버튼 클릭시 다음 순번부터 곡 재생 (1~0)
     const playNextSong = () => {
         const nextIndex = (currentSongIndex + 1) % sel_data.length;
         setCurrentSongIndex(nextIndex);
-        // playAudio 함수에 src값 인자로 넘겨주며 호출!
-        // playAudio(sel_data[nextIndex].vsrc);
-        // console.log(nextIndex);
         setSongSeq(nextIndex);
 
         if (play_btn.hasClass("active")) {
-          setTimeout(()=>audio.play(),100);
+            setTimeout(() => audio.play(), 10);
         }
-
-        // console.log(audio);
     };
 
     const playPrevSong = () => {
@@ -107,37 +100,11 @@ function Player(props) {
         const audioSrc = sel_data[prevIndex].vsrc;
         // console.log(prevIndex);
         setSongSeq(prevIndex);
-        
+
         if (play_btn.hasClass("active")) {
-          setTimeout(()=>audio.play(),100);
+            setTimeout(() => audio.play(), 10);
         }
         // console.log(audio);
-    };
-
-    const playAudio = (audioSrc) => {
-        // 이전/다음버튼 클릭 전 음원 중지
-        if (soundRef.current) {
-            soundRef.current.stop();
-        }
-
-        const sound = new Howl({
-            src: [audioSrc],
-            html5: true,
-        });
-        sound.play();
-
-        // 현재 재생 중인 곡 참조
-        soundRef.current = sound;
-
-        // 재생버튼에 클래스 .active 유무 확인으로 음원 재생/멈춤
-        console.log($(".play_song_btn").hasClass("active"));
-        if ($(".play_song_btn").hasClass("active")) {
-            sound.play();
-            // console.log("플레이");
-        } else {
-            sound.stop();
-            // console.log("멈춤");
-        }
     };
 
     const srcList = [
@@ -180,7 +147,9 @@ function Player(props) {
                         </p>
                         {/* 총 재생시간 */}
                         <p id="total_timer" className="timer">
-                            00:00
+                            <span className="tot1">00</span>
+                            :
+                            <span className="tot2">00</span>
                         </p>
                         <div className="controls">
                             <span className="prev_song_btn" onClick={playPrevSong}>
@@ -198,10 +167,10 @@ function Player(props) {
                                     type="range"
                                     id="volume"
                                     min={0}
-                                    max={100}
-                                    step={1}
+                                    max={1}
+                                    step={0.1}
                                     value={volume}
-                                    onChange={handleVolumeChange}
+                                    onChange={volumeChange}
                                 />
                             </div>
                         </div>

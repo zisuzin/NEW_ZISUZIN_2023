@@ -109,42 +109,43 @@ function handleToggle() {
     (3) 음원 현재 재생시간/ 총 재생시간 업데이트
     (4) 플레이버튼 토글하여 음원 재생/멈춤
 ******************************************/
-// function player() {
-//   const audio = $("#music")[0];
-//   const paused_btn = $(".play_song_btn");
-//   const play_btn = $(".play_song_btn");
-//   const elapsed = $("#elapsed");
-//   const total = $("#total_timer");
-//   const current = $("#progress_timer");
-//   const volumeBar = $("#volume");
+function handleTime() {
+  let audio = $("#music")[0];
+  const elapsed = $("#elapsed");
+  const total1 = $("#total_timer > .tot1");
+  const total2 = $("#total_timer > .tot2");
+  // console.log(total1,total2)
+  const current = $("#progress_timer");
 
-//   // 오디오의 재생 시간이 업데이트될 때마다 함수 호출!
-//   audio.addEventListener("timeupdate", function () { // timeupdate - 오디오 또는 비디오의 재생 시간이 변경될 때마다 발생하는 이벤트
-//     // 오디오의 재생 시간과 전체 재생 시간 가져오기
-//     const currentTime = audio.currentTime;
-//     const duration = audio.duration; // 오디오 총 길이
-//     // 음원 총 길이 구해서 시간 업데이트
-//     const minutes = Math.floor(duration / 60);
-//     const seconds = Math.floor(duration % 60);
-//     const totalTime = minutes.toString().padStart(2,"0") + ":" + seconds.toString().padStart(2,"0"); // 자료형을 문자화한 후 앞에 "0"을 추가!
-//     total.text(totalTime);
+  // 오디오의 재생 시간이 업데이트될 때마다 함수 호출!
+  audio.addEventListener("timeupdate", function () { // timeupdate - 오디오 또는 비디오의 재생 시간이 변경될 때마다 발생하는 이벤트
+    // 오디오의 재생 시간과 전체 재생 시간 가져오기
+    const currentTime = audio.currentTime;
+    const duration = audio.duration || 0; // 오디오 총 길이
+    // 음원 총 재생시간 구해서 시간 업데이트
+    const minutes = Math.floor(duration / 60);
+    const seconds = Math.floor(duration % 60);
+    // let totalTime = minutes.toString().padStart(2,"0") + ":" + seconds.toString().padStart(2,"0"); // 자료형을 문자화한 후 앞에 "0"을 추가!
+    let totalTime1 = minutes.toString().padStart(2,"0")
+    let totalTime2 = seconds.toString().padStart(2,"0")
+    total1.text(totalTime1)
+    total2.text(totalTime2)
 
-//     // 음원 재생시간 구해서 시간 업데이트
-//     const minutes2 = Math.floor(currentTime / 60);
-//     const seconds2 = Math.floor(currentTime % 60);
-//     const currentTime2 = minutes2.toString().padStart(2,"0") + ":" + seconds2.toString().padStart(2,"0"); // 자료형을 문자화한 후 앞에 "0"을 추가!
-//     current.text(currentTime2);
+    // 음원 현재 재생시간 구해서 시간 업데이트
+    const minutes2 = Math.floor(currentTime / 60);
+    const seconds2 = Math.floor(currentTime % 60);
+    const currentTime2 = minutes2.toString().padStart(2,"0") + ":" + seconds2.toString().padStart(2,"0"); // 자료형을 문자화한 후 앞에 "0"을 추가!
+    current.text(currentTime2);
     
-//     // 프로그레스 바의 너비 계산
-//     const progress = (currentTime / duration) * 100 + "%";
-//     // console.log("프로그레스바너비:",progress)
+    // 프로그레스 바의 너비 계산
+    const progress = (currentTime / duration) * 100 + "%";
+    // console.log("프로그레스바너비:",progress)
 
-//     // 프로그레스 바 업데이트
-//     elapsed.css("width", progress);
-//   });
-
-
+    // 프로그레스 바 업데이트
+    elapsed.css("width", progress);
+  });
+}
 
 // window.addEventListener("wheel", handleWheel);
 
-export { handleHover, handleToggle };
+export { handleHover, handleToggle, handleTime };
