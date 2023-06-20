@@ -25,15 +25,10 @@ function Player(props) {
     const [volume, setVolume] = useState(1);
 
     function handleplayer() {
-        const total = $("#total_timer");
-        const current = $("#progress_timer");
         audio = $("#music")[0];
         play_btn = $(".play_song_btn");
-        const elapsed = $("#elapsed");
-        const volumeBar = $("#volume");
         lp = $(".artwork");
 
-        // console.log(audio);
     } // handleplayer 함수
 
     $(document).ready(function () {
@@ -46,10 +41,11 @@ function Player(props) {
         // handleWheel();
     });
 
+    // 볼륨조절 함수
     const volumeChange = (event) => {
         const volumeValue = event.target.value;
         audio.volume = volumeValue;
-        setVolume(volumeValue)
+        setVolume(volumeValue);
     };
 
     const [currentSongIndex, setCurrentSongIndex] = useState(0);
@@ -88,9 +84,10 @@ function Player(props) {
         const nextIndex = (currentSongIndex + 1) % sel_data.length;
         setCurrentSongIndex(nextIndex);
         setSongSeq(nextIndex);
-
+        
         if (play_btn.hasClass("active")) {
             setTimeout(() => audio.play(), 10);
+            changeSongTxt(nextIndex)
         }
     };
 
@@ -106,6 +103,15 @@ function Player(props) {
         }
         // console.log(audio);
     };
+
+    // 재생시간에 따라 특정 값으로 텍스트 변경
+    function changeSongTxt(songSrc) {
+        console.log(songSrc)
+        const songTxt = $("#song");
+        if(songSrc == 1){ // 1 - EXPECTATIONS
+            
+        }
+    }
 
     const srcList = [
         "./audios/i feel.mp3",
@@ -132,7 +138,7 @@ function Player(props) {
                     {/* 곡 정보 */}
                     <h1 id="album">{x.mtit.replace(/-/g, "")}</h1>
                     <h4 id="artist">(G)I-DLe</h4>
-                    <h2 id="song">{x.mtit.replace(/-/g, "")}</h2>
+                    <h2 id="song"></h2>
                     <div className="button-items">
                         <audio id="music" src={srcList[songSeq]}></audio>
                         {/* 음반 리스트 */}
@@ -147,9 +153,7 @@ function Player(props) {
                         </p>
                         {/* 총 재생시간 */}
                         <p id="total_timer" className="timer">
-                            <span className="tot1">00</span>
-                            :
-                            <span className="tot2">00</span>
+                            <span className="tot1">00</span>:<span className="tot2">00</span>
                         </p>
                         <div className="controls">
                             <span className="prev_song_btn" onClick={playPrevSong}>
