@@ -68,7 +68,7 @@ function AlbumDetail() {
               { eachAlbum.track.map((x,i)=>
               <li key={i}>
                 <span style={{color: eachAlbum.txcolor.indexOf('^') !== -1? eachAlbum.txcolor.split('^')[1] : eachAlbum.txcolor}}>
-                  {x}
+                  {(i+1)+"." + ' ' + x}
                 </span>
               </li>
               )

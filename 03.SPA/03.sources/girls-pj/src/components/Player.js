@@ -132,7 +132,7 @@ function Player(props) {
                     {/* 곡 정보 */}
                     <h1 id="album">{x.mtit.replace(/-/g, "")}</h1>
                     <h4 id="artist">(G)I-DLe</h4>
-                    <h2 id="song">{x.mtit}</h2>
+                    <h2 id="song">{x.mtit.replace(/-/g, "")}</h2>
                     <div className="button-items">
                         <audio id="music" src={srcList[songSeq]}></audio>
                         {/* 음반 리스트 */}
