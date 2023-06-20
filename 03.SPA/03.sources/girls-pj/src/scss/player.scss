@@ -156,11 +156,12 @@ $icon-content: "\ebae";
 }
 
 input[type="range"] {
+  position: relative;
 	appearance: none;
 	width: 100%;
 	border-radius: 14px;
 	padding: 0px 1px;
-	background: rgb(21, 21, 24);
+	background: transparent;
   cursor: pointer;
 }
 
