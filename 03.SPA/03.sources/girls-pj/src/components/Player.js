@@ -30,6 +30,38 @@ function Player(props) {
     lp = $(".artwork");
   } // handleplayer 함수
 
+  const audtit = {
+    "I feel":[{"0":"I feel"},{"40":"나야나"},{"100":"넌누구"}],
+    "EXPECTATIONS":[{"10":"바람돌이"},{"80":"코코샤넬"}],
+  }
+
+  let audseq = 0;
+  let albtxt;
+  let sec=0;
+
+  function upAlbumTxt(){    
+    setTimeout(()=>albtxt = $("#album").text(),100);
+  }
+
+  function updateAudio(){
+    $("#music").on("timeupdate",()=>{
+
+      if(!currentTime2||!albtxt||!audtit[albtxt]) return;
+      sec = Math.floor(audio.currentTime);
+
+      let ct = Object.keys(audtit[albtxt][audseq])[0];
+      console.log(sec,albtxt,ct);
+
+      if(sec>=ct){
+        $("#song").text(audtit[albtxt][audseq][ct]);
+        audseq++;
+        if(audseq == audtit[albtxt].length){
+          audseq = audtit[albtxt].length-1;
+        }
+      }
+    })
+  }
+
   $(document).ready(function () {
     // Player 함수
     handleplayer();
@@ -38,6 +70,13 @@ function Player(props) {
     handleHover();
     // CD Wheel 함수
     // handleWheel();
+
+    updateAudio();
+
+    $("#slider").click(()=>{
+      console.log(3333,sec);
+      audseq = 0;
+    })
   });
 
   // 볼륨조절 함수
@@ -66,6 +105,8 @@ function Player(props) {
       audio.pause();
       rotsts = 0;
     }
+    // 재생/멈춤/이전곡/다음곡시에 앨범제목 업데이트!
+    upAlbumTxt();
   };
 
   const rotateLp = () => {
@@ -87,6 +128,11 @@ function Player(props) {
       setTimeout(() => audio.play(), 10);
       changeSongTxt(nextIndex);
     }
+
+    // 재생/멈춤/이전곡/다음곡시에 앨범제목 업데이트!
+    upAlbumTxt();
+    // 앨범순서 초기화!
+    audseq = 0;
   };
 
   const playPrevSong = () => {
@@ -100,6 +146,11 @@ function Player(props) {
       setTimeout(() => audio.play(), 10);
     }
     // console.log(audio);
+
+    // 재생/멈춤/이전곡/다음곡시에 앨범제목 업데이트!
+    upAlbumTxt();
+    // 앨범순서 초기화!
+    audseq = 0;
   };
 
   // 재생시간에 따라 특정 값으로 텍스트 변경
@@ -135,7 +186,7 @@ function Player(props) {
           {/* 곡 정보 */}
           <h1 id="album">{x.mtit.replace(/-/g, "")}</h1>
           <h4 id="artist">(G)I-DLe</h4>
-          <h2 id="song"></h2>
+          <h2 id="song">{x.mtit.replace(/-/g, "")}</h2>
           <div className="button-items">
             <audio id="music" src={srcList[songSeq]}></audio>
             {/* 음반 리스트 */}

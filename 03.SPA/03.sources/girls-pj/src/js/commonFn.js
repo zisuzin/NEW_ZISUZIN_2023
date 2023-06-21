@@ -68,6 +68,9 @@ const valset2 = ["0%","-25%","5%","-25%","-50%","-50%","-50%"];
 
 // document.querySelectorAll(".album_wrap li").forEach((ele,idx)=>ele.setAttribute("data-seq", idx));
 
+let currentTime2;
+
+
 /****************************************** 
     함수명: handleHover
     기능: 마우스 오버시 CD 회전하면서 옆으로 나옴
@@ -112,7 +115,7 @@ function handleToggle() {
 ******************************************/
 function handleTime() {
   let audio = $("#music")[0];
-  const elapsed = $("#elapsed");
+  let elapsed = $("#elapsed");
   const total1 = $("#total_timer > .tot1");
   const total2 = $("#total_timer > .tot2");
   // console.log(total1,total2)
@@ -135,21 +138,56 @@ function handleTime() {
     // 음원 현재 재생시간 구해서 시간 업데이트
     const minutes2 = Math.floor(currentTime / 60);
     const seconds2 = Math.floor(currentTime % 60);
-    const currentTime2 = minutes2.toString().padStart(2,"0") + ":" + seconds2.toString().padStart(2,"0"); // 자료형을 문자화한 후 앞에 "0"을 추가!
+    currentTime2 = minutes2.toString().padStart(2,"0") + ":" + seconds2.toString().padStart(2,"0"); // 자료형을 문자화한 후 앞에 "0"을 추가!
     current.text(currentTime2);
     
     // 프로그레스 바의 너비 계산
     const progress = (currentTime / duration) * 100 + "%";
     // console.log("프로그레스바너비:",progress)
-
+    
     // 프로그레스 바 업데이트
     elapsed.css("width", progress);
-
-    // changeSongTxt(undefined,currentTime2);
-
+    
+    // controlSong(currentTime2,duration,progress)
+    
   });
+  
+  console.log(777777)
+
+  const slider = document.querySelector("#slider");
+  let play_btn = $(".play_song_btn");
+  
+  const controlSong = (e) => {
+    if(play_btn.hasClass("active")){
+      
+      // 클릭한 위치의 X 좌표 구하기
+      const clickX = e.offsetX;
+      
+      // 프로그레스바의 전체너비
+      const progressBarWidth = slider.clientWidth;
+  
+      // 오디오 총 길이
+      let audioDuration = audio.duration; 
+
+      // 클릭한 위치의 너비 비율 계산
+      const progressWidth = (clickX / progressBarWidth) * 100;
+
+      // 클릭한 위치의 시간 계산
+      const seekTime = (clickX / progressBarWidth) * audioDuration;
+  
+      // 프로그레스바 너비 업데이트
+      elapsed.css("width", progressWidth + '%');
+
+      // console.log(audioDuration)
+      // console.log(seekTime);
+      // console.log("od현재시간:",audio.currentTime)
+      audio.currentTime = seekTime;
+
+    }
+    }
+  slider.addEventListener("click",controlSong);
 }
 
 // window.addEventListener("wheel", handleWheel);
 
-export { handleHover, handleToggle, handleTime };
+export { handleHover, handleToggle, handleTime, currentTime2 };
