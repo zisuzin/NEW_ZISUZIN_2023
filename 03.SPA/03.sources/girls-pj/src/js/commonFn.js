@@ -152,13 +152,11 @@ function handleTime() {
     
   });
   
-  console.log(777777)
-
   const slider = document.querySelector("#slider");
   let play_btn = $(".play_song_btn");
   
   const controlSong = (e) => {
-    if(play_btn.hasClass("active")){
+    // if(play_btn.hasClass("active")){
       
       // 클릭한 위치의 X 좌표 구하기
       const clickX = e.offsetX;
@@ -183,7 +181,7 @@ function handleTime() {
       // console.log("od현재시간:",audio.currentTime)
       audio.currentTime = seekTime;
 
-    }
+    // }
     }
   slider.addEventListener("click",controlSong);
 }

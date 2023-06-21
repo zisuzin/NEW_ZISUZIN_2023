@@ -31,8 +31,9 @@ function Player(props) {
   } // handleplayer 함수
 
   const audtit = {
-    "I feel":[{"0":"I feel"},{"40":"나야나"},{"100":"넌누구"}],
-    "EXPECTATIONS":[{"10":"바람돌이"},{"80":"코코샤넬"}],
+    "I feel": [{"0":"Queencard"},{"162":"Allergy"},{"324":"Lucid"},{"500":"All Night"},{"646":"Paradise"},{"835":"Peter Pan"}],
+    "I love": [{"0":"LOVE"},{"196":"Change"},{"400":"Reset"},{"582":"Sculpture"},{"769":"DARK (X-file)"}],
+    "I am": [{"0":"LATATA"},{"202":"달라 ($$$)"},{"414":"MAZE"},{"616":"DON'T TEXT ME"},{"830":"알고 싶어"},{"1038":"들어줘요"}]
   }
 
   let audseq = 0;
@@ -186,7 +187,7 @@ function Player(props) {
           {/* 곡 정보 */}
           <h1 id="album">{x.mtit.replace(/-/g, "")}</h1>
           <h4 id="artist">(G)I-DLe</h4>
-          <h2 id="song">{x.mtit.replace(/-/g, "")}</h2>
+          <h2 id="song">{x.stit == "" ? x.mtit.replace(/-/g, "") : x.stit}</h2>
           <div className="button-items">
             <audio id="music" src={srcList[songSeq]}></audio>
             {/* 음반 리스트 */}
