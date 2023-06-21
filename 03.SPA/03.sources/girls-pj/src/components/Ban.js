@@ -68,6 +68,22 @@ function Main_Ban(props) {
 function Profile_Ban(props) {
   const sel_data = ban_data[props.cat];
 
+  // 멤버 프로필 리스트 클릭시 큰이미지박스 보이기
+  const tgImg = $(".profile_img");
+  tgImg.click(function () {
+    console.log("클클")
+  
+    // 1. 클릭된 이미지 경로 읽어오기
+    let isrc = $(this).find("img").attr("src")
+    console.log($(this).find("img"))
+  
+    // 2. 클릭된 이미지 경로를 큰 이미지에 src로 넣기
+    $(".gimg > img").attr("src", isrc);
+  
+    // 3. 큰이미지박스 보이기
+    $("#imbx").show();
+  });
+
   return (
     <>
       {sel_data.map((x, i) => (
@@ -102,6 +118,17 @@ function Profile_Ban(props) {
                   ))}
                 </ul>
               </div>
+              {/* 4. 큰이미지 박스 */}
+              <section id="imbx">
+                {/* 큰 이미지 */}
+                <div className="gimg">
+                  <img src="" alt="큰이미지"/>
+                </div>
+                <div className="gimgDetail">
+                    <h3>이름:</h3>
+                    <h3>생년월일:</h3>
+                </div>
+              </section>
             </section>
           </div>
         </main>

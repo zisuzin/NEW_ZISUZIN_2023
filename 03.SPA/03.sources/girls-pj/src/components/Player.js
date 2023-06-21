@@ -66,7 +66,7 @@ function Player(props) {
   $(document).ready(function () {
     // Player 함수
     handleplayer();
-    handleTime();
+    handleTime()
     // CD Hover함수
     handleHover();
     // CD Wheel 함수
@@ -79,7 +79,7 @@ function Player(props) {
       audseq = 0;
     })
   });
-
+  
   // 볼륨조절 함수
   const volumeChange = (event) => {
     const volumeValue = event.target.value;

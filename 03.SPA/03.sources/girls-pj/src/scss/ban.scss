@@ -369,6 +369,7 @@ em {
 
 .profile_img img {
   width: 100%;
+  cursor: pointer;
 }
 
 .profile_img > li:first-child {
@@ -385,6 +386,23 @@ em {
 
 .kv img {
   width: 100%;
+}
+
+#imbx {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30vw;
+  background-color: #fff;
+  // 처음엔 안보임
+  display: flex;
+  display: none;
+
+  .gimg > img {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 /****** 비디오 페이지 ******/
@@ -684,3 +702,4 @@ em {
     font-weight: 600;
   }
 }
+
