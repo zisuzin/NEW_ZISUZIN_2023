@@ -345,24 +345,22 @@ em {
 
 .intro_title {
   width: 25%;
-  height: 316px;
+  height: 25vw;
   float: left;
   text-align: center;
   display: table;
 }
 
-.profile_img > li > button {
+.profile_img > li > div {
   display: block;
-}
-.profile_img > li > button div {
-  width: 316px;
-  height: 316px;
-  overflow: hidden;
+  width: 100%;
+  height: 100%;
 }
 
 .profile_img > * {
   float: left;
   width: 25%;
+  height: 25vw;
 }
 
 .profile_img img {
