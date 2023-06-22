@@ -90,73 +90,37 @@ function Profile_Ban(props) {
     $(".close_btn").click(function () {
       $(this).parent().css({ display: "none" });
     });
+  });
 
-    const SVG = () => {
-      let bubblez = SVG("#maskBubblez");
-      let numOfBubblez = 20;
+  // site svg 애니메이션
 
-      let circles = [{ x: 0, y: 0, radius: 0 }];
+  const textPath = document.querySelector("#text-path");
+  const textContainer = document.querySelector("#text-container");
+  let path = document.querySelector(textPath.getAttribute("href"));
+  let pathLength = path.getTotalLength();
 
-      for (let i = 0; i < numOfBubblez; i++) {
-        function drawCircleWithoutOverlap() {
-          let newX = gsap.utils.random(0, 100);
-          let newY = gsap.utils.random(0, 100);
-          let newRadius = gsap.utils.random(4, 20);
-          let newCircle = { x: newX, y: newY, radius: newRadius };
-          let isOverlapping = false;
+  function updateTextPathOffset(offset) {
+    textPath.setAttribute("startOffset", offset);
+  }
 
-          circles.forEach((circle, i) => {
-            let deltaX = newCircle.x - circles[i].x;
-            let deltaY = newCircle.y - circles[i].y;
-            let dist = Math.hypot(deltaX, deltaY);
-            let radiiiis = circles[i].radius + newCircle.radius;
+  updateTextPathOffset(pathLength);
 
-            if (dist < radiiiis) {
-              isOverlapping = true;
-            }
-          });
+  function onScroll() {
+    requestAnimationFrame(function () {
+      let rect = textContainer.getBoundingClientRect();
+      let scrollPercent = rect.y / window.innerHeight;
+      updateTextPathOffset(scrollPercent * 2 * pathLength);
+    });
+  }
 
-          if (isOverlapping) {
-            drawCircleWithoutOverlap();
-          } else {
-            bubblez
-              .circle(newCircle.radius)
-              .x(newCircle.x)
-              .y(newCircle.y)
-              .fill("#fff")
-              .opacity(newCircle.radius / 20);
+  window.addEventListener("scroll", onScroll);
 
-            circles.push(newCircle);
-          }
-        }
-
-        drawCircleWithoutOverlap();
-      }
-
-      gsap.registerPlugin(ScrollTrigger);
-
-      gsap.to("circle", {
-        y: () => 1 - gsap.utils.random(0.1, 0.4) * ScrollTrigger.maxScroll(window),
-        ease: "none",
-        scrollTrigger: {
-          start: 0,
-          end: "max",
-          invalidateOnRefresh: true,
-          scrub: 2,
-        },
-      });
-
-      gsap.to("#text", {
-        attr: {
-          startOffset: -2500,
-        },
-        scrollTrigger: {
-          start: 0,
-          end: "20%",
-          scrub: 2,
-        },
-      });
-    };
+  $(window).scroll(function () {
+    let scroll = $(window).scrollTop();
+    const sec_start1 = $(".text_sec").offset().top;
+    if (scroll > sec_start1) {
+      gsap.to(".site_list_title h3", { duration: 0.8, opacity: 1, y: 3, delay: 1.1 });
+    }
   });
 
   return (
@@ -178,17 +142,14 @@ function Profile_Ban(props) {
             </section>
 
             {/* 스크롤시 등장하는 웨이브 텍스트 */}
-            <svg id="bubblezSVG" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
-              <mask id="maskBubblez">{/* Mask 내용 */}</mask>
-              <image mask="url(#maskBubblez)" preserveAspectRatio="xMidYMid slice" href="https://assets.codepen.io/756881/mesh-gradient+%283%29.png" height="150" width="100" />
-            </svg>
-            <svg id="textSVG" viewBox="0 0 1000 200">
-              <path fill="none" id="curve" d="M0,100S269.931,186.612,520,100C770.069,13.388,1000,100,1000,100" />
-              <text x="-50" fontSize="45">
-                <textPath href="#curve" startOffset="1200">
-                  Wobbly text and gradient bubbles....
-                </textPath>
-              </text>
+            <svg id="text-container" viewBox="0 0 1000 200" xmlns="http://www.w3.org/2000/svg">
+                <path id="text-curve" d="M0 100s269.931 86.612 520 0c250.069-86.612 480 0 480 0" fill="none"></path>
+
+                <text y="40">
+                    <textPath id="text-path" href="#text-curve" startOffset="442.8510130819152">
+                        * 제가 만든 웹사이트가 궁금하신가요?
+                    </textPath>
+                </text>
             </svg>
 
             {/* 3. 개별멤버 프로필 */}
