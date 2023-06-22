@@ -304,25 +304,27 @@ em {
 
 .group_intro > h2 {
   color: #fff;
-  font-size: 3vw;
+  font-size: 3.2vw;
   font-family: NEXONFootballGothicBA1;
   display: table-cell;
   width: 40%;
+  padding-right: 30px;
+  white-space: nowrap;
 }
 
 .group_intro > p {
   color: #ddd;
   display: table-cell;
   width: 60%;
-  font-family: "$noto-sans-font";
+  font-family: "Pretendard-Regular";
   vertical-align: top;
+  line-height: 27px;
+  text-align: justify;
 }
 
 .group_intro {
-  padding: 33px 180px 145px;
+  padding: 33px 220px 120px;
   display: table;
-  width: 100%;
-  border: 1px solid #fff;
   width: 100%;
 }
 
@@ -335,15 +337,14 @@ em {
 
 .members_inner {
   position: relative;
-  max-width: 1280px;
+  max-width: 1260px;
   width: 100%;
   margin: 0 auto;
   display: table;
-  border: 1px solid #fff;
 }
 
 .intro_title {
-  width: 316px;
+  width: 25%;
   height: 316px;
   float: left;
   text-align: center;
@@ -361,6 +362,7 @@ em {
 
 .profile_img > * {
   float: left;
+  width: 25%;
 }
 
 .profile_img img {
@@ -395,9 +397,40 @@ em {
 }
 #imbx .imgbx {
   display: none;
+  background: #111;
+  color: #fff;
 }
-#imbx .imgbx .gimg, #imbx .imgbx .gimgDetail {
+#imbx .imgbx .gimgDetail {
+  padding: 0 70px;
+  vertical-align: middle;
+}
+#imbx .imgbx .gimg,
+#imbx .imgbx .gimgDetail {
+  display: table-cell;
   width: 50%;
+}
+#imbx .imgbx .gimg dt,
+#imbx .imgbx .gimgDetail dt {
+  font-size: 35px;
+  margin-bottom: 25px;
+  font-weight: 600;
+  font-family: Noto Sans KR;
+  display: inline-block;
+}
+#imbx .imgbx .gimg dd,
+#imbx .imgbx .gimgDetail dd {
+  font-size: 17px;
+  width: -moz-fit-content;
+  width: fit-content;
+  letter-spacing: -0.06em;
+}
+#imbx .imgbx .close_btn {
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  right: 0;
+  background: url(../../public/images/profile/btn-close.png);
+  cursor: pointer;
 }
 #imbx img {
   width: 100%;

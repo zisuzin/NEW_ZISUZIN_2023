@@ -70,8 +70,6 @@ function Profile_Ban(props) {
     // 반환된 객체에서 각각의 id 속성을 추출!
     const [imgclk, setImgClk] = useState(0);
 
-    function handleClick() {}
-
     $(() => {
         // 멤버 프로필 리스트 클릭시 큰이미지박스 보이기
         const tgImg = $(".profile_img > li");
@@ -87,10 +85,15 @@ function Profile_Ban(props) {
                 .css({ display: "block" })
                 .find(".imgbx")
                 .eq($(this).index())
-                .css({ display: "flex" })
+                .css({ display: "table" })
                 .siblings()
                 .css({ display: "none" });
         });
+
+            // 4. 닫기버튼 클릭시 큰이미지박스 숨기기
+            $(".close_btn").click(function () {
+                $(this).parent().css({ display : "none"});
+            })
     });
 
     const sel_data = ban_data[props.cat];
@@ -136,14 +139,15 @@ function Profile_Ban(props) {
                                         <div className="gimg">
                                             <img src="" alt="큰이미지" />
                                         </div>
-                                        <div className="gimgDetail">
+                                        <dl className="gimgDetail">
                                             {
-                                                <React.Fragment>
-                                                    <h3>{item.name}</h3>
-                                                    <h3>{item.birth}</h3>
-                                                </React.Fragment>
+                                                <>
+                                                    <dt>{item.name}</dt>
+                                                    <dd>{item.birth}</dd>
+                                                </>
                                             }
-                                        </div>
+                                        </dl>
+                                        <button type="button" className="close_btn" title="팝업 닫기"></button>
                                     </div>
                                 ))}
                             </section>
