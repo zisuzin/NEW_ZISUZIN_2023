@@ -33,33 +33,52 @@ function Player(props) {
   const audtit = {
     "I feel": [{"0":"Queencard"},{"162":"Allergy"},{"324":"Lucid"},{"500":"All Night"},{"646":"Paradise"},{"835":"Peter Pan"}],
     "I love": [{"0":"LOVE"},{"196":"Change"},{"400":"Reset"},{"582":"Sculpture"},{"769":"DARK (X-file)"}],
-    "I am": [{"0":"LATATA"},{"202":"달라 ($$$)"},{"414":"MAZE"},{"616":"DON'T TEXT ME"},{"830":"알고 싶어"},{"1038":"들어줘요"}]
+    "I am": [{"0":"LATATA"},{"202":"달라 ($$$)"},{"414":"MAZE"},{"616":"DON'T TEXT ME"},{"830":"알고 싶어"},{"1038":"들어줘요"}],
   }
 
   let audseq = 0;
   let albtxt;
   let sec=0;
+  let dur=0;
+  let protsts=false;
 
-  function upAlbumTxt(){    
-    setTimeout(()=>albtxt = $("#album").text(),100);
+  function upAlbumTxt(){  
+    setTimeout(()=>{
+      let temp = $("#album").text();
+      console.log("I순번:",temp.indexOf('I'),temp);
+      if(temp.indexOf('I')===0){ 
+        protsts = false;
+        albtxt = temp;
+      }
+      else protsts=true;
+    },100);
   }
 
   function updateAudio(){
+    
     $("#music").on("timeupdate",()=>{
-
+      if(protsts) return;
+      
       if(!currentTime2||!albtxt||!audtit[albtxt]) return;
-      sec = Math.floor(audio.currentTime);
 
-      let ct = Object.keys(audtit[albtxt][audseq])[0];
+
+      sec = Math.floor(audio.currentTime);
+      dur = Math.floor(audio.duration);
+
+      let ct =audtit[albtxt].map(v=>Object.keys(v));
       console.log(sec,albtxt,ct);
 
-      if(sec>=ct){
-        $("#song").text(audtit[albtxt][audseq][ct]);
-        audseq++;
-        if(audseq == audtit[albtxt].length){
-          audseq = audtit[albtxt].length-1;
+      ct.forEach((v,i)=>{
+        let n1 = ct[i][0];
+        let n2 = i+1==ct.length?dur:ct[i+1][0];
+        console.log("범위:",n1,"~",n2,"/길이:",ct.length);
+ 
+        if(sec>=n1 && sec<n2){
+          console.log("찍을값:",audtit[albtxt][i][n1]);
+          $("#song").text(audtit[albtxt][i][n1]);         
         }
-      }
+
+      })
     })
   }
 
@@ -72,7 +91,6 @@ function Player(props) {
     // CD Wheel 함수
     // handleWheel();
 
-    updateAudio();
 
     $("#slider").click(()=>{
       console.log(3333,sec);
@@ -93,21 +111,24 @@ function Player(props) {
 
   // 다음 버튼 클릭시 다음 순번부터 곡 재생 (1~0)
   const currentPlayStop = (e) => {
+    // 재생/멈춤/이전곡/다음곡시에 앨범제목 업데이트!
+    upAlbumTxt();
     play_btn.toggleClass("active");
     // console.log("재생멈춤버튼!!!");
     /* active 클래스 가지고있으면 이미지 변경! */
     if (play_btn.hasClass("active")) {
       play_btn.find("img").attr("src", "./images/player/bx-pause.svg");
+      protsts=false;
+      updateAudio();
       audio.play();
       rotsts = 1;
       rotateLp();
     } else {
       play_btn.find("img").attr("src", "./images/player/bx-play-circle.svg");
+      protsts=true;
       audio.pause();
       rotsts = 0;
     }
-    // 재생/멈춤/이전곡/다음곡시에 앨범제목 업데이트!
-    upAlbumTxt();
   };
 
   const rotateLp = () => {
@@ -121,6 +142,8 @@ function Player(props) {
 
   // 다음 버튼 클릭시 다음 순번부터 곡 재생 (1~0)
   const playNextSong = () => {
+    // 재생/멈춤/이전곡/다음곡시에 앨범제목 업데이트!
+    upAlbumTxt();
     const nextIndex = (currentSongIndex + 1) % sel_data.length;
     setCurrentSongIndex(nextIndex);
     setSongSeq(nextIndex);
@@ -130,13 +153,11 @@ function Player(props) {
       changeSongTxt(nextIndex);
     }
 
-    // 재생/멈춤/이전곡/다음곡시에 앨범제목 업데이트!
-    upAlbumTxt();
-    // 앨범순서 초기화!
-    audseq = 0;
   };
 
   const playPrevSong = () => {
+    // 재생/멈춤/이전곡/다음곡시에 앨범제목 업데이트!
+    upAlbumTxt();
     const prevIndex = (currentSongIndex - 1 + sel_data.length) % sel_data.length;
     setCurrentSongIndex(prevIndex);
     const audioSrc = sel_data[prevIndex].vsrc;
@@ -148,10 +169,6 @@ function Player(props) {
     }
     // console.log(audio);
 
-    // 재생/멈춤/이전곡/다음곡시에 앨범제목 업데이트!
-    upAlbumTxt();
-    // 앨범순서 초기화!
-    audseq = 0;
   };
 
   // 재생시간에 따라 특정 값으로 텍스트 변경

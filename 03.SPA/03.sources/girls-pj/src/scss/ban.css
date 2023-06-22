@@ -385,16 +385,21 @@ em {
 }
 
 #imbx {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 30vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  width: 100%;
   background-color: #fff;
-  display: flex;
   display: none;
 }
-#imbx .gimg > img {
+#imbx .imgbx {
+  display: none;
+}
+#imbx .imgbx .gimg, #imbx .imgbx .gimgDetail {
+  width: 50%;
+}
+#imbx img {
   width: 100%;
   height: 100%;
 }
