@@ -1,7 +1,11 @@
 // 배너 컴포넌트 - Ban.js
 import React from "react";
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
+// 애니메이션 라이브러리
+import gsap from "gsap";
+import { ReactSVG } from "react-svg";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 // 스와이퍼 컴포넌트
 import { Swiper, SwiperSlide } from "swiper/react";
 // 스와이퍼 네비게이션 컴포넌트
@@ -20,7 +24,6 @@ import "swiper/css/navigation";
 
 // 배너 데이터
 import ban_data from "../data/ban";
-// import ReactPaginate from "react-paginate";
 
 // 메인배너 출력용 컴포넌트
 function Main_Ban(props) {
@@ -67,8 +70,7 @@ function Main_Ban(props) {
 
 // 프로필배너 출력용 컴포넌트
 function Profile_Ban(props) {
-  // 반환된 객체에서 각각의 id 속성을 추출!
-  const [imgclk, setImgClk] = useState(0);
+  const sel_data = ban_data[props.cat];
 
   $(() => {
     // 멤버 프로필 리스트 클릭시 큰이미지박스 보이기
@@ -88,9 +90,74 @@ function Profile_Ban(props) {
     $(".close_btn").click(function () {
       $(this).parent().css({ display: "none" });
     });
-  });
 
-  const sel_data = ban_data[props.cat];
+    const SVG = () => {
+      let bubblez = SVG("#maskBubblez");
+      let numOfBubblez = 20;
+
+      let circles = [{ x: 0, y: 0, radius: 0 }];
+
+      for (let i = 0; i < numOfBubblez; i++) {
+        function drawCircleWithoutOverlap() {
+          let newX = gsap.utils.random(0, 100);
+          let newY = gsap.utils.random(0, 100);
+          let newRadius = gsap.utils.random(4, 20);
+          let newCircle = { x: newX, y: newY, radius: newRadius };
+          let isOverlapping = false;
+
+          circles.forEach((circle, i) => {
+            let deltaX = newCircle.x - circles[i].x;
+            let deltaY = newCircle.y - circles[i].y;
+            let dist = Math.hypot(deltaX, deltaY);
+            let radiiiis = circles[i].radius + newCircle.radius;
+
+            if (dist < radiiiis) {
+              isOverlapping = true;
+            }
+          });
+
+          if (isOverlapping) {
+            drawCircleWithoutOverlap();
+          } else {
+            bubblez
+              .circle(newCircle.radius)
+              .x(newCircle.x)
+              .y(newCircle.y)
+              .fill("#fff")
+              .opacity(newCircle.radius / 20);
+
+            circles.push(newCircle);
+          }
+        }
+
+        drawCircleWithoutOverlap();
+      }
+
+      gsap.registerPlugin(ScrollTrigger);
+
+      gsap.to("circle", {
+        y: () => 1 - gsap.utils.random(0.1, 0.4) * ScrollTrigger.maxScroll(window),
+        ease: "none",
+        scrollTrigger: {
+          start: 0,
+          end: "max",
+          invalidateOnRefresh: true,
+          scrub: 2,
+        },
+      });
+
+      gsap.to("#text", {
+        attr: {
+          startOffset: -2500,
+        },
+        scrollTrigger: {
+          start: 0,
+          end: "20%",
+          scrub: 2,
+        },
+      });
+    };
+  });
 
   return (
     <>
@@ -102,12 +169,28 @@ function Profile_Ban(props) {
               <img src={x.isrc} alt="여자아이들 이미지" />
             </div>
           </section>
+
           <div className="intro_profile">
             {/* 2. 그룹 소개 */}
             <section className="group_intro">
               <h2 className="conttents_tit">{x.mtit}</h2>
               <p className="contents-desc">{x.stit}</p>
             </section>
+
+            {/* 스크롤시 등장하는 웨이브 텍스트 */}
+            <svg id="bubblezSVG" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
+              <mask id="maskBubblez">{/* Mask 내용 */}</mask>
+              <image mask="url(#maskBubblez)" preserveAspectRatio="xMidYMid slice" href="https://assets.codepen.io/756881/mesh-gradient+%283%29.png" height="150" width="100" />
+            </svg>
+            <svg id="textSVG" viewBox="0 0 1000 200">
+              <path fill="none" id="curve" d="M0,100S269.931,186.612,520,100C770.069,13.388,1000,100,1000,100" />
+              <text x="-50" fontSize="45">
+                <textPath href="#curve" startOffset="1200">
+                  Wobbly text and gradient bubbles....
+                </textPath>
+              </text>
+            </svg>
+
             {/* 3. 개별멤버 프로필 */}
             <section className="members_intro">
               <div className="members_inner">
@@ -123,21 +206,18 @@ function Profile_Ban(props) {
                     </li>
                   ))}
                 </ul>
+
                 {/* 4. 큰이미지 박스 */}
                 <section id="imbx">
                   {x.sub.map((item, i) => (
-                    <div className="imgbx">
+                    <div className="imgbx" key={i}>
                       {/* 큰 이미지 */}
                       <div className="gimg">
                         <img src="" alt="큰이미지" />
                       </div>
                       <dl className="gimgDetail">
-                        {
-                          <>
-                            <dt>{item.name}</dt>
-                            <dd>{item.birth}</dd>
-                          </>
-                        }
+                        <dt>{item.name}</dt>
+                        <dd>{item.birth}</dd>
                       </dl>
                       <button type="button" className="close_btn" title="팝업 닫기"></button>
                     </div>

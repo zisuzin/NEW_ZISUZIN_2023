@@ -1,7 +1,5 @@
 // 플레이어 컴포넌트 - Player.js
 import React, { useRef, useState, useEffect } from "react";
-// 오디오 재생/컨트롤 라이브러리
-import { Howl } from "howler";
 // 플레이어CSS
 import "../scss/player.css";
 // 메인함수

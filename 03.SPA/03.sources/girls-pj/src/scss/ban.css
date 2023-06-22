@@ -435,6 +435,33 @@ em {
   height: 100%;
 }
 
+#bubblezSVG {
+  position: fixed;
+  height: 100%;
+  width: 110%;
+  top: 0;
+  left: -5%;
+  overflow: visible;
+  z-index: -1;
+}
+
+#top {
+  z-index: 2;
+  pointer-events: none;
+}
+
+svg {
+  font-size: 35px;
+  fill: #313639;
+}
+
+#textSVG {
+  position: fixed;
+  width: 110%;
+  top: 40vh;
+  left: -5%;
+}
+
 /****** 비디오 페이지 ******/
 .mv_wrap {
   display: flex;
