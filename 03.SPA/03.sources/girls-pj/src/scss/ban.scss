@@ -563,7 +563,13 @@ svg {
 }
 
 #sub_mv {
+    display: flex;
+    flex-wrap: wrap;
     margin-top: 30px;
+
+    .mvbx {
+        width: 30%;
+    }
 }
 
 .mv_date {
@@ -572,7 +578,7 @@ svg {
     }
 
     p:nth-child(2) {
-        float: right;
+        text-align: right;
         font-size: 13px;
     }
 }

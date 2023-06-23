@@ -214,15 +214,15 @@ function Video_Ban(props) {
   // 데이터 셋팅
   const vdata = ban_data[props.cat];
 
-  useEffect(() => {
-    // 컴포넌트가 마운트될 때 첫 번째 li 클릭
-    const firstLi = document.querySelector(".swiper-slide");
-    if (firstLi) {
-      firstLi.click();
-    }
+  // useEffect(() => {
+  //   // 컴포넌트가 마운트될 때 첫 번째 li 클릭
+  //   const firstLi = document.querySelector(".swiper-slide");
+  //   if (firstLi) {
+  //     firstLi.click();
+  //   }
 
-    // 두번째 인자가 빈 배열 []인 경우, 컴포넌트가 처음 마운트될 때만 실행됨.
-  }, []);
+  //   // 두번째 인자가 빈 배열 []인 경우, 컴포넌트가 처음 마운트될 때만 실행됨.
+  // }, []);
 
   // 비디오 보이기 함수
   const showVid = (src, tit) => {
@@ -238,23 +238,21 @@ function Video_Ban(props) {
     <main className="contents_wrap">
       <h2>VIDEO</h2>
       <div className="contents_inner">
-        <section id="main_mv">
+        {/* <section id="main_mv">
           <iframe src="" title="" style={{ opacity: 0, transition: "opacity 1s" }}></iframe>
-        </section>
+        </section> */}
         <section id="sub_mv">
-          <Swiper className="mv_wrap" slidesPerView={3} spaceBetween={20} navigation={true} modules={[Navigation]}>
             {vdata.map((x, i) => (
-              <SwiperSlide key={i} className="swiper-slide" onClick={() => showVid(x.vsrc, x.txt)}>
-                <div className="mv_img">
+              <div className="mvbx" key={i}>
+                <figure className="mv_img">
                   <img src={x.isrc} />
-                </div>
-                <div className="mv_date">
+                </figure>
+                <figcaption className="mv_date">
                   <p>{x.txt}</p>
                   <p>{x.date}</p>
-                </div>
-              </SwiperSlide>
+                </figcaption>
+              </div>
             ))}
-          </Swiper>
         </section>
       </div>
     </main>

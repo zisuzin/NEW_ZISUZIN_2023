@@ -543,14 +543,19 @@ svg #text-path {
 }
 
 #sub_mv {
+  display: flex;
+  flex-wrap: wrap;
   margin-top: 30px;
+}
+#sub_mv .mvbx {
+  width: 30%;
 }
 
 .mv_date p:nth-child(1) {
   font-weight: 600;
 }
 .mv_date p:nth-child(2) {
-  float: right;
+  text-align: right;
   font-size: 13px;
 }
 
