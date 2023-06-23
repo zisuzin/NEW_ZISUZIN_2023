@@ -4,7 +4,7 @@ import {Profile_Ban} from "./components/Ban";
 
 const Profile = () => {
     return (
-        <Profile_Ban cat="profile"/>
+        <Profile_Ban cat="profile"/>     
     )
 }; // Profile // 
 

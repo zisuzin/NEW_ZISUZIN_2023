@@ -7,6 +7,7 @@ import { handleHover, handleTime, minutes2, seconds2, currentTime2 } from "../js
 import $ from "jquery";
 // 배너 데이터
 import ban_data from "../data/ban";
+import { PropTween } from "gsap/gsap-core";
 
 // 플레이어 출력용 컴포넌트
 function Player(props) {
@@ -42,19 +43,30 @@ function Player(props) {
 
   function upAlbumTxt(){  
     setTimeout(()=>{
+      // 앨범이름은 오디오가 로딩된 후 시차로 실행!
       let temp = $("#album").text();
       console.log("I순번:",temp.indexOf('I'),temp);
       if(temp.indexOf('I')===0){ 
         protsts = false;
         albtxt = temp;
+        console.log("flase처리!!!");
       }
       else protsts=true;
     },100);
   }
 
+  
   function updateAudio(){
-    
+    let alEle = document.querySelector("#album");
     $("#music").on("timeupdate",()=>{
+      if(alEle.innerText.indexOf('I')===0){ 
+        protsts = false;
+        albtxt = alEle.innerText;
+      }
+      else{
+        protsts = true;
+      }
+      console.log(protsts);
       if(protsts) return;
       
       if(!currentTime2||!albtxt||!audtit[albtxt]) return;
@@ -64,15 +76,15 @@ function Player(props) {
       dur = Math.floor(audio.duration);
 
       let ct =audtit[albtxt].map(v=>Object.keys(v));
-      console.log(sec,albtxt,ct);
+      // console.log(sec,albtxt,ct);
 
       ct.forEach((v,i)=>{
         let n1 = ct[i][0];
         let n2 = i+1==ct.length?dur:ct[i+1][0];
-        console.log("범위:",n1,"~",n2,"/길이:",ct.length);
+        // console.log("범위:",n1,"~",n2,"/길이:",ct.length);
  
         if(sec>=n1 && sec<n2){
-          console.log("찍을값:",audtit[albtxt][i][n1]);
+          // console.log("찍을값:",audtit[albtxt][i][n1]);
           $("#song").text(audtit[albtxt][i][n1]);         
         }
 
@@ -109,24 +121,22 @@ function Player(props) {
 
   // 다음 버튼 클릭시 다음 순번부터 곡 재생 (1~0)
   const currentPlayStop = (e) => {
-    // 재생/멈춤/이전곡/다음곡시에 앨범제목 업데이트!
-    upAlbumTxt();
     play_btn.toggleClass("active");
     // console.log("재생멈춤버튼!!!");
     /* active 클래스 가지고있으면 이미지 변경! */
     if (play_btn.hasClass("active")) {
       play_btn.find("img").attr("src", "./images/player/bx-pause.svg");
-      protsts=false;
       updateAudio();
       audio.play();
       rotsts = 1;
       rotateLp();
     } else {
       play_btn.find("img").attr("src", "./images/player/bx-play-circle.svg");
-      protsts=true;
       audio.pause();
       rotsts = 0;
     }
+    // 재생/멈춤/이전곡/다음곡시에 앨범제목 업데이트!
+    upAlbumTxt();
   };
 
   const rotateLp = () => {
@@ -140,8 +150,6 @@ function Player(props) {
 
   // 다음 버튼 클릭시 다음 순번부터 곡 재생 (1~0)
   const playNextSong = () => {
-    // 재생/멈춤/이전곡/다음곡시에 앨범제목 업데이트!
-    upAlbumTxt();
     const nextIndex = (currentSongIndex + 1) % sel_data.length;
     setCurrentSongIndex(nextIndex);
     setSongSeq(nextIndex);
@@ -150,12 +158,12 @@ function Player(props) {
       setTimeout(() => audio.play(), 10);
       changeSongTxt(nextIndex);
     }
+    // 재생/멈춤/이전곡/다음곡시에 앨범제목 업데이트!
+    upAlbumTxt();
 
   };
 
   const playPrevSong = () => {
-    // 재생/멈춤/이전곡/다음곡시에 앨범제목 업데이트!
-    upAlbumTxt();
     const prevIndex = (currentSongIndex - 1 + sel_data.length) % sel_data.length;
     setCurrentSongIndex(prevIndex);
     const audioSrc = sel_data[prevIndex].vsrc;
@@ -166,6 +174,8 @@ function Player(props) {
       setTimeout(() => audio.play(), 10);
     }
     // console.log(audio);
+    // 재생/멈춤/이전곡/다음곡시에 앨범제목 업데이트!
+    upAlbumTxt();
 
   };
 

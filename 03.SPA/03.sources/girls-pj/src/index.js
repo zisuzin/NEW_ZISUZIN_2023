@@ -12,7 +12,7 @@ import AlbumDetail from './components/AlbumDetail';
 
 export default function App(){
     return (
-        <BrowserRouter>
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
             <Routes>
                 {/* 중요! 레이아웃 컴포넌트를 루트로 잡아줌! */}
                 <Route path='/' element={<Layout/>}>

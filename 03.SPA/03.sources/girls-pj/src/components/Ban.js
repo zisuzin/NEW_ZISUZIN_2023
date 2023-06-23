@@ -31,38 +31,40 @@ function Main_Ban(props) {
 
   return (
     <section className="banbx">
-      <div className="bancont">
-        <ul className="album_wrap">
-          {sel_data.map((x, i) => (
-            <li className="album_set" key={i}>
-              <article className={"album_cover" + (i + 1)}>
-                <div className="album_cover_inner">
-                  <div>
-                    <div className="original_author">
-                      <span>{x.altop_txt.split("^")[0]}</span>
-                      <span>/</span>
-                      <span>{x.altop_txt.split("^")[1]}</span>
+      <div className="banbxInner">
+        <div className="bancont">
+          <ul className="album_wrap">
+            {sel_data.map((x, i) => (
+              <li className={"album_set album_set"+(i+1)} key={i}>
+                <article className={"album_cover" + (i + 1)}>
+                  <div className="album_cover_inner">
+                    <div>
+                      <div className="original_author">
+                        <span>{x.altop_txt.split("^")[0]}</span>
+                        <span>/</span>
+                        <span>{x.altop_txt.split("^")[1]}</span>
+                      </div>
+                      <em>{x.mtit}</em>
                     </div>
-                    <em>{x.mtit}</em>
-                  </div>
-                  <div className="release_date">
-                    <div className="date">
-                      <span>{x.albot_txt.split("^")[0]}</span>
-                      <span>{x.albot_txt.split("^")[1]}</span>
+                    <div className="release_date">
+                      <div className="date">
+                        <span>{x.albot_txt.split("^")[0]}</span>
+                        <span>{x.albot_txt.split("^")[1]}</span>
+                      </div>
+                      <div className="singer">(G)I-DLe</div>
                     </div>
-                    <div className="singer">(G)I-DLe</div>
                   </div>
-                </div>
-              </article>
-              <aside className="album_cd1">
-                <a href="#">
-                  <img src={x.isrc} alt="앨범이미지1" />
-                </a>
-                <div className="cd_center_circle"></div>
-              </aside>
-            </li>
-          ))}
-        </ul>
+                </article>
+                <aside className="album_cd1">
+                  <a href="#">
+                    <img src={x.isrc} alt="앨범이미지1" />
+                  </a>
+                  <div className="cd_center_circle"></div>
+                </aside>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </section>
   );
@@ -70,6 +72,7 @@ function Main_Ban(props) {
 
 // 프로필배너 출력용 컴포넌트
 function Profile_Ban(props) {
+
   const sel_data = ban_data[props.cat];
 
   $(() => {
@@ -91,37 +94,50 @@ function Profile_Ban(props) {
       $(this).parent().css({ display: "none" });
     });
   });
-
   // site svg 애니메이션
 
-  const textPath = document.querySelector("#text-path");
-  const textContainer = document.querySelector("#text-container");
-  let path = document.querySelector(textPath.getAttribute("href"));
-  let pathLength = path.getTotalLength();
-
-  function updateTextPathOffset(offset) {
-    textPath.setAttribute("startOffset", offset);
-  }
-
-  updateTextPathOffset(pathLength);
-
-  function onScroll() {
-    requestAnimationFrame(function () {
-      let rect = textContainer.getBoundingClientRect();
-      let scrollPercent = rect.y / window.innerHeight;
-      updateTextPathOffset(scrollPercent * 2 * pathLength);
+  const textWave = () => {
+    const textPath = document.querySelector("#text-path");
+    const textContainer = document.querySelector("#text-container");
+    let path = document.querySelector(textPath.getAttribute("href"));
+    let pathLength = path.getTotalLength();
+  
+    function updateTextPathOffset(offset) {
+      textPath.setAttribute("startOffset", offset);
+    }
+  
+    updateTextPathOffset(pathLength);
+  
+    function onScroll() {
+      requestAnimationFrame(function () {
+        let rect = textContainer.getBoundingClientRect();
+        let scrollPercent = rect.y / window.innerHeight;
+        updateTextPathOffset(scrollPercent * 2 * pathLength);
+      });
+    }
+  
+    window.addEventListener("scroll", onScroll);
+  
+    $(window).scroll(function () {
+      
+    if(!document.querySelector("#text-container")) return;
+    // console.log("33",document.querySelector("#text-container"));
+      let scroll = $(window).scrollTop();
+      const sec_start1 = $("#text-container").offset().top;
+      const siteListTitle = $("#text-curve");
+    
+      if (scroll > sec_start1 && siteListTitle.length > 0) {
+        gsap.to(siteListTitle, { duration: 0.8, opacity: 1, y: 3, delay: 1.1 });
+      }
     });
   }
 
-  window.addEventListener("scroll", onScroll);
+  function setFn(){
+    setTimeout(textWave,1000)
+  }
+ 
+    useEffect(setFn,[])
 
-  $(window).scroll(function () {
-    let scroll = $(window).scrollTop();
-    const sec_start1 = $(".text_sec").offset().top;
-    if (scroll > sec_start1) {
-      gsap.to(".site_list_title h3", { duration: 0.8, opacity: 1, y: 3, delay: 1.1 });
-    }
-  });
 
   return (
     <>
@@ -147,7 +163,7 @@ function Profile_Ban(props) {
 
                 <text y="40">
                     <textPath id="text-path" href="#text-curve" startOffset="442.8510130819152">
-                        * 제가 만든 웹사이트가 궁금하신가요?
+                        멤버들에 대해 궁금하신가요?
                     </textPath>
                 </text>
             </svg>
@@ -188,7 +204,7 @@ function Profile_Ban(props) {
             </section>
           </div>
         </main>
-      ))}
+        ))}
     </>
   );
 }
@@ -251,7 +267,7 @@ function Album_Ban() {
 
   return (
     <main className="contents_wrap">
-      <h2>DISCOGRAPHY</h2>
+      <h2 className="mttit">DISCOGRAPHY</h2>
       <div className="contents_inner">
         <div className="album_list">
           <ul>

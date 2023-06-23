@@ -9,7 +9,7 @@
 /* 앨범 페이지 */
 @media screen and (max-width: 930px) {
   .contents_wrap {
-    padding: 25.97vw 5.09vw 25.14vw !important;
+    padding: 10.97vw 5.09vw 10vw !important;
   }
 
   .album_list li + li {

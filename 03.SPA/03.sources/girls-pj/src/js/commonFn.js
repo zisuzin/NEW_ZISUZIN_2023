@@ -177,7 +177,7 @@ function handleTime() {
 
       audio.currentTime = seekTime;
     }
-
+    if(document.querySelector("#slider"))
   slider.addEventListener("click",controlSong);
 }
 
