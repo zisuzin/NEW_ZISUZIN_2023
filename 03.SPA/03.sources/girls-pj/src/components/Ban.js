@@ -13,12 +13,16 @@ import { Navigation } from "swiper";
 // 제이쿼리
 import $ from "jquery";
 
-// 배너CSS
+// 폰트어썸 임포트
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+// 배너 CSS
 import "../scss/ban.css";
 // // 미디어쿼리CSS
 // import "../scss/media.css";
 
-// Import Swiper styles
+// 스와이퍼 CSS
 import "swiper/css";
 import "swiper/css/navigation";
 
@@ -35,7 +39,7 @@ function Main_Ban(props) {
         <div className="bancont">
           <ul className="album_wrap">
             {sel_data.map((x, i) => (
-              <li className={"album_set album_set"+(i+1)} key={i}>
+              <li className={"album_set album_set" + (i + 1)} key={i}>
                 <article className={"album_cover" + (i + 1)}>
                   <div className="album_cover_inner">
                     <div>
@@ -72,7 +76,6 @@ function Main_Ban(props) {
 
 // 프로필배너 출력용 컴포넌트
 function Profile_Ban(props) {
-
   const sel_data = ban_data[props.cat];
 
   $(() => {
@@ -101,13 +104,13 @@ function Profile_Ban(props) {
     const textContainer = document.querySelector("#text-container");
     let path = document.querySelector(textPath.getAttribute("href"));
     let pathLength = path.getTotalLength();
-  
+
     function updateTextPathOffset(offset) {
       textPath.setAttribute("startOffset", offset);
     }
-  
+
     updateTextPathOffset(pathLength);
-  
+
     function onScroll() {
       requestAnimationFrame(function () {
         let rect = textContainer.getBoundingClientRect();
@@ -115,29 +118,27 @@ function Profile_Ban(props) {
         updateTextPathOffset(scrollPercent * 2 * pathLength);
       });
     }
-  
+
     window.addEventListener("scroll", onScroll);
-  
+
     $(window).scroll(function () {
-      
-    if(!document.querySelector("#text-container")) return;
-    // console.log("33",document.querySelector("#text-container"));
+      if (!document.querySelector("#text-container")) return;
+      // console.log("33",document.querySelector("#text-container"));
       let scroll = $(window).scrollTop();
       const sec_start1 = $("#text-container").offset().top;
       const siteListTitle = $("#text-curve");
-    
+
       if (scroll > sec_start1 && siteListTitle.length > 0) {
         gsap.to(siteListTitle, { duration: 0.8, opacity: 1, y: 3, delay: 1.1 });
       }
     });
+  };
+
+  function setFn() {
+    setTimeout(textWave, 1000);
   }
 
-  function setFn(){
-    setTimeout(textWave,1000)
-  }
- 
-    useEffect(setFn,[])
-
+  useEffect(setFn, []);
 
   return (
     <>
@@ -159,13 +160,13 @@ function Profile_Ban(props) {
 
             {/* 스크롤시 등장하는 웨이브 텍스트 */}
             <svg id="text-container" viewBox="0 0 1000 200" xmlns="http://www.w3.org/2000/svg">
-                <path id="text-curve" d="M0 100s269.931 86.612 520 0c250.069-86.612 480 0 480 0" fill="none"></path>
+              <path id="text-curve" d="M0 100s269.931 86.612 520 0c250.069-86.612 480 0 480 0" fill="none"></path>
 
-                <text y="40">
-                    <textPath id="text-path" href="#text-curve" startOffset="442.8510130819152">
-                        멤버들에 대해 궁금하신가요?
-                    </textPath>
-                </text>
+              <text y="40">
+                <textPath id="text-path" href="#text-curve" startOffset="442.8510130819152">
+                  멤버들에 대해 궁금하신가요?
+                </textPath>
+              </text>
             </svg>
 
             {/* 3. 개별멤버 프로필 */}
@@ -204,7 +205,7 @@ function Profile_Ban(props) {
             </section>
           </div>
         </main>
-        ))}
+      ))}
     </>
   );
 }
@@ -213,6 +214,48 @@ function Profile_Ban(props) {
 function Video_Ban(props) {
   // 데이터 셋팅
   const vdata = ban_data[props.cat];
+
+  // 데이터 선택하기 : Hook 데이터 구성
+  let [mvd, setMvd] = useState(vdata);
+  console.log(setMvd)
+
+  // 데이터 건수 : Hook 데이터 구성
+  let [tot, setTot] = useState(vdata.length);
+
+  // 데이터 검색 함수
+  const schList = () => {
+    // 검색요소 대상 : #searchInput
+    let input = document.querySelector("#searchInput");
+
+    // 1. 검색어 읽기
+    let keyword = input.value;
+
+    // 2. 검색어 입력확인분기
+    if(keyword.trim()==""){
+      // 입력창으로 다시 보내기 
+      input.focus();
+      return;
+    }
+
+    // 3. 데이터 검색하기
+    // 배열값 다중검색 메서드 -> filter()
+    let searchList = vdata.filter(v=>{
+      // if(v.txt.toLowerCase())
+      if(v.txt.toLowerCase().indexOf(keyword) !== -1)
+      return true;
+    });
+
+    // 4. 검색결과 리스트 업데이트하기 
+    // Hook변수인 데이터변수와 데이터건수 변수를 업데이트
+    setMvd(searchList);
+    setTot(searchList.length);
+  }; // schList 함수 
+
+  // 입력창에서 엔터키 누르면 검색함수 호출!
+  const enterKy = (e) => {
+    if(e.key === 'Enter') schList();
+  }; // enterKy 함수
+
 
   // useEffect(() => {
   //   // 컴포넌트가 마운트될 때 첫 번째 li 클릭
@@ -236,23 +279,54 @@ function Video_Ban(props) {
 
   return (
     <main className="contents_wrap">
-      <h2>VIDEO</h2>
+      {/* <h2>VIDEO</h2> */}
       <div className="contents_inner">
         {/* <section id="main_mv">
           <iframe src="" title="" style={{ opacity: 0, transition: "opacity 1s" }}></iframe>
         </section> */}
-        <section id="sub_mv">
-            {vdata.map((x, i) => (
-              <div className="mvbx" key={i}>
-                <figure className="mv_img">
-                  <img src={x.isrc} />
-                </figure>
-                <figcaption className="mv_date">
-                  <p>{x.txt}</p>
-                  <p>{x.date}</p>
-                </figcaption>
+        {/* 모듈코드 */}
+        <section className="schbx">
+          {/* 1. 옵션선택박스 */}
+          <div className="schopt">
+            {/* 검색박스 */}
+            <div className="searching">
+              {/* 검색버튼 돋보기아이콘 */}
+              <FontAwesomeIcon icon={faSearch} className="schbtn" title="키워드 검색"/>
+              {/* 입력창 */}
+              <input id="searchInput" type="text" placeholder="Filter by Keyword" onKeyUp={enterKy}/>
+            </div>
+          </div>
+          {/* 2. 결과리스트박스 */}
+          <div className="listbx">
+            {/* 결과타이틀 */}
+            <h3 className="restit">총 검색결과 : {tot}</h3>
+            {/* 정렬선택박스 */}
+            <aside className="sortbx">
+              <select className="sel" name="sel" id="sel">
+                <option value="0">A-Z</option>
+                <option value="1">Z-A</option>
+              </select>
+            </aside>
+            {/* 비디오 리스트 컴포넌트 
+                전달속성 dt - 리스트 데이터 */}
+            <main className="contents_wrap">
+              <div className="contents_inner">
+                <section id="sub_mv">
+                    {vdata.map((x, i) => (
+                      <div className="mvbx" key={i}>
+                        <figure className="mv_img">
+                          <img src={x.isrc} />
+                        </figure>
+                        <figcaption className="mv_date">
+                          <p>{x.txt}</p>
+                          <p>{x.date}</p>
+                        </figcaption>
+                      </div>
+                    ))}
+                </section>
               </div>
-            ))}
+            </main>
+          </div>
         </section>
       </div>
     </main>
