@@ -237,13 +237,15 @@ function Video_Ban(props) {
     let keyword = input.value;
 
     // 2. 검색어 입력확인분기
-    if (keyword.trim() == "") {
-      // 검색건수 초기화
-      setTot(0);
-      // 검색어가 변경될 때 자동완성 데이터 초기화
-      setAutocomplete([]);
+    if (keyword.trim() === "") {
       // 입력창으로 다시보내기
       input.focus();
+      // 기존 정렬상태로 돌아가기
+      setMvd([vdata, mvd[3]]);
+      // 검색건수 초기화
+      setTot(vdata.length);
+      // 검색어가 변경될 때 자동완성 데이터 초기화
+      setAutocomplete([]);
       return;
     }
 
@@ -257,22 +259,23 @@ function Video_Ban(props) {
     // Hook변수인 데이터변수와 데이터건수 변수를 업데이트
     setMvd([searchList, 3]);
     setTot(searchList.length);
-    setAutocomplete(searchList.map((item) => item.txt));
   }; // schList 함수
 
   const searchAuto = (e) => {
     // 입력창에서 텍스트 입력시 자동완성 데이터 업데이트!
     let userInp = document.querySelector("#searchInput").value;
-    schList(userInp);
+    
+    let searchList = vdata.filter((v) => {
+      if (v.txt.toLowerCase().indexOf(userInp) !== -1) return true;
+    });
+    setAutocomplete(searchList.map((item) => item.txt));
   }; // searchAuto 함수
 
   // 입력창에서 엔터키 누르면 검색함수 호출!
   const enterKy = (e) => {
     // 엔터쳤을때 데이터 업데이트!
     if (e.key === "Enter") {
-      setTimeout(()=>{
         schList();
-      },1000)
     }
   }; // enterKy 함수
 
@@ -289,7 +292,8 @@ function Video_Ban(props) {
       if (opt == 1) {
         // 오름차순(1)
         return x.txt == y.txt ? 0 : x.txt > y.txt ? 1 : -1;
-      } else if (opt == 2) {
+      }
+      else if (opt == 2) {
         // 내림차순(2)
         return x.txt == y.txt ? 0 : x.txt > y.txt ? -1 : 1;
       }
