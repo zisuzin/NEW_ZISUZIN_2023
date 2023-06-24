@@ -216,8 +216,10 @@ function Video_Ban(props) {
   const vdata = ban_data[props.cat];
 
   // 데이터 선택하기 : Hook 데이터 구성
-  let [mvd, setMvd] = useState(vdata);
-  console.log(setMvd)
+  // -> 데이터 정렬을 반영하기 위해 정렬상태값을 같이 설정함!
+  // 데이터구성 : [배열데이터,정렬상태값]
+  // 정렬상태값 : 1 - 오름차순, 2 - 내림차순, 3 - 정렬전
+  let [mvd, setMvd] = useState([vdata, 3]);
 
   // 데이터 건수 : Hook 데이터 구성
   let [tot, setTot] = useState(vdata.length);
@@ -227,45 +229,84 @@ function Video_Ban(props) {
     // 검색요소 대상 : #searchInput
     let input = document.querySelector("#searchInput");
 
+    // 자동완성 상태변수
+    const [autocomplete, setAutocomplete] = useState([]);
+
     // 1. 검색어 읽기
     let keyword = input.value;
 
     // 2. 검색어 입력확인분기
-    if(keyword.trim()==""){
-      // 입력창으로 다시 보내기 
+    if (keyword.trim() == "") {
+      // 입력창으로 다시 보내기
       input.focus();
       return;
     }
 
     // 3. 데이터 검색하기
     // 배열값 다중검색 메서드 -> filter()
-    let searchList = vdata.filter(v=>{
-      // if(v.txt.toLowerCase())
-      if(v.txt.toLowerCase().indexOf(keyword) !== -1)
-      return true;
+    let searchList = vdata.filter((v) => {
+      if (v.txt.toLowerCase().indexOf(keyword) !== -1) return true;
     });
 
-    // 4. 검색결과 리스트 업데이트하기 
+    // 4. 검색결과 리스트 업데이트하기
     // Hook변수인 데이터변수와 데이터건수 변수를 업데이트
-    setMvd(searchList);
+    setMvd([searchList, 3]);
     setTot(searchList.length);
-  }; // schList 함수 
+    setAutocomplete(searchList.map(item=> item.txt));
+
+  }; // schList 함수
 
   // 입력창에서 엔터키 누르면 검색함수 호출!
   const enterKy = (e) => {
-    if(e.key === 'Enter') schList();
+    // 비디오리스트 타이틀 생성변수
+    let hcode;
+    if (e.key === "Enter") schList();
+
+    // let userInp = document.querySelector("#searchInput").value;
+    // let vdData = mvd[0].map(x=>x.txt)
+    // if(userInp == vdData){
+    //   document.querySelector(".panels").innerText = vdData;
+    //   console.log("출력값:",vdData)
+    // }  
+
+  //   hcode = "<ul>";
+  //   for (let x = 0; x <= tot; x++) {
+  //     hcode += `
+  //     <li>
+  //       <a hrf=""></a>
+  //     </li>
+  //   `
+  // }
+  //     hcode += "</ul>";
+
+    // 입력창에 키워드 입력하면 연관된 비디오리스트 타이틀 출력
+    // document.querySelector(".panels").append(hcode);
+
   }; // enterKy 함수
 
+  // 리스트 정렬 변경함수
+  const sortList = (e) => {
+    // 1. 선택옵션값 : 1 - 오름차순 / 1 - 내림차순
+    let opt = e.target.value;
+    console.log("선택옵션:", opt);
 
-  // useEffect(() => {
-  //   // 컴포넌트가 마운트될 때 첫 번째 li 클릭
-  //   const firstLi = document.querySelector(".swiper-slide");
-  //   if (firstLi) {
-  //     firstLi.click();
-  //   }
+    // 임시변수 : 배열데이터만 가져옴
+    let temp = mvd[0];
 
-  //   // 두번째 인자가 빈 배열 []인 경우, 컴포넌트가 처음 마운트될 때만 실행됨.
-  // }, []);
+    // 2. 옵션에 따른 정렬 반영하기
+    temp.sort((x, y) => {
+      if (opt == 1) {
+        // 오름차순(1)
+        return x.txt == y.txt ? 0 : x.txt > y.txt ? 1 : -1;
+      } else if (opt == 2) {
+        // 내림차순(2)
+        return x.txt == y.txt ? 0 : x.txt > y.txt ? -1 : 1;
+      }
+    });
+    // 3. 데이터 정렬변경 반영하기
+    // setMvd([배열데이터,정렬상태값])
+    setMvd([temp, Number(opt)]);
+  }; // sortList 함수
 
   // 비디오 보이기 함수
   const showVid = (src, tit) => {
@@ -277,13 +318,36 @@ function Video_Ban(props) {
     ifr.css("opacity", 1);
   }; // Showvid //
 
+  function CatList(props) {
+    // 선택데이터
+    let mvd = props.dt;
+    console.log("mvd:", mvd);
+
+    return (
+      <main className="contents_wrap">
+        <div className="contents_inner">
+          <section id="sub_mv">
+            {mvd.map((x, i) => (
+              <div className="mvbx" key={i}>
+                <figure className="mv_img">
+                  <img src={x.isrc} />
+                </figure>
+                <figcaption className="mv_date">
+                  <p>{x.txt}</p>
+                  <p>{x.date}</p>
+                </figcaption>
+              </div>
+            ))}
+          </section>
+        </div>
+      </main>
+    );
+  }
+
   return (
     <main className="contents_wrap">
       {/* <h2>VIDEO</h2> */}
       <div className="contents_inner">
-        {/* <section id="main_mv">
-          <iframe src="" title="" style={{ opacity: 0, transition: "opacity 1s" }}></iframe>
-        </section> */}
         {/* 모듈코드 */}
         <section className="schbx">
           {/* 1. 옵션선택박스 */}
@@ -291,9 +355,23 @@ function Video_Ban(props) {
             {/* 검색박스 */}
             <div className="searching">
               {/* 검색버튼 돋보기아이콘 */}
-              <FontAwesomeIcon icon={faSearch} className="schbtn" title="키워드 검색"/>
+              <FontAwesomeIcon icon={faSearch} className="schbtn" title="키워드 검색" />
               {/* 입력창 */}
-              <input id="searchInput" type="text" placeholder="Filter by Keyword" onKeyUp={enterKy}/>
+              <input id="searchInput" type="text" maxLength="14" placeholder="검색어를 입력해주세요" onKeyUp={enterKy} />
+            </div>
+            {/* 키워드 검색시 연관검색어 팝업 */}
+            <div id="keyword_collection">
+              <div className="panels">
+                <ul>
+                  {
+                    autocomplete.map((item,i)=>(
+                      <li>
+                        <span>{item}</span>
+                      </li>
+                    ))
+                  }
+                </ul>
+              </div>
             </div>
           </div>
           {/* 2. 결과리스트박스 */}
@@ -302,30 +380,15 @@ function Video_Ban(props) {
             <h3 className="restit">총 검색결과 : {tot}</h3>
             {/* 정렬선택박스 */}
             <aside className="sortbx">
-              <select className="sel" name="sel" id="sel">
-                <option value="0">A-Z</option>
-                <option value="1">Z-A</option>
+              <select className="sel" name="sel" id="sel" onChange={sortList}>
+                <option value="0">정렬선택</option>
+                <option value="1">오름차순</option>
+                <option value="2">내림차순</option>
               </select>
             </aside>
             {/* 비디오 리스트 컴포넌트 
                 전달속성 dt - 리스트 데이터 */}
-            <main className="contents_wrap">
-              <div className="contents_inner">
-                <section id="sub_mv">
-                    {vdata.map((x, i) => (
-                      <div className="mvbx" key={i}>
-                        <figure className="mv_img">
-                          <img src={x.isrc} />
-                        </figure>
-                        <figcaption className="mv_date">
-                          <p>{x.txt}</p>
-                          <p>{x.date}</p>
-                        </figcaption>
-                      </div>
-                    ))}
-                </section>
-              </div>
-            </main>
+            <CatList dt={mvd[0]} />
           </div>
         </section>
       </div>

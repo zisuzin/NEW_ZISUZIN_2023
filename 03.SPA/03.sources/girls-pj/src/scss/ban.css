@@ -571,19 +571,25 @@ svg #text-path {
 
 /* 검색입력창 박스 */
 .searching {
+  position: relative;
   width: 250px;
   height: 40px;
+  border: solid 2px #111;
   border-radius: 20px;
-  background-color: #efefef;
   box-sizing: border-box;
   padding: 0 5px;
 }
+.searching svg {
+  position: absolute;
+  right: 15px;
+}
 
 .searching input {
-  font-size: 15px;
-  width: 77%;
-  margin-top: 5px;
-  margin-left: 10px;
+  width: 75%;
+  position: absolute;
+  font-size: 13px;
+  left: 15px;
+  height: 100%;
   background-color: transparent;
   border: none;
 }
@@ -610,13 +616,13 @@ input:focus {
   max-width: 1320px;
   min-height: 600px;
   padding: 20px;
-  margin: 20px auto;
-  /* border: 1px solid #000; */
 }
 
 /* 검색옵션박스 */
 .schopt {
   width: 30%;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
 /****** 앨범 페이지 ******/
@@ -665,6 +671,16 @@ input:focus {
 
 .txt_align {
   display: none;
+}
+
+#keyword_collection {
+  position: absolute;
+}
+#keyword_collection .panels {
+  position: relative;
+  width: 100%;
+  background: #fff;
+  border: 1px solid #ababab;
 }
 
 /****** 앨범 페이지 상세 ******/
