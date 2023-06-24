@@ -604,8 +604,10 @@ input:focus {
 }
 
 .restit {
-  font-size: min(35px, 4vw);
-  margin: 10px;
+  font-size: 1.5em;
+}
+.restit .inputVal {
+  color: #d7266d;
 }
 
 /* 검색박스 */

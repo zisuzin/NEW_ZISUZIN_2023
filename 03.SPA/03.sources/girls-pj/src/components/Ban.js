@@ -287,18 +287,26 @@ function Video_Ban(props) {
     if (e.key === "Enter") {
       schList();
       const userInp = e.target.value.toLowerCase();
-      const completeList = vdata.filter((item)=> {
+      const completeList = vdata.filter((item) => {
         if (item.txt.toLowerCase().indexOf(userInp) !== -1) return true;
       });
 
       // 검색건수 업데이트
-      setTot(completeList.length)
+      setTot(completeList.length);
 
       // 검색결과 타이틀 출력 - 입력값이 있고, 데이터가 있는 경우에만!
       if (userInp.trim() !== "" && completeList.length !== 0) {
-        setResultTit(`${userInp} 검색결과 (${completeList.length})`);
-        $(".sortbx").css({display:"block"});
-        
+        setResultTit(
+          <>
+          <strong className="inputVal">
+            {userInp}
+          </strong>
+          <span>
+            검색결과 ({completeList.length})
+          </span>
+          </>
+        );
+        $(".sortbx").css({ display: "block" });
         if (completeList.length === 1) {
           $(".sortbx").css({ display: "none" });
         }
@@ -306,15 +314,14 @@ function Video_Ban(props) {
       // 검색결과 없는 경우
       else if (completeList.length == 0) {
         setResultTit("검색 결과가 없습니다");
-        $(".sortbx").css({display:"none"});
+        $(".sortbx").css({ display: "none" });
       }
-      // 초기화면 구성 - 위 두 조건을 만족하지 않으면 null값 반환 
+      // 초기화면 구성 - 위 두 조건을 만족하지 않으면 null값 반환
       else {
-        setResultTit(null)
-        $(".sortbx").css({display:"block"});
+        setResultTit(null);
+        $(".sortbx").css({ display: "block" });
       }
     }
-
   }; // enterKy 함수
 
   // 리스트 정렬 변경함수
@@ -396,10 +403,7 @@ function Video_Ban(props) {
           {/* 2. 결과리스트박스 */}
           <div className="listbx">
             {/* 검색결과 타이틀 */}
-            {
-              resultTit &&
-              <h3 className="restit">{resultTit}</h3>
-            }
+            {resultTit && <div className="restit">{resultTit}</div>}
             {/* 정렬선택박스 */}
             <aside className="sortbx">
               <select className="sel" name="sel" id="sel" onChange={sortList}>
