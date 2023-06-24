@@ -233,16 +233,23 @@ function Video_Ban(props) {
     // 검색요소 대상 : #searchInput
     let input = document.querySelector("#searchInput");
 
+    // 자동완성 상태변수
+    const [autocomplete, setAutocomplete] = useState([]);
+
     // 1. 검색어 읽기
     let keyword = input.value;
 
     // 2. 검색어 입력확인분기
     if (keyword.trim() == "") {
+<<<<<<< HEAD
       // 검색건수 초기화
       setTot(0);
       // 검색어가 변경될 때 자동완성 데이터 초기화
       setAutocomplete([]);
       // 입력창으로 다시보내기
+=======
+      // 입력창으로 다시 보내기
+>>>>>>> 5210838836046275218eaf45596c0c076ba61612
       input.focus();
       return;
     }
@@ -257,6 +264,7 @@ function Video_Ban(props) {
     // Hook변수인 데이터변수와 데이터건수 변수를 업데이트
     setMvd([searchList, 3]);
     setTot(searchList.length);
+<<<<<<< HEAD
     setAutocomplete(searchList.map((item) => item.txt));
   }; // schList 함수
 
@@ -274,12 +282,48 @@ function Video_Ban(props) {
         schList();
       },1000)
     }
+=======
+    setAutocomplete(searchList.map(item=> item.txt));
+
+  }; // schList 함수
+
+  // 입력창에서 엔터키 누르면 검색함수 호출!
+  const enterKy = (e) => {
+    // 비디오리스트 타이틀 생성변수
+    let hcode;
+    if (e.key === "Enter") schList();
+
+    // let userInp = document.querySelector("#searchInput").value;
+    // let vdData = mvd[0].map(x=>x.txt)
+    // if(userInp == vdData){
+    //   document.querySelector(".panels").innerText = vdData;
+    //   console.log("출력값:",vdData)
+    // }  
+
+  //   hcode = "<ul>";
+  //   for (let x = 0; x <= tot; x++) {
+  //     hcode += `
+  //     <li>
+  //       <a hrf=""></a>
+  //     </li>
+  //   `
+  // }
+  //     hcode += "</ul>";
+
+    // 입력창에 키워드 입력하면 연관된 비디오리스트 타이틀 출력
+    // document.querySelector(".panels").append(hcode);
+
+>>>>>>> 5210838836046275218eaf45596c0c076ba61612
   }; // enterKy 함수
 
   // 리스트 정렬 변경함수
   const sortList = (e) => {
     // 1. 선택옵션값 : 1 - 오름차순 / 1 - 내림차순
     let opt = e.target.value;
+<<<<<<< HEAD
+=======
+    console.log("선택옵션:", opt);
+>>>>>>> 5210838836046275218eaf45596c0c076ba61612
 
     // 임시변수 : 배열데이터만 가져옴
     let temp = mvd[0];
@@ -312,7 +356,11 @@ function Video_Ban(props) {
   function CatList(props) {
     // 선택데이터
     let mvd = props.dt;
+<<<<<<< HEAD
     // console.log("mvd:", mvd);
+=======
+    console.log("mvd:", mvd);
+>>>>>>> 5210838836046275218eaf45596c0c076ba61612
 
     return (
       <main className="contents_wrap">
@@ -348,17 +396,31 @@ function Video_Ban(props) {
               {/* 검색버튼 돋보기아이콘 */}
               <FontAwesomeIcon icon={faSearch} className="schbtn" title="키워드 검색" />
               {/* 입력창 */}
+<<<<<<< HEAD
               <input id="searchInput" type="text" maxLength="14" placeholder="검색어를 입력해주세요" onKeyUp={enterKy} onChange={searchAuto} />
+=======
+              <input id="searchInput" type="text" maxLength="14" placeholder="검색어를 입력해주세요" onKeyUp={enterKy} />
+>>>>>>> 5210838836046275218eaf45596c0c076ba61612
             </div>
             {/* 키워드 검색시 연관검색어 팝업 */}
             <div id="keyword_collection">
               <div className="panels">
                 <ul>
+<<<<<<< HEAD
                   {autocomplete.map((item, i) => (
                     <li key={i}>
                       <span>{item}</span>
                     </li>
                   ))}
+=======
+                  {
+                    autocomplete.map((item,i)=>(
+                      <li>
+                        <span>{item}</span>
+                      </li>
+                    ))
+                  }
+>>>>>>> 5210838836046275218eaf45596c0c076ba61612
                 </ul>
               </div>
             </div>
