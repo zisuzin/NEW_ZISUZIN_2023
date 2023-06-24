@@ -137,8 +137,8 @@ function Profile_Ban(props) {
   function setFn() {
     setTimeout(textWave, 1000);
   }
-  
-  // setTimeout 썼을때 페이지하단 카운트되는것 방지! 
+
+  // setTimeout 썼을때 페이지하단 카운트되는것 방지!
   useEffect(setFn, []);
 
   return (
@@ -224,7 +224,7 @@ function Video_Ban(props) {
 
   // 데이터 건수 : Hook 데이터 구성
   let [tot, setTot] = useState(vdata.length);
-  
+
   // 자동완성 상태변수
   const [autocomplete, setAutocomplete] = useState([]);
 
@@ -240,6 +240,8 @@ function Video_Ban(props) {
     if (keyword.trim() == "") {
       // 검색건수 초기화
       setTot(0);
+      // 검색어가 변경될 때 자동완성 데이터 초기화
+      setAutocomplete([]);
       // 입력창으로 다시보내기
       input.focus();
       return;
@@ -261,18 +263,16 @@ function Video_Ban(props) {
   const searchAuto = (e) => {
     // 입력창에서 텍스트 입력시 자동완성 데이터 업데이트!
     let userInp = document.querySelector("#searchInput").value;
-    setAutocomplete([]); // 검색어가 변경될 때 자동완성 데이터를 비웁니다.
     schList(userInp);
-    // schList(userInp);
-
   }; // searchAuto 함수
 
   // 입력창에서 엔터키 누르면 검색함수 호출!
   const enterKy = (e) => {
     // 엔터쳤을때 데이터 업데이트!
     if (e.key === "Enter") {
-      let userInp = document.querySelector("#searchInput").value;
-      schList(userInp);
+      setTimeout(()=>{
+        schList();
+      },1000)
     }
   }; // enterKy 함수
 
@@ -312,7 +312,7 @@ function Video_Ban(props) {
   function CatList(props) {
     // 선택데이터
     let mvd = props.dt;
-    console.log("mvd:", mvd);
+    // console.log("mvd:", mvd);
 
     return (
       <main className="contents_wrap">
@@ -348,19 +348,17 @@ function Video_Ban(props) {
               {/* 검색버튼 돋보기아이콘 */}
               <FontAwesomeIcon icon={faSearch} className="schbtn" title="키워드 검색" />
               {/* 입력창 */}
-              <input id="searchInput" type="text" maxLength="14" placeholder="검색어를 입력해주세요" onKeyUp={enterKy} onChange={searchAuto}/>
+              <input id="searchInput" type="text" maxLength="14" placeholder="검색어를 입력해주세요" onKeyUp={enterKy} onChange={searchAuto} />
             </div>
             {/* 키워드 검색시 연관검색어 팝업 */}
             <div id="keyword_collection">
               <div className="panels">
                 <ul>
-                  {
-                    autocomplete.map((item,i)=>(
-                      <li key={i}>
-                        <span>{item}</span>
-                      </li>
-                    ))
-                  }
+                  {autocomplete.map((item, i) => (
+                    <li key={i}>
+                      <span>{item}</span>
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>
