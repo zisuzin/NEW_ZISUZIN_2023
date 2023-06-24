@@ -1,6 +1,6 @@
 // 배너 컴포넌트 - Ban.js
 import React from "react";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 // 애니메이션 라이브러리
 import gsap from "gsap";
@@ -97,8 +97,8 @@ function Profile_Ban(props) {
       $(this).parent().css({ display: "none" });
     });
   });
-  // site svg 애니메이션
 
+  // site svg 애니메이션
   const textWave = () => {
     const textPath = document.querySelector("#text-path");
     const textContainer = document.querySelector("#text-container");
@@ -228,6 +228,9 @@ function Video_Ban(props) {
   // 자동완성 상태변수
   const [autocomplete, setAutocomplete] = useState([]);
 
+  // 사용자입력값 상태변수
+  const [resultTit, setResultTit] = useState(null);
+
   // 데이터 검색 함수
   const schList = () => {
     // 검색요소 대상 : #searchInput
@@ -244,8 +247,6 @@ function Video_Ban(props) {
       setMvd([vdata, mvd[3]]);
       // 검색건수 초기화
       setTot(vdata.length);
-      // 검색어가 변경될 때 자동완성 데이터 초기화
-      setAutocomplete([]);
       return;
     }
 
@@ -256,18 +257,27 @@ function Video_Ban(props) {
     });
 
     // 4. 검색결과 리스트 업데이트하기
-    // Hook변수인 데이터변수와 데이터건수 변수를 업데이트
+    // 검색결과 리스트 업데이트
     setMvd([searchList, 3]);
-    setTot(searchList.length);
   }; // schList 함수
 
   const searchAuto = (e) => {
-    // 입력창에서 텍스트 입력시 자동완성 데이터 업데이트!
     let userInp = document.querySelector("#searchInput").value;
-    
+    // 입력창에서 텍스트 입력시 자동완성 데이터 업데이트
+    // 검색어 입력시 관련 값이 있을 경우만 css 적용!
+    $(".panels").css({ display: "block" });
+
+    // 입력한 검색어와 관련된 데이터가 있을 경우에만 값을 출력
     let searchList = vdata.filter((v) => {
       if (v.txt.toLowerCase().indexOf(userInp) !== -1) return true;
     });
+
+    // 검색어가 비었을때 자동완성 데이터 초기화
+    if (userInp.trim() === "" || searchList.length == 0) {
+      setAutocomplete([]);
+      $(".panels").css({ display: "none" });
+      return;
+    }
     setAutocomplete(searchList.map((item) => item.txt));
   }; // searchAuto 함수
 
@@ -275,8 +285,36 @@ function Video_Ban(props) {
   const enterKy = (e) => {
     // 엔터쳤을때 데이터 업데이트!
     if (e.key === "Enter") {
-        schList();
+      schList();
+      const userInp = e.target.value.toLowerCase();
+      const completeList = vdata.filter((item)=> {
+        if (item.txt.toLowerCase().indexOf(userInp) !== -1) return true;
+      });
+
+      // 검색건수 업데이트
+      setTot(completeList.length)
+
+      // 검색결과 타이틀 출력 - 입력값이 있고, 데이터가 있는 경우에만!
+      if (userInp.trim() !== "" && completeList.length !== 0) {
+        setResultTit(`${userInp} 검색결과 (${completeList.length})`);
+        $(".sortbx").css({display:"block"});
+        
+        if (completeList.length === 1) {
+          $(".sortbx").css({ display: "none" });
+        }
+      }
+      // 검색결과 없는 경우
+      else if (completeList.length == 0) {
+        setResultTit("검색 결과가 없습니다");
+        $(".sortbx").css({display:"none"});
+      }
+      // 초기화면 구성 - 위 두 조건을 만족하지 않으면 null값 반환 
+      else {
+        setResultTit(null)
+        $(".sortbx").css({display:"block"});
+      }
     }
+
   }; // enterKy 함수
 
   // 리스트 정렬 변경함수
@@ -292,8 +330,7 @@ function Video_Ban(props) {
       if (opt == 1) {
         // 오름차순(1)
         return x.txt == y.txt ? 0 : x.txt > y.txt ? 1 : -1;
-      }
-      else if (opt == 2) {
+      } else if (opt == 2) {
         // 내림차순(2)
         return x.txt == y.txt ? 0 : x.txt > y.txt ? -1 : 1;
       }
@@ -303,20 +340,9 @@ function Video_Ban(props) {
     setMvd([temp, Number(opt)]);
   }; // sortList 함수
 
-  // 비디오 보이기 함수
-  const showVid = (src, tit) => {
-    let ifr = $("#main_mv iframe");
-    // 1. 아이프레임 src넣기
-    ifr.attr("src", src + "?autoplay=1");
-    // 2. 아이프레임 title넣기
-    ifr.attr("title", tit);
-    ifr.css("opacity", 1);
-  }; // Showvid //
-
   function CatList(props) {
     // 선택데이터
     let mvd = props.dt;
-    // console.log("mvd:", mvd);
 
     return (
       <main className="contents_wrap">
@@ -369,8 +395,11 @@ function Video_Ban(props) {
           </div>
           {/* 2. 결과리스트박스 */}
           <div className="listbx">
-            {/* 결과타이틀 */}
-            <h3 className="restit">총 검색결과 : {tot}</h3>
+            {/* 검색결과 타이틀 */}
+            {
+              resultTit &&
+              <h3 className="restit">{resultTit}</h3>
+            }
             {/* 정렬선택박스 */}
             <aside className="sortbx">
               <select className="sel" name="sel" id="sel" onChange={sortList}>

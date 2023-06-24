@@ -598,8 +598,7 @@ svg {
   position: relative;
   width: 250px;
   height: 40px;
-  border: solid 2px #111;
-  border-radius: 20px;
+  border: solid 1px #111;
   box-sizing: border-box;
   padding: 0 5px;
 
@@ -695,13 +694,25 @@ input:focus {
 }
 
 #keyword_collection {
-    position: absolute;
+  width: 250px;
+  position: absolute;
 
     .panels {
         position: relative;
         width: 100%;
         background: #fff;
-        border: 1px solid #ababab;
+        border: 1px solid #111;
+        display: none;
+
+        li:hover span {
+          background: #f3f3f3;
+        }
+
+        span {
+          display: block;
+          cursor: pointer;
+          padding: 7px;
+      }
     }
 }
 
