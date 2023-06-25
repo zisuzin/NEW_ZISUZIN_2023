@@ -39,4 +39,8 @@ img {
 
 input, button {
   border: none;
+}
+
+select {
+  outline: none;
 }/*# sourceMappingURL=index.css.map */

@@ -603,10 +603,21 @@ input:focus {
   margin-left: 10px;
 }
 
-.restit {
-  font-size: 1.5em;
+.restit > * {
+  font-family: KOTRA_GOTHIC;
 }
-.restit .inputVal {
+
+.listbx {
+  width: 100%;
+}
+.listbx .restit {
+  font-size: 1.5em;
+  font-family: KOTRA_GOTHIC;
+  font-weight: 600;
+  border-bottom: 1px solid #b1b1b1;
+  text-align: center;
+}
+.listbx .restit .inputVal {
   color: #d7266d;
 }
 
@@ -621,7 +632,6 @@ input:focus {
 
 /* 검색옵션박스 */
 .schopt {
-  width: 30%;
   height: -moz-fit-content;
   height: fit-content;
 }

@@ -32,6 +32,7 @@ $main-w-color: #fff;
 $msp-info-between: 200px;
 $open-sans-font: "Open Sans", sans-serif;
 $nexon-font: NEXONFootballGothicBA1;
+$kotra-font: KOTRA_GOTHIC;
 $noto-sans-font: Noto Sans KR;
 $icon-content: "\ebae";
 $album_tit_shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
@@ -625,12 +626,24 @@ input:focus {
   margin-left: 10px;
 }
 
-.restit {
-  font-size: 1.5em;
+.restit > * {
+  font-family: $kotra-font;
+}
 
-    .inputVal {
-      color: #d7266d;
-    }
+.listbx {
+  width: 100%;
+
+  .restit {
+    font-size: 1.5em;
+    font-family: $kotra-font;
+    font-weight: 600;
+    border-bottom: 1px solid #b1b1b1;
+    text-align: center;
+  
+      .inputVal {
+        color: #d7266d;
+      }
+  }
 }
 
 /* 검색박스 */
@@ -644,7 +657,6 @@ input:focus {
 
 /* 검색옵션박스 */
 .schopt {
-  width: 30%;
   height: fit-content;
 }
 

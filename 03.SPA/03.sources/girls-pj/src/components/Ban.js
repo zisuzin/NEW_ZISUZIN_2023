@@ -352,7 +352,7 @@ function Video_Ban(props) {
     let mvd = props.dt;
 
     return (
-      <main className="contents_wrap">
+      <main className="video_wrap">
         <div className="contents_inner">
           <section id="sub_mv">
             {mvd.map((x, i) => (
