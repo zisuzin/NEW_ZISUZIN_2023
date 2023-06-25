@@ -346,11 +346,13 @@ function Video_Ban(props) {
   // #listRadio 클릭시 디스플레이 리스트형태로 변경!
   const displayList = (e) => {
     if(e.target.id === "listRadio"){
-      $("#sub_mv").css("flex-direction", "column");
+      // $("#sub_mv").css("flex-direction", "column");
+      $("#sub_mv").css({"flex-direction": "column", "gap": "0 20px"});
+      
       $(".mvbx").css("width", "90%");
     }
     else {
-      $("#sub_mv").css({"display": "flex", "flexWrap": "wrap", "flexDirection": "row"});
+      $("#sub_mv").css({"flexWrap": "wrap", "flexDirection": "row"});
       $(".mvbx").css("width", "30%");
     }
   };
