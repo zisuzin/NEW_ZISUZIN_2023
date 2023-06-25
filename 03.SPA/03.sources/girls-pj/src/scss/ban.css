@@ -620,6 +620,36 @@ input:focus {
 .listbx .restit .inputVal {
   color: #d7266d;
 }
+.listbx #gridRadio::before,
+.listbx #listRadio::before {
+  content: "";
+  display: inline-block;
+  height: 16px;
+  width: 16px;
+  cursor: pointer;
+}
+.listbx #gridRadio {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  vertical-align: middle;
+  margin: 0px 4px;
+}
+.listbx #gridRadio::before {
+  -webkit-mask: url(../../public/images/video/grid_icon.svg) no-repeat;
+  background: #000;
+}
+.listbx #listRadio {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  vertical-align: middle;
+  margin: 0px 4px;
+}
+.listbx #listRadio::before {
+  -webkit-mask: url(../../public/images/video/list_icon.svg) no-repeat;
+  background: #000;
+}
 
 /* 검색박스 */
 .schbx {

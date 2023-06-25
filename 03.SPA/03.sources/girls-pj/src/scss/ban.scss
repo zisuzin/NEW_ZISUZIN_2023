@@ -28,6 +28,12 @@
   height: 195px;
 }
 
+@mixin radio_btn_sty {
+  appearance: none;
+  vertical-align: middle;
+  margin: 0px 4px;
+}
+
 $main-w-color: #fff;
 $msp-info-between: 200px;
 $open-sans-font: "Open Sans", sans-serif;
@@ -639,10 +645,37 @@ input:focus {
     font-weight: 600;
     border-bottom: 1px solid #b1b1b1;
     text-align: center;
-  
-      .inputVal {
-        color: #d7266d;
-      }
+
+    .inputVal {
+      color: #d7266d;
+    }
+  }
+
+  #gridRadio::before,
+  #listRadio::before {
+    content: "";
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    cursor: pointer;
+  }
+
+  #gridRadio {
+    @include radio_btn_sty;
+
+    &::before {
+      -webkit-mask: url(../../public/images/video/grid_icon.svg) no-repeat;
+      background: #000;
+    }
+  }
+
+  #listRadio {
+    @include radio_btn_sty;
+
+    &::before {
+      -webkit-mask: url(../../public/images/video/list_icon.svg) no-repeat;
+      background: #000;
+    }
   }
 }
 
@@ -712,23 +745,23 @@ input:focus {
   width: 250px;
   position: absolute;
 
-    .panels {
-        position: relative;
-        width: 100%;
-        background: #fff;
-        border: 1px solid #111;
-        display: none;
+  .panels {
+    position: relative;
+    width: 100%;
+    background: #fff;
+    border: 1px solid #111;
+    display: none;
 
-        li:hover span {
-          background: #f3f3f3;
-        }
-
-        span {
-          display: block;
-          cursor: pointer;
-          padding: 7px;
-      }
+    li:hover span {
+      background: #f3f3f3;
     }
+
+    span {
+      display: block;
+      cursor: pointer;
+      padding: 7px;
+    }
+  }
 }
 
 /****** 앨범 페이지 상세 ******/

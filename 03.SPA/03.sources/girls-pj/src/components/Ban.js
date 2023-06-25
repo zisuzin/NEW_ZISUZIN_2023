@@ -298,12 +298,8 @@ function Video_Ban(props) {
       if (userInp.trim() !== "" && completeList.length !== 0) {
         setResultTit(
           <>
-          <strong className="inputVal">
-            {userInp}
-          </strong>
-          <span>
-            검색결과 ({completeList.length})
-          </span>
+            <strong className="inputVal">{userInp}</strong>
+            <span>검색결과 ({completeList.length})</span>
           </>
         );
         $(".sortbx").css({ display: "block" });
@@ -346,6 +342,18 @@ function Video_Ban(props) {
     // setMvd([배열데이터,정렬상태값])
     setMvd([temp, Number(opt)]);
   }; // sortList 함수
+
+  // #listRadio 클릭시 디스플레이 리스트형태로 변경!
+  const displayList = (e) => {
+    if(e.target.id === "listRadio"){
+      $("#sub_mv").css("flex-direction", "column");
+      $(".mvbx").css("width", "90%");
+    }
+    else {
+      $("#sub_mv").css({"display": "flex", "flexWrap": "wrap", "flexDirection": "row"});
+      $(".mvbx").css("width", "30%");
+    }
+  };
 
   function CatList(props) {
     // 선택데이터
@@ -411,6 +419,12 @@ function Video_Ban(props) {
                 <option value="1">오름차순</option>
                 <option value="2">내림차순</option>
               </select>
+              <label htmlFor="listRadio">
+                <input type="radio" name="listRadio" id="listRadio" onClick={displayList}></input>
+              </label>
+              <label htmlFor="gridRadio">
+                <input type="radio" name="gridRadio" id="gridRadio" onClick={displayList}></input>
+              </label>
             </aside>
             {/* 비디오 리스트 컴포넌트 
                 전달속성 dt - 리스트 데이터 */}
