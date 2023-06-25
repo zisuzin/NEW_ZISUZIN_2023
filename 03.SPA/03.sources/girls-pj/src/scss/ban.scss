@@ -545,7 +545,7 @@ svg {
   padding: 40px 180px 25px;
   overflow: hidden;
   margin: 0 auto;
-  // border: 1px dashed #000;
+  }
 
   .mttit {
     text-align: center;
@@ -553,26 +553,9 @@ svg {
     font-size: min(42px, 5vw);
   }
 
-  #main_mv {
-    width: 100%;
-    cursor: pointer;
-
-    iframe {
-      width: 100%;
-      height: 520px;
-    }
-
-    img {
-      width: 100%;
-      display: block;
-    }
-  }
-}
-
 #sub_mv {
   display: flex;
   flex-wrap: wrap;
-  margin-top: 30px;
   gap: 0 20px;
 
   .mvbx {
@@ -675,6 +658,10 @@ input:focus {
     }
   }
 
+  input[type='radio'].on::before {
+    background-color: #d7266d !important;
+  }
+
   #listRadio {
     @include radio_btn_sty;
 
@@ -683,6 +670,10 @@ input:focus {
       background: #000;
     }
   }
+}
+
+h3.mv_item_tit {
+  margin: 20px 0 15px 0;
 }
 
 /* 검색박스 */

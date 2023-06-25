@@ -216,6 +216,26 @@ function Video_Ban(props) {
   // 데이터 셋팅
   const vdata = ban_data[props.cat];
 
+  useEffect(() => {
+    // 컴포넌트가 마운트될 때 첫 번째 li 클릭
+    const firstLi = document.querySelector(".mvbx");
+    if (firstLi) {
+      firstLi.click();
+    }
+
+    // 두번째 인자가 빈 배열 []인 경우, 컴포넌트가 처음 마운트될 때만 실행됨.
+  }, []);
+
+  // 비디오 보이기 함수
+  const showVid = (src, tit) => {
+    let ifr = $("#main_mv iframe");
+    // 1. 아이프레임 src넣기
+    ifr.attr("src", src + "?autoplay=1");
+    // 2. 아이프레임 title넣기
+    ifr.attr("title", tit);
+    ifr.css("opacity", 1);
+  }; // Showvid //
+
   // 데이터 선택하기 : Hook 데이터 구성
   // -> 데이터 정렬을 반영하기 위해 정렬상태값을 같이 설정함!
   // 데이터구성 : [배열데이터,정렬상태값]
@@ -345,14 +365,22 @@ function Video_Ban(props) {
 
   // #listRadio 클릭시 디스플레이 리스트형태로 변경!
   const displayList = (e) => {
-    if(e.target.id === "listRadio"){
-      // $("#sub_mv").css("flex-direction", "column");
-      $("#sub_mv").css({"flex-direction": "column", "gap": "0 20px"});
-      
+    // 현재 클릭한 요소에 클래스 'on' 추가
+    e.target.classList.add("on");
+    const rdobtn = document.querySelectorAll(".sortbx input[type='radio']");
+    // 클릭한 요소 외 요소는 클래스 'on' 제거
+    rdobtn.forEach((item) => {
+      if (e.target !== item) {
+        item.classList.remove("on");
+      }
+    });
+
+    // 클릭한 요소의 아이디값에 따라 개별 css 적용
+    if (e.target.id === "listRadio") {
+      $("#sub_mv").css({ "flex-direction": "column", gap: "0 20px" });
       $(".mvbx").css("width", "90%");
-    }
-    else {
-      $("#sub_mv").css({"flexWrap": "wrap", "flexDirection": "row"});
+    } else {
+      $("#sub_mv").css({ flexWrap: "wrap", flexDirection: "row" });
       $(".mvbx").css("width", "30%");
     }
   };
@@ -364,9 +392,10 @@ function Video_Ban(props) {
     return (
       <main className="video_wrap">
         <div className="contents_inner">
+          <h3 className="mv_item_tit">Video Clip</h3>
           <section id="sub_mv">
             {mvd.map((x, i) => (
-              <div className="mvbx" key={i}>
+              <div className="mvbx" key={i} onClick={() => showVid(x.vsrc, x.txt)}>
                 <figure className="mv_img">
                   <img src={x.isrc} />
                 </figure>
