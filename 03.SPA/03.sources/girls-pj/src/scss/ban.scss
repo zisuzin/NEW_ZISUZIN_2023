@@ -486,7 +486,6 @@ em {
 }
 
 svg {
-  font-size: min(18px, 1.2vw);
   fill: #fff;
 
   #text-path {
@@ -560,17 +559,24 @@ svg {
 
   .mvbx {
     width: 30%;
+    cursor: pointer;
   }
 }
 
 .mv_date {
   p:nth-child(1) {
     font-weight: 600;
+    display: -webkit-box;
+    overflow: hidden;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    font-size: min(15px,1.25vw);
   }
 
   p:nth-child(2) {
     text-align: right;
-    font-size: 13px;
+    font-size: min(13px,1vw);
   }
 }
 
@@ -590,6 +596,7 @@ svg {
   width: 250px;
   height: 40px;
   border: solid 1px #111;
+  border-radius: 20px;
   box-sizing: border-box;
   padding: 0 5px;
 
@@ -747,6 +754,10 @@ h3.mv_item_tit {
     width: 100%;
     background: #fff;
     border: 1px solid #111;
+    margin-top: 5px;
+    border-radius: 10px;
+    overflow: hidden;
+    z-index: 9;
     display: none;
 
     li:hover span {

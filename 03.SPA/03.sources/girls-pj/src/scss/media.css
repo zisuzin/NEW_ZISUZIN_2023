@@ -61,6 +61,24 @@
   }
 }
 
+@media screen and (max-width: 1090px) {
+  .mvbx {
+    width: 50% !important;
+    float: left !important;
+  }
+  #sub_mv {
+    display: inline-block !important;
+  }
+  .schbx {
+    display: block !important;
+  }
+
+  .listbx {
+    padding-left: 0 !important;
+    margin-top: 20px;
+  }
+}
+
 @media screen and (max-width: 880px) {
   .conttents_tit,
   .contents-desc {
@@ -95,5 +113,5 @@
 
   .profile_img > li:nth-child(2) {
     margin-right: 50%;
-}
+  }
 }
