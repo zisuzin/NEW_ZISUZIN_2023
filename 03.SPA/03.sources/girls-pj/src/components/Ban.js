@@ -217,7 +217,7 @@ function Video_Ban(props) {
   const vdata = ban_data[props.cat];
 
   useEffect(() => {
-    // 컴포넌트가 마운트 될 때 gridbtn 클릭
+    // 컴포넌트가 마운트 될 때 #gridRadio 클릭
     const gridbtn = document.querySelector("#gridRadio");
     if (gridbtn) {
       gridbtn.click();
@@ -234,6 +234,7 @@ function Video_Ban(props) {
     ifr.attr("title", tit);
     ifrbx.css("display", "block");
 
+    // 닫기버튼 클릭시 동영상박스 없앰
     $(".vid_close_btn").click(function () {
       $(".ifr_bg_bx").css({ display: "none" });
     });
@@ -254,16 +255,16 @@ function Video_Ban(props) {
   // 사용자입력값 상태변수
   const [resultTit, setResultTit] = useState(null);
 
-  // 아이프레임 타이틀넣기 상태변수
-  const [vidtxt, setVidTxt] = useState();
+  // 비디오리스트 타이틀 출력 상태변수
+  const [vidTit, setVidTit] = useState(null);
 
-  // 데이터 검색 함수
+  // 데이터 검색 출력 함수
   const schList = () => {
     // 검색요소 대상 : #searchInput
     let input = document.querySelector("#searchInput");
 
-    // 1. 검색어 읽기
-    let keyword = input.value;
+    // 1. 검색어 읽기 - 소문자로 변환
+    let keyword = input.value.toLowerCase();
 
     // 2. 검색어 입력확인분기
     if (keyword.trim() === "") {
@@ -287,6 +288,7 @@ function Video_Ban(props) {
     setMvd([searchList, 3]);
   }; // schList 함수
 
+  // 검색어 자동완성 함수
   const searchAuto = (e) => {
     let userInp = document.querySelector("#searchInput").value;
     // 입력창에서 텍스트 입력시 자동완성 데이터 업데이트
@@ -317,9 +319,6 @@ function Video_Ban(props) {
         if (item.txt.toLowerCase().indexOf(userInp) !== -1) return true;
       });
 
-      // 검색건수 업데이트
-      setTot(completeList.length);
-
       // 검색결과 타이틀 출력 - 입력값이 있고, 데이터가 있는 경우에만!
       if (userInp.trim() !== "" && completeList.length !== 0) {
         setResultTit(
@@ -328,6 +327,11 @@ function Video_Ban(props) {
             <span>검색결과 ({completeList.length})</span>
           </>
         );
+        
+        setVidTit(
+          <h3 className="mv_item_tit">Video Clip</h3>
+        );
+
         $(".sortbx").css({ display: "block" });
         // 검색 데이터가 하나만 있는 경우
         if (completeList.length === 1) {
@@ -338,11 +342,14 @@ function Video_Ban(props) {
       else if (completeList.length == 0) {
         setResultTit("검색 결과가 없습니다");
         $(".sortbx").css({ display: "none" });
-        $(".video_wrap").css({ display: "none" });
+        setVidTit(null);
       }
       // 초기화면 구성 - 위 두 조건을 만족하지 않으면 null값 반환
       else {
         setResultTit(null);
+        setVidTit(
+          <h3 className="mv_item_tit">Video Clip</h3>
+        );
         $(".sortbx").css({ display: "block" });
       }
     }
@@ -350,7 +357,7 @@ function Video_Ban(props) {
 
   // 리스트 정렬 변경함수
   const sortList = (e) => {
-    // 1. 선택옵션값 : 1 - 오름차순 / 1 - 내림차순
+    // 1. 선택옵션값 : 1 - 오름차순 / 2 - 내림차순
     let opt = e.target.value;
 
     // 임시변수 : 배열데이터만 가져옴
@@ -359,10 +366,10 @@ function Video_Ban(props) {
     // 2. 옵션에 따른 정렬 반영하기
     temp.sort((x, y) => {
       if (opt == 1) {
-        // 오름차순(1)
+        // 오름차순(1) - 최솟값부터 정렬
         return x.txt == y.txt ? 0 : x.txt > y.txt ? 1 : -1;
       } else if (opt == 2) {
-        // 내림차순(2)
+        // 내림차순(2) - 최댓값부터 정렬
         return x.txt == y.txt ? 0 : x.txt > y.txt ? -1 : 1;
       }
     });
@@ -474,7 +481,7 @@ function Video_Ban(props) {
     return (
       <main className="video_wrap">
         <div className="contents_inner">
-          <h3 className="mv_item_tit">Video Clip</h3>
+        {vidTit && <>{vidTit}</>}
           <section id="sub_mv">
             {mvd.map((x, i) => (
               <div className="mvbx" key={i} onClick={() => showVid(x.vsrc, x.txt)}>
@@ -488,7 +495,7 @@ function Video_Ban(props) {
               </div>
             ))}
           </section>
-          <div className="ifr_bg_bx" style={{ display: "none", transition: "opacity 1s" }}>
+          <div className="ifr_bg_bx" style={{ display: "none", transition: "all 1s" }}>
             <div className="vid_ifr_wrap">
               <button type="button" className="vid_close_btn">
                 <svg xmlns="http://www.w3.org/2000/svg" id="page23-band1941-Card293262_video-modal-closeIcon" className="closeIcon" viewBox="0 0 30 30" fill="none" focusable="false">
