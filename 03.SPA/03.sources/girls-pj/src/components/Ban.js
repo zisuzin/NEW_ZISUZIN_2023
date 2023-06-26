@@ -385,6 +385,8 @@ function Video_Ban(props) {
     }
   };
 
+  // 체크박스 요소
+  let chkele = document.querySelectorAll(".chkhdn");
   // 체크박스 검색함수
   const chkSearch = (e) => {
     // 1. 체크박스 아이디 : 검색항목의 값(sort)
@@ -392,6 +394,42 @@ function Video_Ban(props) {
     // 2. 체크박스 체크여부 : checked (true/false)
     let chked = e.target.checked;
     console.log("아이디:",chkid,"\n체크여부:",chked);
+
+    // 임시변수 : 기존입력된 데이터 가져옴
+    let temp = mvd[0];
+
+    // 결과집합변수
+    let newList = [];
+
+    // 3. 체크박스 체크갯수 세기 : 1개 초과시 배열 합쳐서 결과 출력!
+    let num = 0;
+    chkele.forEach(v=>{if(v.checked)num++});
+    console.log("체크갯수:",num);
+
+    // 4. 체크박스 체크여부에 따른 분기
+    // 체크여부가 true일때 해당 검색어로 검색!
+    if(chked) {
+      // 현재 데이터 변수에 담기
+      let nowdt = vdata.filter(v=>{
+        if(v.sort === chkid) return true;
+      }); // filter 
+
+      // 체크갯수가 1초과일때 배열합치기! (스프레드연산자 사용)
+      if(num > 1){
+        // 기존데이터(temp) + 새데이터(noWdt)
+        newList = [...temp,...nowdt];
+      }
+      // 체크갯수 1일 때
+      else {
+        newList = nowdt;
+      }
+    }
+
+    // 4. 검색결과 리스트 업데이트
+    // Hook 데이터변수+데이터건수
+    setMvd([newList], 2);
+    setTot(newList.length);
+
   }; // chkSearch 함수
 
   function CatList(props) {
@@ -440,9 +478,6 @@ function Video_Ban(props) {
                   <li>
                     <h2>
                       Alignment
-                      <span className="spbtn">
-                          ＋
-                      </span>
                     </h2>
                     {/* 체크박스리스트 */}
                     <ol>
