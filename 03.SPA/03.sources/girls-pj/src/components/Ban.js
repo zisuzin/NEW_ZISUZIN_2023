@@ -385,6 +385,15 @@ function Video_Ban(props) {
     }
   };
 
+  // 체크박스 검색함수
+  const chkSearch = (e) => {
+    // 1. 체크박스 아이디 : 검색항목의 값(sort)
+    let chkid = e.target.id;
+    // 2. 체크박스 체크여부 : checked (true/false)
+    let chked = e.target.checked;
+    console.log("아이디:",chkid,"\n체크여부:",chked);
+  }; // chkSearch 함수
+
   function CatList(props) {
     // 선택데이터
     let mvd = props.dt;
@@ -425,6 +434,32 @@ function Video_Ban(props) {
               <FontAwesomeIcon icon={faSearch} className="schbtn" title="키워드 검색" />
               {/* 입력창 */}
               <input id="searchInput" type="text" maxLength="14" placeholder="검색어를 입력해주세요" onKeyUp={enterKy} onChange={searchAuto} />
+              {/* 체크박스구역 */}
+              <div className="chkbx">
+                <ul>
+                  <li>
+                    <h2>
+                      Alignment
+                      <span className="spbtn">
+                          ＋
+                      </span>
+                    </h2>
+                    {/* 체크박스리스트 */}
+                    <ol>
+                      <li>
+                        Music Videos
+                        <input type="checkbox" id="mv" className="chkhdn" onChange={chkSearch}/>
+                        <label htmlFor="mv" className="chklb"></label>
+                      </li>
+                      <li>
+                        V-logs
+                        <input type="checkbox" id="vlog" className="chkhdn" onChange={chkSearch}/>
+                        <label htmlFor="vlog" className="chklb"></label>
+                      </li>
+                    </ol>
+                  </li>
+                </ul>
+              </div>
             </div>
             {/* 키워드 검색시 연관검색어 팝업 */}
             <div id="keyword_collection">

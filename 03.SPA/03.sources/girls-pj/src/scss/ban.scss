@@ -501,41 +501,41 @@ svg {
 }
 
 /****** 비디오 페이지 ******/
-.mv_wrap {
-  display: flex;
+// .mv_wrap {
+//   display: flex;
 
-  .swiper {
-    overflow: hidden;
-  }
+//   .swiper {
+//     overflow: hidden;
+//   }
 
-  .swiper-slide {
-    > .mv_img {
-      height: 200px;
-    }
+//   .swiper-slide {
+//     > .mv_img {
+//       height: 200px;
+//     }
 
-    img {
-      width: 100%;
-      height: 100%;
-    }
-  }
-}
+//     img {
+//       width: 100%;
+//       height: 100%;
+//     }
+//   }
+// }
 
-.swiper-backface-hidden .swiper-slide {
-  cursor: pointer;
-}
+// .swiper-backface-hidden .swiper-slide {
+//   cursor: pointer;
+// }
 
-.swiper-button-next:after,
-.swiper-button-prev:after {
-  color: #7200bf;
-  font-weight: 500;
-  transform: translateY(-50%);
-}
+// .swiper-button-next:after,
+// .swiper-button-prev:after {
+//   color: #7200bf;
+//   font-weight: 500;
+//   transform: translateY(-50%);
+// }
 
-.pagenation {
-  margin-top: 50px;
-  text-align: center;
-  cursor: pointer;
-}
+// .pagenation {
+//   margin-top: 50px;
+//   text-align: center;
+//   cursor: pointer;
+// }
 
 .contents_wrap {
   position: relative;
@@ -544,13 +544,61 @@ svg {
   padding: 40px 180px 25px;
   overflow: hidden;
   margin: 0 auto;
-  }
 
-  .mttit {
-    text-align: center;
-    font-family: $nexon-font;
-    font-size: min(42px, 5vw);
+  .chkbx {
+    position: relative;
+    top: 70px;
+
+    li {
+      padding: 10px;
+      font-size: 18px;
+
+      ol > li:last-child {
+        margin-top: -10px;
+      }
+
+      input[type="checkbox"] {
+        display: none;
+      }
+
+      .spbtn {
+        display: block;
+        float: right;
+        margin-right: 5px;
+        font-size: 30px;
+        line-height: 40px;
+        cursor: pointer;
+      }
+
+      .chklb {
+        float: right;
+        display: block;
+        width: 20px;
+        height: 20px;
+        background-color: #ccc;
+      }
+      input:checked + .chklb {
+        position: relative;
+        background-color: #d7266d;
+        text-align: center;
+        font-weight: bold;
+      }
+      input:checked + .chklb::before {
+        content: "✓";
+        position: absolute;
+        top: -4px;
+        left: 5px;
+        color: #fff;
+      }
+    }
   }
+}
+
+.mttit {
+  text-align: center;
+  font-family: $nexon-font;
+  font-size: min(42px, 5vw);
+}
 
 #sub_mv {
   display: flex;
@@ -571,12 +619,12 @@ svg {
     word-break: break-all;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
-    font-size: min(15px,1.25vw);
+    font-size: min(15px, 1.25vw);
   }
 
   p:nth-child(2) {
     text-align: right;
-    font-size: min(13px,1vw);
+    font-size: min(13px, 1vw);
   }
 }
 
@@ -633,7 +681,7 @@ input:focus {
 
   .sortbx {
     margin-top: 8px;
-}
+  }
 
   .restit {
     font-size: 1.5em;
@@ -665,7 +713,7 @@ input:focus {
     }
   }
 
-  input[type='radio'].on::before {
+  input[type="radio"].on::before {
     background-color: #d7266d !important;
   }
 

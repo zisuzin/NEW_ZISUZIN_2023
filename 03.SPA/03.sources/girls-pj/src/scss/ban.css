@@ -484,37 +484,6 @@ svg #text-path {
 }
 
 /****** 비디오 페이지 ******/
-.mv_wrap {
-  display: flex;
-}
-.mv_wrap .swiper {
-  overflow: hidden;
-}
-.mv_wrap .swiper-slide > .mv_img {
-  height: 200px;
-}
-.mv_wrap .swiper-slide img {
-  width: 100%;
-  height: 100%;
-}
-
-.swiper-backface-hidden .swiper-slide {
-  cursor: pointer;
-}
-
-.swiper-button-next:after,
-.swiper-button-prev:after {
-  color: #7200bf;
-  font-weight: 500;
-  transform: translateY(-50%);
-}
-
-.pagenation {
-  margin-top: 50px;
-  text-align: center;
-  cursor: pointer;
-}
-
 .contents_wrap {
   position: relative;
   width: 100%;
@@ -522,6 +491,48 @@ svg #text-path {
   padding: 40px 180px 25px;
   overflow: hidden;
   margin: 0 auto;
+}
+.contents_wrap .chkbx {
+  position: relative;
+  top: 70px;
+}
+.contents_wrap .chkbx li {
+  padding: 10px;
+  font-size: 18px;
+}
+.contents_wrap .chkbx li ol > li:last-child {
+  margin-top: -10px;
+}
+.contents_wrap .chkbx li input[type=checkbox] {
+  display: none;
+}
+.contents_wrap .chkbx li .spbtn {
+  display: block;
+  float: right;
+  margin-right: 5px;
+  font-size: 30px;
+  line-height: 40px;
+  cursor: pointer;
+}
+.contents_wrap .chkbx li .chklb {
+  float: right;
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-color: #ccc;
+}
+.contents_wrap .chkbx li input:checked + .chklb {
+  position: relative;
+  background-color: #d7266d;
+  text-align: center;
+  font-weight: bold;
+}
+.contents_wrap .chkbx li input:checked + .chklb::before {
+  content: "✓";
+  position: absolute;
+  top: -4px;
+  left: 5px;
+  color: #fff;
 }
 
 .mttit {
