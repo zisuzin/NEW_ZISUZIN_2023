@@ -541,12 +541,12 @@ svg #text-path {
 }
 
 #sub_mv {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0 20px;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: space-between;
 }
 #sub_mv .mvbx {
-  width: 30%;
+  width: 100%;
   cursor: pointer;
 }
 

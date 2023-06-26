@@ -223,6 +223,12 @@ function Video_Ban(props) {
       firstLi.click();
     }
 
+    // 컴포넌트가 마운트 될 때 gridbtn 클릭
+    const gridbtn = document.querySelector("#gridRadio");
+    if (gridbtn) {
+      gridbtn.click();
+    }
+
     // 두번째 인자가 빈 배열 []인 경우, 컴포넌트가 처음 마운트될 때만 실행됨.
   }, []);
 
@@ -377,12 +383,20 @@ function Video_Ban(props) {
     });
 
     // 클릭한 요소의 아이디값에 따라 개별 css 적용
+    // 클릭한 요소가 listbtn일때
     if (e.target.id === "listRadio") {
-      $("#sub_mv").css({ "flex-direction": "column", gap: "0 20px" });
-      $(".mvbx").css("width", "90%");
-    } else {
+      $("#sub_mv").css({ "flex-direction": "column" });
+      $(".mvbx").css("width", "100%");
+    }
+    // 클릭한 요소가 gridbtn일때
+    else {
       $("#sub_mv").css({ flexWrap: "wrap", flexDirection: "row" });
-      $(".mvbx").css("width", "30%");
+      $(".mvbx").css("width", "50%");
+      
+      const winWidth = window.innerWidth;
+      if (winWidth > 1090) {
+        $(".mvbx").css("width", "31%");
+      }
     }
   };
 
@@ -511,7 +525,7 @@ function Video_Ban(props) {
             <div className="chkbx">
               <ul>
                 <li>
-                  <h2>Alignment</h2>
+                  <h2>Category</h2>
                   {/* 체크박스리스트 */}
                   <ol>
                     <li>
