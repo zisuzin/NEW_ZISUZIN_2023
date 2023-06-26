@@ -407,7 +407,7 @@ function Video_Ban(props) {
     console.log("체크갯수:",num);
 
     // 4. 체크박스 체크여부에 따른 분기
-    // 체크여부가 true일때 해당 검색어로 검색!
+    // (1) 체크여부가 true일때 해당 검색어로 검색!
     if(chked) {
       // 현재 데이터 변수에 담기
       let nowdt = vdata.filter(v=>{
@@ -423,7 +423,26 @@ function Video_Ban(props) {
       else {
         newList = nowdt;
       }
+    } // if : 체크박스 true
+
+    // (2) 체크박스가 false일때 데이터지우기
+    else {
+      console.log("지울 데이터:",chkid);
+      // splice삭제시 일반for문으로 --처리해야함
+      for(let i=0; i<temp.length; i++){
+        // 조건은 체크박스 풀린 값
+        if(temp[i].sort === chkid){
+          // 배열지우기 메서드 : splice(순번,개수)
+          temp.splice(i,1);
+        }
+        // splice로 지우면 배열항목자체가 삭제되므로 for문 돌때 개수가 줄어듦
+        // 따라서 다음번호를 지울때 ++을 --처리 필수!
+        i--;
+      }
+      // 결과처리하기 : 삭제처리된 temp 결과에 넣기!
+      newList = temp;
     }
+
 
     // 4. 검색결과 리스트 업데이트
     // Hook 데이터변수+데이터건수
