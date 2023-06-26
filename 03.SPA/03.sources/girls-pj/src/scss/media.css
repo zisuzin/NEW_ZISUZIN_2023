@@ -61,24 +61,6 @@
   }
 }
 
-@media screen and (max-width: 1090px) {
-  .mvbx {
-    width: 50% !important;
-    float: left !important;
-  }
-  #sub_mv {
-    display: inline-block !important;
-  }
-  .schbx {
-    display: block !important;
-  }
-
-  .listbx {
-    padding-left: 0 !important;
-    margin-top: 20px;
-  }
-}
-
 @media screen and (max-width: 880px) {
   .conttents_tit,
   .contents-desc {
@@ -115,3 +97,33 @@
     margin-right: 50%;
   }
 }
+
+/* 비디오 페이지 */
+@media screen and (max-width: 1090px) {
+  #listRadio.on .mvbx {
+    width: 50% !important;
+    float: left !important;
+  }
+  #sub_mv {
+    display: inline-block !important;
+  }
+  .schbx {
+    display: block !important;
+  }
+
+  .listbx {
+    padding-left: 0 !important;
+    margin-top: 20px;
+  }
+
+  #search_filter_bx {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* @media screen and (min-width: 1090px) {
+  #listRadio.on .mvbx {
+    width: 50% !important;
+  }
+} */

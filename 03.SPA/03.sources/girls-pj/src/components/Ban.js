@@ -323,6 +323,7 @@ function Video_Ban(props) {
           </>
         );
         $(".sortbx").css({ display: "block" });
+        // 검색 데이터가 하나만 있는 경우
         if (completeList.length === 1) {
           $(".sortbx").css({ display: "none" });
         }
@@ -393,7 +394,7 @@ function Video_Ban(props) {
     let chkid = e.target.id;
     // 2. 체크박스 체크여부 : checked (true/false)
     let chked = e.target.checked;
-    console.log("아이디:",chkid,"\n체크여부:",chked);
+    console.log("아이디:", chkid, "\n체크여부:", chked);
 
     // 임시변수 : 기존입력된 데이터 가져옴
     let temp = mvd[0];
@@ -403,21 +404,23 @@ function Video_Ban(props) {
 
     // 3. 체크박스 체크갯수 세기 : 1개 초과시 배열 합쳐서 결과 출력!
     let num = 0;
-    chkele.forEach(v=>{if(v.checked)num++});
-    console.log("체크갯수:",num);
+    chkele.forEach((v) => {
+      if (v.checked) num++;
+    });
+    console.log("체크갯수:", num);
 
     // 4. 체크박스 체크여부에 따른 분기
     // (1) 체크여부가 true일때 해당 검색어로 검색!
-    if(chked) {
+    if (chked) {
       // 현재 데이터 변수에 담기
-      let nowdt = vdata.filter(v=>{
-        if(v.sort === chkid) return true;
-      }); // filter 
+      let nowdt = vdata.filter((v) => {
+        if (v.sort === chkid) return true;
+      }); // filter
 
       // 체크갯수가 1초과일때 배열합치기! (스프레드연산자 사용)
-      if(num > 1){
+      if (num > 1) {
         // 기존데이터(temp) + 새데이터(noWdt)
-        newList = [...temp,...nowdt];
+        newList = [...temp, ...nowdt];
       }
       // 체크갯수 1일 때
       else {
@@ -427,13 +430,13 @@ function Video_Ban(props) {
 
     // (2) 체크박스가 false일때 데이터지우기
     else {
-      console.log("지울 데이터:",chkid);
+      console.log("지울 데이터:", chkid);
       // splice삭제시 일반for문으로 --처리해야함
-      for(let i=0; i<temp.length; i++){
+      for (let i = 0; i < temp.length; i++) {
         // 조건은 체크박스 풀린 값
-        if(temp[i].sort === chkid){
+        if (temp[i].sort === chkid) {
           // 배열지우기 메서드 : splice(순번,개수)
-          temp.splice(i,1);
+          temp.splice(i, 1);
         }
         // splice로 지우면 배열항목자체가 삭제되므로 for문 돌때 개수가 줄어듦
         // 따라서 다음번호를 지울때 ++을 --처리 필수!
@@ -443,12 +446,10 @@ function Video_Ban(props) {
       newList = temp;
     }
 
-
     // 4. 검색결과 리스트 업데이트
     // Hook 데이터변수+데이터건수
     setMvd([newList], 2);
     setTot(newList.length);
-
   }; // chkSearch 함수
 
   function CatList(props) {
@@ -484,48 +485,48 @@ function Video_Ban(props) {
         {/* 모듈코드 */}
         <section className="schbx">
           {/* 1. 옵션선택박스 */}
-          <div className="schopt">
-            {/* 검색박스 */}
-            <div className="searching">
-              {/* 검색버튼 돋보기아이콘 */}
-              <FontAwesomeIcon icon={faSearch} className="schbtn" title="키워드 검색" />
-              {/* 입력창 */}
-              <input id="searchInput" type="text" maxLength="14" placeholder="검색어를 입력해주세요" onKeyUp={enterKy} onChange={searchAuto} />
-              {/* 체크박스구역 */}
-              <div className="chkbx">
-                <ul>
-                  <li>
-                    <h2>
-                      Alignment
-                    </h2>
-                    {/* 체크박스리스트 */}
-                    <ol>
-                      <li>
-                        Music Videos
-                        <input type="checkbox" id="mv" className="chkhdn" onChange={chkSearch}/>
-                        <label htmlFor="mv" className="chklb"></label>
+          <div id="search_filter_bx">
+            <div className="schopt">
+              {/* 검색박스 */}
+              <div className="searching">
+                {/* 검색버튼 돋보기아이콘 */}
+                <FontAwesomeIcon icon={faSearch} className="schbtn" title="키워드 검색" />
+                {/* 입력창 */}
+                <input id="searchInput" type="text" maxLength="14" placeholder="검색어를 입력해주세요" onKeyUp={enterKy} onChange={searchAuto} />
+              </div>
+              {/* 키워드 검색시 연관검색어 팝업 */}
+              <div id="keyword_collection">
+                <div className="panels">
+                  <ul>
+                    {autocomplete.map((item, i) => (
+                      <li key={i}>
+                        <span>{item}</span>
                       </li>
-                      <li>
-                        V-logs
-                        <input type="checkbox" id="vlog" className="chkhdn" onChange={chkSearch}/>
-                        <label htmlFor="vlog" className="chklb"></label>
-                      </li>
-                    </ol>
-                  </li>
-                </ul>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </div>
-            {/* 키워드 검색시 연관검색어 팝업 */}
-            <div id="keyword_collection">
-              <div className="panels">
-                <ul>
-                  {autocomplete.map((item, i) => (
-                    <li key={i}>
-                      <span>{item}</span>
+            {/* 체크박스구역 */}
+            <div className="chkbx">
+              <ul>
+                <li>
+                  <h2>Alignment</h2>
+                  {/* 체크박스리스트 */}
+                  <ol>
+                    <li>
+                      Music Videos
+                      <input type="checkbox" id="mv" className="chkhdn" onChange={chkSearch} />
+                      <label htmlFor="mv" className="chklb"></label>
                     </li>
-                  ))}
-                </ul>
-              </div>
+                    <li>
+                      V-logs
+                      <input type="checkbox" id="vlog" className="chkhdn" onChange={chkSearch} />
+                      <label htmlFor="vlog" className="chklb"></label>
+                    </li>
+                  </ol>
+                </li>
+              </ul>
             </div>
           </div>
           {/* 2. 결과리스트박스 */}

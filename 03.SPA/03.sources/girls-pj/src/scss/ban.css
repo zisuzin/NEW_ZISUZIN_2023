@@ -494,10 +494,9 @@ svg #text-path {
 }
 .contents_wrap .chkbx {
   position: relative;
-  top: 70px;
 }
 .contents_wrap .chkbx li {
-  padding: 10px;
+  padding: 10px 0;
   font-size: 18px;
 }
 .contents_wrap .chkbx li ol > li:last-child {
