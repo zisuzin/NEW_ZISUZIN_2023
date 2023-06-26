@@ -681,21 +681,34 @@ h3.mv_item_tit {
 .ifr_bg_bx .vid_ifr_wrap {
   position: absolute;
   min-height: calc(100% - 16rem);
-  top: 50%;
+  top: 45%;
   max-width: 800px;
   width: 100%;
   left: 50%;
+  display: flex;
+  flex-direction: column;
   transform: translate(-50%, -50%);
+  gap: 10px 0;
+}
+.ifr_bg_bx .vid_ifr_wrap button {
+  width: 1.75rem;
+  align-self: flex-end;
+  height: 1.75rem;
+  background-color: inherit;
+  cursor: pointer;
+}
+.ifr_bg_bx .vid_ifr_wrap button:hover {
+  color: #d7266d;
 }
 .ifr_bg_bx .vid_ifr_wrap h3 {
   color: #fff;
   text-align: center;
 }
-.ifr_bg_bx .vid_ifr_inner {
+.ifr_bg_bx .vid_ifr_wrap .vid_ifr_inner {
   display: flex;
   flex-direction: column;
 }
-.ifr_bg_bx .vid_ifr_inner iframe {
+.ifr_bg_bx .vid_ifr_wrap .vid_ifr_inner iframe {
   width: 100%;
   height: 100%;
   border: none;

@@ -226,12 +226,17 @@ function Video_Ban(props) {
 
   // 비디오 보이기 함수
   const showVid = (src, tit) => {
-    let ifr = $(".vid_ifr_wrap iframe");
+    let ifr = $(".vid_ifr_inner iframe");
+    const ifrbx = $(".ifr_bg_bx");
     // 1. 아이프레임 src넣기
     ifr.attr("src", src + "?autoplay=1");
     // 2. 아이프레임 title넣기
     ifr.attr("title", tit);
-    ifr.css("opacity", 1);
+    ifrbx.css("display", "block");
+
+    $(".vid_close_btn").click(function () {
+      $(".ifr_bg_bx").css({ display: "none" });
+    });
   }; // Showvid //
 
   // 데이터 선택하기 : Hook 데이터 구성
@@ -248,6 +253,9 @@ function Video_Ban(props) {
 
   // 사용자입력값 상태변수
   const [resultTit, setResultTit] = useState(null);
+
+  // 아이프레임 타이틀넣기 상태변수
+  const [vidtxt, setVidTxt] = useState();
 
   // 데이터 검색 함수
   const schList = () => {
@@ -330,6 +338,7 @@ function Video_Ban(props) {
       else if (completeList.length == 0) {
         setResultTit("검색 결과가 없습니다");
         $(".sortbx").css({ display: "none" });
+        $(".video_wrap").css({ display: "none" });
       }
       // 초기화면 구성 - 위 두 조건을 만족하지 않으면 null값 반환
       else {
@@ -479,11 +488,16 @@ function Video_Ban(props) {
               </div>
             ))}
           </section>
-          <div className="ifr_bg">
+          <div className="ifr_bg_bx" style={{ display: "none", transition: "opacity 1s" }}>
             <div className="vid_ifr_wrap">
-              <h3>타이틀입니다</h3>
+              <button type="button" className="vid_close_btn">
+                <svg xmlns="http://www.w3.org/2000/svg" id="page23-band1941-Card293262_video-modal-closeIcon" className="closeIcon" viewBox="0 0 30 30" fill="none" focusable="false">
+                  <path fillRule="evenodd" clipRule="evenodd" d="M29.998 14.75C29.864 6.578 23.201 0 15 0l-.25.002C6.578.136 0 6.8 0 15c0 8.286 6.716 15 15 15l.25-.002C23.422 29.864 30 23.201 30 15l-.002-.25ZM14.766 1.001l.24-.002.237.002c7.534.129 13.631 6.211 13.755 13.764l.002.24-.002.243c-.129 7.528-6.211 13.625-13.764 13.75l-.24.001-.24-.002C7.136 28.869 1 22.653 1 15 1 7.355 7.132 1.127 14.766 1.002Z" fill="currentColor"></path>
+                  <path fillRule="evenodd" clipRule="evenodd" d="M15 14.396 10.605 10l-.605.603L14.397 15 10 19.396l.605.604L15 15.604 19.396 20l.604-.604L15.604 15 20 10.603 19.396 10 15 14.396Z" fill="currentColor"></path>
+                </svg>
+              </button>
               <div className="vid_ifr_inner">
-              <iframe src="" title="" style={{ opacity: 0, transition: "opacity 1s" }}></iframe>
+                <iframe src="" title=""></iframe>
               </div>
             </div>
           </div>
