@@ -217,24 +217,16 @@ function Video_Ban(props) {
   const vdata = ban_data[props.cat];
 
   useEffect(() => {
-    // 컴포넌트가 마운트될 때 첫 번째 li 클릭
-    const firstLi = document.querySelector(".mvbx");
-    if (firstLi) {
-      firstLi.click();
-    }
-
     // 컴포넌트가 마운트 될 때 gridbtn 클릭
     const gridbtn = document.querySelector("#gridRadio");
     if (gridbtn) {
       gridbtn.click();
     }
-
-    // 두번째 인자가 빈 배열 []인 경우, 컴포넌트가 처음 마운트될 때만 실행됨.
   }, []);
 
   // 비디오 보이기 함수
   const showVid = (src, tit) => {
-    let ifr = $("#main_mv iframe");
+    let ifr = $(".vid_ifr_wrap iframe");
     // 1. 아이프레임 src넣기
     ifr.attr("src", src + "?autoplay=1");
     // 2. 아이프레임 title넣기
@@ -392,7 +384,7 @@ function Video_Ban(props) {
     else {
       $("#sub_mv").css({ flexWrap: "wrap", flexDirection: "row" });
       $(".mvbx").css("width", "50%");
-      
+
       const winWidth = window.innerWidth;
       if (winWidth > 1090) {
         $(".mvbx").css("width", "31%");
@@ -487,6 +479,14 @@ function Video_Ban(props) {
               </div>
             ))}
           </section>
+          <div className="ifr_bg">
+            <div className="vid_ifr_wrap">
+              <h3>타이틀입니다</h3>
+              <div className="vid_ifr_inner">
+              <iframe src="" title="" style={{ opacity: 0, transition: "opacity 1s" }}></iframe>
+              </div>
+            </div>
+          </div>
         </div>
       </main>
     );

@@ -501,42 +501,6 @@ svg {
 }
 
 /****** 비디오 페이지 ******/
-// .mv_wrap {
-//   display: flex;
-
-//   .swiper {
-//     overflow: hidden;
-//   }
-
-//   .swiper-slide {
-//     > .mv_img {
-//       height: 200px;
-//     }
-
-//     img {
-//       width: 100%;
-//       height: 100%;
-//     }
-//   }
-// }
-
-// .swiper-backface-hidden .swiper-slide {
-//   cursor: pointer;
-// }
-
-// .swiper-button-next:after,
-// .swiper-button-prev:after {
-//   color: #7200bf;
-//   font-weight: 500;
-//   transform: translateY(-50%);
-// }
-
-// .pagenation {
-//   margin-top: 50px;
-//   text-align: center;
-//   cursor: pointer;
-// }
-
 .contents_wrap {
   position: relative;
   width: 100%;
@@ -602,10 +566,10 @@ svg {
 #sub_mv {
   display: flex !important;
   flex-wrap: wrap !important;
-  justify-content: space-between;
 
   .mvbx {
     width: 100%;
+    padding-right: calc(1.5rem / 2);
     cursor: pointer;
   }
 }
@@ -728,6 +692,44 @@ input:focus {
 
 h3.mv_item_tit {
   margin: 20px 0 15px 0;
+}
+
+.ifr_bg_bx {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  right: 0;
+  bottom: 0;
+
+  .vid_ifr_wrap {
+    position: absolute;
+    min-height: calc(100% - 16rem);
+    top: 50%;
+    max-width: 800px;
+    width: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    h3 {
+      color: #fff;
+      text-align: center;
+    }
+  }
+
+  .vid_ifr_inner {
+    display: flex;
+    flex-direction: column;
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      position: absolute;
+    }
+  }
 }
 
 /* 검색박스 */
