@@ -101,6 +101,7 @@ function Profile_Ban(props) {
   // site svg 애니메이션
   const textWave = () => {
     const textPath = document.querySelector("#text-path");
+    if(!textPath) return;
     const textContainer = document.querySelector("#text-container");
     let path = document.querySelector(textPath.getAttribute("href"));
     let pathLength = path.getTotalLength();
@@ -443,6 +444,7 @@ function Video_Ban(props) {
       if (num > 1) {
         // 기존데이터(temp) + 새데이터(noWdt)
         newList = [...temp, ...nowdt];
+        console.log(newList);
       }
       // 체크갯수 1일 때
       else {
@@ -452,17 +454,18 @@ function Video_Ban(props) {
 
     // (2) 체크박스가 false일때 데이터지우기
     else {
-      console.log("지울 데이터:", chkid);
+      console.log("지울 데이터:", chkid,temp.length);
       // splice삭제시 일반for문으로 --처리해야함
       for (let i = 0; i < temp.length; i++) {
+        // console.log(temp[i].sort);
         // 조건은 체크박스 풀린 값
         if (temp[i].sort === chkid) {
           // 배열지우기 메서드 : splice(순번,개수)
           temp.splice(i, 1);
-        }
-        // splice로 지우면 배열항목자체가 삭제되므로 for문 돌때 개수가 줄어듦
-        // 따라서 다음번호를 지울때 ++을 --처리 필수!
-        i--;
+          // splice로 지우면 배열항목자체가 삭제되므로 for문 돌때 개수가 줄어듦
+          // 따라서 다음번호를 지울때 ++을 --처리 필수!
+          i--;
+        } /////// if ////////////
       }
       // 결과처리하기 : 삭제처리된 temp 결과에 넣기!
       newList = temp;
