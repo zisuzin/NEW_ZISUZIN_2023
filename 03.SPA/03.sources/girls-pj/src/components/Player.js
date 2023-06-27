@@ -76,7 +76,7 @@ function Player(props) {
       dur = Math.floor(audio.duration);
 
       let ct =audtit[albtxt].map(v=>Object.keys(v));
-      // console.log(sec,albtxt,ct);
+      console.log(sec,albtxt,ct);
 
       ct.forEach((v,i)=>{
         let n1 = ct[i][0];
@@ -105,6 +105,8 @@ function Player(props) {
     $("#slider").click(()=>{
       console.log(3333,sec);
       audseq = 0;
+      // 재생/멈춤/이전곡/다음곡시에 앨범제목 업데이트!
+      upAlbumTxt();
     })
   });
   
@@ -198,6 +200,17 @@ function Player(props) {
 
   // main 배열의 각 순번 별로 데이터 접근 - currentSongIndex : 0, 1, 2, 3,..
   const x = ban_data.main[currentSongIndex];
+
+  // 체크함수 ///////
+  const chkFn = () => {
+    handleplayer();
+    updateAudio();
+    audio.pause();
+    rotsts = 0;
+  }; ///////////// chkFn ////////////
+
+  // 페이지로딩시 체크코드
+  useEffect(chkFn,[]);
 
   return (
     <div className={"player"}>
