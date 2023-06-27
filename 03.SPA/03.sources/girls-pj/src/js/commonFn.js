@@ -8,38 +8,34 @@ import $ from "jquery";
     함수명: handleWheel
     기능: 휠 이동시 슬라이드 위치 변경
 ******************************************/
-let prot = 0;
+
+// 회전각 초기화변수
 let rotation = 0;
-// delta값이 음수인 경우 방향 셋팅
-// const valset1 = ["0%","15%","0%","-10%","-15%","-25%","-35%"];
-// // delta값이 양수인 경우 방향 셋팅
-// const valset2 = ["0%","-25%","5%","-25%","-50%","-50%","-50%"];
 
 function handleWheel(e) {
-  console.log("휠발생!!");
-  // 광휠금지
-  // if (prot) return;
-  // prot = 1;
-  // setTimeout(() => {
-  //   prot = 0;
-  // }, 1000);
+  // console.log("휠발생!!");
 
+  // 휠 방향 체크
+  let delta = e.wheelDelta || e.deltaY;
+
+  if (delta < 0) {
+    console.log("위로휠!:",delta)
+  }
   // 슬라이드 겉박스
   const moveSl = qs(".album_wrap");
-
   // 대상 슬라이드 li
   const tgsl = qsa(".album_set");
+
   rotation +=1;
-  // $(".banbx").css({transform: "translateY(-50%) rotate(" + rotation + "deg)"});
+
+  // li요소 싸고있는 부모박스 ul 회전시키기
   $(".album_wrap").css({transform: "rotate(" + (rotation) + "deg)"});
+  // 대상 li 요소들 역방향 회전시키기
   $(".album_set ").css({transform: "rotate(" + (-rotation) + "deg)"});
 
 }
 
 document.querySelectorAll(".album_wrap li").forEach((ele,idx)=>ele.setAttribute("data-seq", idx));
-
-let currentTime2;
-
 
 /****************************************** 
     함수명: handleHover
@@ -75,8 +71,11 @@ function handleToggle() {
   toggleBtn.toggleClass("active");
 }
 
+// 음원 재생시간 구하는 변수
+let currentTime2;
+
 /****************************************** 
-    함수명: player
+    함수명: handleTime
     기능: 
     (1) 슬라이드li 2번째 요소에 맞춰 플레이어 음원/커버 변경
     (2) 오디오 볼륨조절
