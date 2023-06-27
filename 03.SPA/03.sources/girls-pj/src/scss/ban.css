@@ -2,6 +2,12 @@
 @import url(./fonts.css);
 @import url(../index.css);
 @import url(./media.css);
+#root {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
 /* 배경이미지박스 */
 .bgbx {
   position: absolute;
@@ -13,68 +19,76 @@
 .banbx {
   position: absolute;
   top: 50%;
-  left: -10vw;
-  width: 48vw;
-  border-radius: 50%;
+  left: -57%;
+  height: 150vh;
   aspect-ratio: 1/1;
+  border-radius: 50%;
   background: red;
   transform: translateY(-50%);
 }
 
+.banbxInner {
+  width: 100%;
+  height: 100%;
+}
+
 /* 배너컨텐츠박스 */
 .bancont {
-  position: relative;
-  height: 360px;
-  left: 5vw;
-  top: -30%;
-  aspect-ratio: 1/0.55;
+  width: 100%;
+  height: 100%;
 }
 
 .album_wrap {
-  position: absolute;
   width: 100%;
   height: 100%;
-  transform: translateY(50%);
-  flex-direction: column;
-  display: flex;
-  gap: 3vh 0;
+  position: relative;
 }
 
 /* 대상 슬라이드 */
 .album_set {
   display: flex;
   position: absolute;
-  width: 100%;
-  height: 100%;
+  width: 360px;
+  height: 360px;
   flex-shrink: 0;
   cursor: pointer;
-  transition: transform 0.8s ease-in-out;
+  z-index: 9;
 }
 
-.album_set2 {
-  top: -11vw;
-  left: -5vw;
+.album_set.album_set1 {
+  top: -19%;
+  left: 31%;
 }
 
-.album_set6 {
-  top: 23vw;
-  left: -5vw;
+.album_set.album_set2 {
+  border: 2px dashed lime;
+  top: -9%;
+  left: 72%;
 }
 
-.album_set4 {
-  left: 40vw;
+.album_set.album_set3 {
+  top: 30%;
+  left: 92%;
 }
 
-.album_set:nth-child(2) {
-  transform: translateX(0);
+.album_set.album_set4 {
+  top: 74%;
+  left: 75%;
 }
 
-.album_set:nth-child(3) {
-  transform: translateX(-25%);
+.album_set.album_set5 {
+  top: 94%;
+  left: 23%;
 }
 
-.album_set:nth-child(4) {
-  transform: translateX(-50%);
+.album_set.album_set6 {
+  top: 53%;
+  left: -15%;
+}
+
+.album_set.album_set7 {
+  top: 4%;
+  left: -9%;
 }
 
 /* 우측 CD */
@@ -87,9 +101,10 @@
 .album_cd7 {
   width: 360px;
   height: 100%;
-  left: -112px;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%);
   position: absolute;
-  transform: translateX(73%);
   border-radius: 50%;
   /* CD 흰색 테두리 */
   /* CD 이미지 */
@@ -161,64 +176,47 @@
   box-sizing: border-box;
 }
 
-/* 좌측 Album */
-.album_cover1 {
-  width: 50%;
+.album_cover {
+  position: relative;
+  width: 100%;
   height: 100%;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 12px;
   z-index: 90;
+  width: 100%;
+  height: 100%;
+}
+
+/* 좌측 Album */
+.album_cover1 .album_cover_inner {
   background-color: pink;
 }
 
-.album_cover2 {
-  width: 50%;
-  height: 100%;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 12px;
-  z-index: 90;
+.album_cover2 .album_cover_inner {
   background-color: #222;
 }
 
-.album_cover3 {
-  width: 50%;
-  height: 100%;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 12px;
-  z-index: 90;
+.album_cover3 .album_cover_inner {
   background-color: #da9438;
 }
 
-.album_cover4 {
-  width: 50%;
-  height: 100%;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 12px;
-  z-index: 90;
+.album_cover4 .album_cover_inner {
   background-color: #cc372b;
 }
 
-.album_cover5 {
-  width: 50%;
-  height: 100%;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 12px;
-  z-index: 90;
+.album_cover5 .album_cover_inner {
   background-color: #f7ba20;
 }
 
-.album_cover6 {
-  width: 50%;
-  height: 100%;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 12px;
-  z-index: 90;
+.album_cover6 .album_cover_inner {
   background-color: #d388eb;
 }
 
-.album_cover7 {
-  width: 50%;
-  height: 100%;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 12px;
-  z-index: 90;
+.album_cover7 .album_cover_inner {
   background-color: #373736;
 }
 
 .album_cover_inner {
+  position: relative;
   width: 100%;
   height: 100%;
   box-sizing: border-box;
@@ -226,6 +224,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  z-index: 3;
 }
 
 /* 앨범 하단 출시년도 */

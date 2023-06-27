@@ -3,7 +3,7 @@ import React, { useRef, useState, useEffect } from "react";
 // 플레이어CSS
 import "../scss/player.css";
 // 메인함수
-import { handleHover, handleTime, minutes2, seconds2, currentTime2 } from "../js/commonFn";
+import { handleHover, handleTime, currentTime2 } from "../js/commonFn";
 import $ from "jquery";
 // 배너 데이터
 import ban_data from "../data/ban";
@@ -158,7 +158,7 @@ function Player(props) {
 
     if (play_btn.hasClass("active")) {
       setTimeout(() => audio.play(), 10);
-      changeSongTxt(nextIndex);
+      setSongSeq(nextIndex);
     }
     // 재생/멈춤/이전곡/다음곡시에 앨범제목 업데이트!
     upAlbumTxt();
@@ -178,22 +178,6 @@ function Player(props) {
     // console.log(audio);
     // 재생/멈춤/이전곡/다음곡시에 앨범제목 업데이트!
     upAlbumTxt();
-
-  };
-
-  // 재생시간에 따라 특정 값으로 텍스트 변경
-  const changeSongTxt = (songSrc) => {
-    const songTxt = $("#song");
-    // console.log(songSrc);
-
-    switch (
-      songSrc // 3 - I love
-    ) {
-      case "3":
-        return;
-    }
-
-    // console.log(songSrc)
   };
 
   const srcList = ["./audios/i feel.mp3", "./audios/Expectations.mp3", "./audios/Nxde.mp3", "./audios/i love.mp3", "./audios/dumdi dumdi.mp3", "./audios/i am.mp3", "./audios/tomboy.mp3"];
