@@ -20,8 +20,8 @@ let rotnum = 0;
 // 회전상태막기
 let rotsts = 0;
 $(()=>{
-    let albumImg = `./images/album/alb${$(".album_set").attr("data-num")}.jpg`
-    $(".banbx").css({background: "url("+albumImg+")"});
+  let albumImg = `./images/album/alb0.jpg`
+  $(".banbx").css({background: "url("+albumImg+")", backgroundSize: "center/cover", backgroundRepeat: "no-repeat"});
 })
 
 let imgNum = 0;
@@ -53,8 +53,6 @@ function handleWheel(e) {
       if(imgNum<0){
         imgNum = ($(".album_set").length-1)
       }
-      
-      
       $(".prev_song_btn").trigger("click");
     }
     else { // 음수일 때 (위로 휠)

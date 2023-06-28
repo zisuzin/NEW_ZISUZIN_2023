@@ -63,6 +63,7 @@ function Main_Ban(props) {
                     </ul>
                 </div>
             </div>
+            <img src="dd" alt=""/>
         </section>
     );
 }
