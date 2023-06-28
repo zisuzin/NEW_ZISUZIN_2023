@@ -8,9 +8,9 @@ const Main = () => {
   useEffect(()=>{
     // .banbx 요소를 포함하고 있는 모듈에만 body를 hidden 처리!
     const banEle = document.querySelector(".banbx");
+    window.addEventListener("mousewheel", handleWheel);
     if(banEle) {
       document.body.style.overflowY = "hidden";
-      handleWheel();
     }
     return () => {
       document.body.style.overflowY = "auto";

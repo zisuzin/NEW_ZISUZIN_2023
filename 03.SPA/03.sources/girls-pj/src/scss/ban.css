@@ -56,39 +56,38 @@
 }
 
 .album_set.album_set1 {
-  top: -19%;
-  left: 31%;
-}
-
-.album_set.album_set2 {
-  border: 2px dashed lime;
-  top: -9%;
-  left: 72%;
-}
-
-.album_set.album_set3 {
-  top: 30%;
+  top: 36%;
   left: 92%;
 }
 
-.album_set.album_set4 {
-  top: 74%;
+.album_set.album_set2 {
+  top: 73%;
   left: 75%;
 }
 
-.album_set.album_set5 {
+.album_set.album_set3 {
   top: 94%;
   left: 23%;
 }
 
-.album_set.album_set6 {
+.album_set.album_set4 {
   top: 53%;
   left: -15%;
 }
 
-.album_set.album_set7 {
+.album_set.album_set5 {
   top: 4%;
   left: -9%;
+}
+
+.album_set.album_set6 {
+  top: -19%;
+  left: 31%;
+}
+
+.album_set.album_set7 {
+  top: 0;
+  left: 72%;
 }
 
 /* 우측 CD */

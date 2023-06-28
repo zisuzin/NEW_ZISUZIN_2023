@@ -5,7 +5,7 @@
 @import url(./media.css);
 
 @mixin ablum_cover {
-  position: relative;
+    position: relative;
     width: 100%;
     height: 100%;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 12px;
@@ -45,9 +45,9 @@ $icon-content: "\ebae";
 $album_tit_shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
 
 #root {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
 }
 
 /* 배경이미지박스 */
@@ -62,24 +62,23 @@ $album_tit_shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
 
 /* 배너전체박스 */
 .banbx {
-  position: absolute;
-  top: 50%;
-  left: -57%;
-  height: 150vh;
-  aspect-ratio: 1/1;
-  border-radius: 50%;
-  background: red;
-  transform: translateY(-50%);
-
+    position: absolute;
+    top: 50%;
+    left: -57%;
+    height: 150vh;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background: red;
+    transform: translateY(-50%);
 }
-.banbxInner{
-  width: 100%;
-  height: 100%;
+.banbxInner {
+    width: 100%;
+    height: 100%;
 }
 /* 배너컨텐츠박스 */
 .bancont {
-  width: 100%;
-  height: 100%;
+    width: 100%;
+    height: 100%;
     // position: relative;
     // height: 360px;
     // left: 5vw;
@@ -116,39 +115,38 @@ $album_tit_shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
 }
 
 .album_set.album_set1 {
-  top: -19%;
-  left: 31%;
+    top: 36%;
+    left: 92%;
 }
 
 .album_set.album_set2 {
-  border: 2px dashed lime;
-  top: -9%;
-  left: 72%;
+    top: 73%;
+    left: 75%;
 }
 
 .album_set.album_set3 {
-  top: 30%;
-  left: 92%;
+    top: 94%;
+    left: 23%;
 }
 
 .album_set.album_set4 {
-  top: 74%;
-  left: 75%;
+    top: 53%;
+    left: -15%;
 }
 
 .album_set.album_set5 {
-  top: 94%;
-  left: 23%;
+    top: 4%;
+    left: -9%;
 }
 
 .album_set.album_set6 {
-  top: 53%;
-  left: -15%;
+    top: -19%;
+    left: 31%;
 }
 
 .album_set.album_set7 {
-  top: 4%;
-  left: -9%;
+    top: 0;
+    left: 72%;
 }
 
 /* 우측 CD */
@@ -215,43 +213,43 @@ $album_tit_shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
         }
     }
 }
-.album_cover{
-  @include ablum_cover;
-  width: 100%;
-  height: 100%;
+.album_cover {
+    @include ablum_cover;
+    width: 100%;
+    height: 100%;
 }
 /* 좌측 Album */
-.album_cover1 .album_cover_inner{
+.album_cover1 .album_cover_inner {
     background-color: pink;
 }
 
-.album_cover2  .album_cover_inner{
+.album_cover2 .album_cover_inner {
     background-color: #222;
 }
 
-.album_cover3  .album_cover_inner{
+.album_cover3 .album_cover_inner {
     background-color: #da9438;
 }
 
-.album_cover4  .album_cover_inner{
+.album_cover4 .album_cover_inner {
     background-color: #cc372b;
 }
 
-.album_cover5  .album_cover_inner{
+.album_cover5 .album_cover_inner {
     background-color: #f7ba20;
 }
 
-.album_cover6  .album_cover_inner{
+.album_cover6 .album_cover_inner {
     background-color: #d388eb;
 }
 
-.album_cover7  .album_cover_inner{
+.album_cover7 .album_cover_inner {
     background-color: #373736;
     // background-color: #222;
 }
 
 .album_cover_inner {
-  position: relative;
+    position: relative;
     width: 100%;
     height: 100%;
     box-sizing: border-box;
