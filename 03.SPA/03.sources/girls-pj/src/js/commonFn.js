@@ -19,11 +19,13 @@ let cang = 0;
 let rotnum = 0;
 // 회전상태막기
 let rotsts = 0;
-$(()=>{
-  let albumImg = `./images/album/alb0.jpg`
-  $(".banbx").css({background: "url("+albumImg+")", backgroundSize: "center/cover", backgroundRepeat: "no-repeat"});
-})
-
+function jqFn(){
+  $(()=>{
+    let albumImg = `./images/album/alb0.jpg`
+    $(".banbx").css({background: "url("+albumImg+") 94% 51% / 42% 39% no-repeat"/* , backgroundSize: "cover", backgroundPosition:"center",backgroundRepeat: "no-repeat" */});
+  })
+}
+jqFn()
 let imgNum = 0;
 function handleWheel(e) {
   
@@ -48,7 +50,7 @@ function handleWheel(e) {
   // const alImgData = ban_data.main.map(x=> x.isrc);
     if(delta > 0){ // 양수일 때 (아래 휠)
       cang = cang + ang;
-      console.log('imgNum',imgNum) 
+      // console.log('imgNum',imgNum) 
       imgNum--
       if(imgNum<0){
         imgNum = ($(".album_set").length-1)
@@ -63,11 +65,11 @@ function handleWheel(e) {
       }
       $(".next_song_btn").trigger("click");
     }
-    $(".banbx").css({background: `url(./images/album/alb${imgNum}.jpg)`});
+    $(".banbx").css({background: `url(./images/album/alb${imgNum}.jpg) 94% 51% / 42% 39% no-repeat`});
     $(".album_wrap").css({transform: "rotate(" + (cang) + "deg)"});
     $(".album_set ").css({transform: "rotate(" + (-cang) + "deg)"});
     
-    console.log("횟수:",rotnum);
+    // console.log("횟수:",rotnum);
 }
 
 document.querySelectorAll(".album_wrap li").forEach((ele,idx)=>ele.setAttribute("data-seq", idx));
@@ -187,4 +189,4 @@ function handleTime() {
 
 
 
-export { handleHover, handleToggle, handleTime, handleWheel, currentTime2 };
+export { handleHover, handleToggle, handleTime, handleWheel, jqFn, currentTime2 };

@@ -21,7 +21,8 @@ import "../scss/ban.css";
 
 // 배너 데이터
 import ban_data from "../data/ban";
-
+import { jqFn } from "../js/commonFn";
+jqFn()
 // 메인배너 출력용 컴포넌트
 function Main_Ban(props) {
     const sel_data = ban_data[props.cat];
@@ -63,7 +64,7 @@ function Main_Ban(props) {
                     </ul>
                 </div>
             </div>
-            <img src="dd" alt=""/>
+            {jqFn()}
         </section>
     );
 }

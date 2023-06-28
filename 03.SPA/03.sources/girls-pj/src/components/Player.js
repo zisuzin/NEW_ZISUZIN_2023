@@ -45,11 +45,11 @@ function Player(props) {
     setTimeout(()=>{
       // 앨범이름은 오디오가 로딩된 후 시차로 실행!
       let temp = $("#album").text();
-      console.log("I순번:",temp.indexOf('I'),temp);
+      // console.log("I순번:",temp.indexOf('I'),temp);
       if(temp.indexOf('I')===0){ 
         protsts = false;
         albtxt = temp;
-        console.log("flase처리!!!");
+        // console.log("flase처리!!!");
       }
       else protsts=true;
     },100);
@@ -66,7 +66,7 @@ function Player(props) {
       else{
         protsts = true;
       }
-      console.log(protsts);
+      // console.log(protsts);
       if(protsts) return;
       
       if(!currentTime2||!albtxt||!audtit[albtxt]) return;
@@ -76,7 +76,7 @@ function Player(props) {
       dur = Math.floor(audio.duration);
 
       let ct =audtit[albtxt].map(v=>Object.keys(v));
-      console.log(sec,albtxt,ct);
+      // console.log(sec,albtxt,ct);
 
       ct.forEach((v,i)=>{
         let n1 = ct[i][0];
@@ -103,7 +103,7 @@ function Player(props) {
 
 
     $("#slider").click(()=>{
-      console.log(3333,sec);
+      // console.log(3333,sec);
       audseq = 0;
       // 재생/멈춤/이전곡/다음곡시에 앨범제목 업데이트!
       upAlbumTxt();
