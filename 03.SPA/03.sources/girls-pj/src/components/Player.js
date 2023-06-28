@@ -175,12 +175,24 @@ function Player(props) {
     if (play_btn.hasClass("active")) {
       setTimeout(() => audio.play(), 10);
     }
+    else {
+      return;
+    }
     // console.log(audio);
     // 재생/멈춤/이전곡/다음곡시에 앨범제목 업데이트!
     upAlbumTxt();
   };
 
-  const srcList = ["./audios/i feel.mp3", "./audios/Expectations.mp3", "./audios/Nxde.mp3", "./audios/i love.mp3", "./audios/dumdi dumdi.mp3", "./audios/i am.mp3", "./audios/tomboy.mp3"];
+  const srcList = [
+    "./audios/i feel.mp3",
+    "./audios/Expectations.mp3",
+    "./audios/Nxde.mp3",
+    "./audios/i love.mp3",
+    "./audios/dumdi dumdi.mp3",
+    "./audios/i am.mp3",
+    "./audios/tomboy.mp3",
+    "./audios/Han.mp3"
+  ];
 
   // main 배열의 각 순번 별로 데이터 접근 - currentSongIndex : 0, 1, 2, 3,..
   const x = ban_data.main[currentSongIndex];

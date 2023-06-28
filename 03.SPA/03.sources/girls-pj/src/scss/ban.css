@@ -19,12 +19,22 @@
 .banbx {
   position: absolute;
   top: 50%;
-  left: -57%;
-  height: 150vh;
+  left: -51%;
+  height: 130vh;
   aspect-ratio: 1/1;
   border-radius: 50%;
-  background: red;
   transform: translateY(-50%);
+}
+.banbx::after {
+  content: "";
+  top: 50%;
+  left: 25%;
+  transform: translateY(-50%);
+  position: absolute;
+  background: url(../../public/images/player/lp.png) center/cover no-repeat;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 }
 
 .banbxInner {
@@ -42,6 +52,7 @@
   width: 100%;
   height: 100%;
   position: relative;
+  transition: 0.4s ease-in-out;
 }
 
 /* 대상 슬라이드 */
@@ -53,6 +64,7 @@
   flex-shrink: 0;
   cursor: pointer;
   z-index: 9;
+  transition: 0.4s ease-in-out;
 }
 
 .album_set.album_set1 {
@@ -61,8 +73,8 @@
 }
 
 .album_set.album_set2 {
-  top: 73%;
-  left: 75%;
+  top: 80%;
+  left: 68%;
 }
 
 .album_set.album_set3 {
@@ -71,22 +83,27 @@
 }
 
 .album_set.album_set4 {
-  top: 53%;
-  left: -15%;
+  top: 57%;
+  left: -17%;
 }
 
 .album_set.album_set5 {
-  top: 4%;
-  left: -9%;
+  top: 9%;
+  left: -18%;
 }
 
 .album_set.album_set6 {
-  top: -19%;
-  left: 31%;
+  top: -21%;
+  left: 22%;
 }
 
 .album_set.album_set7 {
-  top: 0;
+  top: -113px;
+  left: 71%;
+}
+
+.album_set.album_set8 {
+  top: -9%;
   left: 72%;
 }
 
@@ -212,6 +229,10 @@
 
 .album_cover7 .album_cover_inner {
   background-color: #373736;
+}
+
+.album_cover8 .album_cover_inner {
+  background: #2c2f77;
 }
 
 .album_cover_inner {
@@ -543,7 +564,6 @@ svg #text-path {
   flex-wrap: wrap !important;
 }
 #sub_mv .mvbx {
-  width: 100%;
   padding-right: 0.75rem;
   cursor: pointer;
 }

@@ -3,6 +3,7 @@
 import { qs, qsa } from "./eventFn.js";
 import changeSongTxt from "../components/Player.js";
 import $ from "jquery";
+import ban_data from "../data/ban";
 
 /****************************************** 
     함수명: handleWheel
@@ -18,16 +19,19 @@ let cang = 0;
 let rotnum = 0;
 // 회전상태막기
 let rotsts = 0;
+$(()=>{
+    let albumImg = `./images/album/alb${$(".album_set").attr("data-num")}.jpg`
+    $(".banbx").css({background: "url("+albumImg+")"});
+})
 
+let imgNum = 0;
 function handleWheel(e) {
-
+  
   // 막기장치 ///////
   if(rotsts) return;
   rotsts = 1;
   setTimeout(()=>rotsts=0,400);
-
   
-
   const delta = e.deltaY;
   
   // 슬라이드 겉박스
@@ -36,28 +40,36 @@ function handleWheel(e) {
   // 대상 슬라이드 li
   const tgsl = qsa(".album_set");
   rotation +=1;
-
   
-
   $(".album_wrap").css({transition: ".4s ease-in-out"});
-    $(".album_set ").css({transition: ".4s ease-in-out"});
+  $(".album_set ").css({transition: ".4s ease-in-out"});
   
-  if(delta > 0){ // 양수일 때 (아래 휠)
-    cang = cang + ang;
-    // $(".album_wrap").prepend($(".album_set")[6])
-    // console.log("아래휠:",delta)
-    $(".prev_song_btn").trigger("click");
-  }
-  else { // 음수일 때 (위로 휠)
-    cang = cang - ang;
-    // $(".album_wrap").append($(".album_set")[0]);
-    // console.log("위로휠:",delta)
-    $(".next_song_btn").trigger("click");
-  }
-  $(".album_wrap").css({transform: "rotate(" + (cang) + "deg)"});
-  $(".album_set ").css({transform: "rotate(" + (-cang) + "deg)"});
   
-  console.log("횟수:",rotnum);
+  // const alImgData = ban_data.main.map(x=> x.isrc);
+    if(delta > 0){ // 양수일 때 (아래 휠)
+      cang = cang + ang;
+      console.log('imgNum',imgNum) 
+      imgNum--
+      if(imgNum<0){
+        imgNum = ($(".album_set").length-1)
+      }
+      
+      
+      $(".prev_song_btn").trigger("click");
+    }
+    else { // 음수일 때 (위로 휠)
+      cang = cang - ang;
+      imgNum++
+      if(imgNum>$(".album_set").length-1){
+        imgNum = 0
+      }
+      $(".next_song_btn").trigger("click");
+    }
+    $(".banbx").css({background: `url(./images/album/alb${imgNum}.jpg)`});
+    $(".album_wrap").css({transform: "rotate(" + (cang) + "deg)"});
+    $(".album_set ").css({transform: "rotate(" + (-cang) + "deg)"});
+    
+    console.log("횟수:",rotnum);
 }
 
 document.querySelectorAll(".album_wrap li").forEach((ele,idx)=>ele.setAttribute("data-seq", idx));

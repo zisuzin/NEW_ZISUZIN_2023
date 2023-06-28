@@ -64,13 +64,25 @@ $album_tit_shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
 .banbx {
     position: absolute;
     top: 50%;
-    left: -57%;
-    height: 150vh;
+    left: -51%;
+    height: 130vh;
     aspect-ratio: 1/1;
     border-radius: 50%;
-    background: red;
     transform: translateY(-50%);
+
+    &::after {
+        content: "";
+        top: 50%;
+        left: 25%;
+        transform: translateY(-50%);
+        position: absolute;
+        background: url(../../public/images/player/lp.png) center/cover no-repeat;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
 }
+
 .banbxInner {
     width: 100%;
     height: 100%;
@@ -79,27 +91,12 @@ $album_tit_shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
 .bancont {
     width: 100%;
     height: 100%;
-    // position: relative;
-    // height: 360px;
-    // left: 5vw;
-    // top: -30%;
-    // aspect-ratio: 1/0.55;
 }
 
 .album_wrap {
-    // position: absolute;
     width: 100%;
     height: 100%;
-    // transform: translateY(50%);
-    // flex-direction: column;
-    // display: flex;
-    // gap: 3vh 0;
-
     position: relative;
-    // height: 360px;
-    // left: 5vw;
-    // top: -30%;
-    // aspect-ratio: 1/0.55;
     transition: .4s ease-in-out;
 }
 
@@ -111,7 +108,6 @@ $album_tit_shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
     height: 360px;
     flex-shrink: 0;
     cursor: pointer;
-    // transition: transform 0.8s ease-in-out;
     z-index: 9;
     transition: .4s ease-in-out;
 }
@@ -122,8 +118,8 @@ $album_tit_shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
 }
 
 .album_set.album_set2 {
-    top: 73%;
-    left: 75%;
+    top: 80%;
+    left: 68%;
 }
 
 .album_set.album_set3 {
@@ -132,22 +128,27 @@ $album_tit_shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
 }
 
 .album_set.album_set4 {
-    top: 53%;
-    left: -15%;
+    top: 57%;
+    left: -17%;
 }
 
 .album_set.album_set5 {
-    top: 4%;
-    left: -9%;
+    top: 9%;
+    left: -18%;
 }
 
 .album_set.album_set6 {
-    top: -19%;
-    left: 31%;
+    top: -21%;
+    left: 22%;
 }
 
 .album_set.album_set7 {
-    top: 0;
+    top: -113px;
+    left: 71%;
+}
+
+.album_set.album_set8 {
+    top: -9%;
     left: 72%;
 }
 
@@ -248,6 +249,10 @@ $album_tit_shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
 .album_cover7 .album_cover_inner {
     background-color: #373736;
     // background-color: #222;
+}
+
+.album_cover8 .album_cover_inner {
+    background: #2c2f77;
 }
 
 .album_cover_inner {

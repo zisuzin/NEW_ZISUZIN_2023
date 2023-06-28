@@ -32,7 +32,7 @@ function Main_Ban(props) {
                 <div className="bancont">
                     <ul className="album_wrap">
                         {sel_data.map((x, i) => (
-                            <li className={"album_set album_set" + (i + 1)} key={i}>
+                            <li className={"album_set album_set" + (i + 1)} key={i} data-num={i}>
                                 <article className={"album_cover" + (i + 1) +" album_cover"}>
                                     <div className="album_cover_inner">
                                         <div>
