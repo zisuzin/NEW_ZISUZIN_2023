@@ -388,13 +388,18 @@ function Video_Ban(props) {
 
     // #listRadio 클릭시 디스플레이 리스트형태로 변경!
     const displayList = (e) => {
+        let eid = e.target.id;
         // 현재 클릭한 요소에 클래스 'on' 추가
         e.target.classList.add("on");
+        if(eid=="gridRadio")$(".video_wrap").addClass("on");
+        else $(".video_wrap").removeClass("on");
+        
         const rdobtn = document.querySelectorAll(".sortbx input[type='radio']");
         // 클릭한 요소 외 요소는 클래스 'on' 제거
         rdobtn.forEach((item) => {
             if (e.target !== item) {
                 item.classList.remove("on");
+
             }
         });
 
@@ -412,6 +417,9 @@ function Video_Ban(props) {
             const winWidth = window.innerWidth;
             if (winWidth > 1090) {
                 $(".mvbx").css("width", "31%");
+            }
+            else if (winWidth < 1090) {
+                $(".mvbx").css("width", "50%");
             }
         }
     };

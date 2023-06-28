@@ -101,7 +101,9 @@
 /* 비디오 페이지 */
 @media screen and (max-width: 1090px) {
   #sub_mv {
-    display: inline-block !important;
+    /* display: inline-block !important; */
+    padding-right: 0;
+    gap: 0 0.75rem;
   }
   .schbx {
     display: block !important;
@@ -117,7 +119,13 @@
     flex-direction: column;
   }
 
-  #gridRadio.on .mvbx {
-    
+
+  .video_wrap .mvbx{
+    width: 100% !important;
+  }
+
+  .video_wrap.on .mvbx {
+    width: calc(50% - 0.75rem) !important;
+    padding-right: 0;
   }
 }
