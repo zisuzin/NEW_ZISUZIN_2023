@@ -254,6 +254,7 @@ function Video_Ban(props) {
 
     // 자동완성 상태변수
     const [autocomplete, setAutocomplete] = useState([]);
+    const [gwd, setGwd] = useState('31%');
 
     // 사용자입력값 상태변수
     const [resultTit, setResultTit] = useState(null);
@@ -291,6 +292,8 @@ function Video_Ban(props) {
         setMvd([searchList, 3]);
     }; // schList 함수
 
+
+
     // 검색어 자동완성 함수
     const searchAuto = (e) => {
         let userInp = document.querySelector("#searchInput").value;
@@ -298,12 +301,12 @@ function Video_Ban(props) {
         // 검색어 입력시 관련 값이 있을 경우만 css 적용!
         console.log("텍스트입력")
         $(".panels").css({ display: "block" });
-
+        
         // 입력한 검색어와 관련된 데이터가 있을 경우에만 값을 출력
         let searchList = vdata.filter((v) => {
             if (v.txt.toLowerCase().indexOf(userInp) !== -1) return true;
         });
-
+        
         // 검색어가 비었을때 자동완성 데이터 초기화
         if (userInp.trim() === "" || searchList.length == 0) {
             setAutocomplete([]);
@@ -352,6 +355,10 @@ function Video_Ban(props) {
                 setVidTit(<h3 className="mv_item_tit">Video Clip</h3>);
                 $(".sortbx").css({ display: "block" });
             }
+            // 검색박스 가로크기
+            setGwd('100%');
+        }else{
+            searchAuto();
         }
     }; // enterKy 함수
 
@@ -377,6 +384,7 @@ function Video_Ban(props) {
         // setMvd([배열데이터,정렬상태값])
         setMvd([temp, Number(opt)]);
     }; // sortList 함수
+
 
     // #listRadio 클릭시 디스플레이 리스트형태로 변경!
     const displayList = (e) => {
@@ -485,7 +493,7 @@ function Video_Ban(props) {
                     {vidTit && <>{vidTit}</>}
                     <section id="sub_mv">
                         {mvd.map((x, i) => (
-                            <div className="mvbx" key={i} onClick={() => showVid(x.vsrc, x.txt)}>
+                            <div className="mvbx" key={i} onClick={() => showVid(x.vsrc, x.txt)} style={{width:gwd}}>
                                 <figure className="mv_img">
                                     <img src={x.isrc} />
                                 </figure>
@@ -551,7 +559,6 @@ function Video_Ban(props) {
                                     maxLength="14"
                                     placeholder="검색어를 입력해주세요"
                                     onKeyUp={enterKy}
-                                    onChange={searchAuto}
                                 />
                             </div>
                             {/* 키워드 검색시 연관검색어 팝업 */}

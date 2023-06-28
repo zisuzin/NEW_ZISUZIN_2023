@@ -10,8 +10,24 @@ import $ from "jquery";
 ******************************************/
 // 회전각 초기화변수
 let rotation = 0;
+// 기본단위
+let ang = 51.43;
+// 현재각도
+let cang = 0;
+// 회전횟수
+let rotnum = 0;
+// 회전상태막기
+let rotsts = 0;
 
 function handleWheel(e) {
+
+  // 막기장치 ///////
+  if(rotsts) return;
+  rotsts = 1;
+  setTimeout(()=>rotsts=0,400);
+
+  
+
   const delta = e.deltaY;
   
   // 슬라이드 겉박스
@@ -20,19 +36,28 @@ function handleWheel(e) {
   // 대상 슬라이드 li
   const tgsl = qsa(".album_set");
   rotation +=1;
+
+  
+
+  $(".album_wrap").css({transition: ".4s ease-in-out"});
+    $(".album_set ").css({transition: ".4s ease-in-out"});
   
   if(delta > 0){ // 양수일 때 (아래 휠)
-    $(".album_wrap").css({transform: "rotate(" + (rotation) + "deg)"});
-    $(".album_set ").css({transform: "rotate(" + (-rotation) + "deg)"});
-    $(".album_wrap").prepend($(".album_set")[6])
+    cang = cang + ang;
+    // $(".album_wrap").prepend($(".album_set")[6])
     // console.log("아래휠:",delta)
+    $(".prev_song_btn").trigger("click");
   }
   else { // 음수일 때 (위로 휠)
-    $(".album_wrap").css({transform: "rotate(" + (-rotation) + "deg)"});
-    $(".album_set ").css({transform: "rotate(" + (rotation) + "deg)"});
-    $(".album_wrap").append($(".album_set")[0]);
+    cang = cang - ang;
+    // $(".album_wrap").append($(".album_set")[0]);
     // console.log("위로휠:",delta)
+    $(".next_song_btn").trigger("click");
   }
+  $(".album_wrap").css({transform: "rotate(" + (cang) + "deg)"});
+  $(".album_set ").css({transform: "rotate(" + (-cang) + "deg)"});
+  
+  console.log("횟수:",rotnum);
 }
 
 document.querySelectorAll(".album_wrap li").forEach((ele,idx)=>ele.setAttribute("data-seq", idx));
