@@ -31,9 +31,9 @@ function jqFn(){
   cang = 0;
   imgNum = 0;
 }
-
-
 let imgNum = 0;
+
+
 function handleWheel(e) {
   
   // 막기장치 ///////

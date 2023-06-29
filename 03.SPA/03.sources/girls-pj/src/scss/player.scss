@@ -15,6 +15,7 @@ $icon-content: "\ebae";
 	left: 50%;
 	border-top-left-radius: 100px;
 	border-bottom-left-radius: 100px;
+  z-index: 999;
 
   > ul li {
     display: inline-block;

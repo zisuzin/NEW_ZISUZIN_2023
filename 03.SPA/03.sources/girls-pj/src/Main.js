@@ -1,6 +1,7 @@
 // 메인 페이지 컴포넌트
 import { useEffect } from "react";
 import { Main_Ban } from "./components/Ban";
+import Circle from "./components/Circle";
 import Player from "./components/Player";
 import { handleWheel } from "./js/commonFn";
 
@@ -24,6 +25,8 @@ const Main = () => {
       <Main_Ban cat="main" />
       {/* 2. 플레이어모듈 */}
       <Player cat="main"/>
+      {/* 3. 커지는 원 */}
+      <Circle/>
     </>
   );
 };

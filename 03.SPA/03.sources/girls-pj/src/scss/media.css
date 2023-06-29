@@ -129,3 +129,9 @@
     padding-right: 0;
   }
 }
+
+@media screen and (min-width: 1090px) {
+  .video_wrap.on .mvbx {
+    width: 31% !important;
+  }
+}

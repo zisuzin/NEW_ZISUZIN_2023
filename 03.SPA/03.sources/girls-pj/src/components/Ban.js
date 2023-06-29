@@ -23,29 +23,29 @@ import "../scss/ban.css";
 import ban_data from "../data/ban";
 import { jqFn } from "../js/commonFn";
 
-
 // 메인배너 출력용 컴포넌트
 function Main_Ban(props) {
     const sel_data = ban_data[props.cat];
 
     const popUpEle = (e) => {
         // .album_set 클릭시 너비값 커지면서 화면 전환시킬 대상요소
-        const chg_page = $(e.currentTarget).children()[0];
-        console.log(chg_page)
-        // chg_page.css({width: "100%"});
+        const chg_page = $(e.currentTarget).find(".chk_page_move_btn");
+        console.log("tg:", chg_page);
+        $(chg_page).toggleClass("on");
     };
 
-    useEffect(jqFn,[]);
+    useEffect(jqFn, []);
 
     return (
         <section className="banbx">
             <div className="banbxInner">
+                
                 <div className="bancont">
                     <ul className="album_wrap">
                         {sel_data.map((x, i) => (
                             <li className={"album_set album_set" + (i + 1)} key={i} data-num={i} onClick={popUpEle}>
-                                <div className="click_change_page_ele"></div>
-                                <article className={"album_cover" + (i + 1) +" album_cover"}>
+                                <div id="chk_page_move_btn_wrap"></div>
+                                <article className={"album_cover" + (i + 1) + " album_cover"}>
                                     <div className="album_cover_inner">
                                         <div>
                                             <div className="original_author">
@@ -63,12 +63,12 @@ function Main_Ban(props) {
                                             <div className="singer">(G)I-DLe</div>
                                         </div>
                                     </div>
-                                <aside className="album_cd1">
-                                    <a href="#">
-                                        <img src={x.isrc} alt="앨범이미지1" />
-                                    </a>
-                                    <div className="cd_center_circle"></div>
-                                </aside>
+                                    <aside className="album_cd1">
+                                        <a href="#">
+                                            <img src={x.isrc} alt="앨범이미지1" />
+                                        </a>
+                                        <div className="cd_center_circle"></div>
+                                    </aside>
                                 </article>
                             </li>
                         ))}
@@ -91,21 +91,19 @@ function Profile_Ban(props) {
             tgImg.click(function () {
                 // 1. 클릭된 이미지 경로 읽어오기
                 let isrc = $(this).find("img").attr("src");
-    
+
                 // 2. 클릭된 이미지 경로를 큰 이미지에 src로 넣기
                 $(".gimg > img").attr("src", isrc);
-    
+
                 // 3. 큰이미지박스 보이기
-                $("#imbx")
-                    .css({ display: "block" });
+                $("#imbx").css({ display: "block" });
             });
-    
+
             // 4. 닫기버튼 클릭시 큰이미지박스 숨기기
             $(".close_btn").click(function () {
                 $("#imbx").css({ display: "none" });
             });
         });
-
     }; /////////// setFn //////////////////
 
     // site svg 애니메이션
@@ -215,7 +213,6 @@ function Profile_Ban(props) {
                                                     <dt>{item.name}</dt>
                                                     <dd>{item.birth}</dd>
                                                 </dl>
-
                                             </div>
                                         </div>
                                     ))}
@@ -269,13 +266,10 @@ function Video_Ban(props) {
 
     // 자동완성 상태변수
     const [autocomplete, setAutocomplete] = useState([]);
-    const [gwd, setGwd] = useState('31%');
+    const [gwd, setGwd] = useState("31%");
 
     // 사용자입력값 상태변수
     const [resultTit, setResultTit] = useState(null);
-
-    // 디스플레이 변경 상태변수
-    const [displayChg, setDisplayChg] = useState();
 
     // 비디오리스트 타이틀 출력 상태변수
     const [vidTit, setVidTit] = useState(<h3 className="mv_item_tit">Video Clip</h3>);
@@ -310,21 +304,19 @@ function Video_Ban(props) {
         setMvd([searchList, 3]);
     }; // schList 함수
 
-
-
     // 검색어 자동완성 함수
     const searchAuto = (e) => {
         let userInp = document.querySelector("#searchInput").value;
         // 입력창에서 텍스트 입력시 자동완성 데이터 업데이트
         // 검색어 입력시 관련 값이 있을 경우만 css 적용!
-        console.log("텍스트입력")
+        console.log("텍스트입력");
         $(".panels").css({ display: "block" });
-        
+
         // 입력한 검색어와 관련된 데이터가 있을 경우에만 값을 출력
         let searchList = vdata.filter((v) => {
             if (v.txt.toLowerCase().indexOf(userInp) !== -1) return true;
         });
-        
+
         // 검색어가 비었을때 자동완성 데이터 초기화
         if (userInp.trim() === "" || searchList.length == 0) {
             setAutocomplete([]);
@@ -374,10 +366,9 @@ function Video_Ban(props) {
                 $(".sortbx").css({ display: "block" });
             }
             // 검색박스 가로크기
-            let cid = $(".sortbx label input.on").attr('id');
-            console.log(cid);
-            setGwd(cid=='listRadio'?'100%':'31%');
-        }else{
+            let cid = $(".sortbx label input.on").attr("id");
+            setGwd(cid == "listRadio" ? "100%" : "31%");
+        } else {
             searchAuto();
         }
     }; // enterKy 함수
@@ -405,21 +396,19 @@ function Video_Ban(props) {
         setMvd([temp, Number(opt)]);
     }; // sortList 함수
 
-
     // #listRadio 클릭시 디스플레이 리스트형태로 변경!
     const displayList = (e) => {
         let eid = e.target.id;
         // 현재 클릭한 요소에 클래스 'on' 추가
         e.target.classList.add("on");
-        if(eid=="gridRadio")$(".video_wrap").addClass("on");
+        if (eid == "gridRadio") $(".video_wrap").addClass("on");
         else $(".video_wrap").removeClass("on");
-        
+
         const rdobtn = document.querySelectorAll(".sortbx input[type='radio']");
         // 클릭한 요소 외 요소는 클래스 'on' 제거
         rdobtn.forEach((item) => {
             if (e.target !== item) {
                 item.classList.remove("on");
-
             }
         });
 
@@ -437,8 +426,7 @@ function Video_Ban(props) {
             const winWidth = window.innerWidth;
             if (winWidth > 1090) {
                 $(".mvbx").css("width", "31%");
-            }
-            else if (winWidth < 1090) {
+            } else if (winWidth < 1090) {
                 $(".mvbx").css("width", "50%");
             }
         }
@@ -521,7 +509,7 @@ function Video_Ban(props) {
                     {vidTit && <>{vidTit}</>}
                     <section id="sub_mv">
                         {mvd.map((x, i) => (
-                            <div className="mvbx" key={i} onClick={() => showVid(x.vsrc, x.txt)} style={{width:gwd}}>
+                            <div className="mvbx" key={i} onClick={() => showVid(x.vsrc, x.txt)} style={{ width: gwd }}>
                                 <figure className="mv_img">
                                     <img src={x.isrc} />
                                 </figure>
