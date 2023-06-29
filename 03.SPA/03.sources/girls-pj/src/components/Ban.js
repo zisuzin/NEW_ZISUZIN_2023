@@ -39,11 +39,11 @@ function Main_Ban(props) {
     return (
         <section className="banbx">
             <div className="banbxInner">
-                
                 <div className="bancont">
                     <ul className="album_wrap">
                         {sel_data.map((x, i) => (
                             <li className={"album_set album_set" + (i + 1)} key={i} data-num={i} onClick={popUpEle}>
+                                <Link to={"album/"+i} className="on">
                                 <div id="chk_page_move_btn_wrap"></div>
                                 <article className={"album_cover" + (i + 1) + " album_cover"}>
                                     <div className="album_cover_inner">
@@ -64,12 +64,11 @@ function Main_Ban(props) {
                                         </div>
                                     </div>
                                     <aside className="album_cd1">
-                                        <a href="#">
-                                            <img src={x.isrc} alt="앨범이미지1" />
-                                        </a>
+                                        <img src={x.isrc} alt="앨범이미지1" />
                                         <div className="cd_center_circle"></div>
                                     </aside>
                                 </article>
+                                </Link>
                             </li>
                         ))}
                     </ul>

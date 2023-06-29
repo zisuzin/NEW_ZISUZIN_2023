@@ -984,21 +984,17 @@ h3.mv_item_tit {
   font-weight: 600;
 }
 
-.circle_wrapper {
-  position: relative;
-  width: 100vw;
-  height: 100vw;
-}
-
 .circle {
   position: fixed;
   width: 100px;
   height: 100px;
-  background: red;
+  background: pink;
   border-radius: 50%;
+  opacity: 0;
   left: 24%;
   top: 46%;
-  transition: 0.8s;
+  transition: 0.3s;
+  pointer-events: none;
 }
 
 .circle.on {
@@ -1007,4 +1003,10 @@ h3.mv_item_tit {
   z-index: 999;
   top: -50%;
   left: -50%;
+}
+
+.album_set > a {
+  display: block;
+  width: 100%;
+  height: 100%;
 }/*# sourceMappingURL=ban.css.map */

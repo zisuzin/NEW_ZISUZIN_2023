@@ -1057,28 +1057,30 @@ h3.mv_item_tit {
     }
 }
 
-.circle_wrapper{
-    position: relative;
-    width: 100vw;
-    height: 100vw;
-    // background: #000;
-}
 .circle{
     position: fixed;
     width: 100px;
     height: 100px;
-    background: red;
+    background: pink;
     border-radius: 50%;
-
+    opacity: 0;
     left: 24%;
     top: 46%;
-    transition: .8s;
+    transition: .3s;
+    pointer-events: none;
 }
 
-.circle.on{
+.circle.on {
     width: 200vw;
     height: 200vw;
     z-index: 999;
     top: -50%;
     left: -50%;
+}
+
+.album_set > a {
+    // position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
 }
