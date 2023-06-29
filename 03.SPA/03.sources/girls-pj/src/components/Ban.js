@@ -22,10 +22,20 @@ import "../scss/ban.css";
 // 배너 데이터
 import ban_data from "../data/ban";
 import { jqFn } from "../js/commonFn";
+
+// 로딩구역 함수
 jqFn()
+
 // 메인배너 출력용 컴포넌트
 function Main_Ban(props) {
     const sel_data = ban_data[props.cat];
+
+    const popUpEle = (e) => {
+        // .album_set 클릭시 너비값 커지면서 화면 전환시킬 대상요소
+        const chg_page = $(e.currentTarget).children()[0];
+        console.log(chg_page)
+        // chg_page.css({width: "100%"});
+    };
 
     return (
         <section className="banbx">
@@ -33,7 +43,8 @@ function Main_Ban(props) {
                 <div className="bancont">
                     <ul className="album_wrap">
                         {sel_data.map((x, i) => (
-                            <li className={"album_set album_set" + (i + 1)} key={i} data-num={i}>
+                            <li className={"album_set album_set" + (i + 1)} key={i} data-num={i} onClick={popUpEle}>
+                                <div className="click_change_page_ele"></div>
                                 <article className={"album_cover" + (i + 1) +" album_cover"}>
                                     <div className="album_cover_inner">
                                         <div>

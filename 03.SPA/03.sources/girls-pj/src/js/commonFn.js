@@ -19,13 +19,17 @@ let cang = 0;
 let rotnum = 0;
 // 회전상태막기
 let rotsts = 0;
+
+// 로딩구역 함수
 function jqFn(){
   $(()=>{
     let albumImg = `./images/album/alb0.jpg`
-    $(".banbx").css({background: "url("+albumImg+") 94% 51% / 42% 39% no-repeat"/* , backgroundSize: "cover", backgroundPosition:"center",backgroundRepeat: "no-repeat" */});
+    $(".banbx").css({background: "url("+albumImg+") 94% 51% / 42% 39% no-repeat"});
   })
 }
+
 jqFn()
+
 let imgNum = 0;
 function handleWheel(e) {
   

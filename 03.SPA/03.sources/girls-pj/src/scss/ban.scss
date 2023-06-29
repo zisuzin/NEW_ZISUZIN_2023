@@ -110,6 +110,17 @@ $album_tit_shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
     cursor: pointer;
     z-index: 9;
     transition: .4s ease-in-out;
+
+    .click_change_page_ele {
+        position: absolute;
+        transform: translate(-50%,-50%);
+        left: 50%;
+        top: 50%;
+        width: 10%;
+        height: 10%;
+        background-color: red;
+        z-index: 99;
+    }
 }
 
 .album_set.album_set1 {
