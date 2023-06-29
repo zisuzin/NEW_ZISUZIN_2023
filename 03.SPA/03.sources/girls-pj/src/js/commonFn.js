@@ -29,84 +29,81 @@ let rectLeft;
 
 // 로딩구역 함수
 function jqFn() {
-    albumImg = `./images/album/alb0.jpg`;
-    $(".banbx").css({ background: "url(" + albumImg + ") 94% 51% / 42% 39% no-repeat" });
-    //초기화!
-    cang = 0;
-    imgNum = 0;
-
-    setTimeout(()=>{
-      rectTop = $(".album_set").offset().top;
-      rectLeft = $(".album_set").offset().left;
-      console.log(rectLeft,rectTop)
-    }, 10)
-
+  albumImg = `./images/album/alb0.jpg`;
+  $(".banbx").css({ background: "url(" + albumImg + ") 94% 51% / 42% 39% no-repeat" });
+  //초기화!
+  cang = 0;
+  imgNum = 0;
 }
 let imgNum = 0;
 
+$(".next_song_btn").click(function () {
+  $(this).toggleClass("on");
+});
+
+// $(".prev_song_btn").click(function () {
+//   $(this).toggleClass("on");
+// });
 
 function handleWheel(e) {
+  // 막기장치 ///////
+  if (rotsts) return;
+  rotsts = 1;
+  setTimeout(() => (rotsts = 0), 400);
 
-    // 막기장치 ///////
-    if (rotsts) return;
-    rotsts = 1;
-    setTimeout(() => (rotsts = 0), 400);
+  const delta = e.deltaY;
 
-    const delta = e.deltaY;
+  // 슬라이드 겉박스
+  const moveSl = qs(".album_wrap");
 
-    // 슬라이드 겉박스
-    const moveSl = qs(".album_wrap");
+  // 대상 슬라이드 li
+  const tgsl = qsa(".album_set");
+  rotation += 1;
 
-    // 대상 슬라이드 li
-    const tgsl = qsa(".album_set");
-    rotation += 1;
+  $(".album_wrap").css({ transition: ".4s ease-in-out" });
+  $(".album_set").css({ transition: ".4s ease-in-out" });
 
-    $(".album_wrap").css({ transition: ".4s ease-in-out" });
-    $(".album_set").css({ transition: ".4s ease-in-out"});
+  const chg_color = ["pink", "#222", "#da9438", "#cc372b", "#f7ba20", "#d388eb", "#373736"];
+  const chg_page_ele = $(".circle");
 
-    const chg_color = [
-      "pink",
-      "#222",
-      "#da9438",
-      "#cc372b",
-      "#f7ba20",
-      "#d388eb",
-      "#373736",
-    ]
-    const chg_page_ele = $(".circle");
+  if (delta > 0) {
+    // 양수일 때 (아래 휠)
+    cang = cang + ang;
+    // console.log('imgNum',imgNum)
+    imgNum--;
+    if (imgNum === -1) imgNum = 6;
 
-    if (delta > 0) {
-        // 양수일 때 (아래 휠)
-        cang = cang + ang;
-        // console.log('imgNum',imgNum)
-        imgNum--;
-        if(imgNum===-1) imgNum=6
-        chg_page_ele.css({backgroundColor: chg_color[imgNum]})
-        console.log("아래",chg_color[imgNum], imgNum)
-        if (imgNum < 0) {
-            imgNum = $(".album_set").length - 1;
-            chg_page_ele.css({backgroundColor: chg_color[imgNum+1]})
-        }
-        $(".prev_song_btn").trigger("click");
-    } else {
-        // 음수일 때 (위로 휠)
-        cang = cang - ang;
-        
-        imgNum++;
-        if(imgNum===7) imgNum =0
-        chg_page_ele.css({backgroundColor: chg_color[imgNum]})
-        console.log("위로",chg_color[imgNum], imgNum)
-        if (imgNum > $(".album_set").length - 1) {
-          imgNum = 0;
-          chg_page_ele.css({backgroundColor: chg_color[imgNum+1]})
-        }
-        $(".next_song_btn").trigger("click");
+    chg_page_ele.css({ backgroundColor: chg_color[imgNum] });
+    console.log("아래", chg_color[imgNum], imgNum);
+
+    if (imgNum < 0) {
+      imgNum = $(".album_set").length - 1;
+      chg_page_ele.css({ backgroundColor: chg_color[imgNum + 1] });
     }
-    $(".banbx").css({ background: `url(./images/album/alb${imgNum}.jpg) 94% 51% / 42% 39% no-repeat` });
-    $(".album_wrap").css({ transform: "rotate(" + cang + "deg)" });
-    $(".album_set ").css({ transform: "rotate(" + -cang + "deg)" });
+    $(".prev_song_btn").trigger("click");
+  } else {
+    // 음수일 때 (위로 휠)
+    cang = cang - ang;
 
-    // console.log("횟수:",rotnum);
+    imgNum++;
+    if (imgNum === 7) imgNum = 0;
+
+    chg_page_ele.css({ backgroundColor: chg_color[imgNum] });
+    console.log("위로", chg_color[imgNum], imgNum);
+
+    if (imgNum > $(".album_set").length - 1) {
+      imgNum = 0;
+      chg_page_ele.css({ backgroundColor: chg_color[imgNum + 1] });
+    }
+    $(".next_song_btn").trigger("click");
+  }
+
+  $(".next_song_btn").click(function () {});
+  $(".banbx").css({ background: `url(./images/album/alb${imgNum}.jpg) 94% 51% / 42% 39% no-repeat` });
+  $(".album_wrap").css({ transform: "rotate(" + cang + "deg)" });
+  $(".album_set ").css({ transform: "rotate(" + -cang + "deg)" });
+
+  // console.log("횟수:",rotnum);
 }
 
 document.querySelectorAll(".album_wrap li").forEach((ele, idx) => ele.setAttribute("data-seq", idx));
@@ -119,21 +116,21 @@ let currentTime2;
     기능: 마우스 오버시 CD 회전하면서 옆으로 나옴
 ******************************************/
 function handleHover() {
-    // 대상에 호버했을때 함수호출!
-    const hovertg = qsa(".album_set");
-    hovertg.forEach((ele) => {
-        // 호버했을때 cd 회전하면서 튀어나옴
-        const tg = ele.querySelector("aside");
-        ele.onmouseover = () => {
-            tg.style.transition = "transform 7s";
-            tg.style.transform = "translate(5%, -50%) rotate(720deg)";
-        };
+  // 대상에 호버했을때 함수호출!
+  const hovertg = qsa(".album_set");
+  hovertg.forEach((ele) => {
+    // 호버했을때 cd 회전하면서 튀어나옴
+    const tg = ele.querySelector("aside");
+    ele.onmouseover = () => {
+      tg.style.transition = "transform 7s";
+      tg.style.transform = "translate(5%, -50%) rotate(720deg)";
+    };
 
-        ele.onmouseleave = () => {
-            tg.style.transition = "transform 7s";
-            tg.style.transform = "translate(0, -50%) rotate(0deg)";
-        };
-    });
+    ele.onmouseleave = () => {
+      tg.style.transition = "transform 7s";
+      tg.style.transform = "translate(0, -50%) rotate(0deg)";
+    };
+  });
 }
 
 /****************************************** 
@@ -141,11 +138,11 @@ function handleHover() {
     기능: 원형 네비 메뉴 클릭시 GNB 등장
 ******************************************/
 function handleToggle() {
-    const nav = $(".circular_nav");
-    const toggleBtn = nav.find($(".toggle_btn"));
+  const nav = $(".circular_nav");
+  const toggleBtn = nav.find($(".toggle_btn"));
 
-    nav.toggleClass("active");
-    toggleBtn.toggleClass("active");
+  nav.toggleClass("active");
+  toggleBtn.toggleClass("active");
 }
 
 /****************************************** 
@@ -157,71 +154,71 @@ function handleToggle() {
     (4) 플레이버튼 토글하여 음원 재생/멈춤
 ******************************************/
 function handleTime() {
-    let audio = $("#music")[0];
-    let elapsed = $("#elapsed");
-    const total1 = $("#total_timer > .tot1");
-    const total2 = $("#total_timer > .tot2");
-    // console.log(total1,total2)
-    const current = $("#progress_timer");
+  let audio = $("#music")[0];
+  let elapsed = $("#elapsed");
+  const total1 = $("#total_timer > .tot1");
+  const total2 = $("#total_timer > .tot2");
+  // console.log(total1,total2)
+  const current = $("#progress_timer");
 
-    // 오디오의 재생 시간이 업데이트될 때마다 함수 호출!
-    $("#music").on("timeupdate", function () {
-        // timeupdate - 오디오 또는 비디오의 재생 시간이 변경될 때마다 발생하는 이벤트
+  // 오디오의 재생 시간이 업데이트될 때마다 함수 호출!
+  $("#music").on("timeupdate", function () {
+    // timeupdate - 오디오 또는 비디오의 재생 시간이 변경될 때마다 발생하는 이벤트
 
-        // 오디오의 재생 시간과 전체 재생 시간 가져오기
-        const currentTime = audio.currentTime;
-        const duration = audio.duration || 0; // 오디오 총 길이
+    // 오디오의 재생 시간과 전체 재생 시간 가져오기
+    const currentTime = audio.currentTime;
+    const duration = audio.duration || 0; // 오디오 총 길이
 
-        // 음원 총 재생시간 구해서 시간 업데이트
-        const minutes = Math.floor(duration / 60);
-        const seconds = Math.floor(duration % 60);
-        let totalTime1 = minutes.toString().padStart(2, "0");
-        let totalTime2 = seconds.toString().padStart(2, "0");
-        total1.text(totalTime1);
-        total2.text(totalTime2);
+    // 음원 총 재생시간 구해서 시간 업데이트
+    const minutes = Math.floor(duration / 60);
+    const seconds = Math.floor(duration % 60);
+    let totalTime1 = minutes.toString().padStart(2, "0");
+    let totalTime2 = seconds.toString().padStart(2, "0");
+    total1.text(totalTime1);
+    total2.text(totalTime2);
 
-        // 음원 현재 재생시간 구해서 시간 업데이트
-        const minutes2 = Math.floor(currentTime / 60);
-        const seconds2 = Math.floor(currentTime % 60);
-        currentTime2 = minutes2.toString().padStart(2, "0") + ":" + seconds2.toString().padStart(2, "0"); // 자료형을 문자화한 후 앞에 "0"을 추가!
-        current.text(currentTime2);
+    // 음원 현재 재생시간 구해서 시간 업데이트
+    const minutes2 = Math.floor(currentTime / 60);
+    const seconds2 = Math.floor(currentTime % 60);
+    currentTime2 = minutes2.toString().padStart(2, "0") + ":" + seconds2.toString().padStart(2, "0"); // 자료형을 문자화한 후 앞에 "0"을 추가!
+    current.text(currentTime2);
 
-        // 프로그레스 바의 너비 계산
-        const progress = (currentTime / duration) * 100 + "%";
-        // console.log("프로그레스바너비:",progress)
+    // 프로그레스 바의 너비 계산
+    const progress = (currentTime / duration) * 100 + "%";
+    // console.log("프로그레스바너비:",progress)
 
-        // 프로그레스 바 업데이트
-        elapsed.css("width", progress);
+    // 프로그레스 바 업데이트
+    elapsed.css("width", progress);
 
-        // controlSong(currentTime2,duration,progress)
-    });
+    // controlSong(currentTime2,duration,progress)
+  });
 
-    const slider = document.querySelector("#slider");
-    let play_btn = $(".play_song_btn");
+  const slider = document.querySelector("#slider");
+  let play_btn = $(".play_song_btn");
 
-    // 프로그레스바 클릭시 해당 시점 계산후 음원 재생
-    const controlSong = (e) => {
-        // 클릭한 위치의 X 좌표 구하기
-        const clickX = e.offsetX;
+  // 프로그레스바 클릭시 해당 시점 계산후 음원 재생
+  const controlSong = (e) => {
+    // 클릭한 위치의 X 좌표 구하기
+    const clickX = e.offsetX;
 
-        // 프로그레스바의 전체너비
-        const progressBarWidth = slider.clientWidth;
+    // 프로그레스바의 전체너비
+    const progressBarWidth = slider.clientWidth;
 
-        // 오디오 총 길이
-        let audioDuration = audio.duration;
+    // 오디오 총 길이
+    let audioDuration = audio.duration;
 
-        // 클릭한 위치의 너비 비율 계산
-        const progressWidth = (clickX / progressBarWidth) * 100;
+    // 클릭한 위치의 너비 비율 계산
+    const progressWidth = (clickX / progressBarWidth) * 100;
 
-        // 클릭한 위치의 시간 계산
-        const seekTime = (clickX / progressBarWidth) * audioDuration;
+    // 클릭한 위치의 시간 계산
+    const seekTime = (clickX / progressBarWidth) * audioDuration;
 
-        // 프로그레스바 너비 업데이트
-        elapsed.css("width", progressWidth + "%");
+    // 프로그레스바 너비 업데이트
+    elapsed.css("width", progressWidth + "%");
 
-        audio.currentTime = seekTime;
-    };
-    if (document.querySelector("#slider")) slider.addEventListener("click", controlSong);
+    audio.currentTime = seekTime;
+  };
+  if (document.querySelector("#slider")) slider.addEventListener("click", controlSong);
 }
 
 export { handleHover, handleToggle, handleTime, handleWheel, jqFn, currentTime2 };

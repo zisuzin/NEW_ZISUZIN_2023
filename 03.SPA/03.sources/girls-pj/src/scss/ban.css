@@ -2,12 +2,6 @@
 @import url(./fonts.css);
 @import url(../index.css);
 @import url(./media.css);
-#root {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-}
-
 /* 배경이미지박스 */
 .bgbx {
   position: absolute;
@@ -844,6 +838,22 @@ h3.mv_item_tit {
 }
 
 /****** 앨범 페이지 상세 ******/
+#albumlist_bx > * {
+  top: 10%;
+  position: relative;
+  animation: fadeUp 0.6s ease-in-out;
+}
+
+@keyframes fadeUp {
+  0% {
+    transform: translateY(10%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 .albumlist_wrap {
   padding: 157px 180px 131px;
   display: flex;
