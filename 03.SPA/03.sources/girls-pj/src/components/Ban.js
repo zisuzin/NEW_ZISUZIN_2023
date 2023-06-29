@@ -30,43 +30,45 @@ function Main_Ban(props) {
   useEffect(jqFn, []);
 
   return (
-    <section className="banbx">
-      <div className="banbxInner">
-        <div className="bancont">
-          <ul className="album_wrap">
-            {sel_data.map((x, i) => (
-              <li className={"album_set album_set" + (i + 1)} key={i} data-num={i}>
-                <div id="chk_page_move_btn_wrap"></div>
-                <article className={"album_cover" + (i + 1) + " album_cover"}>
-                  <div className="album_cover_inner">
-                    <div>
-                      <div className="original_author">
-                        <span>{x.altop_txt.split("^")[0]}</span>
-                        <span>/</span>
-                        <span>{x.altop_txt.split("^")[1]}</span>
+    <div id="cont_wrap">
+      <section className="banbx">
+        <div className="banbxInner">
+          <div className="bancont">
+            <ul className="album_wrap">
+              {sel_data.map((x, i) => (
+                <li className={"album_set album_set" + (i + 1)} key={i} data-num={i}>
+                  <div id="chk_page_move_btn_wrap"></div>
+                  <article className={"album_cover" + (i + 1) + " album_cover"}>
+                    <div className="album_cover_inner">
+                      <div>
+                        <div className="original_author">
+                          <span>{x.altop_txt.split("^")[0]}</span>
+                          <span>/</span>
+                          <span>{x.altop_txt.split("^")[1]}</span>
+                        </div>
+                        <em>{x.mtit}</em>
                       </div>
-                      <em>{x.mtit}</em>
-                    </div>
-                    <div className="release_date">
-                      <div className="date">
-                        <span>{x.albot_txt.split("^")[0]}</span>
-                        <span>{x.albot_txt.split("^")[1]}</span>
+                      <div className="release_date">
+                        <div className="date">
+                          <span>{x.albot_txt.split("^")[0]}</span>
+                          <span>{x.albot_txt.split("^")[1]}</span>
+                        </div>
+                        <div className="singer">(G)I-DLe</div>
                       </div>
-                      <div className="singer">(G)I-DLe</div>
                     </div>
-                  </div>
-                  <aside className="album_cd1">
-                    <img src={x.isrc} alt="앨범이미지1" />
-                    <div className="cd_center_circle"></div>
-                  </aside>
-                </article>
-              </li>
-            ))}
-          </ul>
+                    <aside className="album_cd1">
+                      <img src={x.isrc} alt="앨범이미지1" />
+                      <div className="cd_center_circle"></div>
+                    </aside>
+                  </article>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
-      </div>
-      {jqFn()}
-    </section>
+        {jqFn()}
+      </section>
+    </div>
   );
 }
 

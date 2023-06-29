@@ -35,15 +35,8 @@ function jqFn() {
   cang = 0;
   imgNum = 0;
 }
+
 let imgNum = 0;
-
-$(".next_song_btn").click(function () {
-  $(this).toggleClass("on");
-});
-
-// $(".prev_song_btn").click(function () {
-//   $(this).toggleClass("on");
-// });
 
 function handleWheel(e) {
   // 막기장치 ///////
@@ -74,22 +67,24 @@ function handleWheel(e) {
     if (imgNum === -1) imgNum = 6;
 
     chg_page_ele.css({ backgroundColor: chg_color[imgNum] });
-    console.log("아래", chg_color[imgNum], imgNum);
+    // console.log("아래", chg_color[imgNum], imgNum);
 
     if (imgNum < 0) {
       imgNum = $(".album_set").length - 1;
       chg_page_ele.css({ backgroundColor: chg_color[imgNum + 1] });
     }
     $(".prev_song_btn").trigger("click");
+    console.log("아래휠",cang)
   } else {
     // 음수일 때 (위로 휠)
     cang = cang - ang;
+    console.log("위로휠:",cang);
 
     imgNum++;
     if (imgNum === 7) imgNum = 0;
 
     chg_page_ele.css({ backgroundColor: chg_color[imgNum] });
-    console.log("위로", chg_color[imgNum], imgNum);
+    // console.log("위로", chg_color[imgNum], imgNum);
 
     if (imgNum > $(".album_set").length - 1) {
       imgNum = 0;
@@ -98,12 +93,9 @@ function handleWheel(e) {
     $(".next_song_btn").trigger("click");
   }
 
-  $(".next_song_btn").click(function () {});
   $(".banbx").css({ background: `url(./images/album/alb${imgNum}.jpg) 94% 51% / 42% 39% no-repeat` });
   $(".album_wrap").css({ transform: "rotate(" + cang + "deg)" });
   $(".album_set ").css({ transform: "rotate(" + -cang + "deg)" });
-
-  // console.log("횟수:",rotnum);
 }
 
 document.querySelectorAll(".album_wrap li").forEach((ele, idx) => ele.setAttribute("data-seq", idx));

@@ -135,3 +135,51 @@
     width: 31% !important;
   }
 }
+
+@media screen and (max-width: 1300px) {
+  .banbx {
+    left: -60vw;
+  }
+
+  .player {
+    left: 59%;
+  }
+}
+
+@media screen and (max-width: 1180px) {
+  .banbx {
+    left: -65%;
+  }
+}
+
+@media screen and (max-width: 1130px) {
+  .banbx {
+    left: -70%;
+  }
+}
+
+@media screen and (max-width: 1080px) {
+  .banbx {
+    left: -75%;
+    background: none !important;
+  }
+
+  .player {
+    transform: translateX(-75%);
+    top: 70%;
+    left: 58%;
+  }
+
+  .album_cd1, .album_cd2, .album_cd3, .album_cd4, .album_cd5, .album_cd6, .album_cd7 {
+    display: none;
+  }
+
+  .album_set {
+    display: block;
+    position: absolute;
+  }
+
+  .banbx::after {
+    display: none;
+  }
+}

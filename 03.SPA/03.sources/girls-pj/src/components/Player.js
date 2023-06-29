@@ -7,7 +7,6 @@ import { handleHover, handleTime, currentTime2 } from "../js/commonFn";
 import $ from "jquery";
 // 배너 데이터
 import ban_data from "../data/ban";
-import { PropTween } from "gsap/gsap-core";
 
 // 플레이어 출력용 컴포넌트
 function Player(props) {
@@ -22,6 +21,7 @@ function Player(props) {
   const audioPlayer = useRef(null);
   const sel_data = ban_data[props.cat];
   const [volume, setVolume] = useState(1);
+  let [countUpNum, setCountUpNum] = useState(0)
 
   function handleplayer() {
     audio = $("#music")[0];
@@ -76,7 +76,6 @@ function Player(props) {
       dur = Math.floor(audio.duration);
 
       let ct =audtit[albtxt].map(v=>Object.keys(v));
-      // console.log(sec,albtxt,ct);
 
       ct.forEach((v,i)=>{
         let n1 = ct[i][0];
@@ -150,11 +149,27 @@ function Player(props) {
     if (rotsts && play_btn.hasClass("active")) setTimeout(rotateLp, 10);
   };
 
+  let cang = 0;
+  let ang = 51.43;
+
   // 다음 버튼 클릭시 다음 순번부터 곡 재생 (1~0)
   const playNextSong = () => {
     const nextIndex = (currentSongIndex + 1) % sel_data.length;
     setCurrentSongIndex(nextIndex);
     setSongSeq(nextIndex);
+    $(".next_song_btn").addClass("on");
+    $(".prev_song_btn").removeClass("on");
+
+    cang--;
+    cang -= ang;
+    console.log("다음버튼클",cang);
+    // ang *= -2
+    // setCountUpNum(countUpNum - 1);
+    // countUpNum -= ang;
+    // console.log(countUpNum)
+
+    $(".album_wrap").css({ transform: "rotate(" + cang + "deg)" });
+    $(".album_set ").css({ transform: "rotate(" + -cang + "deg)" });
 
     if (play_btn.hasClass("active")) {
       setTimeout(() => audio.play(), 10);
@@ -169,8 +184,20 @@ function Player(props) {
     const prevIndex = (currentSongIndex - 1 + sel_data.length) % sel_data.length;
     setCurrentSongIndex(prevIndex);
     const audioSrc = sel_data[prevIndex].vsrc;
-    // console.log(prevIndex);
     setSongSeq(prevIndex);
+    $(".prev_song_btn").addClass("on");
+    $(".next_song_btn").removeClass("on");
+
+    cang++;
+    cang += ang;
+    console.log("이전버튼클",cang);
+    // setCountUpNum(countUpNum + 1);
+    // countUpNum += ang;
+    // console.log(countUpNum)
+
+    $(".album_wrap").css({ transform: "rotate(" + countUpNum + "deg)" });
+    $(".album_set ").css({ transform: "rotate(" + -countUpNum + "deg)" });
+
 
     if(play_btn){ // 플레이버튼 요소가 읽혀졌을때만 실행!
       if (play_btn.hasClass("active")) {
