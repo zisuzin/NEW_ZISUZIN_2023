@@ -20,15 +20,18 @@ let rotnum = 0;
 // 회전상태막기
 let rotsts = 0;
 
+// 초기레코드 이미지
+let albumImg = `./images/album/alb0.jpg`;
+
 // 로딩구역 함수
 function jqFn(){
-  $(()=>{
-    let albumImg = `./images/album/alb0.jpg`
-    $(".banbx").css({background: "url("+albumImg+") 94% 51% / 42% 39% no-repeat"});
-  })
+  albumImg = `./images/album/alb0.jpg`;
+  $(".banbx").css({background: "url("+albumImg+") 94% 51% / 42% 39% no-repeat"});
+  //초기화!
+  cang = 0;
+  imgNum = 0;
 }
 
-jqFn()
 
 let imgNum = 0;
 function handleWheel(e) {

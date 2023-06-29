@@ -172,11 +172,13 @@ function Player(props) {
     // console.log(prevIndex);
     setSongSeq(prevIndex);
 
-    if (play_btn.hasClass("active")) {
-      setTimeout(() => audio.play(), 10);
-    }
-    else {
-      return;
+    if(play_btn){ // 플레이버튼 요소가 읽혀졌을때만 실행!
+      if (play_btn.hasClass("active")) {
+        setTimeout(() => audio.play(), 10);
+      }
+      else {
+        return;
+      }
     }
     // console.log(audio);
     // 재생/멈춤/이전곡/다음곡시에 앨범제목 업데이트!

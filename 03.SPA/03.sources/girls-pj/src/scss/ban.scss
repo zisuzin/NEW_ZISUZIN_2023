@@ -466,24 +466,33 @@ em {
     left: 0;
     display: none;
     width: 100%;
+    height: 100%;
     background-color: #fff;
     // 처음엔 안보임
     display: none;
 
     .imgbx {
-        display: none;
+        display: flex;
         background: #111;
         color: #fff;
+        height: 100%;
+
+        div{
+            flex: 1;
+        }
 
         .gimgDetail {
             padding: 0 70px;
-            vertical-align: middle;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            // vertical-align: middle;
         }
 
         .gimg,
         .gimgDetail {
-            display: table-cell;
-            width: 50%;
+            display: block;
+            // width: 50%;
 
             dt {
                 font-size: 35px;
@@ -514,6 +523,8 @@ em {
         width: 100%;
         height: 100%;
     }
+
+
 }
 
 // 스크롤시 등장하는 웨이브 텍스트

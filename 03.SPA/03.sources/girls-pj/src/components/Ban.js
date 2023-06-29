@@ -23,8 +23,6 @@ import "../scss/ban.css";
 import ban_data from "../data/ban";
 import { jqFn } from "../js/commonFn";
 
-// 로딩구역 함수
-jqFn()
 
 // 메인배너 출력용 컴포넌트
 function Main_Ban(props) {
@@ -36,6 +34,8 @@ function Main_Ban(props) {
         console.log(chg_page)
         // chg_page.css({width: "100%"});
     };
+
+    useEffect(jqFn,[]);
 
     return (
         <section className="banbx">
@@ -84,31 +84,29 @@ function Main_Ban(props) {
 function Profile_Ban(props) {
     const sel_data = ban_data[props.cat];
 
-    $(() => {
-        // 멤버 프로필 리스트 클릭시 큰이미지박스 보이기
-        const tgImg = $(".profile_img > li");
-        tgImg.click(function () {
-            // 1. 클릭된 이미지 경로 읽어오기
-            let isrc = $(this).find("img").attr("src");
-
-            // 2. 클릭된 이미지 경로를 큰 이미지에 src로 넣기
-            $(".gimg > img").attr("src", isrc);
-
-            // 3. 큰이미지박스 보이기
-            $("#imbx")
-                .css({ display: "block" })
-                .find(".imgbx")
-                .eq($(this).index())
-                .css({ display: "table" })
-                .siblings()
-                .css({ display: "none" });
+    const loadFn = () => {
+        $(() => {
+            // 멤버 프로필 리스트 클릭시 큰이미지박스 보이기
+            const tgImg = $(".profile_img > li");
+            tgImg.click(function () {
+                // 1. 클릭된 이미지 경로 읽어오기
+                let isrc = $(this).find("img").attr("src");
+    
+                // 2. 클릭된 이미지 경로를 큰 이미지에 src로 넣기
+                $(".gimg > img").attr("src", isrc);
+    
+                // 3. 큰이미지박스 보이기
+                $("#imbx")
+                    .css({ display: "block" });
+            });
+    
+            // 4. 닫기버튼 클릭시 큰이미지박스 숨기기
+            $(".close_btn").click(function () {
+                $("#imbx").css({ display: "none" });
+            });
         });
 
-        // 4. 닫기버튼 클릭시 큰이미지박스 숨기기
-        $(".close_btn").click(function () {
-            $(this).parent().css({ display: "none" });
-        });
-    });
+    }; /////////// setFn //////////////////
 
     // site svg 애니메이션
     const textWave = () => {
@@ -148,6 +146,7 @@ function Profile_Ban(props) {
 
     function setFn() {
         setTimeout(textWave, 1000);
+        loadFn();
     }
 
     // setTimeout 썼을때 페이지하단 카운트되는것 방지!
@@ -210,11 +209,14 @@ function Profile_Ban(props) {
                                             <div className="gimg">
                                                 <img src="" alt="큰이미지" />
                                             </div>
-                                            <dl className="gimgDetail">
-                                                <dt>{item.name}</dt>
-                                                <dd>{item.birth}</dd>
-                                            </dl>
-                                            <button type="button" className="close_btn" title="팝업 닫기"></button>
+                                            <div>
+                                                <button type="button" className="close_btn" title="팝업 닫기"></button>
+                                                <dl className="gimgDetail">
+                                                    <dt>{item.name}</dt>
+                                                    <dd>{item.birth}</dd>
+                                                </dl>
+
+                                            </div>
                                         </div>
                                     ))}
                                 </section>
@@ -271,6 +273,9 @@ function Video_Ban(props) {
 
     // 사용자입력값 상태변수
     const [resultTit, setResultTit] = useState(null);
+
+    // 디스플레이 변경 상태변수
+    const [displayChg, setDisplayChg] = useState();
 
     // 비디오리스트 타이틀 출력 상태변수
     const [vidTit, setVidTit] = useState(<h3 className="mv_item_tit">Video Clip</h3>);
@@ -369,7 +374,9 @@ function Video_Ban(props) {
                 $(".sortbx").css({ display: "block" });
             }
             // 검색박스 가로크기
-            setGwd('100%');
+            let cid = $(".sortbx label input.on").attr('id');
+            console.log(cid);
+            setGwd(cid=='listRadio'?'100%':'31%');
         }else{
             searchAuto();
         }
