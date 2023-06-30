@@ -149,8 +149,10 @@ function Player(props) {
     if (rotsts && play_btn.hasClass("active")) setTimeout(rotateLp, 10);
   };
 
-  let cang = 0;
-  let ang = 51.43;
+  let cang = useRef(0);
+  let ang = useRef(51.43);
+  let imgNum = useRef(0);
+
 
   // 다음 버튼 클릭시 다음 순번부터 곡 재생 (1~0)
   const playNextSong = () => {
@@ -160,16 +162,15 @@ function Player(props) {
     $(".next_song_btn").addClass("on");
     $(".prev_song_btn").removeClass("on");
 
-    cang--;
-    cang -= ang;
-    console.log("다음버튼클",cang);
-    // ang *= -2
-    // setCountUpNum(countUpNum - 1);
-    // countUpNum -= ang;
-    // console.log(countUpNum)
+    cang.current = cang.current -ang.current;
+    imgNum.current ++;
+    if(imgNum.current == 7) imgNum.current = 0;
+    
+    console.log("다음버튼클",imgNum.current);
 
-    $(".album_wrap").css({ transform: "rotate(" + cang + "deg)" });
-    $(".album_set ").css({ transform: "rotate(" + -cang + "deg)" });
+    $(".album_wrap").css({ transform: `rotate(${cang.current}deg)` });
+    $(".album_set ").css({ transform: `rotate(${-cang.current}deg)` });
+    $(".banbx").css({ background: `url(./images/album/alb${imgNum.current}.jpg) 94% 51% / 42% 39% no-repeat` });
 
     if (play_btn.hasClass("active")) {
       setTimeout(() => audio.play(), 10);
@@ -188,15 +189,17 @@ function Player(props) {
     $(".prev_song_btn").addClass("on");
     $(".next_song_btn").removeClass("on");
 
-    cang++;
-    cang += ang;
+    cang.current = cang.current + ang.current
     console.log("이전버튼클",cang);
-    // setCountUpNum(countUpNum + 1);
-    // countUpNum += ang;
-    // console.log(countUpNum)
 
-    $(".album_wrap").css({ transform: "rotate(" + countUpNum + "deg)" });
-    $(".album_set ").css({ transform: "rotate(" + -countUpNum + "deg)" });
+    imgNum.current --;
+    if(imgNum.current == -1) imgNum.current = 6;
+    
+    console.log(cang.current)
+
+    $(".album_wrap").css({ transform: `rotate(${cang.current}deg)` });
+    $(".album_set ").css({ transform: `rotate(${-cang.current}deg)` });
+    $(".banbx").css({ background: `url(./images/album/alb${imgNum.current}.jpg) 94% 51% / 42% 39% no-repeat` });
 
 
     if(play_btn){ // 플레이버튼 요소가 읽혀졌을때만 실행!

@@ -59,7 +59,7 @@ $album_tit_shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
     position: absolute;
     top: 50%;
     // left: -51%;
-    left: -45vw;
+    left: -900px;
     height: 130vh;
     aspect-ratio: 1/1;
     border-radius: 50%;
@@ -900,6 +900,7 @@ h3.mv_item_tit {
     top: 10%;
     position: relative;
     animation: fadeUp .6s ease-in-out;
+    
 }
 
 @keyframes fadeUp {
@@ -947,7 +948,9 @@ h3.mv_item_tit {
         }
     }
 }
-
+#albumlist_bx{
+    padding-bottom: 17%;
+}
 .release_date > p {
     font-size: 1.2vw;
     color: #000;
@@ -955,6 +958,8 @@ h3.mv_item_tit {
 
 .track-list {
     text-align: center;
+    
+
 
     .contents-title {
         font-family: $nexon-font;

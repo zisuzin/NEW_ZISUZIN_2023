@@ -213,4 +213,22 @@ function handleTime() {
   if (document.querySelector("#slider")) slider.addEventListener("click", controlSong);
 }
 
+function handleResize() {
+  const tgBan = $(".banbx");
+  
+  let windW = window.innerWidth;
+  console.log("윈도우너비:",windW,-2000+windW)
+  let banbx = $(".banbx")
+  
+
+  if(windW < 1460 && windW>1000) {
+    banbx.css({
+      left:`max(-1120px,${-2360+windW}px)`  
+    })
+  }
+
+}
+
+window.addEventListener("resize", handleResize);
+
 export { handleHover, handleToggle, handleTime, handleWheel, jqFn, currentTime2 };

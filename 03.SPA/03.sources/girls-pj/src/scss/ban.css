@@ -13,7 +13,7 @@
 .banbx {
   position: absolute;
   top: 50%;
-  left: -45vw;
+  left: -900px;
   height: 130vh;
   aspect-ratio: 1/1;
   border-radius: 50%;
@@ -883,6 +883,10 @@ h3.mv_item_tit {
 .albumlist_wrap .contents_left .back_btn {
   position: absolute;
   top: -50px;
+}
+
+#albumlist_bx {
+  padding-bottom: 17%;
 }
 
 .release_date > p {
