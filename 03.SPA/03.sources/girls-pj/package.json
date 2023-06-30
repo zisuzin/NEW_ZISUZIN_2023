@@ -2,7 +2,6 @@
   "name": "girls-pj",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://zisuzin.github.io/react-project-final",
   "dependencies": {
     "@fortawesome/free-brands-svg-icons": "^6.4.0",
     "@fortawesome/free-regular-svg-icons": "^6.4.0",
