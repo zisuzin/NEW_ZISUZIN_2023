@@ -74,11 +74,11 @@ function handleWheel(e) {
       chg_page_ele.css({ backgroundColor: chg_color[imgNum + 1] });
     }
     $(".prev_song_btn").trigger("click");
-    console.log("아래휠",cang)
+    console.log("아래휠", cang);
   } else {
     // 음수일 때 (위로 휠)
     cang = cang - ang;
-    console.log("위로휠:",cang);
+    console.log("위로휠:", cang);
 
     imgNum++;
     if (imgNum === 7) imgNum = 0;
@@ -213,28 +213,37 @@ function handleTime() {
   if (document.querySelector("#slider")) slider.addEventListener("click", controlSong);
 }
 
-function handleResize() {
-  const tgBan = $(".banbx");
-  
-  let windW = window.innerWidth;
-  // console.log("윈도우너비:",windW,-2000+windW)
-  console.log("윈도우너비:",windW,windW-700)
+  function handleResize() {
+    const tgBan = $(".banbx");
 
-  let banbx = $(".banbx")
-  let player = $(".player");
-  
-  if(windW < 1400 && windW > 780) {
-    banbx.css({
-      left:`max(-1120px,${-2000+windW}px)`  
-    })
+    let windW = window.innerWidth;
+    // console.log("윈도우너비:",windW,-2000+windW)
+    console.log("윈도우너비:", windW, windW - 700);
 
-    player.css({
-      // left:`${windW-605}px`  
-      left:`${windW-700}px`  
-    })
+    let banbx = $(".banbx");
+    let player = $(".player");
+
+    if (windW < 1400 && windW > 780) {
+      banbx.css({
+        left: `max(-1120px,${-2000 + windW}px)`,
+      });
+
+      player.css({
+        // left:`${windW-605}px`
+        left: `${windW - 700}px`,
+      });
+
+    }
+    else {
+      banbx.css({
+        left: `${-1000 + windW}`,
+      });
+
+      player.css({
+        left: `${windW + 700}px`,
+      });
+    }
   }
-
-}
 
 window.addEventListener("resize", handleResize);
 
