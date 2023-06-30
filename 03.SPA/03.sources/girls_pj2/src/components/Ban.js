@@ -17,7 +17,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // 배너 CSS
 import "../scss/ban.css";
 // // 미디어쿼리CSS
-// import "../scss/media.css";
+import "../scss/media.css";
 
 // 배너 데이터
 import ban_data from "../data/ban";

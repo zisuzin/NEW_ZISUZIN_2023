@@ -217,13 +217,20 @@ function handleResize() {
   const tgBan = $(".banbx");
   
   let windW = window.innerWidth;
-  console.log("윈도우너비:",windW,-2000+windW)
-  let banbx = $(".banbx")
-  
+  // console.log("윈도우너비:",windW,-2000+windW)
+  console.log("윈도우너비:",windW,windW-700)
 
-  if(windW < 1460 && windW>1000) {
+  let banbx = $(".banbx")
+  let player = $(".player");
+  
+  if(windW < 1400 && windW > 780) {
     banbx.css({
-      left:`max(-1120px,${-2360+windW}px)`  
+      left:`max(-1120px,${-2000+windW}px)`  
+    })
+
+    player.css({
+      // left:`${windW-605}px`  
+      left:`${windW-700}px`  
     })
   }
 

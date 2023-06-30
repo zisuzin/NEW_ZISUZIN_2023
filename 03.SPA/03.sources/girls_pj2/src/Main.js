@@ -16,7 +16,8 @@ const Main = () => {
         $(chg_page_ele).css("opacity","1");
         const albumId = $(this).attr("data-num")
         setTimeout(()=>{
-            window.location.href = `http://localhost:3000/album/${albumId}`
+            // window.location.href = `http://localhost:3000/album/${albumId}`
+            window.location.href = `http://localhost:3000/#/album/${albumId}`;
         },300)
     });
 };
