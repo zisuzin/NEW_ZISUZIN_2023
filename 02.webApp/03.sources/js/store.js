@@ -1,91 +1,56 @@
 // 서브 페이지 뷰엑스 스토어 셋팅 JS  - store.js
-import {nbData, tgData} from "./sub.js";
 
 const store = new Vuex.Store({
+  // (1) 데이터 셋팅구역:
   state: {
-    tgData: tgData,
-    nbData: nbData,
-    // lnb데이터 셋업
-    lnbData: {
-      women: {
-        shoes: {
-          // 중분류 - 신발
-          // 사이즈는 신발만 있음
-          flat: {
-            size: [225, 230, 240, 245, 250, 255],
-            color: ["#000", "#fff", "#0054FF", "#FFB2D9", "#FFE400", "#CCA63D", "#542E00", "#123478", "#A6A6A6", "#227428", "#78247C"],
-            priceList: ["2만6천원 이하", "3만원 이하", "3만5천원 이하", ""],
-          },
-          sandal: {
-            size: [225, 230, 235, 240, 245, 250],
-            color: ["#000", "#fff", "#CCA63D", "#542E00", "#78247C", "#FFE400", "#0054FF", "#227428", "#A6A6A6", "#123478", "#FFB2D9"],
-            priceList: ["1만9천원 이하", "2만1천원 이하", "2만6천원 이하", "3만원 이하"],
-          },
-        },
-        bag: {
-          // 중분류 - 가방
-          bagpack: {
-            size: ["FREE(one-size)", ""],
-            color: ["#000", "#CCA63D", "#227428", "#fff", "#A6A6A6", "#FFB2D9"],
-            priceList: ["1만9천원 이하", "2만1천원 이하", "2만6천원 이하", "3만원 이하"],
-          },
-        },
-        ac: {
-          // 중분류 - 잡화
-          socks: {
-            size: ["FREE(one-size)", "M", "S"],
-            color: ["#000", "#fff", "#CCA63D", "#FFB2D9", "#227428", "#FFE400", "#78247C", "linear-gradient(red, orange, yellow,green, blue, indigo, violet"],
-            priceList: ["1만9천원 이하", "2만1천원 이하", "2만6천원 이하", "3만원 이하"],
-          },
-        },
+    // gnb 데이터셋업
+    gnb: {
+      skin: {
+        maintit: "핸드&스킨",
+        maindesc: "",
+        subtit: ["제품 모두 보기", "유형", "기능"],
+        dpt1: ["핸드크림", "클렌저", "토너", "세럼/에센스", "에멀전/크림", "페이셜오일"],
+        dpt2: ["건성", "중성", "지성", "복합성"],
+        dpt3: ["항산화", "안티에이징", "피부결"],
+        imgsrc: "",
+        imgtit: "아로마티카 바디워시&로션 기프트세트",
+        desc: "",
       },
-      men: {
-        shoes: {
-          // 중분류 - 신발
-          // 사이즈는 신발만 있음
-          sandal: {
-            size: [250, 255, 260, 265, 270, 275, 280],
-            color: ["#000", "#fff", "#0054FF", "#FFB2D9", "#FFE400", "#CCA63D", "#542E00", "#123478", "#A6A6A6", "#227428", "#78247C"],
-            priceList: ["2만2천원 이하", "3만원 이하", "3만5천원원 이하", "5만원 이하"],
-          },
-        },
+      hair: {
+        maintit: "헤어",
+        maindesc: "",
+        subtit: ["제품 모두 보기", "라인", "기능"],
+        dpt1: ["샴푸", "컨디셔너", "트리트먼트", "두피토닉", "헤어 툴즈"],
+        dpt2: ["로즈마리 스케일링", "티트리 퓨리파잉", "퀴노아 프로틴"],
+        dpt3: ["탈모증상완화", "스칼프 트리트먼트", "헤어 리페어"],
+        imgsrc: "",
+        imgtit: "아로마티카 티트리 퓨리파잉 샴푸",
+        desc: "샴푸하는 순간, 아로마테라피 두피 스파가 시작돼요.",
       },
-      kids: {},
-    }, // lnb 데이터객체
-
-    // 공통처리 메뉴 변수
-    menu: {},
-    menu2: [],
-    setcat: {},
-    setcat2: [],
-    cat1:"",
-    cat2:"",
-    cat3:"",
-
+      home: {
+        maintit: "홈",
+        maindesc: "",
+        subtit: ["제품 모두 보기", "성분", "기능"],
+        dpt1: ["에센셜오일", "시너지오일", "밤", "디퓨저/미스트", "아로마테라피 툴즈"],
+        dpt2: ["라벤더", "로즈마리", "티트리", "페퍼민트", "유칼립투스"],
+        dpt3: ["딥슬립", "스트레스", "메디테이트"],
+        imgsrc: "",
+        imgtit: "서스테이너블 섬머 키트",
+        desc: "여름에 필요한 최적의 허벌 블렌딩과 ",
+      },
+      gift: {
+        maintit: "선물",
+        maindesc: "",
+        subtit: ["제품 모두 보기", "신제품", "사랑받는 제품"],
+        dpt1: ["향합", "바디&핸드 케어 세트", "디퓨저&미스트", "헤어오일&브러쉬 세트"],
+        dpt2: ["아로마테라피 향합", "슈가 바디 스크럽", "글로우 비타 페이셜 스크럽"],
+        dpt3: ["리츄얼 헤어오일", "언버든 시너지 오일", "임브레이스 바디워시"],
+        imgsrc: "",
+        imgtit: "",
+        desc: "",
+      },
+    },
   }, // state 객체
-  mutations: {
-    // 카테고리 페이지 타이틀 및 lnb 변경
-    ChgMenu(dt, pm) {
-      // pm - Get방식으로 넘어온 파라미터값
-        dt.cat1 = pm.cat1;
-        dt.cat2 = pm.cat2;
-        dt.cat3 = pm.cat3;
-
-        dt.menu = dt.tgData[pm.cat1] /* 대분류 접근 */
-        dt.menu2 = dt.tgData[pm.cat1][pm.cat2] /* 중분류 접근 */
-        dt.menu3 = dt.tgData[pm.cat1][pm.cat2][pm.cat3] /* 소분류 접근 */
-        dt.prodCount = dt.menu3 ? dt.menu3.length : 0; /* 소분류데이터 길이값 출력 */
-        // all 클릭시 전체 아이템 반환
-        if(dt.cat3 === 'all') {
-          // 중분류 객체 데이터 합치기
-          let tempData = Object.keys(tgData[dt.cat1][dt.cat2]).map(item => tgData[dt.cat1][dt.cat2][item]);
-          // 합친 객체데이터의 배열 데이터 합치기
-          let combinedData = [].concat(...tempData);
-          // all 클릭시 배열의 길이값 출력
-          dt.prodCount = combinedData.length;
-        }
-    }, // ChgMenu 함수
-  },
-});
+}); ///////////// 뷰엑스 인스턴스 /////////////
 
 export default store;
