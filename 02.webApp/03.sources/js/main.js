@@ -43,6 +43,7 @@ function slideFn() {
         return $(window).width();
     }
     // 윈도우 가로크기 : left 기준위치 px변환!
+    // 초기 가로크기 할당
     let winW = retWin();
     // 리사이즈시 윈도우크기 업데이트
     $(window).resize(()=>{
@@ -86,7 +87,7 @@ function slideFn() {
                 slide.prepend(slide.find("li").last()).css({left: "-100%"});
                 // 커버 제거하기
                 cover.hide();
-            });
+            }); 
 
             // 블릿 변경함수 호출!
             addOn(0);
@@ -101,6 +102,7 @@ function slideFn() {
             }, 200, "easeOutQuint", ()=>{
                 cover.hide();
             });
+
         } ///// else : 제자리 /////
     }); ////////////////// slide dragstop 이벤트 //////////////////
 
