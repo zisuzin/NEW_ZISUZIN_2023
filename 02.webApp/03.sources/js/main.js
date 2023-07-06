@@ -47,7 +47,7 @@ function slideFn() {
     // 리사이즈시 윈도우크기 업데이트
     $(window).resize(()=>{
         winW = retWin();
-        console.log(winW)
+        // console.log(winW)
     });
 
     // 드래그 종료후 발생하는 이벤트 함수
@@ -59,7 +59,7 @@ function slideFn() {
 
         // 슬라이드 left위치값
         let sleft = $(this).offset().left;
-        // console.log(sleft)
+        console.log("left위치값:",sleft)
 
         // 분기점 : -110%보다 작을때
         if (sleft < -winW*1.1) {
@@ -201,7 +201,7 @@ function vidOn(seq) {
     function callback() {
         nowTime = tgVid.get(0).currentTime;
         maxTime = tgVid.get(0).duration;
-        console.log(nowTime,maxTime)
+        // console.log(nowTime,maxTime)
 
         timer = (100 * nowTime / maxTime);
         // 출력
