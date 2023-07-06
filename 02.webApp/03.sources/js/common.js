@@ -9,5 +9,50 @@ import store from "./store.js";
 *****************************************************/
 // [1] 뷰컴포넌트 - 카테고리
 Vue.component("category-comp",{
-  template: ``,
-});
+  template: `
+    <ul class="catbx">
+      <li v-for="(v,i) in $store.state.gnb" :key="i">
+        <a href="#" v-on:click="chgData(i)">{{v['maintit']}}</a>
+      </li>
+      <sub-comp></sub-comp>
+    </ul>
+  `,
+  methods: {
+    // v-on 클릭시 gnb sub-comp 데이터 변경 발생
+    chgData(parm){
+      console.log(parm)
+      // gnb에서 파라미터 받아오기
+      store.state.lnbsrc = parm;
+
+      // [ 업데이트!! ]
+      // thumb박스
+      store.state.setimgsrc = store.state.gnb[parm].imgsrc;
+      store.state.setimgtit = store.state.gnb[parm].imgtit;
+      store.state.setdesc = store.state.gnb[parm].desc;
+    }
+  }
+}); //////////////////// Vue 컴포넌트 ///////////////////////
+
+// [1-2] 뷰컴포넌트 - 카테고리 서브영역
+Vue.component("sub-comp",{
+  template: `
+    <div class="subbx">
+      <div class="thumb">
+        <img v-bind:src="$store.state.setimgsrc" alt="썸네일">
+        <h5 v-text="$store.state.settit"></h5>
+        <span v-text="$store.state.setdesc"></span>
+      </div>
+    </div>
+  `,
+})
+
+
+/********************************************* 
+    뷰인스턴스 생성영역
+*********************************************/
+
+// [1] 뷰인스턴스 - 헤더
+new Vue({
+  el: "#top",
+  store,
+})

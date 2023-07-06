@@ -1,0 +1,21 @@
+@charset "utf-8";
+
+/* 웹&앱PJ 공통클래스/웹폰트 CSS - core.css */
+/* 웹폰트, 공용클래스 */
+
+/******************** 1. 웹폰트 : CDN ********************/
+
+/* IBM Plex Sans KR */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300;400;500;700&display=swap');
+
+/* 전체 글자크기 Root 셋팅! */
+html{
+    font-size: 10px;
+    /* 글자 rem단위 계산편의때문~! */
+}
+
+/* 공사중 표시, 전체 폰트 셋팅 */
+body * {
+    font-family: 'IBM Plex Sans KR', sans-serif;
+    /* outline: 1px dashed #ccc; */
+}
