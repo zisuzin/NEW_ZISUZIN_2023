@@ -78,7 +78,7 @@ main {
   height: 100%;
   opacity: 0;
   background-color: #000;
-  transition: 0.3s ease;
+  transition: 0.3s ease-out;
 }
 
 /* 슬라이드 커버 */
