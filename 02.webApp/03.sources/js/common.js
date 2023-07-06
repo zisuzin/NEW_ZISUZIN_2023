@@ -73,4 +73,27 @@ Vue.component("sub-comp", {
 new Vue({
   el: "#top",
   store,
+  mounted() {
+    // 클릭시 li에 클래스 on
+    $(".catbx li > a").click(function(e){
+      $(this).parent().addClass("on")
+      .siblings().removeClass("on");
+      $(".top").addClass("on");
+      $(".subbx").fadeIn(400);
+    }) ///////// click ////////////
+
+    // 마우스아웃시 전체 클래스 빼기
+    // $("nav").mouseleave(function(){
+    //   $(".top").removeClass("on");
+    //   $(".catbx li").removeClass("on");
+    //   $(".subbx").fadeOut(400);
+    // }) ///////// mouseleave //////////
+
+    // 스크롤 이벤트
+    // $(window).on("scroll",function(){
+    //   // 스크롤시작!
+    //   let scStart = $(window).scrollTop();
+    //   console.log(scStart)
+    // });
+  } ////////// mounted ///////////
 });

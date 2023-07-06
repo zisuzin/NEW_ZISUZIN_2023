@@ -1,159 +1,92 @@
 @charset "utf-8";
 
-/* 웹&앱PJ 메인모듈 CSS - main.css */
+/* 웹&앱PJ 메인페이지 CSS - main.css */
 
-/* 공통 css 셋팅 */
-@import url(./reset.css);
-@import url(./core.css);
-
-:root {
-    /* 브랜드색상 변수 */
-    --aromatica-color_main: #112B23;
-    /* --aromatica-color_main: #153a26; */
+/*************** 메인영역 ***************/
+main {
+  position: relative;
 }
 
-/*************** 상단영역 ***************/
-/* 네비게이션 전체박스 */
-.fxbx {
-    /* 픽스드박스 */
-    position: fixed;
-    z-index: 999;
-    width: 100%;
+/******* section1 *******/
+/* 비디오박스 */
+#vidbx {
+  /* 부모박스 */
+  position: relative;
+  width: 100%;
+  height: 100vh;
 }
 
-nav {
-    /* 플렉스박스 */
-    display: flex;
-    justify-content: space-between;
-    padding: 0 30px;
-    height: 80px;
-    white-space: nowrap;
-    background-color: var(--aromatica-color_main);
+.vidslide {
+  position: absolute;
+  display: flex;
+  top: 0;
+  left: -100%;
+  width: 300%;
+  height: 100%;
+  cursor: move;
+  /* 드래그방지 */
+  app-region: no-drag;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
-/* 로고/카테고리 플렉스박스 */
-.gnb {
-    display: flex;
+.vidslide li {
+  position: relative;
+  /* 등분할 */
+  flex: 1;
 }
 
-/* 1. 로고영역 */
-.logo {
-    height: 80px;
-    transition: .4s ease;
+/* 비디오 공통클래스 */
+.video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.logo a {
-    display: block;
-    width: 195px;
-    height: 100%;
+/* 블릿박스 */
+.indic {
+  position: absolute;
+  display: flex;
+  bottom: 0;
+  width: 100%;
+  z-index: 10;
+  padding: 10px 15px;
 }
 
-.logo img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+.indic li {
+  display: inline-flex;
+  flex: 1;
+  /* 두께 */
+  height: 7px;
+  /* 사이간격 */
+  margin: min(1vw, 10px);
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  overflow: hidden;
 }
 
-/* 2. 카테고리영역 */
-/* gnb 대분류 */
-.catbx {
-    position: relative;
-    display: flex;
-    gap: 70px;
-    margin-left: 80px;
-    line-height: 80px;
-    transition: .4s ease;
+/* 클래스 on */
+.indic li.on .bid {
+  width: 0;
+  opacity: 0.7;
 }
 
-.catbx > li > a {
-    color: #fff;
-    font-size: 15px;
+.bid {
+  display: inline-block;
+  /* 프로그레스바 */
+  width: 0;
+  height: 100%;
+  opacity: 0;
+  background-color: #000;
+  transition: 0.3s ease;
 }
 
-/* 3. 사이드영역 */
-.side {
-    display: flex;
-    gap: 30px;
-    line-height: 90px;
-    transition: .4s ease;
-}
-
-.side > li > a::before {
-    content: '';
-    display: inline-block;
-    background-image: url(../images/ico_common.png);
-    width: 20px;
-    height: 20px;
-}
-
-.side > li > .ico_wish::before {
-    background-position: -44px 253px;
-}
-
-.side > li > .ico_mypage::before {
-    background-position: -217px -177px;
-}
-
-.side > li > .ico_cart::before {
-    background-position: -132px -211px;
-}
-
-/* gnb 소분류 */
-.subbx {
-    position: absolute;
-    top: 100px;
-    gap: 60px;
-    display: flex;
-}
-
-/* 4. 썸네일영역 */
-.thumb {
-    width: 300px;
-    margin-top: 10px;
-    display: flex;
-    flex-direction: column;
-}
-
-.thumb > img {
-    width: 100%;
-    aspect-ratio: 1/0.6;
-    object-fit: cover;
-}
-
-.thumb > h5 {
-    font-weight: 400;
-    font-size: 1.8rem;
-    line-height: 2;
-    margin-top: 10px;
-}
-
-.thumb > span {
-    font-size: 1.4rem;
-    line-height: 1.7;
-}
-
-/* 소분류 공통박스 */
-.sub {
-    font-weight: 400;
-    line-height: 1.7;
-    font-size: 1.5rem;
-}
-
-.sub > dt {
-    cursor: pointer;
-    margin: 10px 0;
-}
-
-.sub > dt > a {
-    font-weight: 600;
-    display: inline-block;
-}
-
-.sub > dd > a {
-    color: #333;
-    display: inline-block;
-}
-
-.sub > dd+dd {
-    margin-top: 5px;
+/* 슬라이드 커버 */
+.cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
 }

@@ -18,4 +18,5 @@ html{
 body * {
     font-family: 'IBM Plex Sans KR', sans-serif;
     /* outline: 1px dashed #ccc; */
+    box-sizing: border-box;
 }
