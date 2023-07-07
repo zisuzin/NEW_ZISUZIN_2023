@@ -7,6 +7,8 @@
 
 /* IBM Plex Sans KR */
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300;400;500;700&display=swap');
+/* EB Garamond */
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;700&display=swap');
 
 /* 전체 글자크기 Root 셋팅! */
 html{
@@ -16,7 +18,7 @@ html{
 
 /* 공사중 표시, 전체 폰트 셋팅 */
 body * {
-    font-family: 'IBM Plex Sans KR', sans-serif;
+    font-family: var(--aromatica-font-primary);
     /* outline: 1px dashed #ccc; */
     box-sizing: border-box;
 }

@@ -8,7 +8,10 @@
 
 :root {
     /* 브랜드색상 변수 */
-    --aromatica-color_main: #112B23;
+    --aromatica-color-main: #112B23;
+    /* 브랜드폰트 변수 */
+    --aromatica-font-primary: 'IBM Plex Sans KR', sans-serif;
+    --aromatica-font-secondary: 'EB Garamond', serif;
 }
 
 /*************** 상단영역 ***************/
@@ -27,7 +30,7 @@ nav {
     padding: 0 30px;
     height: 80px;
     white-space: nowrap;
-    background-color: var(--aromatica-color_main);
+    background-color: var(--aromatica-color-main);
 }
 
 /* 로고/카테고리 플렉스박스 */
