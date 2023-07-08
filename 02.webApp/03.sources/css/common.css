@@ -128,7 +128,7 @@ nav {
     position: relative;
     display: block;
     top: 79px;
-    width: 0%;
+    width: 0;
     border-bottom: 1px solid #333;
     transition: .4s ease-out;
 }
@@ -212,8 +212,9 @@ nav {
 }
 
 .sub > dt > a {
-    font-weight: 600;
     display: inline-block;
+    font-weight: 600;
+    color: #505050;
 }
 
 .sub > dd > a {
@@ -223,4 +224,19 @@ nav {
 
 .sub > dd+dd {
     margin-top: 5px;
+}
+
+.sub > dt > a::after,
+.sub > dd > a::after {
+    content: '';
+    display: block;
+    position: relative;
+    border-bottom: 1px solid #ccc;
+    width: 0;
+    transition: .3s ease-out;
+}
+
+.sub > dt > a:hover::after,
+.sub > dd > a:hover::after {
+    width: 100%;
 }
