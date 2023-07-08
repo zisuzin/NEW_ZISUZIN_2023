@@ -31,6 +31,28 @@ nav {
     height: 80px;
     white-space: nowrap;
     background-color: var(--aromatica-color-main);
+    transition: .3s ease;
+    overflow: hidden;
+}
+
+/* 클래스 on */
+.top.on nav {
+    /* 높이변경 */
+    height: 420px;
+
+    background: #fffef2;
+    transition: .3s ease-out;
+}
+
+/* .top 하단 보더 생김 */
+.top.on nav::after {
+    content: '';
+    position: absolute;
+    display: block;
+    top: 80px;
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+    transition: .4s ease-out;
 }
 
 /* 로고/카테고리 플렉스박스 */
@@ -56,6 +78,34 @@ nav {
     object-fit: contain;
 }
 
+/* 드래그방지 커버 */
+.top::after {
+    position: absolute;
+    content: '';
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    opacity: .0;
+    background-color: #000;
+}
+
+/* 클래스 on */
+/* 배경 어둡게 */
+.top.on::after {
+    position: absolute;
+    content: '';
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    opacity: .3;
+    background-color: #000;
+}
+
+.top.on .catbx > li > a {
+    font-weight: 500;
+    color: #333;
+}
+
 /* 2. 카테고리영역 */
 /* gnb 대분류 */
 .catbx {
@@ -71,6 +121,21 @@ nav {
     color: #fff;
     font-size: 15px;
 }
+
+/* gnb a태그 클릭시 하단 보더 생김  */
+.catbx > li > a::before {
+    content: '';
+    position: relative;
+    display: block;
+    top: 79px;
+    width: 0%;
+    border-bottom: 1px solid #333;
+    transition: .4s ease-out;
+}
+
+.catbx > li.on > a::before {
+    width: 100%;
+} 
 
 /* 3. 사이드영역 */
 .side {

@@ -80,14 +80,24 @@ new Vue({
       .siblings().removeClass("on");
       $(".top").addClass("on");
       $(".subbx").fadeIn(400);
+
+      // .top에 클래스 on 추가시 그린 로고로 변경!
+      if($(".top").hasClass("on")){
+        $(".logo img").attr("src","./images/m_logo_g.png")
+      }
     }) ///////// click ////////////
 
     // 마우스아웃시 전체 클래스 빼기
-    // $("nav").mouseleave(function(){
-    //   $(".top").removeClass("on");
-    //   $(".catbx li").removeClass("on");
-    //   $(".subbx").fadeOut(400);
-    // }) ///////// mouseleave //////////
+    $("nav").mouseleave(function(){
+      $(".top").removeClass("on");
+      $(".catbx li").removeClass("on");
+      $(".subbx").fadeOut(100);
+      
+      // .top에 클래스 on 빠졌을시 화이트 로고로 변경!
+      if($(".top").removeClass("on")){
+        $(".logo img").attr("src","./images/m_logo_w.png")
+      }
+    }) ///////// mouseleave //////////
 
     // 스크롤 이벤트
     // $(window).on("scroll",function(){

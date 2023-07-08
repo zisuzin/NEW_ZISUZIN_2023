@@ -71,13 +71,13 @@ function slideFn() {
                 slide.append(slide.find("li").first()).css({left: "-100%"});
                 // 커버 제거하기
                 cover.hide();
-            });
+                // 메인배너 타이틀함수 호출!
+                showTit();
+            }); // animate
             // 블릿 변경함수 호출!
             addOn(2);
             // 영상 재생함수 호출!
             vidOn(2);
-            // 배너텍스트 변경함수 호출!
-            showTit(2);
         } ///// if : 왼쪽이동 /////
 
         // 분기점 : -90%보다 클때
@@ -89,14 +89,14 @@ function slideFn() {
                 slide.prepend(slide.find("li").last()).css({left: "-100%"});
                 // 커버 제거하기
                 cover.hide();
-            }); 
+                // 메인배너 타이틀함수 호출!
+                showTit();
+            }); // animate
 
             // 블릿 변경함수 호출!
             addOn(0);
             // 영상 재생함수 호출!
             vidOn(0);
-            // 배너텍스트 변경함수 호출!
-            showTit(0);
         }  ///// else if : 오른쪽이동 /////
 
         // 분기점 : 제자리일경우
@@ -105,7 +105,7 @@ function slideFn() {
                 left: -winW + "px"
             }, 200, "easeOutQuint", ()=>{
                 cover.hide();
-            });
+            }); // animate
 
         } ///// else : 제자리 /////
     }); ////////////////// slide dragstop 이벤트 //////////////////
@@ -129,7 +129,7 @@ function slideFn() {
             else {
                 $(ele).attr("data-seq", idx-1)
             }
-        })
+        }) //////////// each ////////////
     } /////////// setSeq 함수 ///////////////////
 
     // 최초호출
@@ -143,7 +143,7 @@ function addOn(seq) { // seq - 읽을 슬라이드
     // 0 - 오른쪽, 2 - 왼쪽 이동
     // 슬라이드 data-seq 읽어오기
     let getseq = slide.find("li").eq(seq).attr("data-seq");
-    console.log("현재순번:",getseq)
+    // console.log("현재순번:",getseq)
 
     // 해당 슬라이드와 동일순번 블릿에 클래스 on
     indic.eq(getseq).addClass("on")
@@ -227,6 +227,7 @@ function vidOn(seq) {
 
             // 광드래그 방지 커버 보이기
             cover.show();
+
             // 왼쪽으로 슬라이드 이동
             slide.animate({
                 left: -winW*2 + "px"
@@ -235,7 +236,9 @@ function vidOn(seq) {
                 slide.append(slide.find("li").first()).css({left: "-100%"});
                 // 커버 제거하기
                 cover.hide();
-            });
+                // 메인배너 타이틀함수 호출!
+                showTit();
+            }); // animate
 
             // 블릿 변경함수 호출!
             addOn(2);
@@ -272,17 +275,20 @@ const subTxtData = {
     "ban3": "유기농 비건 뷰티 브랜드<br>차별화된 프리미엄 원료를 피부로 직접 느껴보세요.",
 }; /////////// subTxtData 객체 ///////////
 
-function showTit(seq) {
+function showTit() {
 
     // 대표배너
-    const mainBan = slide.find("li").eq(seq);
+    const mainBan = slide.find("li").eq(1);
     // 클래스명 읽어오기
     let clsName = mainBan.attr("class");
-    console.log("클래스명:",clsName)
+    // console.log("클래스명:",clsName)
     // 클래스명에 해당하는 객체값 읽어오기
     let mainTxt = mainTxtData[clsName];
     let subTxt = subTxtData[clsName];
     // console.log("메인txt명:",mainTxt,"\n서브txt명:",subTxt);
+
+    // append 초기화
+    $(".txtbx").remove();
 
     // 1. 요소 추가하기
     mainBan.append(`
@@ -327,11 +333,14 @@ function showTit(seq) {
         textShadow: "1px 1px 3px rgb(64 64 64)",
     });
 
-
 } //////// showTit 함수 ///////
 
-} //////// slideFn 함수 ///////
+// 함수 최초호출 모음!
+addOn(1);
+vidOn(1);
+showTit();
 
+} //////// slideFn 함수 ///////
 
 // 전체 싸고있는 함수 최초호출!
 slideFn();
