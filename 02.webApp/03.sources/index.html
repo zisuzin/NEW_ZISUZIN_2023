@@ -5,10 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Aromatica</title>
-    <!-- Favicon -->
+    <!-- 파비콘 -->
     <link rel="shortcut icon" href="images/favicon.ico" />
-    <!-- Swiper CSS -->
-    <!-- <link rel="stylesheet" href="./css/swiper-bundle.min.css" /> -->
+    <!-- 폰트어썸 외부 링크 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+    <!-- 스와이퍼 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
     <!-- 공통 CSS -->
     <link rel="stylesheet" href="./css/common.css" />
     <!-- 메인 CSS -->
@@ -81,19 +83,84 @@
               <h3>인기상품</h3>
               <h2>이달의 베스트상품</h2>
               <p>전통에서 벗어난 매혹적이고 감각적인 이솝 프래그런스는 추억과 우리를 이어주는 다리이자 주변 사람들과의 연결점입니다.</p>
+              <div class="morebtn">
+                <a href="#">
+                  <span>
+                    제품 모두 보기
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </span>
+                </a>
+              </div>
             </div>
             <!-- 슬라이드영역 -->
             <div class="ban">
               <div class="swiper">
                 <div class="swiper-wrapper">
                   <div class="swiper-slide">
-                    <img src="" alt="">
+                    <img src="./images/goods/best/pd-2.jpg" alt="베스트상품" />
                     <div class="txtarea">
-                      <h5></h5>
-                      <p></p>
+                      <h5>바디오일 리츄얼 키트 (괄사 포함)</h5>
+                      <p>끈적임 없는 바디오일</p>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="./images/goods/best/pd-3.jpg" alt="베스트상품" />
+                    <div class="txtarea">
+                      <h5>바이탈라이징 로즈마리 에센스</h5>
+                      <p>순도 높은 항산화 케어</p>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="./images/goods/best/pd-5.jpg" alt="베스트상품" />
+                    <div class="txtarea">
+                      <h5>티트리 밸런싱 포밍 클렌저</h5>
+                      <p>지성 피부용 저자극 클렌저</p>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="./images/goods/best/pd-6.jpg" alt="베스트상품" />
+                    <div class="txtarea">
+                      <h5>로즈마리 스칼프 스케일링 샴푸파</h5>
+                      <p>모근 영양과 각질 관리</p>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="./images/goods/best/pd-8.jpg" alt="베스트상품" />
+                    <div class="txtarea">
+                      <h5>티트리 밸런싱 클렌징바</h5>
+                      <p>매끈한 피부와 청정 모공</p>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="./images/goods/best/pd-9.jpg" alt="베스트상품" />
+                    <div class="txtarea">
+                      <h5>슈가 바디 스크럽 바질 & 버가못</h5>
+                      <p>각질 케어 바디 스크럽</p>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="./images/goods/best/pd-12.jpg" alt="베스트상품" />
+                    <div class="txtarea">
+                      <h5>리추얼 헤어오일</h5>
+                      <p>건조한 모발 수분공급</p>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="./images/goods/best/pd-13.jpg" alt="베스트상품" />
+                    <div class="txtarea">
+                      <h5>언버든 스트레스 릴리프 밤</h5>
+                      <p>마인드 케어 유도 밤</p>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="./images/goods/best/pd-14.jpg" alt="베스트상품" />
+                    <div class="txtarea">
+                      <h5>로즈마리 루트 인핸서</h5>
+                      <p>두피 영양 토닉</p>
                     </div>
                   </div>
                 </div>
+                <div class="swiper-scrollbar"></div>
               </div>
             </div>
           </div>
@@ -105,8 +172,8 @@
     <!-- 뷰JS vuex CDN -->
     <script src="https://unpkg.com/vuex@3.0.0"></script>
 
-    <!-- 스와이퍼 -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script> -->
+    <!-- 스와이퍼 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
     <!-- 제이쿼리 라이브러리 -->
     <script src="./js/plugin/jquery-3.6.0.min.js"></script>
@@ -115,5 +182,6 @@
     <!-- 메인페이지 JS -->
     <script src="./js/common.js" type="module"></script>
     <script src="./js/main.js" type="module"></script>
+    <script src="./js/swiper.js" type="module"></script>
   </body>
 </html>

@@ -9,6 +9,7 @@
 :root {
     /* 브랜드색상 변수 */
     --aromatica-color-main: #112B23;
+    --aromatica-color-sub: #F3F0EB;
     /* 브랜드폰트 변수 */
     --aromatica-font-primary: 'IBM Plex Sans KR', sans-serif;
     --aromatica-font-secondary: 'EB Garamond', serif;
@@ -40,7 +41,7 @@ nav {
     /* 높이변경 */
     height: 420px;
 
-    background: #fffef2;
+    background: var(--aromatica-color-sub);
     transition: .3s ease-out;
 }
 
