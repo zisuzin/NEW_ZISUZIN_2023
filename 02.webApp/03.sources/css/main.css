@@ -103,10 +103,7 @@ main {
   padding-top: 100px;
   position: absolute;
   display: flex;
-
   width: 100%;
-  top: 50%;
-  transform: translate(0, -50%);
 }
 
 /* 텍스트 공통박스 */
@@ -153,7 +150,8 @@ main {
   background-color: var(--aromatica-color-main);
 }
 
-.morebtn:hover span {
+.morebtn:hover span,
+.morebtn:hover span i {
   color: #fffef2;
 }
 
@@ -165,6 +163,12 @@ main {
   height: 100%;
   line-height: 40px;
   font-weight: 500;
+}
+
+.morebtn span i {
+  font-size: 1.2rem;
+  padding-left: 15px;
+  color: #333;
 }
 
 .ban {
