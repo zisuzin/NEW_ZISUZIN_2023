@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SHOOPEN</title>
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" type="image/x-icon" href="https://static.elandrs.com/f/img/favicon/shoopen.ico">
+    <!-- 폰트어썸 외부 링크 -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <!-- 스와이퍼 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <!-- 공통 CSS -->
+    <link rel="stylesheet" href="./css/common.css" />
+    <!-- 메인 CSS -->
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
+    <!-- 상단영역 -->
+    <header id="top">
+      <!-- 속박스 -->
+      <div class="top fxbx">
+        <!-- GNB -->
+        <nav>
+          <div class="gnb">
+            <!-- 1. 로고영역 -->
+            <div class="logo">
+              <a href="main.html">
+                <img src="./00.data/02.imgData/logo.png" alt="메인로고">
+            </a>
+            </div>
+            <!-- 2. 카테고리영역 -->
+            <category-comp></category-comp>
+          </div>
+          <ul class="side">
+            <!-- 3. 사이드영역 -->
+            <li><a href="#" class="ico_wish"></a></li>
+            <li><a href="#" class="ico_mypage"></a></li>
+            <li><a href="#" class="ico_cart"></a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- 메인영역 -->
+    <main id="cont">
+      <!-- 속박스 -->
+      <div class="cont">
+        <!-- 비디오 슬라이드 영역 -->
+        <section id="vidbx">
+          <ul class="vidslide">
+            <li class="ban3">
+              <video id="mainvid3" class="video" src="./images/vid_3.mp4" muted></video>
+            </li>
+            <li class="ban1">
+              <video id="mainvid1" class="video" src="./images/vid_1.mp4" muted></video>
+            </li>
+            <li class="ban2">
+              <video id="mainvid2" class="video" src="./images/vid_2.mp4" muted></video>
+            </li>
+          </ul>
+          <!-- 블릿박스 -->
+          <ol class="indic">
+            <li class="on">
+              <span class="bid"></span>
+            </li>
+            <li class="on">
+              <span class="bid"></span>
+            </li>
+            <li class="on">
+              <span class="bid"></span>
+            </li>
+          </ol>
+          <!-- 슬라이드 커버 -->
+          <div class="cover"></div>
+        </section>
+        <!-- 베스트 상품 영역 -->
+        <section id="bstbx">
+          <!-- 속박스 -->
+          <div class="bstwrap">
+            <!-- 텍스트영역 -->
+            <div class="tit tit1">
+              <h3>인기상품</h3>
+              <h2>이달의 베스트상품</h2>
+              <p>전통에서 벗어난 매혹적이고 감각적인 이솝 프래그런스는 추억과 우리를 이어주는 다리이자 주변 사람들과의 연결점입니다.</p>
+              <div class="morebtn">
+                <a href="#">
+                  <span>
+                    제품 모두 보기
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </span>
+                </a>
+              </div>
+            </div>
+            <!-- 슬라이드영역 -->
+            <div class="ban">
+              <div class="swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <img src="./images/goods/best/pd-2.jpg" alt="베스트상품" />
+                    <div class="txtarea">
+                      <h5>바디오일 리츄얼 키트 (괄사 포함)</h5>
+                      <p>끈적임 없는 바디오일</p>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="./images/goods/best/pd-3.jpg" alt="베스트상품" />
+                    <div class="txtarea">
+                      <h5>바이탈라이징 로즈마리 에센스</h5>
+                      <p>순도 높은 항산화 케어</p>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="./images/goods/best/pd-5.jpg" alt="베스트상품" />
+                    <div class="txtarea">
+                      <h5>티트리 밸런싱 포밍 클렌저</h5>
+                      <p>지성 피부용 저자극 클렌저</p>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="./images/goods/best/pd-6.jpg" alt="베스트상품" />
+                    <div class="txtarea">
+                      <h5>로즈마리 스칼프 스케일링 샴푸파</h5>
+                      <p>모근 영양과 각질 관리</p>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="./images/goods/best/pd-8.jpg" alt="베스트상품" />
+                    <div class="txtarea">
+                      <h5>티트리 밸런싱 클렌징바</h5>
+                      <p>매끈한 피부와 청정 모공</p>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="./images/goods/best/pd-9.jpg" alt="베스트상품" />
+                    <div class="txtarea">
+                      <h5>슈가 바디 스크럽 바질 & 버가못</h5>
+                      <p>각질 케어 바디 스크럽</p>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="./images/goods/best/pd-12.jpg" alt="베스트상품" />
+                    <div class="txtarea">
+                      <h5>리추얼 헤어오일</h5>
+                      <p>건조한 모발 수분공급</p>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="./images/goods/best/pd-13.jpg" alt="베스트상품" />
+                    <div class="txtarea">
+                      <h5>언버든 스트레스 릴리프 밤</h5>
+                      <p>마인드 케어 유도 밤</p>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="./images/goods/best/pd-14.jpg" alt="베스트상품" />
+                    <div class="txtarea">
+                      <h5>로즈마리 루트 인핸서</h5>
+                      <p>두피 영양 토닉</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-scrollbar"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <!-- 뷰JS 스탠드얼론 버전 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <!-- 뷰JS vuex CDN -->
+    <script src="https://unpkg.com/vuex@3.0.0"></script>
+
+    <!-- 스와이퍼 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+    <!-- 제이쿼리 라이브러리 -->
+    <script src="./js/plugin/jquery-3.6.0.min.js"></script>
+    <script src="./js/plugin/jquery-ui.min.js"></script>
+
+    <!-- 메인페이지 JS -->
+    <script src="./js/common.js" type="module"></script>
+    <script src="./js/main.js" type="module"></script>
+    <script src="./js/swiper.js" type="module"></script>
+  </body>
+</html>
