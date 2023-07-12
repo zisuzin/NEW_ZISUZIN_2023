@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-/* 웹&앱PJ 메인모듈 CSS - main.css */
+/* 웹&앱PJ 공통모듈 CSS - common.css */
 
 /* 공통 css 셋팅 */
 @import url(./reset.css);
@@ -106,6 +106,10 @@ nav {
     color: #333;
 }
 
+.top.on .side > li > a::before {
+    filter: brightness(0);
+}
+
 /* 2. 카테고리영역 */
 /* gnb 대분류 */
 .catbx {
@@ -119,7 +123,6 @@ nav {
 
 .catbx > li > a {
     color: #fff;
-    font-weight: 400;
     font-size: 15px;
 }
 

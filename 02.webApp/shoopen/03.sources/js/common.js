@@ -74,9 +74,9 @@ new Vue({
       $(".subbx").fadeIn(400);
 
       // // .top에 클래스 on 추가시 그린 로고로 변경!
-      // if($(".top").hasClass("on")){
-      //   $(".logo img").attr("src","./images/m_logo_g.png")
-      // }
+      if ($(".top").hasClass("on")) {
+        $(".logo img").attr("src", "./images/logo_shoopen.png");
+      }
     }); ///////// click ////////////
 
     // 마우스아웃시 전체 클래스 빼기
@@ -97,5 +97,45 @@ new Vue({
     //   let scStart = $(window).scrollTop();
     //   console.log(scStart)
     // });
+
+    // 메인 배너 함수
+    bannerSwiper();
   }, ////////// mounted ///////////
 });
+
+// 메인 배너 함수
+function bannerSwiper() {
+  const banImg = ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg"];
+
+  for (let i = 0; i < banImg.length; i++) {
+    let temp_banner = `
+        <div class="swiper-slide">
+          <a href="#">
+            <img src="./images/sc1_ban/ban_${banImg[i]}" alt="배너이미지">
+          </a>
+        </div>
+      `;
+
+    $(".main_bannerwrap").append(temp_banner);
+  }
+
+  // 스와이퍼 커스텀
+  const swiper = new Swiper(".swiper", {
+    slidesPerView: 1,
+    slidesPerGroup: 1, 
+        loop: true, 
+        loopFillGroupWithBlank: true,
+        pagination: {
+            el: ".swiper-pagination", 
+            type: "progressbar",
+        },
+        navigation: {
+            nextEl: ".swiper-button-next", 
+            prevEl: ".swiper-button-prev", 
+        },
+        autoplay: {
+            delay: 5000, 
+            disableOnInteraction: false,
+        },
+  });
+} // bannerSwiper
