@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-/* 웹&앱PJ 공통모듈 CSS - common.css */
+/* 웹&앱PJ 메인모듈 CSS - main.css */
 
 /* 공통 css 셋팅 */
 @import url(./reset.css);
@@ -8,8 +8,7 @@
 
 :root {
     /* 브랜드색상 변수 */
-    --shoopen-color-main: #000;
-    --shoopen-color-sub: #fff;
+    --shoopen-color-main:#fff;
     /* 브랜드폰트 변수 */
     --shoopen-font-primary: 'IBM Plex Sans KR', sans-serif;
     --shoopen-font-secondary: 'EB Garamond', serif;
@@ -40,7 +39,6 @@ nav {
 .top.on nav {
     /* 높이변경 */
     height: 420px;
-    background-color: var(--shoopen-color-sub);
     transition: .3s ease-out;
 }
 
@@ -58,24 +56,22 @@ nav {
 /* 로고/카테고리 플렉스박스 */
 .gnb {
     display: flex;
+    line-height: 80px;
 }
 
 /* 1. 로고영역 */
 .logo {
-    height: 80px;
     transition: .4s ease;
 }
 
 .logo a {
     display: block;
-    width: 195px;
-    height: 100%;
 }
 
 .logo img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    vertical-align: middle;
 }
 
 /* 드래그방지 커버 */
@@ -105,24 +101,24 @@ nav {
     font-weight: 500;
     color: #333;
 }
-
-.top.on .side > li > a::before {
+/* .top.on .side > li > a::before {
     filter: brightness(0);
-}
+} */
 
 /* 2. 카테고리영역 */
 /* gnb 대분류 */
 .catbx {
     position: relative;
     display: flex;
-    gap: 70px;
+    gap: 40px;
     margin-left: 80px;
     line-height: 80px;
     transition: .4s ease;
 }
 
 .catbx > li > a {
-    color: #fff;
+    color: #333;
+    font-weight: 600;
     font-size: 15px;
 }
 
@@ -155,6 +151,7 @@ nav {
     background-image: url(../images/ico_common.png);
     width: 20px;
     height: 20px;
+    filter: brightness(0);
 }
 
 .side > li > .ico_wish::before {

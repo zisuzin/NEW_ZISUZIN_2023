@@ -3,15 +3,19 @@
 /* 웹&앱PJ 메인페이지 CSS - main.css */
 
 /*************** 메인영역 ***************/
+main {
+  padding-top: 80px;
+}
 
+/******* section1 *******/
 /* 배너영역 - 스와이퍼 */
-.main_banner {
+#main_banner {
   position: relative;
 }
 
-.main_banner .swiper {
+#main_banner .swiper {
   width: 100%;
-  height: 100vh;
+  height: 85vh;
 }
 
 .swiper-slide img, .swiper-slide a {
@@ -27,7 +31,6 @@
 
 .swiper-horizontal >.swiper-pagination-progressbar, .swiper-pagination-progressbar.swiper-pagination-horizontal, .swiper-pagination-progressbar.swiper-pagination-vertical.swiper-pagination-progressbar-opposite, .swiper-vertical>.swiper-pagination-progressbar.swiper-pagination-progressbar-opposite {
   width: 30%;
-  height: var(--swiper-pagination-progressbar-size,4px);
   left: 50%;
   transform: translateX(-50%);
   top: auto;
@@ -36,4 +39,18 @@
 
 .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
   background: rgba(255,255,255, 0.8);
+}
+
+/******* section2 *******/
+#bestbx {
+  position: relative;
+  width: 100%;
+  height: 552px;
+}
+
+.btwrap {
+  padding-top: 100px;
+  position: absolute;
+  display: flex;
+  width: 100%;
 }
