@@ -20,19 +20,13 @@ Vue.component("category-comp", {
   methods: {
     // v-on 클릭시 gnb sub-comp 데이터 변경 발생
     chgData(parm) {
-      // gnb에서 파라미터 받아오기
-      store.state.lnbsrc = parm;
-
       // [ 업데이트!! ]
-      // thumb박스
-      store.state.setimgsrc = store.state.gnb[parm].imgsrc;
-      store.state.setimgtit = store.state.gnb[parm].imgtit;
-      store.state.setdesc = store.state.gnb[parm].desc;
-
       // dpt박스
       store.state.setsubtit1 = store.state.gnb[parm].subtit[0];
       store.state.setsubtit2 = store.state.gnb[parm].subtit[1];
       store.state.setsubtit3 = store.state.gnb[parm].subtit[2];
+      store.state.setsubtit4 = store.state.gnb[parm].subtit[3];
+      store.state.setsubtit5 = store.state.gnb[parm].subtit[4];
       store.state.setdpt1 = store.state.gnb[parm].dpt1;
       store.state.setdpt2 = store.state.gnb[parm].dpt2;
       store.state.setdpt3 = store.state.gnb[parm].dpt3;
@@ -44,21 +38,20 @@ Vue.component("category-comp", {
 Vue.component("sub-comp", {
   template: `
     <div class="subbx">
-      <div class="thumb">
-        <img v-bind:src="$store.state.setimgsrc" alt="썸네일">
-        <h5 v-text="$store.state.setimgtit"></h5>
-        <span v-text="$store.state.setdesc"></span>
+      <div class="all">
+        <a href="#" v-text="$store.state.setsubtit1"></a>
+        <a href="#" v-text="$store.state.setsubtit2"></a>
       </div>
       <dl class="sub">
-        <dt class="all"><a href="#" v-text="$store.state.setsubtit1"></a></dt>
+        <dt class="all"><a href="#" v-text="$store.state.setsubtit3"></a></dt>
         <dd v-for="(v,n) in $store.state.setdpt1" :key="n"><a href="#">{{v}}</a></dd>
       </dl>
       <dl class="sub">
-        <dt><a href="#" v-text="$store.state.setsubtit2"></a></dt>
+        <dt><a href="#" v-text="$store.state.setsubtit4"></a></dt>
         <dd v-for="(v,n) in $store.state.setdpt2" :key="n"><a href="#">{{v}}</a></dd>
       </dl>
       <dl class="sub">
-        <dt><a href="#" v-text="$store.state.setsubtit3"></a></dt>
+        <dt><a href="#" v-text="$store.state.setsubtit5"></a></dt>
         <dd v-for="(v,n) in $store.state.setdpt3" :key="n"><a href="#">{{v}}</a></dd>
       </dl>
     </div>
@@ -75,29 +68,28 @@ new Vue({
   store,
   mounted() {
     // 클릭시 li에 클래스 on
-    $(".catbx li > a").click(function(e){
-      $(this).parent().addClass("on")
-      .siblings().removeClass("on");
+    $(".catbx li > a").click(function (e) {
+      $(this).parent().addClass("on").siblings().removeClass("on");
       $(".top").addClass("on");
       $(".subbx").fadeIn(400);
 
-      // .top에 클래스 on 추가시 그린 로고로 변경!
-      if($(".top").hasClass("on")){
-        $(".logo img").attr("src","./images/m_logo_g.png")
-      }
-    }) ///////// click ////////////
+      // // .top에 클래스 on 추가시 그린 로고로 변경!
+      // if($(".top").hasClass("on")){
+      //   $(".logo img").attr("src","./images/m_logo_g.png")
+      // }
+    }); ///////// click ////////////
 
     // 마우스아웃시 전체 클래스 빼기
-    $("nav").mouseleave(function(){
+    $("nav").mouseleave(function () {
       $(".top").removeClass("on");
       $(".catbx li").removeClass("on");
       $(".subbx").fadeOut(100);
-      
+
       // .top에 클래스 on 빠졌을시 화이트 로고로 변경!
-      if($(".top").removeClass("on")){
-        $(".logo img").attr("src","./images/m_logo_w.png")
+      if ($(".top").removeClass("on")) {
+        $(".logo img").attr("src", "./images/logo_shoopen.png");
       }
-    }) ///////// mouseleave //////////
+    }); ///////// mouseleave //////////
 
     // 스크롤 이벤트
     // $(window).on("scroll",function(){
@@ -105,5 +97,5 @@ new Vue({
     //   let scStart = $(window).scrollTop();
     //   console.log(scStart)
     // });
-  } ////////// mounted ///////////
+  }, ////////// mounted ///////////
 });
