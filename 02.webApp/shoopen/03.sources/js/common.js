@@ -91,13 +91,6 @@ new Vue({
       }
     }); ///////// mouseleave //////////
 
-    // 스크롤 이벤트
-    // $(window).on("scroll",function(){
-    //   // 스크롤시작!
-    //   let scStart = $(window).scrollTop();
-    //   console.log(scStart)
-    // });
-
     // 메인 배너 함수
     bannerSwiper();
   }, ////////// mounted ///////////
@@ -109,33 +102,35 @@ function bannerSwiper() {
 
   for (let i = 0; i < banImg.length; i++) {
     let temp_banner = `
-        <div class="swiper-slide">
-          <a href="#">
-            <img src="./images/sc1_ban/ban_${banImg[i]}" alt="배너이미지">
-          </a>
-        </div>
-      `;
+          <div class="swiper-slide">
+            <a href="#">
+              <img src="./images/sc1_ban/ban_${banImg[i]}" alt="배너이미지">
+            </a>
+          </div>
+        `;
 
     $(".main_bannerwrap").append(temp_banner);
-  }
+  } /// for ///
 
   // 스와이퍼 커스텀
-  const swiper = new Swiper(".swiper", {
+  const mainswiper = new Swiper(".swiper", {
     slidesPerView: 1,
-    slidesPerGroup: 1, 
-        loop: true, 
-        loopFillGroupWithBlank: true,
-        pagination: {
-            el: ".swiper-pagination", 
-            type: "progressbar",
-        },
-        navigation: {
-            nextEl: ".swiper-button-next", 
-            prevEl: ".swiper-button-prev", 
-        },
-        autoplay: {
-            delay: 5000, 
-            disableOnInteraction: false,
-        },
-  });
+    loop: true,
+    pagination: {
+      // 페이지네이션 설정
+      el: ".swiper-pagination",
+      type: "progressbar",
+    },
+    navigation: {
+      // 네비게이션 설정
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    autoplay: {
+      // 자동넘김 설정
+      delay: 4000,
+      disableOnInteraction: false,
+    },
+  }); /////// mainswiper /////////
 } // bannerSwiper
+

@@ -50,9 +50,14 @@
         <section id="main_banner">
           <div class="swiper mySwiper">
             <div class="swiper-wrapper main_bannerwrap"></div>
+            <!-- 네비게이션 -->
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
-            <div class="swiper-pagination"></div>
+            <button type="button" class="swiper-btn-toggle"></button>
+            <!-- 페이지네이션  -->
+            <div class="pagination_container">
+              <div class="swiper-pagination"></div>
+            </div>
           </div>
         </section>
         <!-- 베스트상품 영역 -->
@@ -82,27 +87,38 @@
                       </span>
                       <!-- 세일 남은 기간 -->
                       <span class="prdcount">
-                      <span class="date">
-                        <span class="valday">0</span>
-                        <span class="daytxt">DAY</span>
+                        <span class="date">
+                          <span class="valday">0</span>
+                          <span class="daytxt">DAY</span>
+                        </span>
+                        <span class="time">
+                          <span class="valhour">00</span>
+                          <span class="valmin">00</span>
+                          <span class="valsec">00</span>
+                        </span>
                       </span>
-                      <span class="time">
-                        <span class="valhour">00</span>
-                        <span class="valmin">00</span>
-                        <span class="valsec">00</span>
+                    </div>
+                    <!-- 제품 상세 -->
+                    <div class="pddetail">
+                      <span class="pdname">원더풀</span>
+                      <span class="pdprice">
+                        <span class="pd-normal-cost">79,000</span>
+                        <span class="pd-discount-cost">39,000</span>
+                        <span class="pd-sale-percent">[50%]</span>
+                      </span>
+                    </div>
+                    <!-- 세일 디테일 -->
+                    <span class="sale-dtl-wrap">
+                      <span class="sale-dtl">
+                        23.05.01 09:01 ~
+                        <br />
+                        23.05.21.08:59
+                      </span>
+                      <span class="count">
+                        <span class="val">43</span>
+                        개 남음
                       </span>
                     </span>
-                  </div>
-                  <!-- 제품 상세 -->
-                  <div class="pddetail">
-                    <span class="pdname">원더풀</span>
-                    <span class="pdprice">
-                      <span class="pd-normal-cost">79,000</span>
-                      <span class="pd-discount-cost">39,000</span>
-                      <span class="pd-sale-percent">[50%]</span>
-                    </span>
-                  </div>
-                  <span class="saledt"></span>
                   </a>
                 </div>
               </div>

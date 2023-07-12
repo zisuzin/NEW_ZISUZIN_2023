@@ -10,8 +10,7 @@
     /* 브랜드색상 변수 */
     --shoopen-color-main:#fff;
     /* 브랜드폰트 변수 */
-    --shoopen-font-primary: 'IBM Plex Sans KR', sans-serif;
-    --shoopen-font-secondary: 'EB Garamond', serif;
+    --shoopen-font-primary: 'Manrope', sans-serif;
 }
 
 /*************** 상단영역 ***************/
@@ -98,7 +97,7 @@ nav {
 }
 
 .top.on .catbx > li > a {
-    font-weight: 500;
+    font-weight: 600;
     color: #333;
 }
 /* .top.on .side > li > a::before {
